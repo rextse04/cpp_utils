@@ -272,11 +272,12 @@ namespace utils {
         private:
             using U = std::make_unsigned_t<Under>;
             template <typename Self, typename Other>
-            struct convertible_to_int : is_lossless_convertible<Other, int> {};
+            struct convertible_to_int : is_lossless_convertible<make_fundamental_t<Other>, int> {};
         public:
             static constexpr shift_op_functors ops = {
                 .shift_left = std::rotl<U>,
                 .shift_right = std::rotr<U>,
+                // because ```std::rotl``` and ```std::rotr``` takes ```int``` as argument
                 .binary_traits = binary_op_traits<detail::get_self, convertible_to_int>{}
             };
             static constexpr shift_asg_op_functors asg_ops = {

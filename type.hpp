@@ -1,7 +1,9 @@
 #pragma once
 #include <type_traits>
+#include <limits>
+#include <utility>
 #include "bitmask.hpp"
-#include "tuple.hpp"
+#include "meta.hpp"
 
 namespace utils {
     enum class type_qualifiers {
@@ -55,16 +57,21 @@ namespace utils {
     template <template<typename...> typename Tmpl, typename T>
     constexpr bool is_template_instance_v = is_template_instance<Tmpl, std::remove_cvref_t<T>>::value;
 
-    template <template<typename...> typename Trait, typename... Args>
-    struct bind_front {
-        template <typename... Ts>
-        struct trait : Trait<Args..., Ts...> {};
-    };
-    template <template<typename...> typename Trait, typename... Args>
-    struct bind_back {
-        template <typename... Ts>
-        struct trait : Trait<Ts..., Args...> {};
-    };
+    namespace detail {
+        template <typename T, auto F, typename Seq>
+        struct sequence_apply;
+        template <typename T, auto F, T... Ns>
+        struct sequence_apply<T, F, std::integer_sequence<T, Ns...>> {
+            using type = std::integer_sequence<T, F(Ns)...>;
+        };
+    }
+    template <typename T, T End, T Begin = 0, T Step = 1>
+    requires (End >= Begin)
+    using make_integer_range = detail::sequence_apply<T, [](T n) { return Begin + n * Step; },
+        std::make_integer_sequence<T, (End - Begin) / Step>>::type;
+    template <std::size_t End, std::size_t Begin = 0, std::size_t Step = 1>
+    requires (End >= Begin)
+    using make_index_range = make_integer_range<std::size_t, End, Begin, Step>;
 
     template <typename...>
     struct always_true : std::true_type {};
@@ -75,7 +82,7 @@ namespace utils {
     struct is_tagged : std::false_type {};
     template <typename Tag, typename T>
     requires (std::is_same_v<typename std::remove_cv_t<T>::tag, Tag> ||
-        tuple_fulfills_any<bind_front<std::is_same, Tag>::template trait, typename std::remove_cv_t<T>::tag>::value)
+        meta::contained_in_v<T, typename std::remove_cv_t<T>::tag>)
     struct is_tagged<Tag, T> : std::true_type {};
     template <typename Tag, typename T>
     constexpr bool is_tagged_v = is_tagged<Tag, T>::value;
