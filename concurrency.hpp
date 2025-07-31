@@ -22,7 +22,7 @@ namespace utils {
     /// (this should not be set to true if ```T``` is inherently synchronized, such as atomics)
     /// @tparam Semaphore: a type that follows the interface of ```std::counting_semaphore```
     /// @tparam SharedMutex: a type that satisfies <i>SharedMutex</i> (can be any type if ```Sync``` is false)
-    /// @remark: In the context of this class, ```read-only access``` is synonymous with const reference,
+    /// @remark In the context of this class, ```read-only access``` is synonymous with const reference,
     /// while ```read/write access``` is synonymous with non-const reference (to the underlying resource).
     template <
         typename T, bool Sync = false,
@@ -55,13 +55,13 @@ namespace utils {
             // a private constructor with friend doesn't work because it is also constructed through std::optional
             constexpr permit(permit_key, unique_resource* owner) : owner_(*owner) {}
             /// Provides read-only access to the resource.
-            /// @remark: If ```sync``` is true, a fancy pointer (```permit_ptr```) is returned.
+            /// @remark If ```sync``` is true, a fancy pointer (```permit_ptr```) is returned.
             constexpr auto read() const noexcept {
                 if constexpr (sync) return permit_ptr<std::shared_lock<SharedMutex>, type_qualifiers::c>(owner_);
                 else return &std::as_const(owner_.base_);
             }
             /// Provides read-write access to the resource.
-            /// @remark: If ```sync``` is true, a fancy pointer (```permit_ptr```) is returned.
+            /// @remark If ```sync``` is true, a fancy pointer (```permit_ptr```) is returned.
             constexpr auto write() const noexcept {
                 if constexpr (sync) return permit_ptr<std::scoped_lock<SharedMutex>>(owner_);
                 else return &owner_.base_;
@@ -96,6 +96,9 @@ namespace utils {
             base_(std::forward<Args>(args)...), sem_(+quota) {}
         /// Get read access to the resource. Only available if ```sync``` is false.
         constexpr const T& operator*() const noexcept requires(!sync) { return base_; }
+        /// Get read/write access to the resource, bypassing semaphore and mutex.
+        /// @warning Dangerous operation.
+        constexpr T& raw_access() noexcept { return base_; }
         /// Blocks until a permit is issued.
         permit acquire() {
             sem_.acquire();
