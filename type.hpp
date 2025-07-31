@@ -110,6 +110,20 @@ namespace utils {
         stale_class& operator=(stale_class&&) = delete;
     };
 
+#ifdef __cpp_variadic_friend
+    template <typename... Ts>
+#else
+    template <typename T>
+#endif
+    class key {
+        constexpr key() noexcept = default;
+#ifdef __cpp_variadic_friend
+        friend Ts...;
+#else
+        friend T;
+#endif
+    };
+
     template <typename T>
     constexpr const T&& as_const(T&& ref) noexcept { return ref; }
     template <typename T>
