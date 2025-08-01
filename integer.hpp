@@ -27,6 +27,8 @@ namespace utils {
     };
     template <typename T>
     using sane_promotion_t = typename sane_promotion<T>::type;
+    template <typename T>
+    constexpr sane_promotion_t<T> sane_promote(T n) { return n; }
 
     template <typename T>
     constexpr T epsilon_of = std::numeric_limits<T>::is_integer ? T(1) : std::numeric_limits<T>::epsilon();
@@ -333,6 +335,10 @@ namespace utils {
         requires std::numeric_limits<T>::is_signed == std::numeric_limits<Ref>::is_signed;
     };
 
+    namespace detail {
+
+    }
+
     template <
         std::integral Under,
         template<typename> typename IBTrait = integral_behavior::sane,
@@ -360,15 +366,33 @@ namespace utils {
         /// Made public to preserve structural type. Use at your own risk.
         underlying_type under_;
         constexpr integer() noexcept = default;
-        template <typename T>
-        requires requires {
-            typename make_fundamental_t<T>;
-            std::is_convertible_v<make_fundamental_t<T>, underlying_type>;
+        /// Normal integer conversion from a number-like value ```other```.
+        /// Explicit if ```other``` is not ```lossless_convertible_to``` ```Under```.
+        template <typename T, typename U = std::remove_cvref_t<T>>
+        requires (std::is_convertible_v<make_fundamental_t<U>, underlying_type>)
+        explicit(!lossless_convertible_to<make_fundamental_t<U>, underlying_type>)
+        constexpr integer(T&& other) noexcept : under_(to_fundamental(other)) {}
+        /// This allows implicit conversions from number literals.
+        /// @throw std::overflow_error (at compile time)
+        /// if the number (with sign preserved) cannot be represented by ```underlying_type```.
+        /// @remark ```Ts``` is used only for decreasing the priority of this constructor.
+        template <std::integral T, typename... Ts>
+        requires (qualifiers_of_v<T> == type_qualifiers::none && sizeof...(Ts) == 0)
+        consteval integer(T&& other, Ts...) : under_(other) {
+            if (std::is_unsigned_v<Under> && other < 0) {
+                throw std::overflow_error("negative number assigned to an unsigned type");
+            }
+            if (other > std::numeric_limits<underlying_type>::max()) {
+                throw std::overflow_error("integer overflow");
+            }
+            if (other < std::numeric_limits<underlying_type>::min()) {
+                throw std::overflow_error("integer underflow");
+            }
         }
-        explicit(!lossless_convertible_to<make_fundamental_t<T>, underlying_type>)
-        constexpr integer(const T& other) noexcept : under_(to_fundamental(other)) {}
         constexpr underlying_type& to_underlying() noexcept { return under_; }
         constexpr underlying_type to_underlying() const noexcept { return under_; }
+        /// Conversion to integer-like type ```T```.
+        /// Explicit if ```underlying_type``` is not ```lossless_convertible_to``` ```T```.
         template <typename T>
         explicit(!lossless_convertible_to<underlying_type, T>)
         constexpr operator T() const noexcept { return under_; }
