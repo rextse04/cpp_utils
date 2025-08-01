@@ -380,7 +380,8 @@ namespace utils {
         requires (qualifiers_of_v<T> == type_qualifiers::none && sizeof...(Ts) == 0)
         consteval integer(T&& other, Ts...) : under_(other) {
             if (std::is_unsigned_v<Under> && other < 0) {
-                throw std::overflow_error("negative number assigned to an unsigned type");
+                throw std::overflow_error("negative number assigned to an unsigned type. "
+                    "Use the explicit constructor if you want it to wrap around.");
             }
             if (other > std::numeric_limits<underlying_type>::max()) {
                 throw std::overflow_error("integer overflow");
