@@ -3,6 +3,7 @@
 #include "integer.hpp"
 #include <sstream>
 #include <format>
+#include <type_traits>
 
 using namespace utils::integer_alias;
 namespace ib = utils::integral_behavior;
@@ -151,4 +152,18 @@ BOOST_AUTO_TEST_CASE(io_test) {
     ss >> u;
     BOOST_CHECK_EQUAL(u, static_cast<unsigned char>(123));
     BOOST_CHECK_EQUAL(std::format("{} {}", s, u), "123 123");
+}
+
+BOOST_AUTO_TEST_CASE(type_test) {
+    BOOST_CHECK((std::is_convertible_v<int, sint>));
+    BOOST_CHECK((std::is_convertible_v<short, sint>));
+    BOOST_CHECK((!std::is_convertible_v<long long, sint>));
+    BOOST_CHECK((!std::is_convertible_v<unsigned, sint>));
+    BOOST_CHECK((!std::is_convertible_v<int, utils::integer_alias::uint>));
+    BOOST_CHECK((std::is_convertible_v<sint, int>));
+    BOOST_CHECK((std::is_convertible_v<sint, long long>));
+    BOOST_CHECK((!std::is_convertible_v<sint, short>));
+    BOOST_CHECK((!std::is_convertible_v<sint, unsigned>));
+    BOOST_CHECK((std::is_convertible_v<sint, float>));
+    BOOST_CHECK((!std::is_convertible_v<float, sint>));
 }

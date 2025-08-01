@@ -28,13 +28,16 @@ namespace utils {
     template <typename T>
     using sane_promotion_t = typename sane_promotion<T>::type;
 
+    template <typename T>
+    constexpr T epsilon_of = std::numeric_limits<T>::is_integer ? T(1) : std::numeric_limits<T>::epsilon();
     template <typename From, typename To>
     concept lossless_convertible_to = requires {
         requires std::is_convertible_v<From, To>;
+        requires std::numeric_limits<From>::is_specialized && std::numeric_limits<To>::is_specialized;
         requires !std::numeric_limits<From>::is_signed || std::numeric_limits<To>::is_signed;
         requires std::numeric_limits<From>::max() <= std::numeric_limits<To>::max();
-        requires std::numeric_limits<From>::min() >= std::numeric_limits<To>::min();
-        requires std::numeric_limits<From>::epsilon() == std::numeric_limits<To>::epsilon();
+        requires std::numeric_limits<From>::lowest() >= std::numeric_limits<To>::lowest();
+        requires epsilon_of<From> >= epsilon_of<To>;
     };
     template <typename From, typename To>
     struct is_lossless_convertible : std::bool_constant<lossless_convertible_to<From, To>> {};
@@ -78,15 +81,17 @@ namespace utils {
         private:
             using SP = sane_promotion<Under>;
             using U = SP::type;
+            static constexpr U max = std::numeric_limits<Under>::max(),
+            min = std::numeric_limits<Under>::min();
             static constexpr U plus(U lhs, U rhs) noexcept {
-                [[assume(rhs < 0 || lhs <= std::numeric_limits<Under>::max() - rhs)]];
-                [[assume(rhs > 0 || lhs >= std::numeric_limits<Under>::min() - rhs)]];
+                [[assume(rhs < 0 || lhs <= max - rhs)]];
+                [[assume(rhs > 0 || lhs >= min - rhs)]];
                 return lhs + rhs;
             }
             static constexpr U minus(U lhs, U rhs) noexcept {
                 if constexpr (SP::conv) {
-                    [[assume(lhs - rhs >= std::numeric_limits<Under>::min())]];
-                    [[assume(lhs - rhs <= std::numeric_limits<Under>::max())]];
+                    [[assume(lhs - rhs >= min)]];
+                    [[assume(lhs - rhs <= max)]];
                 } else if constexpr (std::is_unsigned_v<Under>) {
                     [[assume(lhs >= rhs)]];
                 }
@@ -94,10 +99,11 @@ namespace utils {
             }
             static constexpr U multiplies(U lhs, U rhs) noexcept {
                 if constexpr (SP::conv) {
-                    [[assume(lhs * rhs >= std::numeric_limits<Under>::min())]];
-                    [[assume(lhs * rhs <= std::numeric_limits<Under>::max())]];
+                    // if lhs * rhs overflow even as promoted integers, it would overflow in Under anyway
+                    [[assume(lhs * rhs >= min)]];
+                    [[assume(lhs * rhs <= max)]];
                 } else if constexpr (std::is_unsigned_v<Under>) {
-                    [[assume(rhs == 0 || lhs <= std::numeric_limits<Under>::max() / rhs)]];
+                    [[assume(rhs == 0 || lhs <= max / rhs)]];
                 }
                 return lhs * rhs;
             }
@@ -363,7 +369,9 @@ namespace utils {
         constexpr integer(const T& other) noexcept : under_(to_fundamental(other)) {}
         constexpr underlying_type& to_underlying() noexcept { return under_; }
         constexpr underlying_type to_underlying() const noexcept { return under_; }
-        explicit constexpr operator underlying_type() const noexcept { return under_; }
+        template <typename T>
+        explicit(!lossless_convertible_to<underlying_type, T>)
+        constexpr operator T() const noexcept { return under_; }
         constexpr bool operator==(const same_sign_as<integer> auto& other) const noexcept {
             return under_ == to_fundamental(other);
         }
