@@ -88,7 +88,7 @@ namespace utils {
         template <typename Self, typename Other>
         struct get_self : std::type_identity<Self> {};
         template <typename Self, typename Other>
-        struct is_compatible : std::is_convertible<Other, Self> {};
+        struct is_compatible : std::bool_constant<equiv_to<Self, Other> || std::convertible_to<Other, Self>> {};
     }
     template <template<typename Self> typename ResultTrait = std::type_identity>
     struct unary_op_traits {

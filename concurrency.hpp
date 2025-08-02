@@ -24,10 +24,6 @@ namespace utils {
     /// @tparam SharedMutex: a type that satisfies <i>SharedMutex</i> (can be any type if ```Sync``` is false)
     /// @remark In the context of this class, ```read-only access``` is synonymous with const reference,
     /// while ```read/write access``` is synonymous with non-const reference (to the underlying resource).
-    /// @remark ```const``` semantics for this class deviates from the usual sense.
-    /// A const unique_resource does not mean the underlying resource is immutable.
-    /// Rather, it disables all unsafe operations and forces access through permits.
-    /// This is useful if you want to restrict unsafe operations to the owner of the resource.
     template <
         typename T, bool Sync = false,
         typename Semaphore = std::counting_semaphore<>, typename SharedMutex = std::shared_mutex>
@@ -81,9 +77,9 @@ namespace utils {
             constexpr ~permit() { owner_.sem_.release(); }
         };
     private:
-        mutable value_type base_;
-        [[no_unique_address]] mutable semaphore_type sem_;
-        [[no_unique_address]] mutable std::conditional_t<sync, std::shared_mutex, std::monostate> mutex_;
+        value_type base_;
+        [[no_unique_address]] semaphore_type sem_;
+        [[no_unique_address]] std::conditional_t<sync, std::shared_mutex, std::monostate> mutex_;
 
         using permit_opt = std::optional<permit>;
         constexpr permit_opt issue(bool success) const noexcept {
@@ -100,31 +96,35 @@ namespace utils {
             base_(std::forward<Args>(args)...), sem_(+quota) {}
         /// Get read access to the resource. Only available if ```sync``` is false.
         constexpr const T& operator*() const noexcept requires(!sync) { return base_; }
-        constexpr const T* operator->() const noexcept requires(!sync) { return &base_; }
+        constexpr std::add_pointer_t<const T> operator->() const noexcept requires(!sync) { return &base_; }
         /// Get read/write access to the resource, bypassing semaphore and mutex.
         /// @warning Dangerous operation.
         constexpr T& raw_access() noexcept { return base_; }
+        /// Get read access to the resource, bypassing mutex.
+        /// @warning Dangerous operation if ```sync``` is true.
+        /// ```operator*``` and ```operator->``` are better choices even when ```sync``` is false.
+        constexpr const T& raw_access() const noexcept { return base_; }
         /// Blocks until a permit is issued.
-        permit acquire() const {
+        permit acquire() {
             sem_.acquire();
             return {key, this};
         }
         /// Check if a permit is instantly available.
         /// If yes, returns the issued permit, otherwise returns a ```std::nullopt```.
         /// No blocking occurs nevertheless.
-        permit_opt try_acquire() const noexcept {
+        permit_opt try_acquire() noexcept {
             return issue(sem_.try_acquire());
         }
         /// Wait for ```timeout``` for a permit, returns a permit once it is issued.
         /// If a permit is still not available, returns a ```std::nullopt```.
         template <typename Rep, typename Period>
-        permit_opt try_acquire_for(const std::chrono::duration<Rep, Period>& timeout) const {
+        permit_opt try_acquire_for(const std::chrono::duration<Rep, Period>& timeout) {
             return issue(sem_.try_acquire_for(timeout));
         }
         /// Wait until ```ddl``` for a permit, returns a permit once it is issued.
         /// If a permit is still not available, returns a ```std::nullopt```.
         template <typename Clock, typename Duration>
-        permit_opt try_acquire_until(const std::chrono::time_point<Clock, Duration>& ddl) const {
+        permit_opt try_acquire_until(const std::chrono::time_point<Clock, Duration>& ddl) {
             return issue(sem_.try_acquire_until(ddl));
         }
     };

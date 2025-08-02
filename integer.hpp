@@ -34,7 +34,6 @@ namespace utils {
     constexpr T epsilon_of = std::numeric_limits<T>::is_integer ? T(1) : std::numeric_limits<T>::epsilon();
     template <typename From, typename To>
     concept lossless_convertible_to = requires {
-        requires std::is_convertible_v<From, To>;
         requires std::numeric_limits<From>::is_specialized && std::numeric_limits<To>::is_specialized;
         requires !std::numeric_limits<From>::is_signed || std::numeric_limits<To>::is_signed;
         requires std::numeric_limits<From>::max() <= std::numeric_limits<To>::max();
@@ -335,10 +334,6 @@ namespace utils {
         requires std::numeric_limits<T>::is_signed == std::numeric_limits<Ref>::is_signed;
     };
 
-    namespace detail {
-
-    }
-
     template <
         std::integral Under,
         template<typename> typename IBTrait = integral_behavior::sane,
@@ -363,10 +358,21 @@ namespace utils {
         using to = integer<ToUnder, IBTrait>;
         template <template<typename> typename ToIBTrait = IBTrait, template<typename> typename ToSBTrait = SBTrait>
         using adopt = integer<Under, ToIBTrait, ToSBTrait>;
+
         /// Made public to preserve structural type. Use at your own risk.
         underlying_type under_;
+
+        static constexpr integer max() noexcept {
+            return std::numeric_limits<underlying_type>::max();
+        }
+        static constexpr integer min() noexcept {
+            return std::numeric_limits<underlying_type>::min();
+        }
+        static constexpr bool is_signed = std::numeric_limits<underlying_type>::is_signed;
+
         constexpr integer() noexcept = default;
-        /// Normal integer conversion from a number-like value ```other```.
+        /// Conversion from a ```number_like``` value ```other```.
+        /// If ```underlying_type``` is unsigned and ```other < 0```, it wraps around.
         /// Explicit if ```other``` is not ```lossless_convertible_to``` ```Under```.
         template <typename T>
         requires (std::is_convertible_v<make_fundamental_t<T>, underlying_type>)
@@ -375,18 +381,18 @@ namespace utils {
         /// This allows implicit conversions from numbers known at compile time.
         /// @throw std::overflow_error (at compile time)
         /// if the number (with sign preserved) cannot be represented by ```underlying_type```.
-        /// @remark ```Ts``` is used only for lowering the priority of this constructor (in overload resolution).
-        template <std::integral T, typename... Ts>
+        /// @remark ```Ts``` exists solely to lower the priority of this constructor (in overload resolution).
+        template <typename... Ts>
         requires (sizeof...(Ts) == 0)
-        consteval integer(const T& other, Ts...) : under_(other) {
-            if (std::is_unsigned_v<Under> && other < 0) {
+        consteval integer(const std::integral auto& other, Ts...) : under_(other) {
+            if (!is_signed && other < 0) {
                 throw std::overflow_error("negative number assigned to an unsigned type. "
                     "Use the explicit constructor if you want it to wrap around.");
             }
-            if (other > std::numeric_limits<underlying_type>::max()) {
+            if (other > +max()) {
                 throw std::overflow_error("integer overflow");
             }
-            if (other < std::numeric_limits<underlying_type>::min()) {
+            if (other < +min()) {
                 throw std::overflow_error("integer underflow");
             }
         }
@@ -395,16 +401,20 @@ namespace utils {
         /// Conversion to integer-like type ```T```.
         /// Explicit if ```underlying_type``` is not ```lossless_convertible_to``` ```T```.
         template <typename T>
+        requires (!tagged<T, integer_tag>)
         explicit(!lossless_convertible_to<underlying_type, T>)
         constexpr operator T() const noexcept { return under_; }
+
         constexpr bool operator==(const same_sign_as<integer> auto& other) const noexcept {
             return under_ == to_fundamental(other);
         }
         constexpr auto operator<=>(const same_sign_as<integer> auto& other) const noexcept {
             return under_ <=> to_fundamental(other);
         }
+
         using integer::utils_ops_base_type::operator+;
         constexpr underlying_type operator+() const noexcept { return under_; }
+
         template <typename CharT, typename Traits>
         friend auto& operator<<(std::basic_ostream<CharT, Traits>& os, const integer& i) {
             return os << i.under_;

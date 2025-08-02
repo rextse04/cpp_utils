@@ -9,8 +9,7 @@ namespace utils {
     enum class type_qualifiers {
         none = 0, c = 0b1, v = 0b10
     };
-    template <>
-    struct is_bitmask<type_qualifiers> : std::true_type {};
+    UTILS_BITMASK(type_qualifiers);
     template <typename T>
     struct qualifiers_of {
     private:
