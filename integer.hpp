@@ -368,17 +368,17 @@ namespace utils {
         constexpr integer() noexcept = default;
         /// Normal integer conversion from a number-like value ```other```.
         /// Explicit if ```other``` is not ```lossless_convertible_to``` ```Under```.
-        template <typename T, typename U = std::remove_cvref_t<T>>
-        requires (std::is_convertible_v<make_fundamental_t<U>, underlying_type>)
-        explicit(!lossless_convertible_to<make_fundamental_t<U>, underlying_type>)
-        constexpr integer(T&& other) noexcept : under_(to_fundamental(other)) {}
-        /// This allows implicit conversions from number literals.
+        template <typename T>
+        requires (std::is_convertible_v<make_fundamental_t<T>, underlying_type>)
+        explicit(!lossless_convertible_to<make_fundamental_t<T>, underlying_type>)
+        constexpr integer(const T& other) noexcept : under_(to_fundamental(other)) {}
+        /// This allows implicit conversions from numbers known at compile time.
         /// @throw std::overflow_error (at compile time)
         /// if the number (with sign preserved) cannot be represented by ```underlying_type```.
-        /// @remark ```Ts``` is used only for decreasing the priority of this constructor.
+        /// @remark ```Ts``` is used only for lowering the priority of this constructor (in overload resolution).
         template <std::integral T, typename... Ts>
-        requires (qualifiers_of_v<T> == type_qualifiers::none && sizeof...(Ts) == 0)
-        consteval integer(T&& other, Ts...) : under_(other) {
+        requires (sizeof...(Ts) == 0)
+        consteval integer(const T& other, Ts...) : under_(other) {
             if (std::is_unsigned_v<Under> && other < 0) {
                 throw std::overflow_error("negative number assigned to an unsigned type. "
                     "Use the explicit constructor if you want it to wrap around.");
