@@ -62,7 +62,7 @@ namespace utils {
             }
             /// Provides read-write access to the resource.
             /// @remark If ```sync``` is true, a fancy pointer (```permit_ptr```) is returned.
-            constexpr auto write() const noexcept {
+            constexpr auto write() noexcept {
                 if constexpr (sync) return permit_ptr<std::scoped_lock<SharedMutex>>(owner_);
                 else return &owner_.base_;
             }

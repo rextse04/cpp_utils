@@ -15,13 +15,13 @@ BOOST_AUTO_TEST_CASE(sanity_test) {
     unique_resource<std::string> res(1, "sanity_test");
     BOOST_CHECK_EQUAL(*res, "sanity_test");
     {
-        const auto p1 = res.acquire();
+        auto p1 = res.acquire();
         BOOST_CHECK_EQUAL(*p1, "sanity_test");
         BOOST_CHECK(!res.try_acquire());
         p1.write()->append(" modified!");
     }
     {
-        const auto p2 = res.acquire();
+        auto p2 = res.acquire();
         BOOST_CHECK_EQUAL(*p2, "sanity_test modified!");
     }
 }
@@ -33,7 +33,7 @@ BOOST_AUTO_TEST_CASE(sync_test) {
         std::vector<std::jthread> threads;
         for (int i = 0; i < 10; ++i) {
             threads.emplace_back([&res, i, &failed_i]() {
-                const auto p = res.try_acquire_for(100ms);
+                auto p = res.try_acquire_for(100ms);
                 if (p) {
                     char s[] = "0 ";
                     s[0] += i;
@@ -51,7 +51,7 @@ BOOST_AUTO_TEST_CASE(sync_test) {
             });
         }
     }
-    const auto p = res.try_acquire();
+    auto p = res.try_acquire();
     BOOST_REQUIRE(p.has_value());
     for (char c = '0'; c <= '9'; ++c) {
         if (c == '0' + failed_i) BOOST_CHECK(!std::ranges::contains(*p->read(), c));
