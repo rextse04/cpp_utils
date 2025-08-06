@@ -421,18 +421,29 @@ namespace utils {
         }
         template <typename CharT, typename Traits>
         friend auto& operator>>(std::basic_istream<CharT, Traits>& is, integer& i) {
-            using max_t = std::conditional_t<std::is_signed_v<underlying_type>, std::intmax_t, std::uintmax_t>;
-            max_t u;
-            is >> u;
-            if (u > std::numeric_limits<underlying_type>::max() || u < std::numeric_limits<underlying_type>::min()) {
-                is.setstate(std::ios_base::failbit);
+            using std_types = std::tuple<short, int, long, long long,
+                unsigned short, unsigned int, unsigned long, unsigned long long>;
+            if constexpr (meta::contained_in_v<std_types, underlying_type>) {
+                is >> i.under_;
+            } else {
+                using max_t = std::conditional_t<std::is_signed_v<underlying_type>, long long, unsigned long long>;
+                max_t u;
+                is >> u;
+                if (u > std::numeric_limits<underlying_type>::max()) {
+                    is.setstate(std::ios_base::failbit);
+                    u = std::numeric_limits<underlying_type>::max();
+                }
+                if (u < std::numeric_limits<underlying_type>::min()) {
+                    is.setstate(std::ios_base::failbit);
+                    u = std::numeric_limits<underlying_type>::min();
+                }
+                i.under_ = static_cast<underlying_type>(u);
             }
-            i.under_ = static_cast<underlying_type>(u);
             return is;
         }
     };
     template <tagged<integer_tag> T>
-    struct make_fundamental<T> { using type = typename T::underlying_type; };
+    struct make_fundamental<T> { using type = T::underlying_type; };
 
     namespace integer_alias {
         using schar = integer<signed char>;
