@@ -155,6 +155,7 @@ BOOST_AUTO_TEST_CASE(io_test) {
 }
 
 BOOST_AUTO_TEST_CASE(type_test) {
+    BOOST_CHECK(std::is_trivially_copyable_v<sint>);
     /*
     BOOST_CHECK((std::is_convertible_v<int, sint>));
     BOOST_CHECK((std::is_convertible_v<short, sint>));

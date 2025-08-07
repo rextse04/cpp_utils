@@ -190,9 +190,11 @@ namespace utils::meta {
     private:
         static constexpr std::size_t begin = actual_index_v<Tuple, Begin>, end = actual_index_v<Tuple, End>;
     public:
-        static constexpr std::size_t value = (begin >= end) ? end : (
-            PredTrait<std::tuple_element_t<begin, Tuple>, T>::value ? begin :
-                search<Tuple, T, PredTrait, begin+1, end>::value);
+        static constexpr std::size_t value = []() {
+            if constexpr (begin == end) return end;
+            else if constexpr (PredTrait<std::tuple_element_t<begin, Tuple>, T>::value) return begin;
+            else return search<Tuple, T, PredTrait, begin+1, end>::value;
+        }();
     };
     template <tuple_like Tuple, typename T, template<typename, typename> typename PredTrait = std::is_same>
     constexpr std::size_t search_v = search<Tuple, T, PredTrait>::value;

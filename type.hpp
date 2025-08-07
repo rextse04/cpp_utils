@@ -29,8 +29,9 @@ namespace utils {
         using VDT = std::conditional_t<Q * v, volatile DT, DT>;
         using CVDT = std::conditional_t<Q * c, const VDT, VDT>;
     public:
-        using type = std::conditional_t<std::is_reference_v<T>, CVDT&,
-            std::conditional_t<std::is_pointer_v<T>, CVDT*, CVDT>>;
+        using type = std::conditional_t<std::is_lvalue_reference_v<T>, std::add_lvalue_reference_t<CVDT>,
+            std::conditional_t<std::is_rvalue_reference_v<T>, std::add_rvalue_reference_t<CVDT>,
+                std::conditional_t<std::is_pointer_v<T>, CVDT*, CVDT>>>;
     };
     template <typename T, type_qualifiers Q>
     using apply_qualifiers_t = apply_qualifiers<T, Q>::type;
@@ -108,6 +109,9 @@ namespace utils {
         stale_class& operator=(const stale_class&) = delete;
         stale_class& operator=(stale_class&&) = delete;
     };
+
+    template <typename... Ts>
+    struct join : Ts... {};
 
 #ifdef __cpp_variadic_friend
     template <typename... Ts>
