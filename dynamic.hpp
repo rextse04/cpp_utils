@@ -19,22 +19,26 @@ namespace utils {
     requires (std::is_function_v<F>)
     dyn_method(F*) -> dyn_method<F>;
 
-    template <typename T, typename VTableT = std::remove_cvref_t<T>::vtable_type>
-    struct fptr {
+    struct implements_tag;
+    template <tagged<implements_tag> T>
+    class fptr {
+    public:
+        using value_type = T;
+        using vtable_type = std::remove_cvref_t<T>::vtable_type;
     private:
         T* obj_;
-        const VTableT* vtable_;
-        constexpr fptr(T* obj, const VTableT* vtable) noexcept : obj_(obj), vtable_(vtable) {}
-        template <typename U, typename VTableU>
-        friend struct fptr;
+        const vtable_type* vtable_;
+        constexpr fptr(T* obj, const vtable_type* vtable) noexcept : obj_(obj), vtable_(vtable) {}
+        template <tagged<implements_tag> U>
+        friend class fptr;
         template <typename... Interfaces>
         friend struct implements;
     public:
         constexpr fptr() noexcept = default;
         constexpr fptr(std::nullptr_t) noexcept : obj_(nullptr), vtable_(nullptr) {}
-        template <std::derived_from<T> U, typename VTableU>
-        constexpr fptr(const fptr<U, VTableU>& other) noexcept : obj_(other.obj_), vtable_(other.vtable_) {}
-        constexpr const VTableT* operator->() const noexcept { return vtable_; }
+        template <std::derived_from<T> U>
+        constexpr fptr(const fptr<U>& other) noexcept : obj_(other.obj_), vtable_(other.vtable_) {}
+        constexpr const vtable_type* operator->() const noexcept { return vtable_; }
         constexpr T& operator*() const noexcept { return *obj_; }
         constexpr explicit operator bool() const noexcept { return obj_ != nullptr; }
         template <typename U>
@@ -46,7 +50,7 @@ namespace utils {
     /// ```t.vtable()``` returns an l-value reference to ```const T::vtable_type```.
     template <typename... Interfaces>
     struct implements {
-        using tag = struct implements_tag;
+        using tag = implements_tag;
         using vtable_type = join<Interfaces...>;
         using interfaces = std::tuple<Interfaces...>;
         template <typename Self>
