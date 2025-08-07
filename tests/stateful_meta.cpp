@@ -12,10 +12,13 @@ int main() {
     static_assert(exists(const_var<test_var>{}));
 
     static_assert(get_counter<void, true>() == 0);
-    static_assert(get_counter<void, true>() == 1);
+    static_assert(get_counter<void, false>() == 1);
+    static_assert(get_counter<void, false>() == 1);
 
+    static_assert(!exists(var<test_var>{}));
     set<test_var, 0>{};
     static_assert(get(var<test_var>{}) == 0);
     set<test_var, 1>{};
     static_assert(get(var<test_var>{}) == 1);
+    static_assert(exists(var<test_var>{}));
 }

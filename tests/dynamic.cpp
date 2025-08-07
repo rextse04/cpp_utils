@@ -98,8 +98,8 @@ BOOST_AUTO_TEST_CASE(fptr_test) {
 
 BOOST_AUTO_TEST_CASE(dptr_test) {
     {
-        unique_dptr<shape> c = new circle{.r = 1},
-        r = new rectangle{.w = 1, .h = 2};
+        unique_dptr<shape> c(new circle{.r = 1}),
+        r(new rectangle{.w = 1, .h = 2});
 
         BOOST_CHECK_EQUAL(c->name(), "circle");
         BOOST_CHECK_EQUAL(c->area(c), M_PI);

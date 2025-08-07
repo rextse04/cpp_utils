@@ -3,6 +3,12 @@
 #include "meta.hpp"
 
 namespace utils {
+    struct interface {
+
+    };
+
+    /// This is a thin wrapper around a pointer to a dynamic method.
+    /// This is preferred over raw pointers because it forces initialization.
     template <typename F>
     class dyn_method;
     template <typename R, typename... Args>
@@ -12,7 +18,7 @@ namespace utils {
     private:
         function_type* func_;
     public:
-        consteval dyn_method(function_type* func) noexcept : func_(func) {}
+        constexpr dyn_method(function_type* func) noexcept : func_(func) {}
         constexpr R operator()(Args... args) const noexcept { return func_(static_cast<Args>(args)...); }
     };
     template <typename F>
@@ -20,6 +26,9 @@ namespace utils {
     dyn_method(F*) -> dyn_method<F>;
 
     struct implements_tag;
+    /// Fat pointer. Allows dynamic dispatch on (implementation) classes.
+    /// In other words, it makes sure the correct dynamic methods are called
+    /// even if the stored object is of a derived class of ```T```.
     template <tagged<implements_tag> T>
     class fptr {
     public:
@@ -76,6 +85,7 @@ namespace utils {
     return vtable;\
     }
 
+    /// An owning (RAII) pointer that allows dynamic dispatch on interfaces.
     template <typename... Interfaces>
     class unique_dptr {
     public:

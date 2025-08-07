@@ -6,6 +6,8 @@
 #include <utility>
 
 /**
+ * @file
+ *
  * Key concepts and conventions:
  * - A <i>Result</i> is a type that either has a member type alias ```type```,
  * or a constexpr static member ```value```, named <i>TypeResult</i> and <i>ValueResult</i> respectively.
@@ -21,6 +23,7 @@
  * They are named <i>TypeTrait</i>s and <i>ValueTrait</i>s respectively.
  * - A <i>MetaTrait</i> is a template whose valid instances have an inner template which satisfies <i>Trait</i>.
  */
+
 namespace utils::meta {
     template <typename T>
     struct is_tuple : std::false_type {};
