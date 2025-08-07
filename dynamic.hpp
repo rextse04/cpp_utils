@@ -48,6 +48,8 @@ namespace utils {
 
     /// The child class ```T``` is valid iff for a (possibly cv-qualified) instance ```t``` of ```T```,
     /// ```t.vtable()``` returns an l-value reference to ```const T::vtable_type```.
+    /// The reference must remain valid for the entirety of the program,
+    /// although modification of the underlying vtable is allowed.
     template <typename... Interfaces>
     struct implements {
         using tag = implements_tag;
@@ -93,11 +95,11 @@ namespace utils {
         }
     public:
         constexpr unique_dptr() noexcept = default;
-        constexpr unique_dptr(std::nullptr_t) noexcept {}
+        explicit constexpr unique_dptr(std::nullptr_t) noexcept {}
         /// UB if ```ptr->vtable()``` causes UB.
         template <typename T>
         requires ((has_implemented_v<Interfaces, std::remove_cv_t<T>> && ...))
-        constexpr unique_dptr(T* ptr) : ptr_(ptr), deleter_([](void* ptr) { delete static_cast<T*>(ptr); }) {
+        explicit constexpr unique_dptr(T* ptr) : ptr_(ptr), deleter_([](void* ptr) { delete static_cast<T*>(ptr); }) {
             fill_vtable(std::addressof(ptr->vtable()));
         }
         unique_dptr(const unique_dptr&) = delete;
