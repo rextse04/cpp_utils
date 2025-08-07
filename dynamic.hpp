@@ -127,7 +127,7 @@ namespace utils {
             [[assume(ptr == nullptr || ptr != ptr_)]];
             deleter_(ptr_);
             ptr_ = ptr;
-            fill_vtable(ptr->vtable());
+            fill_vtable(std::addressof(ptr->vtable()));
         }
         constexpr void reset(std::nullptr_t = nullptr) noexcept {
             deleter_(ptr_);
