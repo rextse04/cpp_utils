@@ -2,6 +2,8 @@
 #include <cstdint>
 
 /**
+ * @file
+ *
  * This file contains utilities that enable stateful metaprogramming,
  * which allows you to make compile-time <b>modifiable</b> variables.
  * This is done via a technique called "friend injection".
@@ -27,13 +29,12 @@ namespace utils::meta {
     /// @remark ```get``` does not belong to any namespace - it is searched via ADL.
     template <typename Var>
     class const_var {
-        friend consteval const auto& get(const_var);
+        friend consteval auto get(const_var);
     };
     /// Declare a ```const-var``` by instantiating the template.
     template <typename Var, auto Value>
     class define {
-        static constexpr auto value = Value;
-        friend consteval const auto& get(const_var<Var>) { return value; }
+        friend consteval auto get(const_var<Var>) { return Value; }
     };
 
     /// Checks the existence of a ```const_var```.
@@ -65,17 +66,20 @@ namespace utils::meta {
     /// If not specified, ```Version``` is defaults to the latest.
     template <typename Var, std::uintmax_t Version = get_counter<Var>() - 1>
     class var {
-        friend consteval auto& get(var);
+        friend consteval auto get(var);
     };
     /// Sets ```Var``` to ```Value```.
     /// ```Version``` is automatically incremented at every instantiation of this template.
     template <typename Var, auto Value, std::uintmax_t Version = get_counter<Var, true>()>
     class set {
-        static constexpr auto value = Value;
-        friend consteval auto& get(var<Var, Version>) { return value; }
+        friend consteval auto get(var<Var, Version>) { return Value; }
     };
 
     /// Checks the existence of a ```var```.
     template <typename Var, std::uintmax_t Version, auto = get(var<Var, Version>{})>
     constexpr bool exists(var<Var, Version>) { return true; }
+
+    /// Helper template for when you want a product type to be a variable name.
+    template <typename... Ts>
+    struct product_t;
 }

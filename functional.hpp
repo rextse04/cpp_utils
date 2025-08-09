@@ -160,7 +160,19 @@ namespace utils {
     };
 
     template <typename T>
-    struct function_decay : function_decay<std::remove_pointer_t<std::remove_cvref_t<T>>> {};
+    struct function_decay;
+    template <typename T>
+    requires requires {
+        requires !std::is_same_v<std::remove_pointer_t<std::remove_cvref_t<T>>, T>;
+        typename function_decay<std::remove_pointer_t<std::remove_cvref_t<T>>>::type;
+    }
+    struct function_decay<T> : function_decay<std::remove_pointer_t<std::remove_cvref_t<T>>> {};
+    template <typename T>
+    requires requires {
+        requires std::is_same_v<std::remove_cv_t<T>, T>;
+        typename function_decay<decltype(&T::operator())>::type;
+    }
+    struct function_decay<T> : function_decay<decltype(&T::operator())> {};
     template <typename R, typename... Args>
     struct function_decay<R(Args...)> { using type = R(Args...); };
     template <typename R, typename... Args>
@@ -184,25 +196,31 @@ namespace utils {
     UTILS_FUNCTION_TYPE_DECL(const volatile)
 #undef UTILS_FUNCTION_TYPE_DECL
     template <typename T>
-    requires requires(T f) {
-        typename function_decay<decltype(*f)>::type;
-    }
-    struct function_decay<T> : function_decay<decltype(*std::declval<T>())> {};
+    using function_decay_t = function_decay<T>::type;
+
     template <typename T>
-    requires requires {
-        requires !requires(T f) { typename function_decay<decltype(*f)>::type; };
-        typename function_decay<decltype(&T::operator())>::type;
-    }
-    struct function_decay<T> : function_decay<decltype(&T::operator())> {};
+    struct lambda_decay;
     template <typename T>
-    using function_decay_t = typename function_decay<T>::type;
+    requires requires(T t) { typename lambda_decay<decltype(*t)>::type; }
+    struct lambda_decay<T> : lambda_decay<decltype(*std::declval<T>())> {};
+    template <typename R, typename... Args>
+    struct lambda_decay<R(&)(Args...)> { using type = R(Args...); };
+    template <typename R, typename... Args>
+    struct lambda_decay<R(&)(Args...) noexcept> { using type = R(Args...); };
+    template <typename T>
+    using lambda_decay_t = lambda_decay<T>::type;
+
+    template <typename F>
+    struct result_of;
+    template <typename R, typename... Args>
+    struct result_of<R(Args...)> { using type = R; };
+    template <typename F>
+    using result_of_t = result_of<F>::type;
 
     template <typename F>
     struct arguments_of;
     template <typename R, typename... Args>
-    struct arguments_of<R(Args...)> {
-        using type = std::tuple<Args...>;
-    };
+    struct arguments_of<R(Args...)> { using type = std::tuple<Args...>; };
     template <typename F>
     using arguments_of_t = arguments_of<F>::type;
 

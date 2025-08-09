@@ -56,11 +56,9 @@ namespace utils::meta {
     using make_tuple_t = make_tuple<T>::type;
 
     template <tuple_like Tuple, std::ptrdiff_t Idx>
-    struct actual_index {
-        static constexpr std::size_t value = (Idx >= 0) ? Idx : (Idx + std::tuple_size_v<Tuple>);
-    };
+    struct actual_index : std::integral_constant<std::size_t, (Idx >= 0) ? Idx : (Idx + std::tuple_size_v<Tuple>)> {};
     template <tuple_like Tuple, std::ptrdiff_t Idx>
-    constexpr bool actual_index_v = actual_index<Tuple, Idx>::value;
+    constexpr std::size_t actual_index_v = actual_index<Tuple, Idx>::value;
 
     template <tuple_like Tuple, std::ptrdiff_t Idx>
     struct at {
@@ -69,11 +67,32 @@ namespace utils::meta {
     template <tuple_like Tuple, std::ptrdiff_t Idx>
     using at_t = at<Tuple, Idx>::type;
 
-    template <typename Tuple0, tuple_like... Tuples>
+    template <tuple_like Tuple, typename T, template<typename, typename> typename PredTrait = std::is_same,
+        std::ptrdiff_t Begin = 0, std::ptrdiff_t End = std::tuple_size_v<Tuple>>
+    struct search : std::integral_constant<std::size_t, PredTrait<at_t<Tuple, Begin>, T>::value
+        ? Begin
+        : search<Tuple, T, PredTrait, Begin + 1, End>::value> {};
+    template <tuple_like Tuple, typename T, template<typename, typename> typename PredTrait, std::ptrdiff_t End>
+    struct search<Tuple, T, PredTrait, End, End> : std::integral_constant<std::size_t, actual_index_v<Tuple, End>> {};
+    template <tuple_like Tuple, typename T, template<typename, typename> typename PredTrait = std::is_same>
+    constexpr std::size_t search_v = search<Tuple, T, PredTrait>::value;
+    template <tuple_like Tuple, typename T>
+    struct search_trait : search<Tuple, T> {};
+
+    template <tuple_like Tuple, typename T, template<typename, typename> typename PredTrait = std::is_same,
+        std::ptrdiff_t Begin = 0, std::ptrdiff_t End = std::tuple_size_v<Tuple>>
+    struct contained_in :
+        std::bool_constant<search<Tuple, T, PredTrait, Begin, End>::value != actual_index_v<Tuple, End>> {};
+    template <tuple_like Tuple, typename T, template<typename, typename> typename PredTrait = std::is_same>
+    constexpr bool contained_in_v = contained_in<Tuple, T, PredTrait>::value;
+    template <tuple_like Tuple, typename T>
+    struct contained_in_trait : contained_in<Tuple, T> {};
+
+    template <tuple_like Tuple0, tuple_like... Tuples>
     struct concat {
         using type = decltype(std::tuple_cat(std::declval<Tuple0&&>(), std::declval<concat<Tuples&&...>>()));
     };
-    template <typename Tuple0, tuple_like... Tuples>
+    template <tuple_like Tuple0, tuple_like... Tuples>
     using concat_t = concat<Tuple0, Tuples...>::type;
 
     namespace detail {
@@ -119,7 +138,7 @@ namespace utils::meta {
         struct map_step;
         template <std::size_t Idx, template<typename...> typename Trait, typename... Tuples>
         struct map_step<Idx, Trait, std::tuple<Tuples...>> {
-            using type = std::tuple<infer_t<Trait<std::tuple_element_t<Idx, Tuples>...>>>;
+            using type = infer_t<Trait<std::tuple_element_t<Idx, Tuples>...>>;
         };
         template <template<typename...> typename Trait, typename TuplesTuple, typename IdxSeq>
         struct map;
@@ -131,7 +150,7 @@ namespace utils::meta {
     template <template<typename...> typename Trait, tuple_like Tuple, tuple_like... Tuples>
     struct map : detail::map<Trait, std::tuple<Tuple, Tuples...>, std::make_index_sequence<std::tuple_size_v<Tuple>>> {};
     template <template<typename...> typename Trait, tuple_like Tuple, tuple_like... Tuples>
-    using map_t = map<Trait, Tuples...>::type;
+    using map_t = map<Trait, Tuple, Tuples...>::type;
 
     template <template<typename...> typename Trait, tuple_like T>
     struct reduce : reduce<Trait, make_tuple_t<T>> {};
@@ -163,6 +182,18 @@ namespace utils::meta {
         struct trait : Trait<Ts..., Args...> {};
     };
 
+    template <tuple_like SmallTuple, tuple_like BigTuple>
+    struct subset_of :
+        reduce<std::conjunction, map_t<bind_front<contained_in_trait, BigTuple>::template trait, SmallTuple>> {};
+    template <tuple_like SmallTuple, tuple_like BigTuple>
+    constexpr bool subset_of_v = subset_of<SmallTuple, BigTuple>::value;
+
+    template <tuple_like SmallTuple, tuple_like BigTuple>
+    struct strict_subset_of : std::bool_constant<
+        std::tuple_size_v<SmallTuple> < std::tuple_size_v<BigTuple> && subset_of<SmallTuple, BigTuple>::value> {};
+    template <tuple_like SmallTuple, tuple_like BigTuple>
+    constexpr bool strict_subset_of_v = strict_subset_of<SmallTuple, BigTuple>::value;
+
     template <auto... Values>
     struct to_value_results {
         using type = std::tuple<typename to_value_results<Values>::type...>;
@@ -186,29 +217,6 @@ namespace utils::meta {
         std::make_integer_sequence<std::ptrdiff_t, (End - Begin) / Step>> {};
     template <std::ptrdiff_t End, std::ptrdiff_t Begin = 0, std::ptrdiff_t Step = 1>
     using range_t = range<End, Begin, Step>::type;
-
-    template <tuple_like Tuple, typename T, template<typename, typename> typename PredTrait = std::is_same,
-        std::ptrdiff_t Begin = 0, std::ptrdiff_t End = std::tuple_size_v<Tuple>>
-    struct search {
-    private:
-        static constexpr std::size_t begin = actual_index_v<Tuple, Begin>, end = actual_index_v<Tuple, End>;
-    public:
-        static constexpr std::size_t value = []() {
-            if constexpr (begin == end) return end;
-            else if constexpr (PredTrait<std::tuple_element_t<begin, Tuple>, T>::value) return begin;
-            else return search<Tuple, T, PredTrait, begin+1, end>::value;
-        }();
-    };
-    template <tuple_like Tuple, typename T, template<typename, typename> typename PredTrait = std::is_same>
-    constexpr std::size_t search_v = search<Tuple, T, PredTrait>::value;
-
-    template <tuple_like Tuple, typename T, template<typename, typename> typename PredTrait = std::is_same,
-        std::ptrdiff_t Begin = 0, std::ptrdiff_t End = std::tuple_size_v<Tuple>>
-    struct contained_in {
-        static constexpr bool value = search<Tuple, T, PredTrait, Begin, End>::value != actual_index_v<Tuple, End>;
-    };
-    template <tuple_like Tuple, typename T, template<typename, typename> typename PredTrait = std::is_same>
-    constexpr bool contained_in_v = contained_in<Tuple, T, PredTrait>::value;
 
     /// @returns a tuple that represents the results of ```f``` applied to each element of ```t```
     /// @remark the resulting tuple retains qualifiers and references of the result types of ```f```

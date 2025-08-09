@@ -110,9 +110,6 @@ namespace utils {
         stale_class& operator=(stale_class&&) = delete;
     };
 
-    template <typename... Ts>
-    struct join : Ts... {};
-
 #ifdef __cpp_variadic_friend
     template <typename... Ts>
 #else

@@ -5,6 +5,8 @@
 #include "type.hpp"
 
 /**
+ * @file
+ *
  * This header file contains *_op structs that add operator overloads to their parent classes using the mixin pattern.
  * Operator signature follows usual semantics to encourage proper use, although their behavior can be highly customized.
  * This is done by passing your custom *_op_functors as a template parameter to a *_op struct.

@@ -8,7 +8,7 @@ using namespace utils;
 
 struct shape {
     dyn_method<std::string()> name;
-    dyn_method<double(const void*)> area;
+    dyn_method<double(const_obj_ptr)> area;
 };
 std::string dtor_msg;
 
@@ -16,54 +16,55 @@ struct circle : implements<shape> {
     double r;
     UTILS_DYN
     shape {
-        .name = +[]() -> std::string { return "circle"; },
-        .area = +[](const void* self) -> double {
+        .name = []() -> std::string { return "circle"; },
+        .area = [](const_obj_ptr self) -> double {
             const auto self_ = static_cast<const circle*>(self);
             return M_PI * self_->r * self_->r;
         }
     }
     UTILS_DYN_END
-    ~circle() { dtor_msg = vtable().name(); }
+    ~circle() { dtor_msg += vtable().name(); }
 };
 
 struct rectangular {
-    dyn_method<bool(const void*)> is_square;
+    dyn_method<bool(const_obj_ptr)> is_square;
 };
 
 struct rectangle : implements<shape, rectangular> {
     double w, h;
     UTILS_DYN
     shape {
-        .name = +[]() -> std::string { return "rectangle"; },
-        .area = +[](const void* self) -> double {
+        .name = []() -> std::string { return "rectangle"; },
+        .area = [](const_obj_ptr self) -> double {
             const auto self_ = static_cast<const rectangle*>(self);
             return self_->w * self_->h;
         }
     },
     rectangular {
-        .is_square = +[](const void* self) -> bool {
+        .is_square = +[](const_obj_ptr self) -> bool {
             const auto self_ = static_cast<const rectangle*>(self);
             return self_->w == self_->h;
         }
     }
     UTILS_DYN_END
-    ~rectangle() { dtor_msg = vtable().name(); }
+    ~rectangle() { dtor_msg += vtable().name(); }
 };
 
 struct square : implements<shape, rectangular> {
     double l;
     UTILS_DYN
     shape {
-        .name = +[]() -> std::string { return "square"; },
-        .area = +[](const void* self) -> double {
+        .name = []() -> std::string { return "square"; },
+        .area = [](const_obj_ptr self) -> double {
             const auto self_ = static_cast<const square*>(self);
             return self_->l * self_->l;
         }
     },
     rectangular {
-        .is_square = +[](const void*) -> bool { return true; }
+        .is_square = +[](const_obj_ptr) -> bool { return true; }
     }
     UTILS_DYN_END
+    ~square() { dtor_msg += vtable().name(); }
 };
 
 struct dotted_square : square {
@@ -78,10 +79,10 @@ struct dotted_square : square {
 };
 
 BOOST_AUTO_TEST_CASE(traits_test) {
-    BOOST_CHECK((has_implemented_v<shape, circle>));
-    BOOST_CHECK((has_implemented_v<shape, rectangle>));
-    BOOST_CHECK((has_implemented_v<shape, square>));
-    BOOST_CHECK((has_implemented_v<shape, dotted_square>));
+    BOOST_CHECK((implemented<circle, shape>));
+    BOOST_CHECK((implemented<rectangle, shape>));
+    BOOST_CHECK((implemented<square, shape>));
+    BOOST_CHECK((implemented<dotted_square, shape>));
 }
 
 BOOST_AUTO_TEST_CASE(fptr_test) {
@@ -89,25 +90,45 @@ BOOST_AUTO_TEST_CASE(fptr_test) {
     dotted_square ds{s, 10};
 
     fptr<square> sfp = &s;
-    BOOST_CHECK_EQUAL(sfp->name(), "square");
-    BOOST_CHECK_EQUAL(sfp->area(&s), 1);
+    BOOST_CHECK_EQUAL(sfp->l, 1);
+    BOOST_CHECK_EQUAL(sfp[&shape::name](), "square");
+    BOOST_CHECK_EQUAL(sfp[&shape::area](), 1);
+    BOOST_CHECK(sfp[&rectangular::is_square]());
     sfp = &ds;
-    BOOST_CHECK_EQUAL(sfp->name(), "dotted_square");
-    BOOST_CHECK_EQUAL(sfp->area(&ds), 1);
+    BOOST_CHECK_EQUAL(sfp->l, 1);
+    BOOST_CHECK_EQUAL(sfp[&shape::name](), "dotted_square");
+    BOOST_CHECK_EQUAL(sfp[&shape::area](), 1);
+    BOOST_CHECK(sfp[&rectangular::is_square]());
 }
 
 BOOST_AUTO_TEST_CASE(dptr_test) {
+    dtor_msg.clear();
     {
-        unique_dptr<shape> c(new circle{.r = 1}),
-        r(new rectangle{.w = 1, .h = 2});
+        unique_dptr<const shape> p(new circle{.r = 1});
+        BOOST_CHECK_EQUAL(p[&shape::name](), "circle");
+        BOOST_CHECK_EQUAL(p[&shape::area](), M_PI);
 
-        BOOST_CHECK_EQUAL(c->name(), "circle");
-        BOOST_CHECK_EQUAL(c->area(c), M_PI);
-        BOOST_CHECK_EQUAL(r->name(), "rectangle");
-        BOOST_CHECK_EQUAL(r->area(r), 2);
-
-        c.reset();
+        p.reset(new rectangle{.w = 1, .h = 2});
         BOOST_CHECK_EQUAL(dtor_msg, "circle");
+        BOOST_CHECK_EQUAL(p[&shape::name](), "rectangle");
+        BOOST_CHECK_EQUAL(p[&shape::area](), 2);
+
+        dtor_msg += " ";
     }
-    BOOST_CHECK_EQUAL(dtor_msg, "rectangle");
+    BOOST_CHECK_EQUAL(dtor_msg, "circle rectangle");
+}
+
+BOOST_AUTO_TEST_CASE(dptr_move_test) {
+    dtor_msg.clear();
+    {
+        unique_dptr<const shape, rectangular> p(new dotted_square{{.l = 5}, 10});
+        BOOST_CHECK_EQUAL(p[&shape::name](), "dotted_square");
+        BOOST_CHECK_EQUAL(p[&shape::area](), 25);
+        BOOST_CHECK(p[&rectangular::is_square]());
+
+        unique_dptr<const shape> p2 = std::move(p);
+        BOOST_CHECK_EQUAL(p2[&shape::name](), "dotted_square");
+        BOOST_CHECK_EQUAL(p2[&shape::area](), 25);
+    }
+    BOOST_CHECK_EQUAL(dtor_msg, "square");
 }

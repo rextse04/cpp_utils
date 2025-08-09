@@ -6,6 +6,35 @@
 
 using namespace utils;
 
+struct test {
+    static void f(int) noexcept;
+    void g(int, int) const noexcept;
+    int h(int) volatile;
+};
+
+BOOST_AUTO_TEST_CASE(traits_test) {
+#define F(T, U) BOOST_CHECK_EQUAL_TYPES(function_decay_t<T>, U)
+#define FL(T, U) F(T, U); BOOST_CHECK_EQUAL_TYPES(lambda_decay_t<T>, U)
+    FL(void(int), void(int));
+    FL(void(*)(int), void(int));
+    FL(void(*)(int) noexcept, void(int));
+    FL(void(&)(int), void(int));
+    FL(void(&)(int) noexcept, void(int));
+    FL(void(&&)(int) noexcept, void(int));
+    F(decltype(&test::f), void(int));
+    F(decltype(&test::g), void(int, int));
+    F(decltype(&test::h), int(int));
+    FL(decltype([]{ return 0; }), int(void));
+    FL(decltype([] noexcept { return 0; }), int(void));
+    FL(decltype([] static { return 0; }), int(void));
+    int x = 0;
+    F(decltype([&x]{ return x; }), int(void));
+    F(decltype([&x] noexcept { return x; }), int(void));
+    F(decltype([&x] mutable { return x; }), int(void));
+#undef F
+#undef FL
+}
+
 BOOST_AUTO_TEST_CASE(composition_sanity_test) {
     const auto f = [](auto... args){ return (args + ...); };
     const auto g1 = [](int a, int b) { return a + b; };
