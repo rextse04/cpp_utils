@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Command Line Parser", "index.html", [
+  [ "cpp_utils", "index.html", [
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
