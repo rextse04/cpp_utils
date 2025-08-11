@@ -418,7 +418,10 @@ namespace utils {
         /// Copies ```ptr_``` and ```ivtables_``` from ```other```.
         constexpr dptr(const dptr&) noexcept requires(!is_unique) = default;
         /// Same as the copy constructor, but also sets ```other.ptr_``` to ```nullptr```.
-        constexpr dptr(dptr&& other) noexcept : dptr(other) { // call copy constructor
+        constexpr dptr(dptr&& other)
+        noexcept(std::is_nothrow_move_constructible_v<deleter_type>)
+        requires(std::is_move_constructible_v<deleter_type>) :
+            ptr_(other.ptr_), ivtables_(other.ivtables_), deleter_(std::move(other.deleter_)) {
             other.ptr_ = nullptr;
         }
         /// Construction from a ```dptr``` with a stricter interface.
@@ -437,10 +440,14 @@ namespace utils {
         /**@}*/
 
         /// Copies ```ptr_``` and ```ivtables_``` from ```other```.
-        constexpr dptr& operator=(const dptr&) noexcept = default;
+        constexpr dptr& operator=(const dptr&) noexcept requires(!is_unique) = default;
         /// Same as the copy assignment operator, but also sets ```other.ptr_``` to ```nullptr```.
-        constexpr dptr& operator=(dptr&& other) noexcept {
-            operator=(other); // call copy assignment operator
+        constexpr dptr& operator=(dptr&& other)
+        noexcept(std::is_nothrow_move_assignable_v<deleter_type>)
+        requires(std::is_move_assignable_v<deleter_type>) {
+            ptr_ = other.ptr_;
+            ivtables_ = other.ivtables_;
+            deleter_ = std::move(other.deleter_);
             other.ptr_ = nullptr;
             return *this;
         }
@@ -545,6 +552,8 @@ namespace utils {
         using parent = dptr<I&, Is...>;
     public:
         using dptr<I&, Is...>::dptr;
+        constexpr unique_dptr(unique_dptr&& other) = default;
+        constexpr unique_dptr& operator=(unique_dptr&& other) = default;
         /// Destroyer simply calls ```destroy()```.
         constexpr ~unique_dptr() noexcept {
             if (parent::ptr_ != nullptr) parent::destroy_and_delete();
