@@ -10,7 +10,7 @@ namespace utils::meta {
 /// or if a method named ```utils_find_self_``` or a member type named ```utils_find_self_result_``` is already declared.
 #define UTILS_FIND_SELF\
     struct utils_find_self_result_;\
-    consteval auto utils_find_self()\
+    consteval auto utils_find_self_()\
     -> decltype(utils::meta::define<utils_find_self_result_, std::type_identity<std::remove_cvref_t<decltype(*this)>>{}>{}) {\
         throw "You are not supposed to call this method. See the documentation for UTILS_FIND_SELF.";\
     }
