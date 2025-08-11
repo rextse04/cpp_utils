@@ -1,0 +1,6 @@
+<map id="utils::stale_class" name="utils::stale_class">
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,124,97"/>
+<area shape="rect" id="node2" href="$structutils_1_1trivial__semaphore.html" title="A semaphore that does not do any counting. Used for disabling the semaphore in unique_resource." alt="" coords="172,5,327,32"/>
+<area shape="rect" id="node3" href="$classutils_1_1unique__resource_1_1permit.html" title=" " alt="" coords="172,56,327,112"/>
+<area shape="rect" id="node4" href="$classutils_1_1unique__resource_1_1permit__ptr.html" title="A fancy pointer that holds a lock throughout its lifetime." alt="" coords="172,137,327,207"/>
+</map>

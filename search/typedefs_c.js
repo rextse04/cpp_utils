@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['sane_5fpromotion_5ft_0',['sane_promotion_t',['../namespaceutils.html#ad8c1312274eadecafdf4fb12f1596089',1,'utils']]],
+  ['schar_1',['schar',['../namespaceutils_1_1integer__alias.html#a4ffaa4ed6fb6180ef1941de8c876161d',1,'utils::integer_alias']]],
+  ['semaphore_5ftype_2',['semaphore_type',['../classutils_1_1unique__resource.html#ad17a543d5c5eda53d91e5d176b58596d',1,'utils::unique_resource']]],
+  ['sfast16_3',['sfast16',['../namespaceutils_1_1integer__alias.html#aefd6c2da3868bb86722fb2c0c3b2bf68',1,'utils::integer_alias']]],
+  ['sfast32_4',['sfast32',['../namespaceutils_1_1integer__alias.html#a01ff2dc3d8b1c58d1a8798d136555bd9',1,'utils::integer_alias']]],
+  ['sfast64_5',['sfast64',['../namespaceutils_1_1integer__alias.html#a822e46fe4571493f6ea0627b3dc84a4b',1,'utils::integer_alias']]],
+  ['sfast8_6',['sfast8',['../namespaceutils_1_1integer__alias.html#a2a77d1498260bc57666139ff2730a5c7',1,'utils::integer_alias']]],
+  ['shift_5fbehavior_7',['shift_behavior',['../structutils_1_1integer.html#a1c3c4c502e1afdfeca20668cf74a1646',1,'utils::integer']]],
+  ['sint_8',['sint',['../namespaceutils_1_1integer__alias.html#a7f1c37eeff0c65be762ac86ea0ecc965',1,'utils::integer_alias']]],
+  ['size_5ft_9',['size_t',['../namespaceutils_1_1integer__alias.html#aa8967fdcbd912fcd5a66fdeb551691cf',1,'utils::integer_alias']]],
+  ['size_5ftype_10',['size_type',['../structutils_1_1basic__static__string.html#a796d990115d75b02afdc924556e94f35',1,'utils::basic_static_string']]],
+  ['sleast16_11',['sleast16',['../namespaceutils_1_1integer__alias.html#a8175df01c4fcafb9cacd91dedde2be2d',1,'utils::integer_alias']]],
+  ['sleast32_12',['sleast32',['../namespaceutils_1_1integer__alias.html#a385610bf03b9787cbb0bb53d3b378000',1,'utils::integer_alias']]],
+  ['sleast64_13',['sleast64',['../namespaceutils_1_1integer__alias.html#a1b57ccdf7fc58787df6f2eaecad8aaa1',1,'utils::integer_alias']]],
+  ['sleast8_14',['sleast8',['../namespaceutils_1_1integer__alias.html#a918a9be4a0ebc0376036d73531acb9e2',1,'utils::integer_alias']]],
+  ['slice_5ft_15',['slice_t',['../namespaceutils_1_1meta.html#a38abc3ef8e35eaf454eea88f36750bbc',1,'utils::meta']]],
+  ['sllong_16',['sllong',['../namespaceutils_1_1integer__alias.html#a7cb22bcb91ea7ad61626eec3fa3e04e1',1,'utils::integer_alias']]],
+  ['slong_17',['slong',['../namespaceutils_1_1integer__alias.html#a43eb4b6d50140c3a56a814ea17a0cae7',1,'utils::integer_alias']]],
+  ['smax_18',['smax',['../namespaceutils_1_1integer__alias.html#a22631147990bc3401946bbcef335ac95',1,'utils::integer_alias']]],
+  ['sshort_19',['sshort',['../namespaceutils_1_1integer__alias.html#a5c935f0d9a31e968e7c993cf668f9e3c',1,'utils::integer_alias']]],
+  ['static_5fstring_20',['static_string',['../namespaceutils.html#aabdcb41b3a04c410f35ffb580314b5be',1,'utils']]],
+  ['string_5fview_5ftype_21',['string_view_type',['../structutils_1_1basic__static__string.html#aa2e2ac3b82aee3a881fe2942a9a72a65',1,'utils::basic_static_string']]]
+];
