@@ -103,22 +103,40 @@ BOOST_AUTO_TEST_CASE(fptr_test) {
 
 BOOST_AUTO_TEST_CASE(dptr_test) {
     dtor_msg.clear();
-    {
-        unique_dptr<const shape> p(new circle{.r = 1});
-        BOOST_CHECK_EQUAL(p[&shape::name](), "circle");
-        BOOST_CHECK_EQUAL(p[&shape::area](), M_PI);
 
-        p.reset(new rectangle{.w = 1, .h = 2});
-        BOOST_CHECK_EQUAL(dtor_msg, "circle");
-        BOOST_CHECK_EQUAL(p[&shape::name](), "rectangle");
-        BOOST_CHECK_EQUAL(p[&shape::area](), 2);
+    dptr<const shape> p, p2(new circle{.r = 1}), p3(new rectangle{.w = 1, .h = 2});
+    p = p2;
+    BOOST_CHECK_EQUAL(p2.get(), p.get());
+    BOOST_CHECK_EQUAL(p[&shape::name](), "circle");
+    BOOST_CHECK_EQUAL(p[&shape::area](), M_PI);
+    p.destroy_and_delete();
+    BOOST_CHECK_EQUAL(dtor_msg, "circle");
 
-        dtor_msg += " ";
-    }
+    p = std::move(p3);
+    BOOST_CHECK_EQUAL(p3.get(), nullptr);
+    BOOST_CHECK_EQUAL(dtor_msg, "circle");
+    BOOST_CHECK_EQUAL(p[&shape::name](), "rectangle");
+    BOOST_CHECK_EQUAL(p[&shape::area](), 2);
+
+    dtor_msg += " ";
+    p.destroy_and_delete();
     BOOST_CHECK_EQUAL(dtor_msg, "circle rectangle");
 }
 
-BOOST_AUTO_TEST_CASE(dptr_move_test) {
+BOOST_AUTO_TEST_CASE(dptr_constraints_test) {
+    BOOST_CHECK((!std::is_constructible_v<dptr<shape>, const circle*>));
+    BOOST_CHECK((std::is_constructible_v<dptr<const shape>, const circle*>));
+    BOOST_CHECK((std::is_constructible_v<dptr<const shape>, circle*>));
+    BOOST_CHECK((std::is_constructible_v<dptr<shape>, dptr<shape>>));
+    BOOST_CHECK((!std::is_constructible_v<dptr<shape, rectangular>, dptr<shape>>));
+    BOOST_CHECK((!std::is_constructible_v<dptr<shape>, dptr<rectangular>>));
+    BOOST_CHECK((!std::is_constructible_v<dptr<shape>, dptr<const rectangular>>));
+    BOOST_CHECK((std::is_constructible_v<dptr<const shape>, dptr<shape>>));
+    BOOST_CHECK((!std::is_constructible_v<dptr<shape>, dptr<const shape>>));
+    BOOST_CHECK((!std::is_constructible_v<dptr<shape&>, dptr<shape>&>));
+}
+
+BOOST_AUTO_TEST_CASE(unique_dptr_test) {
     dtor_msg.clear();
     {
         unique_dptr<const shape, rectangular> p(new dotted_square{{.l = 5}, 10});
@@ -131,4 +149,17 @@ BOOST_AUTO_TEST_CASE(dptr_move_test) {
         BOOST_CHECK_EQUAL(p2[&shape::area](), 25);
     }
     BOOST_CHECK_EQUAL(dtor_msg, "square");
+}
+
+BOOST_AUTO_TEST_CASE(unique_dptr_array_test) {
+    dtor_msg.clear();
+    {
+        unique_dptr<const shape[]> p(new square[2]{{.l = 5}, {.l = 10}});
+        BOOST_CHECK_EQUAL(p[&shape::name](), "square");
+        BOOST_CHECK_EQUAL(p[&shape::area](), 25);
+        const auto p2 = p+1;
+        BOOST_CHECK_EQUAL(p2[&shape::name](), "square");
+        BOOST_CHECK_EQUAL(p2[&shape::area](), 100);
+    }
+    BOOST_CHECK_EQUAL(dtor_msg, "squaresquare");
 }

@@ -88,12 +88,12 @@ namespace utils::meta {
     template <tuple_like Tuple, typename T>
     struct contained_in_trait : contained_in<Tuple, T> {};
 
-    template <tuple_like Tuple0, tuple_like... Tuples>
+    template <tuple_like... Tuples>
     struct concat {
-        using type = decltype(std::tuple_cat(std::declval<Tuple0&&>(), std::declval<concat<Tuples&&...>>()));
+        using type = decltype(std::tuple_cat(std::declval<Tuples>()...));
     };
-    template <tuple_like Tuple0, tuple_like... Tuples>
-    using concat_t = concat<Tuple0, Tuples...>::type;
+    template <tuple_like... Tuples>
+    using concat_t = concat<Tuples...>::type;
 
     namespace detail {
         template <typename Tuple, std::size_t Begin, typename RelIdxSeq>
@@ -108,9 +108,10 @@ namespace utils::meta {
     private:
         static constexpr std::size_t begin = actual_index_v<Tuple, Begin>, end = actual_index_v<Tuple, End>;
     public:
-        using type = std::conditional_t<end >= begin,
-            detail::slice<Tuple, begin, std::make_index_sequence<end - begin>>,
-            std::tuple<>>;
+        using type = decltype([]() {
+            if constexpr (begin < end) return detail::slice<Tuple, begin, std::make_index_sequence<end - begin>>{};
+            else return std::type_identity<std::tuple<>>{};
+        }())::type;
     };
     template <tuple_like Tuple, std::ptrdiff_t Begin = 0, std::ptrdiff_t End = std::tuple_size_v<Tuple>>
     using slice_t = slice<Tuple, Begin, End>::type;
@@ -124,6 +125,11 @@ namespace utils::meta {
     struct erase : concat<slice_t<Tuple, 0, Begin>, slice_t<Tuple, End>> {};
     template <tuple_like Tuple, std::ptrdiff_t Begin, std::ptrdiff_t End>
     using erase_t = erase<Tuple, Begin, End>::type;
+
+    template <tuple_like Tuple, std::ptrdiff_t Idx, typename T>
+    struct replace : concat<slice_t<Tuple, 0, Idx>, std::tuple<T>, slice_t<Tuple, Idx + 1>> {};
+    template <tuple_like Tuple, std::ptrdiff_t Idx, typename T>
+    using replace_t = replace<Tuple, Idx, T>::type;
 
     template <typename ErasedResult>
     struct infer {
@@ -217,6 +223,13 @@ namespace utils::meta {
         std::make_integer_sequence<std::ptrdiff_t, (End - Begin) / Step>> {};
     template <std::ptrdiff_t End, std::ptrdiff_t Begin = 0, std::ptrdiff_t Step = 1>
     using range_t = range<End, Begin, Step>::type;
+
+    template <template<typename...> typename Tmpl, typename... Ts>
+    struct apply { using type = Tmpl<Ts...>; };
+    template <template<typename...> typename Tmpl, typename... Ts>
+    struct apply<Tmpl, std::tuple<Ts...>> : apply<Tmpl, Ts...> {};
+    template <template<typename...> typename Tmpl, typename... Ts>
+    using apply_t = apply<Tmpl, Ts...>::type;
 
     /// @returns a tuple that represents the results of ```f``` applied to each element of ```t```
     /// @remark the resulting tuple retains qualifiers and references of the result types of ```f```

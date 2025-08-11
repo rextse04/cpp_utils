@@ -4,3 +4,4 @@
 #include "static_string.hpp"
 #include "meta.hpp"
 #include "memory.hpp"
+#include "swap.hpp"

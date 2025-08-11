@@ -78,16 +78,13 @@ namespace utils {
     template <typename...>
     struct always_false : std::false_type {};
 
+    template <typename T, typename Tag>
+    concept tagged = (std::is_same_v<typename std::remove_cvref_t<T>::tag, Tag> ||
+        meta::contained_in_v<T, typename std::remove_cvref_t<T>::tag>);
     template <typename Tag, typename T>
-    struct is_tagged : std::false_type {};
-    template <typename Tag, typename T>
-    requires (std::is_same_v<typename std::remove_cv_t<T>::tag, Tag> ||
-        meta::contained_in_v<T, typename std::remove_cv_t<T>::tag>)
-    struct is_tagged<Tag, T> : std::true_type {};
+    struct is_tagged : std::bool_constant<tagged<T, Tag>> {};
     template <typename Tag, typename T>
     constexpr bool is_tagged_v = is_tagged<Tag, T>::value;
-    template <typename T, typename Tag>
-    concept tagged = is_tagged_v<Tag, T>;
 
     template <typename T>
     struct make_fundamental;

@@ -152,6 +152,7 @@ namespace utils {
             };
         };
 
+#ifdef __cpp_lib_saturation_arithmetic
         /// Saturated arithmetic.
         /// In particular, ```signed_min % -1``` is defined to be 0.
         template <std::integral Under>
@@ -178,6 +179,7 @@ namespace utils {
                 .modulus_asg = asg_wrap<modulus>{}
             };
         };
+#endif
 
         /// Throws an exception for any overflow (including division) and division by 0.
         /// In other words, every arithmetic operation is defined under this trait.
@@ -442,6 +444,17 @@ namespace utils {
             return is;
         }
     };
+    /// Workaround for g++ bug. Does not apply to other types convertible to ```std::ptrdiff_t``` because of ADL rules.
+    /// @{
+    template <typename T>
+    constexpr T* operator+(T* ptr, lossless_convertible_to<std::ptrdiff_t> auto offset) noexcept {
+        return ptr + static_cast<std::ptrdiff_t>(offset);
+    }
+    template <typename T>
+    constexpr T* operator-(T* ptr, lossless_convertible_to<std::ptrdiff_t> auto offset) noexcept {
+        return ptr - static_cast<std::ptrdiff_t>(offset);
+    }
+    /// @}
     template <tagged<integer_tag> T>
     struct make_fundamental<T> { using type = T::underlying_type; };
 
