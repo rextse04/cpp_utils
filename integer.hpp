@@ -444,17 +444,10 @@ namespace utils {
             return is;
         }
     };
-    /// Workaround for g++ bug. Does not apply to other types convertible to ```std::ptrdiff_t``` because of ADL rules.
-    /// @{
     template <typename T>
-    constexpr T* operator+(T* ptr, lossless_convertible_to<std::ptrdiff_t> auto offset) noexcept {
-        return ptr + static_cast<std::ptrdiff_t>(offset);
-    }
+    constexpr T* operator+(T* ptr, tagged<integer_tag> auto offset) noexcept { return ptr + +offset; }
     template <typename T>
-    constexpr T* operator-(T* ptr, lossless_convertible_to<std::ptrdiff_t> auto offset) noexcept {
-        return ptr - static_cast<std::ptrdiff_t>(offset);
-    }
-    /// @}
+    constexpr T* operator-(T* ptr, tagged<integer_tag> auto offset) noexcept { return ptr - +offset; }
     template <tagged<integer_tag> T>
     struct make_fundamental<T> { using type = T::underlying_type; };
 

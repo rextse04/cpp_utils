@@ -1,6 +1,7 @@
 #pragma once
 #include <type_traits>
 #include "stateful_meta.hpp"
+#include "exception.hpp"
 
 namespace utils::meta {
 /// This macro stores the innermost class ```Self``` enclosing the current context into
@@ -12,7 +13,8 @@ namespace utils::meta {
     struct utils_find_self_result_;\
     consteval auto utils_find_self_()\
     -> decltype(utils::meta::define<utils_find_self_result_, std::type_identity<std::remove_cvref_t<decltype(*this)>>{}>{}) {\
-        throw "You are not supposed to call this method. See the documentation for UTILS_FIND_SELF.";\
+        throw utils::compile_error(\
+            "You are not supposed to call this method. See the documentation for UTILS_FIND_SELF.");\
     }
 /// Retrieves the type found by ```UTILS_FIND_SELF```.
 #define UTILS_FIND_SELF_TYPE typename decltype(get(utils::meta::const_var<utils_find_self_result_>{}))::type
