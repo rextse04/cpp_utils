@@ -549,15 +549,13 @@ inline constexpr bool std::ranges::enable_borrowed_range<utils::basic_static_str
 template <typename CharT, typename Traits>
 inline constexpr bool std::ranges::enable_view<utils::basic_static_string_view<CharT, Traits>> = true;
 
-namespace std {
-    template <utils::tagged<utils::static_string_tag> S>
-    struct formatter<S, typename S::value_type> : formatter<typename S::base_string_view_type, typename S::value_type> {
-    private:
-        using parent = formatter<typename S::base_string_view_type, typename S::value_type>;
-    public:
-        template <typename FmtCtx>
-        constexpr FmtCtx::iterator format(const S& str, FmtCtx& ctx) const {
-            return parent::format(typename S::base_string_view_type(str), ctx);
-        }
-    };
-}
+template <utils::tagged<utils::static_string_tag> S>
+struct std::formatter<S, typename S::value_type> : formatter<typename S::base_string_view_type, typename S::value_type> {
+private:
+    using parent = formatter<typename S::base_string_view_type, typename S::value_type>;
+public:
+    template <typename FmtCtx>
+    constexpr FmtCtx::iterator format(const S& str, FmtCtx& ctx) const {
+        return parent::format(typename S::base_string_view_type(str), ctx);
+    }
+};
