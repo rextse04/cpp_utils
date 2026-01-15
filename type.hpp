@@ -80,7 +80,7 @@ namespace utils {
 
     template <typename T, typename Tag>
     concept tagged = (std::is_same_v<typename std::remove_cvref_t<T>::tag, Tag> ||
-        meta::contained_in_v<T, typename std::remove_cvref_t<T>::tag>);
+        meta::contained_in_v<typename std::remove_cvref_t<T>::tag, Tag>);
     template <typename Tag, typename T>
     struct is_tagged : std::bool_constant<tagged<T, Tag>> {};
     template <typename Tag, typename T>
@@ -119,6 +119,10 @@ namespace utils {
 #else
         friend T;
 #endif
+    };
+
+    struct sink {
+        constexpr sink(auto&&...) noexcept {}
     };
 
     template <typename T>

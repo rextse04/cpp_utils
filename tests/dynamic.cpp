@@ -104,7 +104,9 @@ BOOST_AUTO_TEST_CASE(fptr_test) {
 BOOST_AUTO_TEST_CASE(dptr_test) {
     dtor_msg.clear();
 
-    dptr<const shape> p, p2(new circle{.r = 1}), p3(new rectangle{.w = 1, .h = 2});
+    dptr<const shape> p;
+    dptr<const shape> p2(new circle{.r = 1});
+    dptr<const shape&> p3(new rectangle{.w = 1, .h = 2});
     p = p2;
     BOOST_CHECK_EQUAL(p2.get(), p.get());
     BOOST_CHECK_EQUAL(p[&shape::name](), "circle");
@@ -123,17 +125,21 @@ BOOST_AUTO_TEST_CASE(dptr_test) {
     BOOST_CHECK_EQUAL(dtor_msg, "circle rectangle");
 }
 
+template <typename T, typename U>
+constexpr bool is_settable_v = std::is_constructible_v<T, U> && std::is_assignable_v<T, U>;
+template <typename T, typename U>
+constexpr bool is_not_settable_v = !std::is_constructible_v<T, U> && !std::is_assignable_v<T, U>;
 BOOST_AUTO_TEST_CASE(dptr_constraints_test) {
-    BOOST_CHECK((!std::is_constructible_v<dptr<shape>, const circle*>));
-    BOOST_CHECK((std::is_constructible_v<dptr<const shape>, const circle*>));
-    BOOST_CHECK((std::is_constructible_v<dptr<const shape>, circle*>));
-    BOOST_CHECK((std::is_constructible_v<dptr<shape>, dptr<shape>>));
-    BOOST_CHECK((!std::is_constructible_v<dptr<shape, rectangular>, dptr<shape>>));
-    BOOST_CHECK((!std::is_constructible_v<dptr<shape>, dptr<rectangular>>));
-    BOOST_CHECK((!std::is_constructible_v<dptr<shape>, dptr<const rectangular>>));
-    BOOST_CHECK((std::is_constructible_v<dptr<const shape>, dptr<shape>>));
-    BOOST_CHECK((!std::is_constructible_v<dptr<shape>, dptr<const shape>>));
-    BOOST_CHECK((!std::is_constructible_v<dptr<shape&>, dptr<shape>&>));
+    BOOST_CHECK((is_not_settable_v<dptr<shape>, const circle*>));
+    BOOST_CHECK((is_settable_v<dptr<const shape>, const circle*>));
+    BOOST_CHECK((is_settable_v<dptr<const shape>, circle*>));
+    BOOST_CHECK((is_settable_v<dptr<shape>, dptr<shape>>));
+    BOOST_CHECK((is_not_settable_v<dptr<shape, rectangular>, dptr<shape>>));
+    BOOST_CHECK((is_not_settable_v<dptr<shape>, dptr<rectangular>>));
+    BOOST_CHECK((is_not_settable_v<dptr<shape>, dptr<const rectangular>>));
+    BOOST_CHECK((is_settable_v<dptr<const shape>, dptr<shape>>));
+    BOOST_CHECK((is_not_settable_v<dptr<shape>, dptr<const shape>>));
+    BOOST_CHECK((is_not_settable_v<dptr<shape&>, const dptr<shape&>&>));
 }
 
 BOOST_AUTO_TEST_CASE(unique_dptr_test) {
@@ -162,4 +168,26 @@ BOOST_AUTO_TEST_CASE(unique_dptr_array_test) {
         BOOST_CHECK_EQUAL(p2[&shape::area](), 100);
     }
     BOOST_CHECK_EQUAL(dtor_msg, "squaresquare");
+}
+
+BOOST_AUTO_TEST_CASE(shared_dptr_test) {
+    dtor_msg.clear();
+    shared_dptr<const shape, rectangular> p(new dotted_square{{.l = 5}, 10});
+    weak_dptr<const shape> w(p);
+    BOOST_CHECK_EQUAL(w.use_count(), 1);
+    {
+        auto w2 = w;
+        shared_dptr<const shape> p2(w2);
+        BOOST_CHECK_EQUAL(p2.use_count(), 2);
+        BOOST_CHECK_EQUAL(p2[&shape::name](), "dotted_square");
+        BOOST_CHECK_EQUAL(p2[&shape::area](), 25);
+    }
+    {
+        shared_dptr<const rectangular> p3(std::move(p));
+        BOOST_CHECK_EQUAL(p.get(), nullptr);
+        BOOST_CHECK_EQUAL(p3.use_count(), 1);
+        BOOST_CHECK(p3[&rectangular::is_square]());
+    }
+    BOOST_CHECK_EQUAL(dtor_msg, "square");
+    BOOST_CHECK(w.expired());
 }
