@@ -177,7 +177,8 @@ namespace utils {
     template <tagged<implements_tag> T>
     class fptr {
     public:
-        using value_type = T;
+        using tag = struct fptr_tag;
+        using element_type = T;
         using vtable_type = std::remove_cvref_t<T>::vtable_type;
     private:
         T* obj_;

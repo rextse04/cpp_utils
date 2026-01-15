@@ -182,11 +182,19 @@ BOOST_AUTO_TEST_CASE(shared_dptr_test) {
         BOOST_CHECK_EQUAL(p2[&shape::name](), "dotted_square");
         BOOST_CHECK_EQUAL(p2[&shape::area](), 25);
     }
+    circle c{.r = 3};
     {
-        shared_dptr<const rectangular> p3(std::move(p));
+        shared_dptr<const shape> p3(alias_with, p, std::addressof(c));
+        BOOST_CHECK_EQUAL(p3.use_count(), 2);
+        BOOST_CHECK_EQUAL(p3[&shape::name](), "circle");
+        BOOST_CHECK_EQUAL(p3[&shape::area](), 9 * M_PI);
+    }
+    BOOST_CHECK_EQUAL(dtor_msg, "");
+    {
+        shared_dptr<const rectangular> p4(std::move(p));
         BOOST_CHECK_EQUAL(p.get(), nullptr);
-        BOOST_CHECK_EQUAL(p3.use_count(), 1);
-        BOOST_CHECK(p3[&rectangular::is_square]());
+        BOOST_CHECK_EQUAL(p4.use_count(), 1);
+        BOOST_CHECK(p4[&rectangular::is_square]());
     }
     BOOST_CHECK_EQUAL(dtor_msg, "square");
     BOOST_CHECK(w.expired());
