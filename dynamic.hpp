@@ -214,30 +214,30 @@ namespace utils {
         /// For any implementer ```T``` of ```I``` and any (possibly cv-qualified) instance ```t``` of ```T```,
         /// let ```D``` be ```ivtable<I>(t.vtable()).dtor```.
         /// Then ```D((void*)&t)``` must perform the equivalent of ```t.~T()```.
-        void (* const dtor)(void*);
+        void (* const dtor)(void*) noexcept;
 #ifndef UTILS_DYN_NO_ARR
         /// ```size == sizeof(T)``` must be true.
         const integer_alias::size_t size;
         /// Let ```arr``` be a dynamically allocated array of ```T```,
         /// and ```DA``` be ```ivtable<I>(t.vtable()).arr_deleter```.
         /// Then ```DA((void*)arr)``` must perform the equivalent of ```delete[] arr```.
-        void (* const arr_deleter)(void*);
+        void (* const arr_deleter)(void*) noexcept;
 #endif
     };
     template <interface... Is>
     struct vtable : ivtable<Is>... {
-        constexpr vtable(Is... interfaces, void (*dtor)(void*)
+        constexpr vtable(Is... interfaces, void (*dtor)(void*) noexcept
 #ifdef UTILS_DYN_NO_ARR
             ) noexcept : ivtable<Is>(interfaces, dtor)... {}
 #else
-            , integer_alias::size_t size, void (*arr_deleter)(void*)) noexcept :
+            , integer_alias::size_t size, void (*arr_deleter)(void*) noexcept) noexcept :
             ivtable<Is>(interfaces, dtor, size, arr_deleter)... {}
 #endif
-        constexpr vtable(const vtable& other, void (*dtor)(void*)
+        constexpr vtable(const vtable& other, void (*dtor)(void*) noexcept
 #ifdef UTILS_DYN_NO_ARR
             ) noexcept : ivtable<Is>(other, dtor)... {}
 #else
-            , integer_alias::size_t size, void (*arr_deleter)(void*)) noexcept :
+            , integer_alias::size_t size, void (*arr_deleter)(void*) noexcept) noexcept :
             ivtable<Is>(other, dtor, size, arr_deleter)... {}
 #endif
     };
@@ -275,9 +275,9 @@ namespace utils {
     }
 #else
 #define UTILS_DYN_END ,\
-            [](void* ptr) { std::destroy_at(static_cast<UTILS_FIND_SELF_TYPE*>(ptr)); },\
+            [](void* ptr) noexcept { std::destroy_at(static_cast<UTILS_FIND_SELF_TYPE*>(ptr)); },\
             sizeof(UTILS_FIND_SELF_TYPE),\
-            [](void* arr) { delete[] static_cast<UTILS_FIND_SELF_TYPE*>(arr);}\
+            [](void* arr) noexcept { delete[] static_cast<UTILS_FIND_SELF_TYPE*>(arr);}\
         );\
         return vtable;\
     }
@@ -394,30 +394,44 @@ namespace utils {
             std::conditional_t<is_array, default_array_deleter, default_deleter>>;
     private:
         using Args = std::tuple<I, Is...>;
-        template <typename Deleter, bool Custom>
+        template <typename Deleter, bool Custom, typename T = void>
         struct rebind_deleter_tmpl;
-        template <typename Deleter>
-        struct rebind_deleter_tmpl<Deleter, true> {
+        template <typename Deleter, typename T>
+        struct rebind_deleter_tmpl<Deleter, true, T> {
             using type = meta::apply_t<dptr, meta::concat_t<meta::slice_t<Args, 0, -1>, std::tuple<Deleter>>>;
         };
-        template <typename Deleter>
-        struct rebind_deleter_tmpl<Deleter, false> {
+        template <typename Deleter, typename T>
+        struct rebind_deleter_tmpl<Deleter, false, T> {
             using type = dptr<I, Is..., Deleter>;
         };
-        template <typename Deleter>
-        requires (std::is_same_v<Deleter, void>)
-        struct rebind_deleter_tmpl<Deleter, true> {
+        template <typename T>
+        struct rebind_deleter_tmpl<void, true, T> {
             using type = meta::apply_t<dptr, meta::slice_t<Args, 0, -1>>;
         };
-        template <typename Deleter>
-        requires (std::is_same_v<Deleter, void>)
-        struct rebind_deleter_tmpl<Deleter, false> {
+        template <typename T>
+        struct rebind_deleter_tmpl<void, false, T> {
             using type = dptr;
+        };
+        template <ownership_category Ownership, typename T = void>
+        struct change_ownership_tmpl;
+        template <typename T>
+        struct change_ownership_tmpl<borrowed, T> {
+            using type = dptr<std::remove_reference_t<I>, Is...>;
+        };
+        template <typename T>
+        struct change_ownership_tmpl<unique, T> {
+            using type = dptr<std::remove_reference_t<I>&, Is...>;
+        };
+        template <typename T>
+        struct change_ownership_tmpl<shared, T> {
+            using type = dptr<std::remove_reference_t<I>&&, Is...>;
         };
     public:
         template <deleter Deleter>
         using rebind_deleter_type = rebind_deleter_tmpl<Deleter, custom_deleter>::type;
         using remove_deleter_type = rebind_deleter_tmpl<void, custom_deleter>::type;
+        template <ownership_category Ownership>
+        using change_ownership_type = change_ownership_tmpl<Ownership>::type;
     protected:
         base_type ptr_ = nullptr;
         ivtable_pointer_types ivtables_;
@@ -526,14 +540,28 @@ namespace utils {
         }
         /**@}*/
 
+        /** \defgroup ```dptr``` destructors
+         * Calls ```destroy_and_delete()``` if ```ownership``` is not ```borrowed``` and ```ptr_``` is not null.
+         * @{
+         */
+        constexpr ~dptr() noexcept requires (ownership == borrowed) = default;
+        constexpr ~dptr() noexcept requires (ownership != borrowed) {
+            if (ptr_ == nullptr) return;
+            if constexpr (requires { requires deleter_type::destroying_delete; }) {
+                deleter_(const_cast<void*>(ptr_), ivtables_);
+            } else {
+                destroy();
+                deleter_(const_cast<void*>(ptr_), ivtables_);
+            }
+        }
+        /**@}*/
+
         constexpr dptr& operator=(const dptr&) requires(ownership == borrowed) = default;
-        /// Copy assignment operator is deleted if ownership is unique.
-        //constexpr dptr& operator=(const dptr&) requires(ownership == unique) = delete;
         /// Same as the default copy assignment operator,
         /// but calls ```destroy_and_delete()``` beforehand if ```ptr_``` is not ```nullptr```.
         constexpr dptr& operator=(const dptr& other)
         noexcept(std::is_nothrow_copy_constructible_v<deleter_type>)
-        requires(ownership != borrowed && ownership != unique) {
+        requires (ownership != borrowed && ownership != unique) {
             if (ptr_ != nullptr) destroy_and_delete();
             ptr_ = other.ptr_;
             ivtables_ = other.ivtables_;
@@ -542,7 +570,7 @@ namespace utils {
         }
         constexpr dptr& operator=(dptr&& other)
         noexcept(std::is_nothrow_move_assignable_v<deleter_type>)
-        requires(ownership == borrowed && std::is_move_assignable_v<deleter_type>) = default;
+        requires (ownership == borrowed && std::is_move_assignable_v<deleter_type>) = default;
         /// Same as the default move assignment operator,
         /// but also calls ```destroy_and_delete()``` beforehand and sets ```other.ptr_``` to ```nullptr``` afterwards.
         constexpr dptr& operator=(dptr&& other)
@@ -558,7 +586,8 @@ namespace utils {
         /// If the pointer is not borrowed and ```ptr_``` is not ```nullptr```, calls ```destroy_and_delete()```.
         /// Then, sets ```ptr_``` to ```ptr```,
         /// and fills ```ivtables_``` with pointers to the required ```ivtable```s from ```ptr->vtable()```.
-        constexpr dptr& operator=(detail::dptr_compatible<dptr> auto* ptr) noexcept {
+        constexpr dptr& operator=(detail::dptr_compatible<dptr> auto* ptr)
+        noexcept(ownership == borrowed) {
             if (ownership != borrowed && ptr_ != nullptr) destroy_and_delete();
             ptr_ = ptr;
             fill_ivtables(ivtables_, std::addressof(ptr->vtable()));
@@ -608,9 +637,10 @@ namespace utils {
 #ifdef UTILS_DYN_NO_ARR
             static_assert(false, UTILS_DYN_NO_ARR_ERR_MSG);
 #else
+            using result = rebind_deleter_type<disabled_deleter>::template change_ownership_type<borrowed>;
             using byte_t = follow_t<base_type, std::byte*>;
             const integer_alias::size_t offset = std::get<0>(ivtables_)->size * idx;
-            return rebind_deleter_type<disabled_deleter>{static_cast<byte_t>(ptr_) + offset, ivtables_};
+            return result{static_cast<byte_t>(ptr_) + offset, ivtables_};
 #endif
         }
         constexpr void swap(dptr& other)
@@ -683,10 +713,6 @@ namespace utils {
         using parent::parent;
         constexpr unique_dptr(unique_dptr&& other) = default;
         constexpr unique_dptr& operator=(unique_dptr&& other) = default;
-        /// Destroyer simply calls ```destroy()```.
-        constexpr ~unique_dptr() noexcept {
-            if (parent::ptr_) parent::destroy_and_delete();
-        }
     };
 
     namespace detail {
@@ -770,15 +796,14 @@ namespace utils {
                 typename ReAlloc = std::allocator_traits<Alloc>::template rebind_alloc<Control>,
                 typename ReAllocTraits = std::allocator_traits<ReAlloc>>
             requires (std::is_constructible_v<BaseDeleter, D>)
-            constexpr shared_dptr_deleter(const DPtr& dptr, D&& deleter, const Alloc& alloc = Alloc())
-            noexcept (std::is_nothrow_constructible_v<BaseDeleter, D>) {
+            constexpr shared_dptr_deleter(const DPtr& dptr, D&& deleter, const Alloc& alloc = Alloc()) {
                 ReAlloc alloc_ = alloc;
                 auto control_ptr = ReAllocTraits::allocate(alloc_, 1);
                 control = std::to_address(control_ptr);
                 ReAllocTraits::construct(alloc_, std::to_address(control_ptr),
                     dptr.template rebind_deleter<BaseDeleter>(std::forward<D>(deleter)), std::move(alloc_), control_ptr);
             }
-            constexpr shared_dptr_deleter(const tagged<dptr_tag> auto& dptr) noexcept :
+            constexpr shared_dptr_deleter(const tagged<dptr_tag> auto& dptr) :
                 shared_dptr_deleter(dptr, DefaultDeleter(dptr), default_allocator()) {}
             constexpr shared_dptr_deleter(const tagged<dptr_tag> auto&, shared_dptr_control_base* control) noexcept :
                 control(control) {
@@ -927,7 +952,7 @@ namespace utils {
         constexpr shared_dptr(shared_dptr&&) noexcept = default;
         template <typename... Args>
         requires (std::is_constructible_v<parent, Args..., detail::shared_dptr_control_base*>)
-        constexpr shared_dptr(alias_with_t, const tagged<shared_dptr_tag> auto& other, Args&&... args) :
+        constexpr shared_dptr(alias_with_t, const tagged<shared_dptr_tag> auto& other, Args&&... args) noexcept :
             parent(std::forward<Args>(args)..., other.get_control()) {}
         template <typename... Vs>
         constexpr shared_dptr(const weak_dptr<Vs...>& other)
@@ -938,9 +963,6 @@ namespace utils {
         }
         constexpr shared_dptr& operator=(const shared_dptr&) noexcept = default;
         constexpr shared_dptr& operator=(shared_dptr&&) noexcept = default;
-        constexpr ~shared_dptr() noexcept {
-            if (parent::ptr_) parent::destroy_and_delete();
-        }
 
         constexpr detail::shared_dptr_control_base* get_control() const noexcept {
             return parent::get_deleter().control;
