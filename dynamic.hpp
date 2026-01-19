@@ -770,7 +770,6 @@ namespace utils {
             }
         };
 
-        template <typename DefaultDeleter>
         struct shared_dptr_deleter {
             using tag = deleter_tag;
             using default_allocator = std::allocator<std::byte>;
@@ -796,7 +795,8 @@ namespace utils {
                 ReAllocTraits::construct(alloc_, std::to_address(control_ptr),
                     dptr.template rebind_deleter<BaseDeleter>(std::forward<D>(deleter)), std::move(alloc_), control_ptr);
             }
-            constexpr shared_dptr_deleter(const tagged<dptr_tag> auto& dptr) :
+            template <tagged<dptr_tag> DPtr, typename DefaultDeleter = DPtr::remove_deleter_type::deleter_type>
+            constexpr shared_dptr_deleter(const DPtr& dptr) :
                 shared_dptr_deleter(dptr, DefaultDeleter(dptr), default_allocator()) {}
             constexpr shared_dptr_deleter(shared_dptr_control_base* control, const auto& expired_handler) {
                 if (control) {
@@ -839,8 +839,6 @@ namespace utils {
                 }
             }
         };
-        template <typename I, typename... Is>
-        using shared_dptr_base_t = dptr<I&&, Is..., shared_dptr_deleter<typename dptr<I&&, Is...>::deleter_type>>;
 
         struct ext_control_dptr {
             constexpr long use_count(this const auto& self) noexcept {
@@ -978,9 +976,9 @@ namespace utils {
     /// The underlying pointer is deleted when and only when the lifetime of the last owner of the pointer ends.
     template <detail::dptr_first I, interface... Is>
     requires (!std::is_reference_v<I>)
-    class shared_dptr : public detail::shared_dptr_base_t<I, Is...>, public detail::ext_control_dptr {
+    class shared_dptr : public dptr<I&&, Is..., detail::shared_dptr_deleter>, public detail::ext_control_dptr {
     private:
-        using parent = detail::shared_dptr_base_t<I, Is...>;
+        using parent = dptr<I&&, Is..., detail::shared_dptr_deleter>;
     public:
         using tag = std::tuple<dptr_tag, struct shared_dptr_tag>;
         using parent::parent;

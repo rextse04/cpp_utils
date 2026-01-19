@@ -213,11 +213,12 @@ BOOST_AUTO_TEST_CASE(shared_dptr_multithreading_test) {
     weak_dptr<shape, rectangular> w(p);
     constexpr int total_count = 100;
     std::atomic<int> good_count = 0, bad_count = 0;
+    const int owner_i = rand() % total_count;
     {
         std::vector<std::jthread> threads;
         for (int i = 0; i < total_count; ++i) {
-            threads.emplace_back([i, &p, &w, &good_count, &bad_count]() {
-                if (i == 0) {
+            threads.emplace_back([i, &p, &w, &good_count, &bad_count, &owner_i]() {
+                if (i == owner_i) {
                     shared_dptr<const rectangular> p2 = std::move(p);
                     ++good_count;
                 } else {
