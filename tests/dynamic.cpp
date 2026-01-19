@@ -3,6 +3,9 @@
 #include "dynamic.hpp"
 #include <string>
 #include <cmath>
+#include <thread>
+#include <vector>
+#include <atomic>
 
 using namespace utils;
 
@@ -190,12 +193,45 @@ BOOST_AUTO_TEST_CASE(shared_dptr_test) {
         BOOST_CHECK_EQUAL(p3[&shape::area](), 9 * M_PI);
     }
     BOOST_CHECK_EQUAL(dtor_msg, "");
+    weak_dptr<const rectangular> w2(p);
     {
         shared_dptr<const rectangular> p4(std::move(p));
         BOOST_CHECK_EQUAL(p.get(), nullptr);
+        BOOST_CHECK_EQUAL(p.get_control(), nullptr);
+        BOOST_CHECK_EQUAL(p4.use_count(), 1);
+        p4 = w2;
         BOOST_CHECK_EQUAL(p4.use_count(), 1);
         BOOST_CHECK(p4[&rectangular::is_square]());
     }
     BOOST_CHECK_EQUAL(dtor_msg, "square");
     BOOST_CHECK(w.expired());
+}
+
+BOOST_AUTO_TEST_CASE(shared_dptr_multithreading_test) {
+    dtor_msg.clear();
+    shared_dptr<shape, rectangular> p(new rectangle{.w = 1, .h = 2});
+    weak_dptr<shape, rectangular> w(p);
+    constexpr int total_count = 100;
+    std::atomic<int> good_count = 0, bad_count = 0;
+    {
+        std::vector<std::jthread> threads;
+        for (int i = 0; i < total_count; ++i) {
+            threads.emplace_back([i, &p, &w, &good_count, &bad_count]() {
+                if (i == 0) {
+                    shared_dptr<const rectangular> p2 = std::move(p);
+                    ++good_count;
+                } else {
+                    try {
+                        shared_dptr<const rectangular> p2(w);
+                        ++good_count;
+                    } catch (const std::bad_weak_ptr&) {
+                        ++bad_count;
+                    }
+                }
+            });
+        }
+    }
+    BOOST_CHECK_EQUAL(dtor_msg, "rectangle");
+    BOOST_CHECK_MESSAGE(good_count + bad_count == total_count,
+        "good_count: " << good_count << ", bad_count: " << bad_count << ", total_count: " << total_count);
 }
