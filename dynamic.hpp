@@ -40,34 +40,6 @@
  * An ```fptr``` or ```dptr``` stores a type-erased pointer and extra pointer(s) to appropriate ```ivtable```s,
  * which is how they know which methods and destructors to call.
  *
- * - <b>Strongly</b> prefer composition over inheritance.
- * Dynamic pointers (```dptr```s) only care about what interfaces a class implements,
- * but not the inheritance structure between interfaces. As an example:
- * @code
- * struct Animal { // interface
- *     dyn_method<void(obj_ptr)> eats;
- * };
- * struct SeaAnimal : Animal { // bad interface!
- *     dyn_method<void(obj_ptr)> swims;
- * };
- * class Fish : public implements<SeaAnimal> {...};
- * unique_dptr<SeaAnimal> animal1 = new Fish; // ok
- * unique_dptr<Animal> animal2 = new Fish; // ill-formed: Fish does not implement Animal!
- * @endcode
- * Instead, you should do this:
- * @code
- * struct Animal { // interface
- *     dyn_method<void(obj_ptr)> eats;
- * };
- * struct SeaAnimal { // good interface
- *     dyn_method<void(obj_ptr)> swims;
- * };
- * class Fish : public implements<Animal, SeaAnimal> {...};
- * unique_dptr<SeaAnimal> animal1 = new Fish; // ok
- * unique_dptr<Animal, SeaAnimal> animal2 = new Fish; // still ok
- * unique_dptr<Animal animal3 = new Fish; // still ok
- * @endcode
- *
  * Functionality toggle macros:
  * - UTILS_DYN_NO_ARR: Disables array support in ```dptr``` if present.
  * Reduces the size of each ```ivtable``` by ```sizeof(size_t) + sizeof(void*)```.
@@ -132,14 +104,19 @@ namespace utils {
     template <typename T, typename F = lambda_decay_t<T>>
     dyn_method(T) -> dyn_method<F>;
 
+    namespace detail {
+        template <typename I, typename... Is>
+        struct implemented : std::disjunction<std::is_convertible<const Is*, const I*>...> {};
+        template <typename I, typename... Is>
+        struct implemented<I, std::tuple<Is...>> : implemented<I, Is...> {};
+    }
     template <typename I>
     concept interface = std::is_class_v<I>;
-    struct implements_tag;
     template <typename T, typename I>
     concept implemented = requires(T t) {
         requires interface<I>;
-        requires tagged<T, implements_tag>;
-        requires meta::contained_in_v<typename T::interfaces, I>;
+        requires tagged<T, struct implements_tag>;
+        requires detail::implemented<I, typename T::interfaces>::value;
         { t.vtable() } -> std::same_as<const typename T::vtable_type&>;
     };
     template <typename I, typename T>
@@ -270,7 +247,7 @@ namespace utils {
     /// Pairs with ```UTILS_DYN```. Automatically sets up ```dtor```.
 #ifdef UTILS_DYN_NO_ARR
 #define UTILS_DYN_END ,\
-            [](void* ptr) { std::destroy_at(static_cast<UTILS_FIND_SELF_TYPE*>(ptr)); }\
+            [](void* ptr) noexcept { std::destroy_at(static_cast<UTILS_FIND_SELF_TYPE*>(ptr)); }\
         );\
         return vtable;\
     }
@@ -365,6 +342,11 @@ namespace utils {
             requires meta::reduce_v<std::conjunction, meta::map_t<
                 meta::bind_back<has_implemented, std::remove_cv_t<T>>::template trait, typename U::interfaces>>;
         };
+
+        template <typename Is, typename... Vs>
+        struct superset_of : std::conjunction<implemented<Vs, Is>...> {};
+        template <typename Is, typename... Vs>
+        struct superset_of<Is, std::tuple<Vs...>> : superset_of<Is, Vs...> {};
     }
     /// @brief A non-owning, type-erased pointer that allows dynamic dispatch on interfaces.
     /// @tparam I: First interface.
@@ -529,7 +511,7 @@ namespace utils {
         requires (
             (DT::ownership != unique || !std::is_lvalue_reference_v<T>) &&
             (DT::ownership == borrowed || !std::is_const_v<T>) &&
-            meta::subset_of_v<interfaces, typename DT::interfaces> &&
+            detail::superset_of<typename DT::interfaces, interfaces>::value &&
             std::is_convertible_v<typename DT::base_type, base_type> &&
             std::is_constructible_v<deleter_type, const dptr&, D>)
         constexpr dptr(T&& other)
@@ -545,7 +527,7 @@ namespace utils {
         requires (
             (DT::ownership != unique || !std::is_lvalue_reference_v<T>) &&
             (DT::ownership == borrowed || !std::is_const_v<T>) &&
-            meta::subset_of_v<interfaces, typename DT::interfaces> &&
+            detail::superset_of<typename DT::interfaces, interfaces>::value &&
             std::is_convertible_v<typename DT::base_type, base_type> &&
             std::is_constructible_v<deleter_type, const dptr&, Args...>)
         constexpr dptr(detach_deleter_t, T&& other, Args&&... args)
@@ -615,7 +597,7 @@ namespace utils {
         requires requires {
             requires DT::ownership != unique || !std::is_lvalue_reference_v<T>;
             requires DT::ownership == borrowed || !std::is_const_v<T>;
-            requires meta::subset_of_v<interfaces, typename DT::interfaces>;
+            requires detail::superset_of<typename DT::interfaces, interfaces>::value;
             requires std::is_convertible_v<typename DT::base_type, base_type>;
             requires std::is_same_v<deleter_type, typename DT::deleter_type>;
             { deleter_.assign(std::as_const(*this), std::forward_like<T>(other.deleter_)) };
@@ -642,7 +624,7 @@ namespace utils {
         /// @}
         /// @copydoc detail::bind_dyn
         template <interface V, typename T>
-        requires (meta::contained_in_v<interfaces, V>)
+        requires (detail::implemented<V, interfaces>::value)
         constexpr decltype(auto) operator[](T V::* mptr) const noexcept {
             return detail::bind_dyn(ptr_, std::get<const ivtable<V>*>(ivtables_)->*mptr);
         }
