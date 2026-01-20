@@ -270,7 +270,7 @@ namespace utils {
     /// Pairs with ```UTILS_DYN```. Automatically sets up ```dtor```.
 #ifdef UTILS_DYN_NO_ARR
 #define UTILS_DYN_END ,\
-            [](void* ptr) { std::destroy_at(static_cast<UTILS_FIND_SELF_TYPE*>(ptr)); }\
+            [](void* ptr) noexcept { std::destroy_at(static_cast<UTILS_FIND_SELF_TYPE*>(ptr)); }\
         );\
         return vtable;\
     }
