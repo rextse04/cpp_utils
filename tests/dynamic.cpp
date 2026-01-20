@@ -143,6 +143,9 @@ BOOST_AUTO_TEST_CASE(dptr_constraints_test) {
     BOOST_CHECK((is_settable_v<dptr<const shape>, dptr<shape>>));
     BOOST_CHECK((is_not_settable_v<dptr<shape>, dptr<const shape>>));
     BOOST_CHECK((is_not_settable_v<dptr<shape&>, const dptr<shape&>&>));
+    BOOST_CHECK((is_not_settable_v<dptr<shape>, dptr<shape[]>>));
+    BOOST_CHECK((is_not_settable_v<dptr<const shape[], rectangular>, dptr<const shape[]>>));
+    BOOST_CHECK((is_settable_v<dptr<const shape[]>, dptr<const shape[], rectangular>>));
 }
 
 BOOST_AUTO_TEST_CASE(unique_dptr_test) {
