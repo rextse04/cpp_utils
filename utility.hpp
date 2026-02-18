@@ -27,10 +27,11 @@ namespace utils {
         noexcept((std::is_nothrow_constructible_v<Fs, Gs> && ...)):
             fs_(std::forward<Gs>(gs)...) {}
 
-        template <typename... Ts>
+        template <typename... Ts, std::size_t Match = match<Ts...>()>
+        requires (Match != -1)
         constexpr auto operator()(Ts&&... ts) const
-        noexcept(noexcept(std::get<match<Ts&&...>()>(fs_)(std::forward<Ts>(ts)...))) {
-            return std::get<match<Ts...>()>(fs_)(std::forward<Ts>(ts)...);
+        noexcept(noexcept(std::get<Match>(fs_)(std::forward<Ts>(ts)...))) {
+            return std::get<Match>(fs_)(std::forward<Ts>(ts)...);
         }
     };
 
