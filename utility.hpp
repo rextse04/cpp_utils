@@ -33,4 +33,7 @@ namespace utils {
             return std::get<match<Ts...>()>(fs_)(std::forward<Ts>(ts)...);
         }
     };
+
+    template <typename... Gs>
+    visitor(Gs&&...) -> visitor<std::decay_t<Gs>...>;
 }
