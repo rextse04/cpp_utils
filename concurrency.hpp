@@ -82,7 +82,7 @@ namespace utils {
         [[no_unique_address]] std::conditional_t<sync, std::shared_mutex, std::monostate> mutex_;
 
         using permit_opt = std::optional<permit>;
-        constexpr permit_opt issue(bool success) const noexcept {
+        constexpr permit_opt issue(bool success) noexcept {
             return success ? permit_opt(std::in_place, key, this) : permit_opt(std::nullopt);
         }
     public:
