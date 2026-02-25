@@ -92,7 +92,7 @@ namespace utils {
         template <typename... Args>
         requires (std::is_constructible_v<T, Args...>)
         explicit(sizeof...(Args) == 0)
-        constexpr unique_resource(integer_alias::ptrdiff_t quota, Args&&... args) :
+        constexpr unique_resource(integer_alias::ptrdiff_t quota = 1, Args&&... args) :
             base_(std::forward<Args>(args)...), sem_(+quota) {}
         /// Get read access to the resource. Only available if ```sync``` is false.
         constexpr const T& operator*() const noexcept requires(!sync) { return base_; }
