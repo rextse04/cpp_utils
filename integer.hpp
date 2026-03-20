@@ -336,6 +336,27 @@ namespace utils {
         requires std::numeric_limits<T>::is_signed == std::numeric_limits<Ref>::is_signed;
     };
 
+    namespace detail {
+        template <typename IB>
+        constexpr fix_op_functors integer_fix_ops = {
+            .pre_increment = [](auto& self) {
+                return IB::asg_ops.plus_asg(self, 1);
+            },
+            .post_increment = [](auto& self) {
+                const auto old = self;
+                IB::asg_ops.plus_asg(self, 1);
+                return old;
+            },
+            .pre_decrement = [](auto& self) {
+                return IB::asg_ops.minus_asg(self, 1);
+            },
+            .post_decrement = [](auto& self) {
+                const auto old = self;
+                IB::asg_ops.minus_asg(self, 1);
+                return old;
+            }
+        };
+    }
     template <
         std::integral Under,
         template<typename> typename IBTrait = integral_behavior::sane,
@@ -350,7 +371,8 @@ namespace utils {
         IBTrait<Under>::ops, IBTrait<Under>::asg_ops,
         {.binary_traits = binary_op_traits<detail::get_self, is_same_width>{}},
         {.asg_traits = asg_op_traits<is_same_width>{}},
-        SBTrait<Under>::ops, SBTrait<Under>::asg_ops
+        SBTrait<Under>::ops, SBTrait<Under>::asg_ops,
+        {}, detail::integer_fix_ops<IBTrait<Under>>
     > {
         using tag = struct integer_tag;
         using underlying_type = Under;
@@ -405,7 +427,7 @@ namespace utils {
         template <typename T>
         requires (!tagged<T, integer_tag>)
         explicit(!lossless_convertible_to<underlying_type, T>)
-        constexpr operator T() const noexcept { return under_; }
+        constexpr operator T() const noexcept { return static_cast<T>(under_); }
 
         constexpr bool operator==(const same_sign_as<integer> auto& other) const noexcept {
             return under_ == to_fundamental(other);
