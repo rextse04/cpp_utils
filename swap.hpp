@@ -3,12 +3,12 @@
 /**
  * @file
  *
- * This file is included by all headers that contain a class with a ```swap``` method.
+ * This file is included by all headers that contain a class with a @code swap@endcode method.
  * Due to ADL, manually including this header in user code does not provide any extra utilites.
  */
 
 namespace utils {
-    /// Make classes that provide a ```swap``` method swappable.
+    /// Make classes that provide a @code swap@endcode method swappable.
     /// Visible to any namespace by ADL.
     template <typename T, typename U>
     requires requires(T& t, U& u) { t.swap(u); }

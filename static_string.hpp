@@ -182,13 +182,13 @@ namespace utils {
         };
     }
 
-    /// Identical interface to ```std::basic_string_view```,
+    /// Identical interface to @code std::basic_string_view@endcode,
     /// except that this class can only be constructed at compile time,
     /// thus ensuring that it refers to a "static string".
-    /// @remark ```data_``` and ```size_``` are public to make this a structural type,
+    /// @remark @code data_@endcode and @code size_@endcode are public to make this a structural type,
     /// thus allowing it to be passed as a template parameter.
     /// However, as pointers to string literals cannot be part of template parameters,
-    /// ```basic_static_string``` may be a better choice in this case.
+    /// @code basic_static_string@endcode may be a better choice in this case.
     template <typename CharT, typename Traits = std::char_traits<CharT>>
     struct basic_static_string_view : detail::string_interface<CharT, Traits> {
     private:
@@ -225,11 +225,11 @@ namespace utils {
     using u32static_string_view = basic_static_string_view<char32_t>;
 
     /// This class represents an owning string defined at compile time.
-    /// It implements a subset of the interface of ```std::basic_string```,
+    /// It implements a subset of the interface of @code std::basic_string@endcode,
     /// excluding members that would require the string to be resizable.
     /// In addition, all modifying operations are consteval,
     /// maintaining the variant that the class is immutable at runtime.
-    /// @note The underlying character sequence (```data```) is null-terminated.
+    /// @note The underlying character sequence (@code data@endcode) is null-terminated.
     template <typename CharT, std::size_t N, typename Traits = std::char_traits<CharT>>
     struct basic_static_string : detail::string_interface<CharT, Traits> {
     private:

@@ -12,26 +12,25 @@
  * This is done by passing your custom *_op_functors as a template parameter to a *_op struct.
  *
  * Requirement(s) for a parent class of *_op:\n
- * Let ```P``` be the parent class, and ```O``` be the child class.
- * For any operator ```@``` defined by ```O```,
- * denote its corresponding functor member in ```*_op_functors``` (```OF```) by ```F```. Then,
- * 1. If ```@``` is a binary operator
- * ```static_cast<result_type>(F(this->to_underlying(), other))``` must be well-formed in the context of ```const P```;
- * 2. If ```@``` is a unary operator,
- * ```static_cast<result_type>(F(this->to_underlying()))``` must be well-formed in the context of ```const P```;
- * 3. If ```@``` is an assignment operator,
- * ```F(this->to_underlying(), other)``` must be well-formed in the context of ```P```;
- * 4. If ```@``` is a pre-fix operator, ```F(this->to_underlying())``` must be well-formed in the context of ```P```;
- * 5. If ```@``` is a post-fix operator,
- * ```static_cast<P>(F(this->to_underlying()))``` must be well-formed in the context of ```P```;
- * 6. If ```@``` is a binary or assignment operator,
- * for any (possibly cv-qualified) ```Other``` (the type of ```other```) such that
- * ```decltype(OF::*_traits)::constraint<P, Other>``` is true,
- * either ```std::remove_cvref_t<Other>``` is ```P```, or ```std::is_constructible_v<P, Other>``` must be true,
- * .
- * where ```result_type``` is ```decltype(OF::*_traits)::result<P, decltype(other)>```.
+ * Let @code P@endcode be the parent class, and @code O@endcode be the child class.
+ * For any operator @code @ @endcode defined by @code O@endcode,
+ * denote its corresponding functor member in @code *_op_functors@endcode (@code OF@endcode) by @code F@endcode. Then,
+ * 1. If @code @ @endcode is a binary operator
+ * @code static_cast<result_type>(F(this->to_underlying(), other))@endcode must be well-formed in the context of @code const P@endcode;
+ * 2. If @code @ @endcode is a unary operator,
+ * @code static_cast<result_type>(F(this->to_underlying()))@endcode must be well-formed in the context of @code const P@endcode;
+ * 3. If @code @ @endcode is an assignment operator,
+ * @code F(this->to_underlying(), other)@endcode must be well-formed in the context of @code P@endcode;
+ * 4. If @code @ @endcode is a pre-fix operator, @code F(this->to_underlying())@endcode must be well-formed in the context of @code P@endcode;
+ * 5. If @code @ @endcode is a post-fix operator,
+ * @code static_cast<P>(F(this->to_underlying()))@endcode must be well-formed in the context of @code P@endcode;
+ * 6. If @code @ @endcode is a binary or assignment operator,
+ * for any (possibly cv-qualified) @code Other@endcode (the type of @code other@endcode) such that
+ * @code decltype(OF::*_traits)::constraint<P, Other>@endcode is true,
+ * either @code std::remove_cvref_t<Other>@endcode is @code P@endcode, or @code std::is_constructible_v<P, Other>@endcode must be true,
+ * where @code result_type@endcode is @code decltype(OF::*_traits)::result<P, decltype(other)>@endcode.
  *
- * Note: You can disable an operation by setting ```OF::@``` to ```invalid_op```.
+ * @note You can disable an operation by setting @code OF::@ @endcode to @code invalid_op@endcode.
  */
 
 namespace utils {

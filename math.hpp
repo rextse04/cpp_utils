@@ -12,8 +12,7 @@ namespace utils {
     };
 
     template <std::ptrdiff_t Exp>
-    constexpr auto pow(auto base, tagged<as_tag> auto as_type)
-    -> typename decltype(as_type)::type {
+    constexpr auto pow(auto base, tagged<as_tag> auto as_type) -> decltype(as_type)::type {
         if constexpr (Exp == 0) return as_type.cast(1);
         else if constexpr (Exp > 0) return as_type.cast(base) * pow<Exp-1>(base, as_type);
         else return as_type.cast(1) / pow<-Exp>(base, as_type);

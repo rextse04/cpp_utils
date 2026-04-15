@@ -9,16 +9,16 @@
  * @file
  *
  * Key concepts and conventions:
- * - A <i>Result</i> is a type that either has a member type alias ```type```,
- * or a constexpr static member ```value```, named <i>TypeResult</i> and <i>ValueResult</i> respectively.
- * For example, ```std::integer_constant``` instances are <i>ValueResult</i>s.
+ * - A <i>Result</i> is a type that either has a member type alias @code type@endcode,
+ * or a constexpr static member @code value@endcode, named <i>TypeResult</i> and <i>ValueResult</i> respectively.
+ * For example, @code std::integer_constant@endcode instances are <i>ValueResult</i>s.
  * This can be seen as a generalization of types obtained by applying <i>Trait</i>s.
- * - An <i>ErasedResult</i> is not a <i>Result</i>. It has a member type alias ```result```,
+ * - An <i>ErasedResult</i> is not a <i>Result</i>. It has a member type alias @code result@endcode,
  * which is defined to be a <i>TypeResult</i> or a <i>ValueResult</i>.
- * It can be ```infer```red to a <i>Result</i>, however.
+ * It can be inferred to a <i>Result</i> via @code infer@endcode, however.
  * - A <i>Trait</i> is a template that accepts a fixed or variadic number of template type arguments.
  * Any instance of a <i>Trait</i> should be a <i>Result</i>, or the program should be ill-formed
- * (which is usually guaranteed by setting ```static_assert```s).
+ * (which is usually guaranteed by setting @code static_assert@endcode checks).
  * In addition, valid instances of <i>Trait</i> should either all be <i>TypeResult</i>s, or all be <i>ValueResult</i>s.
  * They are named <i>TypeTrait</i>s and <i>ValueTrait</i>s respectively.
  * - A <i>MetaTrait</i> is a template whose valid instances have an inner template which satisfies <i>Trait</i>.
@@ -231,8 +231,8 @@ namespace utils::meta {
     template <template<typename...> typename Tmpl, typename... Ts>
     using apply_t = apply<Tmpl, Ts...>::type;
 
-    /// @returns a tuple that represents the results of ```f``` applied to each element of ```t```
-    /// @remark the resulting tuple retains qualifiers and references of the result types of ```f```
+    /// @returns a tuple that represents the results of @code f@endcode applied to each element of @code t@endcode
+    /// @remark the resulting tuple retains qualifiers and references of the result types of @code f@endcode
     template <tuple_like Tuple>
     constexpr auto transform(const auto& f, Tuple&& t) {
         const auto expand_transform = [&f]<typename... Ts>(Ts&&... elems) {

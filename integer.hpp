@@ -53,8 +53,8 @@ namespace utils {
             static constexpr integral_asg_op_functors asg_ops{};
         };
 
-        /// Default C++ integral arithmetic rules, but using ```sane_promotion```.
-        /// This prevents ```unsigned short(-1) * 2``` from being undefined (it instead wraps around as expected).
+        /// Default C++ integral arithmetic rules, but using @code sane_promotion@endcode.
+        /// This prevents @code unsigned short(-1) * 2@endcode from being undefined (it instead wraps around as expected).
         template <std::integral Under>
         struct sane {
         private:
@@ -154,7 +154,7 @@ namespace utils {
 
 #ifdef __cpp_lib_saturation_arithmetic
         /// Saturated arithmetic.
-        /// In particular, ```signed_min % -1``` is defined to be 0.
+        /// In particular, @code signed_min % -1@endcode is defined to be 0.
         template <std::integral Under>
         struct sat {
         private:
@@ -242,8 +242,8 @@ namespace utils {
         };
 
         /// Treats bit-shifting as a scalar operation,
-        /// i.e. shifting by a negative ```n``` means shifting in the other direction,
-        /// and we assume ```lhs``` has an infinite range before truncating it to the original type.
+        /// i.e. shifting by a negative @code n@endcode means shifting in the other direction,
+        /// and we assume @code lhs@endcode has an infinite range before truncating it to the original type.
         /// Every operation is defined under this trait.
         template <std::integral Under>
         struct scalar {
@@ -286,7 +286,7 @@ namespace utils {
             static constexpr shift_op_functors ops = {
                 .shift_left = std::rotl<U>,
                 .shift_right = std::rotr<U>,
-                // because ```std::rotl``` and ```std::rotr``` takes ```int``` as argument
+                // because @code std::rotl@endcode and @code std::rotr@endcode takes @code int@endcode as argument
                 .binary_traits = binary_op_traits<detail::get_self, convertible_to_int>{}
             };
             static constexpr shift_asg_op_functors asg_ops = {
@@ -296,7 +296,7 @@ namespace utils {
             };
         };
 
-        /// Throws an exception for invalid ```n```. Every operation is defined under this trait.
+        /// Throws an exception for invalid @code n@endcode. Every operation is defined under this trait.
         template <std::integral Under>
         struct checked {
         private:
@@ -395,17 +395,17 @@ namespace utils {
         static constexpr bool is_signed = std::numeric_limits<underlying_type>::is_signed;
 
         constexpr integer() noexcept = default;
-        /// Conversion from a ```number_like``` value ```other```.
-        /// If ```underlying_type``` is unsigned and ```other < 0```, it wraps around.
-        /// Explicit if ```other``` is not ```lossless_convertible_to``` ```Under```.
+        /// Conversion from a @code number_like@endcode value @code other@endcode.
+        /// If @code underlying_type@endcode is unsigned and @code other < 0@endcode, it wraps around.
+        /// Explicit if @code other@endcode is not @code lossless_convertible_to@endcode @code Under@endcode.
         template <typename T>
         requires (std::is_convertible_v<make_fundamental_t<T>, underlying_type>)
         explicit(!lossless_convertible_to<make_fundamental_t<T>, underlying_type>)
         constexpr integer(const T& other) noexcept : under_(to_fundamental(other)) {}
         /// This allows implicit conversions from numbers known at compile time.
         /// @throw std::overflow_error (at compile time)
-        /// if the number (with sign preserved) cannot be represented by ```underlying_type```.
-        /// @remark ```Ts``` exists solely to lower the priority of this constructor (in overload resolution).
+        /// if the number (with sign preserved) cannot be represented by @code underlying_type@endcode.
+        /// @remark @code Ts@endcode exists solely to lower the priority of this constructor (in overload resolution).
         template <typename... Ts>
         requires (sizeof...(Ts) == 0)
         consteval integer(const std::integral auto& other, Ts...) : under_(other) {
@@ -422,8 +422,8 @@ namespace utils {
         }
         constexpr underlying_type& to_underlying() noexcept { return under_; }
         constexpr underlying_type to_underlying() const noexcept { return under_; }
-        /// Conversion to integer-like type ```T```.
-        /// Explicit if ```underlying_type``` is not ```lossless_convertible_to``` ```T```.
+        /// Conversion to integer-like type @code T@endcode.
+        /// Explicit if @code underlying_type@endcode is not @code lossless_convertible_to@endcode @code T@endcode.
         template <typename T>
         requires (!tagged<T, integer_tag>)
         explicit(!lossless_convertible_to<underlying_type, T>)

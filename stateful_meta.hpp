@@ -11,33 +11,33 @@
  * In this file, compile-time variables are named by types.
  * That is, such variables are defined, accessed and modified via the types they are associated with.
  * Note that you are allowed to use the same type to name variables of different categories.
- * For example, you can define a ```const_var<T>``` and ```<i>counter</i><T>``` and they will be separate variables.
+ * For example, you can define a @code const_var<T>@endcode and @code <i>counter</i><T>@endcode and they will be separate variables.
  * There are three categories of variables:
  * |          Category         |    Written via    |      Read via     |                     Remarks                    |
  * |:-------------------------:|:-----------------:|:-----------------:|:----------------------------------------------:|
- * |      ```const_var```      |    ```define```   |     ```get```     | A ```const_var``` can only be written to once. |
- * | <pre><i>counter</i></pre> | ```get_counter``` | ```get_counter``` | There is no explicit struct for this category. |
- * |         ```var```         |     ```set```     |     ```get```     |                                                |
+ * |      @code const_var@endcode      |    @code define@endcode   |     @code get@endcode     | A @code const_var@endcode can only be written to once. |
+ * | <pre><i>counter</i></pre> | @code get_counter@endcode | @code get_counter@endcode | There is no explicit struct for this category. |
+ * |         @code var@endcode         |     @code set@endcode     |     @code get@endcode     |                                                |
  *
- * In the implementation, some structs may have ```Id``` as one of their template parameters.
+ * In the implementation, some structs may have @code Id@endcode as one of their template parameters.
  * This is necessary to prevent the compiler from caching previous results.
  * Do not fill in that parameter unless you know what you are doing.
  */
 
 namespace utils::meta {
-    /// Read by calling ```get(const_var<Var>{})```.
-    /// @remark ```get``` does not belong to any namespace - it is searched via ADL.
+    /// Read by calling @code get(const_var<Var>{})@endcode.
+    /// @remark @code get@endcode does not belong to any namespace - it is searched via ADL.
     template <typename Var>
     class const_var {
         friend consteval auto get(const_var);
     };
-    /// Declare a ```const-var``` by instantiating the template.
+    /// Declare a @code const-var@endcode by instantiating the template.
     template <typename Var, auto Value>
     class define {
         friend consteval auto get(const_var<Var>) { return Value; }
     };
 
-    /// Checks the existence of a ```const_var```.
+    /// Checks the existence of a @code const_var@endcode.
     template <typename Var, auto = get(utils::meta::const_var<Var>{})>
     consteval bool exists(const_var<Var>) { return true; }
     /// Fallback.
@@ -49,7 +49,7 @@ namespace utils::meta {
     }
     /// A compile-time counter. An undeclared counter is defined to have the value 0.
     /// @tparam Increment: whether to increment the counter after the read
-    /// @tparam Value: sets the value of the counter to the maximum of its original value and ```Value``` before the read
+    /// @tparam Value: sets the value of the counter to the maximum of its original value and @code Value@endcode before the read
     template <typename Var = void, bool Increment = false, std::uintmax_t Value = 0, typename Id = decltype([]{})>
     consteval std::uintmax_t get_counter() {
         if constexpr (exists(const_var<detail::counter<Var, Value>>{})) {
@@ -62,20 +62,20 @@ namespace utils::meta {
         }
     }
 
-    /// Read by calling ```get(var<Var, Version>{})```.
-    /// If not specified, ```Version``` is defaults to the latest.
+    /// Read by calling @code get(var<Var, Version>{})@endcode.
+    /// If not specified, @code Version@endcode is defaults to the latest.
     template <typename Var, std::uintmax_t Version = get_counter<Var>() - 1>
     class var {
         friend consteval auto get(var);
     };
-    /// Sets ```Var``` to ```Value```.
-    /// ```Version``` is automatically incremented at every instantiation of this template.
+    /// Sets @code Var@endcode to @code Value@endcode.
+    /// @code Version@endcode is automatically incremented at every instantiation of this template.
     template <typename Var, auto Value, std::uintmax_t Version = get_counter<Var, true>()>
     class set {
         friend consteval auto get(var<Var, Version>) { return Value; }
     };
 
-    /// Checks the existence of a ```var```.
+    /// Checks the existence of a @code var@endcode.
     template <typename Var, std::uintmax_t Version, auto = get(var<Var, Version>{})>
     constexpr bool exists(var<Var, Version>) { return true; }
 
