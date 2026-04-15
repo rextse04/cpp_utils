@@ -4,10 +4,11 @@
 #include <concepts>
 
 namespace utils {
+    /// @brief Calculates the maximum alignment requirement among the types in @code Ts@endcode.
     template <typename... Ts>
     constexpr auto max_align = static_cast<std::align_val_t>(std::max({alignof(Ts)...}));
 
-    /// @brief calculates the minimum offset that is larger than @code offset@endcode such that it is aligned to @code T@endcode,
+    /// @brief Calculates the minimum offset that is larger than @code offset@endcode such that it is aligned to @code T@endcode,
     /// provided that @code offset@endcode is aligned to @code T@endcode
     template <typename T>
     constexpr std::size_t align_to(std::size_t offset) noexcept {

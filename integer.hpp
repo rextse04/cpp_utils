@@ -16,7 +16,7 @@
 #include "type.hpp"
 
 namespace utils {
-    /// Same rules as integer promotion in the standard, except that the promoted type always preserves sign.
+    /// @brief Same rules as integer promotion in the standard, except that the promoted type always preserves sign.
     template <typename T>
     struct sane_promotion {
     private:
@@ -46,14 +46,15 @@ namespace utils {
     constexpr bool is_lossless_convertible_v = is_lossless_convertible<From, To>::value;
 
     namespace integral_behavior {
-        /// Default C++ integral arithmetic rules.
+        /// @brief Default C++ integral arithmetic rules.
         template <std::integral>
         struct standard {
             static constexpr integral_op_functors ops{};
             static constexpr integral_asg_op_functors asg_ops{};
         };
 
-        /// Default C++ integral arithmetic rules, but using @code sane_promotion@endcode.
+        /// @brief Default C++ integral arithmetic rules, but using @code sane_promotion@endcode.
+        ///
         /// This prevents @code unsigned short(-1) * 2@endcode from being undefined (it instead wraps around as expected).
         template <std::integral Under>
         struct sane {
@@ -76,7 +77,7 @@ namespace utils {
             };
         };
 
-        /// Invokes UB for any overflow (even for unsigned types), in addition to standard C++ arithmetic rules.
+        /// @brief Invokes UB for any overflow (even for unsigned types), in addition to standard C++ arithmetic rules.
         template <std::integral Under>
         struct ub {
         private:
@@ -125,7 +126,7 @@ namespace utils {
             };
         };
 
-        /// Wraps around for any overflow, even for signed types and division by -1.
+        /// @brief Wraps around for any overflow, even for signed types and division by -1.
         template <std::integral Under>
         struct wrap {
         private:
@@ -181,7 +182,8 @@ namespace utils {
         };
 #endif
 
-        /// Throws an exception for any overflow (including division) and division by 0.
+        /// @brief Throws an exception for any overflow (including division) and division by 0.
+        ///
         /// In other words, every arithmetic operation is defined under this trait.
         template <std::integral Under>
         struct checked {
@@ -234,15 +236,16 @@ namespace utils {
     }
 
     namespace shift_behavior {
-        /// Default C++ bit-shift operation rules.
+        /// @brief Default C++ bit-shift operation rules.
         template <std::integral>
         struct standard {
             static constexpr shift_op_functors ops{};
             static constexpr shift_asg_op_functors asg_ops{};
         };
 
-        /// Treats bit-shifting as a scalar operation,
-        /// i.e. shifting by a negative @code n@endcode means shifting in the other direction,
+        /// @brief Treats bit-shifting as a scalar operation.
+        ///
+        /// Shifting by a negative @code n@endcode means shifting in the other direction,
         /// and we assume @code lhs@endcode has an infinite range before truncating it to the original type.
         /// Every operation is defined under this trait.
         template <std::integral Under>
@@ -275,7 +278,9 @@ namespace utils {
             };
         };
 
-        /// Circular bit-shifting. Every operation is defined under this trait.
+        /// @brief Circular bit-shifting.
+        ///
+        /// Every operation is defined under this trait.
         template <std::unsigned_integral Under>
         struct circular {
         private:
@@ -296,7 +301,9 @@ namespace utils {
             };
         };
 
-        /// Throws an exception for invalid @code n@endcode. Every operation is defined under this trait.
+        /// @brief Throws an exception for invalid @code n@endcode.
+        ///
+        /// Every operation is defined under this trait.
         template <std::integral Under>
         struct checked {
         private:
@@ -383,7 +390,7 @@ namespace utils {
         template <template<typename> typename ToIBTrait = IBTrait, template<typename> typename ToSBTrait = SBTrait>
         using adopt = integer<Under, ToIBTrait, ToSBTrait>;
 
-        /// Made public to preserve structural type. Use at your own risk.
+        /// @remark Made public to preserve structural type. Use at your own risk.
         underlying_type under_;
 
         static constexpr integer max() noexcept {
@@ -395,14 +402,15 @@ namespace utils {
         static constexpr bool is_signed = std::numeric_limits<underlying_type>::is_signed;
 
         constexpr integer() noexcept = default;
-        /// Conversion from a @code number_like@endcode value @code other@endcode.
+        /// @brief Conversion from a @code number_like@endcode value @code other@endcode.
+        ///
         /// If @code underlying_type@endcode is unsigned and @code other < 0@endcode, it wraps around.
         /// Explicit if @code other@endcode is not @code lossless_convertible_to@endcode @code Under@endcode.
         template <typename T>
         requires (std::is_convertible_v<make_fundamental_t<T>, underlying_type>)
         explicit(!lossless_convertible_to<make_fundamental_t<T>, underlying_type>)
         constexpr integer(const T& other) noexcept : under_(to_fundamental(other)) {}
-        /// This allows implicit conversions from numbers known at compile time.
+        /// @brief This allows implicit conversions from numbers known at compile time.
         /// @throw std::overflow_error (at compile time)
         /// if the number (with sign preserved) cannot be represented by @code underlying_type@endcode.
         /// @remark @code Ts@endcode exists solely to lower the priority of this constructor (in overload resolution).
@@ -422,7 +430,8 @@ namespace utils {
         }
         constexpr underlying_type& to_underlying() noexcept { return under_; }
         constexpr underlying_type to_underlying() const noexcept { return under_; }
-        /// Conversion to integer-like type @code T@endcode.
+        /// @brief Conversion to integer-like type @code T@endcode.
+        ///
         /// Explicit if @code underlying_type@endcode is not @code lossless_convertible_to@endcode @code T@endcode.
         template <typename T>
         requires (!tagged<T, integer_tag>)

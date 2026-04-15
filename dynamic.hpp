@@ -74,8 +74,9 @@
 #define UTILS_DYN_NO_ARR_ERR_MSG "array support for dptr disabled [UTILS_DYN_NO_ARR]"
 
 namespace utils {
-    /// Thin wrapper around a void pointer that acts like a @code this@endcode pointer,
-    /// which allows the @code dyn_method@endcode template to specialize for non-static dynamic methods.
+    /// @brief Thin wrapper around a void pointer that acts like a @code this@endcode pointer.
+    ///
+    /// This class allows the @code dyn_method@endcode template to specialize for non-static dynamic methods.
     /// Must be used in non-static dynamic methods and as the first parameter.
     template <type_qualifiers Q>
     class basic_obj_ptr {
@@ -111,7 +112,8 @@ namespace utils {
             constexpr operator function_type*() const noexcept { return func_; }
         };
     }
-    /// This is a thin wrapper around a pointer to a dynamic method.
+    /// @brief A thin wrapper around a pointer to a dynamic method.
+    ///
     /// This is preferred over raw pointers because it forces initialization,
     /// and is the only way to declare a non-static dynamic method.
     template <typename F>
@@ -170,7 +172,9 @@ namespace utils {
         }
     }
 
-    /// Fat pointer. Allows dynamic dispatch on (implementation) classes.
+    /// @brief Fat pointer.
+    ///
+    /// Allows dynamic dispatch on (implementation) classes.
     /// In other words, it makes sure the correct dynamic methods are called
     /// even if the stored object is of a derived class of @code T@endcode.
     template <tagged<implements_tag> T>
@@ -211,19 +215,26 @@ namespace utils {
 
     template <interface I>
     struct ivtable : I {
+        /// @brief A pointer to the destructor of the implementer.
+        ///
         /// For any implementer @code T@endcode of @code I@endcode and any (possibly cv-qualified) instance @code t@endcode of @code T@endcode,
         /// let @code D@endcode be @code ivtable<I>(t.vtable()).dtor@endcode.
         /// Then @code D((void*)&t)@endcode must perform the equivalent of @code t.~T()@endcode.
         void (* const dtor)(void*) noexcept;
 #ifndef UTILS_DYN_NO_ARR
+        /// @brief Size of implementer type.
+        ///
         /// @code size == sizeof(T)@endcode must be true.
         const integer_alias::size_t size;
+        /// @brief A pointer to the array destructor of the implementer.
+        ///
         /// Let @code arr@endcode be a dynamically allocated array of @code T@endcode,
         /// and @code DA@endcode be @code ivtable<I>(t.vtable()).arr_deleter@endcode.
         /// Then @code DA((void*)arr)@endcode must perform the equivalent of @code delete[] arr@endcode.
         void (* const arr_deleter)(void*) noexcept;
 #endif
     };
+    /// @brief A composition class which glues multiple @code ivtable@endcode-s together.
     template <interface... Is>
     struct vtable : ivtable<Is>... {
         constexpr vtable(Is... interfaces, void (*dtor)(void*) noexcept
@@ -242,7 +253,8 @@ namespace utils {
 #endif
     };
 
-    /// Denotes an implementer of each of @code Is@endcode.
+    /// @brief Denotes an implementer of each of @code Is@endcode.
+    ///
     /// A child class @code T@endcode (of @code implements@endcode) is valid iff:
     /// 1. The inheritance is public.
     /// 2. For a (possibly cv-qualified) instance @code t@endcode of @code T@endcode,
@@ -260,6 +272,8 @@ namespace utils {
         }
     };
 
+    /// @brief Convenience macro for defining a class that implements one or more interfaces.
+    ///
     /// Hides boilerplate for setting up the @code vtable()@endcode method as specified in @code implements@endcode.
     /// It finds the current class by using the UTILS_FIND_SELF macro, so the rules of the macro apply.
     /// Pairs with @code UTILS_DYN_END@endcode.
@@ -297,6 +311,8 @@ namespace utils {
     /// where it also has to destroy the underlying object, which is optional here.
     template <typename T>
     concept deleter = is_tagged_v<deleter_tag, T> && std::is_destructible_v<T>;
+    /// @brief Convenience wrapper class
+    ///
     /// A convenience wrapper class that
     /// 1. provides @code deleter_tag@endcode,
     /// 2. generates constructors that accepts a reference to an incomplete @code dptr@endcode in the first argument from
@@ -481,23 +497,29 @@ namespace utils {
         template <detail::dptr_first V, interface... Vs>
         friend class dptr;
     public:
-        /** \defgroup @code dptr@endcode constructors
+        /** \defgroup Constructors
          * @param args: arguments forwarded to @code deleter_@endcode succeeding a const reference to dptr
          * (i.e. deleter_ is constructed with (const dptr&, std::forward(args)...))
          * @{
          */
+        /// @brief Default constructor.
+        ///
         /// Initializes @code ptr_@endcode with @code nullptr@endcode.
         template <typename... Args>
         requires (std::is_constructible_v<deleter_type, const dptr&, Args...>)
         constexpr dptr(Args&&... args)
         noexcept(std::is_nothrow_constructible_v<deleter_type, const dptr&, Args...>) :
             deleter_(std::as_const(*this), std::forward<Args>(args)...) {}
+        /// @brief @code nullptr@endcode constructor.
+        ///
         /// Initializes @code ptr_@endcode with @code nullptr@endcode.
         template <typename... Args>
         requires (std::is_constructible_v<deleter_type, const dptr&, Args...>)
         constexpr dptr(std::nullptr_t, Args&&... args)
         noexcept(std::is_nothrow_constructible_v<deleter_type, const dptr&, Args...>) :
             deleter_(std::as_const(*this), std::forward<Args>(args)...) {}
+        /// @brief Pointer constructor.
+        ///
         /// Initializes @code ptr_@endcode with @code ptr@endcode.
         /// Then fills @code ivtables_@endcode with pointers to the required @code ivtable@endcodes from @code ptr->vtable()@endcode.
         template <detail::dptr_compatible<dptr> T, typename... Args>
@@ -506,19 +528,22 @@ namespace utils {
         noexcept(std::is_nothrow_constructible_v<deleter_type, const dptr&, Args...>) :
             ptr_(ptr), ivtables_(extract_ivtables(std::addressof(ptr->vtable()))),
             deleter_(std::as_const(*this), std::forward<Args>(args)...) {}
-        /// Same as the default copy constructor.
+        /// @brief Default copy constructor.
         constexpr dptr(const dptr& other)
         noexcept(std::is_nothrow_constructible_v<deleter_type, const dptr&, const deleter_type&>)
         requires(ownership != unique && std::is_constructible_v<deleter_type, const dptr&, const deleter_type&>) :
             ptr_(other.ptr_), ivtables_(other.ivtables_), deleter_(std::as_const(*this), other.deleter_) {}
-        /// Same as the default move constructor, but also sets @code other.ptr_@endcode to @code nullptr@endcode.
+        /// @brief Default move constructor.
+        ///
+        /// Also sets @code other.ptr_@endcode to @code nullptr@endcode.
         constexpr dptr(dptr&& other)
         noexcept(std::is_nothrow_constructible_v<deleter_type, const dptr&, deleter_type&&>)
         requires (std::is_constructible_v<deleter_type, const dptr&, deleter_type&&>) :
             ptr_(other.ptr_), ivtables_(other.ivtables_), deleter_(std::as_const(*this), std::move(other.deleter_)) {
             other.quick_reset();
         }
-        /// Construction from a @code dptr@endcode with a stricter interface.
+        /// @brief Construction from a @code dptr@endcode with a stricter interface.
+        ///
         /// Copies @code ptr_@endcode and the required subset of @code ivtables_@endcode from @code other@endcode.
         /// After that, moves/copies deleter from @code other@endcode to @code *this@endcode.
         /// If @code other@endcode is moved from, @code other.ptr_@endcode is set to @code nullptr@endcode.
@@ -537,7 +562,8 @@ namespace utils {
             deleter_(std::as_const(*this), std::forward<D>(other.deleter_)) {
             if constexpr (DT::ownership != borrowed && !std::is_lvalue_reference_v<T>) other.quick_reset();
         }
-        /// Construction from a @code dptr@endcode with a stricter interface, while constructing a separate deleter.
+        /// @brief Construction from a @code dptr@endcode with a stricter interface, while constructing a separate deleter.
+        ///
         /// Copies @code ptr_@endcode and the required subset of @code ivtables_@endcode from @code other@endcode.
         /// If @code other@endcode is moved from, @code other.ptr_@endcode is set to @code nullptr@endcode.
         template <tagged<dptr_tag> T, typename DT = std::remove_cvref_t<T>, typename... Args>
@@ -555,7 +581,7 @@ namespace utils {
         }
         /**@}*/
 
-        /** \defgroup @code dptr@endcode destructors
+        /** \defgroup Destructors
          * Calls @code destroy_and_delete()@endcode if @code ownership@endcode is not @code borrowed@endcode and @code ptr_@endcode is not null.
          * @{
          */
@@ -565,7 +591,12 @@ namespace utils {
         }
         /**@}*/
 
-        /// Copy assignment operator. Not available if @code ownership@endcode is @code unique@endcode.
+        /** \defgroup Assignment Operators
+         * @{
+         */
+        /// @brief Copy assignment operator.
+        ///
+        /// Not available if @code ownership@endcode is @code unique@endcode.
         /// When @code ownership@endcode is not @code borrowed@endcode,
         /// calls @code destroy_and_delete()@endcode beforehand if @code ptr_@endcode is not @code nullptr@endcode.
         constexpr dptr& operator=(const dptr& other)
@@ -580,7 +611,8 @@ namespace utils {
             deleter_.assign(std::as_const(*this), other.deleter_);
             return *this;
         }
-        /// Move assignment operator.
+        /// @brief Move assignment operator.
+        ///
         /// When @code ownership@endcode is not borrowed,
         /// calls @code destroy_and_delete()@endcode beforehand and sets @code other.ptr_@endcode to @code nullptr@endcode afterwards.
         constexpr dptr& operator=(dptr&& other)
@@ -595,6 +627,8 @@ namespace utils {
             other.quick_reset();
             return *this;
         }
+        /// @brief Copy assignment from a @code dptr@endcode with a stricter interface.
+        ///
         /// If the pointer is not borrowed and @code ptr_@endcode is not @code nullptr@endcode, calls @code destroy_and_delete()@endcode.
         /// Then, sets @code ptr_@endcode to @code ptr@endcode,
         /// and fills @code ivtables_@endcode with pointers to the required @code ivtable@endcodes from @code ptr->vtable()@endcode.
@@ -604,6 +638,8 @@ namespace utils {
             fill_ivtables(ivtables_, std::addressof(ptr->vtable()));
             return *this;
         }
+        /// @brief Move assignment from a @code dptr@endcode with a stricter interface.
+        ///
         /// If the pointer is not borrowed and @code ptr_@endcode is not @code nullptr@endcode, calls @code destroy_and_delete()@endcode.
         /// Then, copies @code ptr_@endcode and the required subset of @code ivtables_@endcode from @code other@endcode,
         /// and copies/moves the deleter from @code other@endcode.
@@ -626,15 +662,16 @@ namespace utils {
             if constexpr (DT::ownership != borrowed && !std::is_lvalue_reference_v<T>) other.quick_reset();
             return *this;
         }
+        /** @}*/
 
         constexpr bool operator==(const dptr& other) const noexcept { return ptr_ == other.ptr_; }
         constexpr auto operator<=>(const dptr& other) const noexcept { return ptr_ <=> other.ptr_; }
         constexpr explicit operator bool() const noexcept { return ptr_ != nullptr; }
-        /// Returns the pointer.
+        /// @brief Returns the pointer.
         constexpr base_type get() const noexcept { return ptr_; }
-        /// Returns a copy of @code ivtables_@endcode.
+        /// @brief Returns a copy of @code ivtables_@endcode.
         constexpr ivtable_pointer_types get_ivtables() const noexcept { return ivtables_; }
-        /// Returns a reference to the deleter.
+        /// @brief Returns a reference to the deleter.
         /// @{
         constexpr deleter_type& get_deleter() noexcept { return deleter_; }
         constexpr const deleter_type& get_deleter() const noexcept { return deleter_; }
@@ -645,7 +682,9 @@ namespace utils {
         constexpr decltype(auto) operator[](T V::* mptr) const noexcept {
             return detail::bind_dyn(ptr_, std::get<const ivtable<V>*>(ivtables_)->*mptr);
         }
-        /// Pointer arithmetic. Only enabled if the underlying object is an array (i.e. if @code is_array@endcode is true).
+        /// @brief Pointer arithmetic.
+        ///
+        /// Only enabled if the underlying object is an array (i.e. if @code is_array@endcode is true).
         /// @note Let @code T@endcode be the type of the underlying object.
         /// UB occurs if performing @code (T*)ptr_ + idx@endcode leads to UB.
         constexpr auto operator+(integer_alias::size_t idx) const noexcept
@@ -666,7 +705,8 @@ namespace utils {
             std::swap(ivtables_, other.ivtables_);
             std::swap(deleter_, other.deleter_);
         }
-        /// Destroy the underlying object (but does not call deleter on @code ptr_@endcode).
+        /// @brief Destroy the underlying object (but does not call deleter on @code ptr_@endcode).
+        ///
         /// UB if @code ptr_ == nullptr@endcode.
         /// Using the destroyed object (which occurs if you call a non-static @code dyn_method@endcode) afterwards is UB.
         /// @remark Dangerous operation, as destroying an object twice is UB.
@@ -678,7 +718,8 @@ namespace utils {
         constexpr void destroy() const noexcept requires (!is_array) {
             std::get<0>(ivtables_)->dtor(const_cast<void*>(ptr_));
         }
-        /// Destroy the underlying object and delete @code ptr_@endcode using @code deleter_@endcode, before setting it to @code nullptr@endcode.
+        /// @brief Destroy the underlying object and delete @code ptr_@endcode using @code deleter_@endcode, before setting it to @code nullptr@endcode.
+        ///
         /// UB if @code ptr_ == nullptr@endcode.
         /// Usual UB rules apply for deleted pointers.
         /// In particular, all pointers pointing at the original @code ptr_@endcode become dangling.
@@ -695,7 +736,7 @@ namespace utils {
             ptr_ = nullptr;
         }
         /// @}
-        /// Releases ownership of @code ptr_@endcode and returns it.
+        /// @brief Releases ownership of @code ptr_@endcode and returns it.
         /// @note This only sets @code ptr_@endcode to @code nullptr@endcode and does not call @code destroy()@endcode,
         /// even if the pointer is owning.
         constexpr base_type release() noexcept {
@@ -703,23 +744,23 @@ namespace utils {
             ptr_ = nullptr;
             return ptr;
         }
-        /// Equivalent to @code operator=(ptr)@endcode.
+        /// @brief Equivalent to @code operator=(ptr)@endcode.
         template <detail::dptr_compatible<dptr> T>
         constexpr void reset(T* ptr) noexcept { operator=(ptr); }
-        /// Equivalent to @code operator=(nullptr)@endcode.
+        /// @brief Equivalent to @code operator=(nullptr)@endcode.
         constexpr void reset(std::nullptr_t = nullptr) noexcept { operator=(nullptr); }
-        /// Returns an equivalent @code dptr@endcode with the deleter replaced by@code deleter@endcode.
+        /// @brief Returns an equivalent @code dptr@endcode with the deleter replaced by@code deleter@endcode.
         template <deleter Deleter>
         constexpr rebind_deleter_type<Deleter> rebind_deleter(auto&&... args) const
         noexcept(std::is_nothrow_constructible_v<Deleter, const rebind_deleter_type<Deleter>&, decltype(args)...>)
         requires (std::is_constructible_v<Deleter, const rebind_deleter_type<Deleter>&, decltype(args)...>) {
             return {ptr_, ivtables_, std::forward<decltype(args)>(args)...};
         }
-        /// Returns an equivalent @code dptr@endcode with the default deleter.
+        /// @brief Returns an equivalent @code dptr@endcode with the default deleter.
         constexpr remove_deleter_type remove_deleter() const noexcept { return {ptr_, ivtables_}; }
     };
 
-    /// @brief an owning (RAII) version of @code dptr@endcode
+    /// @brief An owning (RAII) version of @code dptr@endcode
     template <detail::dptr_first I, interface... Is>
     requires (!std::is_reference_v<I>)
     class unique_dptr : public dptr<I&, Is...> {

@@ -2,7 +2,6 @@
 #include <string_view>
 #include <stdexcept>
 #include <algorithm>
-#include <exception>
 #include <format>
 #include "type.hpp"
 #include "integer.hpp"
@@ -182,7 +181,7 @@ namespace utils {
         };
     }
 
-    /// Identical interface to @code std::basic_string_view@endcode,
+    /// @brief Identical interface to @code std::basic_string_view@endcode,
     /// except that this class can only be constructed at compile time,
     /// thus ensuring that it refers to a "static string".
     /// @remark @code data_@endcode and @code size_@endcode are public to make this a structural type,
@@ -224,8 +223,9 @@ namespace utils {
     using u16static_string_view = basic_static_string_view<char16_t>;
     using u32static_string_view = basic_static_string_view<char32_t>;
 
-    /// This class represents an owning string defined at compile time.
-    /// It implements a subset of the interface of @code std::basic_string@endcode,
+    /// @brief An owning string defined at compile time.
+    ///
+    /// This class implements a subset of the interface of @code std::basic_string@endcode,
     /// excluding members that would require the string to be resizable.
     /// In addition, all modifying operations are consteval,
     /// maintaining the variant that the class is immutable at runtime.

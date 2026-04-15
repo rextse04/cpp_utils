@@ -2,6 +2,13 @@
 #include <ranges>
 #include <iterator>
 
+/**
+ * @file
+ *
+ * This files implements concepts and utilities for working with containers and ranges,
+ * most of them are defined in the C++ standard but not available as publicly accessible artifacts.
+ */
+
 namespace utils {
     namespace ranges = std::ranges;
     namespace views = std::ranges::views;

@@ -4,6 +4,9 @@
 #include "exception.hpp"
 
 namespace utils::meta {
+/// @deprecated Use C++26 reflection.
+/// @brief A macro for retrieving the current class.
+///
 /// This macro stores the innermost class @code Self@endcode enclosing the current context into
 /// @code meta::const_var<utils_find_self_result_>@endcode (the type of the value being @code std::type_identity<Self>@endcode).
 ///
@@ -16,6 +19,7 @@ namespace utils::meta {
         throw utils::compile_error(\
             "You are not supposed to call this method. See the documentation for UTILS_FIND_SELF.");\
     }
-/// Retrieves the type found by @code UTILS_FIND_SELF@endcode.
+/// @deprecated Use C++26 reflection.
+/// @brief Retrieves the type found by @code UTILS_FIND_SELF@endcode.
 #define UTILS_FIND_SELF_TYPE typename decltype(get(utils::meta::const_var<utils_find_self_result_>{}))::type
 }

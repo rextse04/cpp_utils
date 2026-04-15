@@ -3,6 +3,7 @@
 #include <type_traits>
 
 namespace utils {
+    /// @brief Owns a set of callables and dispatches calls to the first one that matches the arguments.
     template <typename... Fs>
     class visitor {
     private:
@@ -34,7 +35,6 @@ namespace utils {
             return std::get<Match>(fs_)(std::forward<Ts>(ts)...);
         }
     };
-
     template <typename... Gs>
     visitor(Gs&&...) -> visitor<std::decay_t<Gs>...>;
 }
