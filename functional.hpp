@@ -160,6 +160,31 @@ namespace utils {
     };
 
     template <typename T>
+    struct default_construct {
+        static constexpr T operator()() { return T(); }
+    };
+
+    template <typename T = void>
+    struct copy_construct {
+        static constexpr T operator()(const T& obj) { return T(obj); }
+    };
+    template <>
+    struct copy_construct<> {
+        template <typename T>
+        static constexpr T operator()(const T& obj) { return T(obj); }
+    };
+
+    template <typename T = void>
+    struct move_construct {
+        static constexpr T operator()(T&& obj) { return T(std::move(obj)); }
+    };
+    template <>
+    struct move_construct<> {
+        template <typename T>
+        static constexpr T operator()(T&& obj) { return T(std::move(obj)); }
+    };
+
+    template <typename T>
     struct function_decay;
     template <typename T>
     requires requires {

@@ -51,6 +51,16 @@ namespace utils::meta {
     using pack_t = pack<Ts...>::type;
     /// @}
 
+    /// @brief Wraps a parameter pack into a tuple type, unless exactly one tuple is given.
+    /// @{
+    template <typename... Ts>
+    struct smart_pack { using type = std::tuple<Ts...>; };
+    template <typename... Ts>
+    struct smart_pack<std::tuple<Ts...>> { using type = std::tuple<Ts...>; };
+    template <typename... Ts>
+    using smart_pack_t = smart_pack<Ts...>::type;
+    /// @}
+
     namespace detail {
         template <typename T, typename IdxSeq>
         struct make_tuple;
@@ -181,7 +191,8 @@ namespace utils::meta {
 
     /// @{
     /// @brief Converts an @code ErasedResult@endcode to a @code Result@endcode.
-    /// @remark If @code ErasedResult@endcode has a @code type@endcode member, that is returned; otherwise, @code ErasedResult@endcode itself is returned.
+    /// @remark If @code ErasedResult@endcode has a @code type@endcode member, that is returned;
+    /// otherwise, @code ErasedResult@endcode itself is returned.
     template <typename ErasedResult>
     struct infer {
         using type = std::conditional_t<requires { typename ErasedResult::type; },

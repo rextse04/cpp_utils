@@ -95,7 +95,6 @@ namespace utils {
             using type = std::integer_sequence<T, F(Ns)...>;
         };
     }
-
     /// @{
     /// @brief Creates an integer sequence with custom Begin and Step values.
     /// @tparam T The underlying integer type for the sequence.
@@ -162,6 +161,16 @@ namespace utils {
     template <typename T>
     concept integer_like = std::numeric_limits<T>::is_integer && std::is_integral_v<make_fundamental_t<T>>;
 
+    namespace detail {
+        template <typename B>
+        concept boolean_testable_impl = std::convertible_to<B, bool>;
+    }
+    /// @brief C++ standard exposition-only concept: <i>boolean-testable</i>.
+    template <typename B>
+    concept boolean_testable = detail::boolean_testable_impl<B> && requires (B&& b) {
+        { !std::forward<B>(b) } -> detail::boolean_testable_impl;
+    };
+
     /// @brief A class that cannot be copied or moved.
     /// @remark Useful as a base class for types that should only be used by reference or unique ownership.
     struct stale_class {
@@ -173,7 +182,7 @@ namespace utils {
     };
 
     /// @brief A key type that can only be constructed by specified friend types.
-    /// @tparam Ts The friend types that can construct instances of this key (C++20 variadic friends).
+    /// @tparam Ts The friend types that can construct instances of this key (C++26 variadic friends).
     /// @remark When __cpp_variadic_friend is not supported, only a single template parameter @code T@endcode is used.
     /// @remark Useful for controlled access to private or protected constructors.
 #ifdef __cpp_variadic_friend
@@ -235,4 +244,16 @@ namespace utils {
     template <typename T>
     constexpr const volatile T* as_cv_ptr(T* ptr) noexcept { return ptr; }
     /// @}
+
+    /// @brief Returns a reference to @code u@endcode, which has similar properties to @code T@endcode.
+    ///
+    /// Behaves like @code std::forward_like@endcode, except when @code T@endcode is not a reference,
+    /// it returns an lvalue reference instead of an rvalue reference.
+    /// This is useful for forwarding generic member variables of classes.
+    template <typename T, typename U>
+    constexpr auto&& forward_stored(U&& u) noexcept {
+        constexpr auto q = qualifiers_of_v<T>;
+        if (std::is_rvalue_reference_v<T>) return static_cast<apply_qualifiers_t<U&&, q>>(u);
+        else return static_cast<apply_qualifiers_t<U&, q>>(u);
+    }
 }
