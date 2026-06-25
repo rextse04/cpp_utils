@@ -1,13 +1,10 @@
 var searchData=
 [
-  ['dptr_5fcompatible_0',['dptr_compatible',['../conceptutils_1_1detail_1_1dptr__compatible.html',1,'utils::detail']]],
-  ['equiv_5fto_1',['equiv_to',['../conceptutils_1_1equiv__to.html',1,'utils']]],
-  ['implemented_2',['implemented',['../conceptutils_1_1implemented.html',1,'utils']]],
-  ['integer_5flike_3',['integer_like',['../conceptutils_1_1integer__like.html',1,'utils']]],
-  ['interface_4',['interface',['../conceptutils_1_1interface.html',1,'utils']]],
-  ['lossless_5fconvertible_5fto_5',['lossless_convertible_to',['../conceptutils_1_1lossless__convertible__to.html',1,'utils']]],
-  ['pair_5flike_6',['pair_like',['../conceptutils_1_1meta_1_1pair__like.html',1,'utils::meta']]],
-  ['same_5fsign_5fas_7',['same_sign_as',['../conceptutils_1_1same__sign__as.html',1,'utils']]],
-  ['tagged_8',['tagged',['../conceptutils_1_1tagged.html',1,'utils']]],
-  ['tuple_5flike_9',['tuple_like',['../conceptutils_1_1meta_1_1tuple__like.html',1,'utils::meta']]]
+  ['appendable_5fcontainer_0',['appendable_container',['../conceptutils_1_1appendable__container.html',1,'utils']]],
+  ['can_5freference_1',['can_reference',['../conceptutils_1_1detail_1_1can__reference.html',1,'utils::detail']]],
+  ['container_5fcompatible_5fiterator_2',['container_compatible_iterator',['../conceptutils_1_1container__compatible__iterator.html',1,'utils']]],
+  ['container_5fcompatible_5frange_3',['container_compatible_range',['../conceptutils_1_1container__compatible__range.html',1,'utils']]],
+  ['invoke_5fcapturable_4',['invoke_capturable',['../conceptutils_1_1detail_1_1invoke__capturable.html',1,'utils::detail']]],
+  ['move_5fincrementable_5',['move_incrementable',['../conceptutils_1_1detail_1_1move__incrementable.html',1,'utils::detail']]],
+  ['reservable_5fcontainer_6',['reservable_container',['../conceptutils_1_1reservable__container.html',1,'utils']]]
 ];

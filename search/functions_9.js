@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['max_0',['max',['../structutils_1_1trivial__semaphore.html#ab1df416403e0f66ed17cadf74c175f44',1,'utils::trivial_semaphore::max()'],['../structutils_1_1integer.html#a2b1c50a7329c398b161b31c853d13d57',1,'utils::integer::max()'],['../structstd_1_1numeric__limits_3_01T_01_4.html#a4ae3a6b204d60931f275fff5851d51f2',1,'std::numeric_limits&lt; T &gt;::max()']]],
-  ['max_5fsize_1',['max_size',['../structutils_1_1basic__static__string.html#acb905dfecd9ef109720e02d2d0ba39fa',1,'utils::basic_static_string']]],
-  ['min_2',['min',['../structutils_1_1integer.html#aefff8a3e6bf02fb1657d349f37845c94',1,'utils::integer::min()'],['../structstd_1_1numeric__limits_3_01T_01_4.html#af9a715dceaab535ce580015f5463827d',1,'std::numeric_limits&lt; T &gt;::min()']]]
+  ['what_0',['what',['../classutils_1_1compile__error.html#adde3523ba64fb2258aea1a8465807f8f',1,'utils::compile_error']]],
+  ['with_1',['with',['../structutils_1_1with.html#a7bf42d208e5f8e3909f69e0e152cf817',1,'utils::with::with(F func) noexcept'],['../structutils_1_1with.html#a9073329b3290a5c94e3520f9db4b2cff',1,'utils::with::with(G &amp;&amp;func)'],['../structutils_1_1with.html#a3c0bc757fc628b8fbabcf33bc5a15425',1,'utils::with::with(utils::arity&lt; Arity &gt;, F func) noexcept'],['../structutils_1_1with.html#a2c23fbf5807b7286e27d4c3fb3095357',1,'utils::with::with(utils::arity&lt; Arity &gt;, owning, G &amp;&amp;func)'],['../namespaceutils.html#aed4f05af8c7f6713f035d46368507ca9',1,'utils::with()']]]
 ];

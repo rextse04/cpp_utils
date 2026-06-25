@@ -90,17 +90,19 @@ $(document).ready(function(){initNavTree('self_8hpp_source.html',''); initResiza
 <a href="self_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="stateful__meta_8hpp.html">stateful_meta.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceutils_1_1meta.html">utils::meta</a> {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define UTILS_FIND_SELF\</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">    struct utils_find_self_result_;\</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">    consteval auto utils_find_self_()\</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">    -&gt; decltype(utils::meta::define&lt;utils_find_self_result_, std::type_identity&lt;std::remove_cvref_t&lt;decltype(*this)&gt;&gt;{}&gt;{}) {\</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">        throw &quot;You are not supposed to call this method. See the documentation for UTILS_FIND_SELF.&quot;</span>;\</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    }</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#define UTILS_FIND_SELF_TYPE typename decltype(get(utils::meta::const_var&lt;utils_find_self_result_&gt;{}))::type</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">}</span></div>
-<div class="ttc" id="anamespaceutils_1_1meta_html"><div class="ttname"><a href="namespaceutils_1_1meta.html">utils::meta</a></div><div class="ttdef"><b>Definition:</b> <a href="meta_8hpp_source.html#l00027">meta.hpp:27</a></div></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="exception_8hpp.html">exception.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span>utils::meta {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define UTILS_FIND_SELF\</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">    struct utils_find_self_result_;\</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">    consteval auto utils_find_self_()\</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">    -&gt; decltype(utils::meta::define&lt;utils_find_self_result_, std::type_identity&lt;std::remove_cvref_t&lt;decltype(*this)&gt;&gt;{}&gt;{}) {\</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">        throw utils::compile_error(\</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">            &quot;You are not supposed to call this method. See the documentation for UTILS_FIND_SELF.&quot;</span>);\</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define UTILS_FIND_SELF_TYPE typename decltype(get(utils::meta::const_var&lt;utils_find_self_result_&gt;{}))::type</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">}</span></div>
+<div class="ttc" id="aexception_8hpp_html"><div class="ttname"><a href="exception_8hpp.html">exception.hpp</a></div></div>
 <div class="ttc" id="astateful__meta_8hpp_html"><div class="ttname"><a href="stateful__meta_8hpp.html">stateful_meta.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

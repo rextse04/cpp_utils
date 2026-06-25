@@ -2,18 +2,13 @@ var concepts =
 [
     [ "utils", "namespaceutils.html", [
       [ "detail", "namespaceutils_1_1detail.html", [
-        [ "dptr_compatible", "conceptutils_1_1detail_1_1dptr__compatible.html", null ]
+        [ "can_reference", "conceptutils_1_1detail_1_1can__reference.html", null ],
+        [ "invoke_capturable", "conceptutils_1_1detail_1_1invoke__capturable.html", null ],
+        [ "move_incrementable", "conceptutils_1_1detail_1_1move__incrementable.html", null ]
       ] ],
-      [ "meta", "namespaceutils_1_1meta.html", [
-        [ "tuple_like", "conceptutils_1_1meta_1_1tuple__like.html", null ],
-        [ "pair_like", "conceptutils_1_1meta_1_1pair__like.html", null ]
-      ] ],
-      [ "interface", "conceptutils_1_1interface.html", null ],
-      [ "implemented", "conceptutils_1_1implemented.html", null ],
-      [ "lossless_convertible_to", "conceptutils_1_1lossless__convertible__to.html", null ],
-      [ "same_sign_as", "conceptutils_1_1same__sign__as.html", null ],
-      [ "equiv_to", "conceptutils_1_1equiv__to.html", null ],
-      [ "tagged", "conceptutils_1_1tagged.html", null ],
-      [ "integer_like", "conceptutils_1_1integer__like.html", null ]
+      [ "reservable_container", "conceptutils_1_1reservable__container.html", null ],
+      [ "appendable_container", "conceptutils_1_1appendable__container.html", null ],
+      [ "container_compatible_iterator", "conceptutils_1_1container__compatible__iterator.html", null ],
+      [ "container_compatible_range", "conceptutils_1_1container__compatible__range.html", null ]
     ] ]
 ];

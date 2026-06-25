@@ -84,11 +84,6 @@ $(document).ready(function(){initNavTree('concurrency_8hpp.html',''); initResiza
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">concurrency.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -99,81 +94,44 @@ $(document).ready(function(){initNavTree('concurrency_8hpp.html',''); initResiza
 <code>#include &lt;variant&gt;</code><br />
 <code>#include &lt;chrono&gt;</code><br />
 <code>#include &quot;<a class="el" href="integer_8hpp_source.html">integer.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="type_8hpp_source.html">type.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for concurrency.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="concurrency_8hpp__incl.png" border="0" usemap="#aconcurrency_8hpp" alt=""/></div>
 <map name="aconcurrency_8hpp" id="aconcurrency_8hpp">
-<area shape="rect" title=" " alt="" coords="538,5,654,32"/>
-<area shape="rect" title=" " alt="" coords="243,80,330,107"/>
-<area shape="rect" title=" " alt="" coords="354,80,411,107"/>
-<area shape="rect" title=" " alt="" coords="435,80,538,107"/>
-<area shape="rect" title=" " alt="" coords="563,80,629,107"/>
-<area shape="rect" title=" " alt="" coords="653,80,715,107"/>
-<area shape="rect" title=" " alt="" coords="739,80,800,107"/>
-<area shape="rect" href="integer_8hpp.html" title=" " alt="" coords="824,80,909,107"/>
-<area shape="rect" title=" " alt="" coords="5,155,80,181"/>
-<area shape="rect" title=" " alt="" coords="177,453,260,480"/>
-<area shape="rect" title=" " alt="" coords="725,379,779,405"/>
-<area shape="rect" title=" " alt="" coords="479,453,531,480"/>
-<area shape="rect" title=" " alt="" coords="905,155,973,181"/>
-<area shape="rect" title=" " alt="" coords="997,155,1075,181"/>
-<area shape="rect" title=" " alt="" coords="1100,155,1185,181"/>
-<area shape="rect" title=" " alt="" coords="1210,155,1249,181"/>
-<area shape="rect" title=" " alt="" coords="661,453,723,480"/>
-<area shape="rect" title=" " alt="" coords="805,453,870,480"/>
-<area shape="rect" title=" " alt="" coords="1273,155,1338,181"/>
-<area shape="rect" title=" " alt="" coords="1363,155,1432,181"/>
-<area shape="rect" title=" " alt="" coords="1456,155,1515,181"/>
-<area shape="rect" href="operators_8hpp.html" title=" " alt="" coords="399,155,499,181"/>
-<area shape="rect" href="type_8hpp.html" title=" " alt="" coords="507,304,578,331"/>
-<area shape="rect" title=" " alt="" coords="295,229,374,256"/>
-<area shape="rect" href="functional_8hpp.html" title=" " alt="" coords="398,229,501,256"/>
-<area shape="rect" title=" " alt="" coords="585,453,636,480"/>
-<area shape="rect" href="meta_8hpp.html" title=" " alt="" coords="627,379,701,405"/>
-<area shape="rect" href="bitmask_8hpp.html" title=" " alt="" coords="459,379,551,405"/>
+<area shape="rect" title=" " alt="" coords="344,5,460,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,92,107"/>
+<area shape="rect" title=" " alt="" coords="116,80,173,107"/>
+<area shape="rect" title=" " alt="" coords="197,80,300,107"/>
+<area shape="rect" title=" " alt="" coords="325,80,391,107"/>
+<area shape="rect" title=" " alt="" coords="415,80,477,107"/>
+<area shape="rect" title=" " alt="" coords="501,80,562,107"/>
+<area shape="rect" href="integer_8hpp.html" title=" " alt="" coords="1099,80,1185,107"/>
+<area shape="rect" href="type_8hpp.html" title="Type manipulation and qualification utilities for compile&#45;time type introspection and transformation." alt="" coords="721,304,792,331"/>
+<area shape="rect" title=" " alt="" coords="1778,155,1853,181"/>
+<area shape="rect" title=" " alt="" coords="417,453,499,480"/>
+<area shape="rect" title=" " alt="" coords="914,379,967,405"/>
+<area shape="rect" title=" " alt="" coords="733,453,785,480"/>
+<area shape="rect" title=" " alt="" coords="1144,155,1212,181"/>
+<area shape="rect" title=" " alt="" coords="1236,155,1315,181"/>
+<area shape="rect" title=" " alt="" coords="1339,155,1425,181"/>
+<area shape="rect" title=" " alt="" coords="1449,155,1488,181"/>
+<area shape="rect" title=" " alt="" coords="898,453,959,480"/>
+<area shape="rect" title=" " alt="" coords="1028,453,1093,480"/>
+<area shape="rect" title=" " alt="" coords="1512,155,1577,181"/>
+<area shape="rect" title=" " alt="" coords="1602,155,1671,181"/>
+<area shape="rect" title=" " alt="" coords="1695,155,1754,181"/>
+<area shape="rect" href="operators_8hpp.html" title=" " alt="" coords="688,155,788,181"/>
+<area shape="rect" title=" " alt="" coords="640,229,719,256"/>
+<area shape="rect" href="functional_8hpp.html" title=" " alt="" coords="459,229,561,256"/>
+<area shape="rect" title=" " alt="" coords="591,453,642,480"/>
+<area shape="rect" href="meta_8hpp.html" title=" " alt="" coords="647,379,722,405"/>
+<area shape="rect" href="bitmask_8hpp.html" title=" " alt="" coords="797,379,889,405"/>
 </map>
 </div>
 </div>
 <p><a href="concurrency_8hpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1unique__resource__sync__t.html">utils::unique_resource_sync_t</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1detail_1_1unique__resource__typedefs.html">utils::detail::unique_resource_typedefs&lt; Sync, SharedMutex &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1detail_1_1unique__resource__typedefs_3_01false_00_01SharedMutex_01_4.html">utils::detail::unique_resource_typedefs&lt; false, SharedMutex &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1unique__resource.html">utils::unique_resource&lt; T, Sync, Semaphore, SharedMutex &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1unique__resource_1_1permit__ptr.html">utils::unique_resource&lt; T, Sync, Semaphore, SharedMutex &gt;::permit_ptr&lt; Lock, Q &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A fancy pointer that holds a lock throughout its lifetime.  <a href="classutils_1_1unique__resource_1_1permit__ptr.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1unique__resource_1_1permit.html">utils::unique_resource&lt; T, Sync, Semaphore, SharedMutex &gt;::permit</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1trivial__semaphore.html">utils::trivial_semaphore</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A semaphore that does not do any counting. Used for disabling the semaphore in <code><a class="el" href="classutils_1_1unique__resource.html">unique_resource</a></code>.  <a href="structutils_1_1trivial__semaphore.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceutils"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html">utils</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceutils_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1detail.html">utils::detail</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a197cc51bcfc6c07cffed9890ac0f92e9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a197cc51bcfc6c07cffed9890ac0f92e9"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a197cc51bcfc6c07cffed9890ac0f92e9">utils::unique_resource</a> (unique_resource_sync_t, integer_alias::ptrdiff_t, T &amp;&amp;) -&gt; unique_resource&lt; std::remove_cvref_t&lt; T &gt;, true &gt;</td></tr>
-<tr class="separator:a197cc51bcfc6c07cffed9890ac0f92e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:aab7eb6fe43329d41b46fcfe6ba001dc8"><td class="memItemLeft" align="right" valign="top">constexpr struct <a class="el" href="structutils_1_1unique__resource__sync__t.html">utils::unique_resource_sync_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aab7eb6fe43329d41b46fcfe6ba001dc8">utils::unique_resource_sync</a></td></tr>
-<tr class="separator:aab7eb6fe43329d41b46fcfe6ba001dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

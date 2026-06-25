@@ -1,9 +1,10 @@
 <map id="type.hpp" name="type.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="155,5,225,32"/>
-<area shape="rect" id="node2" href="$dynamic_8hpp.html" title=" " alt="" coords="5,304,100,331"/>
-<area shape="rect" id="node3" href="$functional_8hpp.html" title=" " alt="" coords="49,80,152,107"/>
-<area shape="rect" id="node4" href="$operators_8hpp.html" title=" " alt="" coords="103,155,203,181"/>
-<area shape="rect" id="node5" href="$integer_8hpp.html" title=" " alt="" coords="130,229,215,256"/>
-<area shape="rect" id="node7" href="$math_8hpp.html" title=" " alt="" coords="278,80,353,107"/>
-<area shape="rect" id="node6" href="$concurrency_8hpp.html" title=" " alt="" coords="124,304,240,331"/>
+<area shape="rect" id="node1" title="Type manipulation and qualification utilities for compile&#45;time type introspection and transformation." alt="" coords="205,5,275,32"/>
+<area shape="rect" id="node2" href="$compare_8hpp.html" title=" " alt="" coords="5,80,101,107"/>
+<area shape="rect" id="node3" href="$concurrency_8hpp.html" title=" " alt="" coords="97,304,213,331"/>
+<area shape="rect" id="node4" href="$dynamic_8hpp.html" title=" " alt="" coords="251,304,346,331"/>
+<area shape="rect" id="node5" href="$functional_8hpp.html" title=" " alt="" coords="329,80,431,107"/>
+<area shape="rect" id="node6" href="$operators_8hpp.html" title=" " alt="" coords="278,155,378,181"/>
+<area shape="rect" id="node7" href="$integer_8hpp.html" title=" " alt="" coords="256,229,341,256"/>
+<area shape="rect" id="node8" href="$static__string_8hpp.html" title=" " alt="" coords="391,304,508,331"/>
 </map>

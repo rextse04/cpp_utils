@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['search_5fv_0',['search_v',['../namespaceutils_1_1meta.html#aeb4f807ff8f6a11b97c26fb852d91b16',1,'utils::meta']]],
-  ['size_1',['size',['../structutils_1_1ivtable.html#a5ee28ae5692b3df6b0bec661dc41e6c9',1,'utils::ivtable::size()'],['../structutils_1_1basic__static__string.html#ab710802591c17b7782f70c11ddb766e0',1,'utils::basic_static_string::size()']]],
-  ['subset_5fof_5fv_2',['subset_of_v',['../namespaceutils_1_1meta.html#ae9e1e125419fe26992d7565a1c7f2045',1,'utils::meta']]],
-  ['sum_5fv_3',['sum_v',['../namespaceutils_1_1meta.html#aa6f94b0098e74cddc4241037e2a90844',1,'utils::meta']]],
-  ['sync_4',['sync',['../classutils_1_1unique__resource.html#a5e196cbe677464c06715c5cf9b87cb6c',1,'utils::unique_resource']]]
+  ['value_0',['value',['../structutils_1_1detail_1_1arity__psum.html#af620c7aeb876fee272217423261a200d',1,'utils::detail::arity_psum::value()'],['../structutils_1_1detail_1_1arity__psum_3_01WrapsT_00_010_01_4.html#a176a18d6c960ec395fd5b57b8cbdbedd',1,'utils::detail::arity_psum&lt; WrapsT, 0 &gt;::value()']]],
+  ['variadic_1',['variadic',['../structutils_1_1detail_1_1arity__psum.html#a32f8419079e7991fb83569f13d31e335',1,'utils::detail::arity_psum::variadic()'],['../structutils_1_1detail_1_1arity__psum_3_01WrapsT_00_010_01_4.html#a6912961e08db58e1a153599ecbac9f73',1,'utils::detail::arity_psum&lt; WrapsT, 0 &gt;::variadic()']]]
 ];

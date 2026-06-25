@@ -85,22 +85,25 @@ $(document).ready(function(){initNavTree('self_8hpp.html',''); initResizable(); 
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">self.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;type_traits&gt;</code><br />
 <code>#include &quot;<a class="el" href="stateful__meta_8hpp_source.html">stateful_meta.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="exception_8hpp_source.html">exception.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for self.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="self_8hpp__incl.png" border="0" usemap="#aself_8hpp" alt=""/></div>
 <map name="aself_8hpp" id="aself_8hpp">
-<area shape="rect" title=" " alt="" coords="77,5,144,32"/>
+<area shape="rect" title=" " alt="" coords="141,5,208,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,88,107"/>
 <area shape="rect" href="stateful__meta_8hpp.html" title=" " alt="" coords="112,80,237,107"/>
+<area shape="rect" href="exception_8hpp.html" title=" " alt="" coords="261,80,363,107"/>
 <area shape="rect" title=" " alt="" coords="144,155,205,181"/>
+<area shape="rect" title=" " alt="" coords="251,155,328,181"/>
+<area shape="rect" title=" " alt="" coords="352,155,440,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -115,18 +118,11 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 <p><a href="self_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceutils"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html">utils</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceutils_1_1meta"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html">utils::meta</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a0fd91b8deec89b8d0a02352439b62ded"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="self_8hpp.html#a0fd91b8deec89b8d0a02352439b62ded">UTILS_FIND_SELF</a></td></tr>
 <tr class="separator:a0fd91b8deec89b8d0a02352439b62ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a379c3395d69445241a0099fdaf0e68de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="self_8hpp.html#a379c3395d69445241a0099fdaf0e68de">UTILS_FIND_SELF_TYPE</a>&#160;&#160;&#160;typename decltype(get(<a class="el" href="classutils_1_1meta_1_1const__var.html">utils::meta::const_var</a>&lt;utils_find_self_result_&gt;{}))::type</td></tr>
+<tr class="memitem:a379c3395d69445241a0099fdaf0e68de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="self_8hpp.html#a379c3395d69445241a0099fdaf0e68de">UTILS_FIND_SELF_TYPE</a>&#160;&#160;&#160;typename decltype(get(utils::meta::const_var&lt;utils_find_self_result_&gt;{}))::type</td></tr>
 <tr class="separator:a379c3395d69445241a0099fdaf0e68de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -143,10 +139,11 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">struct </span>utils_find_self_result_;\</div>
 <div class="line">    consteval <span class="keyword">auto</span> utils_find_self_()\</div>
-<div class="line">    -&gt; <span class="keyword">decltype</span>(<a class="code hl_class" href="classutils_1_1meta_1_1define.html">utils::meta::define</a>&lt;utils_find_self_result_, std::type_identity&lt;std::remove_cvref_t&lt;<span class="keyword">decltype</span>(*this)&gt;&gt;{}&gt;{}) {\</div>
-<div class="line">        throw <span class="stringliteral">&quot;You are not supposed to call this method. See the documentation for UTILS_FIND_SELF.&quot;</span>;\</div>
+<div class="line">    -&gt; <span class="keyword">decltype</span>(utils::meta::define&lt;utils_find_self_result_, std::type_identity&lt;std::remove_cvref_t&lt;<span class="keyword">decltype</span>(*this)&gt;&gt;{}&gt;{}) {\</div>
+<div class="line">        throw <a class="code hl_class" href="classutils_1_1compile__error.html">utils::compile_error</a>(\</div>
+<div class="line">            <span class="stringliteral">&quot;You are not supposed to call this method. See the documentation for UTILS_FIND_SELF.&quot;</span>);\</div>
 <div class="line">    }</div>
-<div class="ttc" id="aclassutils_1_1meta_1_1define_html"><div class="ttname"><a href="classutils_1_1meta_1_1define.html">utils::meta::define</a></div><div class="ttdoc">Declare a const-var by instantiating the template.</div><div class="ttdef"><b>Definition:</b> <a href="stateful__meta_8hpp_source.html#l00036">stateful_meta.hpp:36</a></div></div>
+<div class="ttc" id="aclassutils_1_1compile__error_html"><div class="ttname"><a href="classutils_1_1compile__error.html">utils::compile_error</a></div><div class="ttdef"><b>Definition:</b> <a href="exception_8hpp_source.html#l00006">exception.hpp:6</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -157,7 +154,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define UTILS_FIND_SELF_TYPE&#160;&#160;&#160;typename decltype(get(<a class="el" href="classutils_1_1meta_1_1const__var.html">utils::meta::const_var</a>&lt;utils_find_self_result_&gt;{}))::type</td>
+          <td class="memname">#define UTILS_FIND_SELF_TYPE&#160;&#160;&#160;typename decltype(get(utils::meta::const_var&lt;utils_find_self_result_&gt;{}))::type</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -105,14 +105,15 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="bitmask_8hpp__dep__incl.png" border="0" usemap="#abitmask_8hppdep" alt=""/></div>
 <map name="abitmask_8hppdep" id="abitmask_8hppdep">
-<area shape="rect" title=" " alt="" coords="144,5,236,32"/>
-<area shape="rect" href="type_8hpp.html" title=" " alt="" coords="155,80,225,107"/>
-<area shape="rect" href="dynamic_8hpp.html" title=" " alt="" coords="5,379,100,405"/>
-<area shape="rect" href="functional_8hpp.html" title=" " alt="" coords="49,155,152,181"/>
-<area shape="rect" href="operators_8hpp.html" title=" " alt="" coords="103,229,203,256"/>
-<area shape="rect" href="integer_8hpp.html" title=" " alt="" coords="130,304,215,331"/>
-<area shape="rect" href="math_8hpp.html" title=" " alt="" coords="278,155,353,181"/>
-<area shape="rect" href="concurrency_8hpp.html" title=" " alt="" coords="124,379,240,405"/>
+<area shape="rect" title=" " alt="" coords="194,5,286,32"/>
+<area shape="rect" href="type_8hpp.html" title="Type manipulation and qualification utilities for compile&#45;time type introspection and transformation." alt="" coords="205,80,275,107"/>
+<area shape="rect" href="compare_8hpp.html" title=" " alt="" coords="5,155,101,181"/>
+<area shape="rect" href="concurrency_8hpp.html" title=" " alt="" coords="97,379,213,405"/>
+<area shape="rect" href="dynamic_8hpp.html" title=" " alt="" coords="251,379,346,405"/>
+<area shape="rect" href="functional_8hpp.html" title=" " alt="" coords="329,155,431,181"/>
+<area shape="rect" href="operators_8hpp.html" title=" " alt="" coords="278,229,378,256"/>
+<area shape="rect" href="integer_8hpp.html" title=" " alt="" coords="256,304,341,331"/>
+<area shape="rect" href="static__string_8hpp.html" title=" " alt="" coords="391,379,508,405"/>
 </map>
 </div>
 </div>
@@ -145,7 +146,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">static_assert</span>(std::is_enum_v&lt;T&gt;, <span class="stringliteral">&quot;T must be an enumeration type&quot;</span>);\</div>
-<div class="line">    constexpr <span class="keyword">auto</span> <a class="code hl_function" href="namespaceutils.html#abac18518b5ba2dab3326801ff578a9ac">operator+</a>(T a) <span class="keyword">noexcept</span> {\</div>
+<div class="line">    constexpr <span class="keyword">auto</span> operator+(T a) <span class="keyword">noexcept</span> {\</div>
 <div class="line">        return std::to_underlying(a);\</div>
 <div class="line">    }\</div>
 <div class="line">    constexpr T operator|(T a, T b) <span class="keyword">noexcept</span> {\</div>
@@ -172,7 +173,6 @@ Macros</h2></td></tr>
 <div class="line">    constexpr <span class="keywordtype">bool</span> operator*(T a, T b) <span class="keyword">noexcept</span> {\</div>
 <div class="line">        return +a &amp; +b;\</div>
 <div class="line">    }</div>
-<div class="ttc" id="anamespaceutils_html_abac18518b5ba2dab3326801ff578a9ac"><div class="ttname"><a href="namespaceutils.html#abac18518b5ba2dab3326801ff578a9ac">utils::operator+</a></div><div class="ttdeci">constexpr T * operator+(T *ptr, lossless_convertible_to&lt; std::ptrdiff_t &gt; auto offset) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="integer_8hpp_source.html#l00450">integer.hpp:450</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="bitmask_8hpp_source.html#l00005">5</a> of file <a class="el" href="bitmask_8hpp_source.html">bitmask.hpp</a>.</p>
 

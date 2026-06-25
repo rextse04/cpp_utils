@@ -84,10 +84,6 @@ $(document).ready(function(){initNavTree('stateful__meta_8hpp.html',''); initRes
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">stateful_meta.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -113,52 +109,31 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 </div>
 <p><a href="stateful__meta_8hpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1meta_1_1const__var.html">utils::meta::const_var&lt; Var &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1meta_1_1define.html">utils::meta::define&lt; Var, Value &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declare a <code>const-var</code> by instantiating the template.  <a href="classutils_1_1meta_1_1define.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1meta_1_1var.html">utils::meta::var&lt; Var, Version &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceutils"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html">utils</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceutils_1_1meta"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html">utils::meta</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceutils_1_1meta_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta_1_1detail.html">utils::meta::detail</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a663523ca9759fbbba5c59040d339416c"><td class="memTemplParams" colspan="2">template&lt;typename Var , auto  = get(utils::meta::const_var&lt;Var&gt;{})&gt; </td></tr>
-<tr class="memitem:a663523ca9759fbbba5c59040d339416c"><td class="memTemplItemLeft" align="right" valign="top">consteval bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#a663523ca9759fbbba5c59040d339416c">utils::meta::exists</a> (const_var&lt; Var &gt;)</td></tr>
-<tr class="memdesc:a663523ca9759fbbba5c59040d339416c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the existence of a <code><a class="el" href="classutils_1_1meta_1_1const__var.html">const_var</a></code>.  <a href="namespaceutils_1_1meta.html#a663523ca9759fbbba5c59040d339416c">More...</a><br /></td></tr>
-<tr class="separator:a663523ca9759fbbba5c59040d339416c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ecd2bb074afc4484c62aa40fb97ac97"><td class="memItemLeft" align="right" valign="top">consteval bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#a7ecd2bb074afc4484c62aa40fb97ac97">utils::meta::exists</a> (...)</td></tr>
-<tr class="memdesc:a7ecd2bb074afc4484c62aa40fb97ac97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fallback.  <a href="namespaceutils_1_1meta.html#a7ecd2bb074afc4484c62aa40fb97ac97">More...</a><br /></td></tr>
-<tr class="separator:a7ecd2bb074afc4484c62aa40fb97ac97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad02c270667465805004b1f692dfb6cf0"><td class="memTemplParams" colspan="2">template&lt;typename Var  = void, bool Increment = false, std::uintmax_t Value = 0, typename Id  = decltype([]{})&gt; </td></tr>
-<tr class="memitem:ad02c270667465805004b1f692dfb6cf0"><td class="memTemplItemLeft" align="right" valign="top">consteval std::uintmax_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#ad02c270667465805004b1f692dfb6cf0">utils::meta::get_counter</a> ()</td></tr>
-<tr class="separator:ad02c270667465805004b1f692dfb6cf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This file contains utilities that enable stateful metaprogramming, which allows you to make compile-time <b>modifiable</b> variables. This is done via a technique called "friend injection".</p>
-<p >In this file, compile-time variables are named by types. That is, such variables are defined, accessed and modified via the types they are associated with. Note that you are allowed to use the same type to name variables of different categories. For example, you can define a <code>const_var&lt;T&gt;</code> and <code>&lt;i&gt;counter&lt;/i&gt;&lt;T&gt;</code> and they will be separate variables. There are three categories of variables: </p><table class="markdownTable">
+<p >In this file, compile-time variables are named by types. That is, such variables are defined, accessed and modified via the types they are associated with. Note that you are allowed to use the same type to name variables of different categories. For example, you can define a </p><div class="fragment"><div class="line">const_var&lt;T&gt;</div>
+</div><!-- fragment --><p> and </p><div class="fragment"><div class="line">&lt;i&gt;counter&lt;/i&gt;&lt;T&gt;</div>
+</div><!-- fragment --><p> and they will be separate variables. There are three categories of variables: </p><table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">Category   </th><th class="markdownTableHeadCenter">Written via   </th><th class="markdownTableHeadCenter">Read via   </th><th class="markdownTableHeadCenter">Remarks    </th></tr>
+<th class="markdownTableHeadNone">Category   </th><th class="markdownTableHeadNone">Written via   </th><th class="markdownTableHeadNone">Read via   </th><th class="markdownTableHeadNone">Remarks    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter"><code>const_var</code>   </td><td class="markdownTableBodyCenter"><code>define</code>   </td><td class="markdownTableBodyCenter"><code>get</code>   </td><td class="markdownTableBodyCenter">A <code>const_var</code> can only be written to once.    </td></tr>
+<td class="markdownTableBodyNone"><div class="fragment"><div class="line">const_var</div>
+</div><!-- fragment -->   </td><td class="markdownTableBodyNone"><div class="fragment"><div class="line">define</div>
+</div><!-- fragment -->   </td><td class="markdownTableBodyNone"><div class="fragment"><div class="line">get</div>
+</div><!-- fragment -->   </td><td class="markdownTableBodyNone">A <div class="fragment"><div class="line">const_var</div>
+</div><!-- fragment --> can only be written to once.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter"><pre><em>counter</em></pre>   </td><td class="markdownTableBodyCenter"><code>get_counter</code>   </td><td class="markdownTableBodyCenter"><code>get_counter</code>   </td><td class="markdownTableBodyCenter">There is no explicit struct for this category.    </td></tr>
+<td class="markdownTableBodyNone"><pre><em>counter</em></pre>   </td><td class="markdownTableBodyNone"><div class="fragment"><div class="line">get_counter</div>
+</div><!-- fragment -->   </td><td class="markdownTableBodyNone"><div class="fragment"><div class="line">get_counter</div>
+</div><!-- fragment -->   </td><td class="markdownTableBodyNone">There is no explicit struct for this category.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter"><code>var</code>   </td><td class="markdownTableBodyCenter"><code>set</code>   </td><td class="markdownTableBodyCenter"><code>get</code>   </td><td class="markdownTableBodyCenter"></td></tr>
+<td class="markdownTableBodyNone"><div class="fragment"><div class="line">var</div>
+</div><!-- fragment -->   </td><td class="markdownTableBodyNone"><div class="fragment"><div class="line">set</div>
+</div><!-- fragment -->   </td><td class="markdownTableBodyNone"><div class="fragment"><div class="line">get</div>
+</div><!-- fragment -->   </td><td class="markdownTableBodyNone"></td></tr>
 </table>
-<p >In the implementation, some structs may have <code>Id</code> as one of their template parameters. This is necessary to prevent the compiler from caching previous results. Do not fill in that parameter unless you know what you are doing. </p>
+<p >In the implementation, some structs may have </p><div class="fragment"><div class="line">Id</div>
+</div><!-- fragment --><p> as one of their template parameters. This is necessary to prevent the compiler from caching previous results. Do not fill in that parameter unless you know what you are doing. </p>
 
 <p class="definition">Definition in file <a class="el" href="stateful__meta_8hpp_source.html">stateful_meta.hpp</a>.</p>
 </div></div><!-- contents -->

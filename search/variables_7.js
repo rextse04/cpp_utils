@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['max_5falign_0',['max_align',['../namespaceutils.html#aa5a8569183721291e22c718a7927f05b',1,'utils']]]
+  ['negate_0',['negate',['../structutils_1_1sign__op__functors.html#a23b80421abc526261ddbd2b9789e44e1',1,'utils::sign_op_functors']]]
 ];

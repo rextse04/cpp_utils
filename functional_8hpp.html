@@ -108,7 +108,7 @@ Include dependency graph for functional.hpp:</div>
 <area shape="rect" title=" " alt="" coords="73,229,125,256"/>
 <area shape="rect" title=" " alt="" coords="463,229,514,256"/>
 <area shape="rect" title=" " alt="" coords="181,229,263,256"/>
-<area shape="rect" href="type_8hpp.html" title=" " alt="" coords="232,80,303,107"/>
+<area shape="rect" href="type_8hpp.html" title="Type manipulation and qualification utilities for compile&#45;time type introspection and transformation." alt="" coords="232,80,303,107"/>
 <area shape="rect" href="meta_8hpp.html" title=" " alt="" coords="369,155,443,181"/>
 <area shape="rect" title=" " alt="" coords="241,155,294,181"/>
 <area shape="rect" href="bitmask_8hpp.html" title=" " alt="" coords="23,155,115,181"/>
@@ -121,11 +121,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="functional_8hpp__dep__incl.png" border="0" usemap="#afunctional_8hppdep" alt=""/></div>
 <map name="afunctional_8hppdep" id="afunctional_8hppdep">
-<area shape="rect" title=" " alt="" coords="45,5,148,32"/>
+<area shape="rect" title=" " alt="" coords="65,5,168,32"/>
 <area shape="rect" href="dynamic_8hpp.html" title=" " alt="" coords="5,229,100,256"/>
-<area shape="rect" href="operators_8hpp.html" title=" " alt="" coords="91,80,191,107"/>
-<area shape="rect" href="integer_8hpp.html" title=" " alt="" coords="98,155,183,181"/>
+<area shape="rect" href="operators_8hpp.html" title=" " alt="" coords="121,80,221,107"/>
+<area shape="rect" href="integer_8hpp.html" title=" " alt="" coords="134,155,219,181"/>
 <area shape="rect" href="concurrency_8hpp.html" title=" " alt="" coords="124,229,240,256"/>
+<area shape="rect" href="static__string_8hpp.html" title=" " alt="" coords="265,229,382,256"/>
 </map>
 </div>
 </div>
@@ -172,6 +173,16 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1asg__wrap.html">utils::asg_wrap&lt; Op, T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1asg__wrap_3_01Op_00_01void_01_4.html">utils::asg_wrap&lt; Op, void &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1default__construct.html">utils::default_construct&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1copy__construct.html">utils::copy_construct&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1copy__construct_3_4.html">utils::copy_construct&lt;&gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1move__construct.html">utils::move_construct&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1move__construct_3_4.html">utils::move_construct&lt;&gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1function__decay_3_01T_01_4.html">utils::function_decay&lt; T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -329,7 +340,7 @@ Variables</h2></td></tr>
 <div class="line">    template &lt;<span class="keyword">typename</span> C, <span class="keyword">typename</span> R, <span class="keyword">typename</span>... Args&gt;\</div>
 <div class="line">    struct function_decay&lt;R(C::*)(Args...) qualifiers &amp;&amp; <span class="keyword">noexcept</span>&gt; { <span class="keyword">using</span> type = R(Args...); };</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="functional_8hpp_source.html#l00180">180</a> of file <a class="el" href="functional_8hpp_source.html">functional.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="functional_8hpp_source.html#l00205">205</a> of file <a class="el" href="functional_8hpp_source.html">functional.hpp</a>.</p>
 
 </div>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['qualifiers_5fof_0',['qualifiers_of',['../structutils_1_1qualifiers__of.html',1,'utils']]]
+  ['unary_5fop_5ftraits_0',['unary_op_traits',['../structutils_1_1unary__op__traits.html',1,'utils']]]
 ];
