@@ -1,0 +1,958 @@
+\hypertarget{segment__tree_8hpp_source}{}\doxysection{segment\+\_\+tree.\+hpp}
+\label{segment__tree_8hpp_source}\index{containers/segment\_tree.hpp@{containers/segment\_tree.hpp}}
+\mbox{\hyperlink{segment__tree_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#include <flat\_map>}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#include <concepts>}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <type\_traits>}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include <utility>}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00009}00009 \textcolor{preprocessor}{\#include <cstddef>}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00010}00010 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00011}00011 \textcolor{preprocessor}{\#include <bit>}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00012}00012 \textcolor{preprocessor}{\#include <initializer\_list>}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00013}00013 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00014}00014 \textcolor{preprocessor}{\#include <iterator>}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00015}00015 \textcolor{preprocessor}{\#include <array>}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00016}00016 \textcolor{preprocessor}{\#include <limits>}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00017}00017 \textcolor{preprocessor}{\#include <numeric>}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00018}00018 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{functional_8hpp}{functional.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00019}00019 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{memory_8hpp}{memory.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00020}00020 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ranges_8hpp}{ranges.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00021}00021 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{iterator_8hpp}{iterator.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00022}00022 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{interval_8hpp}{interval.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00023}00023 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{containers_2type_8hpp}{containers/type.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00024}00024 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{type_8hpp}{type.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00025}00025 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{compare_8hpp}{compare.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{swap_8hpp}{swap.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00028}00028 \textcolor{keyword}{namespace }utils::detail \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00029}00029     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Base>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00030}00030     \textcolor{keyword}{class }segment\_tree\_reference \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00031}00031     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00032}00032         Base\& base\_;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00033}00033         Base::size\_type node\_;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00034}00034     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00035}00035         \textcolor{keyword}{constexpr} segment\_tree\_reference(Base\& base, Base::size\_type idx) noexcept : base\_(base), node\_(idx) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00036}00036         \textcolor{keyword}{constexpr} \textcolor{keyword}{const} \textcolor{keyword}{typename} Base::key\_type\& key() const noexcept \{ \textcolor{keywordflow}{return} base\_.keys()[node\_]; \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00037}00037         \textcolor{keyword}{constexpr} \textcolor{keyword}{const} \textcolor{keyword}{typename} Base::mapped\_type\& value() const noexcept \{ \textcolor{keywordflow}{return} base\_.nodes()[node\_]; \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00038}00038         \textcolor{keyword}{constexpr} \textcolor{keyword}{operator} \textcolor{keyword}{const} \textcolor{keyword}{typename} Base::mapped\_type\&() \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \{ \textcolor{keywordflow}{return} base\_.nodes()[node\_]; \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00039}00039         \textcolor{keyword}{template} <\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00040}00040         \textcolor{keyword}{requires} (std::is\_assignable\_v<typename Base::mapped\_type\&, U\&\&>)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00041}00041         \textcolor{keyword}{constexpr} \textcolor{keyword}{const} segment\_tree\_reference\& \textcolor{keyword}{operator}=(U\&\& mapped) \textcolor{keyword}{const} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00042}00042             base\_.do\_assign(node\_, std::forward<U>(mapped));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00043}00043             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00044}00044         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00045}00045     \};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00046}00046     \textcolor{keyword}{template} <std::\textcolor{keywordtype}{size\_t} I, \textcolor{keyword}{typename} Base>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00047}00047     \textcolor{keyword}{constexpr} \textcolor{keyword}{auto}\&\& get(\textcolor{keyword}{const} segment\_tree\_reference<Base>\& ref) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00048}00048         \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (I == 0) \textcolor{keywordflow}{return} ref.key();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00049}00049         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (I == 1) \textcolor{keywordflow}{return} ref;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00050}00050     \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00051}00051     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} Base>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00052}00052     \textcolor{keyword}{constexpr} T get(\textcolor{keyword}{const} segment\_tree\_reference<Base>\& ref) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00053}00053         \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (std::is\_same\_v<T, const typename Base::key\_type\&>) \textcolor{keywordflow}{return} ref.key();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00054}00054         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (std::is\_same\_v<T, const segment\_tree\_reference<Base>\&>) \textcolor{keywordflow}{return} ref;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00055}00055     \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00056}00056 \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00057}00057 \textcolor{keyword}{template} <std::\textcolor{keywordtype}{size\_t} I, \textcolor{keyword}{typename} Base>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00058}00058 \textcolor{keyword}{struct }std::tuple\_element<I, \mbox{\hyperlink{namespaceutils}{utils}}::detail::segment\_tree\_reference<Base>> \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00059}00059     \textcolor{keyword}{using} type = \textcolor{keyword}{decltype}(get<I>(std::declval<utils::detail::segment\_tree\_reference<Base>>()));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00060}00060 \};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00061}00061 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Base>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00062}00062 \textcolor{keyword}{struct }std::tuple\_size<\mbox{\hyperlink{namespaceutils}{utils}}::detail::segment\_tree\_reference<Base>> : std::integral\_constant<std::size\_t, 2> \{\};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00064}00064 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutils}{utils}} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00065}00065     \textcolor{keyword}{namespace }detail \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00066}00066         \textcolor{keyword}{template} <\textcolor{keyword}{typename} F, \textcolor{keyword}{typename} T, \textcolor{keyword}{typename} Multiplier>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00067}00067         \textcolor{keyword}{concept }multiplies\_for = \textcolor{keyword}{requires} (\textcolor{keyword}{const} F\& multiplies, \textcolor{keyword}{const} T\& a, \textcolor{keyword}{const} Multiplier\& m) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00068}00068             \{ multiplies(a, m) \} -\/> std::convertible\_to<T>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00069}00069         \};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00070}00070     \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00073}00073     \textcolor{keyword}{inline} \textcolor{keyword}{constexpr} \textcolor{keyword}{struct }segment\_tree\_nodes\_t \{\} segment\_tree\_nodes;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00076}00076     \textcolor{keyword}{enum class} segment\_tree\_traverse\_direction \{ stop, left, right, both \};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00089}00089     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} ST>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00090}00090     \textcolor{keyword}{concept }segment\_tree\_traverser\_for = \textcolor{keyword}{requires} (T traverser, \textcolor{keyword}{const} ST\& st, \textcolor{keyword}{const} \textcolor{keyword}{typename} ST::node\_info\& info) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00091}00091         \{ traverser(st, info) \} -\/> std::convertible\_to<segment\_tree\_traverse\_direction>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00092}00092     \};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00109}00109     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} ST>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00110}00110     \textcolor{keyword}{concept }segment\_tree\_strategy\_for = \textcolor{keyword}{requires} (}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00111}00111         T strategy, \textcolor{keyword}{const} ST\& st, \textcolor{keyword}{const} \textcolor{keyword}{typename} ST::node\_info\& info,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00112}00112         \textcolor{keyword}{decltype}(strategy(st, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr})) V, \textcolor{keyword}{const} \textcolor{keyword}{decltype}(V)\& L, \textcolor{keyword}{const} \textcolor{keyword}{decltype}(V)\& R) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00113}00113         \{ strategy(st, \&info, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr}) \} -\/> std::same\_as<\textcolor{keyword}{decltype}(V)>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00114}00114         \{ strategy(st, \&info, \&L, \textcolor{keyword}{nullptr}) \} -\/> std::same\_as<\textcolor{keyword}{decltype}(V)>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00115}00115         \{ strategy(st, \&info, \textcolor{keyword}{nullptr}, \&R) \} -\/> std::same\_as<\textcolor{keyword}{decltype}(V)>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00116}00116         \{ strategy(st, \&info, \&L, \&R) \} -\/> std::same\_as<\textcolor{keyword}{decltype}(V)>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00117}00117     \};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00186}00186     \textcolor{keyword}{template} <}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00187}00187         \textcolor{keyword}{typename} Key, \textcolor{keyword}{typename} T,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00188}00188         std::copyable Compare = std::less<Key>,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00189}00189         std::copyable Sum = std::plus<T>,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00190}00190         std::copyable Identity = default\_construct<T>,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00191}00191         \textcolor{keyword}{typename} KeyContainer = std::vector<Key>, \textcolor{keyword}{typename} MappedContainer = std::vector<T>>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00192}00192     \textcolor{keyword}{requires} (}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00193}00193         std::strict\_weak\_order<Compare, const Key\&, const Key\&> \&\&}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00194}00194         \textcolor{keyword}{requires} (\textcolor{keyword}{const} Sum sum, \textcolor{keyword}{const} T\& mapped) \{ \{ sum(mapped, mapped) \} -\/> std::convertible\_to<T>; \} \&\&}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00195}00195         \textcolor{keyword}{requires} (\textcolor{keyword}{const} Identity identity) \{ \{ identity() \} -\/> std::convertible\_to<T>; \})}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00196}00196     \textcolor{keyword}{class} segment\_tree \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00197}00197         \textcolor{keyword}{using} \textcolor{keyword}{enum} segment\_tree\_traverse\_direction;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00198}00198     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00199}00199         \textcolor{keyword}{using} key\_container\_type = KeyContainer;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00200}00200         \textcolor{keyword}{using} mapped\_container\_type = MappedContainer;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00201}00201         \textcolor{keyword}{using} key\_type = Key;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00202}00202         \textcolor{keyword}{using} mapped\_type = T;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00203}00203         \textcolor{keyword}{using} value\_type = std::pair<key\_type, mapped\_type>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00204}00204         \textcolor{keyword}{using} key\_compare = Compare;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00205}00205         \textcolor{keyword}{using} mapped\_sum = Sum;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00206}00206         \textcolor{keyword}{using} mapped\_identity = Identity;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00207}00207         \textcolor{keyword}{using} size\_type = std::size\_t;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00208}00208         \textcolor{keyword}{using} difference\_type = std::ptrdiff\_t;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00209}00209         \textcolor{keyword}{using} reference = detail::segment\_tree\_reference<segment\_tree>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00210}00210         \textcolor{keyword}{using} const\_reference = std::pair<const Key\&, const T\&>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00211}00211         \textcolor{keyword}{using} update\_type = mapped\_container\_type;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00212}00212         \textcolor{keyword}{struct }containers \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00213}00213             key\_container\_type keys;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00214}00214             mapped\_container\_type values;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00215}00215         \};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00216}00216         \textcolor{keyword}{class }value\_compare \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00217}00217         \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00218}00218             key\_compare comp\_;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00219}00219 }
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00220}00220             \textcolor{keyword}{constexpr} value\_compare(\textcolor{keyword}{const} key\_compare\& comp) : comp\_(comp) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00221}00221         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00222}00222             \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} operator()(\textcolor{keyword}{const} value\_type\& lhs, \textcolor{keyword}{const} value\_type\& rhs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00223}00223                 \textcolor{keywordflow}{return} comp\_(lhs.first, rhs.first);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00224}00224             \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00225}00225         \};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00226}00226         \textcolor{keyword}{friend} reference;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00227}00227     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00228}00228         std::byte keys\_[\textcolor{keyword}{sizeof}(key\_container\_type)];}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00229}00229         std::byte nodes\_[\textcolor{keyword}{sizeof}(mapped\_container\_type)];}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00230}00230         std::array<size\_type, std::numeric\_limits<size\_type>::digits + 1> level\_offsets\_\{\};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00231}00231         \textcolor{keywordtype}{int} levels\_\{0\};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00232}00232         [[no\_unique\_address]] key\_compare comp\_\{\};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00233}00233         [[no\_unique\_address]] mapped\_sum sum\_\{\};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00234}00234         [[no\_unique\_address]] mapped\_identity identity\_\{\};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00235}00235 }
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00236}00236         \textcolor{keyword}{constexpr} key\_container\_type\& m\_keys() noexcept \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00237}00237             \textcolor{keywordflow}{return} *std::launder(\textcolor{keyword}{reinterpret\_cast<}key\_container\_type*\textcolor{keyword}{>}(keys\_));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00238}00238         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00239}00239         \textcolor{keyword}{constexpr} mapped\_container\_type\& m\_nodes() noexcept \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00240}00240             \textcolor{keywordflow}{return} *std::launder(\textcolor{keyword}{reinterpret\_cast<}mapped\_container\_type*\textcolor{keyword}{>}(nodes\_));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00241}00241         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00242}00242         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} sort() \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00243}00243             ranges::sort(views::zip(m\_keys(), m\_nodes()), comp\_, [](\textcolor{keyword}{const} \textcolor{keyword}{auto}\& pair) -\/> \textcolor{keyword}{const} key\_type\& \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00244}00244                 \textcolor{keywordflow}{return} get<0>(pair);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00245}00245             \});}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00246}00246         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00247}00247         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} build() \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00248}00248             level\_offsets\_[levels\_ = 1] = keys().size();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00249}00249             size\_type prev = 0;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00250}00250             \textcolor{keywordflow}{while} (level\_offsets\_[levels\_] -\/ level\_offsets\_[levels\_ -\/ 1] > 1) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00251}00251                 \textcolor{keyword}{const} size\_type prev\_end = nodes().size();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00252}00252                 \textcolor{keywordflow}{while} (prev < prev\_end -\/ 1) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00253}00253                     m\_nodes().push\_back(sum\_(nodes()[prev], nodes()[prev + 1]));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00254}00254                     prev += 2;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00255}00255                 \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00256}00256                 \textcolor{keywordflow}{if} (prev != prev\_end) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00257}00257                     m\_nodes().push\_back(sum\_(nodes()[prev], identity\_()));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00258}00258                     ++prev;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00259}00259                 \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00260}00260                 level\_offsets\_[++levels\_] = nodes().size();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00261}00261             \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00262}00262         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00263}00263         \textcolor{keyword}{template} <\textcolor{keywordtype}{bool} Sort, \textcolor{keyword}{typename} Pairs>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00264}00264         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} unzip(Pairs\&\& pairs) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00265}00265             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (ranges::sized\_range<Pairs>) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00266}00266                 \textcolor{keyword}{const} \textcolor{keyword}{auto} size = ranges::size(pairs);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00267}00267                 \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (reservable\_container<key\_container\_type>) m\_keys().reserve(size);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00268}00268                 \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (reservable\_container<mapped\_container\_type>) m\_nodes().reserve(size);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00269}00269             \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00270}00270             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\&\& pair : pairs) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00271}00271                 \textcolor{keyword}{auto}\&\& v = \textcolor{keyword}{static\_cast<}follow\_t<decltype(pair), value\_type\&\&\textcolor{keyword}{>}>(pair);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00272}00272                 m\_keys().push\_back(std::move(v.first));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00273}00273                 m\_nodes().push\_back(std::move(v.second));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00274}00274             \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00275}00275             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (Sort) sort();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00276}00276             build();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00277}00277         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00278}00278         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} fast\_clear() noexcept \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00279}00279             level\_offsets\_[1] = 0;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00280}00280             levels\_ = 0;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00281}00281         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00282}00282     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00284}00284         \textcolor{keyword}{constexpr} \textcolor{keyword}{const} key\_container\_type\& keys() const noexcept \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00285}00285             \textcolor{keywordflow}{return} *std::launder(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }key\_container\_type*\textcolor{keyword}{>}(keys\_));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00286}00286         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00290}00290         \textcolor{keyword}{constexpr} \textcolor{keyword}{const} mapped\_container\_type\& nodes() const noexcept \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00291}00291             \textcolor{keywordflow}{return} *std::launder(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }mapped\_container\_type*\textcolor{keyword}{>}(nodes\_));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00292}00292         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00294}00294         \textcolor{keyword}{constexpr} \textcolor{keyword}{const} \textcolor{keyword}{decltype}(level\_offsets\_)\& level\_offsets() \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \{ \textcolor{keywordflow}{return} level\_offsets\_; \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00296}00296         \textcolor{keyword}{constexpr} key\_compare key\_comp()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} comp\_; \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00298}00298         \textcolor{keyword}{constexpr} value\_compare value\_comp()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} value\_compare(comp\_); \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00300}00300         \textcolor{keyword}{constexpr} mapped\_sum sum()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} sum\_; \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00302}00302         \textcolor{keyword}{constexpr} mapped\_identity identity()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} identity\_; \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00303}00303     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00304}00304         \textcolor{keyword}{template} <\textcolor{keyword}{typename} Allocator, \textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00305}00305         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} construct\_keys(\textcolor{keyword}{const} Allocator\& alloc, Args\&\&... args) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00306}00306             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (std::is\_same\_v<Allocator, detail::void\_allocator\_t>) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00307}00307                 \textcolor{keyword}{new}(keys\_) key\_container\_type(std::forward<Args>(args)...);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00308}00308             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00309}00309                 std::uninitialized\_construct\_using\_allocator(keys\_, alloc, std::forward<Args>(args)...);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00310}00310             \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00311}00311         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00312}00312         \textcolor{keyword}{template} <\textcolor{keyword}{typename} Allocator, \textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00313}00313         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} construct\_nodes(\textcolor{keyword}{const} Allocator\& alloc, Args\&\&... args) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00314}00314             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (std::is\_same\_v<Allocator, detail::void\_allocator\_t>) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00315}00315                 \textcolor{keyword}{new}(nodes\_) mapped\_container\_type(std::forward<Args>(args)...);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00316}00316             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00317}00317                 std::uninitialized\_construct\_using\_allocator(nodes\_, alloc, std::forward<Args>(args)...);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00318}00318             \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00319}00319         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00320}00320     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00335}00335         \textcolor{keyword}{template} <container\_allocator<segment\_tree> Allocator = detail::\textcolor{keywordtype}{void}\_allocator\_t>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00336}00336         \textcolor{keyword}{explicit} \textcolor{keyword}{constexpr} segment\_tree(}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00337}00337             \textcolor{keyword}{const} key\_compare\& comp = key\_compare(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00338}00338             \textcolor{keyword}{const} mapped\_sum\& sum = mapped\_sum(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00339}00339             \textcolor{keyword}{const} mapped\_identity\& identity = mapped\_identity(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00340}00340             \textcolor{keyword}{const} Allocator\& alloc = detail::void\_allocator) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00341}00341             comp\_(comp), sum\_(sum), identity\_(identity) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00342}00342             construct\_keys(alloc);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00343}00343             construct\_nodes(alloc);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00344}00344         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00345}00345         \textcolor{keyword}{template} <\textcolor{keyword}{typename} Allocator>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00346}00346         \textcolor{keyword}{explicit} \textcolor{keyword}{constexpr} segment\_tree(\textcolor{keyword}{const} Allocator\& alloc) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00347}00347             segment\_tree(key\_compare(), mapped\_sum(), mapped\_identity(), alloc) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00351}00351         \textcolor{keyword}{constexpr} segment\_tree(\textcolor{keyword}{const} segment\_tree\& other)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00352}00352         \textcolor{keyword}{noexcept}(}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00353}00353             std::is\_nothrow\_copy\_constructible\_v<key\_container\_type> \&\&}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00354}00354             std::is\_nothrow\_copy\_constructible\_v<mapped\_container\_type>) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00355}00355             segment\_tree(other, detail::void\_allocator) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00356}00356         \textcolor{keyword}{constexpr} segment\_tree(\textcolor{keyword}{const} segment\_tree\& other, \textcolor{keyword}{const} container\_allocator<segment\_tree> \textcolor{keyword}{auto}\& alloc):}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00357}00357             level\_offsets\_(other.level\_offsets\_), levels\_(other.levels\_),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00358}00358             comp\_(other.comp\_), sum\_(other.sum\_), identity\_(other.identity\_) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00359}00359             construct\_keys(alloc, other.keys());}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00360}00360             construct\_nodes(alloc, other.nodes());}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00361}00361         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00366}00366         \textcolor{keyword}{constexpr} segment\_tree(segment\_tree\&\& other)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00367}00367         \textcolor{keyword}{noexcept}(}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00368}00368             std::is\_nothrow\_move\_constructible\_v<key\_container\_type> \&\&}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00369}00369             std::is\_nothrow\_move\_constructible\_v<mapped\_container\_type>) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00370}00370             segment\_tree(std::move(other), detail::void\_allocator) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00371}00371         \textcolor{keyword}{constexpr} segment\_tree(segment\_tree\&\& other, \textcolor{keyword}{const} container\_allocator<segment\_tree> \textcolor{keyword}{auto}\& alloc) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00372}00372             level\_offsets\_(other.level\_offsets\_), levels\_(other.levels\_),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00373}00373             comp\_(std::move(other.comp\_)), sum\_(std::move(other.sum\_)), identity\_(other.identity\_) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00374}00374             construct\_keys(alloc, std::move(other.m\_keys()));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00375}00375             construct\_nodes(alloc, std::move(other.m\_nodes()));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00376}00376             other.fast\_clear();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00377}00377         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00382}00382         \textcolor{keyword}{template} <equiv\_to<key\_container\_type> Keys, equiv\_to<mapped\_container\_type> Nodes,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00383}00383             container\_allocator<segment\_tree> Allocator = detail::\textcolor{keywordtype}{void}\_allocator\_t>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00384}00384         \textcolor{keyword}{constexpr} segment\_tree(segment\_tree\_nodes\_t, Keys\&\& keys, Nodes\&\& nodes,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00385}00385             \textcolor{keyword}{const} key\_compare\& comp = key\_compare(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00386}00386             \textcolor{keyword}{const} mapped\_sum\& sum = mapped\_sum(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00387}00387             \textcolor{keyword}{const} mapped\_identity\& identity = mapped\_identity(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00388}00388             \textcolor{keyword}{const} Allocator\& alloc = detail::void\_allocator) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00389}00389             comp\_(comp), sum\_(sum), identity\_(identity) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00390}00390             construct\_keys(alloc, std::forward<Keys>(keys));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00391}00391             construct\_nodes(alloc, std::forward<Nodes>(nodes));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00392}00392             \textcolor{keywordflow}{if} (this-\/>keys().empty()) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00393}00393             level\_offsets\_[levels\_ = 1] = this-\/>keys().size();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00394}00394             \textcolor{keywordflow}{while} (level\_offsets\_[levels\_] > 1) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00395}00395                 level\_offsets\_[levels\_ + 1] = level\_offsets\_[levels\_] / 2 + level\_offsets\_[levels\_] \% 2;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00396}00396                 ++levels\_;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00397}00397             \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00398}00398             std::partial\_sum(level\_offsets\_.begin() + 1, level\_offsets\_.begin() + levels\_ + 1,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00399}00399                 level\_offsets\_.begin() + 1);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00400}00400         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00401}00401         \textcolor{keyword}{template} <equiv\_to<key\_container\_type> Keys, equiv\_to<mapped\_container\_type> Nodes,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00402}00402             container\_allocator<segment\_tree> Allocator>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00403}00403         \textcolor{keyword}{constexpr} segment\_tree(segment\_tree\_nodes\_t, Keys\&\& keys, Nodes\&\& nodes, \textcolor{keyword}{const} Allocator\& alloc) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00404}00404             segment\_tree(segment\_tree\_nodes, std::forward<Keys>(keys), std::forward<Nodes>(nodes),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00405}00405                 key\_compare(), mapped\_sum(), mapped\_identity(), alloc) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00411}00411         \textcolor{keyword}{template} <equiv\_to<key\_container\_type> Keys, equiv\_to<mapped\_container\_type> Mapped,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00412}00412             container\_allocator<segment\_tree> Allocator = detail::\textcolor{keywordtype}{void}\_allocator\_t>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00413}00413         \textcolor{keyword}{constexpr} segment\_tree(Keys\&\& keys, Mapped\&\& mapped,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00414}00414             \textcolor{keyword}{const} key\_compare\& comp = key\_compare(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00415}00415             \textcolor{keyword}{const} mapped\_sum\& sum = mapped\_sum(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00416}00416             \textcolor{keyword}{const} mapped\_identity\& identity = mapped\_identity(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00417}00417             \textcolor{keyword}{const} Allocator\& alloc = detail::void\_allocator)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00418}00418         \textcolor{keyword}{requires} (move\_insertable\_into<mapped\_container\_type> \&\& std::swappable<key\_type> \&\& std::swappable<mapped\_type>) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00419}00419             comp\_(comp), sum\_(sum), identity\_(identity) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00420}00420             construct\_keys(alloc, std::forward<Keys>(keys));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00421}00421             construct\_nodes(alloc, std::forward<Mapped>(mapped));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00422}00422             sort();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00423}00423             build();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00424}00424         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00425}00425         \textcolor{keyword}{template} <equiv\_to<key\_container\_type> Keys, equiv\_to<mapped\_container\_type> Mapped,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00426}00426             container\_allocator<segment\_tree> Allocator>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00427}00427         \textcolor{keyword}{constexpr} segment\_tree(Keys\&\& keys, Mapped\&\& mapped, \textcolor{keyword}{const} Allocator\& alloc)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00428}00428         \textcolor{keyword}{requires} (move\_insertable\_into<mapped\_container\_type> \&\& std::swappable<key\_type> \&\& std::swappable<mapped\_type>) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00429}00429             segment\_tree(std::forward<Keys>(keys), std::forward<Mapped>(mapped), key\_compare(), mapped\_sum(), alloc) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00430}00430         \textcolor{keyword}{template} <equiv\_to<key\_container\_type> Keys, equiv\_to<mapped\_container\_type> Mapped,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00431}00431             container\_allocator<segment\_tree> Allocator = detail::\textcolor{keywordtype}{void}\_allocator\_t>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00432}00432         \textcolor{keyword}{constexpr} segment\_tree(std::sorted\_equivalent\_t, Keys\&\& keys, Mapped\&\& mapped,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00433}00433             \textcolor{keyword}{const} key\_compare\& comp = key\_compare(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00434}00434             \textcolor{keyword}{const} mapped\_sum\& sum = mapped\_sum(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00435}00435             \textcolor{keyword}{const} mapped\_identity\& identity = mapped\_identity(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00436}00436             \textcolor{keyword}{const} Allocator\& alloc = detail::void\_allocator)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00437}00437         \textcolor{keyword}{requires} (move\_insertable\_into<mapped\_container\_type>) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00438}00438             comp\_(comp), sum\_(sum), identity\_(identity) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00439}00439             construct\_keys(alloc, std::forward<Keys>(keys));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00440}00440             construct\_nodes(alloc, std::forward<Mapped>(mapped));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00441}00441             build();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00442}00442         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00443}00443         \textcolor{keyword}{template} <equiv\_to<key\_container\_type> Keys, equiv\_to<mapped\_container\_type> Mapped,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00444}00444             container\_allocator<segment\_tree> Allocator>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00445}00445         \textcolor{keyword}{constexpr} segment\_tree(std::sorted\_equivalent\_t, Keys\&\& keys, Mapped\&\& mapped, \textcolor{keyword}{const} Allocator\& alloc)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00446}00446         \textcolor{keyword}{requires} (move\_insertable\_into<mapped\_container\_type>) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00447}00447             segment\_tree(std::sorted\_equivalent, std::forward<Keys>(keys), std::forward<Mapped>(mapped),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00448}00448                 key\_compare(), mapped\_sum(), mapped\_identity(), alloc) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00453}00453         \textcolor{keyword}{template} <container\_compatible\_range<value\_type> Pairs,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00454}00454             container\_allocator<segment\_tree> Allocator = detail::\textcolor{keywordtype}{void}\_allocator\_t>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00455}00455         \textcolor{keyword}{constexpr} segment\_tree(std::from\_range\_t, Pairs\&\& pairs,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00456}00456             \textcolor{keyword}{const} key\_compare\& comp = key\_compare(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00457}00457             \textcolor{keyword}{const} mapped\_sum\& sum = mapped\_sum(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00458}00458             \textcolor{keyword}{const} mapped\_identity\& identity = mapped\_identity(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00459}00459             \textcolor{keyword}{const} Allocator\& alloc = detail::void\_allocator)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00460}00460         \textcolor{keyword}{requires} (}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00461}00461             move\_insertable\_into<key\_container\_type> \&\& move\_insertable\_into<mapped\_container\_type> \&\&}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00462}00462             std::swappable<key\_type> \&\& std::swappable<mapped\_type>) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00463}00463             comp\_(comp), sum\_(sum), identity\_(identity) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00464}00464             construct\_keys(alloc);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00465}00465             construct\_nodes(alloc);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00466}00466             unzip<true>(std::forward<Pairs>(pairs));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00467}00467         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00468}00468         \textcolor{keyword}{template} <container\_compatible\_range<value\_type> Pairs, container\_allocator<segment\_tree> Allocator>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00469}00469         \textcolor{keyword}{constexpr} segment\_tree(std::from\_range\_t, Pairs\&\& pairs, \textcolor{keyword}{const} Allocator\& alloc)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00470}00470         \textcolor{keyword}{requires} (}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00471}00471             move\_insertable\_into<key\_container\_type> \&\& move\_insertable\_into<mapped\_container\_type> \&\&}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00472}00472             std::swappable<key\_type> \&\& std::swappable<mapped\_type>) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00473}00473             segment\_tree(std::from\_range, std::forward<Pairs>(pairs), key\_compare(), mapped\_sum(), mapped\_identity(), alloc) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00474}00474         \textcolor{keyword}{template} <}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00475}00475             container\_compatible\_range<value\_type> Pairs,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00476}00476             container\_allocator<segment\_tree> Allocator = detail::void\_allocator\_t>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00477}00477         \textcolor{keyword}{constexpr} segment\_tree(std::sorted\_equivalent\_t, std::from\_range\_t, Pairs\&\& pairs,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00478}00478             \textcolor{keyword}{const} key\_compare\& comp = key\_compare(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00479}00479             \textcolor{keyword}{const} mapped\_sum\& sum = mapped\_sum(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00480}00480             \textcolor{keyword}{const} mapped\_identity\& identity = mapped\_identity(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00481}00481             \textcolor{keyword}{const} Allocator\& alloc = detail::void\_allocator)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00482}00482         \textcolor{keyword}{requires} (move\_insertable\_into<key\_container\_type> \&\& move\_insertable\_into<mapped\_container\_type>) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00483}00483             comp\_(comp), sum\_(sum), identity\_(identity) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00484}00484             construct\_keys(alloc);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00485}00485             construct\_nodes(alloc);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00486}00486             unzip<false>(std::forward<Pairs>(pairs));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00487}00487         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00488}00488         \textcolor{keyword}{template} <container\_compatible\_range<value\_type> Pairs, container\_allocator<segment\_tree> Allocator>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00489}00489         \textcolor{keyword}{constexpr} segment\_tree(std::sorted\_equivalent\_t, std::from\_range\_t, Pairs\&\& pairs, \textcolor{keyword}{const} Allocator\& alloc)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00490}00490         \textcolor{keyword}{requires} (move\_insertable\_into<key\_container\_type> \&\& move\_insertable\_into<mapped\_container\_type>) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00491}00491             segment\_tree(std::sorted\_equivalent, std::from\_range, std::forward<Pairs>(pairs),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00492}00492                 key\_compare(), mapped\_sum(), mapped\_identity(), alloc) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00498}00498         \textcolor{keyword}{template} <container\_compatible\_iterator<value\_type> PairsIt, std::sentinel\_for<PairsIt> PairsSent,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00499}00499             container\_allocator<segment\_tree> Allocator = detail::\textcolor{keywordtype}{void}\_allocator\_t>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00500}00500         \textcolor{keyword}{constexpr} segment\_tree(PairsIt pairs\_begin, PairsSent pairs\_end,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00501}00501             \textcolor{keyword}{const} key\_compare\& comp = key\_compare(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00502}00502             \textcolor{keyword}{const} mapped\_sum\& sum = mapped\_sum(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00503}00503             \textcolor{keyword}{const} mapped\_identity\& identity = mapped\_identity(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00504}00504             \textcolor{keyword}{const} Allocator\& alloc = detail::void\_allocator)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00505}00505         \textcolor{keyword}{requires} (}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00506}00506             move\_insertable\_into<key\_container\_type> \&\& move\_insertable\_into<mapped\_container\_type> \&\&}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00507}00507             std::swappable<key\_type> \&\& std::swappable<mapped\_type>):}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00508}00508             segment\_tree(std::from\_range, ranges::subrange(pairs\_begin, pairs\_end), comp, sum, identity, alloc) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00509}00509         \textcolor{keyword}{template} <container\_compatible\_iterator<value\_type> PairsIt, std::sentinel\_for<PairsIt> PairsSent,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00510}00510             container\_allocator<segment\_tree> Allocator>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00511}00511         \textcolor{keyword}{constexpr} segment\_tree(PairsIt pairs\_begin, PairsSent pairs\_end, \textcolor{keyword}{const} Allocator\& alloc)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00512}00512         \textcolor{keyword}{requires} (}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00513}00513             move\_insertable\_into<key\_container\_type> \&\& move\_insertable\_into<mapped\_container\_type> \&\&}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00514}00514             std::swappable<key\_type> \&\& std::swappable<mapped\_type>) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00515}00515             segment\_tree(pairs\_begin, pairs\_end, key\_compare(), mapped\_sum(), mapped\_identity(), alloc) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00516}00516         \textcolor{keyword}{template} <container\_compatible\_iterator<value\_type> PairsIt, std::sentinel\_for<PairsIt> PairsSent,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00517}00517             container\_allocator<segment\_tree> Allocator = detail::\textcolor{keywordtype}{void}\_allocator\_t>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00518}00518         \textcolor{keyword}{constexpr} segment\_tree(std::sorted\_equivalent\_t, PairsIt pairs\_begin, PairsSent pairs\_end,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00519}00519             \textcolor{keyword}{const} key\_compare\& comp = key\_compare(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00520}00520             \textcolor{keyword}{const} mapped\_sum\& sum = mapped\_sum(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00521}00521             \textcolor{keyword}{const} mapped\_identity\& identity = mapped\_identity(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00522}00522             \textcolor{keyword}{const} Allocator\& alloc = detail::void\_allocator)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00523}00523         \textcolor{keyword}{requires} (move\_insertable\_into<key\_container\_type> \&\& move\_insertable\_into<mapped\_container\_type>) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00524}00524             segment\_tree(std::sorted\_equivalent, std::from\_range, ranges::subrange(pairs\_begin, pairs\_end),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00525}00525                 comp, sum, identity, alloc) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00526}00526         \textcolor{keyword}{template} <container\_compatible\_iterator<value\_type> PairsIt, std::sentinel\_for<PairsIt> PairsSent,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00527}00527             container\_allocator<segment\_tree> Allocator>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00528}00528         \textcolor{keyword}{constexpr} segment\_tree(std::sorted\_equivalent\_t, PairsIt pairs\_begin, PairsSent pairs\_end, \textcolor{keyword}{const} Allocator\& alloc)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00529}00529         \textcolor{keyword}{requires} (move\_insertable\_into<key\_container\_type> \&\& move\_insertable\_into<mapped\_container\_type>) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00530}00530             segment\_tree(std::sorted\_equivalent, pairs\_begin, pairs\_end,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00531}00531                 key\_compare(), mapped\_sum(), mapped\_identity(), alloc) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00535}00535         \textcolor{keyword}{template} <container\_allocator<segment\_tree> Allocator = detail::\textcolor{keywordtype}{void}\_allocator\_t>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00536}00536         \textcolor{keyword}{constexpr} segment\_tree(std::initializer\_list<value\_type> pairs,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00537}00537             \textcolor{keyword}{const} key\_compare\& comp = key\_compare(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00538}00538             \textcolor{keyword}{const} mapped\_sum\& sum = mapped\_sum(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00539}00539             \textcolor{keyword}{const} mapped\_identity\& identity = mapped\_identity(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00540}00540             \textcolor{keyword}{const} Allocator\& alloc = detail::void\_allocator)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00541}00541         \textcolor{keyword}{requires} (}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00542}00542             move\_insertable\_into<key\_container\_type> \&\& move\_insertable\_into<mapped\_container\_type> \&\&}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00543}00543             std::swappable<key\_type> \&\& std::swappable<mapped\_type>) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00544}00544             segment\_tree(std::from\_range, pairs, comp, sum, identity, alloc) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00545}00545         \textcolor{keyword}{template} <container\_allocator<segment\_tree> Allocator>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00546}00546         \textcolor{keyword}{constexpr} segment\_tree(std::initializer\_list<value\_type> pairs, \textcolor{keyword}{const} Allocator\& alloc)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00547}00547         \textcolor{keyword}{requires} (}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00548}00548             move\_insertable\_into<key\_container\_type> \&\& move\_insertable\_into<mapped\_container\_type> \&\&}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00549}00549             std::swappable<key\_type> \&\& std::swappable<mapped\_type>) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00550}00550             segment\_tree(std::from\_range, pairs, alloc) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00551}00551         \textcolor{keyword}{template} <container\_allocator<segment\_tree> Allocator = detail::\textcolor{keywordtype}{void}\_allocator\_t>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00552}00552         \textcolor{keyword}{constexpr} segment\_tree(std::sorted\_equivalent\_t, std::initializer\_list<value\_type> pairs,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00553}00553             \textcolor{keyword}{const} key\_compare\& comp = key\_compare(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00554}00554             \textcolor{keyword}{const} mapped\_sum\& sum = mapped\_sum(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00555}00555             \textcolor{keyword}{const} mapped\_identity\& identity = mapped\_identity(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00556}00556             \textcolor{keyword}{const} Allocator\& alloc = detail::void\_allocator)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00557}00557         \textcolor{keyword}{requires} (move\_insertable\_into<key\_container\_type> \&\& move\_insertable\_into<mapped\_container\_type>) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00558}00558             segment\_tree(std::sorted\_equivalent, std::from\_range, pairs, comp, sum, identity, alloc) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00559}00559         \textcolor{keyword}{template} <container\_allocator<segment\_tree> Allocator>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00560}00560         \textcolor{keyword}{constexpr} segment\_tree(std::sorted\_equivalent\_t, std::initializer\_list<value\_type> pairs, \textcolor{keyword}{const} Allocator\& alloc)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00561}00561         \textcolor{keyword}{requires} (move\_insertable\_into<key\_container\_type> \&\& move\_insertable\_into<mapped\_container\_type>) :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00562}00562             segment\_tree(std::sorted\_equivalent, std::from\_range, pairs,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00563}00563                 key\_compare(), mapped\_sum(), mapped\_identity(),alloc) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00566}00566         \textcolor{keyword}{constexpr} \string~segment\_tree()}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00567}00567         \textcolor{keyword}{requires} (}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00568}00568             std::is\_trivially\_destructible\_v<key\_container\_type> \&\&}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00569}00569             std::is\_trivially\_destructible\_v<mapped\_container\_type>) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00570}00570         \textcolor{keyword}{constexpr} \string~segment\_tree() \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00571}00571             std::destroy\_at(\&m\_keys());}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00572}00572             std::destroy\_at(\&m\_nodes());}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00573}00573         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00577}00577         \textcolor{keyword}{constexpr} segment\_tree\& operator=(\textcolor{keyword}{const} segment\_tree\& other)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00578}00578         \textcolor{keyword}{noexcept}(}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00579}00579             std::is\_nothrow\_copy\_constructible\_v<key\_container\_type> \&\&}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00580}00580             std::is\_nothrow\_copy\_constructible\_v<mapped\_container\_type> \&\&}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00581}00581             std::is\_nothrow\_copy\_constructible\_v<key\_compare> \&\&}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00582}00582             std::is\_nothrow\_copy\_constructible\_v<mapped\_sum> \&\&}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00583}00583             std::is\_nothrow\_copy\_constructible\_v<mapped\_identity>) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00584}00584             m\_keys() = other.keys();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00585}00585             m\_nodes() = other.nodes();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00586}00586             level\_offsets\_ = other.level\_offsets\_;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00587}00587             levels\_ = other.levels\_;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00588}00588             comp\_ = other.comp\_;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00589}00589             sum\_ = other.sum\_;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00590}00590             identity\_ = other.identity\_;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00591}00591             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00592}00592         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00594}00594         \textcolor{keyword}{constexpr} segment\_tree\& operator=(segment\_tree\&\& other)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00595}00595         \textcolor{keyword}{noexcept}(}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00596}00596             std::is\_nothrow\_move\_constructible\_v<key\_container\_type> \&\&}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00597}00597             std::is\_nothrow\_move\_constructible\_v<mapped\_container\_type> \&\&}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00598}00598             std::is\_nothrow\_copy\_constructible\_v<key\_compare> \&\&}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00599}00599             std::is\_nothrow\_copy\_constructible\_v<mapped\_sum> \&\&}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00600}00600             std::is\_nothrow\_copy\_constructible\_v<mapped\_identity>) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00601}00601             m\_keys() = std::move(other.keys());}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00602}00602             m\_nodes() = std::move(other.nodes());}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00603}00603             level\_offsets\_ = other.level\_offsets\_;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00604}00604             levels\_ = other.levels\_;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00605}00605             comp\_ = std::move(other.comp\_);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00606}00606             sum\_ = std::move(other.sum\_);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00607}00607             identity\_ = std::move(other.identity\_);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00608}00608             other.fast\_clear();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00609}00609             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00610}00610         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00613}00613         \textcolor{keyword}{constexpr} segment\_tree\& operator=(std::initializer\_list<value\_type> pairs)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00614}00614         \textcolor{keyword}{requires} (std::swappable<key\_type> \&\& std::swappable<mapped\_type>) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00615}00615             m\_keys().clear();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00616}00616             m\_nodes().clear();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00617}00617             unzip<true>(pairs);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00618}00618             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00619}00619         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00621}00621     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00622}00622         \textcolor{keyword}{template} <\textcolor{keywordtype}{bool} LowerBound>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00623}00623         \textcolor{keyword}{constexpr} size\_type search(\textcolor{keyword}{const} \textcolor{keyword}{auto}\& key)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00624}00624             \textcolor{keyword}{const} \textcolor{keyword}{auto}\& k = make\_search\_key<segment\_tree>(key);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00625}00625             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (LowerBound) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00626}00626                 \textcolor{keywordflow}{return} ranges::lower\_bound(keys().begin(), keys().begin() + size(), k, comp\_) -\/ keys().begin();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00627}00627             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00628}00628                 \textcolor{keywordflow}{return} ranges::upper\_bound(keys().begin(), keys().begin() + size(), k, comp\_) -\/ keys().begin();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00629}00629             \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00630}00630         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00631}00631         \textcolor{keyword}{template} <\textcolor{keywordtype}{bool} Throw>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00632}00632         \textcolor{keyword}{constexpr} size\_type exact\_search(\textcolor{keyword}{const} \textcolor{keyword}{auto}\& key)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00633}00633             \textcolor{keyword}{const} size\_type found = search<true>(key);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00634}00634             \textcolor{keywordflow}{if} (found == size() || comp\_(key, keys()[found]) || comp\_(keys()[found], key)) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00635}00635                 \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (Throw) \textcolor{keywordflow}{throw} std::out\_of\_range(\textcolor{stringliteral}{"{}key not found in segment\_tree."{}});}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00636}00636                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} size();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00637}00637             \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00638}00638             \textcolor{keywordflow}{return} found;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00639}00639         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00640}00640     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00645}00645         \textcolor{keyword}{constexpr} reference operator[](\textcolor{keyword}{const} searchable\_in<segment\_tree> \textcolor{keyword}{auto}\& key) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00646}00646             \textcolor{keywordflow}{return} \{*\textcolor{keyword}{this}, search<true>(key)\};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00647}00647         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00648}00648         \textcolor{keyword}{constexpr} \textcolor{keyword}{const} T\& operator[](\textcolor{keyword}{const} searchable\_in<segment\_tree> \textcolor{keyword}{auto}\& key)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00649}00649             \textcolor{keywordflow}{return} nodes()[search<true>(key)];}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00650}00650         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00651}00651         \textcolor{keyword}{template} <detail::multiplies\_for<mapped\_type, \textcolor{keywordtype}{size\_t}ype> Mul = std::multiplies<>>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00652}00652         \textcolor{keyword}{constexpr} T operator[](\textcolor{keyword}{const} searchable\_in<segment\_tree> \textcolor{keyword}{auto}\& key, update\_type\& update, \textcolor{keyword}{const} Mul\& multiplies)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00653}00653             \textcolor{keyword}{const} size\_type node = search<true>(key);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00654}00654             \textcolor{keywordflow}{return} do\_traverse(}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00655}00655                 node\_traverser(node, node+1), aggregate\_with\_update\_strategy(update, multiplies),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00656}00656                 levels\_ -\/ 1, 0, 0, size());}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00657}00657         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00665}00665         \textcolor{keyword}{constexpr} reference at(\textcolor{keyword}{const} searchable\_in<segment\_tree> \textcolor{keyword}{auto}\& key) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00666}00666             \textcolor{keywordflow}{return} \{*\textcolor{keyword}{this}, exact\_search<true>(key)\};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00667}00667         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00668}00668         \textcolor{keyword}{constexpr} \textcolor{keyword}{const} T\& at(\textcolor{keyword}{const} searchable\_in<segment\_tree> \textcolor{keyword}{auto}\& key)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00669}00669             \textcolor{keywordflow}{return} nodes()[exact\_search<true>(key)];}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00670}00670         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00671}00671         \textcolor{keyword}{template} <detail::multiplies\_for<mapped\_type, \textcolor{keywordtype}{size\_t}ype> Mul = std::multiplies<>>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00672}00672         \textcolor{keyword}{constexpr} T at(\textcolor{keyword}{const} searchable\_in<segment\_tree> \textcolor{keyword}{auto}\& key, update\_type\& update, \textcolor{keyword}{const} Mul\& multiplies)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00673}00673             \textcolor{keyword}{const} size\_type node = exact\_search<true>(key);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00674}00674             \textcolor{keywordflow}{return} do\_traverse(}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00675}00675                 node\_traverser(node, node+1), aggregate\_with\_update\_strategy(update, multiplies),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00676}00676                 levels\_ -\/ 1, 0, 0, size());}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00677}00677         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00679}00679     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00680}00680         \textcolor{keyword}{struct }const\_iterator\_func;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00681}00681         \textcolor{keyword}{struct }iterator\_func \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00682}00682         \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00683}00683             segment\_tree* base\_;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00684}00684             \textcolor{keyword}{friend} const\_iterator\_func;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00685}00685         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00686}00686             \textcolor{keyword}{constexpr} iterator\_func() noexcept = default;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00687}00687             explicit constexpr iterator\_func(segment\_tree* base) noexcept : base\_(base) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00688}00688             reference operator()(size\_type node) \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00689}00689                 \textcolor{keywordflow}{return} \{*base\_, node\};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00690}00690             \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00691}00691         \};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00692}00692         \textcolor{keyword}{struct }const\_iterator\_func \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00693}00693         \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00694}00694             \textcolor{keyword}{const} segment\_tree* base\_;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00695}00695         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00696}00696             \textcolor{keyword}{constexpr} const\_iterator\_func() noexcept = default;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00697}00697             explicit constexpr const\_iterator\_func(const segment\_tree* base) noexcept : base\_(base) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00698}00698             \textcolor{keyword}{constexpr} const\_iterator\_func(iterator\_func f) noexcept : base\_(f.base\_) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00699}00699             const\_reference operator()(size\_type node) \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00700}00700                 \textcolor{keywordflow}{return} \{base\_-\/>keys()[node], base\_-\/>nodes()[node]\};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00701}00701             \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00702}00702         \};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00703}00703         \textcolor{keyword}{using} iota\_iterator = ranges::iterator\_t<ranges::iota\_view<size\_type, size\_type>>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00704}00704     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00705}00705         \textcolor{keyword}{using} iterator = transform\_iterator<iota\_iterator, iterator\_func>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00706}00706         \textcolor{keyword}{using} const\_iterator = transform\_iterator<iota\_iterator, const\_iterator\_func>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00707}00707         \textcolor{keyword}{using} reverse\_iterator = std::reverse\_iterator<iterator>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00708}00708         \textcolor{keyword}{using} const\_reverse\_iterator = std::reverse\_iterator<const\_iterator>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00709}00709     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00710}00710         \textcolor{keyword}{constexpr} iterator iter(size\_type node) \textcolor{keyword}{noexcept} \{ \textcolor{keywordflow}{return} \{iota\_iterator(node), iterator\_func(\textcolor{keyword}{this})\}; \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00711}00711         \textcolor{keyword}{constexpr} const\_iterator iter(size\_type node) \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \{ \textcolor{keywordflow}{return} \{iota\_iterator(node), const\_iterator\_func(\textcolor{keyword}{this})\}; \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00712}00712     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00716}00716         \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} begin(\textcolor{keyword}{this} \textcolor{keyword}{auto}\&\& \textcolor{keyword}{self}) noexcept \{ \textcolor{keywordflow}{return} \textcolor{keyword}{self}.iter(0); \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00717}00717         \textcolor{keyword}{constexpr} const\_iterator cbegin() const noexcept \{ \textcolor{keywordflow}{return} iter(0); \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00718}00718         \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} end(\textcolor{keyword}{this} \textcolor{keyword}{auto}\&\& \textcolor{keyword}{self}) noexcept \{ \textcolor{keywordflow}{return} \textcolor{keyword}{self}.iter(\textcolor{keyword}{self}.size()); \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00719}00719         \textcolor{keyword}{constexpr} const\_iterator cend() const noexcept \{ \textcolor{keywordflow}{return} iter(size()); \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00720}00720         \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} rbegin(\textcolor{keyword}{this} \textcolor{keyword}{auto}\&\& \textcolor{keyword}{self}) noexcept \{ \textcolor{keywordflow}{return} std::reverse\_iterator(\textcolor{keyword}{self}.end()); \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00721}00721         \textcolor{keyword}{constexpr} const\_reverse\_iterator crbegin() const noexcept \{ \textcolor{keywordflow}{return} std::reverse\_iterator(end()); \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00722}00722         \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} rend(\textcolor{keyword}{this} \textcolor{keyword}{auto}\&\& \textcolor{keyword}{self}) noexcept \{ \textcolor{keywordflow}{return} std::reverse\_iterator(\textcolor{keyword}{self}.begin()); \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00723}00723         \textcolor{keyword}{constexpr} const\_reverse\_iterator crend() const noexcept \{ \textcolor{keywordflow}{return} std::reverse\_iterator(end()); \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00726}00726         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} empty() const noexcept \{ \textcolor{keywordflow}{return} size() == 0; \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00728}00728         \textcolor{keyword}{constexpr} size\_type size() const noexcept \{ \textcolor{keywordflow}{return} level\_offsets\_[1]; \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00730}00730         \textcolor{keyword}{constexpr} size\_type max\_size() const noexcept \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00731}00731             \textcolor{comment}{// s: nodes, n: size}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00732}00732             \textcolor{comment}{// s = n + ceil(n/2) + ceil(ceil(n/2)/2) + ... + 1}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00733}00733             \textcolor{comment}{// = 2n + ceil(lg n) -\/ 1 -\/ popcount(n-\/1)}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00734}00734             \textcolor{comment}{// <= 2n + ceil(lg n) -\/ 1}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00735}00735             \textcolor{keywordflow}{return} std::min<size\_type>(}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00736}00736                 keys().max\_size(),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00737}00737                 (nodes().max\_size() -\/ (std::numeric\_limits<typename mapped\_container\_type::size\_type>::digits -\/ 1)) / 2);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00738}00738         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00739}00739     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00740}00740         \textcolor{keyword}{template} <\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00741}00741         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} do\_assign(size\_type node, U\&\& mapped) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00742}00742             m\_nodes()[node] = std::forward<U>(mapped);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00743}00743             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} level = 1; level < levels\_; ++level) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00744}00744                 \textcolor{keyword}{const} \textcolor{keywordtype}{bool} odd = node \% 2;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00745}00745                 \textcolor{keyword}{const} size\_type prev = level\_offsets\_[level -\/ 1] + node;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00746}00746                 node /= 2;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00747}00747                 \textcolor{keyword}{const} size\_type current = level\_offsets\_[level] + node;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00748}00748                 \textcolor{keywordflow}{if} (odd) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00749}00749                     m\_nodes()[current] = sum\_(m\_nodes()[prev], m\_nodes()[prev -\/ 1]);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00750}00750                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00751}00751                     \textcolor{keywordflow}{if} (prev + 1 == level\_offsets\_[level]) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00752}00752                         m\_nodes()[current] = sum\_(m\_nodes()[prev], identity\_());}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00753}00753                     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00754}00754                         m\_nodes()[current] = sum\_(m\_nodes()[prev], m\_nodes()[prev + 1]);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00755}00755                     \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00756}00756                 \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00757}00757             \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00758}00758         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00759}00759     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00761}00761         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} clear() noexcept \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00762}00762             m\_keys().clear();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00763}00763             m\_nodes().clear();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00764}00764             fast\_clear();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00765}00765         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00767}00767         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} swap(segment\_tree\& other) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00768}00768             \textcolor{keyword}{using} std::swap;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00769}00769             swap(keys(), other.keys());}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00770}00770             swap(nodes(), other.nodes());}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00771}00771             swap(level\_offsets\_, other.level\_offsets\_);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00772}00772             swap(levels\_, other.levels\_);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00773}00773             swap(comp\_, other.comp\_);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00774}00774             swap(sum\_, other.sum\_);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00775}00775         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00777}00777         \textcolor{keyword}{constexpr} size\_type count(\textcolor{keyword}{const} searchable\_in<segment\_tree> \textcolor{keyword}{auto}\& key)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00778}00778             \textcolor{keywordflow}{return} upper\_bound(key) -\/ lower\_bound(key);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00779}00779         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00783}00783         \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} find(\textcolor{keyword}{this} \textcolor{keyword}{auto}\&\& \textcolor{keyword}{self}, \textcolor{keyword}{const} searchable\_in<segment\_tree> \textcolor{keyword}{auto}\& key) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00784}00784             \textcolor{keywordflow}{return} \textcolor{keyword}{self}.iter(\textcolor{keyword}{self}.\textcolor{keyword}{template} exact\_search<false>(key));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00785}00785         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00787}00787         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} contains(\textcolor{keyword}{const} searchable\_in<segment\_tree> \textcolor{keyword}{auto}\& key)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00788}00788             \textcolor{keywordflow}{return} exact\_search<false>(key) != size();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00789}00789         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00792}00792         \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} lower\_bound(\textcolor{keyword}{this} \textcolor{keyword}{auto}\&\& \textcolor{keyword}{self}, \textcolor{keyword}{const} searchable\_in<segment\_tree> \textcolor{keyword}{auto}\& key) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00793}00793             \textcolor{keywordflow}{return} \textcolor{keyword}{self}.iter(\textcolor{keyword}{self}.\textcolor{keyword}{template} search<true>(key));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00794}00794         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00797}00797         \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} upper\_bound(\textcolor{keyword}{this} \textcolor{keyword}{auto}\&\& \textcolor{keyword}{self}, \textcolor{keyword}{const} searchable\_in<segment\_tree> \textcolor{keyword}{auto}\& key) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00798}00798             \textcolor{keywordflow}{return} \textcolor{keyword}{self}.iter(\textcolor{keyword}{self}.\textcolor{keyword}{template} search<false>(key));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00799}00799         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00803}00803         \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} equal\_range(\textcolor{keyword}{this} \textcolor{keyword}{auto}\&\& \textcolor{keyword}{self}, \textcolor{keyword}{const} searchable\_in<segment\_tree> \textcolor{keyword}{auto}\& key) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00804}00804             \textcolor{keywordflow}{return} std::pair(\textcolor{keyword}{self}.lower\_bound(key), \textcolor{keyword}{self}.upper\_bound(key));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00805}00805         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00806}00806     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00820}00820         \textcolor{keyword}{struct }node\_info \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00821}00821             \textcolor{keywordtype}{int} level, left\_level, right\_level;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00822}00822             size\_type level\_idx, left\_idx, right\_idx, begin, end, div\_node;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00823}00823         \};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00824}00824     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00825}00825         \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} do\_traverse(\textcolor{keyword}{this} \textcolor{keyword}{auto}\&\& \textcolor{keyword}{self}, \textcolor{keyword}{const} \textcolor{keyword}{auto}\& traverser, \textcolor{keyword}{const} \textcolor{keyword}{auto}\& strategy,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00826}00826             \textcolor{keywordtype}{int} level, size\_type level\_idx, size\_type begin, size\_type end) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00827}00827             \textcolor{keyword}{using} \textcolor{keyword}{enum} interval\_endpoint\_type;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00828}00828             node\_info info;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00829}00829             info.level = level;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00830}00830             info.level\_idx = level\_idx;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00831}00831             info.begin = begin;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00832}00832             info.end = end;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00833}00833             info.div\_node = begin + (std::bit\_ceil(end -\/ begin) >> 1);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00834}00834             info.left\_level = level -\/ 1;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00835}00835             info.left\_idx = level\_idx * 2;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00836}00836             info.right\_level = std::bit\_width(end -\/ info.div\_node -\/ 1);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00837}00837             info.right\_idx = ((level\_idx * 2 + 1) << (level -\/ info.right\_level)) >> 1;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00838}00838             \textcolor{keyword}{const} node\_info* info\_ptr = std::addressof(info);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00839}00839             \textcolor{keyword}{const} segment\_tree\_traverse\_direction dir = traverser(\textcolor{keyword}{self}, info);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00840}00840             \textcolor{keywordflow}{if} (dir == stop) \textcolor{keywordflow}{return} strategy(\textcolor{keyword}{self}, info\_ptr, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00841}00841             \textcolor{keywordflow}{if} (level == 0) \textcolor{keywordflow}{return} strategy(\textcolor{keyword}{self}, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00842}00842             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (\textcolor{keyword}{requires} \{ strategy.prepare(\textcolor{keyword}{self}, *info\_ptr); \}) strategy.prepare(\textcolor{keyword}{self}, *info\_ptr);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00843}00843             \textcolor{keyword}{const} \textcolor{keyword}{auto} collect\_left = [\&] \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00844}00844                 \textcolor{keywordflow}{return} \textcolor{keyword}{self}.do\_traverse(traverser, strategy, info.left\_level, info.left\_idx, info.begin, info.div\_node);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00845}00845             \};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00846}00846             \textcolor{keyword}{const} \textcolor{keyword}{auto} collect\_right = [\&] \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00847}00847                 \textcolor{keywordflow}{return} \textcolor{keyword}{self}.do\_traverse(traverser, strategy, info.right\_level, info.right\_idx, info.div\_node, info.end);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00848}00848             \};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00849}00849             \textcolor{keywordflow}{if} (dir == left) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00850}00850                 \textcolor{keyword}{const} \textcolor{keyword}{auto}\& left = collect\_left();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00851}00851                 \textcolor{keywordflow}{return} strategy(\textcolor{keyword}{self}, info\_ptr, std::addressof(left), \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00852}00852             \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00853}00853             \textcolor{keywordflow}{if} (dir == right) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00854}00854                 \textcolor{keyword}{const} \textcolor{keyword}{auto}\& right = collect\_right();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00855}00855                 \textcolor{keywordflow}{return} strategy(\textcolor{keyword}{self}, info\_ptr, \textcolor{keyword}{nullptr}, std::addressof(right));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00856}00856             \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00857}00857             \textcolor{keywordflow}{if} (dir == both) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00858}00858                 \textcolor{keyword}{const} \textcolor{keyword}{auto}\& left = collect\_left();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00859}00859                 \textcolor{keyword}{const} \textcolor{keyword}{auto}\& right = collect\_right();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00860}00860                 \textcolor{keywordflow}{return} strategy(\textcolor{keyword}{self}, info\_ptr, std::addressof(left), std::addressof(right));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00861}00861             \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00862}00862             std::unreachable();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00863}00863         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00864}00864         \textcolor{keyword}{template} <\textcolor{keyword}{typename} K1, \textcolor{keyword}{typename} K2>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00865}00865         \textcolor{keyword}{struct }key\_traverser \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00866}00866             interval<K1, K2> itv\_;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00867}00867 }
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00868}00868             \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} operator()(\textcolor{keyword}{const} segment\_tree\& base, \textcolor{keyword}{const} node\_info\& info) \textcolor{keyword}{const}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00869}00869             -\/> segment\_tree\_traverse\_direction \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00870}00870                 \textcolor{keyword}{using} \textcolor{keyword}{enum} interval\_endpoint\_type;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00871}00871                 \textcolor{keyword}{const} interval<const Key\&, const Key\&> root\_itv(}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00872}00872                     \{base.keys()[info.begin], closed\}, \{base.keys()[info.end -\/ 1], closed\});}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00873}00873                 \textcolor{keywordflow}{if} (itv\_.superset\_of(root\_itv, base.comp\_)) \textcolor{keywordflow}{return} stop;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00874}00874                 \textcolor{keyword}{const} interval\_endpoint<const Key\&> div\_right(base.keys()[info.div\_node], open);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00875}00875                 \textcolor{keywordflow}{if} (itv\_.right.compare(div\_right, \textcolor{keyword}{true}, base.comp\_) <= 0) \textcolor{keywordflow}{return} left;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00876}00876                 \textcolor{keyword}{const} interval\_endpoint<const Key\&> div\_left(base.keys()[info.div\_node], closed);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00877}00877                 \textcolor{keywordflow}{if} (itv\_.left.compare(div\_left, \textcolor{keyword}{false}, base.comp\_) <= 0) \textcolor{keywordflow}{return} right;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00878}00878                 \textcolor{keywordflow}{return} both;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00879}00879             \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00880}00880         \};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00881}00881         \textcolor{keyword}{struct }node\_traverser \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00882}00882             size\_type begin\_, end\_;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00883}00883 }
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00884}00884             \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} operator()(\textcolor{keyword}{const} segment\_tree\&, \textcolor{keyword}{const} node\_info\& info) \textcolor{keyword}{const} \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00885}00885             -\/> segment\_tree\_traverse\_direction \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00886}00886                 \textcolor{keywordflow}{if} (begin\_ <= info.begin \&\& end\_ >= info.end) \textcolor{keywordflow}{return} stop;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00887}00887                 \textcolor{keywordflow}{if} (end\_ <= info.div\_node) \textcolor{keywordflow}{return} left;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00888}00888                 \textcolor{keywordflow}{if} (begin\_ >= info.div\_node) \textcolor{keywordflow}{return} right;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00889}00889                 \textcolor{keywordflow}{return} both;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00890}00890             \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00891}00891         \};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00892}00892         \textcolor{keyword}{struct }aggregate\_strategy \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00893}00893             \textcolor{keyword}{template} <\textcolor{keyword}{typename} Info, \textcolor{keyword}{typename} L, \textcolor{keyword}{typename} R>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00894}00894             \textcolor{keyword}{constexpr} mapped\_type operator()(\textcolor{keyword}{const} segment\_tree\& base, Info info, L left, R right) \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00895}00895                 \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (std::is\_null\_pointer\_v<L> \&\& std::is\_null\_pointer\_v<R>) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00896}00896                     \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (std::is\_null\_pointer\_v<Info>) \textcolor{keywordflow}{return} base.identity\_();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00897}00897                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} base.nodes()[base.level\_offsets\_[info-\/>level] + info-\/>level\_idx];}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00898}00898                 \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00899}00899                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (std::is\_null\_pointer\_v<R>) \textcolor{keywordflow}{return} *left;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00900}00900                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (std::is\_null\_pointer\_v<L>) \textcolor{keywordflow}{return} *right;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00901}00901                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} base.sum\_(*left, *right);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00902}00902             \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00903}00903         \};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00904}00904         \textcolor{keyword}{template} <\textcolor{keyword}{typename} Mul>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00905}00905         \textcolor{keyword}{struct }aggregate\_with\_update\_strategy \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00906}00906         \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00907}00907             update\_type\& update\_;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00908}00908             \textcolor{keyword}{const} Mul\& multiplies\_;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00909}00909         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00910}00910             \textcolor{keyword}{constexpr} aggregate\_with\_update\_strategy(update\_type\& update, \textcolor{keyword}{const} Mul\& multiplies) noexcept :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00911}00911                 update\_(update), multiplies\_(multiplies) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00912}00912             \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} prepare(\textcolor{keyword}{const} segment\_tree\& base, \textcolor{keyword}{const} node\_info\& info) \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00913}00913                 \textcolor{keyword}{const} size\_type node = base.level\_offsets\_[info.level] + info.level\_idx,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00914}00914                                 left = base.level\_offsets\_[info.left\_level] + info.left\_idx,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00915}00915                                 right = base.level\_offsets\_[info.right\_level] + info.right\_idx;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00916}00916                 mapped\_type\& lazy = update\_[base.nodes().size() + node];}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00917}00917                 mapped\_type\& lazy\_left = update\_[base.nodes().size() + left];}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00918}00918                 mapped\_type\& lazy\_right = update\_[base.nodes().size() + right];}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00919}00919                 update\_[left] = base.sum\_(update\_[left], multiplies\_(lazy, 1 << info.left\_level));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00920}00920                 update\_[right] = base.sum\_(update\_[right], multiplies\_(lazy, 1 << info.right\_level));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00921}00921                 lazy\_left = base.sum\_(lazy\_left, lazy);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00922}00922                 lazy\_right = base.sum\_(lazy\_right, lazy);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00923}00923                 lazy = base.identity\_();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00924}00924             \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00925}00925             \textcolor{keyword}{template} <\textcolor{keyword}{typename} Info, \textcolor{keyword}{typename} L, \textcolor{keyword}{typename} R>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00926}00926             \textcolor{keyword}{constexpr} mapped\_type operator()(\textcolor{keyword}{const} segment\_tree\& base, Info info, L left, R right) \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00927}00927                 \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (std::is\_null\_pointer\_v<L> \&\& std::is\_null\_pointer\_v<R>) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00928}00928                     \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (std::is\_null\_pointer\_v<Info>) \textcolor{keywordflow}{return} base.identity\_();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00929}00929                     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00930}00930                         \textcolor{keyword}{const} size\_type node = base.level\_offsets\_[info-\/>level] + info-\/>level\_idx;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00931}00931                         \textcolor{keywordflow}{return} base.sum\_(base.nodes()[node], update\_[node]);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00932}00932                     \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00933}00933                 \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00934}00934                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (std::is\_null\_pointer\_v<L>) \textcolor{keywordflow}{return} *right;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00935}00935                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (std::is\_null\_pointer\_v<R>) \textcolor{keywordflow}{return} *left;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00936}00936                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} base.sum\_(*left, *right);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00937}00937             \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00938}00938         \};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00939}00939         \textcolor{keyword}{template} <\textcolor{keyword}{typename} Mul>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00940}00940         \textcolor{keyword}{struct }update\_strategy \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00941}00941         \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00942}00942             update\_type\& update\_;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00943}00943             \textcolor{keyword}{const} mapped\_type\& diff\_;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00944}00944             \textcolor{keyword}{const} Mul\& multiplies\_;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00945}00945         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00946}00946             \textcolor{keyword}{constexpr} update\_strategy(update\_type\& update, \textcolor{keyword}{const} mapped\_type\& diff, \textcolor{keyword}{const} Mul\& multiplies) noexcept :}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00947}00947                 update\_(update), diff\_(diff), multiplies\_(multiplies) \{\}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00948}00948             \textcolor{keyword}{template} <\textcolor{keyword}{typename} Info, \textcolor{keyword}{typename} L, \textcolor{keyword}{typename} R>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00949}00949             \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} operator()(\textcolor{keyword}{const} segment\_tree\& base, Info info, L, R) \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00950}00950                 \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (std::is\_null\_pointer\_v<Info>) \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00951}00951                 \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00952}00952                     \textcolor{keyword}{const} size\_type node = base.level\_offsets\_[info-\/>level] + info-\/>level\_idx;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00953}00953                     \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (std::is\_null\_pointer\_v<L> \&\& std::is\_null\_pointer\_v<R>) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00954}00954                         mapped\_type\& update = update\_[node];}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00955}00955                         mapped\_type\& lazy = update\_[base.nodes().size() + node];}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00956}00956                         update = base.sum\_(update, multiplies\_(diff\_, 1 << info-\/>level));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00957}00957                         lazy = base.sum\_(lazy, diff\_);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00958}00958                     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00959}00959                         \textcolor{keyword}{const} size\_type left = base.level\_offsets\_[info-\/>left\_level] + info-\/>left\_idx,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00960}00960                                         right = base.level\_offsets\_[info-\/>right\_level] + info-\/>right\_idx;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00961}00961                         update\_[node] = base.sum\_(update\_[left], update\_[right]);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00962}00962                     \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00963}00963                     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00964}00964                 \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00965}00965             \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00966}00966         \};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00967}00967     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00969}00969         \textcolor{keyword}{constexpr} update\_type make\_update() const}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00970}00970         requires (copy\_insertable\_into<mapped\_container\_type>) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00971}00971             \textcolor{keywordflow}{return} update\_type(nodes().size() * 2, identity\_());}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00972}00972         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00981}00981         \textcolor{keyword}{template} <searchable\_in<segment\_tree> K1, searchable\_in<segment\_tree> K2,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00982}00982             detail::multiplies\_for<mapped\_type, \textcolor{keywordtype}{size\_t}ype> Mul = std::multiplies<>>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00983}00983         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} make\_update(update\_type\& update,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00984}00984             \textcolor{keyword}{const} interval<K1, K2>\& key\_itv, \textcolor{keyword}{const} mapped\_type\& diff, \textcolor{keyword}{const} Mul\& multiplies = \{\}) \textcolor{keyword}{const} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00985}00985             \textcolor{keyword}{const} \textcolor{keyword}{auto}\& k1 = make\_search\_key<segment\_tree>(key\_itv.left.value);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00986}00986             \textcolor{keyword}{const} \textcolor{keyword}{auto}\& k2 = make\_search\_key<segment\_tree>(key\_itv.right.value);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00987}00987             \textcolor{keyword}{const} interval<\textcolor{keyword}{decltype}(k1), \textcolor{keyword}{decltype}(k2)> k\_itv(\{k1, key\_itv.left.type\}, \{k2, key\_itv.right.type\});}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00988}00988             traverse(key\_traverser(k\_itv), update\_strategy(update, diff, multiplies));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00989}00989         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00990}00990         \textcolor{keyword}{template} <detail::multiplies\_for<mapped\_type, \textcolor{keywordtype}{size\_t}ype> Mul = std::multiplies<>>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00991}00991         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} make\_update(update\_type\& update,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00992}00992             const\_iterator begin, const\_iterator end, \textcolor{keyword}{const} mapped\_type\& diff, \textcolor{keyword}{const} Mul\& multiplies = \{\}) \textcolor{keyword}{const} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00993}00993             traverse(node\_traverser(begin -\/ begin(), end -\/ begin()), update\_strategy(update, diff, multiplies));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00994}00994         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01000}01000         \textcolor{keyword}{constexpr} \textcolor{keyword}{decltype}(\textcolor{keyword}{auto}) traverse(}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01001}01001             \textcolor{keyword}{const} segment\_tree\_traverser\_for<segment\_tree> \textcolor{keyword}{auto}\& traverser,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01002}01002             \textcolor{keyword}{const} segment\_tree\_strategy\_for<segment\_tree> \textcolor{keyword}{auto}\& strategy) \textcolor{keyword}{const} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01003}01003             \textcolor{keywordflow}{if} (levels\_ <= 0) \textcolor{keywordflow}{return} strategy(*\textcolor{keyword}{this}, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01004}01004             \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} do\_traverse(traverser, strategy, levels\_ -\/ 1, 0, 0, size());}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01005}01005         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01013}01013         \textcolor{keyword}{template} <searchable\_in<segment\_tree> K1, searchable\_in<segment\_tree> K2>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01014}01014         \textcolor{keyword}{constexpr} T aggregate(\textcolor{keyword}{const} interval<K1, K2>\& key\_itv)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01015}01015             \textcolor{keyword}{const} \textcolor{keyword}{auto}\& k1 = make\_search\_key<segment\_tree>(key\_itv.left.value);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01016}01016             \textcolor{keyword}{const} \textcolor{keyword}{auto}\& k2 = make\_search\_key<segment\_tree>(key\_itv.right.value);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01017}01017             \textcolor{keyword}{const} interval<\textcolor{keyword}{decltype}(k1), \textcolor{keyword}{decltype}(k2)> k\_itv(\{k1, key\_itv.left.type\}, \{k2, key\_itv.right.type\});}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01018}01018             \textcolor{keywordflow}{return} traverse(key\_traverser(k\_itv), aggregate\_strategy());}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01019}01019         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01020}01020         \textcolor{keyword}{template} <searchable\_in<segment\_tree> K1, searchable\_in<segment\_tree> K2,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01021}01021             detail::multiplies\_for<mapped\_type, \textcolor{keywordtype}{size\_t}ype> Mul = std::multiplies<>>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01022}01022         \textcolor{keyword}{constexpr} T aggregate(\textcolor{keyword}{const} interval<K1, K2>\& key\_itv, update\_type\& update, \textcolor{keyword}{const} Mul\& multiplies = \{\}) \textcolor{keyword}{const} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01023}01023             \textcolor{keyword}{const} \textcolor{keyword}{auto}\& k1 = make\_search\_key<segment\_tree>(key\_itv.left.value);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01024}01024             \textcolor{keyword}{const} \textcolor{keyword}{auto}\& k2 = make\_search\_key<segment\_tree>(key\_itv.right.value);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01025}01025             \textcolor{keyword}{const} interval<\textcolor{keyword}{decltype}(k1), \textcolor{keyword}{decltype}(k2)> k\_itv(\{k1, key\_itv.left.type\}, \{k2, key\_itv.right.type\});}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01026}01026             \textcolor{keywordflow}{return} traverse(key\_traverser(k\_itv), aggregate\_with\_update\_strategy(update, multiplies));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01027}01027         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01028}01028         \textcolor{keyword}{constexpr} T aggregate(const\_iterator begin, const\_iterator end)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01029}01029             \textcolor{keywordflow}{return} traverse(node\_traverser(begin -\/ this-\/>begin(), end -\/ this-\/>begin()), aggregate\_strategy());}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01030}01030         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01031}01031         \textcolor{keyword}{template} <detail::multiplies\_for<mapped\_type, \textcolor{keywordtype}{size\_t}ype> Mul = std::multiplies<>>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01032}01032         \textcolor{keyword}{constexpr} T aggregate(const\_iterator begin, const\_iterator end, update\_type\& update, \textcolor{keyword}{const} Mul\& multiplies = \{\}) \textcolor{keyword}{const} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01033}01033             \textcolor{keywordflow}{return} traverse(}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01034}01034                 node\_traverser(begin -\/ this-\/>begin(), end -\/ this-\/>begin()),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01035}01035                 aggregate\_with\_update\_strategy(update, multiplies));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01036}01036         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01041}01041         \textcolor{keyword}{constexpr} T total()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01042}01042             \textcolor{keywordflow}{return} empty() ? identity\_() : nodes().back();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01043}01043         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01046}01046         \textcolor{keyword}{template} <detail::multiplies\_for<mapped\_type, \textcolor{keywordtype}{size\_t}ype> Mul = std::multiplies<>>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01047}01047         \textcolor{keyword}{constexpr} T total(\textcolor{keyword}{const} update\_type\& update, \textcolor{keyword}{const} Mul\& multiplies = \{\}) \textcolor{keyword}{const} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01048}01048             \textcolor{keywordflow}{return} empty() ? identity\_() : sum\_(}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01049}01049                 sum\_(nodes().back(),  update[nodes().size() -\/ 1]),}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01050}01050                 multiplies(update.back(), size()));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01051}01051         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01056}01056         \textcolor{keyword}{friend} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} segment\_tree\& lhs, \textcolor{keyword}{const} segment\_tree\& rhs) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01057}01057             \textcolor{keywordflow}{return} lhs.keys() == rhs.keys() \&\& lhs.nodes() == rhs.nodes();}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01058}01058         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01063}01063         \textcolor{keyword}{friend} \textcolor{keyword}{constexpr} \textcolor{keyword}{decltype}(\textcolor{keyword}{auto}) operator<=>(\textcolor{keyword}{const} segment\_tree\& lhs, \textcolor{keyword}{const} segment\_tree\& rhs)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01064}01064         \textcolor{keyword}{requires} (container\_three\_way\_comparable<segment\_tree>) \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01065}01065             \textcolor{keywordflow}{return} std::lexicographical\_compare\_three\_way(lhs.begin(), lhs.end(), rhs.begin(), rhs.end(), \mbox{\hyperlink{namespaceutils_a66e65835c8cea64e6a28ccf70f71ea28}{synth\_three\_way}});}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01066}01066         \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01067}01067     \};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01068}01068     \textcolor{keyword}{template} <\textcolor{keyword}{typename} KeyContainer, \textcolor{keyword}{typename} MappedContainer,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01069}01069         \textcolor{keyword}{typename} Key = KeyContainer::value\_type, \textcolor{keyword}{typename} T = MappedContainer::value\_type,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01070}01070         \textcolor{keyword}{typename} Compare = std::less<Key>, \textcolor{keyword}{typename} Sum = std::plus<T>, \textcolor{keyword}{typename} Identity = default\_construct<T>,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01071}01071         \textcolor{keyword}{typename} Allocator = detail::void\_allocator\_t>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01072}01072     segment\_tree(segment\_tree\_nodes\_t, KeyContainer, MappedContainer,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01073}01073         Compare = Compare(), Sum = Sum(), Identity = Identity(), Allocator = Allocator())}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01074}01074     -\/> segment\_tree<Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01075}01075     \textcolor{keyword}{template} <\textcolor{keyword}{typename} KeyContainer, \textcolor{keyword}{typename} MappedContainer, simple\_allocator Allocator,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01076}01076         \textcolor{keyword}{typename} Key = KeyContainer::value\_type, \textcolor{keyword}{typename} T = MappedContainer::value\_type>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01077}01077     segment\_tree(segment\_tree\_nodes\_t, KeyContainer, MappedContainer, Allocator)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01078}01078     -\/> segment\_tree<Key, T, std::less<Key>, std::plus<T>, default\_construct<T>, KeyContainer, MappedContainer>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01079}01079 }
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01080}01080     \textcolor{keyword}{template} <\textcolor{keyword}{typename} KeyContainer, \textcolor{keyword}{typename} MappedContainer,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01081}01081         \textcolor{keyword}{typename} Key = KeyContainer::value\_type, \textcolor{keyword}{typename} T = MappedContainer::value\_type,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01082}01082         \textcolor{keyword}{typename} Compare = std::less<Key>, \textcolor{keyword}{typename} Sum = std::plus<T>, \textcolor{keyword}{typename} Identity = default\_construct<T>,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01083}01083         \textcolor{keyword}{typename} Allocator = detail::void\_allocator\_t>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01084}01084     segment\_tree(KeyContainer, MappedContainer, Compare = Compare(), Sum = Sum(), Identity = Identity(), Allocator = Allocator())}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01085}01085     -\/> segment\_tree<Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01086}01086     \textcolor{keyword}{template} <\textcolor{keyword}{typename} KeyContainer, \textcolor{keyword}{typename} MappedContainer, simple\_allocator Allocator,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01087}01087         \textcolor{keyword}{typename} Key = KeyContainer::value\_type, \textcolor{keyword}{typename} T = MappedContainer::value\_type>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01088}01088     segment\_tree(KeyContainer, MappedContainer, Allocator)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01089}01089     -\/> segment\_tree<Key, T, std::less<Key>, std::plus<T>, default\_construct<T>, KeyContainer, MappedContainer>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01090}01090     \textcolor{keyword}{template} <\textcolor{keyword}{typename} KeyContainer, \textcolor{keyword}{typename} MappedContainer,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01091}01091         \textcolor{keyword}{typename} Key = KeyContainer::value\_type, \textcolor{keyword}{typename} T = MappedContainer::value\_type,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01092}01092         \textcolor{keyword}{typename} Compare = std::less<Key>, \textcolor{keyword}{typename} Sum = std::plus<T>, \textcolor{keyword}{typename} Identity = default\_construct<T>,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01093}01093         \textcolor{keyword}{typename} Allocator = detail::void\_allocator\_t>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01094}01094     segment\_tree(std::sorted\_equivalent\_t, KeyContainer, MappedContainer,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01095}01095         Compare = Compare(), Sum = Sum(), Identity = Identity(), Allocator = Allocator())}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01096}01096     -\/> segment\_tree<Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01097}01097     \textcolor{keyword}{template} <\textcolor{keyword}{typename} KeyContainer, \textcolor{keyword}{typename} MappedContainer, simple\_allocator Allocator,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01098}01098         \textcolor{keyword}{typename} Key = KeyContainer::value\_type, \textcolor{keyword}{typename} T = MappedContainer::value\_type>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01099}01099     segment\_tree(std::sorted\_equivalent\_t, KeyContainer, MappedContainer, Allocator)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01100}01100     -\/> segment\_tree<Key, T, std::less<Key>, std::plus<T>, default\_construct<T>, KeyContainer, MappedContainer>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01101}01101 }
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01102}01102     \textcolor{keyword}{namespace }detail \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01103}01103         \textcolor{keyword}{template} <\textcolor{keyword}{typename} It, \textcolor{keyword}{typename} Allocator,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01104}01104             \textcolor{keyword}{typename} PairT = std::iter\_value\_t<It>,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01105}01105             \textcolor{keyword}{typename} KeyT = std::remove\_cvref\_t<std::tuple\_element\_t<0, PairT>>,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01106}01106             \textcolor{keyword}{typename} TT = std::remove\_cvref\_t<std::tuple\_element\_t<1, PairT>>>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01107}01107         \textcolor{keyword}{struct }segment\_tree\_traits \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01108}01108             \textcolor{keyword}{using} Pair = PairT;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01109}01109             \textcolor{keyword}{using} Key = KeyT;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01110}01110             \textcolor{keyword}{using} T = TT;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01111}01111             \textcolor{keyword}{using} Compare = std::less<Key>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01112}01112             \textcolor{keyword}{using} Sum = std::plus<T>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01113}01113             \textcolor{keyword}{using} Identity = default\_construct<T>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01114}01114             \textcolor{keyword}{using} Traits = std::allocator\_traits<Allocator>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01115}01115             \textcolor{keyword}{using} KeyContainer = std::vector<Key, typename Traits::template rebind\_alloc<Key>>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01116}01116             \textcolor{keyword}{using} MappedContainer = std::vector<T, typename Traits::template rebind\_alloc<T>>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01117}01117         \};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01118}01118     \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01119}01119     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Pairs, \textcolor{keyword}{typename} Allocator = std::allocator<\textcolor{keywordtype}{int}>,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01120}01120         \textcolor{keyword}{typename} STT = detail::segment\_tree\_traits<ranges::iterator\_t<Pairs>, Allocator>,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01121}01121         \textcolor{keyword}{typename} Compare = STT::Compare, \textcolor{keyword}{typename} Sum = STT::Sum, \textcolor{keyword}{typename} Identity = STT::Identity>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01122}01122     segment\_tree(std::from\_range\_t, Pairs\&\&, Compare = Compare(), Sum = Sum(), Identity = Identity(), Allocator = Allocator())}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01123}01123     -\/> segment\_tree<\textcolor{keyword}{typename} STT::Key, \textcolor{keyword}{typename} STT::T, Compare, Sum, Identity,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01124}01124         \textcolor{keyword}{typename} STT::KeyContainer, \textcolor{keyword}{typename} STT::MappedContainer>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01125}01125     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Pairs, simple\_allocator Allocator,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01126}01126         \textcolor{keyword}{typename} STT = detail::segment\_tree\_traits<ranges::iterator\_t<Pairs>, Allocator>>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01127}01127     segment\_tree(std::from\_range\_t, Pairs\&\&, Allocator)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01128}01128     -\/> segment\_tree<\textcolor{keyword}{typename} STT::Key, \textcolor{keyword}{typename} STT::T,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01129}01129         \textcolor{keyword}{typename} STT::Compare, \textcolor{keyword}{typename} STT::Sum, \textcolor{keyword}{typename} STT::Identity, \textcolor{keyword}{typename} STT::KeyContainer, \textcolor{keyword}{typename} STT::MappedContainer>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01130}01130     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Pairs, \textcolor{keyword}{typename} Allocator = std::allocator<\textcolor{keywordtype}{int}>,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01131}01131         \textcolor{keyword}{typename} STT = detail::segment\_tree\_traits<ranges::iterator\_t<Pairs>, Allocator>,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01132}01132         \textcolor{keyword}{typename} Compare = STT::Compare, \textcolor{keyword}{typename} Sum = STT::Sum, \textcolor{keyword}{typename} Identity = STT::Identity>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01133}01133     segment\_tree(std::sorted\_equivalent\_t, std::from\_range\_t, Pairs\&\&,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01134}01134         Compare = Compare(), Sum = Sum(), Identity = Identity(), Allocator = Allocator())}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01135}01135     -\/> segment\_tree<\textcolor{keyword}{typename} STT::Key, \textcolor{keyword}{typename} STT::T, Compare, Sum, Identity,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01136}01136         \textcolor{keyword}{typename} STT::KeyContainer, \textcolor{keyword}{typename} STT::MappedContainer>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01137}01137     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Pairs, simple\_allocator Allocator,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01138}01138         \textcolor{keyword}{typename} STT = detail::segment\_tree\_traits<ranges::iterator\_t<Pairs>, Allocator>>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01139}01139     segment\_tree(std::sorted\_equivalent\_t, std::from\_range\_t, Pairs\&\&, Allocator)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01140}01140     -\/> segment\_tree<\textcolor{keyword}{typename} STT::Key, \textcolor{keyword}{typename} STT::T,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01141}01141         \textcolor{keyword}{typename} STT::Compare, \textcolor{keyword}{typename} STT::Sum, \textcolor{keyword}{typename} STT::Identity, \textcolor{keyword}{typename} STT::KeyContainer, \textcolor{keyword}{typename} STT::MappedContainer>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01142}01142 }
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01143}01143     \textcolor{keyword}{template} <\textcolor{keyword}{typename} PairsIt, \textcolor{keyword}{typename} PairsSent, \textcolor{keyword}{typename} Allocator = std::allocator<\textcolor{keywordtype}{int}>,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01144}01144         \textcolor{keyword}{typename} STT = detail::segment\_tree\_traits<PairsIt, Allocator>,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01145}01145         \textcolor{keyword}{typename} Compare = STT::Compare, \textcolor{keyword}{typename} Sum = STT::Sum, \textcolor{keyword}{typename} Identity = STT::Identity>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01146}01146     segment\_tree(PairsIt, PairsSent, Compare = Compare(), Sum = Sum(), Identity = Identity(), Allocator = Allocator())}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01147}01147     -\/> segment\_tree<\textcolor{keyword}{typename} STT::Key, \textcolor{keyword}{typename} STT::T, Compare, Sum, Identity,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01148}01148         \textcolor{keyword}{typename} STT::KeyContainer, \textcolor{keyword}{typename} STT::MappedContainer>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01149}01149     \textcolor{keyword}{template} <\textcolor{keyword}{typename} PairsIt, \textcolor{keyword}{typename} PairsSent, simple\_allocator Allocator,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01150}01150         \textcolor{keyword}{typename} STT = detail::segment\_tree\_traits<PairsIt, Allocator>>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01151}01151     segment\_tree(PairsIt, PairsSent, Allocator)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01152}01152     -\/> segment\_tree<\textcolor{keyword}{typename} STT::Key, \textcolor{keyword}{typename} STT::T,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01153}01153         \textcolor{keyword}{typename} STT::Compare, \textcolor{keyword}{typename} STT::Sum, \textcolor{keyword}{typename} STT::Identity, \textcolor{keyword}{typename} STT::KeyContainer, \textcolor{keyword}{typename} STT::MappedContainer>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01154}01154     \textcolor{keyword}{template} <\textcolor{keyword}{typename} PairsIt, \textcolor{keyword}{typename} PairsSent, \textcolor{keyword}{typename} Allocator = std::allocator<\textcolor{keywordtype}{int}>,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01155}01155         \textcolor{keyword}{typename} STT = detail::segment\_tree\_traits<PairsIt, Allocator>,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01156}01156         \textcolor{keyword}{typename} Compare = STT::Compare, \textcolor{keyword}{typename} Sum = STT::Sum, \textcolor{keyword}{typename} Identity = STT::Identity>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01157}01157     segment\_tree(std::sorted\_equivalent\_t, PairsIt, PairsSent, Compare = Compare(), Sum = Sum(), Allocator = Allocator())}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01158}01158     -\/> segment\_tree<\textcolor{keyword}{typename} STT::Key, \textcolor{keyword}{typename} STT::T, Compare, Sum, Identity,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01159}01159         \textcolor{keyword}{typename} STT::KeyContainer, \textcolor{keyword}{typename} STT::MappedContainer>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01160}01160     \textcolor{keyword}{template} <\textcolor{keyword}{typename} PairsIt, \textcolor{keyword}{typename} PairsSent, simple\_allocator Allocator,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01161}01161         \textcolor{keyword}{typename} STT = detail::segment\_tree\_traits<PairsIt, Allocator>>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01162}01162     segment\_tree(std::sorted\_equivalent\_t, PairsIt, PairsSent, Allocator)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01163}01163     -\/> segment\_tree<\textcolor{keyword}{typename} STT::Key, \textcolor{keyword}{typename} STT::T,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01164}01164         \textcolor{keyword}{typename} STT::Compare, \textcolor{keyword}{typename} STT::Sum, \textcolor{keyword}{typename} STT::Identity, \textcolor{keyword}{typename} STT::KeyContainer, \textcolor{keyword}{typename} STT::MappedContainer>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01165}01165 }
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01166}01166     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Key, \textcolor{keyword}{typename} T, \textcolor{keyword}{typename} Allocator = std::allocator<\textcolor{keywordtype}{int}>,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01167}01167         \textcolor{keyword}{typename} STT = detail::segment\_tree\_traits<const std::pair<Key, T>*, Allocator>,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01168}01168         \textcolor{keyword}{typename} Compare = STT::Compare, \textcolor{keyword}{typename} Sum = STT::Sum, \textcolor{keyword}{typename} Identity = STT::Identity>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01169}01169     segment\_tree(std::initializer\_list<std::pair<Key, T>>, Compare = Compare(), Sum = Sum(), Allocator = Allocator())}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01170}01170     -\/> segment\_tree<\textcolor{keyword}{typename} STT::Key, \textcolor{keyword}{typename} STT::T, Compare, Sum, Identity,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01171}01171         \textcolor{keyword}{typename} STT::KeyContainer, \textcolor{keyword}{typename} STT::MappedContainer>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01172}01172     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Key, \textcolor{keyword}{typename} T, simple\_allocator Allocator,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01173}01173         \textcolor{keyword}{typename} STT = detail::segment\_tree\_traits<const std::pair<Key, T>*, Allocator>>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01174}01174     segment\_tree(std::initializer\_list<std::pair<Key, T>>, Allocator)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01175}01175     -\/> segment\_tree<\textcolor{keyword}{typename} STT::Key, \textcolor{keyword}{typename} STT::T,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01176}01176         \textcolor{keyword}{typename} STT::Compare, \textcolor{keyword}{typename} STT::Sum, \textcolor{keyword}{typename} STT::Identity, \textcolor{keyword}{typename} STT::KeyContainer, \textcolor{keyword}{typename} STT::MappedContainer>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01177}01177     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Key, \textcolor{keyword}{typename} T, \textcolor{keyword}{typename} Allocator = std::allocator<\textcolor{keywordtype}{int}>,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01178}01178         \textcolor{keyword}{typename} STT = detail::segment\_tree\_traits<const std::pair<Key, T>*, Allocator>,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01179}01179         \textcolor{keyword}{typename} Compare = STT::Compare, \textcolor{keyword}{typename} Sum = STT::Sum, \textcolor{keyword}{typename} Identity = STT::Identity>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01180}01180     segment\_tree(std::sorted\_equivalent\_t,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01181}01181         std::initializer\_list<std::pair<Key, T>>, Compare = Compare(), Sum = Sum(), Identity = Identity(), Allocator = Allocator())}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01182}01182     -\/> segment\_tree<\textcolor{keyword}{typename} STT::Key, \textcolor{keyword}{typename} STT::T, Compare, Sum, Identity,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01183}01183         \textcolor{keyword}{typename} STT::KeyContainer, \textcolor{keyword}{typename} STT::MappedContainer>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01184}01184     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Key, \textcolor{keyword}{typename} T, simple\_allocator Allocator,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01185}01185         \textcolor{keyword}{typename} STT = detail::segment\_tree\_traits<const std::pair<Key, T>*, Allocator>>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01186}01186     segment\_tree(std::sorted\_equivalent\_t, std::initializer\_list<std::pair<Key, T>>, Allocator)}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01187}01187     -\/> segment\_tree<\textcolor{keyword}{typename} STT::Key, \textcolor{keyword}{typename} STT::T,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01188}01188         \textcolor{keyword}{typename} STT::Compare, \textcolor{keyword}{typename} STT::Sum, \textcolor{keyword}{typename} STT::Identity, \textcolor{keyword}{typename} STT::KeyContainer, \textcolor{keyword}{typename} STT::MappedContainer>;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01189}01189 \}}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01190}01190 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Alloc, \textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01191}01191 \textcolor{keyword}{struct }std::uses\_allocator<\mbox{\hyperlink{namespaceutils}{utils}}::segment\_tree<Args...>, Alloc> : std::conjunction<}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01192}01192     std::uses\_allocator<typename utils::segment\_tree<Args...>::key\_container\_type, Alloc>,}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l01193}01193     std::uses\_allocator<typename utils::segment\_tree<Args...>::mapped\_container\_type, Alloc>> \{\};}
+
+\end{DoxyCode}

@@ -1,0 +1,22 @@
+\hypertarget{conceptutils_1_1container__compatible__range}{}\doxysection{utils\+::container\+\_\+compatible\+\_\+range Concept Reference}
+\label{conceptutils_1_1container__compatible__range}\index{utils::container\_compatible\_range@{utils::container\_compatible\_range}}
+
+
+{\ttfamily \#include $<$ranges.\+hpp$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} R, \textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1container__compatible__range}{utils::container\_compatible\_range}} = }
+\DoxyCodeLine{        ranges::input\_range<R> \&\&}
+\DoxyCodeLine{        std::convertible\_to<ranges::range\_reference\_t<R>, T>}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{ranges_8hpp_source_l00054}{54}} of file \mbox{\hyperlink{ranges_8hpp_source}{ranges.\+hpp}}.
+

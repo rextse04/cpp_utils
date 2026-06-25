@@ -1,0 +1,269 @@
+\hypertarget{classutils_1_1filter__iterator}{}\doxysection{utils\+::filter\+\_\+iterator\texorpdfstring{$<$}{<} Iter, Sent, P \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classutils_1_1filter__iterator}\index{utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}}
+
+
+{\ttfamily \#include $<$iterator.\+hpp$>$}
+
+
+
+Inheritance diagram for utils\+::filter\+\_\+iterator\texorpdfstring{$<$}{<} Iter, Sent, P \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{classutils_1_1filter__iterator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for utils\+::filter\+\_\+iterator\texorpdfstring{$<$}{<} Iter, Sent, P \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{classutils_1_1filter__iterator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classutils_1_1filter__iterator_a7e3f9885bc47c3742ab6bfec9d2cbd07}{iterator\+\_\+type}} = Iter
+\item 
+using \mbox{\hyperlink{classutils_1_1filter__iterator_a304824853a1ff1c7c47f59e09d7fa7d5}{iterator\+\_\+category}} = std\+::common\+\_\+type\+\_\+t$<$ \mbox{\hyperlink{namespaceutils_aac452ad4319d1aa831bb904e6e5123bb}{iterator\+\_\+category\+\_\+t}}$<$ Iter $>$, std\+::forward\+\_\+iterator\+\_\+tag $>$
+\item 
+using \mbox{\hyperlink{classutils_1_1filter__iterator_af82989f94ab382c5a84d437c6eae2d11}{difference\+\_\+type}} = std\+::iter\+\_\+difference\+\_\+t$<$ Iter $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1filter__iterator_a69e39fabc5b92cb7099506518150b608}{filter\+\_\+iterator}} ()=default
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1filter__iterator_a47a0eaac703914a036120e4978090638}{filter\+\_\+iterator}} (Iter it, Sent st, P pred)
+\item 
+{\footnotesize template$<$typename U , typename S , typename Q $>$ \newline
+requires (std\+::convertible\+\_\+to$<$const U\&, Iter$>$ \&\& std\+::convertible\+\_\+to$<$const S\&, Sent$>$ \&\& std\+::convertible\+\_\+to$<$const P\&, Q$>$)}\\constexpr \mbox{\hyperlink{classutils_1_1filter__iterator_ad752fb42ee0bfffc3cfd3545ade3b027}{filter\+\_\+iterator}} (const \mbox{\hyperlink{classutils_1_1filter__iterator}{filter\+\_\+iterator}}$<$ U, S, Q $>$ \&other)
+\item 
+constexpr Sent \mbox{\hyperlink{classutils_1_1filter__iterator_a575e698a18ebf192946a81a1926083fe}{sentinel}} () const
+\item 
+constexpr const P \& \mbox{\hyperlink{classutils_1_1filter__iterator_ad02b855f6d91ae3e74d9d0080a2be7b3}{filter}} () const noexcept
+\item 
+constexpr decltype(auto) \mbox{\hyperlink{classutils_1_1filter__iterator_ae6eb418a013624dd4a33cdc8edbe4a24}{operator$\ast$}} () const
+\item 
+constexpr decltype(auto) \mbox{\hyperlink{classutils_1_1filter__iterator_ac1f5bafe6b16f84232ec7a3a795c6cea}{operator-\/$>$}} () const
+\item 
+constexpr decltype(auto) \mbox{\hyperlink{classutils_1_1filter__iterator_afe70099a748efc5791dd67dc75e3c816}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{classutils_1_1filter__iterator_af82989f94ab382c5a84d437c6eae2d11}{difference\+\_\+type}} n) const =delete
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1filter__iterator}{filter\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1filter__iterator_a01735cf8c2f31f232621937ccb8e0ecd}{operator++}} ()
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1filter__iterator}{filter\+\_\+iterator}} \mbox{\hyperlink{classutils_1_1filter__iterator_a0f98de00b2ee74a7b764c62f46f26939}{operator++}} (int)
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1filter__iterator}{filter\+\_\+iterator}} \mbox{\hyperlink{classutils_1_1filter__iterator_aef0cebd14206a19aaa058cda703da215}{operator++}} (int)
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1filter__iterator}{filter\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1filter__iterator_a1e0132643a28cdcb257ee4327a855de5}{operator-\/-\/}} ()=delete
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1filter__iterator}{filter\+\_\+iterator}} \mbox{\hyperlink{classutils_1_1filter__iterator_a0f2d80c59330521e8ad148ebdfcbbf64}{operator-\/-\/}} (int)=delete
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1filter__iterator}{filter\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1filter__iterator_ab3aae15adad02097d010603abf2a16e2}{operator+=}} (\mbox{\hyperlink{classutils_1_1filter__iterator_af82989f94ab382c5a84d437c6eae2d11}{difference\+\_\+type}} n)=delete
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1filter__iterator}{filter\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1filter__iterator_a0834cd8ac89a13fc5cfdbce111736f14}{operator-\/=}} (\mbox{\hyperlink{classutils_1_1filter__iterator_af82989f94ab382c5a84d437c6eae2d11}{difference\+\_\+type}} n)=delete
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Iter, typename Sent, typename P$>$\newline
+requires ( detail\+::move\+\_\+incrementable$<$Iter$>$ \&\& std\+::sentinel\+\_\+for$<$Sent, Iter$>$ \&\& std\+::predicate$<$P, std\+::iter\+\_\+reference\+\_\+t$<$Iter$>$$>$ \&\& std\+::move\+\_\+constructible$<$P$>$)\newline
+class utils\+::filter\+\_\+iterator$<$ Iter, Sent, P $>$}
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00146}{146}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classutils_1_1filter__iterator_af82989f94ab382c5a84d437c6eae2d11}\label{classutils_1_1filter__iterator_af82989f94ab382c5a84d437c6eae2d11}} 
+\index{utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}!difference\_type@{difference\_type}}
+\index{difference\_type@{difference\_type}!utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}}
+\doxysubsubsection{\texorpdfstring{difference\_type}{difference\_type}}
+{\footnotesize\ttfamily template$<$typename Iter , typename Sent , typename P $>$ \\
+using \mbox{\hyperlink{classutils_1_1filter__iterator}{utils\+::filter\+\_\+iterator}}$<$ Iter, Sent, P $>$\+::\mbox{\hyperlink{classutils_1_1filter__iterator_af82989f94ab382c5a84d437c6eae2d11}{difference\+\_\+type}} =  std\+::iter\+\_\+difference\+\_\+t$<$Iter$>$}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00154}{154}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1filter__iterator_a304824853a1ff1c7c47f59e09d7fa7d5}\label{classutils_1_1filter__iterator_a304824853a1ff1c7c47f59e09d7fa7d5}} 
+\index{utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}!iterator\_category@{iterator\_category}}
+\index{iterator\_category@{iterator\_category}!utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}}
+\doxysubsubsection{\texorpdfstring{iterator\_category}{iterator\_category}}
+{\footnotesize\ttfamily template$<$typename Iter , typename Sent , typename P $>$ \\
+using \mbox{\hyperlink{classutils_1_1filter__iterator}{utils\+::filter\+\_\+iterator}}$<$ Iter, Sent, P $>$\+::\mbox{\hyperlink{classutils_1_1filter__iterator_a304824853a1ff1c7c47f59e09d7fa7d5}{iterator\+\_\+category}} =  std\+::common\+\_\+type\+\_\+t$<$\mbox{\hyperlink{namespaceutils_aac452ad4319d1aa831bb904e6e5123bb}{iterator\+\_\+category\+\_\+t}}$<$Iter$>$, std\+::forward\+\_\+iterator\+\_\+tag$>$}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00153}{153}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1filter__iterator_a7e3f9885bc47c3742ab6bfec9d2cbd07}\label{classutils_1_1filter__iterator_a7e3f9885bc47c3742ab6bfec9d2cbd07}} 
+\index{utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}!iterator\_type@{iterator\_type}}
+\index{iterator\_type@{iterator\_type}!utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}}
+\doxysubsubsection{\texorpdfstring{iterator\_type}{iterator\_type}}
+{\footnotesize\ttfamily template$<$typename Iter , typename Sent , typename P $>$ \\
+using \mbox{\hyperlink{classutils_1_1filter__iterator}{utils\+::filter\+\_\+iterator}}$<$ Iter, Sent, P $>$\+::\mbox{\hyperlink{classutils_1_1filter__iterator_a7e3f9885bc47c3742ab6bfec9d2cbd07}{iterator\+\_\+type}} =  Iter}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00152}{152}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classutils_1_1filter__iterator_a69e39fabc5b92cb7099506518150b608}\label{classutils_1_1filter__iterator_a69e39fabc5b92cb7099506518150b608}} 
+\index{utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}!filter\_iterator@{filter\_iterator}}
+\index{filter\_iterator@{filter\_iterator}!utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}}
+\doxysubsubsection{\texorpdfstring{filter\_iterator()}{filter\_iterator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename Sent , typename P $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1filter__iterator}{utils\+::filter\+\_\+iterator}}$<$ Iter, Sent, P $>$\+::\mbox{\hyperlink{classutils_1_1filter__iterator}{filter\+\_\+iterator}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [default]}}
+
+\mbox{\Hypertarget{classutils_1_1filter__iterator_a47a0eaac703914a036120e4978090638}\label{classutils_1_1filter__iterator_a47a0eaac703914a036120e4978090638}} 
+\index{utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}!filter\_iterator@{filter\_iterator}}
+\index{filter\_iterator@{filter\_iterator}!utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}}
+\doxysubsubsection{\texorpdfstring{filter\_iterator()}{filter\_iterator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename Sent , typename P $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1filter__iterator}{utils\+::filter\+\_\+iterator}}$<$ Iter, Sent, P $>$\+::\mbox{\hyperlink{classutils_1_1filter__iterator}{filter\+\_\+iterator}} (\begin{DoxyParamCaption}\item[{Iter}]{it,  }\item[{Sent}]{st,  }\item[{P}]{pred }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00157}{157}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1filter__iterator_ad752fb42ee0bfffc3cfd3545ade3b027}\label{classutils_1_1filter__iterator_ad752fb42ee0bfffc3cfd3545ade3b027}} 
+\index{utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}!filter\_iterator@{filter\_iterator}}
+\index{filter\_iterator@{filter\_iterator}!utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}}
+\doxysubsubsection{\texorpdfstring{filter\_iterator()}{filter\_iterator()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename Sent , typename P $>$ \\
+template$<$typename U , typename S , typename Q $>$ \newline
+requires (std\+::convertible\+\_\+to$<$const U\&, Iter$>$ \&\& std\+::convertible\+\_\+to$<$const S\&, Sent$>$ \&\& std\+::convertible\+\_\+to$<$const P\&, Q$>$)\\
+constexpr \mbox{\hyperlink{classutils_1_1filter__iterator}{utils\+::filter\+\_\+iterator}}$<$ Iter, Sent, P $>$\+::\mbox{\hyperlink{classutils_1_1filter__iterator}{filter\+\_\+iterator}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutils_1_1filter__iterator}{filter\+\_\+iterator}}$<$ U, S, Q $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00160}{160}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutils_1_1filter__iterator_ad02b855f6d91ae3e74d9d0080a2be7b3}\label{classutils_1_1filter__iterator_ad02b855f6d91ae3e74d9d0080a2be7b3}} 
+\index{utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}!filter@{filter}}
+\index{filter@{filter}!utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}}
+\doxysubsubsection{\texorpdfstring{filter()}{filter()}}
+{\footnotesize\ttfamily template$<$typename Iter , typename Sent , typename P $>$ \\
+constexpr const P \& \mbox{\hyperlink{classutils_1_1filter__iterator}{utils\+::filter\+\_\+iterator}}$<$ Iter, Sent, P $>$\+::filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00163}{163}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1filter__iterator_ae6eb418a013624dd4a33cdc8edbe4a24}\label{classutils_1_1filter__iterator_ae6eb418a013624dd4a33cdc8edbe4a24}} 
+\index{utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$typename Iter , typename Sent , typename P $>$ \\
+constexpr decltype(auto) \mbox{\hyperlink{classutils_1_1filter__iterator}{utils\+::filter\+\_\+iterator}}$<$ Iter, Sent, P $>$\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00165}{165}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1filter__iterator_a01735cf8c2f31f232621937ccb8e0ecd}\label{classutils_1_1filter__iterator_a01735cf8c2f31f232621937ccb8e0ecd}} 
+\index{utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}!operator++@{operator++}}
+\index{operator++@{operator++}!utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename Sent , typename P $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1filter__iterator}{filter\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1filter__iterator}{utils\+::filter\+\_\+iterator}}$<$ Iter, Sent, P $>$\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00172}{172}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1filter__iterator_a0f98de00b2ee74a7b764c62f46f26939}\label{classutils_1_1filter__iterator_a0f98de00b2ee74a7b764c62f46f26939}} 
+\index{utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}!operator++@{operator++}}
+\index{operator++@{operator++}!utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename Sent , typename P $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1filter__iterator}{filter\+\_\+iterator}} \mbox{\hyperlink{classutils_1_1filter__iterator}{utils\+::filter\+\_\+iterator}}$<$ Iter, Sent, P $>$\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00177}{177}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1filter__iterator_aef0cebd14206a19aaa058cda703da215}\label{classutils_1_1filter__iterator_aef0cebd14206a19aaa058cda703da215}} 
+\index{utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}!operator++@{operator++}}
+\index{operator++@{operator++}!utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename Sent , typename P $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1filter__iterator}{filter\+\_\+iterator}} \mbox{\hyperlink{classutils_1_1filter__iterator}{utils\+::filter\+\_\+iterator}}$<$ Iter, Sent, P $>$\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00182}{182}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1filter__iterator_ab3aae15adad02097d010603abf2a16e2}\label{classutils_1_1filter__iterator_ab3aae15adad02097d010603abf2a16e2}} 
+\index{utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$typename Iter , typename Sent , typename P $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1filter__iterator}{filter\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1filter__iterator}{utils\+::filter\+\_\+iterator}}$<$ Iter, Sent, P $>$\+::operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1filter__iterator_af82989f94ab382c5a84d437c6eae2d11}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classutils_1_1filter__iterator_a1e0132643a28cdcb257ee4327a855de5}\label{classutils_1_1filter__iterator_a1e0132643a28cdcb257ee4327a855de5}} 
+\index{utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename Sent , typename P $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1filter__iterator}{filter\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1filter__iterator}{utils\+::filter\+\_\+iterator}}$<$ Iter, Sent, P $>$\+::operator-\/-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classutils_1_1filter__iterator_a0f2d80c59330521e8ad148ebdfcbbf64}\label{classutils_1_1filter__iterator_a0f2d80c59330521e8ad148ebdfcbbf64}} 
+\index{utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename Sent , typename P $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1filter__iterator}{filter\+\_\+iterator}} \mbox{\hyperlink{classutils_1_1filter__iterator}{utils\+::filter\+\_\+iterator}}$<$ Iter, Sent, P $>$\+::operator-\/-\/ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classutils_1_1filter__iterator_a0834cd8ac89a13fc5cfdbce111736f14}\label{classutils_1_1filter__iterator_a0834cd8ac89a13fc5cfdbce111736f14}} 
+\index{utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily template$<$typename Iter , typename Sent , typename P $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1filter__iterator}{filter\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1filter__iterator}{utils\+::filter\+\_\+iterator}}$<$ Iter, Sent, P $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1filter__iterator_af82989f94ab382c5a84d437c6eae2d11}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classutils_1_1filter__iterator_ac1f5bafe6b16f84232ec7a3a795c6cea}\label{classutils_1_1filter__iterator_ac1f5bafe6b16f84232ec7a3a795c6cea}} 
+\index{utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily template$<$typename Iter , typename Sent , typename P $>$ \\
+constexpr decltype(auto) \mbox{\hyperlink{classutils_1_1filter__iterator}{utils\+::filter\+\_\+iterator}}$<$ Iter, Sent, P $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00168}{168}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1filter__iterator_afe70099a748efc5791dd67dc75e3c816}\label{classutils_1_1filter__iterator_afe70099a748efc5791dd67dc75e3c816}} 
+\index{utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily template$<$typename Iter , typename Sent , typename P $>$ \\
+constexpr decltype(auto) \mbox{\hyperlink{classutils_1_1filter__iterator}{utils\+::filter\+\_\+iterator}}$<$ Iter, Sent, P $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1filter__iterator_af82989f94ab382c5a84d437c6eae2d11}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classutils_1_1filter__iterator_a575e698a18ebf192946a81a1926083fe}\label{classutils_1_1filter__iterator_a575e698a18ebf192946a81a1926083fe}} 
+\index{utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}!sentinel@{sentinel}}
+\index{sentinel@{sentinel}!utils::filter\_iterator$<$ Iter, Sent, P $>$@{utils::filter\_iterator$<$ Iter, Sent, P $>$}}
+\doxysubsubsection{\texorpdfstring{sentinel()}{sentinel()}}
+{\footnotesize\ttfamily template$<$typename Iter , typename Sent , typename P $>$ \\
+constexpr Sent \mbox{\hyperlink{classutils_1_1filter__iterator}{utils\+::filter\+\_\+iterator}}$<$ Iter, Sent, P $>$\+::sentinel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00162}{162}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{iterator_8hpp}{iterator.\+hpp}}\end{DoxyCompactItemize}

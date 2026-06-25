@@ -1,0 +1,548 @@
+\hypertarget{integer_8hpp_source}{}\doxysection{integer.\+hpp}
+\mbox{\hyperlink{integer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#include <concepts>}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#include <type\_traits>}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <limits>}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <utility>}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include <numeric>}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include <stdckdint.h>}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00009}00009 \textcolor{preprocessor}{\#include <bit>}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00010}00010 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00011}00011 \textcolor{preprocessor}{\#include <cstddef>}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00012}00012 \textcolor{preprocessor}{\#include <istream>}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00013}00013 \textcolor{preprocessor}{\#include <ostream>}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00014}00014 \textcolor{preprocessor}{\#include <format>}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00015}00015 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{operators_8hpp}{operators.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00016}00016 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{type_8hpp}{type.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00018}00018 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutils}{utils}} \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00020}00020     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00021}00021     \textcolor{keyword}{struct }sane\_promotion \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00022}00022     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00023}00023         \textcolor{keyword}{using} P = \textcolor{keyword}{decltype}(+std::declval<T>());}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00024}00024     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00025}00025         \textcolor{keyword}{using} type = std::conditional\_t<std::is\_signed\_v<T>, P, std::make\_unsigned\_t<P>>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00026}00026         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} conv = !std::is\_same\_v<type, T>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00027}00027     \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00028}00028     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00029}00029     \textcolor{keyword}{using} sane\_promotion\_t = \textcolor{keyword}{typename} sane\_promotion<T>::type;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00030}00030     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00031}00031     \textcolor{keyword}{constexpr} sane\_promotion\_t<T> sane\_promote(T n) \{ \textcolor{keywordflow}{return} n; \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00033}00033     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00034}00034     \textcolor{keyword}{constexpr} T epsilon\_of = std::numeric\_limits<T>::is\_integer ? T(1) : std::numeric\_limits<T>::epsilon();}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00035}00035     \textcolor{keyword}{template} <\textcolor{keyword}{typename} From, \textcolor{keyword}{typename} To>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00036}00036     \textcolor{keyword}{concept }lossless\_convertible\_to = \textcolor{keyword}{requires} \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00037}00037         \textcolor{keyword}{requires} std::numeric\_limits<From>::is\_specialized \&\& std::numeric\_limits<To>::is\_specialized;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00038}00038         \textcolor{keyword}{requires} !std::numeric\_limits<From>::is\_signed || std::numeric\_limits<To>::is\_signed;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00039}00039         \textcolor{keyword}{requires} std::numeric\_limits<From>::max() <= std::numeric\_limits<To>::max();}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00040}00040         \textcolor{keyword}{requires} std::numeric\_limits<From>::lowest() >= std::numeric\_limits<To>::lowest();}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00041}00041         \textcolor{keyword}{requires} epsilon\_of<From> >= epsilon\_of<To>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00042}00042     \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00043}00043     \textcolor{keyword}{template} <\textcolor{keyword}{typename} From, \textcolor{keyword}{typename} To>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00044}00044     \textcolor{keyword}{struct }is\_lossless\_convertible : std::bool\_constant<lossless\_convertible\_to<From, To>> \{\};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00045}00045     \textcolor{keyword}{template} <\textcolor{keyword}{typename} From, \textcolor{keyword}{typename} To>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00046}00046     \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} is\_lossless\_convertible\_v = is\_lossless\_convertible<From, To>::value;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00048}00048     \textcolor{keyword}{namespace }integral\_behavior \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00050}00050         \textcolor{keyword}{template} <std::\textcolor{keywordtype}{int}egral>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00051}00051         \textcolor{keyword}{struct }standard \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00052}00052             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} integral\_op\_functors ops\{\};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00053}00053             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} integral\_asg\_op\_functors asg\_ops\{\};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00054}00054         \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00059}00059         \textcolor{keyword}{template} <std::\textcolor{keywordtype}{int}egral Under>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00060}00060         \textcolor{keyword}{struct }sane \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00061}00061         \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00062}00062             \textcolor{keyword}{using} U = sane\_promotion\_t<Under>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00063}00063         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00064}00064             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} integral\_op\_functors ops = \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00065}00065                 .plus = std::plus<U>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00066}00066                 .minus = std::minus<U>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00067}00067                 .multiplies = std::multiplies<U>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00068}00068                 .divides = std::divides<U>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00069}00069                 .modulus = std::modulus<U>\{\}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00070}00070             \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00071}00071             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} integral\_asg\_op\_functors asg\_ops = \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00072}00072                 .plus\_asg = plus\_asg<U>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00073}00073                 .minus\_asg = minus\_asg<U>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00074}00074                 .multiplies\_asg = multiplies\_asg<U>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00075}00075                 .divides\_asg = divides\_asg<U>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00076}00076                 .modulus\_asg = modulus\_asg<U>\{\}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00077}00077             \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00078}00078         \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00081}00081         \textcolor{keyword}{template} <std::\textcolor{keywordtype}{int}egral Under>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00082}00082         \textcolor{keyword}{struct }ub \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00083}00083         \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00084}00084             \textcolor{keyword}{using} SP = sane\_promotion<Under>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00085}00085             \textcolor{keyword}{using} U = SP::type;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00086}00086             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} U max = std::numeric\_limits<Under>::max(),}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00087}00087             min = std::numeric\_limits<Under>::min();}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00088}00088             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} U plus(U lhs, U rhs) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00089}00089                 [[assume(rhs < 0 || lhs <= max -\/ rhs)]];}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00090}00090                 [[assume(rhs > 0 || lhs >= min -\/ rhs)]];}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00091}00091                 \textcolor{keywordflow}{return} lhs + rhs;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00092}00092             \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00093}00093             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} U minus(U lhs, U rhs) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00094}00094                 \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (SP::conv) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00095}00095                     [[assume(lhs -\/ rhs >= min)]];}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00096}00096                     [[assume(lhs -\/ rhs <= max)]];}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00097}00097                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (std::is\_unsigned\_v<Under>) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00098}00098                     [[assume(lhs >= rhs)]];}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00099}00099                 \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00100}00100                 \textcolor{keywordflow}{return} lhs -\/ rhs;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00101}00101             \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00102}00102             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} U multiplies(U lhs, U rhs) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00103}00103                 \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (SP::conv) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00104}00104                     \textcolor{comment}{// if lhs * rhs overflow even as promoted integers, it would overflow in Under anyway}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00105}00105                     [[assume(lhs * rhs >= min)]];}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00106}00106                     [[assume(lhs * rhs <= max)]];}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00107}00107                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (std::is\_unsigned\_v<Under>) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00108}00108                     [[assume(rhs == 0 || lhs <= max / rhs)]];}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00109}00109                 \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00110}00110                 \textcolor{keywordflow}{return} lhs * rhs;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00111}00111             \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00112}00112         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00113}00113             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} integral\_op\_functors ops = \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00114}00114                 .plus = plus,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00115}00115                 .minus = minus,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00116}00116                 .multiplies = multiplies,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00117}00117                 .divides = std::divides<U>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00118}00118                 .modulus = std::modulus<U>\{\}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00119}00119             \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00120}00120             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} integral\_asg\_op\_functors asg\_ops = \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00121}00121                 .plus\_asg = asg\_wrap<plus>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00122}00122                 .minus\_asg = asg\_wrap<minus>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00123}00123                 .multiplies\_asg = asg\_wrap<multiplies>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00124}00124                 .divides\_asg = divides\_asg<U>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00125}00125                 .modulus\_asg = modulus\_asg<U>\{\}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00126}00126             \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00127}00127         \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00128}00128 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00130}00130         \textcolor{keyword}{template} <std::\textcolor{keywordtype}{int}egral Under>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00131}00131         \textcolor{keyword}{struct }wrap \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00132}00132         \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00133}00133             \textcolor{keyword}{using} U = sane\_promotion\_t<Under>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00134}00134             \textcolor{keyword}{using} UU = std::make\_unsigned\_t<U>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00135}00135             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} U divides(U lhs, U rhs) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00136}00136                 \textcolor{keywordflow}{if} (std::is\_signed\_v<Under> \&\& lhs == std::numeric\_limits<U>::min() \&\& rhs == -\/1) \textcolor{keywordflow}{return} lhs;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00137}00137                 \textcolor{keywordflow}{return} lhs / rhs;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00138}00138             \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00139}00139         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00140}00140             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} integral\_op\_functors ops = \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00141}00141                 .plus = std::plus<UU>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00142}00142                 .minus = std::minus<UU>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00143}00143                 .multiplies = std::multiplies<UU>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00144}00144                 .divides = divides,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00145}00145                 .modulus = std::modulus<U>\{\}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00146}00146             \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00147}00147             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} integral\_asg\_op\_functors asg\_ops = \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00148}00148                 .plus\_asg = plus\_asg<UU>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00149}00149                 .minus\_asg = minus\_asg<UU>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00150}00150                 .multiplies\_asg = multiplies\_asg<UU>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00151}00151                 .divides\_asg = asg\_wrap<divides>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00152}00152                 .modulus\_asg = modulus\_asg<U>\{\}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00153}00153             \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00154}00154         \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00156}00156 \textcolor{preprocessor}{\#ifdef \_\_cpp\_lib\_saturation\_arithmetic}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00159}00159         \textcolor{keyword}{template} <std::\textcolor{keywordtype}{int}egral Under>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00160}00160         \textcolor{keyword}{struct }sat \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00161}00161         \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00162}00162             \textcolor{keyword}{using} U = sane\_promotion\_t<Under>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00163}00163             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} U modulus(U lhs, U rhs) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00164}00164                 \textcolor{keywordflow}{if} (std::is\_signed\_v<Under> \&\& lhs == std::numeric\_limits<U>::min() \&\& rhs == -\/1) \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00165}00165                 \textcolor{keywordflow}{return} lhs \% rhs;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00166}00166             \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00167}00167         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00168}00168             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} integral\_op\_functors ops = \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00169}00169                 .plus = std::add\_sat<Under>,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00170}00170                 .minus = std::sub\_sat<Under>,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00171}00171                 .multiplies = std::mul\_sat<Under>,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00172}00172                 .divides = std::div\_sat<Under>,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00173}00173                 .modulus = modulus}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00174}00174             \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00175}00175             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} integral\_asg\_op\_functors asg\_ops = \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00176}00176                 .plus\_asg = asg\_wrap<std::add\_sat<Under>>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00177}00177                 .minus\_asg = asg\_wrap<std::sub\_sat<Under>>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00178}00178                 .multiplies\_asg = asg\_wrap<std::mul\_sat<Under>>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00179}00179                 .divides\_asg = asg\_wrap<std::div\_sat<Under>>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00180}00180                 .modulus\_asg = asg\_wrap<modulus>\{\}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00181}00181             \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00182}00182         \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00183}00183 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00184}00184 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00188}00188         \textcolor{keyword}{template} <std::\textcolor{keywordtype}{int}egral Under>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00189}00189         \textcolor{keyword}{struct }checked \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00190}00190         \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00191}00191             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} Under plus(Under lhs, Under rhs) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00192}00192                 Under res;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00193}00193                 \textcolor{keywordflow}{if} (ckd\_add(\&res, lhs, rhs)) \textcolor{keywordflow}{throw} std::overflow\_error(\textcolor{stringliteral}{"{}integer overflow"{}});}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00194}00194                 \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00195}00195             \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00196}00196             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} Under minus(Under lhs, Under rhs) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00197}00197                 Under res;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00198}00198                 \textcolor{keywordflow}{if} (ckd\_sub(\&res, lhs, rhs)) \textcolor{keywordflow}{throw} std::overflow\_error(\textcolor{stringliteral}{"{}integer underflow"{}});}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00199}00199                 \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00200}00200             \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00201}00201             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} Under multiplies(Under lhs, Under rhs) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00202}00202                 Under res;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00203}00203                 \textcolor{keywordflow}{if} (ckd\_mul(\&res, lhs, rhs)) \textcolor{keywordflow}{throw} std::overflow\_error(\textcolor{stringliteral}{"{}integer overflow"{}});}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00204}00204                 \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00205}00205             \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00206}00206             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} Under divides(Under lhs, Under rhs) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00207}00207                 \textcolor{keywordflow}{if} (std::is\_signed\_v<Under> \&\& lhs == std::numeric\_limits<Under>::min() \&\& rhs == -\/1) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00208}00208                     \textcolor{keywordflow}{throw} std::overflow\_error(\textcolor{stringliteral}{"{}integer overflow"{}});}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00209}00209                 \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00210}00210                 \textcolor{keywordflow}{if} (rhs == 0) \textcolor{keywordflow}{throw} std::domain\_error(\textcolor{stringliteral}{"{}integer division by zero"{}});}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00211}00211                 \textcolor{keywordflow}{return} lhs / rhs;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00212}00212             \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00213}00213             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} Under modulus(Under lhs, Under rhs) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00214}00214                 \textcolor{keywordflow}{if} (std::is\_signed\_v<Under> \&\& lhs == std::numeric\_limits<Under>::min() \&\& rhs == -\/1) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00215}00215                     \textcolor{keywordflow}{throw} std::overflow\_error(\textcolor{stringliteral}{"{}integer overflow"{}});}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00216}00216                 \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00217}00217                 \textcolor{keywordflow}{if} (rhs == 0) \textcolor{keywordflow}{throw} std::domain\_error(\textcolor{stringliteral}{"{}integer division by zero"{}});}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00218}00218                 \textcolor{keywordflow}{return} lhs \% rhs;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00219}00219             \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00220}00220         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00221}00221             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} integral\_op\_functors ops = \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00222}00222                 .plus = plus,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00223}00223                 .minus = minus,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00224}00224                 .multiplies = multiplies,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00225}00225                 .divides = divides,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00226}00226                 .modulus = modulus}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00227}00227             \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00228}00228             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} integral\_asg\_op\_functors asg\_ops = \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00229}00229                 .plus\_asg = asg\_wrap<plus>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00230}00230                 .minus\_asg = asg\_wrap<minus>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00231}00231                 .multiplies\_asg = asg\_wrap<multiplies>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00232}00232                 .divides\_asg = asg\_wrap<divides>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00233}00233                 .modulus\_asg = asg\_wrap<modulus>\{\}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00234}00234             \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00235}00235         \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00236}00236     \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00237}00237 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00238}00238     \textcolor{keyword}{namespace }shift\_behavior \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00240}00240         \textcolor{keyword}{template} <std::\textcolor{keywordtype}{int}egral>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00241}00241         \textcolor{keyword}{struct }standard \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00242}00242             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} shift\_op\_functors ops\{\};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00243}00243             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} shift\_asg\_op\_functors asg\_ops\{\};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00244}00244         \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00245}00245 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00251}00251         \textcolor{keyword}{template} <std::\textcolor{keywordtype}{int}egral Under>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00252}00252         \textcolor{keyword}{struct }scalar \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00253}00253         \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00254}00254             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} bits = std::numeric\_limits<std::make\_unsigned\_t<Under>>::digits;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00255}00255             \textcolor{keyword}{struct }shift\_right;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00256}00256             \textcolor{keyword}{struct }shift\_left \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00257}00257                 \textcolor{keyword}{static} Under operator()(Under lhs, \textcolor{keyword}{auto} n) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00258}00258                     \textcolor{keywordflow}{if} (n < 0) \textcolor{keywordflow}{return} shift\_right\{\}(lhs, -\/n);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00259}00259                     \textcolor{keywordflow}{if} (n >= bits) \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00260}00260                     \textcolor{keywordflow}{return} lhs << n;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00261}00261                 \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00262}00262             \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00263}00263             \textcolor{keyword}{struct }shift\_right \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00264}00264                 \textcolor{keyword}{static} Under operator()(Under lhs, \textcolor{keyword}{auto} n) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00265}00265                     \textcolor{keywordflow}{if} (n < 0) \textcolor{keywordflow}{return} shift\_left\{\}(lhs, -\/n);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00266}00266                     \textcolor{keywordflow}{if} (n >= bits) \textcolor{keywordflow}{return} lhs < 0 ? -\/1 : 0;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00267}00267                     \textcolor{keywordflow}{return} lhs >> n;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00268}00268                 \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00269}00269             \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00270}00270         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00271}00271             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} shift\_op\_functors ops = \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00272}00272                 .shift\_left = shift\_left\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00273}00273                 .shift\_right = shift\_right\{\}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00274}00274             \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00275}00275             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} shift\_asg\_op\_functors asg\_ops = \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00276}00276                 .shift\_left\_asg = asg\_wrap<shift\_left\{\}>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00277}00277                 .shift\_right\_asg = asg\_wrap<shift\_right\{\}>\{\}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00278}00278             \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00279}00279         \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00280}00280 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00284}00284         \textcolor{keyword}{template} <std::\textcolor{keywordtype}{unsigned}\_\textcolor{keywordtype}{int}egral Under>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00285}00285         \textcolor{keyword}{struct }circular \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00286}00286         \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00287}00287             \textcolor{keyword}{using} U = std::make\_unsigned\_t<Under>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00288}00288             \textcolor{keyword}{template} <\textcolor{keyword}{typename} Self, \textcolor{keyword}{typename} Other>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00289}00289             \textcolor{keyword}{struct }convertible\_to\_int : is\_lossless\_convertible<make\_fundamental\_t<Other>, int> \{\};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00290}00290         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00291}00291             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} shift\_op\_functors ops = \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00292}00292                 .shift\_left = std::rotl<U>,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00293}00293                 .shift\_right = std::rotr<U>,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00294}00294                 \textcolor{comment}{// because @code std::rotl@endcode and @code std::rotr@endcode takes @code int@endcode as argument}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00295}00295                 .binary\_traits = binary\_op\_traits<detail::get\_self, convertible\_to\_int>\{\}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00296}00296             \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00297}00297             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} shift\_asg\_op\_functors asg\_ops = \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00298}00298                 .shift\_left\_asg = asg\_wrap<std::rotl<U>>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00299}00299                 .shift\_right\_asg = asg\_wrap<std::rotr<U>>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00300}00300                 .asg\_traits = asg\_op\_traits<convertible\_to\_int>\{\}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00301}00301             \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00302}00302         \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00303}00303 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00307}00307         \textcolor{keyword}{template} <std::\textcolor{keywordtype}{int}egral Under>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00308}00308         \textcolor{keyword}{struct }checked \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00309}00309         \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00310}00310             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} bits = std::numeric\_limits<std::make\_unsigned\_t<Under>>::digits;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00311}00311             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} shift\_left = [](Under lhs, \textcolor{keyword}{auto} n) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00312}00312                 \textcolor{keywordflow}{if} (n < 0 || n >= bits) \textcolor{keywordflow}{throw} std::domain\_error(\textcolor{stringliteral}{"{}shift out of range"{}});}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00313}00313                 \textcolor{keywordflow}{return} lhs << n;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00314}00314             \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00315}00315             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} shift\_right = [](Under lhs, \textcolor{keyword}{auto} n) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00316}00316                 \textcolor{keywordflow}{if} (n < 0 || n >= bits) \textcolor{keywordflow}{throw} std::domain\_error(\textcolor{stringliteral}{"{}shift out of range"{}});}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00317}00317                 \textcolor{keywordflow}{return} lhs >> n;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00318}00318             \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00319}00319         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00320}00320             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} shift\_op\_functors ops = \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00321}00321                 .shift\_left = shift\_left,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00322}00322                 .shift\_right = shift\_right,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00323}00323             \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00324}00324             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} shift\_asg\_op\_functors asg\_ops = \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00325}00325                 .shift\_left\_asg = asg\_wrap<shift\_left>\{\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00326}00326                 .shift\_right\_asg = asg\_wrap<shift\_right>\{\}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00327}00327             \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00328}00328         \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00329}00329     \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00330}00330 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00331}00331     \textcolor{keyword}{template} <}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00332}00332         \textcolor{keyword}{typename} Self, \textcolor{keyword}{typename} Other,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00333}00333         \textcolor{keyword}{typename} SelfInfo = std::numeric\_limits<Self>,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00334}00334         \textcolor{keyword}{typename} OtherInfo = std::numeric\_limits<std::remove\_cvref\_t<Other>>>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00335}00335     \textcolor{keyword}{struct }is\_same\_width : std::bool\_constant<requires \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00336}00336         requires integer\_like<std::remove\_cvref\_t<Self>>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00337}00337         requires integer\_like<std::remove\_cvref\_t<Other>>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00338}00338         requires SelfInfo::digits + SelfInfo::is\_signed == OtherInfo::digits + OtherInfo::is\_signed;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00339}00339     \}> \{\};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00340}00340     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} Ref>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00341}00341     \textcolor{keyword}{concept }same\_sign\_as = \textcolor{keyword}{requires} \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00342}00342         \textcolor{keyword}{requires} integer\_like<T>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00343}00343         \textcolor{keyword}{requires} std::numeric\_limits<T>::is\_signed == std::numeric\_limits<Ref>::is\_signed;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00344}00344     \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00345}00345 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00346}00346     \textcolor{keyword}{namespace }detail \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00347}00347         \textcolor{keyword}{template} <\textcolor{keyword}{typename} IB>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00348}00348         \textcolor{keyword}{constexpr} fix\_op\_functors integer\_fix\_ops = \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00349}00349             .pre\_increment = [](\textcolor{keyword}{auto}\& \textcolor{keyword}{self}) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00350}00350                 \textcolor{keywordflow}{return} IB::asg\_ops.plus\_asg(\textcolor{keyword}{self}, 1);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00351}00351             \},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00352}00352             .post\_increment = [](\textcolor{keyword}{auto}\& \textcolor{keyword}{self}) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00353}00353                 \textcolor{keyword}{const} \textcolor{keyword}{auto} old = \textcolor{keyword}{self};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00354}00354                 IB::asg\_ops.plus\_asg(\textcolor{keyword}{self}, 1);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00355}00355                 \textcolor{keywordflow}{return} old;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00356}00356             \},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00357}00357             .pre\_decrement = [](\textcolor{keyword}{auto}\& \textcolor{keyword}{self}) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00358}00358                 \textcolor{keywordflow}{return} IB::asg\_ops.minus\_asg(\textcolor{keyword}{self}, 1);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00359}00359             \},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00360}00360             .post\_decrement = [](\textcolor{keyword}{auto}\& \textcolor{keyword}{self}) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00361}00361                 \textcolor{keyword}{const} \textcolor{keyword}{auto} old = \textcolor{keyword}{self};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00362}00362                 IB::asg\_ops.minus\_asg(\textcolor{keyword}{self}, 1);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00363}00363                 \textcolor{keywordflow}{return} old;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00364}00364             \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00365}00365         \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00366}00366     \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00367}00367     \textcolor{keyword}{template} <}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00368}00368         std::integral Under,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00369}00369         \textcolor{keyword}{template}<\textcolor{keyword}{typename}> \textcolor{keyword}{typename} IBTrait = integral\_behavior::sane,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00370}00370         \textcolor{keyword}{template}<\textcolor{keyword}{typename}> \textcolor{keyword}{typename} SBTrait = shift\_behavior::standard>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00371}00371     \textcolor{keyword}{requires} (}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00372}00372         tagged<\textcolor{keyword}{decltype}(IBTrait<Under>::ops), integral\_op\_functors\_tag> \&\&}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00373}00373         tagged<\textcolor{keyword}{decltype}(IBTrait<Under>::asg\_ops), integral\_asg\_op\_functors\_tag> \&\&}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00374}00374         tagged<\textcolor{keyword}{decltype}(SBTrait<Under>::ops), shift\_op\_functors\_tag> \&\&}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00375}00375         tagged<\textcolor{keyword}{decltype}(SBTrait<Under>::asg\_ops), shift\_asg\_op\_functors\_tag>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00376}00376     )}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00377}00377     \textcolor{keyword}{struct} integer : arithmetic\_ops<}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00378}00378         IBTrait<Under>::ops, IBTrait<Under>::asg\_ops,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00379}00379         \{.binary\_traits = binary\_op\_traits<detail::get\_self, is\_same\_width>\{\}\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00380}00380         \{.asg\_traits = asg\_op\_traits<is\_same\_width>\{\}\},}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00381}00381         SBTrait<Under>::ops, SBTrait<Under>::asg\_ops,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00382}00382         \{\}, detail::integer\_fix\_ops<IBTrait<Under>>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00383}00383     > \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00384}00384         \textcolor{keyword}{using} tag = \textcolor{keyword}{struct }integer\_tag;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00385}00385         \textcolor{keyword}{using} underlying\_type = Under;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00386}00386         \textcolor{keyword}{using} integral\_behavior = IBTrait<Under>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00387}00387         \textcolor{keyword}{using} shift\_behavior = SBTrait<Under>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00388}00388         \textcolor{keyword}{template} <std::\textcolor{keywordtype}{int}egral ToUnder>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00389}00389         \textcolor{keyword}{using} to = integer<ToUnder, IBTrait>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00390}00390         \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}> \textcolor{keyword}{typename} ToIBTrait = IBTrait, \textcolor{keyword}{template}<\textcolor{keyword}{typename}> \textcolor{keyword}{typename} ToSBTrait = SBTrait>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00391}00391         \textcolor{keyword}{using} adopt = integer<Under, ToIBTrait, ToSBTrait>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00392}00392 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00394}00394         underlying\_type under\_;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00395}00395 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00396}00396         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} integer max() noexcept \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00397}00397             \textcolor{keywordflow}{return} std::numeric\_limits<underlying\_type>::max();}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00398}00398         \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00399}00399         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} integer min() noexcept \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00400}00400             \textcolor{keywordflow}{return} std::numeric\_limits<underlying\_type>::min();}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00401}00401         \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00402}00402         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} is\_signed = std::numeric\_limits<underlying\_type>::is\_signed;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00403}00403 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00404}00404         \textcolor{keyword}{constexpr} integer() noexcept = default;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00409}00409         template <typename T>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00410}00410         requires (std::is\_convertible\_v<make\_fundamental\_t<T>, underlying\_type>)}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00411}00411         explicit(!lossless\_convertible\_to<make\_fundamental\_t<T>, underlying\_type>)}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00412}00412         constexpr integer(const T\& other) noexcept : under\_(to\_fundamental(other)) \{\}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00417}00417         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00418}00418         \textcolor{keyword}{requires} (\textcolor{keyword}{sizeof}...(Ts) == 0)}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00419}00419         \textcolor{keyword}{consteval} integer(\textcolor{keyword}{const} std::integral \textcolor{keyword}{auto}\& other, Ts...) : under\_(other) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00420}00420             \textcolor{keywordflow}{if} (!is\_signed \&\& other < 0) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00421}00421                 \textcolor{keywordflow}{throw} std::overflow\_error(\textcolor{stringliteral}{"{}negative number assigned to an unsigned type. "{}}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00422}00422                     \textcolor{stringliteral}{"{}Use the explicit constructor if you want it to wrap around."{}});}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00423}00423             \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00424}00424             \textcolor{keywordflow}{if} (other > +max()) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00425}00425                 \textcolor{keywordflow}{throw} std::overflow\_error(\textcolor{stringliteral}{"{}integer overflow"{}});}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00426}00426             \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00427}00427             \textcolor{keywordflow}{if} (other < +min()) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00428}00428                 \textcolor{keywordflow}{throw} std::overflow\_error(\textcolor{stringliteral}{"{}integer underflow"{}});}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00429}00429             \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00430}00430         \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00431}00431         \textcolor{keyword}{constexpr} underlying\_type\& to\_underlying() noexcept \{ \textcolor{keywordflow}{return} under\_; \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00432}00432         \textcolor{keyword}{constexpr} underlying\_type to\_underlying() const noexcept \{ \textcolor{keywordflow}{return} under\_; \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00436}00436         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00437}00437         \textcolor{keyword}{requires} (!tagged<T, integer\_tag>)}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00438}00438         \textcolor{keyword}{explicit}(!lossless\_convertible\_to<underlying\_type, T>)}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00439}00439         \textcolor{keyword}{constexpr} \textcolor{keyword}{operator} T() const noexcept \{ \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(under\_); \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00440}00440 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00441}00441         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} same\_sign\_as<integer> \textcolor{keyword}{auto}\& other) \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00442}00442             \textcolor{keywordflow}{return} under\_ == to\_fundamental(other);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00443}00443         \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00444}00444         \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} operator<=>(\textcolor{keyword}{const} same\_sign\_as<integer> \textcolor{keyword}{auto}\& other) \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00445}00445             \textcolor{keywordflow}{return} under\_ <=> to\_fundamental(other);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00446}00446         \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00447}00447 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00448}00448         \textcolor{keyword}{using} integer::utils\_ops\_base\_type::operator+;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00449}00449         \textcolor{keyword}{constexpr} underlying\_type operator+() const noexcept \{ \textcolor{keywordflow}{return} under\_; \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00450}00450 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00451}00451         \textcolor{keyword}{template} <\textcolor{keyword}{typename} CharT, \textcolor{keyword}{typename} Traits>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00452}00452         \textcolor{keyword}{friend} \textcolor{keyword}{auto}\& operator<<(std::basic\_ostream<CharT, Traits>\& os, \textcolor{keyword}{const} integer\& i) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00453}00453             \textcolor{keywordflow}{return} os << i.under\_;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00454}00454         \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00455}00455         \textcolor{keyword}{template} <\textcolor{keyword}{typename} CharT, \textcolor{keyword}{typename} Traits>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00456}00456         \textcolor{keyword}{friend} \textcolor{keyword}{auto}\& operator>>(std::basic\_istream<CharT, Traits>\& is, integer\& i) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00457}00457             \textcolor{keyword}{using} std\_types = std::tuple<short, int, long, \textcolor{keywordtype}{long} long,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00458}00458                 \textcolor{keywordtype}{unsigned} short, \textcolor{keywordtype}{unsigned} int, \textcolor{keywordtype}{unsigned} long, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long}>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00459}00459             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (meta::contained\_in\_v<std\_types, underlying\_type>) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00460}00460                 is >> i.under\_;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00461}00461             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00462}00462                 \textcolor{keyword}{using} max\_t = std::conditional\_t<std::is\_signed\_v<underlying\_type>, \textcolor{keywordtype}{long} long, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long}>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00463}00463                 max\_t u;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00464}00464                 is >> u;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00465}00465                 \textcolor{keywordflow}{if} (u > std::numeric\_limits<underlying\_type>::max()) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00466}00466                     is.setstate(std::ios\_base::failbit);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00467}00467                     u = std::numeric\_limits<underlying\_type>::max();}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00468}00468                 \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00469}00469                 \textcolor{keywordflow}{if} (u < std::numeric\_limits<underlying\_type>::min()) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00470}00470                     is.setstate(std::ios\_base::failbit);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00471}00471                     u = std::numeric\_limits<underlying\_type>::min();}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00472}00472                 \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00473}00473                 i.under\_ = \textcolor{keyword}{static\_cast<}underlying\_type\textcolor{keyword}{>}(u);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00474}00474             \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00475}00475             \textcolor{keywordflow}{return} is;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00476}00476         \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00477}00477     \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00478}00478     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00479}00479     \textcolor{keyword}{constexpr} T* operator+(T* ptr, tagged<integer\_tag> \textcolor{keyword}{auto} offset) \textcolor{keyword}{noexcept} \{ \textcolor{keywordflow}{return} ptr + +offset; \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00480}00480     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00481}00481     \textcolor{keyword}{constexpr} T* operator-\/(T* ptr, tagged<integer\_tag> \textcolor{keyword}{auto} offset) \textcolor{keyword}{noexcept} \{ \textcolor{keywordflow}{return} ptr -\/ +offset; \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00482}00482     \textcolor{keyword}{template} <tagged<\textcolor{keywordtype}{int}eger\_tag> T>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00483}00483     \textcolor{keyword}{struct }make\_fundamental<T> \{ \textcolor{keyword}{using} type = T::underlying\_type; \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00484}00484 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00485}00485     \textcolor{keyword}{namespace }integer\_alias \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00486}00486         \textcolor{keyword}{using} schar = integer<signed char>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00487}00487         \textcolor{keyword}{using} uchar = integer<unsigned char>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00488}00488         \textcolor{keyword}{using} sshort = integer<signed short>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00489}00489         \textcolor{keyword}{using} ushort = integer<unsigned short>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00490}00490         \textcolor{keyword}{using} sint = integer<signed int>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00491}00491         \textcolor{keyword}{using} uint = integer<unsigned int>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00492}00492         \textcolor{keyword}{using} slong = integer<signed long>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00493}00493         \textcolor{keyword}{using} ulong = integer<unsigned long>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00494}00494         \textcolor{keyword}{using} sllong = integer<signed long long>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00495}00495         \textcolor{keyword}{using} ullong = integer<unsigned long long>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00496}00496 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00497}00497 \textcolor{preprocessor}{\#ifdef INT8\_MAX}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00498}00498         \textcolor{keyword}{using} s8 = integer<int8\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00499}00499 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00500}00500 \textcolor{preprocessor}{\#ifdef UINT8\_MAX}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00501}00501         \textcolor{keyword}{using} u8 = integer<uint8\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00502}00502 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00503}00503 \textcolor{preprocessor}{\#ifdef INT16\_MAX}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00504}00504         \textcolor{keyword}{using} s16 = integer<int16\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00505}00505 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00506}00506 \textcolor{preprocessor}{\#ifdef UINT16\_MAX}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00507}00507         \textcolor{keyword}{using} u16 = integer<uint16\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00508}00508 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00509}00509 \textcolor{preprocessor}{\#ifdef INT32\_MAX}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00510}00510         \textcolor{keyword}{using} s32 = integer<int32\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00511}00511 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00512}00512 \textcolor{preprocessor}{\#ifdef UINT32\_MAX}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00513}00513         \textcolor{keyword}{using} u32 = integer<uint32\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00514}00514 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00515}00515 \textcolor{preprocessor}{\#ifdef INT64\_MAX}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00516}00516         \textcolor{keyword}{using} s64 = integer<int64\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00517}00517 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00518}00518 \textcolor{preprocessor}{\#ifdef UINT64\_MAX}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00519}00519         \textcolor{keyword}{using} u64 = integer<uint64\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00520}00520 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00521}00521         \textcolor{keyword}{using} sleast8 = integer<std::int\_least8\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00522}00522         \textcolor{keyword}{using} uleast8 = integer<std::uint\_least8\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00523}00523         \textcolor{keyword}{using} sleast16 = integer<std::int\_least16\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00524}00524         \textcolor{keyword}{using} uleast16 = integer<std::uint\_least16\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00525}00525         \textcolor{keyword}{using} sleast32 = integer<std::int\_least32\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00526}00526         \textcolor{keyword}{using} uleast32 = integer<std::uint\_least32\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00527}00527         \textcolor{keyword}{using} sleast64 = integer<std::int\_least64\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00528}00528         \textcolor{keyword}{using} uleast64 = integer<std::uint\_least64\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00529}00529         \textcolor{keyword}{using} sfast8 = integer<std::int\_fast8\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00530}00530         \textcolor{keyword}{using} ufast8 = integer<std::uint\_fast8\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00531}00531         \textcolor{keyword}{using} sfast16 = integer<std::int\_fast16\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00532}00532         \textcolor{keyword}{using} ufast16 = integer<std::uint\_fast16\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00533}00533         \textcolor{keyword}{using} sfast32 = integer<std::int\_fast32\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00534}00534         \textcolor{keyword}{using} ufast32 = integer<std::uint\_fast32\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00535}00535         \textcolor{keyword}{using} sfast64 = integer<std::int\_fast64\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00536}00536         \textcolor{keyword}{using} ufast64 = integer<std::uint\_fast64\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00537}00537         \textcolor{keyword}{using} smax = integer<std::intmax\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00538}00538         \textcolor{keyword}{using} umax = integer<std::uintmax\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00539}00539 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00540}00540         \textcolor{keyword}{using} \textcolor{keywordtype}{size\_t} = integer<std::size\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00541}00541         \textcolor{keyword}{using} ptrdiff\_t = integer<std::ptrdiff\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00542}00542 \textcolor{preprocessor}{\#ifdef INTPTR\_MAX}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00543}00543         \textcolor{keyword}{using} intptr\_t = integer<std::intptr\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00544}00544 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00545}00545 \textcolor{preprocessor}{\#ifdef UINTPTR\_MAX}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00546}00546         \textcolor{keyword}{using} uintptr\_t = integer<std::uintptr\_t>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00547}00547 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00548}00548     \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00549}00549 \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00550}00550 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00551}00551 \textcolor{keyword}{template} <utils::tagged<utils::\textcolor{keywordtype}{int}eger\_tag> T>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00552}00552 \textcolor{keyword}{struct }std::numeric\_limits<T> : std::numeric\_limits<typename T::underlying\_type> \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00553}00553     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} T min() noexcept \{ \textcolor{keywordflow}{return} std::numeric\_limits<typename T::underlying\_type>::min(); \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00554}00554     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} T max() noexcept \{ \textcolor{keywordflow}{return} std::numeric\_limits<typename T::underlying\_type>::max(); \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00555}00555     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} T lowest() noexcept \{ \textcolor{keywordflow}{return} std::numeric\_limits<typename T::underlying\_type>::lowest(); \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00556}00556     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} T epsilon() noexcept \{ \textcolor{keywordflow}{return} std::numeric\_limits<typename T::underlying\_type>::epsilon(); \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00557}00557     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} T round\_error() noexcept \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00558}00558         \textcolor{keywordflow}{return} std::numeric\_limits<typename T::underlying\_type>::round\_error();}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00559}00559     \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00560}00560     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} T infinity() noexcept \{ \textcolor{keywordflow}{return} std::numeric\_limits<typename T::underlying\_type>::infinity(); \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00561}00561     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} T quiet\_NaN() noexcept \{ \textcolor{keywordflow}{return} std::numeric\_limits<typename T::underlying\_type>::quiet\_NaN(); \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00562}00562     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} T signaling\_NaN() noexcept \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00563}00563         \textcolor{keywordflow}{return} std::numeric\_limits<typename T::underlying\_type>::signaling\_NaN();}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00564}00564     \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00565}00565     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} T denorm\_min() noexcept \{ \textcolor{keywordflow}{return} std::numeric\_limits<typename T::underlying\_type>::denorm\_min(); \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00566}00566 \};}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00567}00567 }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00568}00568 \textcolor{keyword}{template} <utils::tagged<utils::\textcolor{keywordtype}{int}eger\_tag> T, \textcolor{keyword}{typename} CharT>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00569}00569 \textcolor{keyword}{struct }std::formatter<T, CharT> : std::formatter<typename T::underlying\_type, CharT> \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00570}00570 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00571}00571     \textcolor{keyword}{using} parent = std::formatter<typename T::underlying\_type, CharT>;}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00572}00572 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00573}00573     \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} parse(\textcolor{keyword}{auto}\& parse\_ctx) \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00574}00574         \textcolor{keywordflow}{return} parent::parse(parse\_ctx);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00575}00575     \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00576}00576     \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} format(T arg, \textcolor{keyword}{auto}\& fmt\_ctx)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00577}00577         \textcolor{keywordflow}{return} parent::format(arg.to\_underlying(), fmt\_ctx);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00578}00578     \}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00579}00579 \};}
+
+\end{DoxyCode}

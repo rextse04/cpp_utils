@@ -1,0 +1,16 @@
+\hypertarget{math_8hpp_source}{}\doxysection{math.\+hpp}
+\mbox{\hyperlink{math_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{math_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{math_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#include <cstddef>}}
+\DoxyCodeLine{\Hypertarget{math_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{math_8hpp_source_l00004}00004 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutils}{utils}} \{}
+\DoxyCodeLine{\Hypertarget{math_8hpp_source_l00006}00006     \textcolor{keyword}{template} <std::ptrdiff\_t Exp, \textcolor{keyword}{typename} CastT>}
+\DoxyCodeLine{\Hypertarget{math_8hpp_source_l00007}\mbox{\hyperlink{namespaceutils_a4515012627113facd242ccb5f3d59374}{00007}}     \textcolor{keyword}{constexpr} CastT \mbox{\hyperlink{namespaceutils_a4515012627113facd242ccb5f3d59374}{pow}}(CastT base) \{}
+\DoxyCodeLine{\Hypertarget{math_8hpp_source_l00008}00008         \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (Exp == 0) \textcolor{keywordflow}{return} CastT(1);}
+\DoxyCodeLine{\Hypertarget{math_8hpp_source_l00009}00009         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (Exp > 0) \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}CastT\textcolor{keyword}{>}(base) * \mbox{\hyperlink{namespaceutils_a4515012627113facd242ccb5f3d59374}{pow}}<Exp-\/1, CastT>(base);}
+\DoxyCodeLine{\Hypertarget{math_8hpp_source_l00010}00010         \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} CastT(1)/ \mbox{\hyperlink{namespaceutils_a4515012627113facd242ccb5f3d59374}{pow}}<-\/Exp, CastT>(base);}
+\DoxyCodeLine{\Hypertarget{math_8hpp_source_l00011}00011     \}}
+\DoxyCodeLine{\Hypertarget{math_8hpp_source_l00012}00012 \}}
+
+\end{DoxyCode}

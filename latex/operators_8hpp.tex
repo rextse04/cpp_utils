@@ -1,0 +1,393 @@
+\hypertarget{operators_8hpp}{}\doxysection{operators.\+hpp File Reference}
+\label{operators_8hpp}\index{operators.hpp@{operators.hpp}}
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include \char`\"{}functional.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}type.\+hpp\char`\"{}}\newline
+Include dependency graph for operators.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{operators_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{operators_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structutils_1_1disable__op}{utils\+::disable\+\_\+op}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1unary__op__traits}{utils\+::unary\+\_\+op\+\_\+traits$<$ Result\+Trait $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1unary__op__traits_1_1result}{utils\+::unary\+\_\+op\+\_\+traits$<$ Result\+Trait $>$\+::result$<$ Self $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1binary__op__traits}{utils\+::binary\+\_\+op\+\_\+traits$<$ Result\+Trait, Constraint\+Trait $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1binary__op__traits_1_1result}{utils\+::binary\+\_\+op\+\_\+traits$<$ Result\+Trait, Constraint\+Trait $>$\+::result$<$ Self, Other $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1binary__op__traits_1_1constraint}{utils\+::binary\+\_\+op\+\_\+traits$<$ Result\+Trait, Constraint\+Trait $>$\+::constraint$<$ Self, Other $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1asg__op__traits}{utils\+::asg\+\_\+op\+\_\+traits$<$ Constraint\+Trait $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1asg__op__traits_1_1constraint}{utils\+::asg\+\_\+op\+\_\+traits$<$ Constraint\+Trait $>$\+::constraint$<$ Self, Other $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1integral__op__functors}{utils\+::integral\+\_\+op\+\_\+functors$<$ Plus, Minus, Mul, Div, Mod, Binary\+Traits $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1integral__ops}{utils\+::integral\+\_\+ops$<$ Funcs $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1integral__asg__op__functors}{utils\+::integral\+\_\+asg\+\_\+op\+\_\+functors$<$ Plus\+Asg, Minus\+Asg, Mul\+Asg, Div\+Asg, Mod\+Asg, Asg\+Traits $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1integral__asg__ops}{utils\+::integral\+\_\+asg\+\_\+ops$<$ Funcs $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1integral__full__ops}{utils\+::integral\+\_\+full\+\_\+ops$<$ Funcs, Asg\+Funcs $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1bit__op__functors}{utils\+::bit\+\_\+op\+\_\+functors$<$ Bit\+And, Bit\+Or, Bit\+Xor, Bit\+Not, Binary\+Traits, Unary\+Traits $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1bit__ops}{utils\+::bit\+\_\+ops$<$ Funcs $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1bit__asg__op__functors}{utils\+::bit\+\_\+asg\+\_\+op\+\_\+functors$<$ Bit\+And\+Asg, Bit\+Or\+Asg, Bit\+Xor\+Asg, Asg\+Traits $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1bit__asg__ops}{utils\+::bit\+\_\+asg\+\_\+ops$<$ Funcs $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1bit__full__ops}{utils\+::bit\+\_\+full\+\_\+ops$<$ Funcs, Asg\+Funcs $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1shift__op__functors}{utils\+::shift\+\_\+op\+\_\+functors$<$ Shift\+Left, Shift\+Right, Binary\+Traits $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1shift__ops}{utils\+::shift\+\_\+ops$<$ Funcs $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1shift__asg__op__functors}{utils\+::shift\+\_\+asg\+\_\+op\+\_\+functors$<$ Shift\+Left\+Asg, Shift\+Right\+Asg, Asg\+Traits $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1shift__asg__ops}{utils\+::shift\+\_\+asg\+\_\+ops$<$ Funcs $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1shift__full__ops}{utils\+::shift\+\_\+full\+\_\+ops$<$ Funcs, Asg\+Funcs $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1sign__op__functors}{utils\+::sign\+\_\+op\+\_\+functors$<$ Neg, Unary\+Traits $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1sign__ops}{utils\+::sign\+\_\+ops$<$ Funcs $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1fix__op__functors}{utils\+::fix\+\_\+op\+\_\+functors$<$ Pre\+Inc, Post\+Inc, Pre\+Dec, Post\+Dec $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1fix__ops}{utils\+::fix\+\_\+ops$<$ Funcs $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1arithmetic__ops}{utils\+::arithmetic\+\_\+ops$<$ Int\+Funcs, Int\+Asg\+Funcs, Bit\+Funcs, Bit\+Asg\+Funcs, Shift\+Funcs, Shift\+Asg\+Funcs, Sign\+Funcs, Fix\+Funcs $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1logical__op__functors}{utils\+::logical\+\_\+op\+\_\+functors$<$ And, Or, Not $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1logical__ops}{utils\+::logical\+\_\+ops$<$ Funcs $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceutils}{utils}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{operators_8hpp_a1d9fcd4bbeb49a815fa8249cdb4e41a5}{UTILS\+\_\+\+BINARY\+\_\+\+OP}}(op,  name)
+\item 
+\#define \mbox{\hyperlink{operators_8hpp_a4e69170c3ed702202239ab85fcd07cf1}{UTILS\+\_\+\+UNARY\+\_\+\+OP}}(op,  name)
+\item 
+\#define \mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{UTILS\+\_\+\+ASG\+\_\+\+OP}}(op,  name)
+\item 
+\#define \mbox{\hyperlink{operators_8hpp_af9a66ab382ee5d9ec749b9ba778ed41c}{UTILS\+\_\+\+FIX\+\_\+\+OP}}(op,  name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This header file contains $\ast$\+\_\+op structs that add operator overloads to their parent classes using the mixin pattern. Operator signature follows usual semantics to encourage proper use, although their behavior can be highly customized. This is done by passing your custom $\ast$\+\_\+op\+\_\+functors as a template parameter to a $\ast$\+\_\+op struct.
+
+Requirement(s) for a parent class of $\ast$\+\_\+op\+:~\newline
+Let 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{P}
+
+\end{DoxyCode}
+ be the parent class, and 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{O}
+
+\end{DoxyCode}
+ be the child class. For any operator 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{@}
+
+\end{DoxyCode}
+ defined by 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{O}
+
+\end{DoxyCode}
+, denote its corresponding functor member in 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{*\_op\_functors}
+
+\end{DoxyCode}
+ (
+\begin{DoxyCode}{0}
+\DoxyCodeLine{OF}
+
+\end{DoxyCode}
+) by 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{F}
+
+\end{DoxyCode}
+. Then,
+\begin{DoxyEnumerate}
+\item If 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{@}
+
+\end{DoxyCode}
+ is a binary operator 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{static\_cast<}result\_type\textcolor{keyword}{>}(F(this-\/>to\_underlying(), other))}
+
+\end{DoxyCode}
+ must be well-\/formed in the context of 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const} P}
+
+\end{DoxyCode}
+;
+\item If 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{@}
+
+\end{DoxyCode}
+ is a unary operator, 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{static\_cast<}result\_type\textcolor{keyword}{>}(F(this-\/>to\_underlying()))}
+
+\end{DoxyCode}
+ must be well-\/formed in the context of 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const} P}
+
+\end{DoxyCode}
+;
+\item If 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{@}
+
+\end{DoxyCode}
+ is an assignment operator, 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{F(this-\/>to\_underlying(), other)}
+
+\end{DoxyCode}
+ must be well-\/formed in the context of 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{P}
+
+\end{DoxyCode}
+;
+\item If 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{@}
+
+\end{DoxyCode}
+ is a pre-\/fix operator, 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{F(this-\/>to\_underlying())}
+
+\end{DoxyCode}
+ must be well-\/formed in the context of 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{P}
+
+\end{DoxyCode}
+;
+\item If 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{@}
+
+\end{DoxyCode}
+ is a post-\/fix operator, 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{static\_cast<}P\textcolor{keyword}{>}(F(this-\/>to\_underlying()))}
+
+\end{DoxyCode}
+ must be well-\/formed in the context of 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{P}
+
+\end{DoxyCode}
+;
+\item If 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{@}
+
+\end{DoxyCode}
+ is a binary or assignment operator, for any (possibly cv-\/qualified) 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Other}
+
+\end{DoxyCode}
+ (the type of 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{other}
+
+\end{DoxyCode}
+) such that 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{decltype}(OF::*\_traits)::constraint<P, Other>}
+
+\end{DoxyCode}
+ is true, either 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::remove\_cvref\_t<Other>}
+
+\end{DoxyCode}
+ is 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{P}
+
+\end{DoxyCode}
+, or 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::is\_constructible\_v<P, Other>}
+
+\end{DoxyCode}
+ must be true, where 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{result\_type}
+
+\end{DoxyCode}
+ is 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{decltype}(OF::*\_traits)::result<P, \textcolor{keyword}{decltype}(other)>}
+
+\end{DoxyCode}
+.
+\end{DoxyEnumerate}
+
+\begin{DoxyNote}{Note}
+You can disable an operation by setting 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{OF::@}
+
+\end{DoxyCode}
+ to 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{invalid\_op}
+
+\end{DoxyCode}
+. 
+\end{DoxyNote}
+
+
+Definition in file \mbox{\hyperlink{operators_8hpp_source}{operators.\+hpp}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}\label{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}} 
+\index{operators.hpp@{operators.hpp}!UTILS\_ASG\_OP@{UTILS\_ASG\_OP}}
+\index{UTILS\_ASG\_OP@{UTILS\_ASG\_OP}!operators.hpp@{operators.hpp}}
+\doxysubsubsection{\texorpdfstring{UTILS\_ASG\_OP}{UTILS\_ASG\_OP}}
+{\footnotesize\ttfamily \#define UTILS\+\_\+\+ASG\+\_\+\+OP(\begin{DoxyParamCaption}\item[{}]{op,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keyword}{template} <\textcolor{keyword}{typename} Self, \textcolor{keyword}{typename} Other>\(\backslash\)}
+\DoxyCodeLine{    constexpr Self\& \textcolor{keyword}{operator} op(\textcolor{keyword}{this} Self\& \textcolor{keyword}{self}, Other\&\& other)\(\backslash\)}
+\DoxyCodeLine{    requires (\(\backslash\)}
+\DoxyCodeLine{        !std::is\_same\_v<\textcolor{keyword}{decltype}(Funcs.name), disable\_op> \&\&\(\backslash\)}
+\DoxyCodeLine{        \textcolor{keyword}{decltype}(Funcs.asg\_traits)::\textcolor{keyword}{template} constraint<Self, Other>::value\(\backslash\)}
+\DoxyCodeLine{    ) \{\(\backslash\)}
+\DoxyCodeLine{        if \textcolor{keyword}{constexpr} (is\_equiv\_v<Self, Other>) \{\(\backslash\)}
+\DoxyCodeLine{            Funcs.name(\textcolor{keyword}{self}.to\_underlying(), other.to\_underlying());\(\backslash\)}
+\DoxyCodeLine{        \} \textcolor{keywordflow}{else} \{\(\backslash\)}
+\DoxyCodeLine{            Self conv(std::forward<Other>(other));\(\backslash\)}
+\DoxyCodeLine{            Funcs.name(\textcolor{keyword}{self}.to\_underlying(), conv.to\_underlying());\(\backslash\)}
+\DoxyCodeLine{        \}\(\backslash\)}
+\DoxyCodeLine{        return \textcolor{keyword}{self};\(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{operators_8hpp_source_l00059}{59}} of file \mbox{\hyperlink{operators_8hpp_source}{operators.\+hpp}}.
+
+\mbox{\Hypertarget{operators_8hpp_a1d9fcd4bbeb49a815fa8249cdb4e41a5}\label{operators_8hpp_a1d9fcd4bbeb49a815fa8249cdb4e41a5}} 
+\index{operators.hpp@{operators.hpp}!UTILS\_BINARY\_OP@{UTILS\_BINARY\_OP}}
+\index{UTILS\_BINARY\_OP@{UTILS\_BINARY\_OP}!operators.hpp@{operators.hpp}}
+\doxysubsubsection{\texorpdfstring{UTILS\_BINARY\_OP}{UTILS\_BINARY\_OP}}
+{\footnotesize\ttfamily \#define UTILS\+\_\+\+BINARY\+\_\+\+OP(\begin{DoxyParamCaption}\item[{}]{op,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keyword}{template} <\textcolor{keyword}{typename} Self, \textcolor{keyword}{typename} Other>\(\backslash\)}
+\DoxyCodeLine{    constexpr \textcolor{keyword}{decltype}(\textcolor{keyword}{auto}) \textcolor{keyword}{operator} op(\textcolor{keyword}{this} \textcolor{keyword}{const} Self\& \textcolor{keyword}{self}, Other\&\& other)\(\backslash\)}
+\DoxyCodeLine{    requires (\(\backslash\)}
+\DoxyCodeLine{        !std::is\_same\_v<\textcolor{keyword}{decltype}(Funcs.name), disable\_op> \&\&\(\backslash\)}
+\DoxyCodeLine{        \textcolor{keyword}{decltype}(Funcs.binary\_traits)::\textcolor{keyword}{template} constraint<Self, Other>::value\(\backslash\)}
+\DoxyCodeLine{    ) \{\(\backslash\)}
+\DoxyCodeLine{        using result\_type = \textcolor{keyword}{decltype}(Funcs.binary\_traits)::\textcolor{keyword}{template} result<Self, Other>::type;\(\backslash\)}
+\DoxyCodeLine{        if \textcolor{keyword}{constexpr} (is\_equiv\_v<Self, Other>) \{\(\backslash\)}
+\DoxyCodeLine{            return \textcolor{keyword}{static\_cast<}result\_type\textcolor{keyword}{>}(Funcs.name(\textcolor{keyword}{self}.to\_underlying(), other.to\_underlying()));\(\backslash\)}
+\DoxyCodeLine{        \} \textcolor{keywordflow}{else} \{\(\backslash\)}
+\DoxyCodeLine{            Self conv(std::forward<Other>(other));\(\backslash\)}
+\DoxyCodeLine{            return \textcolor{keyword}{static\_cast<}result\_type\textcolor{keyword}{>}(Funcs.name(\textcolor{keyword}{self}.to\_underlying(), conv.to\_underlying()));\(\backslash\)}
+\DoxyCodeLine{        \}\(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{operators_8hpp_source_l00037}{37}} of file \mbox{\hyperlink{operators_8hpp_source}{operators.\+hpp}}.
+
+\mbox{\Hypertarget{operators_8hpp_af9a66ab382ee5d9ec749b9ba778ed41c}\label{operators_8hpp_af9a66ab382ee5d9ec749b9ba778ed41c}} 
+\index{operators.hpp@{operators.hpp}!UTILS\_FIX\_OP@{UTILS\_FIX\_OP}}
+\index{UTILS\_FIX\_OP@{UTILS\_FIX\_OP}!operators.hpp@{operators.hpp}}
+\doxysubsubsection{\texorpdfstring{UTILS\_FIX\_OP}{UTILS\_FIX\_OP}}
+{\footnotesize\ttfamily \#define UTILS\+\_\+\+FIX\+\_\+\+OP(\begin{DoxyParamCaption}\item[{}]{op,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keyword}{template} <\textcolor{keyword}{typename} Self>\(\backslash\)}
+\DoxyCodeLine{    constexpr Self\& \textcolor{keyword}{operator} op(\textcolor{keyword}{this} Self\& \textcolor{keyword}{self})\(\backslash\)}
+\DoxyCodeLine{    requires (!std::is\_same\_v<\textcolor{keyword}{decltype}(Funcs.pre\_\#\#name), disable\_op>) \{\(\backslash\)}
+\DoxyCodeLine{        Funcs.pre\_\#\#name(\textcolor{keyword}{self}.to\_underlying());\(\backslash\)}
+\DoxyCodeLine{        return \textcolor{keyword}{self};\(\backslash\)}
+\DoxyCodeLine{    \}\(\backslash\)}
+\DoxyCodeLine{    template <typename Self>\(\backslash\)}
+\DoxyCodeLine{    constexpr Self \textcolor{keyword}{operator} op(\textcolor{keyword}{this} Self\& \textcolor{keyword}{self}, \textcolor{keywordtype}{int})\(\backslash\)}
+\DoxyCodeLine{    requires (!std::is\_same\_v<\textcolor{keyword}{decltype}(Funcs.post\_\#\#name), disable\_op>) \{\(\backslash\)}
+\DoxyCodeLine{        return \textcolor{keyword}{static\_cast<}Self\textcolor{keyword}{>}(Funcs.post\_\#\#name(\textcolor{keyword}{self}.to\_underlying()));\(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{operators_8hpp_source_l00074}{74}} of file \mbox{\hyperlink{operators_8hpp_source}{operators.\+hpp}}.
+
+\mbox{\Hypertarget{operators_8hpp_a4e69170c3ed702202239ab85fcd07cf1}\label{operators_8hpp_a4e69170c3ed702202239ab85fcd07cf1}} 
+\index{operators.hpp@{operators.hpp}!UTILS\_UNARY\_OP@{UTILS\_UNARY\_OP}}
+\index{UTILS\_UNARY\_OP@{UTILS\_UNARY\_OP}!operators.hpp@{operators.hpp}}
+\doxysubsubsection{\texorpdfstring{UTILS\_UNARY\_OP}{UTILS\_UNARY\_OP}}
+{\footnotesize\ttfamily \#define UTILS\+\_\+\+UNARY\+\_\+\+OP(\begin{DoxyParamCaption}\item[{}]{op,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keyword}{template} <\textcolor{keyword}{typename} Self>\(\backslash\)}
+\DoxyCodeLine{    constexpr \textcolor{keyword}{decltype}(\textcolor{keyword}{auto}) \textcolor{keyword}{operator} op(\textcolor{keyword}{this} \textcolor{keyword}{const} Self\& \textcolor{keyword}{self})\(\backslash\)}
+\DoxyCodeLine{    requires (!std::is\_same\_v<\textcolor{keyword}{decltype}(Funcs.name), disable\_op>) \{\(\backslash\)}
+\DoxyCodeLine{        using result\_type = \textcolor{keyword}{decltype}(Funcs.unary\_traits)::\textcolor{keyword}{template} result<Self>::type;\(\backslash\)}
+\DoxyCodeLine{        return \textcolor{keyword}{static\_cast<}result\_type\textcolor{keyword}{>}(Funcs.name(\textcolor{keyword}{self}.to\_underlying()));\(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{operators_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{operators_8hpp_source}{operators.\+hpp}}.
+

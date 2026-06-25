@@ -1,0 +1,11 @@
+<map id="type.hpp" name="type.hpp">
+<area shape="rect" id="node1" title="Type manipulation and qualification utilities for compile&#45;time type introspection and transformation." alt="" coords="278,5,349,32"/>
+<area shape="rect" id="node2" href="$compare_8hpp.html" title=" " alt="" coords="52,80,148,107"/>
+<area shape="rect" id="node4" href="$concurrency_8hpp.html" title=" " alt="" coords="283,319,399,345"/>
+<area shape="rect" id="node5" href="$dynamic_8hpp.html" title=" " alt="" coords="158,319,253,345"/>
+<area shape="rect" id="node6" href="$functional_8hpp.html" title=" " alt="" coords="173,80,275,107"/>
+<area shape="rect" id="node7" href="$operators_8hpp.html" title=" " alt="" coords="243,162,343,189"/>
+<area shape="rect" id="node8" href="$integer_8hpp.html" title=" " alt="" coords="299,244,384,271"/>
+<area shape="rect" id="node9" href="$static__string_8hpp.html" title=" " alt="" coords="424,319,541,345"/>
+<area shape="rect" id="node3" href="$segment__tree_8hpp.html" title=" " alt="" coords="32,155,168,196"/>
+</map>

@@ -1,0 +1,55 @@
+\hypertarget{ranges_8hpp_source}{}\doxysection{ranges.\+hpp}
+\mbox{\hyperlink{ranges_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#include <ranges>}}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#include <iterator>}}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00012}00012 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutils}{utils}} \{}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00013}00013     \textcolor{keyword}{namespace }ranges = std::ranges;}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00014}00014     \textcolor{keyword}{namespace }views = std::ranges::views;}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00016}00016     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Container>}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00017}\mbox{\hyperlink{conceptutils_1_1reservable__container}{00017}}     \textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1reservable__container}{reservable\_container}} =}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00018}00018         std::ranges::sized\_range<Container> \&\&}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00019}00019         \textcolor{keyword}{requires} (Container\& c, std::ranges::range\_size\_t<Container> n) \{}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00020}00020             c.reserve(n);}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00021}00021             \{ c.capacity() \} -\/> std::same\_as<\textcolor{keyword}{decltype}(n)>;}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00022}00022             \{ c.max\_size() \} -\/> std::same\_as<\textcolor{keyword}{decltype}(n)>;}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00023}00023         \};}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00025}00025     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Container, \textcolor{keyword}{typename} Reference>}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00026}\mbox{\hyperlink{conceptutils_1_1appendable__container}{00026}}     \textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1appendable__container}{appendable\_container}} = \textcolor{keyword}{requires} (Container\& c, Reference\&\& ref) \{}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00027}00027         \textcolor{keyword}{requires} (}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00028}00028             \textcolor{keyword}{requires} \{ c.emplace\_back(std::forward<Reference>(ref)); \}     ||}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00029}00029             \textcolor{keyword}{requires} \{ c.push\_back(std::forward<Reference>(ref)); \}        ||}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00030}00030             \textcolor{keyword}{requires} \{ c.emplace(c.end(), std::forward<Reference>(ref)); \} ||}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00031}00031             \textcolor{keyword}{requires} \{ c.insert(c.end(), std::forward<Reference>(ref)); \}}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00032}00032         );}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00033}00033     \};}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00035}00035     \textcolor{keyword}{template} <\textcolor{keyword}{typename} C>}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00036}\mbox{\hyperlink{namespaceutils_a838b0479484b30995e1d7e40f1cb529b}{00036}}     \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} \mbox{\hyperlink{namespaceutils_a838b0479484b30995e1d7e40f1cb529b}{container\_appender}}(C\& c) \{}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00037}00037         \textcolor{keywordflow}{return} [\&c]<\textcolor{keyword}{class }Reference>(Reference\&\& ref) \{}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00038}00038             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (\textcolor{keyword}{requires} \{ c.emplace\_back(std::declval<Reference>()); \})}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00039}00039                 c.emplace\_back(std::forward<Reference>(ref));}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00040}00040             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (\textcolor{keyword}{requires} \{ c.push\_back(std::declval<Reference>()); \})}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00041}00041                 c.push\_back(std::forward<Reference>(ref));}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00042}00042             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (\textcolor{keyword}{requires} \{ c.emplace(c.end(), std::declval<Reference>()); \})}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00043}00043                 c.emplace(c.end(), std::forward<Reference>(ref));}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00044}00044             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00045}00045                 c.insert(c.end(), std::forward<Reference>(ref));}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00046}00046         \};}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00047}00047     \}}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00049}00049     \textcolor{keyword}{template} <\textcolor{keyword}{typename} I, \textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00050}\mbox{\hyperlink{conceptutils_1_1container__compatible__iterator}{00050}}     \textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1container__compatible__iterator}{container\_compatible\_iterator}} =}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00051}00051         std::input\_iterator<I> \&\&}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00052}00052         std::convertible\_to<std::iter\_reference\_t<I>, T>;}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00053}00053     \textcolor{keyword}{template} <\textcolor{keyword}{typename} R, \textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00054}\mbox{\hyperlink{conceptutils_1_1container__compatible__range}{00054}}     \textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1container__compatible__range}{container\_compatible\_range}} =}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00055}00055         ranges::input\_range<R> \&\&}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00056}00056         std::convertible\_to<ranges::range\_reference\_t<R>, T>;}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00057}00057 \}}
+
+\end{DoxyCode}

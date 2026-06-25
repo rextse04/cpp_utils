@@ -1,0 +1,123 @@
+\hypertarget{concurrency_8hpp_source}{}\doxysection{concurrency.\+hpp}
+\mbox{\hyperlink{concurrency_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#include <semaphore>}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#include <mutex>}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <shared\_mutex>}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <optional>}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include <variant>}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{integer_8hpp}{integer.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00009}00009 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{type_8hpp}{type.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00011}00011 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutils}{utils}} \{}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00012}00012     \textcolor{keyword}{constexpr} \textcolor{keyword}{struct }unique\_resource\_sync\_t \{\} unique\_resource\_sync\{\};}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00013}00013     \textcolor{keyword}{namespace }detail \{}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00014}00014         \textcolor{keyword}{template} <\textcolor{keywordtype}{bool} Sync, \textcolor{keyword}{typename} SharedMutex>}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00015}00015         \textcolor{keyword}{struct }unique\_resource\_typedefs \{ \textcolor{keyword}{using} mutex\_type = SharedMutex; \};}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00016}00016         \textcolor{keyword}{template} <\textcolor{keyword}{typename} SharedMutex>}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00017}00017         \textcolor{keyword}{struct }unique\_resource\_typedefs<false, SharedMutex> \{\};}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00018}00018     \}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00028}00028     \textcolor{keyword}{template} <}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00029}00029         \textcolor{keyword}{typename} T, \textcolor{keywordtype}{bool} Sync = \textcolor{keyword}{false},}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00030}00030         \textcolor{keyword}{typename} Semaphore = std::counting\_semaphore<>, \textcolor{keyword}{typename} SharedMutex = std::shared\_mutex>}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00031}00031     \textcolor{keyword}{class }unique\_resource : \textcolor{keyword}{public} detail::unique\_resource\_typedefs<Sync, SharedMutex> \{}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00032}00032     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00033}00033         \textcolor{keyword}{using} value\_type = T;}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00034}00034         \textcolor{keyword}{using} semaphore\_type = Semaphore;}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00035}00035         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} sync = Sync;}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00036}00036     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00037}00037         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keyword}{struct }permit\_key : key<unique\_resource> \{\} key\{\};}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00038}00038     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00039}00039         \textcolor{keyword}{class }permit;}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00041}00041         \textcolor{keyword}{template} <\textcolor{keyword}{typename} Lock, type\_qualifiers Q = type\_qualifiers::none>}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00042}00042         \textcolor{keyword}{class }permit\_ptr : \textcolor{keyword}{public} stale\_class \{}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00043}00043         \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00044}00044             apply\_qualifiers\_t<value\_type\&, Q> base\_;}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00045}00045             Lock lock\_;}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00046}00046             \textcolor{keyword}{explicit} \textcolor{keyword}{constexpr} permit\_ptr(unique\_resource\& owner) : base\_(owner.base\_), lock\_(owner.mutex\_) \{\}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00047}00047             \textcolor{keyword}{friend} permit;}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00048}00048         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00049}00049             \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} operator-\/>() const noexcept \{ \textcolor{keywordflow}{return} \&base\_; \}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00050}00050             \textcolor{keyword}{constexpr} \textcolor{keyword}{auto}\& operator*() const noexcept \{ \textcolor{keywordflow}{return} base\_; \}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00051}00051         \};}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00052}00052         \textcolor{keyword}{class }permit : \textcolor{keyword}{public} stale\_class \{}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00053}00053         \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00054}00054             unique\_resource\& owner\_;}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00055}00055         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00056}00056             \textcolor{comment}{// a private constructor with friend doesn't work because it is also constructed through std::optional}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00057}00057             \textcolor{keyword}{constexpr} permit(permit\_key, unique\_resource* owner) : owner\_(*owner) \{\}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00060}00060             \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} read() const noexcept \{}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00061}00061                 \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (sync) \textcolor{keywordflow}{return} permit\_ptr<std::shared\_lock<SharedMutex>, type\_qualifiers::c>(owner\_);}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00062}00062                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \&std::as\_const(owner\_.base\_);}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00063}00063             \}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00066}00066             \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} write() noexcept \{}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00067}00067                 \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (sync) \textcolor{keywordflow}{return} permit\_ptr<std::scoped\_lock<SharedMutex>>(owner\_);}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00068}00068                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \&owner\_.base\_;}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00069}00069             \}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00071}00071             \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} operator-\/>() const noexcept \{}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00072}00072                 \textcolor{keywordflow}{return} read();}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00073}00073             \}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00077}00077             \textcolor{keyword}{constexpr} \textcolor{keyword}{const} value\_type\& operator*() const noexcept requires(!sync) \{}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00078}00078                 \textcolor{keywordflow}{return} owner\_.base\_;}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00079}00079             \}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00080}00080             \textcolor{keyword}{constexpr} \string~permit() \{ owner\_.sem\_.release(); \}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00081}00081         \};}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00082}00082     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00083}00083         value\_type base\_;}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00084}00084         [[no\_unique\_address]] semaphore\_type sem\_;}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00085}00085         [[no\_unique\_address]] std::conditional\_t<sync, std::shared\_mutex, std::monostate> mutex\_;}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00087}00087         \textcolor{keyword}{using} permit\_opt = std::optional<permit>;}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00088}00088         \textcolor{keyword}{constexpr} permit\_opt issue(\textcolor{keywordtype}{bool} success) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00089}00089             \textcolor{keywordflow}{return} success ? permit\_opt(std::in\_place, key, \textcolor{keyword}{this}) : permit\_opt(std::nullopt);}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00090}00090         \}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00091}00091     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00094}00094         \textcolor{keyword}{constexpr} unique\_resource(unique\_resource\_sync\_t, integer\_alias::ptrdiff\_t quota, T\&\& base)}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00095}00095         \textcolor{keyword}{requires} (std::is\_move\_constructible\_v<T>) :}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00096}00096             base\_(std::forward<T>(base)), sem\_(+quota) \{\}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00097}00097         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00098}00098         \textcolor{keyword}{requires} (std::is\_constructible\_v<T, Args...>)}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00099}00099         \textcolor{keyword}{explicit}(\textcolor{keyword}{sizeof}...(Args) == 0)}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00100}00100         \textcolor{keyword}{constexpr} unique\_resource(integer\_alias::ptrdiff\_t quota = 1, Args\&\&... args) :}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00101}00101             base\_(std::forward<Args>(args)...), sem\_(+quota) \{\}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00106}00106         \textcolor{keyword}{constexpr} \textcolor{keyword}{const} T\& operator*() const noexcept requires(!sync) \{ \textcolor{keywordflow}{return} base\_; \}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00107}00107         \textcolor{keyword}{constexpr} std::add\_pointer\_t<const T> operator-\/>() const noexcept requires(!sync) \{ \textcolor{keywordflow}{return} \&base\_; \}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00110}00110         \textcolor{keyword}{constexpr} T\& raw\_access() noexcept \{ \textcolor{keywordflow}{return} base\_; \}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00114}00114         \textcolor{keyword}{constexpr} \textcolor{keyword}{const} T\& raw\_access() const noexcept \{ \textcolor{keywordflow}{return} base\_; \}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00116}00116         permit acquire() \{}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00117}00117             sem\_.acquire();}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00118}00118             \textcolor{keywordflow}{return} \{key, \textcolor{keyword}{this}\};}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00119}00119         \}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00125}00125         permit\_opt try\_acquire() noexcept \{}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00126}00126             \textcolor{keywordflow}{return} issue(sem\_.try\_acquire());}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00127}00127         \}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00132}00132         \textcolor{keyword}{template} <\textcolor{keyword}{typename} Rep, \textcolor{keyword}{typename} Period>}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00133}00133         permit\_opt try\_acquire\_for(\textcolor{keyword}{const} std::chrono::duration<Rep, Period>\& timeout) \{}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00134}00134             \textcolor{keywordflow}{return} issue(sem\_.try\_acquire\_for(timeout));}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00135}00135         \}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00140}00140         \textcolor{keyword}{template} <\textcolor{keyword}{typename} Clock, \textcolor{keyword}{typename} Duration>}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00141}00141         permit\_opt try\_acquire\_until(\textcolor{keyword}{const} std::chrono::time\_point<Clock, Duration>\& ddl) \{}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00142}00142             \textcolor{keywordflow}{return} issue(sem\_.try\_acquire\_until(ddl));}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00143}00143         \}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00144}00144     \};}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00145}00145     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00146}00146     unique\_resource(unique\_resource\_sync\_t, integer\_alias::ptrdiff\_t, T\&\&)}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00147}00147     -\/> unique\_resource<std::remove\_cvref\_t<T>, \textcolor{keyword}{true}>;}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00148}00148 }
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00152}00152     \textcolor{keyword}{struct }trivial\_semaphore : stale\_class \{}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00153}00153         \textcolor{keyword}{explicit} \textcolor{keyword}{constexpr} trivial\_semaphore(integer\_alias::ptrdiff\_t) \textcolor{keyword}{noexcept} \{\}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00154}00154         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} release() noexcept \{\}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00155}00155         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} release(integer\_alias::ptrdiff\_t) \textcolor{keyword}{noexcept} \{\}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00156}00156         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} acquire() noexcept \{\}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00157}00157         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} try\_acquire() noexcept \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00158}00158         \textcolor{keyword}{template} <\textcolor{keyword}{typename} Rep, \textcolor{keyword}{typename} Period>}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00159}00159         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} try\_acquire\_for(\textcolor{keyword}{const} std::chrono::duration<Rep, Period>\&) \textcolor{keyword}{noexcept} \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00160}00160         \textcolor{keyword}{template} <\textcolor{keyword}{typename} Clock, \textcolor{keyword}{typename} Duration>}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00161}00161         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} try\_acquire\_until(\textcolor{keyword}{const} std::chrono::time\_point<Clock, Duration>\&) \textcolor{keyword}{noexcept} \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00162}00162         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} integer\_alias::ptrdiff\_t max() noexcept \{ \textcolor{keywordflow}{return} PTRDIFF\_MAX; \}}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00163}00163     \};}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00164}00164 \}}
+
+\end{DoxyCode}

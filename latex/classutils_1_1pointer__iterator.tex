@@ -1,0 +1,366 @@
+\hypertarget{classutils_1_1pointer__iterator}{}\doxysection{utils\+::pointer\+\_\+iterator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classutils_1_1pointer__iterator}\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+
+
+{\ttfamily \#include $<$iterator.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classutils_1_1pointer__iterator_ab0064b508bd6acc339f8d06b3260f859}{iterator\+\_\+type}} = T $\ast$
+\item 
+using \mbox{\hyperlink{classutils_1_1pointer__iterator_a7850e0c5043cb047a01890e23bdbd4c8}{value\+\_\+type}} = std\+::remove\+\_\+cv\+\_\+t$<$ T $>$
+\item 
+using \mbox{\hyperlink{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}{difference\+\_\+type}} = std\+::ptrdiff\+\_\+t
+\item 
+using \mbox{\hyperlink{classutils_1_1pointer__iterator_aabaf47a4ce09476dea071f003f7fab3b}{pointer}} = T $\ast$
+\item 
+using \mbox{\hyperlink{classutils_1_1pointer__iterator_a2e89ed88cc00093992f602a5af9dd5d9}{reference}} = T \&
+\item 
+using \mbox{\hyperlink{classutils_1_1pointer__iterator_a75334ad2289ac33315a79eca6ab44518}{iterator\+\_\+category}} = std\+::contiguous\+\_\+iterator\+\_\+tag
+\item 
+using \mbox{\hyperlink{classutils_1_1pointer__iterator_aeda79a0d9071cde80931781c0019b1c6}{iterator\+\_\+concept}} = std\+::contiguous\+\_\+iterator\+\_\+tag
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator_a0c200668168839fe5e07252ba7398d7c}{pointer\+\_\+iterator}} () noexcept
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator_aa9a00e07b6385c6afe7cd242bfc93f4a}{pointer\+\_\+iterator}} (\mbox{\hyperlink{classutils_1_1pointer__iterator_aabaf47a4ce09476dea071f003f7fab3b}{pointer}} ptr) noexcept
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator_aabaf47a4ce09476dea071f003f7fab3b}{pointer}} \mbox{\hyperlink{classutils_1_1pointer__iterator_a50927652c357f6585f1d0c9ec0ab2e4c}{get}} () const noexcept
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator_a2e89ed88cc00093992f602a5af9dd5d9}{reference}} \mbox{\hyperlink{classutils_1_1pointer__iterator_a0ad395c41fe91d7bf402a2ccede20659}{operator$\ast$}} () const noexcept
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator_aabaf47a4ce09476dea071f003f7fab3b}{pointer}} \mbox{\hyperlink{classutils_1_1pointer__iterator_ab475917983d56b8989452467151461d4}{operator-\/$>$}} () const noexcept
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator_a2e89ed88cc00093992f602a5af9dd5d9}{reference}} \mbox{\hyperlink{classutils_1_1pointer__iterator_a5f5edd4cf7e2c406515c75672bd11fda}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}{difference\+\_\+type}} n) const noexcept
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1pointer__iterator_a318b728fe16f9721fd5baf44a900e0a5}{operator++}} () noexcept
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} \mbox{\hyperlink{classutils_1_1pointer__iterator_a9c360c66195873064856bf39f3a85d8b}{operator++}} (int) noexcept
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1pointer__iterator_a864c6968827d138d5679d262f90e2a01}{operator-\/-\/}} () noexcept
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} \mbox{\hyperlink{classutils_1_1pointer__iterator_aca68cf8e806dc612f9399be1186af9d5}{operator-\/-\/}} (int) noexcept
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1pointer__iterator_a93ea31654f83d4451db04e67f4053f97}{operator+=}} (\mbox{\hyperlink{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}{difference\+\_\+type}} n) noexcept
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1pointer__iterator_a5ff63874d49fd440538eb28ef5a36d03}{operator-\/=}} (\mbox{\hyperlink{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}{difference\+\_\+type}} n) noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+constexpr friend \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} \mbox{\hyperlink{classutils_1_1pointer__iterator_a89db1d3be72445c3b84510a5f9d84337}{operator+}} (\mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} it, \mbox{\hyperlink{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}{difference\+\_\+type}} n) noexcept
+\item 
+constexpr friend \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} \mbox{\hyperlink{classutils_1_1pointer__iterator_a65814b544fe7f82de4a13b84aa52c18f}{operator+}} (\mbox{\hyperlink{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}{difference\+\_\+type}} n, \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} it) noexcept
+\item 
+constexpr friend \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} \mbox{\hyperlink{classutils_1_1pointer__iterator_adf547ed2a9406bce330a1c8b5f9109d5}{operator-\/}} (\mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} it, \mbox{\hyperlink{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}{difference\+\_\+type}} n) noexcept
+\item 
+constexpr friend \mbox{\hyperlink{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}{difference\+\_\+type}} \mbox{\hyperlink{classutils_1_1pointer__iterator_a518e098963b62954ed85b03f487f748c}{operator-\/}} (\mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} a, \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} b) noexcept
+\item 
+constexpr friend auto \mbox{\hyperlink{classutils_1_1pointer__iterator_af28e8243ae39a8beb6759eec72dbe690}{operator==}} (\mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} a, \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} b) noexcept
+\item 
+constexpr friend auto \mbox{\hyperlink{classutils_1_1pointer__iterator_ad36d6f42391d0bc25ab10f042e7538d5}{operator$<$=$>$}} (\mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} a, \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} b) noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class utils\+::pointer\+\_\+iterator$<$ T $>$}
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00023}{23}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}\label{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!difference\_type@{difference\_type}}
+\index{difference\_type@{difference\_type}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{difference\_type}{difference\_type}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classutils_1_1pointer__iterator}{utils\+::pointer\+\_\+iterator}}$<$ T $>$\+::\mbox{\hyperlink{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}{difference\+\_\+type}} =  std\+::ptrdiff\+\_\+t}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00027}{27}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_a75334ad2289ac33315a79eca6ab44518}\label{classutils_1_1pointer__iterator_a75334ad2289ac33315a79eca6ab44518}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!iterator\_category@{iterator\_category}}
+\index{iterator\_category@{iterator\_category}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{iterator\_category}{iterator\_category}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classutils_1_1pointer__iterator}{utils\+::pointer\+\_\+iterator}}$<$ T $>$\+::\mbox{\hyperlink{classutils_1_1pointer__iterator_a75334ad2289ac33315a79eca6ab44518}{iterator\+\_\+category}} =  std\+::contiguous\+\_\+iterator\+\_\+tag}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_aeda79a0d9071cde80931781c0019b1c6}\label{classutils_1_1pointer__iterator_aeda79a0d9071cde80931781c0019b1c6}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!iterator\_concept@{iterator\_concept}}
+\index{iterator\_concept@{iterator\_concept}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{iterator\_concept}{iterator\_concept}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classutils_1_1pointer__iterator}{utils\+::pointer\+\_\+iterator}}$<$ T $>$\+::\mbox{\hyperlink{classutils_1_1pointer__iterator_aeda79a0d9071cde80931781c0019b1c6}{iterator\+\_\+concept}} =  std\+::contiguous\+\_\+iterator\+\_\+tag}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00031}{31}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_ab0064b508bd6acc339f8d06b3260f859}\label{classutils_1_1pointer__iterator_ab0064b508bd6acc339f8d06b3260f859}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!iterator\_type@{iterator\_type}}
+\index{iterator\_type@{iterator\_type}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{iterator\_type}{iterator\_type}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classutils_1_1pointer__iterator}{utils\+::pointer\+\_\+iterator}}$<$ T $>$\+::\mbox{\hyperlink{classutils_1_1pointer__iterator_ab0064b508bd6acc339f8d06b3260f859}{iterator\+\_\+type}} =  T$\ast$}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00025}{25}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_aabaf47a4ce09476dea071f003f7fab3b}\label{classutils_1_1pointer__iterator_aabaf47a4ce09476dea071f003f7fab3b}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!pointer@{pointer}}
+\index{pointer@{pointer}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pointer}{pointer}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classutils_1_1pointer__iterator}{utils\+::pointer\+\_\+iterator}}$<$ T $>$\+::\mbox{\hyperlink{classutils_1_1pointer__iterator_aabaf47a4ce09476dea071f003f7fab3b}{pointer}} =  T$\ast$}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00028}{28}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_a2e89ed88cc00093992f602a5af9dd5d9}\label{classutils_1_1pointer__iterator_a2e89ed88cc00093992f602a5af9dd5d9}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!reference@{reference}}
+\index{reference@{reference}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{reference}{reference}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classutils_1_1pointer__iterator}{utils\+::pointer\+\_\+iterator}}$<$ T $>$\+::\mbox{\hyperlink{classutils_1_1pointer__iterator_a2e89ed88cc00093992f602a5af9dd5d9}{reference}} =  T\&}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00029}{29}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_a7850e0c5043cb047a01890e23bdbd4c8}\label{classutils_1_1pointer__iterator_a7850e0c5043cb047a01890e23bdbd4c8}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!value\_type@{value\_type}}
+\index{value\_type@{value\_type}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{value\_type}{value\_type}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classutils_1_1pointer__iterator}{utils\+::pointer\+\_\+iterator}}$<$ T $>$\+::\mbox{\hyperlink{classutils_1_1pointer__iterator_a7850e0c5043cb047a01890e23bdbd4c8}{value\+\_\+type}} =  std\+::remove\+\_\+cv\+\_\+t$<$T$>$}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00026}{26}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_a0c200668168839fe5e07252ba7398d7c}\label{classutils_1_1pointer__iterator_a0c200668168839fe5e07252ba7398d7c}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!pointer\_iterator@{pointer\_iterator}}
+\index{pointer\_iterator@{pointer\_iterator}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pointer\_iterator()}{pointer\_iterator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator}{utils\+::pointer\+\_\+iterator}}$<$ T $>$\+::\mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_aa9a00e07b6385c6afe7cd242bfc93f4a}\label{classutils_1_1pointer__iterator_aa9a00e07b6385c6afe7cd242bfc93f4a}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!pointer\_iterator@{pointer\_iterator}}
+\index{pointer\_iterator@{pointer\_iterator}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pointer\_iterator()}{pointer\_iterator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator}{utils\+::pointer\+\_\+iterator}}$<$ T $>$\+::\mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1pointer__iterator_aabaf47a4ce09476dea071f003f7fab3b}{pointer}}}]{ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_a50927652c357f6585f1d0c9ec0ab2e4c}\label{classutils_1_1pointer__iterator_a50927652c357f6585f1d0c9ec0ab2e4c}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!get@{get}}
+\index{get@{get}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator_aabaf47a4ce09476dea071f003f7fab3b}{pointer}} \mbox{\hyperlink{classutils_1_1pointer__iterator}{utils\+::pointer\+\_\+iterator}}$<$ T $>$\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00038}{38}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_a0ad395c41fe91d7bf402a2ccede20659}\label{classutils_1_1pointer__iterator_a0ad395c41fe91d7bf402a2ccede20659}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator_a2e89ed88cc00093992f602a5af9dd5d9}{reference}} \mbox{\hyperlink{classutils_1_1pointer__iterator}{utils\+::pointer\+\_\+iterator}}$<$ T $>$\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00040}{40}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_a318b728fe16f9721fd5baf44a900e0a5}\label{classutils_1_1pointer__iterator_a318b728fe16f9721fd5baf44a900e0a5}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!operator++@{operator++}}
+\index{operator++@{operator++}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1pointer__iterator}{utils\+::pointer\+\_\+iterator}}$<$ T $>$\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_a9c360c66195873064856bf39f3a85d8b}\label{classutils_1_1pointer__iterator_a9c360c66195873064856bf39f3a85d8b}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!operator++@{operator++}}
+\index{operator++@{operator++}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} \mbox{\hyperlink{classutils_1_1pointer__iterator}{utils\+::pointer\+\_\+iterator}}$<$ T $>$\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00044}{44}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_a93ea31654f83d4451db04e67f4053f97}\label{classutils_1_1pointer__iterator_a93ea31654f83d4451db04e67f4053f97}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1pointer__iterator}{utils\+::pointer\+\_\+iterator}}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00047}{47}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_a864c6968827d138d5679d262f90e2a01}\label{classutils_1_1pointer__iterator_a864c6968827d138d5679d262f90e2a01}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1pointer__iterator}{utils\+::pointer\+\_\+iterator}}$<$ T $>$\+::operator-\/-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00045}{45}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_aca68cf8e806dc612f9399be1186af9d5}\label{classutils_1_1pointer__iterator_aca68cf8e806dc612f9399be1186af9d5}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} \mbox{\hyperlink{classutils_1_1pointer__iterator}{utils\+::pointer\+\_\+iterator}}$<$ T $>$\+::operator-\/-\/ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00046}{46}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_a5ff63874d49fd440538eb28ef5a36d03}\label{classutils_1_1pointer__iterator_a5ff63874d49fd440538eb28ef5a36d03}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1pointer__iterator}{utils\+::pointer\+\_\+iterator}}$<$ T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00048}{48}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_ab475917983d56b8989452467151461d4}\label{classutils_1_1pointer__iterator_ab475917983d56b8989452467151461d4}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator_aabaf47a4ce09476dea071f003f7fab3b}{pointer}} \mbox{\hyperlink{classutils_1_1pointer__iterator}{utils\+::pointer\+\_\+iterator}}$<$ T $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00041}{41}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_a5f5edd4cf7e2c406515c75672bd11fda}\label{classutils_1_1pointer__iterator_a5f5edd4cf7e2c406515c75672bd11fda}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1pointer__iterator_a2e89ed88cc00093992f602a5af9dd5d9}{reference}} \mbox{\hyperlink{classutils_1_1pointer__iterator}{utils\+::pointer\+\_\+iterator}}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00042}{42}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_a65814b544fe7f82de4a13b84aa52c18f}\label{classutils_1_1pointer__iterator_a65814b544fe7f82de4a13b84aa52c18f}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+}{operator+}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr friend \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}{difference\+\_\+type}}}]{n,  }\item[{\mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}}$<$ T $>$}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00050}{50}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_a89db1d3be72445c3b84510a5f9d84337}\label{classutils_1_1pointer__iterator_a89db1d3be72445c3b84510a5f9d84337}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+}{operator+}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr friend \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}}$<$ T $>$}]{it,  }\item[{\mbox{\hyperlink{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00049}{49}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_a518e098963b62954ed85b03f487f748c}\label{classutils_1_1pointer__iterator_a518e098963b62954ed85b03f487f748c}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/}{operator-}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr friend \mbox{\hyperlink{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}{difference\+\_\+type}} operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}}$<$ T $>$}]{a,  }\item[{\mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}}$<$ T $>$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_adf547ed2a9406bce330a1c8b5f9109d5}\label{classutils_1_1pointer__iterator_adf547ed2a9406bce330a1c8b5f9109d5}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/}{operator-}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr friend \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}} operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}}$<$ T $>$}]{it,  }\item[{\mbox{\hyperlink{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_ad36d6f42391d0bc25ab10f042e7538d5}\label{classutils_1_1pointer__iterator_ad36d6f42391d0bc25ab10f042e7538d5}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!operator$<$=$>$@{operator$<$=$>$}}
+\index{operator$<$=$>$@{operator$<$=$>$}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$=$>$}{operator<=>}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr friend auto operator$<$=$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}}$<$ T $>$}]{a,  }\item[{\mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}}$<$ T $>$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00054}{54}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pointer__iterator_af28e8243ae39a8beb6759eec72dbe690}\label{classutils_1_1pointer__iterator_af28e8243ae39a8beb6759eec72dbe690}} 
+\index{utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!utils::pointer\_iterator$<$ T $>$@{utils::pointer\_iterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr friend auto operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}}$<$ T $>$}]{a,  }\item[{\mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}}$<$ T $>$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00053}{53}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{iterator_8hpp}{iterator.\+hpp}}\end{DoxyCompactItemize}

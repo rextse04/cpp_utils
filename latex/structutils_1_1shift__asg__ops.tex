@@ -1,0 +1,87 @@
+\hypertarget{structutils_1_1shift__asg__ops}{}\doxysection{utils\+::shift\+\_\+asg\+\_\+ops\texorpdfstring{$<$}{<} Funcs \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structutils_1_1shift__asg__ops}\index{utils::shift\_asg\_ops$<$ Funcs $>$@{utils::shift\_asg\_ops$<$ Funcs $>$}}
+
+
+{\ttfamily \#include $<$operators.\+hpp$>$}
+
+
+
+Inheritance diagram for utils\+::shift\+\_\+asg\+\_\+ops\texorpdfstring{$<$}{<} Funcs \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structutils_1_1shift__asg__ops__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Self , integer\+\_\+like Other$>$ \newline
+requires ( !std\+::is\+\_\+same\+\_\+v$<$decltype(Funcs.\+shift\+\_\+left\+\_\+asg), \mbox{\hyperlink{structutils_1_1disable__op}{disable\+\_\+op}}$>$ \&\& decltype(Funcs.\+asg\+\_\+traits)\+::template constraint$<$Self, Other$>$\+::value )}\\constexpr Self \& \mbox{\hyperlink{structutils_1_1shift__asg__ops_a3a65efb7a45951b16a0728984c1aefb5}{operator$<$$<$=}} (this Self \&self, const Other \&n)
+\item 
+{\footnotesize template$<$typename Self , integer\+\_\+like Other$>$ \newline
+requires ( !std\+::is\+\_\+same\+\_\+v$<$decltype(Funcs.\+shift\+\_\+right\+\_\+asg), \mbox{\hyperlink{structutils_1_1disable__op}{disable\+\_\+op}}$>$ \&\& decltype(Funcs.\+asg\+\_\+traits)\+::template constraint$<$Self, Other$>$\+::value )}\\constexpr Self \& \mbox{\hyperlink{structutils_1_1shift__asg__ops_a883d9857e2dd4859d0ff50700a9663ef}{operator$>$$>$=}} (this Self \&self, const Other \&n)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{structutils_1_1shift__asg__ops_af41d3ecdb34318fbac039e18b0de2e8e}{utils\+\_\+ops\+\_\+base\+\_\+type}} = \mbox{\hyperlink{structutils_1_1shift__asg__ops}{shift\+\_\+asg\+\_\+ops}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$\mbox{\hyperlink{structutils_1_1shift__asg__op__functors}{shift\+\_\+asg\+\_\+op\+\_\+functors}} Funcs = \{\}$>$\newline
+struct utils\+::shift\+\_\+asg\+\_\+ops$<$ Funcs $>$}
+
+
+Definition at line \mbox{\hyperlink{operators_8hpp_source_l00278}{278}} of file \mbox{\hyperlink{operators_8hpp_source}{operators.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structutils_1_1shift__asg__ops_af41d3ecdb34318fbac039e18b0de2e8e}\label{structutils_1_1shift__asg__ops_af41d3ecdb34318fbac039e18b0de2e8e}} 
+\index{utils::shift\_asg\_ops$<$ Funcs $>$@{utils::shift\_asg\_ops$<$ Funcs $>$}!utils\_ops\_base\_type@{utils\_ops\_base\_type}}
+\index{utils\_ops\_base\_type@{utils\_ops\_base\_type}!utils::shift\_asg\_ops$<$ Funcs $>$@{utils::shift\_asg\_ops$<$ Funcs $>$}}
+\doxysubsubsection{\texorpdfstring{utils\_ops\_base\_type}{utils\_ops\_base\_type}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{structutils_1_1shift__asg__op__functors}{shift\+\_\+asg\+\_\+op\+\_\+functors}} Funcs = \{\}$>$ \\
+using \mbox{\hyperlink{structutils_1_1shift__asg__ops}{utils\+::shift\+\_\+asg\+\_\+ops}}$<$ Funcs $>$\+::\mbox{\hyperlink{structutils_1_1shift__asg__ops_af41d3ecdb34318fbac039e18b0de2e8e}{utils\+\_\+ops\+\_\+base\+\_\+type}} =  \mbox{\hyperlink{structutils_1_1shift__asg__ops}{shift\+\_\+asg\+\_\+ops}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{operators_8hpp_source_l00280}{280}} of file \mbox{\hyperlink{operators_8hpp_source}{operators.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structutils_1_1shift__asg__ops_a3a65efb7a45951b16a0728984c1aefb5}\label{structutils_1_1shift__asg__ops_a3a65efb7a45951b16a0728984c1aefb5}} 
+\index{utils::shift\_asg\_ops$<$ Funcs $>$@{utils::shift\_asg\_ops$<$ Funcs $>$}!operator$<$$<$=@{operator$<$$<$=}}
+\index{operator$<$$<$=@{operator$<$$<$=}!utils::shift\_asg\_ops$<$ Funcs $>$@{utils::shift\_asg\_ops$<$ Funcs $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$=()}{operator<<=()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{structutils_1_1shift__asg__op__functors}{shift\+\_\+asg\+\_\+op\+\_\+functors}} Funcs = \{\}$>$ \\
+template$<$typename Self , integer\+\_\+like Other$>$ \newline
+requires ( !std\+::is\+\_\+same\+\_\+v$<$decltype(Funcs.\+shift\+\_\+left\+\_\+asg), \mbox{\hyperlink{structutils_1_1disable__op}{disable\+\_\+op}}$>$ \&\& decltype(Funcs.\+asg\+\_\+traits)\+::template constraint$<$Self, Other$>$\+::value )\\
+constexpr Self \& \mbox{\hyperlink{structutils_1_1shift__asg__ops}{utils\+::shift\+\_\+asg\+\_\+ops}}$<$ Funcs $>$\+::operator$<$$<$= (\begin{DoxyParamCaption}\item[{this Self \&}]{self,  }\item[{const Other \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{operators_8hpp_source_l00283}{283}} of file \mbox{\hyperlink{operators_8hpp_source}{operators.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1shift__asg__ops_a883d9857e2dd4859d0ff50700a9663ef}\label{structutils_1_1shift__asg__ops_a883d9857e2dd4859d0ff50700a9663ef}} 
+\index{utils::shift\_asg\_ops$<$ Funcs $>$@{utils::shift\_asg\_ops$<$ Funcs $>$}!operator$>$$>$=@{operator$>$$>$=}}
+\index{operator$>$$>$=@{operator$>$$>$=}!utils::shift\_asg\_ops$<$ Funcs $>$@{utils::shift\_asg\_ops$<$ Funcs $>$}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$=()}{operator>>=()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{structutils_1_1shift__asg__op__functors}{shift\+\_\+asg\+\_\+op\+\_\+functors}} Funcs = \{\}$>$ \\
+template$<$typename Self , integer\+\_\+like Other$>$ \newline
+requires ( !std\+::is\+\_\+same\+\_\+v$<$decltype(Funcs.\+shift\+\_\+right\+\_\+asg), \mbox{\hyperlink{structutils_1_1disable__op}{disable\+\_\+op}}$>$ \&\& decltype(Funcs.\+asg\+\_\+traits)\+::template constraint$<$Self, Other$>$\+::value )\\
+constexpr Self \& \mbox{\hyperlink{structutils_1_1shift__asg__ops}{utils\+::shift\+\_\+asg\+\_\+ops}}$<$ Funcs $>$\+::operator$>$$>$= (\begin{DoxyParamCaption}\item[{this Self \&}]{self,  }\item[{const Other \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{operators_8hpp_source_l00292}{292}} of file \mbox{\hyperlink{operators_8hpp_source}{operators.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{operators_8hpp}{operators.\+hpp}}\end{DoxyCompactItemize}

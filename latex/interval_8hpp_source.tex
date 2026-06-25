@@ -1,0 +1,157 @@
+\hypertarget{interval_8hpp_source}{}\doxysection{interval.\+hpp}
+\label{interval_8hpp_source}\index{containers/interval.hpp@{containers/interval.hpp}}
+\mbox{\hyperlink{interval_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#include <type\_traits>}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#include <concepts>}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <utility>}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include <compare>}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00008}00008 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutils}{utils}} \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00009}00009     \textcolor{keyword}{namespace }detail \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00010}00010         \textcolor{keyword}{template} <\textcolor{keyword}{typename} R, \textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00011}00011         \textcolor{keyword}{struct }is\_strict\_weak\_order;}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00012}00012         \textcolor{keyword}{template} <\textcolor{keyword}{typename} R>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00013}00013         \textcolor{keyword}{struct }is\_strict\_weak\_order<R> : std::bool\_constant<true> \{\};}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00014}00014         \textcolor{keyword}{template} <\textcolor{keyword}{typename} R, \textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00015}00015         \textcolor{keyword}{struct }is\_strict\_weak\_order<R, T> : std::bool\_constant<std::strict\_weak\_order<R, T, T>> \{\};}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00016}00016         \textcolor{keyword}{template} <\textcolor{keyword}{typename} R, \textcolor{keyword}{typename} T, \textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00017}00017         \textcolor{keyword}{struct }is\_strict\_weak\_order<R, T, Ts...> : std::bool\_constant<}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00018}00018             (std::strict\_weak\_order<R, T, Ts> \&\& ...) \&\&}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00019}00019             is\_strict\_weak\_order<R, Ts...>::value> \{\};}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00020}00020         \textcolor{keyword}{template} <\textcolor{keyword}{typename} R, \textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00021}00021         \textcolor{keyword}{concept }strict\_weak\_order = is\_strict\_weak\_order<R, Ts...>::value;}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00022}00022     \}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00025}00025     \textcolor{keyword}{enum class} interval\_endpoint\_type : unsigned char \{ open, closed \};}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00038}00038     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00039}00039     \textcolor{keyword}{struct }interval\_endpoint \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00040}00040         \textcolor{keyword}{using} value\_type = T;}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00042}00042         T value;}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00043}00043         interval\_endpoint\_type type;}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00049}00049         \textcolor{keyword}{template} <std::constructible\_from<const T\&> U>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00050}00050         \textcolor{keyword}{constexpr} \textcolor{keyword}{operator} interval\_endpoint<U>() const noexcept(std::is\_nothrow\_constructible\_v<U, const T\&>)\{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00051}00051             \textcolor{keywordflow}{return} \{.value\{value\}, .type\{type\}\};}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00052}00052         \}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00056}00056         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} interval\_endpoint\& other) \textcolor{keyword}{const} = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00072}00072         \textcolor{keyword}{template} <\textcolor{keyword}{typename} U>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00073}00073         \textcolor{keyword}{constexpr} std::weak\_ordering operator<=>(\textcolor{keyword}{const} interval\_endpoint<U>\& other) \textcolor{keyword}{const}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00074}00074         \textcolor{keyword}{requires} (detail::strict\_weak\_order<std::less<>, \textcolor{keyword}{const} T\&, \textcolor{keyword}{const} U\&>) \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00075}00075             \textcolor{keywordflow}{return} compare(other, \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00076}00076         \}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00078}00078         \textcolor{keyword}{template} <\textcolor{keyword}{typename} U, detail::strict\_weak\_order<const T\&, const U\&> Compare = std::less<>>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00079}00079         \textcolor{keyword}{constexpr} std::weak\_ordering compare(\textcolor{keyword}{const} interval\_endpoint<U>\& other, \textcolor{keywordtype}{bool} right, \textcolor{keyword}{const} Compare\& comp = \{\}) \textcolor{keyword}{const} \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00080}00080             \textcolor{keywordflow}{if} (comp(value, other.value)) \textcolor{keywordflow}{return} right ? std::weak\_ordering::less : std::weak\_ordering::greater;}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00081}00081             \textcolor{keywordflow}{if} (comp(other.value, value)) \textcolor{keywordflow}{return} right ? std::weak\_ordering::greater : std::weak\_ordering::less;}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00082}00082             \textcolor{keywordflow}{return} std::to\_underlying(type) <=> std::to\_underlying(other.type);}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00083}00083         \}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00085}00085     \};}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00087}00087     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00088}00088     \textcolor{keyword}{constexpr} interval\_endpoint<std::decay\_t<T>> operator|(T\&\& value, interval\_endpoint\_type type) \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00089}00089         \textcolor{keywordflow}{return} \{std::forward<T>(value), type\};}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00090}00090     \}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00100}00100     \textcolor{keyword}{template} <\textcolor{keyword}{typename} L, \textcolor{keyword}{typename} R>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00101}00101     \textcolor{keyword}{struct }interval \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00102}00102         \textcolor{keyword}{using} left\_value\_type = L;}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00103}00103         \textcolor{keyword}{using} right\_value\_type = R;}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00105}00105         interval\_endpoint<L> left;}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00106}00106         interval\_endpoint<R> right;}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00111}00111         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} interval\& other) \textcolor{keyword}{const} = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00112}00112         \textcolor{keyword}{using} \textcolor{keyword}{enum} interval\_endpoint\_type;}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00114}00114         \textcolor{keyword}{template} <detail::strict\_weak\_order<const L\&, const R\&> Compare = std::less<>>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00115}00115         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} empty(\textcolor{keyword}{const} Compare\& comp = \{\}) \textcolor{keyword}{const} \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00116}00116             \textcolor{keywordflow}{if} (comp(left.value, right.value)) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00117}00117             \textcolor{keywordflow}{if} (comp(right.value, left.value)) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00118}00118             \textcolor{keywordflow}{return} !(left.type == closed \&\& right.type == closed);}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00119}00119         \}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00121}00121         \textcolor{keyword}{template} <\textcolor{keyword}{typename} P, detail::strict\_weak\_order<const L\&, const R\&, const P\&> Compare = std::less<>>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00122}00122         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} contains(\textcolor{keyword}{const} P\& point, \textcolor{keyword}{const} Compare\& comp = \{\}) \textcolor{keyword}{const} \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00123}00123             \textcolor{keywordtype}{bool} out;}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00124}00124             \textcolor{keywordflow}{switch} (left.type) \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00125}00125                 \textcolor{keywordflow}{case} open: out = comp(left.value, point); \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00126}00126                 \textcolor{keywordflow}{case} closed: out = !comp(point, left.value); \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00127}00127                 \textcolor{keywordflow}{default}: std::unreachable();}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00128}00128             \}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00129}00129             \textcolor{keywordflow}{switch} (right.type) \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00130}00130                 \textcolor{keywordflow}{case} open: out = out \&\& comp(point, right.value); \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00131}00131                 \textcolor{keywordflow}{case} closed: out = out \&\& !comp(right.value, point); \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00132}00132                 \textcolor{keywordflow}{default}: std::unreachable();}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00133}00133             \}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00134}00134             \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00135}00135         \}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00139}00139         \textcolor{keyword}{template} <\textcolor{keyword}{typename} L2, \textcolor{keyword}{typename} R2,}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00140}00140             detail::strict\_weak\_order<const L\&, const R\&, const L2\&, const R2\&> Compare = std::less<>>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00141}00141         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} superset\_of(\textcolor{keyword}{const} interval<L2, R2>\& other, \textcolor{keyword}{const} Compare\& comp = \{\}) \textcolor{keyword}{const} \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00142}00142             \textcolor{keywordflow}{return} left.compare(other.left, \textcolor{keyword}{false}, comp) >= 0 \&\& right.compare(other.right, \textcolor{keyword}{true}, comp) >= 0;}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00143}00143         \}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00144}00144         \textcolor{keyword}{template} <\textcolor{keyword}{typename} L2, \textcolor{keyword}{typename} R2,}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00145}00145             detail::strict\_weak\_order<const L\&, const R\&, const L2\&, const R2\&> Compare = std::less<>>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00146}00146         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} strict\_superset\_of(\textcolor{keyword}{const} interval<L2, R2>\& other, \textcolor{keyword}{const} Compare\& comp = \{\}) \textcolor{keyword}{const} \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00147}00147             \textcolor{keyword}{const} \textcolor{keyword}{auto} left\_cmp = left.compare(other.left, \textcolor{keyword}{false}, comp),}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00148}00148                 right\_cmp = right.compare(other.right, \textcolor{keyword}{true}, comp);}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00149}00149             \textcolor{keywordflow}{return} (left\_cmp > 0 \&\& right\_cmp >= 0) || (left\_cmp >= 0 \&\& right\_cmp > 0);}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00150}00150         \}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00151}00151         \textcolor{keyword}{template} <\textcolor{keyword}{typename} L2, \textcolor{keyword}{typename} R2,}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00152}00152             detail::strict\_weak\_order<const L\&, const R\&, const L2\&, const R2\&> Compare = std::less<>>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00153}00153         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} subset\_of(\textcolor{keyword}{const} interval<L2, R2>\& other, \textcolor{keyword}{const} Compare\& comp = \{\}) \textcolor{keyword}{const} \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00154}00154             \textcolor{keywordflow}{return} other.superset\_of(*\textcolor{keyword}{this}, comp);}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00155}00155         \}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00156}00156         \textcolor{keyword}{template} <\textcolor{keyword}{typename} L2, \textcolor{keyword}{typename} R2,}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00157}00157             detail::strict\_weak\_order<const L\&, const R\&, const L2\&, const R2\&> Compare = std::less<>>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00158}00158         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} strict\_subset\_of(\textcolor{keyword}{const} interval<L2, R2>\& other, \textcolor{keyword}{const} Compare\& comp = \{\}) \textcolor{keyword}{const} \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00159}00159             \textcolor{keywordflow}{return} other.strict\_superset\_of(*\textcolor{keyword}{this}, comp);}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00160}00160         \}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00164}00164         \textcolor{keyword}{template} <\textcolor{keyword}{typename} CL, \textcolor{keyword}{typename} CR,}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00165}00165             \textcolor{keyword}{typename} L2, \textcolor{keyword}{typename} R2, detail::strict\_weak\_order<const L\&, const R\&, const L2\&, const R2\&> Compare = std::less<>>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00166}00166         \textcolor{keyword}{requires} (}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00167}00167             std::is\_constructible\_v<CL, const L\&> \&\& std::is\_constructible\_v<CL, const L2\&> \&\&}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00168}00168             std::is\_constructible\_v<CR, const R\&> \&\& std::is\_constructible\_v<CR, const R2\&>)}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00169}00169         \textcolor{keyword}{constexpr} interval<CL, CR> intersection\_with(\textcolor{keyword}{const} interval<L2, R2>\& other, \textcolor{keyword}{const} Compare\& comp = \{\}) \textcolor{keyword}{const} \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00170}00170             \textcolor{keyword}{const} \textcolor{keyword}{auto} left\_cmp = left.compare(other.left, \textcolor{keyword}{false}, comp);}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00171}00171             \textcolor{keyword}{const} \textcolor{keyword}{auto} right\_cmp = right.compare(other.right, \textcolor{keyword}{true}, comp);}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00172}00172             \textcolor{keywordflow}{if} (left\_cmp <= 0) \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00173}00173                 \textcolor{keywordflow}{if} (right\_cmp <= 0) \textcolor{keywordflow}{return} \{left, right\};}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00174}00174                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \{left, other.right\};}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00175}00175             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00176}00176                 \textcolor{keywordflow}{if} (right\_cmp <= 0) \textcolor{keywordflow}{return} \{other.left, right\};}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00177}00177                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \{other.left, other.right\};}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00178}00178             \}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00179}00179         \}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00180}00180         \textcolor{keyword}{template} <detail::strict\_weak\_order<const L\&, const R\&> Compare = std::less<>>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00181}00181         \textcolor{keyword}{constexpr} interval intersection\_with(\textcolor{keyword}{const} interval\& other, \textcolor{keyword}{const} Compare\& comp = \{\}) \textcolor{keyword}{const}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00182}00182         \textcolor{keyword}{requires} \textcolor{keyword}{requires}\{ this-\/>intersection\_with<L, R, L, R, Compare>(other, comp); \} \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00183}00183             \textcolor{keywordflow}{return} intersection\_with<L, R, L, R, Compare>(other, comp);}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00184}00184         \}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00186}00186 }
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00195}00195         \textcolor{keyword}{template} <\textcolor{keyword}{typename} L2, \textcolor{keyword}{typename} R2>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00196}00196         \textcolor{keyword}{constexpr} std::partial\_ordering operator<=>(\textcolor{keyword}{const} interval<L2, R2>\& other) \textcolor{keyword}{const}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00197}00197         \textcolor{keyword}{requires} (detail::strict\_weak\_order<std::less<>, \textcolor{keyword}{const} L\&, \textcolor{keyword}{const} R\&, \textcolor{keyword}{const} L2\&, \textcolor{keyword}{const} R2\&>) \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00198}00198             \textcolor{keywordflow}{return} compare(other);}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00199}00199         \}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00201}00201         \textcolor{keyword}{template} <\textcolor{keyword}{typename} L2, \textcolor{keyword}{typename} R2,}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00202}00202             detail::strict\_weak\_order<const L\&, const R\&, const L2\&, const R2\&> Compare = std::less<>>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00203}00203         \textcolor{keyword}{constexpr} std::partial\_ordering compare(\textcolor{keyword}{const} interval<L2, R2>\& other, \textcolor{keyword}{const} Compare\& comp = \{\}) \textcolor{keyword}{const} \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00204}00204             \textcolor{keyword}{const} \textcolor{keyword}{auto} left\_cmp = left.compare(other.left, \textcolor{keyword}{false}, comp),}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00205}00205             right\_cmp = right.compare(other.right, \textcolor{keyword}{true}, comp);}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00206}00206             \textcolor{keywordflow}{if} (left\_cmp == 0 \&\& right\_cmp == 0) \textcolor{keywordflow}{return} std::partial\_ordering::equivalent;}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00207}00207             \textcolor{keywordflow}{if} (left\_cmp >= 0 \&\& right\_cmp >= 0) \textcolor{keywordflow}{return} std::partial\_ordering::greater;}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00208}00208             \textcolor{keywordflow}{if} (left\_cmp <= 0 \&\& right\_cmp <= 0) \textcolor{keywordflow}{return} std::partial\_ordering::less;}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00209}00209             \textcolor{keywordflow}{return} std::partial\_ordering::unordered;}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00210}00210         \}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00212}00212     \};}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00214}00214     \textcolor{keyword}{template} <\textcolor{keyword}{typename} LE, \textcolor{keyword}{typename} RE>}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00215}00215     \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} operator,(LE\&\& left, RE\&\& right)}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00216}00216     \textcolor{keyword}{requires} \textcolor{keyword}{requires} \{ interval(std::forward<LE>(left), std::forward<RE>(right)); \} \{}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00217}00217         \textcolor{keywordflow}{return} interval(std::forward<LE>(left), std::forward<RE>(right));}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00218}00218     \}}
+\DoxyCodeLine{\Hypertarget{interval_8hpp_source_l00219}00219 \}}
+
+\end{DoxyCode}

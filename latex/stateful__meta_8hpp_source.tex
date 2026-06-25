@@ -1,0 +1,53 @@
+\hypertarget{stateful__meta_8hpp_source}{}\doxysection{stateful\+\_\+meta.\+hpp}
+\mbox{\hyperlink{stateful__meta_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00027}00027 \textcolor{keyword}{namespace }utils::meta \{}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00030}00030     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Var>}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00031}00031     \textcolor{keyword}{class }const\_var \{}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00032}00032         \textcolor{keyword}{friend} \textcolor{keyword}{consteval} \textcolor{keyword}{auto} get(const\_var);}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00033}00033     \};}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00035}00035     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Var, auto Value>}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00036}00036     \textcolor{keyword}{class }define \{}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00037}00037         \textcolor{keyword}{friend} \textcolor{keyword}{consteval} \textcolor{keyword}{auto} get(const\_var<Var>) \{ \textcolor{keywordflow}{return} Value; \}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00038}00038     \};}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00041}00041     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Var, auto = get(utils::meta::const\_var<Var>\{\})>}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00042}00042     \textcolor{keyword}{consteval} \textcolor{keywordtype}{bool} exists(const\_var<Var>) \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00044}00044     \textcolor{keyword}{consteval} \textcolor{keywordtype}{bool} exists(...) \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00046}00046     \textcolor{keyword}{namespace }detail \{}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00047}00047         \textcolor{keyword}{template} <\textcolor{keyword}{typename} Var, std::u\textcolor{keywordtype}{int}max\_t Value>}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00048}00048         \textcolor{keyword}{struct }counter;}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00049}00049     \}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00053}00053     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Var = void, \textcolor{keywordtype}{bool} Increment = \textcolor{keyword}{false}, std::uintmax\_t Value = 0, \textcolor{keyword}{typename} Id = \textcolor{keyword}{decltype}([]\{\})>}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00054}00054     \textcolor{keyword}{consteval} std::uintmax\_t get\_counter() \{}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00055}00055         \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (exists(const\_var<detail::counter<Var, Value>>\{\})) \{}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00056}00056             \textcolor{keywordflow}{return} get\_counter<Var, Increment, Value + 1, Id>();}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00057}00057         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00058}00058             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (Increment) \{}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00059}00059                 (void) define<detail::counter<Var, Value>, \textcolor{keyword}{true}>\{\};}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00060}00060             \}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00061}00061             \textcolor{keywordflow}{return} Value;}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00062}00062         \}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00063}00063     \}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00068}00068     template <typename Var, std::uintmax\_t Version = get\_counter<Var>() -\/ 1>}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00069}00069     \textcolor{keyword}{class }var \{}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00070}00070         \textcolor{keyword}{friend} \textcolor{keyword}{consteval} \textcolor{keyword}{auto} get(var);}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00071}00071     \};}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00074}00074     template <typename Var, auto Value, std::uintmax\_t Version = get\_counter<Var, true>()>}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00075}00075     \textcolor{keyword}{class }set \{}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00076}00076         \textcolor{keyword}{friend} \textcolor{keyword}{consteval} \textcolor{keyword}{auto} get(var<Var, Version>) \{ \textcolor{keywordflow}{return} Value; \}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00077}00077     \};}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00080}00080     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Var, std::u\textcolor{keywordtype}{int}max\_t Version, auto = get(var<Var, Version>\{\})>}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00081}00081     \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} exists(var<Var, Version>) \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00084}00084     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00085}00085     \textcolor{keyword}{struct }product\_t;}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00086}00086 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,39 @@
+\hypertarget{bitmask_8hpp_source}{}\doxysection{bitmask.\+hpp}
+\mbox{\hyperlink{bitmask_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#include <utility>}}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00004}\mbox{\hyperlink{namespaceutils}{00004}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutils}{utils}} \{}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00005}\mbox{\hyperlink{bitmask_8hpp_a764d2cb0d4a2da0c7d4d10eb67b89970}{00005}} \textcolor{preprocessor}{\#define UTILS\_BITMASK(T)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00006}00006 \textcolor{preprocessor}{    static\_assert(std::is\_enum\_v<T>, "{}T must be an enumeration type"{}});\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00007}00007     constexpr auto operator+(T a) noexcept \{\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00008}00008         return std::to\_underlying(a);\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00009}00009     \}\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00010}00010     constexpr T operator|(T a, T b) noexcept \{\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00011}00011         return static\_cast<T>(+a | +b);\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00012}00012     \}\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00013}00013     constexpr T\& operator|=(T\& a, T b) noexcept \{\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00014}00014         return a = a | b;\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00015}00015     \}\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00016}00016     constexpr T operator\&(T a, T b) noexcept \{\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00017}00017         return static\_cast<T>(+a \& +b);\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00018}00018     \}\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00019}00019     constexpr T\& operator\&=(T\& a, T b) noexcept \{\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00020}00020         return a = a \& b;\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00021}00021     \}\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00022}00022     constexpr T operator\string^(T a, T b) noexcept \{\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00023}00023         return static\_cast<T>(+a \string^ +b);\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00024}00024     \}\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00025}00025     constexpr T\& operator\string^=(T\& a, T b) noexcept \{\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00026}00026         return a = a \string^ b;\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00027}00027     \}\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00028}00028     constexpr T operator\string~(T a) noexcept \{\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00029}00029         return static\_cast<T>(\string~+a);\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00030}00030     \}\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00031}00031     constexpr bool operator*(T a, T b) noexcept \{\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00032}00032         return +a \& +b;\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00033}00033     \}}
+\DoxyCodeLine{\Hypertarget{bitmask_8hpp_source_l00034}00034 \}}
+
+\end{DoxyCode}

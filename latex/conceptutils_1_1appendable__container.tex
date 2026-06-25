@@ -1,0 +1,27 @@
+\hypertarget{conceptutils_1_1appendable__container}{}\doxysection{utils\+::appendable\+\_\+container Concept Reference}
+\label{conceptutils_1_1appendable__container}\index{utils::appendable\_container@{utils::appendable\_container}}
+
+
+{\ttfamily \#include $<$ranges.\+hpp$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} Container, \textcolor{keyword}{typename} Reference>}
+\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1appendable__container}{utils::appendable\_container}} =  \textcolor{keyword}{requires} (Container\& c, Reference\&\& ref) \{}
+\DoxyCodeLine{        \textcolor{keyword}{requires} (}
+\DoxyCodeLine{            \textcolor{keyword}{requires} \{ c.emplace\_back(std::forward<Reference>(ref)); \}     ||}
+\DoxyCodeLine{            \textcolor{keyword}{requires} \{ c.push\_back(std::forward<Reference>(ref)); \}        ||}
+\DoxyCodeLine{            \textcolor{keyword}{requires} \{ c.emplace(c.end(), std::forward<Reference>(ref)); \} ||}
+\DoxyCodeLine{            \textcolor{keyword}{requires} \{ c.insert(c.end(), std::forward<Reference>(ref)); \}}
+\DoxyCodeLine{        );}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{ranges_8hpp_source_l00026}{26}} of file \mbox{\hyperlink{ranges_8hpp_source}{ranges.\+hpp}}.
+
