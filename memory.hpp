@@ -5,15 +5,21 @@
 
 namespace utils {
     /// @brief Calculates the maximum alignment requirement among the types in @code Ts@endcode.
+    /// @{
     template <typename... Ts>
-    constexpr auto max_align = static_cast<std::align_val_t>(std::max({alignof(Ts)...}));
+    struct max_align {
+        static constexpr auto value = static_cast<std::align_val_t>(std::max({alignof(Ts)...}));
+    };
+    template <typename... Ts>
+    constexpr std::align_val_t max_align_v = max_align<Ts...>::value;
+    /// @}
 
-    /// @brief Calculates the minimum offset that is larger than @code offset@endcode such that it is aligned to @code T@endcode,
-    /// provided that @code offset@endcode is aligned to @code T@endcode
-    template <typename T>
-    constexpr std::size_t align_to(std::size_t offset) noexcept {
-        return (offset + alignof(T) - 1) / alignof(T) * alignof(T);
-    }
+    /// @brief A trivial class type that is aligned to @code Alignment@endcode.
+    /// @remark It is ill-formed if @code Alignment@endcode is invalid or unsupported.
+    template <std::size_t Alignment>
+    struct aligned_t {
+        alignas(Alignment) std::byte data[Alignment];
+    };
 
     /// @brief @code constexpr@endcode-friendly pointer punning
     /// @remark This does not guard against UB.

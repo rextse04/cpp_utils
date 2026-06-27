@@ -1,4 +1,4 @@
-#define BOOST_TEST_MODULE containers/segment_tree.cpp
+#define BOOST_TEST_MODULE containers/segment_tree.hpp
 #include "common.hpp"
 #include "containers/segment_tree.hpp"
 #include <vector>
