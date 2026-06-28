@@ -46,6 +46,7 @@ namespace utils::pmr {
         }
         template <typename U>
         arena_allocator(const arena_allocator<U>& other) noexcept : control_(other.control_) {}
+        bool operator==(const arena_allocator& other) const noexcept { return control_ == other.control_; }
 
         void release(std::pmr::memory_resource& mr, size_type space) noexcept {
             mr.deallocate(control_, space, alignof(control_type));
@@ -53,14 +54,12 @@ namespace utils::pmr {
 
         pointer allocate(size_type n, std::align_val_t alignment = std::align_val_t(alignof(T))) const {
             const size_type bytes = sizeof(T) * n;
-            void_pointer out = std::align(std::size_t(alignment), bytes, control_->data, control_->space);
+            void_pointer out = std::align(static_cast<std::size_t>(alignment), bytes, control_->data, control_->space);
             if (out == nullptr) throw std::bad_alloc();
             control_->data = static_cast<std::byte*>(control_->data) + bytes;
             control_->space -= bytes;
             return std::start_lifetime_as_array<T>(out, n);
         }
         static void deallocate(pointer, size_type, std::align_val_t = std::align_val_t(alignof(T))) noexcept {}
-        template <typename U>
-        bool operator==(const arena_allocator<U>& other) const noexcept { return control_ == other.control_; }
     };
 }

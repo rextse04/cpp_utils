@@ -44,17 +44,18 @@ namespace utils::pmr {
         }
         template <typename U>
         stack_allocator(const stack_allocator<U>& other) noexcept : front_(other.front_) {}
+        bool operator==(const stack_allocator& other) const noexcept { return front_ == other.front_; }
 
         void release(std::pmr::memory_resource& mr, size_type space) noexcept {
             mr.deallocate(front_, space, alignof(control_type));
         }
 
         pointer allocate(size_type n, std::align_val_t alignment = std::align_val_t(alignof(T))) const {
-            control_type* back = front_->prev;
+            control_type* const back = front_->prev;
             control_type sentinel = {back, back->offset - sizeof(control_type)};
             void_pointer obj_ptr = back + 1;
             const size_type bytes = sizeof(T) * n;
-            if (!std::align(std::size_t(alignment), bytes, obj_ptr, sentinel.offset)) {
+            if (!std::align(static_cast<std::size_t>(alignment), bytes, obj_ptr, sentinel.offset)) {
                 throw std::bad_alloc();
             }
             void_pointer sentinel_ptr = obj_ptr + bytes;
@@ -62,7 +63,7 @@ namespace utils::pmr {
             if (!std::align(alignof(control_type), sizeof(control_type), sentinel_ptr, sentinel.offset)) {
                 throw std::bad_alloc();
             }
-            back->offset = static_cast<std::byte*>(obj_ptr) - reinterpret_cast<std::byte*>(back);
+            back->offset = static_cast<const std::byte*>(obj_ptr) - reinterpret_cast<const std::byte*>(back);
             front_->prev = new(sentinel_ptr) control_type(sentinel);
             return std::start_lifetime_as_array<T>(obj_ptr, n);
         }
@@ -72,7 +73,7 @@ namespace utils::pmr {
             std::align(alignof(control_type), sizeof(control_type), next, max_space);
             if (next == front_->prev) {
                 do { front_->prev = front_->prev->prev; }
-                while (front_->prev != front_ && front_->prev->offset == 0);
+                while (front_->prev != front_ && front_->prev->prev->offset == 0);
                 front_->prev->offset = std::launder(reinterpret_cast<const control_type*>(next))->offset +
                     (reinterpret_cast<const std::byte*>(next) - reinterpret_cast<const std::byte*>(front_->prev));
             } else {
@@ -80,7 +81,5 @@ namespace utils::pmr {
             }
         }
         constexpr static size_type max_size() noexcept { return PTRDIFF_MAX / sizeof(control_type); }
-        template <typename U>
-        bool operator==(const stack_allocator<U>& other) const noexcept { return front_ == other.front_; }
     };
 }
