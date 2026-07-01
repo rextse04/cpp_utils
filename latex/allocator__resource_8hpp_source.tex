@@ -1,0 +1,52 @@
+\hypertarget{allocator__resource_8hpp_source}{}\doxysection{allocator\+\_\+resource.\+hpp}
+\label{allocator__resource_8hpp_source}\index{allocators/allocator\_resource.hpp@{allocators/allocator\_resource.hpp}}
+\mbox{\hyperlink{allocator__resource_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#include <type\_traits>}}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#include <cstddef>}}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <memory\_resource>}}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include <utility>}}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{memory_8hpp}{memory.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00009}00009 \textcolor{keyword}{namespace }utils::pmr \{}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00012}00012     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00013}00013     \textcolor{keyword}{concept }resource\_allocator = (}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00014}00014         simple\_allocator<T> \&\& std::is\_same\_v<typename T::value\_type, std::byte> \&\&}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00015}00015         \textcolor{keyword}{requires} (T a, std::pmr::memory\_resource\& mr, std::size\_t space, std::size\_t bytes, std::align\_val\_t alignment, std::byte* p) \{}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00022}00022             \{ a.release(mr, space) \} \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00027}00027             \{ a.allocate(bytes, alignment) \} -\/> std::same\_as<std::byte*>;}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00032}00032             \{ a.deallocate(p, bytes, alignment) \};}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00033}00033         \});}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00036}00036     \textcolor{keyword}{template} <resource\_allocator Allocator>}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00037}00037     \textcolor{keyword}{class }allocator\_resource : \textcolor{keyword}{public} std::pmr::memory\_resource, \textcolor{keyword}{private} Allocator \{}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00038}00038     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00039}00039         \textcolor{keyword}{using} allocator\_type = Allocator;}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00040}00040     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00041}00041         memory\_resource* upstream\_;}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00042}00042         std::size\_t space\_;}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00043}00043     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00048}00048         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00049}00049         allocator\_resource(memory\_resource* upstream, std::size\_t space, Args\&\&... args)}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00050}00050         \textcolor{keyword}{requires} (std::is\_constructible\_v<Allocator, memory\_resource\&, std::size\_t, Args\&\&...>) :}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00051}00051             Allocator(*upstream, space, std::forward<Args>(args)...), upstream\_(upstream), space\_(space) \{\}}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00054}00054         allocator\_resource(\textcolor{keyword}{const} allocator\_resource\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00057}00057         allocator\_resource\& operator=(\textcolor{keyword}{const} allocator\_resource\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00059}00059         \string~allocator\_resource() noexcept\textcolor{keyword}{ override }\{ Allocator::release(*upstream\_, space\_); \}}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00060}00060     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00061}00061         \textcolor{keywordtype}{void}* do\_allocate(std::size\_t bytes, std::size\_t alignment)\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00062}00062             \textcolor{keywordflow}{return} Allocator::allocate(bytes, std::align\_val\_t(alignment));}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00063}00063         \}}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00064}00064         \textcolor{keywordtype}{void} do\_deallocate(\textcolor{keywordtype}{void}* ptr, std::size\_t bytes, std::size\_t alignment)\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00065}00065             Allocator::deallocate(\textcolor{keyword}{static\_cast<}std::byte*\textcolor{keyword}{>}(ptr), bytes, std::align\_val\_t(alignment));}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00066}00066         \}}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00067}00067         \textcolor{keywordtype}{bool} do\_is\_equal(\textcolor{keyword}{const} memory\_resource\& other) \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \textcolor{keyword}{override} \{}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00068}00068             \textcolor{keyword}{const} \textcolor{keyword}{auto} other\_ = \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }Allocator*\textcolor{keyword}{>}(\&other);}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00069}00069             \textcolor{keywordflow}{if} (other\_ == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00070}00070             \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }Allocator\&\textcolor{keyword}{>}(*this) == *other\_;}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00071}00071         \}}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00072}00072     \};}
+\DoxyCodeLine{\Hypertarget{allocator__resource_8hpp_source_l00073}00073 \}}
+
+\end{DoxyCode}

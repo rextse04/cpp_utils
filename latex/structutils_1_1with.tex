@@ -4,34 +4,44 @@
 
 {\ttfamily \#include $<$functional.\+hpp$>$}
 
+
+
+Collaboration diagram for utils\+::with\texorpdfstring{$<$}{<} F, Arity, Owning \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{structutils_1_1with__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
 using \mbox{\hyperlink{structutils_1_1with_a6e8cd2421fb4c8e92e7c8f9a706b197d}{tag}} = with\+\_\+tag
 \item 
-using \mbox{\hyperlink{structutils_1_1with_a3f17c5a37bc24efac7d827255b449668}{type}} = F
+using \mbox{\hyperlink{structutils_1_1with_a3f17c5a37bc24efac7d827255b449668}{type}} = \mbox{\hyperlink{structF}{F}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-constexpr \mbox{\hyperlink{structutils_1_1with_a7bf42d208e5f8e3909f69e0e152cf817}{with}} (F \mbox{\hyperlink{structutils_1_1with_a2aa4545d2660c2b1395f4776c21ed2df}{func}}) noexcept
+constexpr \mbox{\hyperlink{structutils_1_1with_a7bf42d208e5f8e3909f69e0e152cf817}{with}} (\mbox{\hyperlink{structF}{F}} \mbox{\hyperlink{structutils_1_1with_a2aa4545d2660c2b1395f4776c21ed2df}{func}}) noexcept
 \item 
 {\footnotesize template$<$typename G $>$ \newline
 requires (Owning)}\\constexpr \mbox{\hyperlink{structutils_1_1with_a9073329b3290a5c94e3520f9db4b2cff}{with}} (G \&\&\mbox{\hyperlink{structutils_1_1with_a2aa4545d2660c2b1395f4776c21ed2df}{func}})
 \item 
-constexpr \mbox{\hyperlink{structutils_1_1with_a3c0bc757fc628b8fbabcf33bc5a15425}{with}} (\mbox{\hyperlink{structutils_1_1arity}{utils\+::arity}}$<$ Arity $>$, F \mbox{\hyperlink{structutils_1_1with_a2aa4545d2660c2b1395f4776c21ed2df}{func}}) noexcept
+constexpr \mbox{\hyperlink{structutils_1_1with_a3c0bc757fc628b8fbabcf33bc5a15425}{with}} (\mbox{\hyperlink{structutils_1_1arity}{utils\+::arity}}$<$ Arity $>$, \mbox{\hyperlink{structF}{F}} \mbox{\hyperlink{structutils_1_1with_a2aa4545d2660c2b1395f4776c21ed2df}{func}}) noexcept
 \item 
 {\footnotesize template$<$typename G $>$ \newline
 requires (Owning)}\\constexpr \mbox{\hyperlink{structutils_1_1with_a2c23fbf5807b7286e27d4c3fb3095357}{with}} (\mbox{\hyperlink{structutils_1_1arity}{utils\+::arity}}$<$ Arity $>$, \mbox{\hyperlink{structutils_1_1owning}{owning}}, G \&\&\mbox{\hyperlink{structutils_1_1with_a2aa4545d2660c2b1395f4776c21ed2df}{func}})
 \item 
-constexpr \mbox{\hyperlink{structutils_1_1with}{with}}$<$ std\+::remove\+\_\+cvref\+\_\+t$<$ F $>$, Arity, true $>$ \mbox{\hyperlink{structutils_1_1with_a7176aa858c7aad377a11d6db3e75cd04}{to\+\_\+owning}} () const
+constexpr \mbox{\hyperlink{structutils_1_1with}{with}}$<$ std\+::remove\+\_\+cvref\+\_\+t$<$ \mbox{\hyperlink{structF}{F}} $>$, Arity, true $>$ \mbox{\hyperlink{structutils_1_1with_a7176aa858c7aad377a11d6db3e75cd04}{to\+\_\+owning}} () const
 \item 
 {\footnotesize template$<$std\+::size\+\_\+t Begin = 0$>$ }\\constexpr decltype(auto) \mbox{\hyperlink{structutils_1_1with_ae0db9b1bc954776700c5bd56de35d3ac}{operator()}} (meta\+::tuple\+\_\+like auto \&\&args) const
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-F \mbox{\hyperlink{structutils_1_1with_a2aa4545d2660c2b1395f4776c21ed2df}{func}}
+\mbox{\hyperlink{structF}{F}} \mbox{\hyperlink{structutils_1_1with_a2aa4545d2660c2b1395f4776c21ed2df}{func}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -43,7 +53,7 @@ static constexpr bool \mbox{\hyperlink{structutils_1_1with_ab98f662c0666d9b8a1a4
 
 
 \doxysubsection{Detailed Description}
-\subsubsection*{template$<$typename F, std\+::size\+\_\+t Arity, bool Owning = false$>$\newline
+\subsubsection*{template$<$typename \mbox{\hyperlink{structF}{F}}, std\+::size\+\_\+t Arity, bool Owning = false$>$\newline
 struct utils\+::with$<$ F, Arity, Owning $>$}
 
 
@@ -56,8 +66,8 @@ Definition at line \mbox{\hyperlink{functional_8hpp_source_l00264}{264}} of file
 \index{utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}!tag@{tag}}
 \index{tag@{tag}!utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}}
 \doxysubsubsection{\texorpdfstring{tag}{tag}}
-{\footnotesize\ttfamily template$<$typename F , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
-using \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ F, Arity, Owning $>$\+::\mbox{\hyperlink{structutils_1_1with_a6e8cd2421fb4c8e92e7c8f9a706b197d}{tag}} =  with\+\_\+tag}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{structF}{F}} , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
+using \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ \mbox{\hyperlink{structF}{F}}, Arity, Owning $>$\+::\mbox{\hyperlink{structutils_1_1with_a6e8cd2421fb4c8e92e7c8f9a706b197d}{tag}} =  with\+\_\+tag}
 
 
 
@@ -67,8 +77,8 @@ Definition at line \mbox{\hyperlink{functional_8hpp_source_l00265}{265}} of file
 \index{utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}!type@{type}}
 \index{type@{type}!utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}}
 \doxysubsubsection{\texorpdfstring{type}{type}}
-{\footnotesize\ttfamily template$<$typename F , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
-using \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ F, Arity, Owning $>$\+::\mbox{\hyperlink{structutils_1_1with_a3f17c5a37bc24efac7d827255b449668}{type}} =  F}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{structF}{F}} , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
+using \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ \mbox{\hyperlink{structF}{F}}, Arity, Owning $>$\+::\mbox{\hyperlink{structutils_1_1with_a3f17c5a37bc24efac7d827255b449668}{type}} =  \mbox{\hyperlink{structF}{F}}}
 
 
 
@@ -81,8 +91,8 @@ Definition at line \mbox{\hyperlink{functional_8hpp_source_l00266}{266}} of file
 \index{utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}!with@{with}}
 \index{with@{with}!utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}}
 \doxysubsubsection{\texorpdfstring{with()}{with()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily template$<$typename F , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
-constexpr \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ F, Arity, Owning $>$\+::\mbox{\hyperlink{structutils_1_1with}{with}} (\begin{DoxyParamCaption}\item[{F}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{structF}{F}} , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
+constexpr \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ \mbox{\hyperlink{structF}{F}}, Arity, Owning $>$\+::\mbox{\hyperlink{structutils_1_1with}{with}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structF}{F}}}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
 
 
@@ -92,10 +102,10 @@ Definition at line \mbox{\hyperlink{functional_8hpp_source_l00270}{270}} of file
 \index{utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}!with@{with}}
 \index{with@{with}!utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}}
 \doxysubsubsection{\texorpdfstring{with()}{with()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily template$<$typename F , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{structF}{F}} , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
 template$<$typename G $>$ \newline
 requires (Owning)\\
-constexpr \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ F, Arity, Owning $>$\+::\mbox{\hyperlink{structutils_1_1with}{with}} (\begin{DoxyParamCaption}\item[{G \&\&}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+constexpr \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ \mbox{\hyperlink{structF}{F}}, Arity, Owning $>$\+::\mbox{\hyperlink{structutils_1_1with}{with}} (\begin{DoxyParamCaption}\item[{G \&\&}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
@@ -105,8 +115,8 @@ Definition at line \mbox{\hyperlink{functional_8hpp_source_l00272}{272}} of file
 \index{utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}!with@{with}}
 \index{with@{with}!utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}}
 \doxysubsubsection{\texorpdfstring{with()}{with()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily template$<$typename F , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
-constexpr \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ F, Arity, Owning $>$\+::\mbox{\hyperlink{structutils_1_1with}{with}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1arity}{utils\+::arity}}$<$ Arity $>$}]{,  }\item[{F}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{structF}{F}} , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
+constexpr \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ \mbox{\hyperlink{structF}{F}}, Arity, Owning $>$\+::\mbox{\hyperlink{structutils_1_1with}{with}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1arity}{utils\+::arity}}$<$ Arity $>$}]{,  }\item[{\mbox{\hyperlink{structF}{F}}}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
 
 
@@ -116,10 +126,10 @@ Definition at line \mbox{\hyperlink{functional_8hpp_source_l00273}{273}} of file
 \index{utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}!with@{with}}
 \index{with@{with}!utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}}
 \doxysubsubsection{\texorpdfstring{with()}{with()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily template$<$typename F , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{structF}{F}} , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
 template$<$typename G $>$ \newline
 requires (Owning)\\
-constexpr \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ F, Arity, Owning $>$\+::\mbox{\hyperlink{structutils_1_1with}{with}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1arity}{utils\+::arity}}$<$ Arity $>$}]{,  }\item[{\mbox{\hyperlink{structutils_1_1owning}{owning}}}]{,  }\item[{G \&\&}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+constexpr \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ \mbox{\hyperlink{structF}{F}}, Arity, Owning $>$\+::\mbox{\hyperlink{structutils_1_1with}{with}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1arity}{utils\+::arity}}$<$ Arity $>$}]{,  }\item[{\mbox{\hyperlink{structutils_1_1owning}{owning}}}]{,  }\item[{G \&\&}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
@@ -132,9 +142,9 @@ Definition at line \mbox{\hyperlink{functional_8hpp_source_l00275}{275}} of file
 \index{utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}!operator()@{operator()}}
 \index{operator()@{operator()}!utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}}
 \doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
-{\footnotesize\ttfamily template$<$typename F , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{structF}{F}} , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
 template$<$std\+::size\+\_\+t Begin = 0$>$ \\
-constexpr decltype(auto) \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ F, Arity, Owning $>$\+::operator() (\begin{DoxyParamCaption}\item[{meta\+::tuple\+\_\+like auto \&\&}]{args }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+constexpr decltype(auto) \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ \mbox{\hyperlink{structF}{F}}, Arity, Owning $>$\+::operator() (\begin{DoxyParamCaption}\item[{meta\+::tuple\+\_\+like auto \&\&}]{args }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
@@ -144,8 +154,8 @@ Definition at line \mbox{\hyperlink{functional_8hpp_source_l00280}{280}} of file
 \index{utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}!to\_owning@{to\_owning}}
 \index{to\_owning@{to\_owning}!utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}}
 \doxysubsubsection{\texorpdfstring{to\_owning()}{to\_owning()}}
-{\footnotesize\ttfamily template$<$typename F , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
-constexpr \mbox{\hyperlink{structutils_1_1with}{with}}$<$ std\+::remove\+\_\+cvref\+\_\+t$<$ F $>$, Arity, true $>$ \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ F, Arity, Owning $>$\+::to\+\_\+owning (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{structF}{F}} , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
+constexpr \mbox{\hyperlink{structutils_1_1with}{with}}$<$ std\+::remove\+\_\+cvref\+\_\+t$<$ \mbox{\hyperlink{structF}{F}} $>$, Arity, true $>$ \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ \mbox{\hyperlink{structF}{F}}, Arity, Owning $>$\+::to\+\_\+owning (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
@@ -158,8 +168,8 @@ Definition at line \mbox{\hyperlink{functional_8hpp_source_l00276}{276}} of file
 \index{utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}!arity@{arity}}
 \index{arity@{arity}!utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}}
 \doxysubsubsection{\texorpdfstring{arity}{arity}}
-{\footnotesize\ttfamily template$<$typename F , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
-constexpr std\+::size\+\_\+t \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ F, Arity, Owning $>$\+::\mbox{\hyperlink{structutils_1_1arity}{arity}} = Arity\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{structF}{F}} , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
+constexpr std\+::size\+\_\+t \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ \mbox{\hyperlink{structF}{F}}, Arity, Owning $>$\+::\mbox{\hyperlink{structutils_1_1arity}{arity}} = Arity\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
 
 
 
@@ -169,8 +179,8 @@ Definition at line \mbox{\hyperlink{functional_8hpp_source_l00267}{267}} of file
 \index{utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}!func@{func}}
 \index{func@{func}!utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}}
 \doxysubsubsection{\texorpdfstring{func}{func}}
-{\footnotesize\ttfamily template$<$typename F , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
-F \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ F, Arity, Owning $>$\+::func}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{structF}{F}} , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
+\mbox{\hyperlink{structF}{F}} \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ \mbox{\hyperlink{structF}{F}}, Arity, Owning $>$\+::func}
 
 
 
@@ -180,8 +190,8 @@ Definition at line \mbox{\hyperlink{functional_8hpp_source_l00269}{269}} of file
 \index{utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}!is\_variadic@{is\_variadic}}
 \index{is\_variadic@{is\_variadic}!utils::with$<$ F, Arity, Owning $>$@{utils::with$<$ F, Arity, Owning $>$}}
 \doxysubsubsection{\texorpdfstring{is\_variadic}{is\_variadic}}
-{\footnotesize\ttfamily template$<$typename F , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
-constexpr bool \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ F, Arity, Owning $>$\+::is\+\_\+variadic = \mbox{\hyperlink{structutils_1_1arity}{arity}} == static\+\_\+cast$<$std\+::size\+\_\+t$>$(-\/1)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{structF}{F}} , std\+::size\+\_\+t Arity, bool Owning = false$>$ \\
+constexpr bool \mbox{\hyperlink{structutils_1_1with}{utils\+::with}}$<$ \mbox{\hyperlink{structF}{F}}, Arity, Owning $>$\+::is\+\_\+variadic = \mbox{\hyperlink{structutils_1_1arity}{arity}} == static\+\_\+cast$<$std\+::size\+\_\+t$>$(-\/1)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
 
 
 

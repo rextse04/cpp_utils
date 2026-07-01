@@ -1,0 +1,178 @@
+\hypertarget{integer_8cpp_source}{}\doxysection{integer.\+cpp}
+\label{integer_8cpp_source}\index{tests/integer.cpp@{tests/integer.cpp}}
+\mbox{\hyperlink{integer_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00001}\mbox{\hyperlink{integer_8cpp_a6b2a3852db8bb19ab6909bac01859985}{00001}} \textcolor{preprocessor}{\#define BOOST\_TEST\_MODULE integer.cpp}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{common_8hpp}{common.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{integer_8hpp}{integer.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <format>}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <type\_traits>}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00008}00008 \textcolor{keyword}{using namespace }utils::integer\_alias;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00009}00009 \textcolor{keyword}{namespace }ib = utils::integral\_behavior;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00010}00010 \textcolor{keyword}{namespace }sb = utils::shift\_behavior;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00011}\mbox{\hyperlink{integer_8cpp_a5a8b63d07d404866c79b60b66c55ae1f}{00011}} \textcolor{keyword}{using} \mbox{\hyperlink{integer_8cpp_a5a8b63d07d404866c79b60b66c55ae1f}{test\_types}} = std::tuple<}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00012}00012     utils::integer<int, ib::standard>,}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00013}00013     utils::integer<int, ib::sane>,}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00014}00014     utils::integer<int, ib::ub>,}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00015}00015     utils::integer<int, ib::wrap>,}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00016}00016     utils::integer<int, ib::sat>,}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00017}00017     utils::integer<int, ib::checked>>;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00019}\mbox{\hyperlink{integer_8cpp_a8b8510cb9d50ec5c5cf38a62aaeca8dd}{00019}} \mbox{\hyperlink{integer_8cpp_a8b8510cb9d50ec5c5cf38a62aaeca8dd}{BOOST\_AUTO\_TEST\_CASE}}(sanity\_test) \{}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00020}00020     \textcolor{keyword}{using} s = utils::integer<short>;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00021}00021     \textcolor{keyword}{using} u = utils::integer<unsigned short>;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00022}00022     \textcolor{keyword}{using} ull = utils::integer<unsigned long long>;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00023}00023     BOOST\_CHECK\_EQUAL(s(123.1), 123);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00024}00024     BOOST\_CHECK\_EQUAL(s(0xA'BCDE), \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{short}\textcolor{keyword}{>}(0xBCDE));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00025}00025     BOOST\_CHECK\_NE(s(0xABCD), 0xABCD);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00026}00026     BOOST\_CHECK\_EQUAL(u(123.1), \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\textcolor{keyword}{>}(123));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00027}00027     BOOST\_CHECK\_EQUAL(u(-\/1), std::numeric\_limits<unsigned short>::max());}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00028}00028     BOOST\_CHECK\_EQUAL(ull(-\/1), std::numeric\_limits<unsigned long long>::max());}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00029}00029     BOOST\_CHECK\_EQUAL(u(0xA'BCDE), \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\textcolor{keyword}{>}(0xBCDE));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00031}00031     \textcolor{keyword}{const} s lhs(0xF0FF);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00032}00032     \textcolor{keyword}{const} u rhs = 0xFF00;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00033}00033     BOOST\_CHECK\_EQUAL(lhs \& rhs, s(0xF000));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00034}00034     BOOST\_CHECK\_EQUAL(lhs | rhs, s(0xFFFF));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00035}00035     BOOST\_CHECK\_EQUAL(lhs \string^ rhs, s(0x0FFF));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00036}00036     BOOST\_CHECK\_EQUAL(\string~lhs, 0x0F00);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00037}00037     BOOST\_CHECK\_EQUAL(\string~rhs, \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\textcolor{keyword}{>}(0x00FF));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00039}00039     BOOST\_CHECK\_EQUAL(s(0xFFFF) << 4, s(0xFFF0));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00040}00040     BOOST\_CHECK\_EQUAL(u(0xFFFF) << 4, u(0xFFF0));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00041}00041     BOOST\_CHECK\_EQUAL(s(0xFFFF) >> 4, s(0xFFFF));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00042}00042     BOOST\_CHECK\_EQUAL(u(0xFFFF) >> 4, u(0x0FFF));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00044}00044     BOOST\_CHECK\_LT(s(0xABCD), 0xF'ABCD);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00045}00045     BOOST\_CHECK\_GT(ullong(-\/1), u(-\/1));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00047}00047     s sn = 0;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00048}00048     BOOST\_CHECK\_EQUAL(++sn, s(1));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00049}00049     BOOST\_CHECK\_EQUAL(sn++, s(1));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00050}00050     BOOST\_CHECK\_EQUAL(sn, s(2));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00051}00051     u un = 0;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00052}00052     BOOST\_CHECK\_EQUAL(-\/-\/un, u(-\/1));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00053}00053     BOOST\_CHECK\_EQUAL(un-\/-\/, u(-\/1));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00054}00054     BOOST\_CHECK\_EQUAL(un, u(-\/2));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00055}00055 \}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00057}\mbox{\hyperlink{integer_8cpp_a2d979f42b04d9a2313098f58c709f026}{00057}} \textcolor{keyword}{using} \mbox{\hyperlink{integer_8cpp_a2d979f42b04d9a2313098f58c709f026}{normal\_test\_types}} = std::tuple<}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00058}00058     utils::integer<int, ib::standard>,}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00059}00059     utils::integer<int, ib::sane>,}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00060}00060     utils::integer<int, ib::ub>,}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00061}00061     utils::integer<int, ib::wrap>,}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00062}00062     utils::integer<int, ib::sat>,}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00063}00063     utils::integer<int, ib::checked>>;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00064}\mbox{\hyperlink{integer_8cpp_a6847cf552d1f916e3d5b13768a01aeff}{00064}} \mbox{\hyperlink{integer_8cpp_a6847cf552d1f916e3d5b13768a01aeff}{BOOST\_AUTO\_TEST\_CASE\_TEMPLATE}}(normal\_test, T, \mbox{\hyperlink{integer_8cpp_a2d979f42b04d9a2313098f58c709f026}{normal\_test\_types}}) \{}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00065}00065     \textcolor{keyword}{using} s = T::template to<short>;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00066}00066     \textcolor{keyword}{using} u = T::template to<unsigned short>;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00067}00067     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{short} n = std::numeric\_limits<short>::min(); n < std::numeric\_limits<short>::max(); ++n) \{}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00068}00068         BOOST\_CHECK\_EQUAL(s(n) + s(1), n+1);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00069}00069     \}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00070}00070     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} n = 0; n < std::numeric\_limits<unsigned short>::max(); ++n) \{}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00071}00071         BOOST\_CHECK\_EQUAL(u(n) + u(1), \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\textcolor{keyword}{>}(n+1));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00072}00072     \}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00073}00073 \}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00075}\mbox{\hyperlink{integer_8cpp_a155017e110cec08bad03b1b0faf994fc}{00075}} \textcolor{keyword}{using} \mbox{\hyperlink{integer_8cpp_a155017e110cec08bad03b1b0faf994fc}{unsigned\_test\_types}} = std::tuple<}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00076}00076     utils::integer<int, ib::sane>,}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00077}00077     utils::integer<int, ib::wrap>,}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00078}00078     utils::integer<int, ib::sat>>;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00079}\mbox{\hyperlink{integer_8cpp_a8861ef32aaf6fa23037b52a09b28f603}{00079}} \mbox{\hyperlink{integer_8cpp_a6847cf552d1f916e3d5b13768a01aeff}{BOOST\_AUTO\_TEST\_CASE\_TEMPLATE}}(unsigned\_test, T, \mbox{\hyperlink{integer_8cpp_a155017e110cec08bad03b1b0faf994fc}{unsigned\_test\_types}}) \{}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00080}00080     \textcolor{keyword}{using} U = T::template to<unsigned short>;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00081}00081     \textcolor{keyword}{const} \textcolor{keyword}{auto} umax = std::numeric\_limits<U>::max();}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00082}00082     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} ans1 = std::is\_same\_v<T, utils::integer<int, ib::sat>>}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00083}00083         ? std::numeric\_limits<unsigned short>::max()}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00084}00084         : std::numeric\_limits<unsigned short>::max() -\/ 1,}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00085}00085     ans2 = std::is\_same\_v<T, utils::integer<int, ib::sat>> ? 0 : 1;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00086}00086     BOOST\_CHECK\_EQUAL(umax + umax, ans1);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00087}00087     BOOST\_CHECK\_EQUAL(U(0) -\/ umax, ans2);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00088}00088     BOOST\_CHECK\_EQUAL(umax * \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short}\textcolor{keyword}{>}(2), ans1);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00089}00089 \}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00091}\mbox{\hyperlink{integer_8cpp_a5cbf05d4a779b80311beef1e3560ad32}{00091}} \mbox{\hyperlink{integer_8cpp_a8b8510cb9d50ec5c5cf38a62aaeca8dd}{BOOST\_AUTO\_TEST\_CASE}}(denorm\_test) \{}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00092}00092     \textcolor{keyword}{const} \textcolor{keyword}{auto} smax = std::numeric\_limits<short>::max(),}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00093}00093     smin = std::numeric\_limits<short>::min();}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00094}00094     \textcolor{keyword}{const} utils::integer<short, ib::wrap> smax\_wrap(smax);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00095}00095     BOOST\_CHECK\_EQUAL(smax\_wrap + smax\_wrap, -\/2);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00096}00096     BOOST\_CHECK\_EQUAL(-\/smax\_wrap -\/ smax\_wrap, 2);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00097}00097     BOOST\_CHECK\_EQUAL(smax\_wrap * \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{short}\textcolor{keyword}{>}(2), -\/2);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00098}00098     \textcolor{keyword}{const} utils::integer<short, ib::sat> smax\_sat(smax), smin\_sat(smin);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00099}00099     BOOST\_CHECK\_EQUAL(smax\_sat + smax\_sat, smax\_sat);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00100}00100     BOOST\_CHECK\_EQUAL(-\/smax\_sat -\/ smax\_sat, std::numeric\_limits<short>::min());}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00101}00101     BOOST\_CHECK\_EQUAL(smax\_sat * \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{short}\textcolor{keyword}{>}(2), smax\_sat);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00102}00102     BOOST\_CHECK\_EQUAL(smin\_sat / \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{short}\textcolor{keyword}{>}(-\/1), smax\_sat);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00103}00103     BOOST\_CHECK\_EQUAL(smin\_sat \% \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{short}\textcolor{keyword}{>}(-\/1), 0);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00104}00104     \textcolor{keyword}{const} utils::integer<short, ib::checked> smax\_checked(smax), smin\_checked(smin);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00105}00105     BOOST\_CHECK\_THROW(smax\_checked + smax\_checked, std::overflow\_error);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00106}00106     BOOST\_CHECK\_THROW(-\/smax\_checked -\/ smax\_checked, std::overflow\_error);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00107}00107     BOOST\_CHECK\_THROW(smax\_checked * \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{short}\textcolor{keyword}{>}(2), std::overflow\_error);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00108}00108     BOOST\_CHECK\_THROW(smax\_checked / \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{short}\textcolor{keyword}{>}(0), std::domain\_error);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00109}00109     BOOST\_CHECK\_THROW(smin\_checked / \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{short}\textcolor{keyword}{>}(-\/1), std::overflow\_error);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00110}00110     BOOST\_CHECK\_THROW(smax\_checked \% \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{short}\textcolor{keyword}{>}(0), std::domain\_error);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00111}00111     BOOST\_CHECK\_THROW(smin\_checked \% \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{short}\textcolor{keyword}{>}(-\/1), std::overflow\_error);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00112}00112 \}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00114}\mbox{\hyperlink{integer_8cpp_a13ec1fe9ffa4087190b6f077dc51f460}{00114}} \textcolor{keyword}{using} \mbox{\hyperlink{integer_8cpp_a13ec1fe9ffa4087190b6f077dc51f460}{shift\_test\_types}} = std::tuple<}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00115}00115     utils::integer<unsigned, ib::sane, sb::standard>,}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00116}00116     utils::integer<unsigned, ib::sane, sb::scalar>,}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00117}00117     utils::integer<unsigned, ib::sane, sb::circular>,}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00118}00118     utils::integer<unsigned, ib::sane, sb::checked>>;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00119}\mbox{\hyperlink{integer_8cpp_a50179539e9703d8d97bec5c612b86562}{00119}} \mbox{\hyperlink{integer_8cpp_a6847cf552d1f916e3d5b13768a01aeff}{BOOST\_AUTO\_TEST\_CASE\_TEMPLATE}}(shift\_normal\_test, T, \mbox{\hyperlink{integer_8cpp_a13ec1fe9ffa4087190b6f077dc51f460}{shift\_test\_types}}) \{}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00120}00120     T s(0xABCD);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00121}00121     BOOST\_CHECK\_EQUAL(s << 16, 0xABCD'0000);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00122}00122     BOOST\_CHECK\_EQUAL(s <<= 16, 0xABCD'0000);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00123}00123     BOOST\_CHECK\_EQUAL(s >> 8, 0xAB'CD00u);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00124}00124     BOOST\_CHECK\_EQUAL(s >>= 8, 0xAB'CD00u);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00125}00125 \}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00127}\mbox{\hyperlink{integer_8cpp_a5a9b4f44db5854d5392a6bc9fe1fe8b0}{00127}} \mbox{\hyperlink{integer_8cpp_a8b8510cb9d50ec5c5cf38a62aaeca8dd}{BOOST\_AUTO\_TEST\_CASE}}(shift\_denorm\_test) \{}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00128}00128     \textcolor{keyword}{const} utils::integer<int, ib::sane, sb::scalar> s\_scalar(0xAABB'CCDD);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00129}00129     BOOST\_CHECK\_EQUAL(s\_scalar << 32, 0);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00130}00130     BOOST\_CHECK\_EQUAL(s\_scalar << -\/16, \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(0xFFFF'AABB));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00131}00131     BOOST\_CHECK\_EQUAL(s\_scalar >> 32, \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(0xFFFF'FFFF));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00132}00132     BOOST\_CHECK\_EQUAL(s\_scalar >> -\/16, \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(0xCCDD'0000));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00133}00133     \textcolor{keyword}{const} utils::integer<unsigned, ib::sane, sb::circular> s\_circular(0xAABB'CCDD);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00134}00134     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} circular\_ans = 0xCCDD'AABB;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00135}00135     BOOST\_CHECK\_EQUAL(s\_circular << 48, circular\_ans);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00136}00136     BOOST\_CHECK\_EQUAL(s\_circular << -\/48, circular\_ans);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00137}00137     BOOST\_CHECK\_EQUAL(s\_circular >> 48, circular\_ans);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00138}00138     BOOST\_CHECK\_EQUAL(s\_circular >> -\/48, circular\_ans);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00139}00139     \textcolor{keyword}{const} utils::integer<int, ib::sane, sb::checked> s\_checked(0xAABB'CCDD);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00140}00140     BOOST\_CHECK\_THROW(s\_checked << 32, std::domain\_error);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00141}00141     BOOST\_CHECK\_THROW(s\_checked << -\/16, std::domain\_error);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00142}00142     BOOST\_CHECK\_THROW(s\_checked >> 32, std::domain\_error);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00143}00143     BOOST\_CHECK\_THROW(s\_checked >> -\/16, std::domain\_error);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00144}00144 \}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00145}00145 }
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00146}\mbox{\hyperlink{integer_8cpp_add9dfade34c6a0f113dc46874f64adfb}{00146}} \mbox{\hyperlink{integer_8cpp_a8b8510cb9d50ec5c5cf38a62aaeca8dd}{BOOST\_AUTO\_TEST\_CASE}}(io\_test) \{}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00147}00147     \textcolor{keyword}{const} utils::integer<int> s = 123;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00148}00148     std::stringstream ss;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00149}00149     ss << s;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00150}00150     BOOST\_CHECK\_EQUAL(ss.str(), \textcolor{stringliteral}{"{}123"{}});}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00151}00151     utils::integer<unsigned char> u;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00152}00152     ss >> u;}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00153}00153     BOOST\_CHECK\_EQUAL(u, \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}\textcolor{keyword}{>}(123));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00154}00154     BOOST\_CHECK\_EQUAL(std::format(\textcolor{stringliteral}{"{}\{\} \{\}"{}}, s, u), \textcolor{stringliteral}{"{}123 123"{}});}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00155}00155 \}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00156}00156 }
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00157}\mbox{\hyperlink{integer_8cpp_acc8b04fc6d1ac7c710abdefd21238e3b}{00157}} \mbox{\hyperlink{integer_8cpp_a8b8510cb9d50ec5c5cf38a62aaeca8dd}{BOOST\_AUTO\_TEST\_CASE}}(type\_test) \{}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00158}00158     BOOST\_CHECK(std::is\_trivially\_copyable\_v<sint>);}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00159}00159     \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00160}00160 \textcolor{comment}{    BOOST\_CHECK((std::is\_convertible\_v<int, sint>));}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00161}00161 \textcolor{comment}{    BOOST\_CHECK((std::is\_convertible\_v<short, sint>));}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00162}00162 \textcolor{comment}{    BOOST\_CHECK((!std::is\_convertible\_v<long long, sint>));}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00163}00163 \textcolor{comment}{    BOOST\_CHECK((!std::is\_convertible\_v<unsigned, sint>));}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00164}00164 \textcolor{comment}{    BOOST\_CHECK((!std::is\_convertible\_v<int, utils::integer\_alias::uint>));}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00165}00165 \textcolor{comment}{    */}}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00166}00166     BOOST\_CHECK((std::is\_convertible\_v<sint, int>));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00167}00167     BOOST\_CHECK((std::is\_convertible\_v<sint, long long>));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00168}00168     BOOST\_CHECK((!std::is\_convertible\_v<sint, short>));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00169}00169     BOOST\_CHECK((!std::is\_convertible\_v<sint, unsigned>));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00170}00170     BOOST\_CHECK((std::is\_convertible\_v<sint, float>));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00171}00171     BOOST\_CHECK((!std::is\_convertible\_v<float, sint>));}
+\DoxyCodeLine{\Hypertarget{integer_8cpp_source_l00172}00172 \}}
+
+\end{DoxyCode}

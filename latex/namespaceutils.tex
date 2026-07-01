@@ -175,9 +175,9 @@ concept \mbox{\hyperlink{conceptutils_1_1container__compatible__range}{container
 \item 
 {\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceutils_aa2a651da2caee87aff06087795119502}{lambda\+\_\+decay\+\_\+t}} = \mbox{\hyperlink{structutils_1_1lambda__decay}{lambda\+\_\+decay}}$<$ T $>$\+::type
 \item 
-{\footnotesize template$<$typename F $>$ }\\using \mbox{\hyperlink{namespaceutils_aec2f7d8a4a6a70e231ae13dd1a18606a}{result\+\_\+of\+\_\+t}} = \mbox{\hyperlink{structutils_1_1result__of}{result\+\_\+of}}$<$ F $>$\+::type
+{\footnotesize template$<$typename \mbox{\hyperlink{structF}{F}} $>$ }\\using \mbox{\hyperlink{namespaceutils_aec2f7d8a4a6a70e231ae13dd1a18606a}{result\+\_\+of\+\_\+t}} = \mbox{\hyperlink{structutils_1_1result__of}{result\+\_\+of}}$<$ \mbox{\hyperlink{structF}{F}} $>$\+::type
 \item 
-{\footnotesize template$<$typename F $>$ }\\using \mbox{\hyperlink{namespaceutils_ac4674b772ff1c668b49f1867630f3d54}{arguments\+\_\+of\+\_\+t}} = \mbox{\hyperlink{structutils_1_1arguments__of}{arguments\+\_\+of}}$<$ F $>$\+::type
+{\footnotesize template$<$typename \mbox{\hyperlink{structF}{F}} $>$ }\\using \mbox{\hyperlink{namespaceutils_ac4674b772ff1c668b49f1867630f3d54}{arguments\+\_\+of\+\_\+t}} = \mbox{\hyperlink{structutils_1_1arguments__of}{arguments\+\_\+of}}$<$ \mbox{\hyperlink{structF}{F}} $>$\+::type
 \item 
 using \mbox{\hyperlink{namespaceutils_acdc92300a8a41d794e21ecfade137492}{variadic\+\_\+arity}} = \mbox{\hyperlink{structutils_1_1arity}{arity}}$<$ static\+\_\+cast$<$ std\+::size\+\_\+t $>$(-\/1)$>$
 \item 
@@ -192,7 +192,7 @@ using \mbox{\hyperlink{namespaceutils_acdc92300a8a41d794e21ecfade137492}{variadi
 \item 
 {\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{namespaceutils_aeae858e40387fdfac0f8629db4991dbb}{bind}} (T \&\&) -\/$>$ \mbox{\hyperlink{structutils_1_1bind}{bind}}$<$ T \&\& $>$
 \item 
-{\footnotesize template$<$typename F , typename... Gs$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a75ce48a3fb2e45c2eb6917e6d32ceb84}{composite}} (F \&\&f, Gs \&\&... gs)
+{\footnotesize template$<$typename \mbox{\hyperlink{structF}{F}} , typename... Gs$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a75ce48a3fb2e45c2eb6917e6d32ceb84}{composite}} (\mbox{\hyperlink{structF}{F}} \&\&f, Gs \&\&... gs)
 \item 
 {\footnotesize template$<$std\+::ptrdiff\+\_\+t Exp, typename CastT $>$ }\\constexpr CastT \mbox{\hyperlink{namespaceutils_a4515012627113facd242ccb5f3d59374}{pow}} (CastT base)
 \begin{DoxyCompactList}\small\item\em Calculates. \end{DoxyCompactList}\item 
@@ -205,7 +205,7 @@ using \mbox{\hyperlink{namespaceutils_acdc92300a8a41d794e21ecfade137492}{variadi
 \item 
 constexpr auto \mbox{\hyperlink{namespaceutils_a66e65835c8cea64e6a28ccf70f71ea28}{synth\+\_\+three\+\_\+way}}
 \begin{DoxyCompactList}\small\item\em C++ standard exposition-\/only functor\+: {\itshape synth-\/three-\/way}. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename F $>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a5a720537626a2d6e7ae840a1212a67f2}{arity\+\_\+of\+\_\+v}} = \mbox{\hyperlink{structutils_1_1arity__of}{arity\+\_\+of}}$<$F$>$\+::value
+{\footnotesize template$<$typename \mbox{\hyperlink{structF}{F}} $>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a5a720537626a2d6e7ae840a1212a67f2}{arity\+\_\+of\+\_\+v}} = \mbox{\hyperlink{structutils_1_1arity__of}{arity\+\_\+of}}$<$\mbox{\hyperlink{structF}{F}}$>$\+::value
 \end{DoxyCompactItemize}
 
 
@@ -214,8 +214,8 @@ constexpr auto \mbox{\hyperlink{namespaceutils_a66e65835c8cea64e6a28ccf70f71ea28
 \index{utils@{utils}!arguments\_of\_t@{arguments\_of\_t}}
 \index{arguments\_of\_t@{arguments\_of\_t}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{arguments\_of\_t}{arguments\_of\_t}}
-{\footnotesize\ttfamily template$<$typename F $>$ \\
-using \mbox{\hyperlink{namespaceutils_ac4674b772ff1c668b49f1867630f3d54}{utils\+::arguments\+\_\+of\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1arguments__of}{arguments\+\_\+of}}$<$F$>$\+::type}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{structF}{F}} $>$ \\
+using \mbox{\hyperlink{namespaceutils_ac4674b772ff1c668b49f1867630f3d54}{utils\+::arguments\+\_\+of\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1arguments__of}{arguments\+\_\+of}}$<$\mbox{\hyperlink{structF}{F}}$>$\+::type}
 
 
 
@@ -269,8 +269,8 @@ Definition at line \mbox{\hyperlink{functional_8hpp_source_l00236}{236}} of file
 \index{utils@{utils}!result\_of\_t@{result\_of\_t}}
 \index{result\_of\_t@{result\_of\_t}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{result\_of\_t}{result\_of\_t}}
-{\footnotesize\ttfamily template$<$typename F $>$ \\
-using \mbox{\hyperlink{namespaceutils_aec2f7d8a4a6a70e231ae13dd1a18606a}{utils\+::result\+\_\+of\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1result__of}{result\+\_\+of}}$<$F$>$\+::type}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{structF}{F}} $>$ \\
+using \mbox{\hyperlink{namespaceutils_aec2f7d8a4a6a70e231ae13dd1a18606a}{utils\+::result\+\_\+of\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1result__of}{result\+\_\+of}}$<$\mbox{\hyperlink{structF}{F}}$>$\+::type}
 
 
 
@@ -325,8 +325,8 @@ Definition at line \mbox{\hyperlink{functional_8hpp_source_l00261}{261}} of file
 \index{utils@{utils}!composite@{composite}}
 \index{composite@{composite}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{composite()}{composite()}}
-{\footnotesize\ttfamily template$<$typename F , typename... Gs$>$ \\
-constexpr auto utils\+::composite (\begin{DoxyParamCaption}\item[{F \&\&}]{f,  }\item[{Gs \&\&...}]{gs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{structF}{F}} , typename... Gs$>$ \\
+constexpr auto utils\+::composite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structF}{F}} \&\&}]{f,  }\item[{Gs \&\&...}]{gs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
 
 
 
@@ -389,8 +389,8 @@ Definition at line \mbox{\hyperlink{math_8hpp_source_l00007}{7}} of file \mbox{\
 \index{utils@{utils}!arity\_of\_v@{arity\_of\_v}}
 \index{arity\_of\_v@{arity\_of\_v}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{arity\_of\_v}{arity\_of\_v}}
-{\footnotesize\ttfamily template$<$typename F $>$ \\
-constexpr auto utils\+::arity\+\_\+of\+\_\+v = \mbox{\hyperlink{structutils_1_1arity__of}{arity\+\_\+of}}$<$F$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{structF}{F}} $>$ \\
+constexpr auto utils\+::arity\+\_\+of\+\_\+v = \mbox{\hyperlink{structutils_1_1arity__of}{arity\+\_\+of}}$<$\mbox{\hyperlink{structF}{F}}$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
 
 
 

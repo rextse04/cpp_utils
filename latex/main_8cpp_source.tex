@@ -1,0 +1,94 @@
+\hypertarget{main_8cpp_source}{}\doxysection{main.\+cpp}
+\label{main_8cpp_source}\index{examples/dynamic/main.cpp@{examples/dynamic/main.cpp}}
+\mbox{\hyperlink{main_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}\mbox{\hyperlink{main_8cpp_af96a4b94873f4fed9c5c9c2a6a8a0172}{00001}} \textcolor{preprocessor}{\#define UTILS\_DYN\_NO\_ARR}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{dynamic_8hpp}{dynamic.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <string\_view>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespaceutils}{utils}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}\mbox{\hyperlink{structshape}{00010}} \textcolor{keyword}{struct }\mbox{\hyperlink{structshape}{shape}} \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}\mbox{\hyperlink{structshape_aea1e980f8070ae3fa3fdf75f8843cc95}{00011}}     dyn\_method<std::string\_view()> \mbox{\hyperlink{structshape_aea1e980f8070ae3fa3fdf75f8843cc95}{name}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}\mbox{\hyperlink{structshape_ac478d6f7902da6a081fac6ae1c8ff145}{00012}}     dyn\_method<double(const\_obj\_ptr)> \mbox{\hyperlink{structshape_ac478d6f7902da6a081fac6ae1c8ff145}{area}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013 \};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}\mbox{\hyperlink{structcircle}{00015}} \textcolor{keyword}{struct }\mbox{\hyperlink{structcircle}{circle}} : implements<shape> \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}\mbox{\hyperlink{structcircle_a5f252f6cf93b81949dbf334c74931f18}{00016}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{structcircle_a5f252f6cf93b81949dbf334c74931f18}{r}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}00017     \mbox{\hyperlink{dynamic_8hpp_a4ea298754f78cee61561d73527480ba0}{UTILS\_DYN}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018     \mbox{\hyperlink{structshape}{shape}} \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019         .\mbox{\hyperlink{structshape_aea1e980f8070ae3fa3fdf75f8843cc95}{name}} = []() -\/> std::string\_view \{ \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}circle"{}}; \},}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020         .area = [](const\_obj\_ptr \textcolor{keyword}{self}) -\/> \textcolor{keywordtype}{double} \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021             \textcolor{keyword}{const} \textcolor{keyword}{auto} self\_ = \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{structcircle}{circle}}*\textcolor{keyword}{>}(\textcolor{keyword}{self});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022             \textcolor{keywordflow}{return} M\_PI * self\_-\/>\mbox{\hyperlink{structcircle_a5f252f6cf93b81949dbf334c74931f18}{r}} * self\_-\/>r;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}00023         \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}00025     \mbox{\hyperlink{dynamic_8hpp_a5c1bb59a2913f7e47ebd09366c0dd01d}{UTILS\_DYN\_END}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026 \};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}\mbox{\hyperlink{structrectangular}{00028}} \textcolor{keyword}{struct }\mbox{\hyperlink{structrectangular}{rectangular}} \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}\mbox{\hyperlink{structrectangular_ab2157ddd5cc206d82bc4ce8244885f65}{00029}}     dyn\_method<bool(const\_obj\_ptr)> \mbox{\hyperlink{structrectangular_ab2157ddd5cc206d82bc4ce8244885f65}{is\_square}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030 \};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}\mbox{\hyperlink{structrectangle}{00032}} \textcolor{keyword}{struct }\mbox{\hyperlink{structrectangle}{rectangle}} : implements<shape, rectangular> \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}\mbox{\hyperlink{structrectangle_adf9cba0614c51050583f49d3031bea12}{00033}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{structrectangle_a7e6cce29a8941b95c12102adeb67c986}{w}}, \mbox{\hyperlink{structrectangle_adf9cba0614c51050583f49d3031bea12}{h}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034     \mbox{\hyperlink{dynamic_8hpp_a4ea298754f78cee61561d73527480ba0}{UTILS\_DYN}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}\mbox{\hyperlink{structrectangle_a397888374b0481ea52175739b06e9300}{00035}}     \mbox{\hyperlink{structshape}{shape}} \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036         .\mbox{\hyperlink{structshape_aea1e980f8070ae3fa3fdf75f8843cc95}{name}} = []() -\/> std::string\_view \{ \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}rectangle"{}}; \},}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037         .area = [](const\_obj\_ptr \textcolor{keyword}{self}) -\/> \textcolor{keywordtype}{double} \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038             \textcolor{keyword}{const} \textcolor{keyword}{auto} self\_ = \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{structrectangle}{rectangle}}*\textcolor{keyword}{>}(\textcolor{keyword}{self});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039             \textcolor{keywordflow}{return} self\_-\/>\mbox{\hyperlink{structrectangle_a7e6cce29a8941b95c12102adeb67c986}{w}} * self\_-\/>h;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040         \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041     \},}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042     \mbox{\hyperlink{structrectangular}{rectangular}} \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043         .\mbox{\hyperlink{structrectangular_ab2157ddd5cc206d82bc4ce8244885f65}{is\_square}} = +[](const\_obj\_ptr \textcolor{keyword}{self}) -\/> \textcolor{keywordtype}{bool} \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044             \textcolor{keyword}{const} \textcolor{keyword}{auto} self\_ = \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{structrectangle}{rectangle}}*\textcolor{keyword}{>}(\textcolor{keyword}{self});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045             \textcolor{keywordflow}{return} self\_-\/>\mbox{\hyperlink{structrectangle_a7e6cce29a8941b95c12102adeb67c986}{w}} == self\_-\/>h;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046         \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048     \mbox{\hyperlink{dynamic_8hpp_a5c1bb59a2913f7e47ebd09366c0dd01d}{UTILS\_DYN\_END}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049 \};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}\mbox{\hyperlink{structsquare}{00051}} \textcolor{keyword}{struct }\mbox{\hyperlink{structsquare}{square}} : implements<shape, rectangular> \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}\mbox{\hyperlink{structsquare_a7fac16660c47a6934cdd8b2a56f88e55}{00052}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{structsquare_a7fac16660c47a6934cdd8b2a56f88e55}{l}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053     \mbox{\hyperlink{dynamic_8hpp_a4ea298754f78cee61561d73527480ba0}{UTILS\_DYN}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}\mbox{\hyperlink{structsquare_a8b6fe995b3645fb146c93c9f766c4faa}{00054}}     \mbox{\hyperlink{structshape}{shape}} \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055         .\mbox{\hyperlink{structshape_aea1e980f8070ae3fa3fdf75f8843cc95}{name}} = []() -\/> std::string\_view \{ \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}square"{}}; \},}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056         .area = [](const\_obj\_ptr \textcolor{keyword}{self}) -\/> \textcolor{keywordtype}{double} \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057             \textcolor{keyword}{const} \textcolor{keyword}{auto} self\_ = \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{structsquare}{square}}*\textcolor{keyword}{>}(\textcolor{keyword}{self});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058             \textcolor{keywordflow}{return} self\_-\/>\mbox{\hyperlink{structsquare_a7fac16660c47a6934cdd8b2a56f88e55}{l}} * self\_-\/>l;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059         \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060     \},}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061     \mbox{\hyperlink{structrectangular}{rectangular}} \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062         .\mbox{\hyperlink{structrectangular_ab2157ddd5cc206d82bc4ce8244885f65}{is\_square}} = +[](const\_obj\_ptr) -\/> \textcolor{keywordtype}{bool} \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064     \mbox{\hyperlink{dynamic_8hpp_a5c1bb59a2913f7e47ebd09366c0dd01d}{UTILS\_DYN\_END}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065 \};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}\mbox{\hyperlink{structdotted__square}{00067}} \textcolor{keyword}{struct }\mbox{\hyperlink{structdotted__square}{dotted\_square}} : \mbox{\hyperlink{structsquare}{square}} \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00068}\mbox{\hyperlink{structdotted__square_a84e719f023f66e808b9c57b9740de087}{00068}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{structdotted__square_a84e719f023f66e808b9c57b9740de087}{dot\_count}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}\mbox{\hyperlink{structdotted__square_ad94788c12d4964f65a8802303e7009a5}{00069}}     \mbox{\hyperlink{structdotted__square_ad94788c12d4964f65a8802303e7009a5}{UTILS\_DYN}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00070}00070     []() \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00071}00071         \textcolor{keyword}{auto} parent = square::vtable();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072         parent.name = +[]() -\/> std::string\_view \{ \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}dotted\_square"{}}; \};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073         \textcolor{keywordflow}{return} parent;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00074}00074     \}()}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00075}00075     \mbox{\hyperlink{dynamic_8hpp_a5c1bb59a2913f7e47ebd09366c0dd01d}{UTILS\_DYN\_END}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00076}00076 \};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00078}\mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00078}} \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00079}00079     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 2; ++i) \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00080}00080         unique\_dptr<const shape> p;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00081}00081         \textcolor{keywordflow}{if} (i) \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00082}00082             p.reset(\textcolor{keyword}{new} \mbox{\hyperlink{structcircle}{circle}}\{.\mbox{\hyperlink{structcircle_a5f252f6cf93b81949dbf334c74931f18}{r}} = 3\});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00083}00083         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00084}00084             p.reset(\textcolor{keyword}{new} \mbox{\hyperlink{structrectangle}{rectangle}}\{.\mbox{\hyperlink{structrectangle_a7e6cce29a8941b95c12102adeb67c986}{w}} = 3, .h = 4\});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00085}00085         \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00086}00086         std::cout << p[\&\mbox{\hyperlink{structshape_aea1e980f8070ae3fa3fdf75f8843cc95}{shape::name}}]() << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00087}00087     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00088}00088 \}}
+
+\end{DoxyCode}

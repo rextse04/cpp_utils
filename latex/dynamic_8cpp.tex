@@ -1,0 +1,196 @@
+\hypertarget{dynamic_8cpp}{}\doxysection{tests/dynamic.cpp File Reference}
+\label{dynamic_8cpp}\index{tests/dynamic.cpp@{tests/dynamic.cpp}}
+{\ttfamily \#include \char`\"{}common.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dynamic.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+Include dependency graph for dynamic.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dynamic_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structshape}{shape}}
+\item 
+struct \mbox{\hyperlink{structcircle}{circle}}
+\item 
+struct \mbox{\hyperlink{structrectangular}{rectangular}}
+\item 
+struct \mbox{\hyperlink{structrectangle}{rectangle}}
+\item 
+struct \mbox{\hyperlink{structsquare}{square}}
+\item 
+struct \mbox{\hyperlink{structdotted__square}{dotted\+\_\+square}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{dynamic_8cpp_a6b2a3852db8bb19ab6909bac01859985}{BOOST\+\_\+\+TEST\+\_\+\+MODULE}}~dynamic.\+hpp
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{dynamic_8cpp_acea8692767498ab33965da19170415c1}{BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE}} (traits\+\_\+test)
+\item 
+\mbox{\hyperlink{dynamic_8cpp_aef6ae31e2ced1cff34842e9d0ca201c2}{BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE}} (fptr\+\_\+test)
+\item 
+\mbox{\hyperlink{dynamic_8cpp_a926ea5a53f98016bd41facb7daa5c9da}{BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE}} (dptr\+\_\+test)
+\item 
+\mbox{\hyperlink{dynamic_8cpp_a003f48fefa540a437fdc4bd0777dd22e}{BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE}} (dptr\+\_\+constraints\+\_\+test)
+\item 
+\mbox{\hyperlink{dynamic_8cpp_a257dc4795a65a9a063f300e5535001e5}{BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE}} (unique\+\_\+dptr\+\_\+test)
+\item 
+\mbox{\hyperlink{dynamic_8cpp_a4fd1c23afea21fc2b4b75d5abd475fd3}{BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE}} (unique\+\_\+dptr\+\_\+array\+\_\+test)
+\item 
+\mbox{\hyperlink{dynamic_8cpp_a93cf70190f02766018b0893c3a416305}{BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE}} (shared\+\_\+dptr\+\_\+test)
+\item 
+\mbox{\hyperlink{dynamic_8cpp_a34b00fef2458b9d22d6ac4dad3004c14}{BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE}} (shared\+\_\+dptr\+\_\+multithreading\+\_\+test)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{dynamic_8cpp_a68461f024285c1585a6b2f228bc046d3}{dtor\+\_\+msg}}
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\constexpr bool \mbox{\hyperlink{dynamic_8cpp_a62d327c26862c17c7b9893965a282f36}{is\+\_\+settable\+\_\+v}} = std\+::is\+\_\+constructible\+\_\+v$<$T, U$>$ \&\& std\+::is\+\_\+assignable\+\_\+v$<$T, U$>$
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\constexpr bool \mbox{\hyperlink{dynamic_8cpp_a30599e8888b40d03c7d64cb23ffb5dd8}{is\+\_\+not\+\_\+settable\+\_\+v}} = !std\+::is\+\_\+constructible\+\_\+v$<$T, U$>$ \&\& !std\+::is\+\_\+assignable\+\_\+v$<$T, U$>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{dynamic_8cpp_a6b2a3852db8bb19ab6909bac01859985}\label{dynamic_8cpp_a6b2a3852db8bb19ab6909bac01859985}} 
+\index{dynamic.cpp@{dynamic.cpp}!BOOST\_TEST\_MODULE@{BOOST\_TEST\_MODULE}}
+\index{BOOST\_TEST\_MODULE@{BOOST\_TEST\_MODULE}!dynamic.cpp@{dynamic.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_TEST\_MODULE}{BOOST\_TEST\_MODULE}}
+{\footnotesize\ttfamily \#define BOOST\+\_\+\+TEST\+\_\+\+MODULE~dynamic.\+hpp}
+
+
+
+Definition at line \mbox{\hyperlink{dynamic_8cpp_source_l00001}{1}} of file \mbox{\hyperlink{dynamic_8cpp_source}{dynamic.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dynamic_8cpp_a003f48fefa540a437fdc4bd0777dd22e}\label{dynamic_8cpp_a003f48fefa540a437fdc4bd0777dd22e}} 
+\index{dynamic.cpp@{dynamic.cpp}!BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}}
+\index{BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}!dynamic.cpp@{dynamic.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_AUTO\_TEST\_CASE()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{dptr\+\_\+constraints\+\_\+test}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dynamic_8cpp_source_l00135}{135}} of file \mbox{\hyperlink{dynamic_8cpp_source}{dynamic.\+cpp}}.
+
+\mbox{\Hypertarget{dynamic_8cpp_a926ea5a53f98016bd41facb7daa5c9da}\label{dynamic_8cpp_a926ea5a53f98016bd41facb7daa5c9da}} 
+\index{dynamic.cpp@{dynamic.cpp}!BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}}
+\index{BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}!dynamic.cpp@{dynamic.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_AUTO\_TEST\_CASE()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{dptr\+\_\+test}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dynamic_8cpp_source_l00107}{107}} of file \mbox{\hyperlink{dynamic_8cpp_source}{dynamic.\+cpp}}.
+
+\mbox{\Hypertarget{dynamic_8cpp_aef6ae31e2ced1cff34842e9d0ca201c2}\label{dynamic_8cpp_aef6ae31e2ced1cff34842e9d0ca201c2}} 
+\index{dynamic.cpp@{dynamic.cpp}!BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}}
+\index{BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}!dynamic.cpp@{dynamic.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_AUTO\_TEST\_CASE()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{fptr\+\_\+test}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dynamic_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{dynamic_8cpp_source}{dynamic.\+cpp}}.
+
+\mbox{\Hypertarget{dynamic_8cpp_a34b00fef2458b9d22d6ac4dad3004c14}\label{dynamic_8cpp_a34b00fef2458b9d22d6ac4dad3004c14}} 
+\index{dynamic.cpp@{dynamic.cpp}!BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}}
+\index{BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}!dynamic.cpp@{dynamic.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_AUTO\_TEST\_CASE()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{shared\+\_\+dptr\+\_\+multithreading\+\_\+test}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dynamic_8cpp_source_l00213}{213}} of file \mbox{\hyperlink{dynamic_8cpp_source}{dynamic.\+cpp}}.
+
+\mbox{\Hypertarget{dynamic_8cpp_a93cf70190f02766018b0893c3a416305}\label{dynamic_8cpp_a93cf70190f02766018b0893c3a416305}} 
+\index{dynamic.cpp@{dynamic.cpp}!BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}}
+\index{BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}!dynamic.cpp@{dynamic.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_AUTO\_TEST\_CASE()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{shared\+\_\+dptr\+\_\+test}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dynamic_8cpp_source_l00179}{179}} of file \mbox{\hyperlink{dynamic_8cpp_source}{dynamic.\+cpp}}.
+
+\mbox{\Hypertarget{dynamic_8cpp_acea8692767498ab33965da19170415c1}\label{dynamic_8cpp_acea8692767498ab33965da19170415c1}} 
+\index{dynamic.cpp@{dynamic.cpp}!BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}}
+\index{BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}!dynamic.cpp@{dynamic.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_AUTO\_TEST\_CASE()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{traits\+\_\+test}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dynamic_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{dynamic_8cpp_source}{dynamic.\+cpp}}.
+
+\mbox{\Hypertarget{dynamic_8cpp_a4fd1c23afea21fc2b4b75d5abd475fd3}\label{dynamic_8cpp_a4fd1c23afea21fc2b4b75d5abd475fd3}} 
+\index{dynamic.cpp@{dynamic.cpp}!BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}}
+\index{BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}!dynamic.cpp@{dynamic.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_AUTO\_TEST\_CASE()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{unique\+\_\+dptr\+\_\+array\+\_\+test}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dynamic_8cpp_source_l00166}{166}} of file \mbox{\hyperlink{dynamic_8cpp_source}{dynamic.\+cpp}}.
+
+\mbox{\Hypertarget{dynamic_8cpp_a257dc4795a65a9a063f300e5535001e5}\label{dynamic_8cpp_a257dc4795a65a9a063f300e5535001e5}} 
+\index{dynamic.cpp@{dynamic.cpp}!BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}}
+\index{BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}!dynamic.cpp@{dynamic.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_AUTO\_TEST\_CASE()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{unique\+\_\+dptr\+\_\+test}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{dynamic_8cpp_source_l00151}{151}} of file \mbox{\hyperlink{dynamic_8cpp_source}{dynamic.\+cpp}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{dynamic_8cpp_a68461f024285c1585a6b2f228bc046d3}\label{dynamic_8cpp_a68461f024285c1585a6b2f228bc046d3}} 
+\index{dynamic.cpp@{dynamic.cpp}!dtor\_msg@{dtor\_msg}}
+\index{dtor\_msg@{dtor\_msg}!dynamic.cpp@{dynamic.cpp}}
+\doxysubsubsection{\texorpdfstring{dtor\_msg}{dtor\_msg}}
+{\footnotesize\ttfamily std\+::string dtor\+\_\+msg}
+
+
+
+Definition at line \mbox{\hyperlink{dynamic_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{dynamic_8cpp_source}{dynamic.\+cpp}}.
+
+\mbox{\Hypertarget{dynamic_8cpp_a30599e8888b40d03c7d64cb23ffb5dd8}\label{dynamic_8cpp_a30599e8888b40d03c7d64cb23ffb5dd8}} 
+\index{dynamic.cpp@{dynamic.cpp}!is\_not\_settable\_v@{is\_not\_settable\_v}}
+\index{is\_not\_settable\_v@{is\_not\_settable\_v}!dynamic.cpp@{dynamic.cpp}}
+\doxysubsubsection{\texorpdfstring{is\_not\_settable\_v}{is\_not\_settable\_v}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+constexpr bool is\+\_\+not\+\_\+settable\+\_\+v = !std\+::is\+\_\+constructible\+\_\+v$<$T, U$>$ \&\& !std\+::is\+\_\+assignable\+\_\+v$<$T, U$>$\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{dynamic_8cpp_source_l00134}{134}} of file \mbox{\hyperlink{dynamic_8cpp_source}{dynamic.\+cpp}}.
+
+\mbox{\Hypertarget{dynamic_8cpp_a62d327c26862c17c7b9893965a282f36}\label{dynamic_8cpp_a62d327c26862c17c7b9893965a282f36}} 
+\index{dynamic.cpp@{dynamic.cpp}!is\_settable\_v@{is\_settable\_v}}
+\index{is\_settable\_v@{is\_settable\_v}!dynamic.cpp@{dynamic.cpp}}
+\doxysubsubsection{\texorpdfstring{is\_settable\_v}{is\_settable\_v}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+constexpr bool is\+\_\+settable\+\_\+v = std\+::is\+\_\+constructible\+\_\+v$<$T, U$>$ \&\& std\+::is\+\_\+assignable\+\_\+v$<$T, U$>$\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{dynamic_8cpp_source_l00132}{132}} of file \mbox{\hyperlink{dynamic_8cpp_source}{dynamic.\+cpp}}.
+

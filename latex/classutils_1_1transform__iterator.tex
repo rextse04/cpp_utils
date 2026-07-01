@@ -38,12 +38,12 @@ using \mbox{\hyperlink{classutils_1_1transform__iterator_a37d06bac81adfc8e032b8d
 \item 
 constexpr \mbox{\hyperlink{classutils_1_1transform__iterator_afc0a8cf18faef026fbce6464c348b5f2}{transform\+\_\+iterator}} ()=default
 \item 
-constexpr \mbox{\hyperlink{classutils_1_1transform__iterator_aa26bb93ba83c8847ec5818c448f25b1d}{transform\+\_\+iterator}} (parent it, F func)
+constexpr \mbox{\hyperlink{classutils_1_1transform__iterator_aa26bb93ba83c8847ec5818c448f25b1d}{transform\+\_\+iterator}} (parent it, \mbox{\hyperlink{structF}{F}} func)
 \item 
 {\footnotesize template$<$typename U , typename G $>$ \newline
-requires (std\+::convertible\+\_\+to$<$const U\&, Iter$>$ \&\& std\+::convertible\+\_\+to$<$const G\&, F$>$)}\\constexpr \mbox{\hyperlink{classutils_1_1transform__iterator_ac76915421f869d80aedd12fbe9b89111}{transform\+\_\+iterator}} (const \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}}$<$ U, G $>$ \&other)
+requires (std\+::convertible\+\_\+to$<$const U\&, Iter$>$ \&\& std\+::convertible\+\_\+to$<$const G\&, \mbox{\hyperlink{structF}{F}}$>$)}\\constexpr \mbox{\hyperlink{classutils_1_1transform__iterator_ac76915421f869d80aedd12fbe9b89111}{transform\+\_\+iterator}} (const \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}}$<$ U, G $>$ \&other)
 \item 
-constexpr const F \& \mbox{\hyperlink{classutils_1_1transform__iterator_a0ea956af4882ae579fc0f13421aed67a}{transformer}} () const noexcept
+constexpr const \mbox{\hyperlink{structF}{F}} \& \mbox{\hyperlink{classutils_1_1transform__iterator_a0ea956af4882ae579fc0f13421aed67a}{transformer}} () const noexcept
 \item 
 constexpr decltype(auto) \mbox{\hyperlink{classutils_1_1transform__iterator_a9280046964c0cfda6a3286b701631f80}{operator$\ast$}} () const
 \item 
@@ -77,8 +77,8 @@ constexpr friend \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+
 
 
 \doxysubsection{Detailed Description}
-\subsubsection*{template$<$typename Iter, typename F$>$\newline
-requires ( std\+::input\+\_\+or\+\_\+output\+\_\+iterator$<$Iter$>$ \&\& detail\+::invoke\+\_\+capturable$<$F, std\+::iter\+\_\+reference\+\_\+t$<$Iter$>$$>$ \&\& std\+::move\+\_\+constructible$<$F$>$)\newline
+\subsubsection*{template$<$typename Iter, typename \mbox{\hyperlink{structF}{F}}$>$\newline
+requires ( std\+::input\+\_\+or\+\_\+output\+\_\+iterator$<$Iter$>$ \&\& detail\+::invoke\+\_\+capturable$<$\mbox{\hyperlink{structF}{F}}, std\+::iter\+\_\+reference\+\_\+t$<$Iter$>$$>$ \&\& std\+::move\+\_\+constructible$<$\mbox{\hyperlink{structF}{F}}$>$)\newline
 class utils\+::transform\+\_\+iterator$<$ Iter, F $>$}
 
 
@@ -91,8 +91,8 @@ Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00071}{71}} of file \m
 \index{utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}!difference\_type@{difference\_type}}
 \index{difference\_type@{difference\_type}!utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}}
 \doxysubsubsection{\texorpdfstring{difference\_type}{difference\_type}}
-{\footnotesize\ttfamily template$<$typename Iter , typename F $>$ \\
-using \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, F $>$\+::\mbox{\hyperlink{classutils_1_1transform__iterator_a37d06bac81adfc8e032b8dbfec95edce}{difference\+\_\+type}} =  std\+::iter\+\_\+difference\+\_\+t$<$Iter$>$}
+{\footnotesize\ttfamily template$<$typename Iter , typename \mbox{\hyperlink{structF}{F}} $>$ \\
+using \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, \mbox{\hyperlink{structF}{F}} $>$\+::\mbox{\hyperlink{classutils_1_1transform__iterator_a37d06bac81adfc8e032b8dbfec95edce}{difference\+\_\+type}} =  std\+::iter\+\_\+difference\+\_\+t$<$Iter$>$}
 
 
 
@@ -102,8 +102,8 @@ Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00078}{78}} of file \m
 \index{utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}!iterator\_category@{iterator\_category}}
 \index{iterator\_category@{iterator\_category}!utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}}
 \doxysubsubsection{\texorpdfstring{iterator\_category}{iterator\_category}}
-{\footnotesize\ttfamily template$<$typename Iter , typename F $>$ \\
-using \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, F $>$\+::\mbox{\hyperlink{classutils_1_1transform__iterator_ac4e293e7dea655cc9f2815f27b3cbeb7}{iterator\+\_\+category}} =  std\+::common\+\_\+type\+\_\+t$<$\mbox{\hyperlink{namespaceutils_aac452ad4319d1aa831bb904e6e5123bb}{iterator\+\_\+category\+\_\+t}}$<$Iter$>$, std\+::random\+\_\+access\+\_\+iterator\+\_\+tag$>$}
+{\footnotesize\ttfamily template$<$typename Iter , typename \mbox{\hyperlink{structF}{F}} $>$ \\
+using \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, \mbox{\hyperlink{structF}{F}} $>$\+::\mbox{\hyperlink{classutils_1_1transform__iterator_ac4e293e7dea655cc9f2815f27b3cbeb7}{iterator\+\_\+category}} =  std\+::common\+\_\+type\+\_\+t$<$\mbox{\hyperlink{namespaceutils_aac452ad4319d1aa831bb904e6e5123bb}{iterator\+\_\+category\+\_\+t}}$<$Iter$>$, std\+::random\+\_\+access\+\_\+iterator\+\_\+tag$>$}
 
 
 
@@ -113,8 +113,8 @@ Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00077}{77}} of file \m
 \index{utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}!iterator\_type@{iterator\_type}}
 \index{iterator\_type@{iterator\_type}!utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}}
 \doxysubsubsection{\texorpdfstring{iterator\_type}{iterator\_type}}
-{\footnotesize\ttfamily template$<$typename Iter , typename F $>$ \\
-using \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, F $>$\+::\mbox{\hyperlink{classutils_1_1transform__iterator_a66dfcabcf885fef90f3b336e501e3a7a}{iterator\+\_\+type}} =  Iter}
+{\footnotesize\ttfamily template$<$typename Iter , typename \mbox{\hyperlink{structF}{F}} $>$ \\
+using \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, \mbox{\hyperlink{structF}{F}} $>$\+::\mbox{\hyperlink{classutils_1_1transform__iterator_a66dfcabcf885fef90f3b336e501e3a7a}{iterator\+\_\+type}} =  Iter}
 
 
 
@@ -127,15 +127,15 @@ Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00076}{76}} of file \m
 \index{utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}!transform\_iterator@{transform\_iterator}}
 \index{transform\_iterator@{transform\_iterator}!utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}}
 \doxysubsubsection{\texorpdfstring{transform\_iterator()}{transform\_iterator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily template$<$typename Iter , typename F $>$ \\
-constexpr \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, F $>$\+::\mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [default]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename \mbox{\hyperlink{structF}{F}} $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, \mbox{\hyperlink{structF}{F}} $>$\+::\mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [default]}}
 
 \mbox{\Hypertarget{classutils_1_1transform__iterator_aa26bb93ba83c8847ec5818c448f25b1d}\label{classutils_1_1transform__iterator_aa26bb93ba83c8847ec5818c448f25b1d}} 
 \index{utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}!transform\_iterator@{transform\_iterator}}
 \index{transform\_iterator@{transform\_iterator}!utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}}
 \doxysubsubsection{\texorpdfstring{transform\_iterator()}{transform\_iterator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily template$<$typename Iter , typename F $>$ \\
-constexpr \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, F $>$\+::\mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} (\begin{DoxyParamCaption}\item[{parent}]{it,  }\item[{F}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename \mbox{\hyperlink{structF}{F}} $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, \mbox{\hyperlink{structF}{F}} $>$\+::\mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} (\begin{DoxyParamCaption}\item[{parent}]{it,  }\item[{\mbox{\hyperlink{structF}{F}}}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
@@ -145,10 +145,10 @@ Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00081}{81}} of file \m
 \index{utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}!transform\_iterator@{transform\_iterator}}
 \index{transform\_iterator@{transform\_iterator}!utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}}
 \doxysubsubsection{\texorpdfstring{transform\_iterator()}{transform\_iterator()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily template$<$typename Iter , typename F $>$ \\
+{\footnotesize\ttfamily template$<$typename Iter , typename \mbox{\hyperlink{structF}{F}} $>$ \\
 template$<$typename U , typename G $>$ \newline
-requires (std\+::convertible\+\_\+to$<$const U\&, Iter$>$ \&\& std\+::convertible\+\_\+to$<$const G\&, F$>$)\\
-constexpr \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, F $>$\+::\mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}}$<$ U, G $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+requires (std\+::convertible\+\_\+to$<$const U\&, Iter$>$ \&\& std\+::convertible\+\_\+to$<$const G\&, \mbox{\hyperlink{structF}{F}}$>$)\\
+constexpr \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, \mbox{\hyperlink{structF}{F}} $>$\+::\mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}}$<$ U, G $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
@@ -161,8 +161,8 @@ Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00084}{84}} of file \m
 \index{utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}}
 \doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
-{\footnotesize\ttfamily template$<$typename Iter , typename F $>$ \\
-constexpr decltype(auto) \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, F $>$\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename \mbox{\hyperlink{structF}{F}} $>$ \\
+constexpr decltype(auto) \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, \mbox{\hyperlink{structF}{F}} $>$\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
@@ -172,8 +172,8 @@ Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00088}{88}} of file \m
 \index{utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}!operator++@{operator++}}
 \index{operator++@{operator++}!utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}}
 \doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily template$<$typename Iter , typename F $>$ \\
-constexpr \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, F $>$\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename \mbox{\hyperlink{structF}{F}} $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, \mbox{\hyperlink{structF}{F}} $>$\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
@@ -183,8 +183,8 @@ Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00095}{95}} of file \m
 \index{utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}!operator++@{operator++}}
 \index{operator++@{operator++}!utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}}
 \doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily template$<$typename Iter , typename F $>$ \\
-constexpr \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, F $>$\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename \mbox{\hyperlink{structF}{F}} $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, \mbox{\hyperlink{structF}{F}} $>$\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
@@ -194,8 +194,8 @@ Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00099}{99}} of file \m
 \index{utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}!operator++@{operator++}}
 \index{operator++@{operator++}!utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}}
 \doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily template$<$typename Iter , typename F $>$ \\
-constexpr \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, F $>$\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename \mbox{\hyperlink{structF}{F}} $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, \mbox{\hyperlink{structF}{F}} $>$\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
@@ -205,8 +205,8 @@ Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00102}{102}} of file \
 \index{utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}}
 \doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
-{\footnotesize\ttfamily template$<$typename Iter , typename F $>$ \\
-constexpr \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, F $>$\+::operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1transform__iterator_a37d06bac81adfc8e032b8dbfec95edce}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename \mbox{\hyperlink{structF}{F}} $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, \mbox{\hyperlink{structF}{F}} $>$\+::operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1transform__iterator_a37d06bac81adfc8e032b8dbfec95edce}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
@@ -216,8 +216,8 @@ Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00114}{114}} of file \
 \index{utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}!operator-\/-\/@{operator-\/-\/}}
 \index{operator-\/-\/@{operator-\/-\/}!utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}}
 \doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename Iter , typename F $>$ \\
-constexpr \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, F $>$\+::operator-\/-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename \mbox{\hyperlink{structF}{F}} $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, \mbox{\hyperlink{structF}{F}} $>$\+::operator-\/-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
@@ -227,8 +227,8 @@ Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00106}{106}} of file \
 \index{utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}!operator-\/-\/@{operator-\/-\/}}
 \index{operator-\/-\/@{operator-\/-\/}!utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}}
 \doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename Iter , typename F $>$ \\
-constexpr \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, F $>$\+::operator-\/-\/ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename \mbox{\hyperlink{structF}{F}} $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, \mbox{\hyperlink{structF}{F}} $>$\+::operator-\/-\/ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
@@ -238,8 +238,8 @@ Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00110}{110}} of file \
 \index{utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}!operator-\/=@{operator-\/=}}
 \index{operator-\/=@{operator-\/=}!utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}}
 \doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
-{\footnotesize\ttfamily template$<$typename Iter , typename F $>$ \\
-constexpr \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, F $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1transform__iterator_a37d06bac81adfc8e032b8dbfec95edce}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename \mbox{\hyperlink{structF}{F}} $>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} \& \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, \mbox{\hyperlink{structF}{F}} $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1transform__iterator_a37d06bac81adfc8e032b8dbfec95edce}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
@@ -249,15 +249,15 @@ Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00118}{118}} of file \
 \index{utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}!operator-\/$>$@{operator-\/$>$}}
 \index{operator-\/$>$@{operator-\/$>$}!utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}}
 \doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
-{\footnotesize\ttfamily template$<$typename Iter , typename F $>$ \\
-constexpr decltype(auto) \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, F $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [delete]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename \mbox{\hyperlink{structF}{F}} $>$ \\
+constexpr decltype(auto) \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, \mbox{\hyperlink{structF}{F}} $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [delete]}}
 
 \mbox{\Hypertarget{classutils_1_1transform__iterator_a18e099ff0dfdeaa31a9c66319bd459b3}\label{classutils_1_1transform__iterator_a18e099ff0dfdeaa31a9c66319bd459b3}} 
 \index{utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
 \index{operator\mbox{[}\mbox{]}@{operator[]}!utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}}
 \doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
-{\footnotesize\ttfamily template$<$typename Iter , typename F $>$ \\
-constexpr decltype(auto) \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, F $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1transform__iterator_a37d06bac81adfc8e032b8dbfec95edce}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename \mbox{\hyperlink{structF}{F}} $>$ \\
+constexpr decltype(auto) \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, \mbox{\hyperlink{structF}{F}} $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1transform__iterator_a37d06bac81adfc8e032b8dbfec95edce}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
@@ -267,8 +267,8 @@ Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00092}{92}} of file \m
 \index{utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}!transformer@{transformer}}
 \index{transformer@{transformer}!utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}}
 \doxysubsubsection{\texorpdfstring{transformer()}{transformer()}}
-{\footnotesize\ttfamily template$<$typename Iter , typename F $>$ \\
-constexpr const F \& \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, F $>$\+::transformer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename \mbox{\hyperlink{structF}{F}} $>$ \\
+constexpr const \mbox{\hyperlink{structF}{F}} \& \mbox{\hyperlink{classutils_1_1transform__iterator}{utils\+::transform\+\_\+iterator}}$<$ Iter, \mbox{\hyperlink{structF}{F}} $>$\+::transformer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
 
 
@@ -281,8 +281,8 @@ Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00086}{86}} of file \m
 \index{utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}!operator+@{operator+}}
 \index{operator+@{operator+}!utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}}
 \doxysubsubsection{\texorpdfstring{operator+}{operator+}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename Iter , typename F $>$ \\
-constexpr friend \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}}$<$ Iter, F $>$ \&}]{it,  }\item[{\mbox{\hyperlink{classutils_1_1transform__iterator_a37d06bac81adfc8e032b8dbfec95edce}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename \mbox{\hyperlink{structF}{F}} $>$ \\
+constexpr friend \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}}$<$ Iter, \mbox{\hyperlink{structF}{F}} $>$ \&}]{it,  }\item[{\mbox{\hyperlink{classutils_1_1transform__iterator_a37d06bac81adfc8e032b8dbfec95edce}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
 
 
 
@@ -292,8 +292,8 @@ Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00122}{122}} of file \
 \index{utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}!operator+@{operator+}}
 \index{operator+@{operator+}!utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}}
 \doxysubsubsection{\texorpdfstring{operator+}{operator+}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename Iter , typename F $>$ \\
-constexpr friend \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1transform__iterator_a37d06bac81adfc8e032b8dbfec95edce}{difference\+\_\+type}}}]{n,  }\item[{const \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}}$<$ Iter, F $>$ \&}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename \mbox{\hyperlink{structF}{F}} $>$ \\
+constexpr friend \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1transform__iterator_a37d06bac81adfc8e032b8dbfec95edce}{difference\+\_\+type}}}]{n,  }\item[{const \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}}$<$ Iter, \mbox{\hyperlink{structF}{F}} $>$ \&}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
 
 
 
@@ -303,8 +303,8 @@ Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00126}{126}} of file \
 \index{utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!utils::transform\_iterator$<$ Iter, F $>$@{utils::transform\_iterator$<$ Iter, F $>$}}
 \doxysubsubsection{\texorpdfstring{operator-\/}{operator-}}
-{\footnotesize\ttfamily template$<$typename Iter , typename F $>$ \\
-constexpr friend \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}}$<$ Iter, F $>$ \&}]{it,  }\item[{\mbox{\hyperlink{classutils_1_1transform__iterator_a37d06bac81adfc8e032b8dbfec95edce}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+{\footnotesize\ttfamily template$<$typename Iter , typename \mbox{\hyperlink{structF}{F}} $>$ \\
+constexpr friend \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}} operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}}$<$ Iter, \mbox{\hyperlink{structF}{F}} $>$ \&}]{it,  }\item[{\mbox{\hyperlink{classutils_1_1transform__iterator_a37d06bac81adfc8e032b8dbfec95edce}{difference\+\_\+type}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
 
 
 

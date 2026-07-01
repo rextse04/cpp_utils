@@ -1,0 +1,21 @@
+\hypertarget{allocators_2common_8hpp_source}{}\doxysection{common.\+hpp}
+\label{allocators_2common_8hpp_source}\index{tests/allocators/common.hpp@{tests/allocators/common.hpp}}
+\mbox{\hyperlink{allocators_2common_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{allocators_2common_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{allocators_2common_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}../common.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{allocators_2common_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#include <span>}}
+\DoxyCodeLine{\Hypertarget{allocators_2common_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <cstddef>}}
+\DoxyCodeLine{\Hypertarget{allocators_2common_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <ranges>}}
+\DoxyCodeLine{\Hypertarget{allocators_2common_8hpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{allocators_2common_8hpp_source_l00007}\mbox{\hyperlink{allocators_2common_8hpp_aa45660a424e4ff9b8ce5ad08532436e4}{00007}} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{allocators_2common_8hpp_aa45660a424e4ff9b8ce5ad08532436e4}{poison}}(std::span<std::byte> \mbox{\hyperlink{stack__allocator_8cpp_a156eb536d1933730c8d9aa522f53e437}{buf}}) \{}
+\DoxyCodeLine{\Hypertarget{allocators_2common_8hpp_source_l00008}00008     \textcolor{keyword}{constexpr} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} pattern[] = \{0xDE, 0xAD, 0xBE, 0xEF\};}
+\DoxyCodeLine{\Hypertarget{allocators_2common_8hpp_source_l00009}00009     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} chunk : \mbox{\hyperlink{stack__allocator_8cpp_a156eb536d1933730c8d9aa522f53e437}{buf}} | std::views::chunk(4)) \{}
+\DoxyCodeLine{\Hypertarget{allocators_2common_8hpp_source_l00010}00010         \textcolor{keywordflow}{for} (std::size\_t i = 0; i < chunk.size(); ++i) \{}
+\DoxyCodeLine{\Hypertarget{allocators_2common_8hpp_source_l00011}00011             \textcolor{keywordflow}{if} (i >= chunk.size()) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{allocators_2common_8hpp_source_l00012}00012             chunk[i] = \textcolor{keyword}{static\_cast<}std::byte\textcolor{keyword}{>}(pattern[i]);}
+\DoxyCodeLine{\Hypertarget{allocators_2common_8hpp_source_l00013}00013         \}}
+\DoxyCodeLine{\Hypertarget{allocators_2common_8hpp_source_l00014}00014     \}}
+\DoxyCodeLine{\Hypertarget{allocators_2common_8hpp_source_l00015}00015 \}}
+
+\end{DoxyCode}

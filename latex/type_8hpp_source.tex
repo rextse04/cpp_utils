@@ -66,9 +66,9 @@
 \DoxyCodeLine{\Hypertarget{type_8hpp_source_l00090}00090     \textcolor{keyword}{namespace }detail \{}
 \DoxyCodeLine{\Hypertarget{type_8hpp_source_l00091}00091         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, auto F, \textcolor{keyword}{typename} Seq>}
 \DoxyCodeLine{\Hypertarget{type_8hpp_source_l00092}00092         \textcolor{keyword}{struct }sequence\_apply;}
-\DoxyCodeLine{\Hypertarget{type_8hpp_source_l00093}00093         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{auto} F, T... Ns>}
-\DoxyCodeLine{\Hypertarget{type_8hpp_source_l00094}00094         \textcolor{keyword}{struct }sequence\_apply<T, F, std::integer\_sequence<T, Ns...>> \{}
-\DoxyCodeLine{\Hypertarget{type_8hpp_source_l00095}00095             \textcolor{keyword}{using} type = std::integer\_sequence<T, F(Ns)...>;}
+\DoxyCodeLine{\Hypertarget{type_8hpp_source_l00093}00093         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{auto} \mbox{\hyperlink{functional_8cpp_ade69077374d2ffb263c8074758eea543}{F}}, T... Ns>}
+\DoxyCodeLine{\Hypertarget{type_8hpp_source_l00094}00094         \textcolor{keyword}{struct }sequence\_apply<T, \mbox{\hyperlink{structF}{F}}, std::integer\_sequence<T, Ns...>> \{}
+\DoxyCodeLine{\Hypertarget{type_8hpp_source_l00095}00095             \textcolor{keyword}{using} type = std::integer\_sequence<T, \mbox{\hyperlink{functional_8cpp_ade69077374d2ffb263c8074758eea543}{F}}(Ns)...>;}
 \DoxyCodeLine{\Hypertarget{type_8hpp_source_l00096}00096         \};}
 \DoxyCodeLine{\Hypertarget{type_8hpp_source_l00097}00097     \}}
 \DoxyCodeLine{\Hypertarget{type_8hpp_source_l00105}00105     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, T End, T Begin = 0, T Step = 1>}

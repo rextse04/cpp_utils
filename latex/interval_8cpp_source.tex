@@ -1,0 +1,54 @@
+\hypertarget{interval_8cpp_source}{}\doxysection{interval.\+cpp}
+\label{interval_8cpp_source}\index{tests/containers/interval.cpp@{tests/containers/interval.cpp}}
+\mbox{\hyperlink{interval_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00001}\mbox{\hyperlink{interval_8cpp_a6b2a3852db8bb19ab6909bac01859985}{00001}} \textcolor{preprocessor}{\#define BOOST\_TEST\_MODULE containers/interval.hpp}}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}common.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{interval_8hpp}{containers/interval.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00005}00005 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespaceutils}{utils}};}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00007}\mbox{\hyperlink{interval_8cpp_a75b71e65629a49fee482ab760d778eb2}{00007}} \mbox{\hyperlink{interval_8cpp_a75b71e65629a49fee482ab760d778eb2}{BOOST\_AUTO\_TEST\_CASE}}(endpoint\_test) \{}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00008}00008     \textcolor{keyword}{using} \textcolor{keyword}{enum} interval\_endpoint\_type;}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00009}00009     \textcolor{keyword}{const} interval\_endpoint a = 0 | closed, b = 0 | open, c = 1 | open, d = 1 | closed;}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00010}00010     BOOST\_CHECK(a == a); BOOST\_CHECK(b <= b); BOOST\_CHECK(c >= c); BOOST\_CHECK(d == d);}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00011}00011     BOOST\_CHECK(a.compare(b, \textcolor{keyword}{false}) > 0); BOOST\_CHECK(a < c); BOOST\_CHECK(a < d);}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00012}00012     BOOST\_CHECK(c > b); BOOST\_CHECK(d >= b);}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00013}00013     BOOST\_CHECK(c <= d);}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00014}00014 \}}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00016}\mbox{\hyperlink{interval_8cpp_ab791a36099f624446c630cda0ac9b2ad}{00016}} \mbox{\hyperlink{interval_8cpp_a75b71e65629a49fee482ab760d778eb2}{BOOST\_AUTO\_TEST\_CASE}}(interval\_test) \{}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00017}00017     \textcolor{keyword}{using} \textcolor{keyword}{enum} interval\_endpoint\_type;}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00018}00018     \textcolor{keyword}{const} interval\_endpoint a = 0 | closed, b = 0 | open, c = 2 | open, d = 2 | closed;}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00019}00019     \textcolor{keyword}{const} interval ac = \{a, c\}, ad = \{a, d\}, bc = \{b, c\}, bd = \{b, d\};}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00020}00020     BOOST\_CHECK(!(a,a).empty()); BOOST\_CHECK((b,b).empty()); BOOST\_CHECK((c,c).empty()); BOOST\_CHECK(!(d,d).empty());}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00021}00021     BOOST\_CHECK((a,b).empty()); BOOST\_CHECK((c,d).empty());}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00022}00022     BOOST\_CHECK(!ac.empty()); BOOST\_CHECK(!ad.empty()); BOOST\_CHECK(!bc.empty()); BOOST\_CHECK(!bd.empty());}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00023}00023     BOOST\_CHECK(ac.contains(0)); BOOST\_CHECK(ac.contains(1)); BOOST\_CHECK(!ac.contains(2));}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00024}00024     BOOST\_CHECK(ad.contains(0)); BOOST\_CHECK(ad.contains(1)); BOOST\_CHECK(ad.contains(2));}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00025}00025     BOOST\_CHECK(!bc.contains(0)); BOOST\_CHECK(bc.contains(1)); BOOST\_CHECK(!bc.contains(2));}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00026}00026     BOOST\_CHECK(!bd.contains(0)); BOOST\_CHECK(bd.contains(1)); BOOST\_CHECK(bd.contains(2));}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00027}00027     BOOST\_CHECK(ac.superset\_of(bc));}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00028}00028     BOOST\_CHECK(ad.superset\_of(ac)); BOOST\_CHECK(ad.superset\_of(bc)); BOOST\_CHECK(ad.superset\_of(bd));}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00029}00029     BOOST\_CHECK(ac.strict\_superset\_of(bc));}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00030}00030     BOOST\_CHECK(ad.strict\_superset\_of(ac)); BOOST\_CHECK(ad.strict\_superset\_of(bc)); BOOST\_CHECK(ad.strict\_superset\_of(bd));}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00031}00031     BOOST\_CHECK(ac.superset\_of(ac)); BOOST\_CHECK(!ac.strict\_superset\_of(ac));}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00032}00032     BOOST\_CHECK(ac >= bc);}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00033}00033     BOOST\_CHECK(ad >= bc); BOOST\_CHECK(ad >= bc); BOOST\_CHECK(ad >= bc);}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00034}00034     BOOST\_CHECK(ac > bc);}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00035}00035     BOOST\_CHECK(ac < ad); BOOST\_CHECK(bc < ad); BOOST\_CHECK(bd < ad);}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00036}00036     BOOST\_CHECK(ac == ac); BOOST\_CHECK(!(ac != ac));}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00037}00037     BOOST\_CHECK((a,a).intersection\_with((b,b)).empty());}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00038}00038     BOOST\_CHECK(ac.intersection\_with(ac) == ac);}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00039}00039     BOOST\_CHECK(ac.intersection\_with(ad) == ac);}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00040}00040     BOOST\_CHECK(ac.intersection\_with(bc) == bc);}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00041}00041     BOOST\_CHECK(ac.intersection\_with(bd) == bc);}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00042}00042     BOOST\_CHECK(ad.intersection\_with(ad) == ad);}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00043}00043     BOOST\_CHECK(ad.intersection\_with(bc) == bc);}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00044}00044     BOOST\_CHECK(ad.intersection\_with(bd) == bd);}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00045}00045     BOOST\_CHECK(bc.intersection\_with(bc) == bc);}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00046}00046     BOOST\_CHECK(bc.intersection\_with(bd) == bc);}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00047}00047     BOOST\_CHECK(bd.intersection\_with(bd) == bd);}
+\DoxyCodeLine{\Hypertarget{interval_8cpp_source_l00048}00048 \}}
+
+\end{DoxyCode}

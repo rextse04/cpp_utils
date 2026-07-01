@@ -1,0 +1,99 @@
+\hypertarget{segment__tree_8cpp}{}\doxysection{tests/containers/segment\+\_\+tree.cpp File Reference}
+\label{segment__tree_8cpp}\index{tests/containers/segment\_tree.cpp@{tests/containers/segment\_tree.cpp}}
+{\ttfamily \#include \char`\"{}common.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}containers/segment\+\_\+tree.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$ranges$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$climits$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+Include dependency graph for segment\+\_\+tree.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{segment__tree_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{segment__tree_8cpp_a6b2a3852db8bb19ab6909bac01859985}{BOOST\+\_\+\+TEST\+\_\+\+MODULE}}~containers/segment\+\_\+tree.\+hpp
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{segment__tree_8cpp_a4bdb57aa5576f9290c513d28f489508a}{randomized\+\_\+test\+\_\+ops\+\_\+list}} = std\+::tuple$<$ std\+::pair$<$ std\+::plus$<$ unsigned $>$, decltype(\mbox{[}$\,$\mbox{]}() \{ return 0u
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{segment__tree_8cpp_a22b0b2d29a84024c7f998c9c063f9d96}{BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE}} (basic\+\_\+test)
+\item 
+\mbox{\hyperlink{segment__tree_8cpp_a891ee7c496b3664983bf4a3d5a9427e8}{BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE}} (single\+\_\+element\+\_\+test)
+\item 
+\mbox{\hyperlink{segment__tree_8cpp_aaf6fbf8cc6bf7d7428df5da5e86b6712}{BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE\+\_\+\+TEMPLATE}} (randomized\+\_\+test, Ops, \mbox{\hyperlink{segment__tree_8cpp_a4bdb57aa5576f9290c513d28f489508a}{randomized\+\_\+test\+\_\+ops\+\_\+list}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{segment__tree_8cpp_a6b2a3852db8bb19ab6909bac01859985}\label{segment__tree_8cpp_a6b2a3852db8bb19ab6909bac01859985}} 
+\index{segment\_tree.cpp@{segment\_tree.cpp}!BOOST\_TEST\_MODULE@{BOOST\_TEST\_MODULE}}
+\index{BOOST\_TEST\_MODULE@{BOOST\_TEST\_MODULE}!segment\_tree.cpp@{segment\_tree.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_TEST\_MODULE}{BOOST\_TEST\_MODULE}}
+{\footnotesize\ttfamily \#define BOOST\+\_\+\+TEST\+\_\+\+MODULE~containers/segment\+\_\+tree.\+hpp}
+
+
+
+Definition at line \mbox{\hyperlink{segment__tree_8cpp_source_l00001}{1}} of file \mbox{\hyperlink{segment__tree_8cpp_source}{segment\+\_\+tree.\+cpp}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{segment__tree_8cpp_a4bdb57aa5576f9290c513d28f489508a}\label{segment__tree_8cpp_a4bdb57aa5576f9290c513d28f489508a}} 
+\index{segment\_tree.cpp@{segment\_tree.cpp}!randomized\_test\_ops\_list@{randomized\_test\_ops\_list}}
+\index{randomized\_test\_ops\_list@{randomized\_test\_ops\_list}!segment\_tree.cpp@{segment\_tree.cpp}}
+\doxysubsubsection{\texorpdfstring{randomized\_test\_ops\_list}{randomized\_test\_ops\_list}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{segment__tree_8cpp_a4bdb57aa5576f9290c513d28f489508a}{randomized\+\_\+test\+\_\+ops\+\_\+list}} =  std\+::tuple$<$ std\+::pair$<$std\+::plus$<$unsigned$>$, decltype(\mbox{[}$\,$\mbox{]}() \{ return 0u}
+
+
+
+Definition at line \mbox{\hyperlink{segment__tree_8cpp_source_l00157}{157}} of file \mbox{\hyperlink{segment__tree_8cpp_source}{segment\+\_\+tree.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{segment__tree_8cpp_a22b0b2d29a84024c7f998c9c063f9d96}\label{segment__tree_8cpp_a22b0b2d29a84024c7f998c9c063f9d96}} 
+\index{segment\_tree.cpp@{segment\_tree.cpp}!BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}}
+\index{BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}!segment\_tree.cpp@{segment\_tree.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_AUTO\_TEST\_CASE()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{basic\+\_\+test}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{segment__tree_8cpp_source_l00076}{76}} of file \mbox{\hyperlink{segment__tree_8cpp_source}{segment\+\_\+tree.\+cpp}}.
+
+\mbox{\Hypertarget{segment__tree_8cpp_a891ee7c496b3664983bf4a3d5a9427e8}\label{segment__tree_8cpp_a891ee7c496b3664983bf4a3d5a9427e8}} 
+\index{segment\_tree.cpp@{segment\_tree.cpp}!BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}}
+\index{BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}!segment\_tree.cpp@{segment\_tree.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_AUTO\_TEST\_CASE()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{single\+\_\+element\+\_\+test}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{segment__tree_8cpp_source_l00149}{149}} of file \mbox{\hyperlink{segment__tree_8cpp_source}{segment\+\_\+tree.\+cpp}}.
+
+\mbox{\Hypertarget{segment__tree_8cpp_aaf6fbf8cc6bf7d7428df5da5e86b6712}\label{segment__tree_8cpp_aaf6fbf8cc6bf7d7428df5da5e86b6712}} 
+\index{segment\_tree.cpp@{segment\_tree.cpp}!BOOST\_AUTO\_TEST\_CASE\_TEMPLATE@{BOOST\_AUTO\_TEST\_CASE\_TEMPLATE}}
+\index{BOOST\_AUTO\_TEST\_CASE\_TEMPLATE@{BOOST\_AUTO\_TEST\_CASE\_TEMPLATE}!segment\_tree.cpp@{segment\_tree.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_AUTO\_TEST\_CASE\_TEMPLATE()}{BOOST\_AUTO\_TEST\_CASE\_TEMPLATE()}}
+{\footnotesize\ttfamily BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE\+\_\+\+TEMPLATE (\begin{DoxyParamCaption}\item[{randomized\+\_\+test}]{,  }\item[{Ops}]{,  }\item[{\mbox{\hyperlink{segment__tree_8cpp_a4bdb57aa5576f9290c513d28f489508a}{randomized\+\_\+test\+\_\+ops\+\_\+list}}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{segment__tree_8cpp_source_l00163}{163}} of file \mbox{\hyperlink{segment__tree_8cpp_source}{segment\+\_\+tree.\+cpp}}.
+

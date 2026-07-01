@@ -1,0 +1,118 @@
+\hypertarget{common_8cpp_source}{}\doxysection{common.\+cpp}
+\label{common_8cpp_source}\index{tests/allocators/common.cpp@{tests/allocators/common.cpp}}
+\mbox{\hyperlink{common_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00001}\mbox{\hyperlink{common_8cpp_a6b2a3852db8bb19ab6909bac01859985}{00001}} \textcolor{preprocessor}{\#define BOOST\_TEST\_MODULE allocators/common}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{common_8hpp}{common.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{allocator__resource_8hpp}{allocators/allocator\_resource.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{arena__allocator_8hpp}{allocators/arena\_allocator.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{stack__allocator_8hpp}{allocators/stack\_allocator.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <tuple>}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <memory\_resource>}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <deque>}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <ranges>}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include <cstddef>}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00013}00013 \textcolor{preprocessor}{\#include <thread>}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00014}00014 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00015}00015 \textcolor{preprocessor}{\#include <climits>}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00016}00016 \textcolor{preprocessor}{\#include <atomic>}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00017}00017 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{meta_8hpp}{meta.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00019}00019 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespaceutils}{utils}};}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00020}00020 \textcolor{keyword}{using namespace }utils::pmr;}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00021}\mbox{\hyperlink{common_8cpp_ad0d0a5ec8384f291de2d87cfb81e940f}{00021}} \textcolor{keyword}{using} \mbox{\hyperlink{common_8cpp_ad0d0a5ec8384f291de2d87cfb81e940f}{unsync\_allocators}} = std::tuple<}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00022}00022     arena\_allocator<std::byte>,}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00023}00023     stack\_allocator<std::byte>}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00024}00024 >;}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00025}\mbox{\hyperlink{common_8cpp_a89f0ccab83bca5eee844e9362e583479}{00025}} \textcolor{keyword}{using} \mbox{\hyperlink{common_8cpp_a89f0ccab83bca5eee844e9362e583479}{sync\_allocators}} = std::tuple<}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00026}00026     arena\_allocator<std::byte, true>,}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00027}00027     stack\_allocator<std::byte, true>}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00028}00028 >;}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00029}\mbox{\hyperlink{common_8cpp_a5bc8f56e953eabc127d7a49b30a4375b}{00029}} \textcolor{keyword}{using} \mbox{\hyperlink{common_8cpp_a5bc8f56e953eabc127d7a49b30a4375b}{allocators}} = meta::concat\_t<unsync\_allocators, sync\_allocators>;}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00031}\mbox{\hyperlink{common_8cpp_a8fce0487d68fb7a38c4dd530e38e8335}{00031}} \mbox{\hyperlink{common_8cpp_a8fce0487d68fb7a38c4dd530e38e8335}{BOOST\_AUTO\_TEST\_CASE\_TEMPLATE}}(deque\_test, A, \mbox{\hyperlink{common_8cpp_a5bc8f56e953eabc127d7a49b30a4375b}{allocators}}) \{}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00032}00032     allocator\_resource<A> mr(std::pmr::new\_delete\_resource(), 1 << 16);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00033}00033     std::pmr::deque<int> d(std::from\_range, std::views::iota(0, 1024), \&mr);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00034}00034     BOOST\_CHECK\_EQUAL(d.size(), 1024);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00035}00035     \textcolor{keywordflow}{for} (std::size\_t i = 0; i < d.size(); ++i) \{}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00036}00036         BOOST\_CHECK\_EQUAL(d[i], i);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00037}00037     \}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00038}00038     d.erase(d.begin(), d.begin() + 128);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00039}00039     BOOST\_CHECK\_EQUAL(d.size(), 1024 -\/ 128);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00040}00040     \textcolor{keywordflow}{for} (std::size\_t i = 0; i < d.size(); ++i) \{}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00041}00041         BOOST\_CHECK\_EQUAL(d[i], i + 128);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00042}00042     \}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00043}00043     d.erase(d.end() -\/ 128, d.end());}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00044}00044     BOOST\_CHECK\_EQUAL(d.size(), 1024 -\/ 128 * 2);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00045}00045     \textcolor{keywordflow}{for} (std::size\_t i = 0; i < d.size(); ++i) \{}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00046}00046         BOOST\_CHECK\_EQUAL(d[i], i + 128);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00047}00047     \}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00048}00048     d.clear();}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00049}00049     BOOST\_CHECK\_EQUAL(d.size(), 0);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00050}00050     BOOST\_CHECK\_THROW(d.resize(1uz << 20), std::bad\_alloc);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00051}00051     BOOST\_CHECK\_EQUAL(d.size(), 0);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00052}00052     d.resize(2048);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00053}00053     BOOST\_CHECK\_EQUAL(d.size(), 2048);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00054}00054     \textcolor{keywordflow}{for} (std::size\_t i = 0; i < d.size(); ++i) \{}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00055}00055         BOOST\_CHECK\_EQUAL(d[i], 0);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00056}00056     \}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00057}00057 \}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00059}\mbox{\hyperlink{common_8cpp_a1ce6872be52f6473d7f253f8446b97ed}{00059}} \mbox{\hyperlink{common_8cpp_a8fce0487d68fb7a38c4dd530e38e8335}{BOOST\_AUTO\_TEST\_CASE\_TEMPLATE}}(set\_test, A, \mbox{\hyperlink{common_8cpp_a5bc8f56e953eabc127d7a49b30a4375b}{allocators}}) \{}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00060}00060     allocator\_resource<A> mr(std::pmr::new\_delete\_resource(), 1 << 16);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00061}00061     std::pmr::set<int> s(std::from\_range, std::views::iota(0, 1024), \&mr);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00062}00062     BOOST\_CHECK\_EQUAL(s.size(), 1024);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00063}00063     \textcolor{keywordflow}{for} (std::size\_t i = 0; i < s.size(); ++i) \{}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00064}00064         BOOST\_CHECK(s.contains(i));}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00065}00065     \}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00066}00066     BOOST\_CHECK(!s.contains(1024));}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00067}00067     std::erase\_if(s, [](\textcolor{keywordtype}{int} i) \{ \textcolor{keywordflow}{return} i \% 2 == 0; \});}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00068}00068     BOOST\_CHECK\_EQUAL(s.size(), 512);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00069}00069     \textcolor{keywordflow}{for} (std::size\_t i = 0; i < s.size(); ++i) \{}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00070}00070         BOOST\_CHECK\_EQUAL(s.contains(i), i \% 2);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00071}00071     \}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00072}00072     s.clear();}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00073}00073     BOOST\_CHECK\_EQUAL(s.size(), 0);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00074}00074     BOOST\_CHECK\_THROW(s.insert\_range(std::views::iota(0, 1 << 16)), std::bad\_alloc);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00075}00075     \textcolor{keywordflow}{for} (std::size\_t i = 0; i < s.size(); ++i) \{}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00076}00076         BOOST\_CHECK(s.contains(i));}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00077}00077     \}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00078}00078 \}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00080}\mbox{\hyperlink{common_8cpp_ab36b6040d741d96b4f966d6d5d3fb642}{00080}} \mbox{\hyperlink{common_8cpp_a8fce0487d68fb7a38c4dd530e38e8335}{BOOST\_AUTO\_TEST\_CASE\_TEMPLATE}}(sync\_test, A, \mbox{\hyperlink{common_8cpp_a89f0ccab83bca5eee844e9362e583479}{sync\_allocators}}) \{}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00081}00081     \textcolor{keyword}{using} AT = std::allocator\_traits<A>;}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00082}00082     std::byte \mbox{\hyperlink{stack__allocator_8cpp_a156eb536d1933730c8d9aa522f53e437}{buf}}[1 << 16];}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00083}00083     \textcolor{keyword}{typename} AT::template rebind\_alloc<char> \mbox{\hyperlink{stack__allocator_8cpp_a2c2cc7cfdabcb42d76ff2f1769ed7a30}{alloc}}(\mbox{\hyperlink{stack__allocator_8cpp_a156eb536d1933730c8d9aa522f53e437}{buf}}, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{stack__allocator_8cpp_a156eb536d1933730c8d9aa522f53e437}{buf}}));}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00084}00084     \textcolor{keyword}{typename} AT::template rebind\_alloc<int> int\_alloc(\mbox{\hyperlink{stack__allocator_8cpp_a2c2cc7cfdabcb42d76ff2f1769ed7a30}{alloc}});}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00085}00085     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} num\_threads = std::jthread::hardware\_concurrency();}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00086}00086     std::vector<char*> ptrs(num\_threads * CHAR\_MAX);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00087}00087     std::atomic<std::size\_t> top = 0;}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00088}00088     \{}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00089}00089         std::vector<std::jthread> threads;}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00090}00090         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} i = 0; i < num\_threads; ++i) \{}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00091}00091             threads.emplace\_back([\&, i]() \{}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00092}00092                 \textcolor{keywordtype}{int}* \textcolor{keyword}{const} q = int\_alloc.allocate(i);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00093}00093                 \textcolor{keywordflow}{for} (std::size\_t j = 0; j < i; ++j) \{}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00094}00094                     *q = 0xDEADBEEF;}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00095}00095                 \}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00096}00096                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{char} j = 0; j < CHAR\_MAX; ++j) \{}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00097}00097                     \textcolor{keywordtype}{char}* \textcolor{keyword}{const} p = \mbox{\hyperlink{stack__allocator_8cpp_a2c2cc7cfdabcb42d76ff2f1769ed7a30}{alloc}}.allocate(1);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00098}00098                     ptrs[top.fetch\_add(1, std::memory\_order::relaxed)] = p;}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00099}00099                     *p = i;}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00100}00100                 \}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00101}00101                 int\_alloc.deallocate(q, i);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00102}00102             \});}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00103}00103         \}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00104}00104     \}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00105}00105     BOOST\_CHECK\_EQUAL(top.load(std::memory\_order::relaxed), num\_threads * CHAR\_MAX);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00106}00106     std::vector<std::size\_t> counts(num\_threads);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00107}00107     \textcolor{keywordflow}{for} (std::size\_t j = 0; j < num\_threads * CHAR\_MAX; ++j) \{}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00108}00108         ++counts[*ptrs[j]];}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00109}00109     \}}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00110}00110     \textcolor{keyword}{const} \textcolor{keyword}{auto} expected = std::views::repeat(CHAR\_MAX, num\_threads);}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00111}00111     BOOST\_CHECK\_EQUAL\_COLLECTIONS(counts.begin(), counts.end(), expected.begin(), expected.end());}
+\DoxyCodeLine{\Hypertarget{common_8cpp_source_l00112}00112 \}}
+
+\end{DoxyCode}

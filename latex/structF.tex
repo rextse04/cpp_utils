@@ -1,0 +1,49 @@
+\hypertarget{structF}{}\doxysection{F\texorpdfstring{$<$}{<} Str \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structF}\index{F$<$ Str $>$@{F$<$ Str $>$}}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr auto \mbox{\hyperlink{structF_a56e0a26902ac5496ebee23609c1a9639}{str}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$basic\+\_\+static\+\_\+string Str$>$\newline
+struct F$<$ Str $>$}
+
+
+Definition at line \mbox{\hyperlink{static__string_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{static__string_8cpp_source}{static\+\_\+string.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structF_a56e0a26902ac5496ebee23609c1a9639}\label{structF_a56e0a26902ac5496ebee23609c1a9639}} 
+\index{F$<$ Str $>$@{F$<$ Str $>$}!str@{str}}
+\index{str@{str}!F$<$ Str $>$@{F$<$ Str $>$}}
+\doxysubsubsection{\texorpdfstring{str}{str}}
+{\footnotesize\ttfamily template$<$basic\+\_\+static\+\_\+string Str$>$ \\
+constexpr auto \mbox{\hyperlink{structF}{F}}$<$ Str $>$\+::str\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= []() \{}
+\DoxyCodeLine{        \textcolor{keyword}{auto} out = Str;}
+\DoxyCodeLine{        out[0] = \textcolor{charliteral}{'A'};}
+\DoxyCodeLine{        out.resize(5);}
+\DoxyCodeLine{        out.append(\textcolor{stringliteral}{"{} append"{}});}
+\DoxyCodeLine{        out.insert(5, \textcolor{stringliteral}{"{} insert"{}});}
+\DoxyCodeLine{        out.erase(3, 2);}
+\DoxyCodeLine{        out.replace(3, 1, \textcolor{stringliteral}{"{} replace "{}});}
+\DoxyCodeLine{        \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{    \}()}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{static__string_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{static__string_8cpp_source}{static\+\_\+string.\+cpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tests/\mbox{\hyperlink{static__string_8cpp}{static\+\_\+string.\+cpp}}\end{DoxyCompactItemize}

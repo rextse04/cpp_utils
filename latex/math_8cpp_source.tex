@@ -1,0 +1,19 @@
+\hypertarget{math_8cpp_source}{}\doxysection{math.\+cpp}
+\label{math_8cpp_source}\index{tests/math.cpp@{tests/math.cpp}}
+\mbox{\hyperlink{math_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{math_8cpp_source_l00001}\mbox{\hyperlink{math_8cpp_a6b2a3852db8bb19ab6909bac01859985}{00001}} \textcolor{preprocessor}{\#define BOOST\_TEST\_MODULE math.cpp}}
+\DoxyCodeLine{\Hypertarget{math_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{common_8hpp}{common.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{math_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{math_8hpp}{math.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{math_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{math_8cpp_source_l00005}00005 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespaceutils}{utils}};}
+\DoxyCodeLine{\Hypertarget{math_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{math_8cpp_source_l00007}\mbox{\hyperlink{math_8cpp_a520505fe4dfd0038d0c964da592763d7}{00007}} \mbox{\hyperlink{math_8cpp_a520505fe4dfd0038d0c964da592763d7}{BOOST\_AUTO\_TEST\_CASE}}(pow\_test) \{}
+\DoxyCodeLine{\Hypertarget{math_8cpp_source_l00008}00008     BOOST\_CHECK\_EQUAL(utils::pow<3>(2), 8);}
+\DoxyCodeLine{\Hypertarget{math_8cpp_source_l00009}00009     BOOST\_CHECK\_EQUAL(utils::pow<0>(2), 1);}
+\DoxyCodeLine{\Hypertarget{math_8cpp_source_l00010}00010     BOOST\_CHECK\_EQUAL(utils::pow<-\/1>(2), 0);}
+\DoxyCodeLine{\Hypertarget{math_8cpp_source_l00011}00011     BOOST\_CHECK\_EQUAL((utils::pow<-\/1, float>(2)), 0.5);}
+\DoxyCodeLine{\Hypertarget{math_8cpp_source_l00012}00012     BOOST\_CHECK\_NE((utils::pow<-\/1, float>(3)), (utils::pow<-\/1, double>(3)));}
+\DoxyCodeLine{\Hypertarget{math_8cpp_source_l00013}00013 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,95 @@
+\hypertarget{functional_8cpp}{}\doxysection{tests/functional.cpp File Reference}
+\label{functional_8cpp}\index{tests/functional.cpp@{tests/functional.cpp}}
+{\ttfamily \#include \char`\"{}common.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}functional.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+Include dependency graph for functional.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functional_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtest}{test}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{functional_8cpp_a6b2a3852db8bb19ab6909bac01859985}{BOOST\+\_\+\+TEST\+\_\+\+MODULE}}~functional.\+hpp
+\item 
+\#define \mbox{\hyperlink{functional_8cpp_ade69077374d2ffb263c8074758eea543}{F}}(T,  U)~\mbox{\hyperlink{common_8hpp_a539abb6dd6578df9d7d3311c3eae91c8}{BOOST\+\_\+\+CHECK\+\_\+\+EQUAL\+\_\+\+TYPES}}(function\+\_\+decay\+\_\+t$<$T$>$, U)
+\item 
+\#define \mbox{\hyperlink{functional_8cpp_a2009323759429486f950abc95cf499ab}{FL}}(T,  U)~\mbox{\hyperlink{structF}{F}}(T, U); \mbox{\hyperlink{common_8hpp_a539abb6dd6578df9d7d3311c3eae91c8}{BOOST\+\_\+\+CHECK\+\_\+\+EQUAL\+\_\+\+TYPES}}(lambda\+\_\+decay\+\_\+t$<$T$>$, U)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{functional_8cpp_acea8692767498ab33965da19170415c1}{BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE}} (traits\+\_\+test)
+\item 
+\mbox{\hyperlink{functional_8cpp_a943d116fbdd99803e30ee27653881c91}{BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE}} (composition\+\_\+sanity\+\_\+test)
+\item 
+\mbox{\hyperlink{functional_8cpp_a80cc192ad8352c89c10ef7241ad88b17}{BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE}} (composition\+\_\+lifetime\+\_\+test)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{functional_8cpp_a6b2a3852db8bb19ab6909bac01859985}\label{functional_8cpp_a6b2a3852db8bb19ab6909bac01859985}} 
+\index{functional.cpp@{functional.cpp}!BOOST\_TEST\_MODULE@{BOOST\_TEST\_MODULE}}
+\index{BOOST\_TEST\_MODULE@{BOOST\_TEST\_MODULE}!functional.cpp@{functional.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_TEST\_MODULE}{BOOST\_TEST\_MODULE}}
+{\footnotesize\ttfamily \#define BOOST\+\_\+\+TEST\+\_\+\+MODULE~functional.\+hpp}
+
+
+
+Definition at line \mbox{\hyperlink{functional_8cpp_source_l00001}{1}} of file \mbox{\hyperlink{functional_8cpp_source}{functional.\+cpp}}.
+
+\mbox{\Hypertarget{functional_8cpp_ade69077374d2ffb263c8074758eea543}\label{functional_8cpp_ade69077374d2ffb263c8074758eea543}} 
+\index{functional.cpp@{functional.cpp}!F@{F}}
+\index{F@{F}!functional.cpp@{functional.cpp}}
+\doxysubsubsection{\texorpdfstring{F}{F}}
+{\footnotesize\ttfamily \#define \mbox{\hyperlink{structF}{F}}(\begin{DoxyParamCaption}\item[{}]{T,  }\item[{}]{U }\end{DoxyParamCaption})~\mbox{\hyperlink{common_8hpp_a539abb6dd6578df9d7d3311c3eae91c8}{BOOST\+\_\+\+CHECK\+\_\+\+EQUAL\+\_\+\+TYPES}}(function\+\_\+decay\+\_\+t$<$T$>$, U)}
+
+\mbox{\Hypertarget{functional_8cpp_a2009323759429486f950abc95cf499ab}\label{functional_8cpp_a2009323759429486f950abc95cf499ab}} 
+\index{functional.cpp@{functional.cpp}!FL@{FL}}
+\index{FL@{FL}!functional.cpp@{functional.cpp}}
+\doxysubsubsection{\texorpdfstring{FL}{FL}}
+{\footnotesize\ttfamily \#define FL(\begin{DoxyParamCaption}\item[{}]{T,  }\item[{}]{U }\end{DoxyParamCaption})~\mbox{\hyperlink{structF}{F}}(T, U); \mbox{\hyperlink{common_8hpp_a539abb6dd6578df9d7d3311c3eae91c8}{BOOST\+\_\+\+CHECK\+\_\+\+EQUAL\+\_\+\+TYPES}}(lambda\+\_\+decay\+\_\+t$<$T$>$, U)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{functional_8cpp_a80cc192ad8352c89c10ef7241ad88b17}\label{functional_8cpp_a80cc192ad8352c89c10ef7241ad88b17}} 
+\index{functional.cpp@{functional.cpp}!BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}}
+\index{BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}!functional.cpp@{functional.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_AUTO\_TEST\_CASE()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{composition\+\_\+lifetime\+\_\+test}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{functional_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{functional_8cpp_source}{functional.\+cpp}}.
+
+\mbox{\Hypertarget{functional_8cpp_a943d116fbdd99803e30ee27653881c91}\label{functional_8cpp_a943d116fbdd99803e30ee27653881c91}} 
+\index{functional.cpp@{functional.cpp}!BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}}
+\index{BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}!functional.cpp@{functional.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_AUTO\_TEST\_CASE()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{composition\+\_\+sanity\+\_\+test}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{functional_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{functional_8cpp_source}{functional.\+cpp}}.
+
+\mbox{\Hypertarget{functional_8cpp_acea8692767498ab33965da19170415c1}\label{functional_8cpp_acea8692767498ab33965da19170415c1}} 
+\index{functional.cpp@{functional.cpp}!BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}}
+\index{BOOST\_AUTO\_TEST\_CASE@{BOOST\_AUTO\_TEST\_CASE}!functional.cpp@{functional.cpp}}
+\doxysubsubsection{\texorpdfstring{BOOST\_AUTO\_TEST\_CASE()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily BOOST\+\_\+\+AUTO\+\_\+\+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{traits\+\_\+test}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{functional_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{functional_8cpp_source}{functional.\+cpp}}.
+

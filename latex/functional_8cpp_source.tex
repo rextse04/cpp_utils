@@ -1,0 +1,70 @@
+\hypertarget{functional_8cpp_source}{}\doxysection{functional.\+cpp}
+\label{functional_8cpp_source}\index{tests/functional.cpp@{tests/functional.cpp}}
+\mbox{\hyperlink{functional_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00001}\mbox{\hyperlink{functional_8cpp_a6b2a3852db8bb19ab6909bac01859985}{00001}} \textcolor{preprocessor}{\#define BOOST\_TEST\_MODULE functional.hpp}}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{common_8hpp}{common.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{functional_8hpp}{functional.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00007}00007 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespaceutils}{utils}};}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00009}\mbox{\hyperlink{structtest}{00009}} \textcolor{keyword}{struct }\mbox{\hyperlink{structtest}{test}} \{}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00010}\mbox{\hyperlink{structtest_a577bfed4d62a943f987b5c6d8827eed6}{00010}}     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{structtest_a577bfed4d62a943f987b5c6d8827eed6}{f}}(\textcolor{keywordtype}{int}) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00011}\mbox{\hyperlink{structtest_afa58c943aa94a4c092a8a57576eeace8}{00011}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{structtest_afa58c943aa94a4c092a8a57576eeace8}{g}}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}) \textcolor{keyword}{const} \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00012}\mbox{\hyperlink{structtest_ace97574298f412eab2c655118fb769a1}{00012}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{structtest_ace97574298f412eab2c655118fb769a1}{h}}(\textcolor{keywordtype}{int}) \textcolor{keyword}{volatile};}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00013}00013 \};}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00015}\mbox{\hyperlink{functional_8cpp_acea8692767498ab33965da19170415c1}{00015}} \mbox{\hyperlink{functional_8cpp_acea8692767498ab33965da19170415c1}{BOOST\_AUTO\_TEST\_CASE}}(traits\_test) \{}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00016}00016 \textcolor{preprocessor}{\#define F(T, U) BOOST\_CHECK\_EQUAL\_TYPES(function\_decay\_t<T>, U)}}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00017}00017 \textcolor{preprocessor}{\#define FL(T, U) F(T, U); BOOST\_CHECK\_EQUAL\_TYPES(lambda\_decay\_t<T>, U)}}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00018}00018     \mbox{\hyperlink{functional_8cpp_a2009323759429486f950abc95cf499ab}{FL}}(\textcolor{keywordtype}{void}(\textcolor{keywordtype}{int}), \textcolor{keywordtype}{void}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00019}00019     \mbox{\hyperlink{functional_8cpp_a2009323759429486f950abc95cf499ab}{FL}}(\textcolor{keywordtype}{void}(*)(\textcolor{keywordtype}{int}), \textcolor{keywordtype}{void}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00020}00020     \mbox{\hyperlink{functional_8cpp_a2009323759429486f950abc95cf499ab}{FL}}(\textcolor{keywordtype}{void}(*)(\textcolor{keywordtype}{int}) \textcolor{keyword}{noexcept}, \textcolor{keywordtype}{void}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00021}00021     \mbox{\hyperlink{functional_8cpp_a2009323759429486f950abc95cf499ab}{FL}}(\textcolor{keywordtype}{void}(\&)(\textcolor{keywordtype}{int}), \textcolor{keywordtype}{void}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00022}00022     \mbox{\hyperlink{functional_8cpp_a2009323759429486f950abc95cf499ab}{FL}}(\textcolor{keywordtype}{void}(\&)(\textcolor{keywordtype}{int}) \textcolor{keyword}{noexcept}, \textcolor{keywordtype}{void}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00023}00023     \mbox{\hyperlink{functional_8cpp_a2009323759429486f950abc95cf499ab}{FL}}(\textcolor{keywordtype}{void}(\&\&)(\textcolor{keywordtype}{int}) \textcolor{keyword}{noexcept}, \textcolor{keywordtype}{void}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00024}00024     \mbox{\hyperlink{functional_8cpp_ade69077374d2ffb263c8074758eea543}{F}}(\textcolor{keyword}{decltype}(\&\mbox{\hyperlink{structtest_a577bfed4d62a943f987b5c6d8827eed6}{test::f}}), \textcolor{keywordtype}{void}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00025}00025     \mbox{\hyperlink{functional_8cpp_ade69077374d2ffb263c8074758eea543}{F}}(\textcolor{keyword}{decltype}(\&\mbox{\hyperlink{structtest_afa58c943aa94a4c092a8a57576eeace8}{test::g}}), \textcolor{keywordtype}{void}(\textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00026}00026     \mbox{\hyperlink{functional_8cpp_ade69077374d2ffb263c8074758eea543}{F}}(\textcolor{keyword}{decltype}(\&\mbox{\hyperlink{structtest_ace97574298f412eab2c655118fb769a1}{test::h}}), \textcolor{keywordtype}{int}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00027}00027     \mbox{\hyperlink{functional_8cpp_a2009323759429486f950abc95cf499ab}{FL}}(\textcolor{keyword}{decltype}([]\{ \textcolor{keywordflow}{return} 0; \}), \textcolor{keywordtype}{int}(\textcolor{keywordtype}{void}));}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00028}00028     \mbox{\hyperlink{functional_8cpp_a2009323759429486f950abc95cf499ab}{FL}}(\textcolor{keyword}{decltype}([] \textcolor{keyword}{noexcept} \{ \textcolor{keywordflow}{return} 0; \}), \textcolor{keywordtype}{int}(\textcolor{keywordtype}{void}));}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00029}00029     \mbox{\hyperlink{functional_8cpp_a2009323759429486f950abc95cf499ab}{FL}}(\textcolor{keyword}{decltype}([] \textcolor{keyword}{static} \{ \textcolor{keywordflow}{return} 0; \}), \textcolor{keywordtype}{int}(\textcolor{keywordtype}{void}));}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00030}00030     \textcolor{keywordtype}{int} x = 0;}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00031}00031     \mbox{\hyperlink{functional_8cpp_ade69077374d2ffb263c8074758eea543}{F}}(\textcolor{keyword}{decltype}([\&x]\{ \textcolor{keywordflow}{return} x; \}), \textcolor{keywordtype}{int}(\textcolor{keywordtype}{void}));}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00032}00032     \mbox{\hyperlink{functional_8cpp_ade69077374d2ffb263c8074758eea543}{F}}(\textcolor{keyword}{decltype}([\&x] \textcolor{keyword}{noexcept} \{ \textcolor{keywordflow}{return} x; \}), \textcolor{keywordtype}{int}(\textcolor{keywordtype}{void}));}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00033}00033     \mbox{\hyperlink{functional_8cpp_ade69077374d2ffb263c8074758eea543}{F}}(\textcolor{keyword}{decltype}([\&x] \textcolor{keyword}{mutable} \{ \textcolor{keywordflow}{return} x; \}), \textcolor{keywordtype}{int}(\textcolor{keywordtype}{void}));}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00034}00034 \textcolor{preprocessor}{\#undef F}}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00035}00035 \textcolor{preprocessor}{\#undef FL}}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00036}00036 \}}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00038}\mbox{\hyperlink{functional_8cpp_a943d116fbdd99803e30ee27653881c91}{00038}} \mbox{\hyperlink{functional_8cpp_acea8692767498ab33965da19170415c1}{BOOST\_AUTO\_TEST\_CASE}}(composition\_sanity\_test) \{}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00039}00039     \textcolor{keyword}{const} \textcolor{keyword}{auto} f = [](\textcolor{keyword}{auto}... args)\{ \textcolor{keywordflow}{return} (args + ...); \};}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00040}00040     \textcolor{keyword}{const} \textcolor{keyword}{auto} g1 = [](\textcolor{keywordtype}{int} a, \textcolor{keywordtype}{int} b) \{ \textcolor{keywordflow}{return} a + b; \};}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00041}00041     \textcolor{keyword}{const} \textcolor{keyword}{auto} g2 = [](\textcolor{keywordtype}{int} a) \{ \textcolor{keywordflow}{return} a*a; \};}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00042}00042     \textcolor{keyword}{const} \textcolor{keyword}{auto} g3 = [](\textcolor{keyword}{auto}... args) \{ \textcolor{keywordflow}{return} (args * ...); \};}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00044}00044     \textcolor{keyword}{const} \textcolor{keyword}{auto} h1 = \mbox{\hyperlink{namespaceutils_a75ce48a3fb2e45c2eb6917e6d32ceb84}{composite}}(f, g1, g2);}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00045}00045     BOOST\_CHECK\_EQUAL(h1(1, 2, 3), 12);}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00046}00046     \textcolor{keyword}{const} \textcolor{keyword}{auto} h2 = \mbox{\hyperlink{namespaceutils_a75ce48a3fb2e45c2eb6917e6d32ceb84}{composite}}(f, \mbox{\hyperlink{namespaceutils_aeae858e40387fdfac0f8629db4991dbb}{bind}}(5), \mbox{\hyperlink{namespaceutils_aed4f05af8c7f6713f035d46368507ca9}{with}}(\mbox{\hyperlink{structutils_1_1arity}{arity<3>}}\{\}, g3));}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00047}00047     BOOST\_CHECK\_EQUAL(h2(1, 2, 3), 11);}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00048}00048 \}}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00050}\mbox{\hyperlink{functional_8cpp_a80cc192ad8352c89c10ef7241ad88b17}{00050}} \mbox{\hyperlink{functional_8cpp_acea8692767498ab33965da19170415c1}{BOOST\_AUTO\_TEST\_CASE}}(composition\_lifetime\_test) \{}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00051}00051     \textcolor{keyword}{const} std::string long\_str = \textcolor{stringliteral}{"{}This is a really long string to disable small-\/string optimization for "{}};}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00052}00052     \textcolor{keyword}{const} \textcolor{keyword}{auto} f = [](\textcolor{keyword}{const} \textcolor{keyword}{auto}\&... args)\{ \textcolor{keywordflow}{return} (args + ...); \};}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00053}00053     std::function<std::string(\textcolor{keyword}{const} std::string\&)> h;}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00054}00054     std::string g2 = long\_str + \textcolor{stringliteral}{"{}g2. "{}};}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00055}00055     \{}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00056}00056         \textcolor{keyword}{const} \textcolor{keyword}{auto} g1 = [prefix = long\_str](\textcolor{keyword}{const} std::string\& str) \{ \textcolor{keywordflow}{return} prefix + str + \textcolor{stringliteral}{"{}. "{}}; \};}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00057}00057         std::string g3 = long\_str + \textcolor{stringliteral}{"{}g3."{}};}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00058}00058         h = \mbox{\hyperlink{namespaceutils_a75ce48a3fb2e45c2eb6917e6d32ceb84}{composite}}(f, std::move(g1), \mbox{\hyperlink{namespaceutils_aeae858e40387fdfac0f8629db4991dbb}{bind}}(g2), \mbox{\hyperlink{namespaceutils_aeae858e40387fdfac0f8629db4991dbb}{bind}}(std::move(g3)));}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00059}00059         BOOST\_CHECK(!g2.empty());}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00060}00060         BOOST\_CHECK(g3.empty());}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00061}00061     \}}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00062}00062     g2.clear();}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00063}00063     BOOST\_CHECK\_EQUAL(h(\textcolor{stringliteral}{"{}g1"{}}), long\_str + \textcolor{stringliteral}{"{}g1. "{}} + long\_str + \textcolor{stringliteral}{"{}g2. "{}} + long\_str + \textcolor{stringliteral}{"{}g3."{}});}
+\DoxyCodeLine{\Hypertarget{functional_8cpp_source_l00064}00064 \}}
+
+\end{DoxyCode}
