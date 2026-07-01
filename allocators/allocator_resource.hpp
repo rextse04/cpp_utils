@@ -14,12 +14,14 @@ namespace utils::pmr {
         simple_allocator<T> && std::is_same_v<typename T::value_type, std::byte> &&
         requires (T a, std::pmr::memory_resource& mr, std::size_t space, std::size_t bytes, std::align_val_t alignment, std::byte* p) {
             /**
-             * Precondition: @code a@endcode is constructed with @code T(mr, space, ...)@endcode.
+             * Precondition: @code a@endcode is equal to some @code T(mr, space, ...)@endcode.
              * Effect: @code a@endcode deallocates @code space@endcode through @code mr@endcode.
-             * Postcondition: @code a@endcode does not use the previously allocated upstream memory after release.
+             * Postcondition: @code a@endcode and all equal allocators release management of and
+             * do not use the previously allocated upstream memory after release.
              */
             { a.release(mr, space) } noexcept;
             /**
+             * Precondition: @code alignment@endcode is a power of 2 and not less than @code alignof(T::value_type)@endcode.
              * Effect: Returns a pointer to a block of memory of size @code bytes@endcode and alignment @code alignment@endcode.
              */
             { a.allocate(bytes, alignment) } -> std::same_as<std::byte*>;
@@ -48,13 +50,11 @@ namespace utils::pmr {
         requires (std::is_constructible_v<Allocator, memory_resource&, std::size_t, Args&&...>) :
             Allocator(*upstream, space, std::forward<Args>(args)...), upstream_(upstream), space_(space) {}
         /// @brief Copy constructor is deleted because
-        /// @code allocator_resource@endcode has unique ownership of the reserved memory.
+        /// @code allocator_resource@endcode has unique and non-transferable ownership of the reserved memory.
         allocator_resource(const allocator_resource&) = delete;
-        allocator_resource(allocator_resource&&) noexcept(std::is_nothrow_move_constructible_v<Allocator>) = default;
         /// @brief Copy assignment operator is deleted because
-        /// @code allocator_resource@endcode has unique ownership of the reserved memory.
+        /// @code allocator_resource@endcode has unique and non-transferable ownership of the reserved memory.
         allocator_resource& operator=(const allocator_resource&) = delete;
-        allocator_resource& operator=(allocator_resource&&) noexcept(std::is_nothrow_move_assignable_v<Allocator>) = default;
         /// @brief Destructor. Releases ownership of reserved memory.
         ~allocator_resource() noexcept override { Allocator::release(*upstream_, space_); }
     private:

@@ -497,7 +497,7 @@ namespace utils {
         template <detail::dptr_first V, interface... Vs>
         friend class dptr;
     public:
-        /** \defgroup Constructors
+        /** \defgroup dptr<I, Is...>::dptr
          * @param args: arguments forwarded to @code deleter_@endcode succeeding a const reference to dptr
          * (i.e. deleter_ is constructed with (const dptr&, std::forward(args)...))
          * @{
@@ -581,7 +581,7 @@ namespace utils {
         }
         /**@}*/
 
-        /** \defgroup Destructors
+        /** \defgroup dptr<I, Is...>::~dptr
          * Calls @code destroy_and_delete()@endcode if @code ownership@endcode is not @code borrowed@endcode and @code ptr_@endcode is not null.
          * @{
          */
@@ -591,7 +591,7 @@ namespace utils {
         }
         /**@}*/
 
-        /** \defgroup Assignment Operators
+        /** \defgroup dptr<I, Is...>::operator=
          * @{
          */
         /// @brief Copy assignment operator.

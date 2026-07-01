@@ -3,7 +3,6 @@
 #include "allocators/stack_allocator.hpp"
 #include <cstddef>
 #include <cstdint>
-#include <algorithm>
 
 using namespace utils;
 using namespace utils::pmr;
@@ -14,7 +13,7 @@ stack_allocator<std::int32_t> i32_alloc(alloc);
 stack_allocator<std::int64_t> i64_alloc(i32_alloc);
 
 static void prepare() {
-    std::ranges::fill(buf, std::byte(0xDE)); // poison memory
+    poison(buf);
     alloc = {buf, sizeof(buf)};
     i32_alloc = alloc;
     i64_alloc = i32_alloc;
