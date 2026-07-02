@@ -99,6 +99,8 @@ namespace utils::pmr {
             mr.deallocate(control_, space, alignof(control_type));
         }
         /// @brief Allocates storage for @code T[n]@endcode with specified alignment from the underlying buffer.
+        ///
+        /// The behavior is undefined if `alignment` is less than that of `T`.
         pointer allocate(size_type n, std::align_val_t alignment = std::align_val_t(alignof(T))) const {
             const size_type bytes = sizeof(T) * n;
             void_pointer aligned;

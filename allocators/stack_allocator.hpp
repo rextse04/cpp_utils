@@ -98,6 +98,8 @@ namespace utils::pmr {
             mr.deallocate(front_, space, alignof(control_type));
         }
         /// @brief Allocates storage for @code T[n]@endcode with specified alignment from the underlying buffer.
+        ///
+        /// The behavior is undefined if `alignment` is less than that of `T`.
         pointer allocate(size_type n, std::align_val_t alignment = std::align_val_t(alignof(T))) const {
             control_type sentinel;
             while (true) {
@@ -135,6 +137,8 @@ namespace utils::pmr {
         /// Let $D_i$ indicate if $M_i$ has been removed for @f$i\in[k]@f$.
         /// A call to `deallocate` first finds @f$t@f$ such that `p` points to @f$M_t@f$, marks the chunk as removed,
         /// then recycles all chunks in the set @f$\{M_i\mid D_i,...,D_k\}@f$.
+        /// @remark The alignment argument is unused.
+        /// It is defined to deallocate a pointer obtained through aligned allocation without passing the required alignment.
         void deallocate(pointer p, size_type n, std::align_val_t = std::align_val_t(alignof(T))) const noexcept {
             control_type* const next = std::launder(static_cast<control_type*>(
                 align(alignof(control_type), sizeof(control_type), p + n, front_->obj)));

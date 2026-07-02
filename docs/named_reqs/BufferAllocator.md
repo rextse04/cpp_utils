@@ -1,4 +1,4 @@
-# Named Requirement: <i>BufferAllocator</i>
+# Named Requirement: <i>BufferAllocator</i> {#BufferAllocator}
 A <i>BufferAllocator</i> is an <i>Allocator</i> which operates on a contiguous block of buffer memory,
 usually pre-allocated by an upstream memory source.
 <i>BufferAllocator</i>s are typically used in scenarios where memory allocation and deallocation need to be fast and predictable,
@@ -9,15 +9,15 @@ If it further allows construction and assignment between its non-synchronized co
 it is a <i>ConvertibleBufferAllocator</i>.
 
 ## Requirements
-A class type `A` meets the <i>BufferAllocator</i> named requirement if it satisfies <i>Allocator</i> and all requirements below.
+A class type `A` meets the named requirement if it satisfies <i>Allocator</i> and all requirements below.
 ### Notations
 | Type                                                                         | Definition                                                                             |
 |------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
-| `AT`                                                                         | `std::allocator_traits<T>`                                                             |
+| `AT`                                                                         | `std::allocator_traits<A>`                                                             |
 | `T`                                                                          | `A::value_type`                                                                        |
 | `P`                                                                          | `AT::pointer`                                                                          |
 | `U`                                                                          | A cv-unqualified object type, which may or may not be same as `T`                      |
-| `B`                                                                          | `A` rebound to `U`, i.e. `std::allocator_traits<A>::rebind_alloc<U>`                   |
+| `B`                                                                          | `A` rebound to `U`, i.e. `AT::rebind_alloc<U>`                                         |
 | `C` <span style="color:green">(for <i>ConvertibleBufferAllocator</i>)</span> | `A` rebound to `U` without synchronization, i.e. `A::template rebind<U, false>::other` |
 
 | Value   | Definition                                                                                                              |

@@ -7,28 +7,13 @@
 #include "memory.hpp"
 
 namespace utils::pmr {
-    /// @brief Determines if @code T@endcode can be an underlying allocator for @code allocator_resource@endcode.
-    /// @note Semantic guarantees and requirements are outlined in the concept body.
-    template <typename T>
+    /// @brief Named requirement: [<i>ResourceAllocator</i>](ResourceAllocator.md)
+    template <typename A>
     concept resource_allocator = (
-        simple_allocator<T> && std::is_same_v<typename T::value_type, std::byte> &&
-        requires (T a, std::pmr::memory_resource& mr, std::size_t space, std::size_t bytes, std::align_val_t alignment, std::byte* p) {
-            /**
-             * Precondition: @code a@endcode is equal to some @code T(mr, space, ...)@endcode.
-             * Effect: @code a@endcode deallocates @code space@endcode through @code mr@endcode.
-             * Postcondition: @code a@endcode and all equal allocators release management of and
-             * do not use the previously allocated upstream memory after release.
-             */
+        simple_allocator<A> && std::is_same_v<typename A::value_type, std::byte> &&
+        requires (A a, std::pmr::memory_resource& mr, std::size_t space, std::size_t bytes, std::align_val_t alignment, std::byte* p) {
             { a.release(mr, space) } noexcept;
-            /**
-             * Precondition: @code alignment@endcode is a power of 2 and not less than @code alignof(T::value_type)@endcode.
-             * Effect: Returns a pointer to a block of memory of size @code bytes@endcode and alignment @code alignment@endcode.
-             */
             { a.allocate(bytes, alignment) } -> std::same_as<std::byte*>;
-            /**
-             * Precondition: @code p@endcode is provided by @code a.allocate(bytes, alignment)@endcode.
-             * Effect: @code a@endcode deallocates the memory block pointed to by @code p@endcode.
-             */
             { a.deallocate(p, bytes, alignment) };
         });
     /// @brief A @code std::pmr::memory_resource@endcode which reserves specified amount of memory and
