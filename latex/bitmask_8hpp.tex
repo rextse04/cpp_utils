@@ -1,0 +1,74 @@
+\hypertarget{bitmask_8hpp}{}\doxysection{bitmask.\+hpp File Reference}
+\label{bitmask_8hpp}\index{bitmask.hpp@{bitmask.hpp}}
+{\ttfamily \#include $<$utility$>$}\newline
+Include dependency graph for bitmask.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{bitmask_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bitmask_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceutils}{utils}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{bitmask_8hpp_a764d2cb0d4a2da0c7d4d10eb67b89970}{UTILS\+\_\+\+BITMASK}}(T)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{bitmask_8hpp_a764d2cb0d4a2da0c7d4d10eb67b89970}\label{bitmask_8hpp_a764d2cb0d4a2da0c7d4d10eb67b89970}} 
+\index{bitmask.hpp@{bitmask.hpp}!UTILS\_BITMASK@{UTILS\_BITMASK}}
+\index{UTILS\_BITMASK@{UTILS\_BITMASK}!bitmask.hpp@{bitmask.hpp}}
+\doxysubsubsection{\texorpdfstring{UTILS\_BITMASK}{UTILS\_BITMASK}}
+{\footnotesize\ttfamily \#define UTILS\+\_\+\+BITMASK(\begin{DoxyParamCaption}\item[{}]{T }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keyword}{static\_assert}(std::is\_enum\_v<T>, \textcolor{stringliteral}{"{}T must be an enumeration type"{}});\(\backslash\)}
+\DoxyCodeLine{    constexpr \textcolor{keyword}{auto} operator+(T a) \textcolor{keyword}{noexcept} \{\(\backslash\)}
+\DoxyCodeLine{        return std::to\_underlying(a);\(\backslash\)}
+\DoxyCodeLine{    \}\(\backslash\)}
+\DoxyCodeLine{    constexpr T operator|(T a, T b) \textcolor{keyword}{noexcept} \{\(\backslash\)}
+\DoxyCodeLine{        return \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(+a | +b);\(\backslash\)}
+\DoxyCodeLine{    \}\(\backslash\)}
+\DoxyCodeLine{    constexpr T\& operator|=(T\& a, T b) \textcolor{keyword}{noexcept} \{\(\backslash\)}
+\DoxyCodeLine{        return a = a | b;\(\backslash\)}
+\DoxyCodeLine{    \}\(\backslash\)}
+\DoxyCodeLine{    constexpr T operator\&(T a, T b) \textcolor{keyword}{noexcept} \{\(\backslash\)}
+\DoxyCodeLine{        return \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(+a \& +b);\(\backslash\)}
+\DoxyCodeLine{    \}\(\backslash\)}
+\DoxyCodeLine{    constexpr T\& operator\&=(T\& a, T b) \textcolor{keyword}{noexcept} \{\(\backslash\)}
+\DoxyCodeLine{        return a = a \& b;\(\backslash\)}
+\DoxyCodeLine{    \}\(\backslash\)}
+\DoxyCodeLine{    constexpr T operator\string^(T a, T b) \textcolor{keyword}{noexcept} \{\(\backslash\)}
+\DoxyCodeLine{        return \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(+a \string^ +b);\(\backslash\)}
+\DoxyCodeLine{    \}\(\backslash\)}
+\DoxyCodeLine{    constexpr T\& operator\string^=(T\& a, T b) \textcolor{keyword}{noexcept} \{\(\backslash\)}
+\DoxyCodeLine{        return a = a \string^ b;\(\backslash\)}
+\DoxyCodeLine{    \}\(\backslash\)}
+\DoxyCodeLine{    constexpr T operator\string~(T a) \textcolor{keyword}{noexcept} \{\(\backslash\)}
+\DoxyCodeLine{        return \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(\string~+a);\(\backslash\)}
+\DoxyCodeLine{    \}\(\backslash\)}
+\DoxyCodeLine{    constexpr \textcolor{keywordtype}{bool} operator*(T a, T b) \textcolor{keyword}{noexcept} \{\(\backslash\)}
+\DoxyCodeLine{        return +a \& +b;\(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{bitmask_8hpp_source_l00005}{5}} of file \mbox{\hyperlink{bitmask_8hpp_source}{bitmask.\+hpp}}.
+

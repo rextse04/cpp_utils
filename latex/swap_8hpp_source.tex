@@ -1,0 +1,15 @@
+\hypertarget{swap_8hpp_source}{}\doxysection{swap.\+hpp}
+\mbox{\hyperlink{swap_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{swap_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{swap_8hpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{swap_8hpp_source_l00010}00010 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutils}{utils}} \{}
+\DoxyCodeLine{\Hypertarget{swap_8hpp_source_l00014}00014     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} U>}
+\DoxyCodeLine{\Hypertarget{swap_8hpp_source_l00015}00015     \textcolor{keyword}{requires} \textcolor{keyword}{requires}(T\& t, U\& u) \{ t.swap(u); \}}
+\DoxyCodeLine{\Hypertarget{swap_8hpp_source_l00016}00016     \textcolor{keyword}{constexpr} \textcolor{keyword}{decltype}(\textcolor{keyword}{auto}) swap(T\& t, U\& u)}
+\DoxyCodeLine{\Hypertarget{swap_8hpp_source_l00017}00017     \textcolor{keyword}{noexcept}(\textcolor{keyword}{noexcept}(t.swap(u))) \{}
+\DoxyCodeLine{\Hypertarget{swap_8hpp_source_l00018}00018         \textcolor{keywordflow}{return} t.swap(u);}
+\DoxyCodeLine{\Hypertarget{swap_8hpp_source_l00019}00019     \}}
+\DoxyCodeLine{\Hypertarget{swap_8hpp_source_l00020}00020 \}}
+
+\end{DoxyCode}

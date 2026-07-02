@@ -1,0 +1,235 @@
+\hypertarget{dynamic_8hpp}{}\doxysection{dynamic.\+hpp File Reference}
+\label{dynamic_8hpp}\index{dynamic.hpp@{dynamic.hpp}}
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include \char`\"{}functional.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}type.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}meta.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}self.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}integer.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}swap.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}memory.\+hpp\char`\"{}}\newline
+Include dependency graph for dynamic.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dynamic_8hpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{dynamic_8hpp_a715ab85251d4469384bbbfa91eaa3214}{UTILS\+\_\+\+DYN\+\_\+\+NO\+\_\+\+ARR\+\_\+\+ERR\+\_\+\+MSG}}~\char`\"{}array support for dptr disabled \mbox{[}UTILS\+\_\+\+DYN\+\_\+\+NO\+\_\+\+ARR\mbox{]}\char`\"{}
+\item 
+\#define \mbox{\hyperlink{dynamic_8hpp_a4ea298754f78cee61561d73527480ba0}{UTILS\+\_\+\+DYN}}
+\item 
+\#define \mbox{\hyperlink{dynamic_8hpp_a5c1bb59a2913f7e47ebd09366c0dd01d}{UTILS\+\_\+\+DYN\+\_\+\+END}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides utilities for Rust-\/like dynamic dispatch, as a partial replacement for virtual methods in standard C++. The major difference between this system and that in the language is that rather than embedding a pointer to vtable in each object, it is stored in each pointer to an object. The advantages of this approach are that it reduces the footprint of \char`\"{}dynamic objects\char`\"{} and one level of indirection on each dynamic dispatch.
+
+Important concepts and remarks\+:
+\begin{DoxyItemize}
+\item An {\bfseries{Interface}} is any class type that defines what its {\bfseries{implementers}} must implement. Under the hood, the interface is directly embedded in its associated vtables, and so there are few limits on what the class type can be. However, practically, you would probably want an interface to be an aggregate for the provided macros to be usable.
+\item When a class 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{T}
+
+\end{DoxyCode}
+ implements one or more interfaces (by using the UTILS\+\_\+\+DYN\+\_\+\+BEGIN and UTILS\+\_\+\+DYN\+\_\+\+END macros), you are defining a static method 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vtable()}
+
+\end{DoxyCode}
+ that returns a 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vtable}
+
+\end{DoxyCode}
+ object stored in static duration storage. The 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vtable}
+
+\end{DoxyCode}
+ struct inherits from 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ivtable<I>}
+
+\end{DoxyCode}
+ for each 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{I}
+
+\end{DoxyCode}
+ in 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Is}
+
+\end{DoxyCode}
+, which in turn is a struct that inherits from 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{I}
+
+\end{DoxyCode}
+ and contains an extra 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{dtor}
+
+\end{DoxyCode}
+. The macro and the constructor of 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vtable}
+
+\end{DoxyCode}
+ automatically initializes the 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{dtor}
+
+\end{DoxyCode}
+ fields with the destructor of 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{T}
+
+\end{DoxyCode}
+, the 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{size}
+
+\end{DoxyCode}
+ fields with 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{sizeof}(T)}
+
+\end{DoxyCode}
+, and the 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{arr\_deleter}
+
+\end{DoxyCode}
+ fields with 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{delete} T[]}
+
+\end{DoxyCode}
+. An 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{fptr}
+
+\end{DoxyCode}
+ or 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{dptr}
+
+\end{DoxyCode}
+ stores a type-\/erased pointer and extra pointer(s) to appropriate 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ivtable}
+
+\end{DoxyCode}
+s, which is how they know which methods and destructors to call.
+\item {\bfseries{Strongly}} prefer composition over inheritance. Dynamic pointers (
+\begin{DoxyCode}{0}
+\DoxyCodeLine{dptr}
+
+\end{DoxyCode}
+s) only care about what interfaces a class implements, but not the inheritance structure between interfaces. As an example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{struct }Animal \{ \textcolor{comment}{// interface}}
+\DoxyCodeLine{    dyn\_method<void(obj\_ptr)> eats;}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{\textcolor{keyword}{struct }SeaAnimal : Animal \{ \textcolor{comment}{// bad interface!}}
+\DoxyCodeLine{    dyn\_method<void(obj\_ptr)> swims;}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{\textcolor{keyword}{class }Fish : \textcolor{keyword}{public} implements<SeaAnimal> \{...\};}
+\DoxyCodeLine{unique\_dptr<SeaAnimal> animal1 = \textcolor{keyword}{new} Fish; \textcolor{comment}{// ok}}
+\DoxyCodeLine{unique\_dptr<Animal> animal2 = \textcolor{keyword}{new} Fish; \textcolor{comment}{// ill-\/formed: Fish does not implement Animal!}}
+
+\end{DoxyCode}
+ Instead, you should do this\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{struct }Animal \{ \textcolor{comment}{// interface}}
+\DoxyCodeLine{    dyn\_method<void(obj\_ptr)> eats;}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{\textcolor{keyword}{struct }SeaAnimal \{ \textcolor{comment}{// good interface}}
+\DoxyCodeLine{    dyn\_method<void(obj\_ptr)> swims;}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{\textcolor{keyword}{class }Fish : \textcolor{keyword}{public} implements<Animal, SeaAnimal> \{...\};}
+\DoxyCodeLine{unique\_dptr<SeaAnimal> animal1 = \textcolor{keyword}{new} Fish; \textcolor{comment}{// ok}}
+\DoxyCodeLine{unique\_dptr<Animal, SeaAnimal> animal2 = \textcolor{keyword}{new} Fish; \textcolor{comment}{// still ok}}
+\DoxyCodeLine{unique\_dptr<Animal animal3 = \textcolor{keyword}{new} Fish; \textcolor{comment}{// still ok}}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+Functionality toggle macros\+:
+\begin{DoxyItemize}
+\item UTILS\+\_\+\+DYN\+\_\+\+NO\+\_\+\+ARR\+: Disables array support in 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{dptr}
+
+\end{DoxyCode}
+ if present. Reduces the size of each 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ivtable}
+
+\end{DoxyCode}
+ by 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{sizeof}(size\_t) + \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{void}*)}
+
+\end{DoxyCode}
+. 
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{dynamic_8hpp_source}{dynamic.\+hpp}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{dynamic_8hpp_a4ea298754f78cee61561d73527480ba0}\label{dynamic_8hpp_a4ea298754f78cee61561d73527480ba0}} 
+\index{dynamic.hpp@{dynamic.hpp}!UTILS\_DYN@{UTILS\_DYN}}
+\index{UTILS\_DYN@{UTILS\_DYN}!dynamic.hpp@{dynamic.hpp}}
+\doxysubsubsection{\texorpdfstring{UTILS\_DYN}{UTILS\_DYN}}
+{\footnotesize\ttfamily \#define UTILS\+\_\+\+DYN}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    UTILS\_FIND\_SELF\(\backslash\)}
+\DoxyCodeLine{    constexpr \textcolor{keyword}{static} \textcolor{keyword}{const} vtable\_type\& vtable() \{\(\backslash\)}
+\DoxyCodeLine{        static \textcolor{keyword}{constexpr} vtable\_type vtable(}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{dynamic_8hpp_a5c1bb59a2913f7e47ebd09366c0dd01d}\label{dynamic_8hpp_a5c1bb59a2913f7e47ebd09366c0dd01d}} 
+\index{dynamic.hpp@{dynamic.hpp}!UTILS\_DYN\_END@{UTILS\_DYN\_END}}
+\index{UTILS\_DYN\_END@{UTILS\_DYN\_END}!dynamic.hpp@{dynamic.hpp}}
+\doxysubsubsection{\texorpdfstring{UTILS\_DYN\_END}{UTILS\_DYN\_END}}
+{\footnotesize\ttfamily \#define UTILS\+\_\+\+DYN\+\_\+\+END}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{            ,\(\backslash\)}
+\DoxyCodeLine{            [](\textcolor{keywordtype}{void}* ptr) \textcolor{keyword}{noexcept} \{ std::destroy\_at(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{self_8hpp_a379c3395d69445241a0099fdaf0e68de}{UTILS\_FIND\_SELF\_TYPE}}*\textcolor{keyword}{>}(ptr)); \},\(\backslash\)}
+\DoxyCodeLine{            sizeof(\mbox{\hyperlink{self_8hpp_a379c3395d69445241a0099fdaf0e68de}{UTILS\_FIND\_SELF\_TYPE}}),\(\backslash\)}
+\DoxyCodeLine{            [](\textcolor{keywordtype}{void}* arr) \textcolor{keyword}{noexcept} \{ \textcolor{keyword}{delete}[] \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{self_8hpp_a379c3395d69445241a0099fdaf0e68de}{UTILS\_FIND\_SELF\_TYPE}}*\textcolor{keyword}{>}(arr);\}\(\backslash\)}
+\DoxyCodeLine{        );\(\backslash\)}
+\DoxyCodeLine{        return vtable;\(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{dynamic_8hpp_a715ab85251d4469384bbbfa91eaa3214}\label{dynamic_8hpp_a715ab85251d4469384bbbfa91eaa3214}} 
+\index{dynamic.hpp@{dynamic.hpp}!UTILS\_DYN\_NO\_ARR\_ERR\_MSG@{UTILS\_DYN\_NO\_ARR\_ERR\_MSG}}
+\index{UTILS\_DYN\_NO\_ARR\_ERR\_MSG@{UTILS\_DYN\_NO\_ARR\_ERR\_MSG}!dynamic.hpp@{dynamic.hpp}}
+\doxysubsubsection{\texorpdfstring{UTILS\_DYN\_NO\_ARR\_ERR\_MSG}{UTILS\_DYN\_NO\_ARR\_ERR\_MSG}}
+{\footnotesize\ttfamily \#define UTILS\+\_\+\+DYN\+\_\+\+NO\+\_\+\+ARR\+\_\+\+ERR\+\_\+\+MSG~\char`\"{}array support for dptr disabled \mbox{[}UTILS\+\_\+\+DYN\+\_\+\+NO\+\_\+\+ARR\mbox{]}\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{dynamic_8hpp_source_l00074}{74}} of file \mbox{\hyperlink{dynamic_8hpp_source}{dynamic.\+hpp}}.
+

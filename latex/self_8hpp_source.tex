@@ -1,0 +1,20 @@
+\hypertarget{self_8hpp_source}{}\doxysection{self.\+hpp}
+\mbox{\hyperlink{self_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{self_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{self_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#include <type\_traits>}}
+\DoxyCodeLine{\Hypertarget{self_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{stateful__meta_8hpp}{stateful\_meta.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{self_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{exception_8hpp}{exception.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{self_8hpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{self_8hpp_source_l00006}00006 \textcolor{keyword}{namespace }utils::meta \{}
+\DoxyCodeLine{\Hypertarget{self_8hpp_source_l00015}00015 \textcolor{preprocessor}{\#define UTILS\_FIND\_SELF\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{self_8hpp_source_l00016}00016 \textcolor{preprocessor}{    struct utils\_find\_self\_result\_;\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{self_8hpp_source_l00017}00017 \textcolor{preprocessor}{    consteval auto utils\_find\_self\_()\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{self_8hpp_source_l00018}00018 \textcolor{preprocessor}{    -\/> decltype(utils::meta::define<utils\_find\_self\_result\_, std::type\_identity<std::remove\_cvref\_t<decltype(*this)>>\{\}>\{\}) \{\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{self_8hpp_source_l00019}00019 \textcolor{preprocessor}{        throw utils::compile\_error(\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{self_8hpp_source_l00020}00020 \textcolor{preprocessor}{            "{}You are not supposed to call this method. See the documentation for UTILS\_FIND\_SELF."{}});\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{self_8hpp_source_l00021}00021     \}}
+\DoxyCodeLine{\Hypertarget{self_8hpp_source_l00024}00024 \textcolor{preprocessor}{\#define UTILS\_FIND\_SELF\_TYPE typename decltype(get(utils::meta::const\_var<utils\_find\_self\_result\_>\{\}))::type}}
+\DoxyCodeLine{\Hypertarget{self_8hpp_source_l00025}00025 \textcolor{preprocessor}{\}}}
+
+\end{DoxyCode}

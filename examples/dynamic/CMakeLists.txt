@@ -1,1 +1,0 @@
-add_executable(dynamic_example main.cpp)

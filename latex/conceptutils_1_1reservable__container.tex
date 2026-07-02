@@ -1,0 +1,26 @@
+\hypertarget{conceptutils_1_1reservable__container}{}\doxysection{utils\+::reservable\+\_\+container Concept Reference}
+\label{conceptutils_1_1reservable__container}\index{utils::reservable\_container@{utils::reservable\_container}}
+
+
+{\ttfamily \#include $<$ranges.\+hpp$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} Container>}
+\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1reservable__container}{utils::reservable\_container}} = }
+\DoxyCodeLine{        std::ranges::sized\_range<Container> \&\&}
+\DoxyCodeLine{        \textcolor{keyword}{requires} (Container\& c, std::ranges::range\_size\_t<Container> n) \{}
+\DoxyCodeLine{            c.reserve(n);}
+\DoxyCodeLine{            \{ c.capacity() \} -\/> std::same\_as<\textcolor{keyword}{decltype}(n)>;}
+\DoxyCodeLine{            \{ c.max\_size() \} -\/> std::same\_as<\textcolor{keyword}{decltype}(n)>;}
+\DoxyCodeLine{        \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{ranges_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{ranges_8hpp_source}{ranges.\+hpp}}.
+

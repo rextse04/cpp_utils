@@ -1,0 +1,106 @@
+\hypertarget{stateful__meta_8hpp}{}\doxysection{stateful\+\_\+meta.\+hpp File Reference}
+\label{stateful__meta_8hpp}\index{stateful\_meta.hpp@{stateful\_meta.hpp}}
+{\ttfamily \#include $<$cstdint$>$}\newline
+Include dependency graph for stateful\+\_\+meta.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{stateful__meta_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{stateful__meta_8hpp__dep__incl}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+This file contains utilities that enable stateful metaprogramming, which allows you to make compile-\/time {\bfseries{modifiable}} variables. This is done via a technique called \char`\"{}friend injection\char`\"{}.
+
+In this file, compile-\/time variables are named by types. That is, such variables are defined, accessed and modified via the types they are associated with. Note that you are allowed to use the same type to name variables of different categories. For example, you can define a 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{const\_var<T>}
+
+\end{DoxyCode}
+ and 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{<i>counter</i><T>}
+
+\end{DoxyCode}
+ and they will be separate variables. There are three categories of variables\+: \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Category   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Written via   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Read via   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Remarks    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Category   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Written via   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Read via   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Remarks    }\\\cline{1-4}
+\endhead
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{const\_var}
+
+\end{DoxyCode}
+   &
+\begin{DoxyCode}{0}
+\DoxyCodeLine{define}
+
+\end{DoxyCode}
+   &
+\begin{DoxyCode}{0}
+\DoxyCodeLine{get}
+
+\end{DoxyCode}
+   &A 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{const\_var}
+
+\end{DoxyCode}
+ can only be written to once.    \\\cline{1-4}
+
+\begin{DoxyPre}{\itshape counter}\end{DoxyPre}
+   &
+\begin{DoxyCode}{0}
+\DoxyCodeLine{get\_counter}
+
+\end{DoxyCode}
+   &
+\begin{DoxyCode}{0}
+\DoxyCodeLine{get\_counter}
+
+\end{DoxyCode}
+   &There is no explicit struct for this category.    \\\cline{1-4}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var}
+
+\end{DoxyCode}
+   &
+\begin{DoxyCode}{0}
+\DoxyCodeLine{set}
+
+\end{DoxyCode}
+   &
+\begin{DoxyCode}{0}
+\DoxyCodeLine{get}
+
+\end{DoxyCode}
+   &\\\cline{1-4}
+\end{longtabu}
+
+
+In the implementation, some structs may have 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Id}
+
+\end{DoxyCode}
+ as one of their template parameters. This is necessary to prevent the compiler from caching previous results. Do not fill in that parameter unless you know what you are doing. 
+
+Definition in file \mbox{\hyperlink{stateful__meta_8hpp_source}{stateful\+\_\+meta.\+hpp}}.
+

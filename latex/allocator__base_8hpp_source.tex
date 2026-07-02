@@ -1,0 +1,21 @@
+\hypertarget{allocator__base_8hpp_source}{}\doxysection{allocator\+\_\+base.\+hpp}
+\label{allocator__base_8hpp_source}\index{allocators/allocator\_base.hpp@{allocators/allocator\_base.hpp}}
+\mbox{\hyperlink{allocator__base_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{allocator__base_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{allocator__base_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\Hypertarget{allocator__base_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{allocator__base_8hpp_source_l00004}00004 \textcolor{keyword}{namespace }utils::pmr \{}
+\DoxyCodeLine{\Hypertarget{allocator__base_8hpp_source_l00012}00012     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} Traits>}
+\DoxyCodeLine{\Hypertarget{allocator__base_8hpp_source_l00013}00013     \textcolor{keyword}{struct }allocator\_base \{}
+\DoxyCodeLine{\Hypertarget{allocator__base_8hpp_source_l00014}00014         \textcolor{keyword}{using} value\_type = T;}
+\DoxyCodeLine{\Hypertarget{allocator__base_8hpp_source_l00015}00015         \textcolor{keyword}{using} void\_pointer = Traits::void\_pointer;}
+\DoxyCodeLine{\Hypertarget{allocator__base_8hpp_source_l00016}00016         \textcolor{keyword}{using} const\_void\_pointer = std::pointer\_traits<void\_pointer>::template rebind<const void>;}
+\DoxyCodeLine{\Hypertarget{allocator__base_8hpp_source_l00017}00017         \textcolor{keyword}{using} pointer = std::pointer\_traits<void\_pointer>::template rebind<T>;}
+\DoxyCodeLine{\Hypertarget{allocator__base_8hpp_source_l00018}00018         \textcolor{keyword}{using} const\_pointer = std::pointer\_traits<void\_pointer>::template rebind<const T>;}
+\DoxyCodeLine{\Hypertarget{allocator__base_8hpp_source_l00019}00019         \textcolor{keyword}{using} difference\_type = std::pointer\_traits<void\_pointer>::difference\_type;}
+\DoxyCodeLine{\Hypertarget{allocator__base_8hpp_source_l00020}00020         \textcolor{keyword}{using} size\_type = Traits::size\_type;}
+\DoxyCodeLine{\Hypertarget{allocator__base_8hpp_source_l00021}00021     \};}
+\DoxyCodeLine{\Hypertarget{allocator__base_8hpp_source_l00022}00022 \}}
+
+\end{DoxyCode}
