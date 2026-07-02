@@ -1,12 +1,7 @@
 <map id="operators.hpp" name="operators.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="377,5,477,32"/>
-<area shape="rect" id="node2" href="$integer_8hpp.html" title=" " alt="" coords="384,80,469,107"/>
-<area shape="rect" id="node3" href="$concurrency_8hpp.html" title=" " alt="" coords="143,155,259,181"/>
-<area shape="rect" id="node5" href="$dynamic_8hpp.html" title=" " alt="" coords="314,155,409,181"/>
-<area shape="rect" id="node8" href="$static__string_8hpp.html" title=" " alt="" coords="433,155,551,181"/>
-<area shape="rect" id="node10" href="$integer_8cpp.html" title=" " alt="" coords="574,155,693,181"/>
-<area shape="rect" id="node4" href="$concurrency_8cpp.html" title=" " alt="" coords="5,229,155,256"/>
-<area shape="rect" id="node6" href="$main_8cpp.html" title=" " alt="" coords="179,229,365,256"/>
-<area shape="rect" id="node7" href="$dynamic_8cpp.html" title=" " alt="" coords="389,229,515,256"/>
-<area shape="rect" id="node9" href="$static__string_8cpp.html" title=" " alt="" coords="539,229,690,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="143,5,243,32"/>
+<area shape="rect" id="node2" href="$integer_8hpp.html" title=" " alt="" coords="150,80,235,107"/>
+<area shape="rect" id="node3" href="$concurrency_8hpp.html" title=" " alt="" coords="5,155,121,181"/>
+<area shape="rect" id="node4" href="$dynamic_8hpp.html" title=" " alt="" coords="145,155,240,181"/>
+<area shape="rect" id="node5" href="$static__string_8hpp.html" title=" " alt="" coords="265,155,382,181"/>
 </map>

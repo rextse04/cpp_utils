@@ -137,7 +137,7 @@ Let
 \end{DoxyCode}
 ) by 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{structF}{F}}}
+\DoxyCodeLine{F}
 
 \end{DoxyCode}
 . Then,
@@ -149,7 +149,7 @@ Let
 \end{DoxyCode}
  is a binary operator 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keyword}{static\_cast<}result\_type\textcolor{keyword}{>}(\mbox{\hyperlink{functional_8cpp_ade69077374d2ffb263c8074758eea543}{F}}(this-\/>to\_underlying(), other))}
+\DoxyCodeLine{\textcolor{keyword}{static\_cast<}result\_type\textcolor{keyword}{>}(F(this-\/>to\_underlying(), other))}
 
 \end{DoxyCode}
  must be well-\/formed in the context of 
@@ -165,7 +165,7 @@ Let
 \end{DoxyCode}
  is a unary operator, 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keyword}{static\_cast<}result\_type\textcolor{keyword}{>}(\mbox{\hyperlink{functional_8cpp_ade69077374d2ffb263c8074758eea543}{F}}(this-\/>to\_underlying()))}
+\DoxyCodeLine{\textcolor{keyword}{static\_cast<}result\_type\textcolor{keyword}{>}(F(this-\/>to\_underlying()))}
 
 \end{DoxyCode}
  must be well-\/formed in the context of 
@@ -181,7 +181,7 @@ Let
 \end{DoxyCode}
  is an assignment operator, 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{functional_8cpp_ade69077374d2ffb263c8074758eea543}{F}}(this-\/>to\_underlying(), other)}
+\DoxyCodeLine{F(this-\/>to\_underlying(), other)}
 
 \end{DoxyCode}
  must be well-\/formed in the context of 
@@ -197,7 +197,7 @@ Let
 \end{DoxyCode}
  is a pre-\/fix operator, 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{functional_8cpp_ade69077374d2ffb263c8074758eea543}{F}}(this-\/>to\_underlying())}
+\DoxyCodeLine{F(this-\/>to\_underlying())}
 
 \end{DoxyCode}
  must be well-\/formed in the context of 
@@ -213,7 +213,7 @@ Let
 \end{DoxyCode}
  is a post-\/fix operator, 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keyword}{static\_cast<}P\textcolor{keyword}{>}(\mbox{\hyperlink{functional_8cpp_ade69077374d2ffb263c8074758eea543}{F}}(this-\/>to\_underlying()))}
+\DoxyCodeLine{\textcolor{keyword}{static\_cast<}P\textcolor{keyword}{>}(F(this-\/>to\_underlying()))}
 
 \end{DoxyCode}
  must be well-\/formed in the context of 

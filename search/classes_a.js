@@ -1,14 +1,6 @@
 var searchData=
 [
-  ['pointer_5fiterator_0',['pointer_iterator',['../classutils_1_1pointer__iterator.html',1,'utils']]],
-  ['post_5fdecrement_1',['post_decrement',['../structutils_1_1post__decrement.html',1,'utils']]],
-  ['post_5fdecrement_3c_3e_2',['post_decrement&lt;&gt;',['../structutils_1_1post__decrement_3_4.html',1,'utils']]],
-  ['post_5fincrement_3',['post_increment',['../structutils_1_1post__increment.html',1,'utils']]],
-  ['post_5fincrement_3c_3e_4',['post_increment&lt;&gt;',['../structutils_1_1post__increment_3_4.html',1,'utils']]],
-  ['pre_5fdecrement_5',['pre_decrement',['../structutils_1_1pre__decrement.html',1,'utils']]],
-  ['pre_5fdecrement_3c_20void_20_3e_6',['pre_decrement&lt; void &gt;',['../structutils_1_1pre__decrement_3_01void_01_4.html',1,'utils']]],
-  ['pre_5fincrement_7',['pre_increment',['../structutils_1_1pre__increment.html',1,'utils']]],
-  ['pre_5fincrement_3c_20void_20_3e_8',['pre_increment&lt; void &gt;',['../structutils_1_1pre__increment_3_01void_01_4.html',1,'utils']]],
-  ['promote_9',['promote',['../structutils_1_1promote.html',1,'utils']]],
-  ['promote_3c_20void_20_3e_10',['promote&lt; void &gt;',['../structutils_1_1promote_3_01void_01_4.html',1,'utils']]]
+  ['result_0',['result',['../structutils_1_1binary__op__traits_1_1result.html',1,'utils::binary_op_traits&lt; ResultTrait, ConstraintTrait &gt;::result&lt; Self, Other &gt;'],['../structutils_1_1unary__op__traits_1_1result.html',1,'utils::unary_op_traits&lt; ResultTrait &gt;::result&lt; Self &gt;']]],
+  ['result_5fof_1',['result_of',['../structutils_1_1result__of.html',1,'utils']]],
+  ['result_5fof_3c_20r_28args_2e_2e_2e_29_3e_2',['result_of&lt; R(Args...)&gt;',['../structutils_1_1result__of_3_01R_07Args_8_8_8_08_4.html',1,'utils']]]
 ];

@@ -25,84 +25,14 @@
 var NAVTREE =
 [
   [ "cpp_utils", "index.html", [
-    [ "Named Requirement: <i>BufferAllocator</i>", "md_docs_named_reqs_BufferAllocator.html", [
-      [ "Requirements", "md_docs_named_reqs_BufferAllocator.html#autotoc_md1", [
-        [ "Notations", "md_docs_named_reqs_BufferAllocator.html#autotoc_md2", null ],
-        [ "Supported Operations", "md_docs_named_reqs_BufferAllocator.html#autotoc_md3", null ]
-      ] ]
-    ] ],
-    [ "Customization", "md_doxygen_awesome_css_docs_customization.html", [
-      [ "CSS-Variables", "md_doxygen_awesome_css_docs_customization.html#autotoc_md5", [
-        [ "Setup", "md_doxygen_awesome_css_docs_customization.html#autotoc_md6", null ],
-        [ "Available variables", "md_doxygen_awesome_css_docs_customization.html#autotoc_md7", null ]
-      ] ],
-      [ "Doxygen generator", "md_doxygen_awesome_css_docs_customization.html#autotoc_md8", null ],
-      [ "Share your customizations", "md_doxygen_awesome_css_docs_customization.html#autotoc_md9", null ]
-    ] ],
-    [ "Extensions", "md_doxygen_awesome_css_docs_extensions.html", [
-      [ "Dark Mode Toggle", "md_doxygen_awesome_css_docs_extensions.html#extension-dark-mode-toggle", [
-        [ "Installation", "md_doxygen_awesome_css_docs_extensions.html#autotoc_md11", null ],
-        [ "Customizing", "md_doxygen_awesome_css_docs_extensions.html#autotoc_md12", null ]
-      ] ],
-      [ "Fragment Copy Button", "md_doxygen_awesome_css_docs_extensions.html#extension-copy-button", [
-        [ "Installation", "md_doxygen_awesome_css_docs_extensions.html#autotoc_md13", null ],
-        [ "Customizing", "md_doxygen_awesome_css_docs_extensions.html#autotoc_md14", null ]
-      ] ],
-      [ "Paragraph Linking", "md_doxygen_awesome_css_docs_extensions.html#extension-para", [
-        [ "Installation", "md_doxygen_awesome_css_docs_extensions.html#autotoc_md15", null ],
-        [ "Customizing", "md_doxygen_awesome_css_docs_extensions.html#autotoc_md16", null ]
-      ] ],
-      [ "Interactive TOC", "md_doxygen_awesome_css_docs_extensions.html#extension-toc", [
-        [ "Installation", "md_doxygen_awesome_css_docs_extensions.html#autotoc_md17", null ],
-        [ "Customizing", "md_doxygen_awesome_css_docs_extensions.html#autotoc_md18", null ]
-      ] ],
-      [ "Tabs", "md_doxygen_awesome_css_docs_extensions.html#extension-tabs", [
-        [ "Installation", "md_doxygen_awesome_css_docs_extensions.html#autotoc_md19", null ],
-        [ "Usage", "md_doxygen_awesome_css_docs_extensions.html#autotoc_md20", null ]
-      ] ],
-      [ "Page Navigation", "md_doxygen_awesome_css_docs_extensions.html#extension-page-navigation", [
-        [ "Installation", "md_doxygen_awesome_css_docs_extensions.html#autotoc_md21", null ],
-        [ "Usage", "md_doxygen_awesome_css_docs_extensions.html#autotoc_md22", null ]
-      ] ]
-    ] ],
-    [ "Tips & Tricks", "md_doxygen_awesome_css_docs_tricks.html", [
-      [ "Diagrams with Graphviz", "md_doxygen_awesome_css_docs_tricks.html#tricks-graphviz", null ],
-      [ "Disable Dark Mode", "md_doxygen_awesome_css_docs_tricks.html#tricks-darkmode", null ],
-      [ "Choosing Sidebar Width", "md_doxygen_awesome_css_docs_tricks.html#tricks-sidebar", null ],
-      [ "Formatting Tables", "md_doxygen_awesome_css_docs_tricks.html#tricks-tables", [
-        [ "Centering", "md_doxygen_awesome_css_docs_tricks.html#autotoc_md24", null ],
-        [ "Full Width", "md_doxygen_awesome_css_docs_tricks.html#autotoc_md25", null ],
-        [ "Buttons", "md_doxygen_awesome_css_docs_tricks.html#autotoc_md26", null ],
-        [ "Bordered Images", "md_doxygen_awesome_css_docs_tricks.html#autotoc_md27", null ]
-      ] ]
-    ] ],
-    [ "Doxygen Awesome", "md_doxygen_awesome_css_README.html", [
-      [ "Motivation", "md_doxygen_awesome_css_README.html#autotoc_md36", null ],
-      [ "Features", "md_doxygen_awesome_css_README.html#autotoc_md37", null ],
-      [ "Examples", "md_doxygen_awesome_css_README.html#autotoc_md38", null ],
-      [ "Installation", "md_doxygen_awesome_css_README.html#autotoc_md39", [
-        [ "Git submodule", "md_doxygen_awesome_css_README.html#autotoc_md40", null ],
-        [ "CMake with FetchContent", "md_doxygen_awesome_css_README.html#autotoc_md41", null ],
-        [ "npm/xpm dependency", "md_doxygen_awesome_css_README.html#autotoc_md42", null ],
-        [ "System-wide", "md_doxygen_awesome_css_README.html#autotoc_md43", null ],
-        [ "Choosing a layout", "md_doxygen_awesome_css_README.html#autotoc_md44", null ],
-        [ "Further installation instructions", "md_doxygen_awesome_css_README.html#autotoc_md45", null ]
-      ] ],
-      [ "Browser support", "md_doxygen_awesome_css_README.html#autotoc_md46", null ],
-      [ "Credits", "md_doxygen_awesome_css_README.html#autotoc_md47", null ]
-    ] ],
-    [ "Bug List", "bug.html", null ],
-    [ "Deprecated List", "deprecated.html", null ],
-    [ "Todo List", "todo.html", null ],
+    [ "Named Requirements", "named_reqs.html", "named_reqs" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ],
-        [ "Typedefs", "namespacemembers_type.html", null ],
-        [ "Enumerations", "namespacemembers_enum.html", null ],
-        [ "Enumerator", "namespacemembers_eval.html", null ]
+        [ "Typedefs", "namespacemembers_type.html", null ]
       ] ]
     ] ],
     [ "Concepts", "concepts.html", "concepts" ],
@@ -111,7 +41,7 @@ var NAVTREE =
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", "functions_dup" ],
+        [ "All", "functions.html", null ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ],
@@ -122,9 +52,6 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ],
-        [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -133,10 +60,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"allocator__base_8hpp.html",
-"example_8hpp.html",
-"structshape.html#a6458217fd87b055994f89805d952d084",
-"structutils_1_1shift__asg__ops.html#af41d3ecdb34318fbac039e18b0de2e8e"
+"BufferAllocator.html",
+"namespaceutils.html#a838b0479484b30995e1d7e40f1cb529b",
+"structutils_1_1result__of.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

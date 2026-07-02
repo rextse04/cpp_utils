@@ -27,7 +27,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">cpp_utils
    </div>
-   <div id="projectbrief">An std-like header-only utility library for modern C++</div>
+   <div id="projectbrief">A header-only utility library written in modern C++ (C++23 or above).</div>
   </td>
  </tr>
  </tbody>
@@ -118,16 +118,11 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="operators_8hpp__dep__incl.png" border="0" usemap="#aoperators_8hppdep" alt=""/></div>
 <map name="aoperators_8hppdep" id="aoperators_8hppdep">
-<area shape="rect" title=" " alt="" coords="377,5,477,32"/>
-<area shape="rect" href="integer_8hpp.html" title=" " alt="" coords="384,80,469,107"/>
-<area shape="rect" href="concurrency_8hpp.html" title=" " alt="" coords="143,155,259,181"/>
-<area shape="rect" href="dynamic_8hpp.html" title=" " alt="" coords="314,155,409,181"/>
-<area shape="rect" href="static__string_8hpp.html" title=" " alt="" coords="433,155,551,181"/>
-<area shape="rect" href="integer_8cpp.html" title=" " alt="" coords="574,155,693,181"/>
-<area shape="rect" href="concurrency_8cpp.html" title=" " alt="" coords="5,229,155,256"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="179,229,365,256"/>
-<area shape="rect" href="dynamic_8cpp.html" title=" " alt="" coords="389,229,515,256"/>
-<area shape="rect" href="static__string_8cpp.html" title=" " alt="" coords="539,229,690,256"/>
+<area shape="rect" title=" " alt="" coords="143,5,243,32"/>
+<area shape="rect" href="integer_8hpp.html" title=" " alt="" coords="150,80,235,107"/>
+<area shape="rect" href="concurrency_8hpp.html" title=" " alt="" coords="5,155,121,181"/>
+<area shape="rect" href="dynamic_8hpp.html" title=" " alt="" coords="145,155,240,181"/>
+<area shape="rect" href="static__string_8hpp.html" title=" " alt="" coords="265,155,382,181"/>
 </map>
 </div>
 </div>
@@ -221,28 +216,26 @@ Let </p><div class="fragment"><div class="line">P</div>
 </div><!-- fragment --><p> defined by </p><div class="fragment"><div class="line">O</div>
 </div><!-- fragment --><p>, denote its corresponding functor member in </p><div class="fragment"><div class="line">*_op_functors</div>
 </div><!-- fragment --><p> (</p><div class="fragment"><div class="line">OF</div>
-</div><!-- fragment --><p>) by </p><div class="fragment"><div class="line"><a class="code hl_struct" href="structF.html">F</a></div>
-<div class="ttc" id="astructF_html"><div class="ttname"><a href="structF.html">F</a></div><div class="ttdef"><b>Definition:</b> <a href="static__string_8cpp_source.html#l00009">static_string.cpp:9</a></div></div>
+</div><!-- fragment --><p>) by </p><div class="fragment"><div class="line">F</div>
 </div><!-- fragment --><p>. Then,</p><ol type="1">
 <li>If <div class="fragment"><div class="line">@</div>
-</div><!-- fragment --> is a binary operator <div class="fragment"><div class="line"><span class="keyword">static_cast&lt;</span>result_type<span class="keyword">&gt;</span>(<a class="code hl_define" href="functional_8cpp.html#ade69077374d2ffb263c8074758eea543">F</a>(this-&gt;to_underlying(), other))</div>
-<div class="ttc" id="afunctional_8cpp_html_ade69077374d2ffb263c8074758eea543"><div class="ttname"><a href="functional_8cpp.html#ade69077374d2ffb263c8074758eea543">F</a></div><div class="ttdeci">#define F(T, U)</div></div>
+</div><!-- fragment --> is a binary operator <div class="fragment"><div class="line"><span class="keyword">static_cast&lt;</span>result_type<span class="keyword">&gt;</span>(F(this-&gt;to_underlying(), other))</div>
 </div><!-- fragment --> must be well-formed in the context of <div class="fragment"><div class="line"><span class="keyword">const</span> P</div>
 </div><!-- fragment -->;</li>
 <li>If <div class="fragment"><div class="line">@</div>
-</div><!-- fragment --> is a unary operator, <div class="fragment"><div class="line"><span class="keyword">static_cast&lt;</span>result_type<span class="keyword">&gt;</span>(<a class="code hl_define" href="functional_8cpp.html#ade69077374d2ffb263c8074758eea543">F</a>(this-&gt;to_underlying()))</div>
+</div><!-- fragment --> is a unary operator, <div class="fragment"><div class="line"><span class="keyword">static_cast&lt;</span>result_type<span class="keyword">&gt;</span>(F(this-&gt;to_underlying()))</div>
 </div><!-- fragment --> must be well-formed in the context of <div class="fragment"><div class="line"><span class="keyword">const</span> P</div>
 </div><!-- fragment -->;</li>
 <li>If <div class="fragment"><div class="line">@</div>
-</div><!-- fragment --> is an assignment operator, <div class="fragment"><div class="line"><a class="code hl_define" href="functional_8cpp.html#ade69077374d2ffb263c8074758eea543">F</a>(this-&gt;to_underlying(), other)</div>
+</div><!-- fragment --> is an assignment operator, <div class="fragment"><div class="line">F(this-&gt;to_underlying(), other)</div>
 </div><!-- fragment --> must be well-formed in the context of <div class="fragment"><div class="line">P</div>
 </div><!-- fragment -->;</li>
 <li>If <div class="fragment"><div class="line">@</div>
-</div><!-- fragment --> is a pre-fix operator, <div class="fragment"><div class="line"><a class="code hl_define" href="functional_8cpp.html#ade69077374d2ffb263c8074758eea543">F</a>(this-&gt;to_underlying())</div>
+</div><!-- fragment --> is a pre-fix operator, <div class="fragment"><div class="line">F(this-&gt;to_underlying())</div>
 </div><!-- fragment --> must be well-formed in the context of <div class="fragment"><div class="line">P</div>
 </div><!-- fragment -->;</li>
 <li>If <div class="fragment"><div class="line">@</div>
-</div><!-- fragment --> is a post-fix operator, <div class="fragment"><div class="line"><span class="keyword">static_cast&lt;</span>P<span class="keyword">&gt;</span>(<a class="code hl_define" href="functional_8cpp.html#ade69077374d2ffb263c8074758eea543">F</a>(this-&gt;to_underlying()))</div>
+</div><!-- fragment --> is a post-fix operator, <div class="fragment"><div class="line"><span class="keyword">static_cast&lt;</span>P<span class="keyword">&gt;</span>(F(this-&gt;to_underlying()))</div>
 </div><!-- fragment --> must be well-formed in the context of <div class="fragment"><div class="line">P</div>
 </div><!-- fragment -->;</li>
 <li>If <div class="fragment"><div class="line">@</div>

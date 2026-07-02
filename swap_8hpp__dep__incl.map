@@ -1,10 +1,6 @@
 <map id="swap.hpp" name="swap.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="306,5,383,32"/>
-<area shape="rect" id="node2" href="$segment__tree_8hpp.html" title=" " alt="" coords="106,80,242,121"/>
-<area shape="rect" id="node4" href="$dynamic_8hpp.html" title=" " alt="" coords="297,87,392,114"/>
-<area shape="rect" id="node7" href="$static__string_8hpp.html" title=" " alt="" coords="522,87,639,114"/>
-<area shape="rect" id="node3" href="$segment__tree_8cpp.html" title=" " alt="" coords="5,169,175,211"/>
-<area shape="rect" id="node5" href="$main_8cpp.html" title=" " alt="" coords="199,177,384,203"/>
-<area shape="rect" id="node6" href="$dynamic_8cpp.html" title=" " alt="" coords="408,177,535,203"/>
-<area shape="rect" id="node8" href="$static__string_8cpp.html" title=" " alt="" coords="559,177,709,203"/>
+<area shape="rect" id="node1" title=" " alt="" coords="175,5,252,32"/>
+<area shape="rect" id="node2" href="$segment__tree_8hpp.html" title=" " alt="" coords="5,80,141,121"/>
+<area shape="rect" id="node3" href="$dynamic_8hpp.html" title=" " alt="" coords="166,87,261,114"/>
+<area shape="rect" id="node4" href="$static__string_8hpp.html" title=" " alt="" coords="285,87,403,114"/>
 </map>

@@ -27,7 +27,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">cpp_utils
    </div>
-   <div id="projectbrief">An std-like header-only utility library for modern C++</div>
+   <div id="projectbrief">A header-only utility library written in modern C++ (C++23 or above).</div>
   </td>
  </tr>
  </tbody>
@@ -235,14 +235,14 @@ $(document).ready(function(){initNavTree('dynamic_8hpp_source.html',''); initRes
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="keyword">template</span> &lt;interface... Is&gt;</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="keyword">struct </span>vtable : ivtable&lt;Is&gt;... {</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        <span class="keyword">constexpr</span> vtable(Is... interfaces, void (*dtor)(<span class="keywordtype">void</span>*) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>#ifdef <a class="code hl_define" href="main_8cpp.html#af96a4b94873f4fed9c5c9c2a6a8a0172">UTILS_DYN_NO_ARR</a></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>#ifdef UTILS_DYN_NO_ARR</div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            ) noexcept : ivtable&lt;Is&gt;(interfaces, dtor)... {}</div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            , integer_alias::size_t size, void (*arr_deleter)(<span class="keywordtype">void</span>*) <span class="keyword">noexcept</span>) noexcept :</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>            ivtable&lt;Is&gt;(interfaces, dtor, size, arr_deleter)... {}</div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        <span class="keyword">constexpr</span> vtable(<span class="keyword">const</span> vtable&amp; other, <span class="keywordtype">void</span> (*dtor)(<span class="keywordtype">void</span>*) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>#ifdef <a class="code hl_define" href="main_8cpp.html#af96a4b94873f4fed9c5c9c2a6a8a0172">UTILS_DYN_NO_ARR</a></div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>#ifdef UTILS_DYN_NO_ARR</div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            ) noexcept : ivtable&lt;Is&gt;(other, dtor)... {}</div>
 <div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>            , integer_alias::size_t size, void (*arr_deleter)(<span class="keywordtype">void</span>*) <span class="keyword">noexcept</span>) noexcept :</div>
@@ -638,19 +638,19 @@ $(document).ready(function(){initNavTree('dynamic_8hpp_source.html',''); initRes
 <div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>            <span class="keyword">using</span> allocator_traits = std::allocator_traits&lt;allocator_type&gt;;</div>
 <div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>            <span class="keyword">using</span> allocator_pointer = allocator_traits::pointer;</div>
 <div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>            DPtr dptr;</div>
-<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>            [[no_unique_address]] Alloc <a class="code hl_function" href="stack__allocator_8cpp.html#a2c2cc7cfdabcb42d76ff2f1769ed7a30">alloc</a>;</div>
+<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>            [[no_unique_address]] Alloc alloc;</div>
 <div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>            [[no_unique_address]] std::conditional_t&lt;std::is_pointer_v&lt;allocator_pointer&gt;,</div>
 <div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>                sink, allocator_pointer&gt; self_ptr;</div>
 <div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span> </div>
 <div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span>            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> DPtrT, <span class="keyword">typename</span> AllocT&gt;</div>
-<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span>            <span class="keyword">constexpr</span> shared_dptr_control(DPtrT&amp;&amp; dptr, AllocT&amp;&amp; <a class="code hl_function" href="stack__allocator_8cpp.html#a2c2cc7cfdabcb42d76ff2f1769ed7a30">alloc</a>, allocator_pointer self_ptr) :</div>
-<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span>                dptr(std::forward&lt;DPtrT&gt;(dptr)), <a class="code hl_function" href="stack__allocator_8cpp.html#a2c2cc7cfdabcb42d76ff2f1769ed7a30">alloc</a>(std::forward&lt;AllocT&gt;(<a class="code hl_function" href="stack__allocator_8cpp.html#a2c2cc7cfdabcb42d76ff2f1769ed7a30">alloc</a>)), self_ptr(self_ptr) {}</div>
+<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span>            <span class="keyword">constexpr</span> shared_dptr_control(DPtrT&amp;&amp; dptr, AllocT&amp;&amp; alloc, allocator_pointer self_ptr) :</div>
+<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span>                dptr(std::forward&lt;DPtrT&gt;(dptr)), alloc(std::forward&lt;AllocT&gt;(alloc)), self_ptr(self_ptr) {}</div>
 <div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span> </div>
 <div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span>            <span class="keyword">constexpr</span> <span class="keywordtype">void</span> destroy_and_delete() <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
 <div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>                dptr.destroy_and_delete();</div>
 <div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span>            }</div>
 <div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>            <span class="keyword">constexpr</span> <span class="keywordtype">void</span> deallocate() <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
-<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>                allocator_type alloc_ = std::move(<a class="code hl_function" href="stack__allocator_8cpp.html#a2c2cc7cfdabcb42d76ff2f1769ed7a30">alloc</a>);</div>
+<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>                allocator_type alloc_ = std::move(alloc);</div>
 <div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>                allocator_traits::destroy(alloc_, <span class="keyword">this</span>);</div>
 <div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span>                <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_pointer_v&lt;allocator_pointer&gt;) {</div>
 <div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>                    allocator_traits::deallocate(alloc_, <span class="keyword">this</span>, 1);</div>
@@ -674,12 +674,12 @@ $(document).ready(function(){initNavTree('dynamic_8hpp_source.html',''); initRes
 <div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>                <span class="keyword">typename</span> ReAlloc = std::allocator_traits&lt;Alloc&gt;::template rebind_alloc&lt;Control&gt;,</div>
 <div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>                <span class="keyword">typename</span> ReAllocTraits = std::allocator_traits&lt;ReAlloc&gt;&gt;</div>
 <div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>            <span class="keyword">requires</span> (std::is_constructible_v&lt;BaseDeleter, D&gt;)</div>
-<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>            <span class="keyword">constexpr</span> shared_dptr_deleter(<span class="keyword">const</span> DPtr&amp; dptr, D&amp;&amp; deleter, <span class="keyword">const</span> Alloc&amp; <a class="code hl_function" href="stack__allocator_8cpp.html#a2c2cc7cfdabcb42d76ff2f1769ed7a30">alloc</a> = Alloc()) {</div>
+<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>            <span class="keyword">constexpr</span> shared_dptr_deleter(<span class="keyword">const</span> DPtr&amp; dptr, D&amp;&amp; deleter, <span class="keyword">const</span> Alloc&amp; alloc = Alloc()) {</div>
 <div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>                <span class="keywordflow">if</span> (!dptr) {</div>
 <div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>                    control = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>                    <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>                }</div>
-<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span>                ReAlloc alloc_ = <a class="code hl_function" href="stack__allocator_8cpp.html#a2c2cc7cfdabcb42d76ff2f1769ed7a30">alloc</a>;</div>
+<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span>                ReAlloc alloc_ = alloc;</div>
 <div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span>                <span class="keyword">auto</span> control_ptr = ReAllocTraits::allocate(alloc_, 1);</div>
 <div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span>                control = std::to_address(control_ptr);</div>
 <div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>                ReAllocTraits::construct(alloc_, std::to_address(control_ptr),</div>
@@ -893,12 +893,10 @@ $(document).ready(function(){initNavTree('dynamic_8hpp_source.html',''); initRes
 <div class="ttc" id="adynamic_8hpp_html_a715ab85251d4469384bbbfa91eaa3214"><div class="ttname"><a href="dynamic_8hpp.html#a715ab85251d4469384bbbfa91eaa3214">UTILS_DYN_NO_ARR_ERR_MSG</a></div><div class="ttdeci">#define UTILS_DYN_NO_ARR_ERR_MSG</div><div class="ttdef"><b>Definition:</b> <a href="dynamic_8hpp_source.html#l00074">dynamic.hpp:74</a></div></div>
 <div class="ttc" id="afunctional_8hpp_html"><div class="ttname"><a href="functional_8hpp.html">functional.hpp</a></div></div>
 <div class="ttc" id="ainteger_8hpp_html"><div class="ttname"><a href="integer_8hpp.html">integer.hpp</a></div></div>
-<div class="ttc" id="amain_8cpp_html_af96a4b94873f4fed9c5c9c2a6a8a0172"><div class="ttname"><a href="main_8cpp.html#af96a4b94873f4fed9c5c9c2a6a8a0172">UTILS_DYN_NO_ARR</a></div><div class="ttdeci">#define UTILS_DYN_NO_ARR</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00001">main.cpp:1</a></div></div>
 <div class="ttc" id="amemory_8hpp_html"><div class="ttname"><a href="memory_8hpp.html">memory.hpp</a></div></div>
 <div class="ttc" id="ameta_8hpp_html"><div class="ttname"><a href="meta_8hpp.html">meta.hpp</a></div></div>
 <div class="ttc" id="anamespaceutils_html"><div class="ttname"><a href="namespaceutils.html">utils</a></div><div class="ttdef"><b>Definition:</b> <a href="atomic_8hpp_source.html#l00004">atomic.hpp:4</a></div></div>
 <div class="ttc" id="aself_8hpp_html"><div class="ttname"><a href="self_8hpp.html">self.hpp</a></div></div>
-<div class="ttc" id="astack__allocator_8cpp_html_a2c2cc7cfdabcb42d76ff2f1769ed7a30"><div class="ttname"><a href="stack__allocator_8cpp.html#a2c2cc7cfdabcb42d76ff2f1769ed7a30">alloc</a></div><div class="ttdeci">stack_allocator&lt; char &gt; alloc(buf, sizeof(buf))</div></div>
 <div class="ttc" id="aswap_8hpp_html"><div class="ttname"><a href="swap_8hpp.html">swap.hpp</a></div></div>
 <div class="ttc" id="atype_8hpp_html"><div class="ttname"><a href="type_8hpp.html">type.hpp</a></div><div class="ttdoc">Type manipulation and qualification utilities for compile-time type introspection and transformation.</div></div>
 </div><!-- fragment --></div><!-- contents -->

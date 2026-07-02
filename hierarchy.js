@@ -34,13 +34,9 @@ var hierarchy =
     [ "utils::copy_construct<>", "structutils_1_1copy__construct_3_4.html", null ],
     [ "utils::default_construct< T >", "structutils_1_1default__construct.html", null ],
     [ "utils::disable_op", "structutils_1_1disable__op.html", null ],
-    [ "MyLibrary::Example", "classMyLibrary_1_1Example.html", [
-      [ "MyLibrary::SubclassExample< TemplatedClass >", "classMyLibrary_1_1SubclassExample.html", null ]
-    ] ],
     [ "std::exception", null, [
       [ "utils::compile_error", "classutils_1_1compile__error.html", null ]
     ] ],
-    [ "F< Str >", "structF.html", null ],
     [ "utils::fix_op_functors< PreInc, PostInc, PreDec, PostDec >", "structutils_1_1fix__op__functors.html", null ],
     [ "utils::fix_ops< Funcs >", "structutils_1_1fix__ops.html", null ],
     [ "utils::fix_ops< {} >", "structutils_1_1fix__ops.html", [
@@ -54,17 +50,6 @@ var hierarchy =
     [ "utils::function_decay< R(Args...)>", "structutils_1_1function__decay_3_01R_07Args_8_8_8_08_4.html", null ],
     [ "utils::function_decay< std::remove_pointer_t< std::remove_cvref_t< T > > >", "structutils_1_1function__decay.html", [
       [ "utils::function_decay< T >", "structutils_1_1function__decay_3_01T_01_4.html", null ]
-    ] ],
-    [ "implements", null, [
-      [ "circle", "structcircle.html", null ],
-      [ "circle", "structcircle.html", null ],
-      [ "rectangle", "structrectangle.html", null ],
-      [ "rectangle", "structrectangle.html", null ],
-      [ "square", "structsquare.html", [
-        [ "dotted_square", "structdotted__square.html", null ],
-        [ "dotted_square", "structdotted__square.html", null ]
-      ] ],
-      [ "square", "structsquare.html", null ]
     ] ],
     [ "utils::integral_asg_op_functors< PlusAsg, MinusAsg, MulAsg, DivAsg, ModAsg, AsgTraits >", "structutils_1_1integral__asg__op__functors.html", null ],
     [ "utils::integral_asg_ops< Funcs >", "structutils_1_1integral__asg__ops.html", [
@@ -112,15 +97,12 @@ var hierarchy =
     [ "utils::pre_increment< void >", "structutils_1_1pre__increment_3_01void_01_4.html", null ],
     [ "utils::promote< T >", "structutils_1_1promote.html", null ],
     [ "utils::promote< void >", "structutils_1_1promote_3_01void_01_4.html", null ],
-    [ "rectangular", "structrectangular.html", null ],
     [ "utils::result_of< F >", "structutils_1_1result__of.html", null ],
     [ "utils::result_of< R(Args...)>", "structutils_1_1result__of_3_01R_07Args_8_8_8_08_4.html", null ],
     [ "ResultTrait", null, [
       [ "utils::binary_op_traits< ResultTrait, ConstraintTrait >::result< Self, Other >", "structutils_1_1binary__op__traits_1_1result.html", null ],
       [ "utils::unary_op_traits< ResultTrait >::result< Self >", "structutils_1_1unary__op__traits_1_1result.html", null ]
     ] ],
-    [ "MyLibrary::SecondExample", "classMyLibrary_1_1SecondExample.html", null ],
-    [ "shape", "structshape.html", null ],
     [ "utils::shift_asg_op_functors< ShiftLeftAsg, ShiftRightAsg, AsgTraits >", "structutils_1_1shift__asg__op__functors.html", null ],
     [ "utils::shift_asg_ops< Funcs >", "structutils_1_1shift__asg__ops.html", [
       [ "utils::shift_full_ops< {}, {} >", "structutils_1_1shift__full__ops.html", [
@@ -151,8 +133,6 @@ var hierarchy =
       [ "utils::arithmetic_ops< IntFuncs, IntAsgFuncs, BitFuncs, BitAsgFuncs, ShiftFuncs, ShiftAsgFuncs, SignFuncs, FixFuncs >", "structutils_1_1arithmetic__ops.html", null ]
     ] ],
     [ "utils::synth_three_way_result< T, U >", "structutils_1_1synth__three__way__result.html", null ],
-    [ "random::test", "structrandom_1_1test.html", null ],
-    [ "test", "structtest.html", null ],
     [ "utils::unary_op_traits< ResultTrait >", "structutils_1_1unary__op__traits.html", null ],
     [ "utils::visitor< Fs >", "classutils_1_1visitor.html", null ],
     [ "utils::with< F, Arity, Owning >", "structutils_1_1with.html", null ]

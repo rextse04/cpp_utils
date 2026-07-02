@@ -27,7 +27,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">cpp_utils
    </div>
-   <div id="projectbrief">An std-like header-only utility library for modern C++</div>
+   <div id="projectbrief">A header-only utility library written in modern C++ (C++23 or above).</div>
   </td>
  </tr>
  </tbody>
@@ -125,13 +125,13 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afc0a8cf18faef026fbce6464c348b5f2"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1transform__iterator.html#afc0a8cf18faef026fbce6464c348b5f2">transform_iterator</a> ()=default</td></tr>
 <tr class="separator:afc0a8cf18faef026fbce6464c348b5f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa26bb93ba83c8847ec5818c448f25b1d"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1transform__iterator.html#aa26bb93ba83c8847ec5818c448f25b1d">transform_iterator</a> (parent it, <a class="el" href="structF.html">F</a> func)</td></tr>
+<tr class="memitem:aa26bb93ba83c8847ec5818c448f25b1d"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1transform__iterator.html#aa26bb93ba83c8847ec5818c448f25b1d">transform_iterator</a> (parent it, F func)</td></tr>
 <tr class="separator:aa26bb93ba83c8847ec5818c448f25b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac76915421f869d80aedd12fbe9b89111"><td class="memTemplParams" colspan="2">template&lt;typename U , typename G &gt; <br />
-requires (std::convertible_to&lt;const U&amp;, Iter&gt; &amp;&amp; std::convertible_to&lt;const G&amp;, <a class="el" href="structF.html">F</a>&gt;)</td></tr>
+requires (std::convertible_to&lt;const U&amp;, Iter&gt; &amp;&amp; std::convertible_to&lt;const G&amp;, F&gt;)</td></tr>
 <tr class="memitem:ac76915421f869d80aedd12fbe9b89111"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classutils_1_1transform__iterator.html#ac76915421f869d80aedd12fbe9b89111">transform_iterator</a> (const <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a>&lt; U, G &gt; &amp;other)</td></tr>
 <tr class="separator:ac76915421f869d80aedd12fbe9b89111"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ea956af4882ae579fc0f13421aed67a"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="structF.html">F</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1transform__iterator.html#a0ea956af4882ae579fc0f13421aed67a">transformer</a> () const noexcept</td></tr>
+<tr class="memitem:a0ea956af4882ae579fc0f13421aed67a"><td class="memItemLeft" align="right" valign="top">constexpr const F &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1transform__iterator.html#a0ea956af4882ae579fc0f13421aed67a">transformer</a> () const noexcept</td></tr>
 <tr class="separator:a0ea956af4882ae579fc0f13421aed67a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9280046964c0cfda6a3286b701631f80"><td class="memItemLeft" align="right" valign="top">constexpr decltype(auto)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1transform__iterator.html#a9280046964c0cfda6a3286b701631f80">operator*</a> () const</td></tr>
 <tr class="separator:a9280046964c0cfda6a3286b701631f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,8 +164,8 @@ Friends</h2></td></tr>
 <tr class="separator:adcc1fe8001b1200d2d04a80194f96aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename Iter, typename <a class="el" href="structF.html">F</a>&gt;<br />
-requires ( std::input_or_output_iterator&lt;Iter&gt; &amp;&amp; detail::invoke_capturable&lt;<a class="el" href="structF.html">F</a>, std::iter_reference_t&lt;Iter&gt;&gt; &amp;&amp; std::move_constructible&lt;<a class="el" href="structF.html">F</a>&gt;)<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Iter, typename F&gt;<br />
+requires ( std::input_or_output_iterator&lt;Iter&gt; &amp;&amp; detail::invoke_capturable&lt;F, std::iter_reference_t&lt;Iter&gt;&gt; &amp;&amp; std::move_constructible&lt;F&gt;)<br />
 class utils::transform_iterator&lt; Iter, F &gt;</div>
 <p class="definition">Definition at line <a class="el" href="iterator_8hpp_source.html#l00071">71</a> of file <a class="el" href="iterator_8hpp_source.html">iterator.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
@@ -175,10 +175,10 @@ class utils::transform_iterator&lt; Iter, F &gt;</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename Iter , typename F &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, <a class="el" href="structF.html">F</a> &gt;::<a class="el" href="classutils_1_1transform__iterator.html#a37d06bac81adfc8e032b8dbfec95edce">difference_type</a> =  std::iter_difference_t&lt;Iter&gt;</td>
+          <td class="memname">using <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, F &gt;::<a class="el" href="classutils_1_1transform__iterator.html#a37d06bac81adfc8e032b8dbfec95edce">difference_type</a> =  std::iter_difference_t&lt;Iter&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -193,10 +193,10 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename Iter , typename F &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, <a class="el" href="structF.html">F</a> &gt;::<a class="el" href="classutils_1_1transform__iterator.html#ac4e293e7dea655cc9f2815f27b3cbeb7">iterator_category</a> =  std::common_type_t&lt;<a class="el" href="namespaceutils.html#aac452ad4319d1aa831bb904e6e5123bb">iterator_category_t</a>&lt;Iter&gt;, std::random_access_iterator_tag&gt;</td>
+          <td class="memname">using <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, F &gt;::<a class="el" href="classutils_1_1transform__iterator.html#ac4e293e7dea655cc9f2815f27b3cbeb7">iterator_category</a> =  std::common_type_t&lt;<a class="el" href="namespaceutils.html#aac452ad4319d1aa831bb904e6e5123bb">iterator_category_t</a>&lt;Iter&gt;, std::random_access_iterator_tag&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -211,10 +211,10 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename Iter , typename F &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, <a class="el" href="structF.html">F</a> &gt;::<a class="el" href="classutils_1_1transform__iterator.html#a66dfcabcf885fef90f3b336e501e3a7a">iterator_type</a> =  Iter</td>
+          <td class="memname">using <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, F &gt;::<a class="el" href="classutils_1_1transform__iterator.html#a66dfcabcf885fef90f3b336e501e3a7a">iterator_type</a> =  Iter</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -230,13 +230,13 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename Iter , typename F &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, <a class="el" href="structF.html">F</a> &gt;::<a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> </td>
+          <td class="memname">constexpr <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, F &gt;::<a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -257,13 +257,13 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename Iter , typename F &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, <a class="el" href="structF.html">F</a> &gt;::<a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> </td>
+          <td class="memname">constexpr <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, F &gt;::<a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> </td>
           <td>(</td>
           <td class="paramtype">parent&#160;</td>
           <td class="paramname"><em>it</em>, </td>
@@ -271,7 +271,7 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structF.html">F</a>&#160;</td>
+          <td class="paramtype">F&#160;</td>
           <td class="paramname"><em>func</em>&#160;</td>
         </tr>
         <tr>
@@ -297,16 +297,16 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename Iter , typename F &gt; </div>
 <div class="memtemplate">
 template&lt;typename U , typename G &gt; <br />
-requires (std::convertible_to&lt;const U&amp;, Iter&gt; &amp;&amp; std::convertible_to&lt;const G&amp;, <a class="el" href="structF.html">F</a>&gt;)</div>
+requires (std::convertible_to&lt;const U&amp;, Iter&gt; &amp;&amp; std::convertible_to&lt;const G&amp;, F&gt;)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, <a class="el" href="structF.html">F</a> &gt;::<a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> </td>
+          <td class="memname">constexpr <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, F &gt;::<a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a>&lt; U, G &gt; &amp;&#160;</td>
           <td class="paramname"><em>other</em></td><td>)</td>
@@ -331,13 +331,13 @@ requires (std::convertible_to&lt;const U&amp;, Iter&gt; &amp;&amp; std::converti
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename Iter , typename F &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr decltype(auto) <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, <a class="el" href="structF.html">F</a> &gt;::operator* </td>
+          <td class="memname">constexpr decltype(auto) <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, F &gt;::operator* </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -360,13 +360,13 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename Iter , typename F &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> &amp; <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, <a class="el" href="structF.html">F</a> &gt;::operator++ </td>
+          <td class="memname">constexpr <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> &amp; <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, F &gt;::operator++ </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -389,13 +389,13 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename Iter , typename F &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, <a class="el" href="structF.html">F</a> &gt;::operator++ </td>
+          <td class="memname">constexpr <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, F &gt;::operator++ </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -419,13 +419,13 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename Iter , typename F &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, <a class="el" href="structF.html">F</a> &gt;::operator++ </td>
+          <td class="memname">constexpr <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, F &gt;::operator++ </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -449,13 +449,13 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename Iter , typename F &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> &amp; <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, <a class="el" href="structF.html">F</a> &gt;::operator+= </td>
+          <td class="memname">constexpr <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> &amp; <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, F &gt;::operator+= </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classutils_1_1transform__iterator.html#a37d06bac81adfc8e032b8dbfec95edce">difference_type</a>&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
@@ -479,13 +479,13 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename Iter , typename F &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> &amp; <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, <a class="el" href="structF.html">F</a> &gt;::operator-- </td>
+          <td class="memname">constexpr <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> &amp; <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, F &gt;::operator-- </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -508,13 +508,13 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename Iter , typename F &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, <a class="el" href="structF.html">F</a> &gt;::operator-- </td>
+          <td class="memname">constexpr <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, F &gt;::operator-- </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -538,13 +538,13 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename Iter , typename F &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> &amp; <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, <a class="el" href="structF.html">F</a> &gt;::operator-= </td>
+          <td class="memname">constexpr <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> &amp; <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, F &gt;::operator-= </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classutils_1_1transform__iterator.html#a37d06bac81adfc8e032b8dbfec95edce">difference_type</a>&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
@@ -568,13 +568,13 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename Iter , typename F &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr decltype(auto) <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, <a class="el" href="structF.html">F</a> &gt;::operator-&gt; </td>
+          <td class="memname">constexpr decltype(auto) <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, F &gt;::operator-&gt; </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -595,13 +595,13 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename Iter , typename F &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr decltype(auto) <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, <a class="el" href="structF.html">F</a> &gt;::operator[] </td>
+          <td class="memname">constexpr decltype(auto) <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, F &gt;::operator[] </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classutils_1_1transform__iterator.html#a37d06bac81adfc8e032b8dbfec95edce">difference_type</a>&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
@@ -625,13 +625,13 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename Iter , typename F &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const <a class="el" href="structF.html">F</a> &amp; <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, <a class="el" href="structF.html">F</a> &gt;::transformer </td>
+          <td class="memname">constexpr const F &amp; <a class="el" href="classutils_1_1transform__iterator.html">utils::transform_iterator</a>&lt; Iter, F &gt;::transformer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -655,7 +655,7 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename Iter , typename F &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -663,7 +663,7 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
         <tr>
           <td class="memname">constexpr friend <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> operator+ </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a>&lt; Iter, <a class="el" href="structF.html">F</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a>&lt; Iter, F &gt; &amp;&#160;</td>
           <td class="paramname"><em>it</em>, </td>
         </tr>
         <tr>
@@ -695,7 +695,7 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename Iter , typename F &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -709,7 +709,7 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a>&lt; Iter, <a class="el" href="structF.html">F</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a>&lt; Iter, F &gt; &amp;&#160;</td>
           <td class="paramname"><em>it</em>&#160;</td>
         </tr>
         <tr>
@@ -735,7 +735,7 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename Iter , typename F &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -743,7 +743,7 @@ template&lt;typename Iter , typename <a class="el" href="structF.html">F</a> &gt
         <tr>
           <td class="memname">constexpr friend <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a> operator- </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a>&lt; Iter, <a class="el" href="structF.html">F</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classutils_1_1transform__iterator.html">transform_iterator</a>&lt; Iter, F &gt; &amp;&#160;</td>
           <td class="paramname"><em>it</em>, </td>
         </tr>
         <tr>

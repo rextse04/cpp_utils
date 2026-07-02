@@ -41,19 +41,19 @@
 \DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00058}00058         \textcolor{keyword}{template} <\textcolor{keyword}{typename}, \textcolor{keywordtype}{bool}>}
 \DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00059}00059         \textcolor{keyword}{friend} \textcolor{keyword}{class }stack\_allocator;}
 \DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00060}00060     \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00067}00067         stack\_allocator(void\_pointer \mbox{\hyperlink{stack__allocator_8cpp_a156eb536d1933730c8d9aa522f53e437}{buf}}, size\_type space) \{}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00068}00068             void\_pointer back = \mbox{\hyperlink{stack__allocator_8cpp_a156eb536d1933730c8d9aa522f53e437}{buf}};}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00067}00067         stack\_allocator(void\_pointer buf, size\_type space) \{}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00068}00068             void\_pointer back = buf;}
 \DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00069}00069             \textcolor{keywordflow}{if} (!std::align(\textcolor{keyword}{alignof}(control\_type), \textcolor{keyword}{sizeof}(control\_type), back, space)) \{}
 \DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00070}00070                 \textcolor{keywordflow}{throw} std::bad\_alloc();}
 \DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00071}00071             \}}
 \DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00072}00072             front\_ = \textcolor{keyword}{new}(back) control\_type;}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00073}00073             *front\_ = \{front\_, \textcolor{keyword}{static\_cast<}std::byte*\textcolor{keyword}{>}(\mbox{\hyperlink{stack__allocator_8cpp_a156eb536d1933730c8d9aa522f53e437}{buf}}) + space\};}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00073}00073             *front\_ = \{front\_, \textcolor{keyword}{static\_cast<}std::byte*\textcolor{keyword}{>}(buf) + space\};}
 \DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00074}00074         \}}
 \DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00077}00077         stack\_allocator(std::pmr::memory\_resource\& mr, size\_type space) \{}
 \DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00078}00078             \textcolor{keywordflow}{if} (space < \textcolor{keyword}{sizeof}(control\_type)) \textcolor{keywordflow}{throw} std::bad\_alloc();}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00079}00079             \textcolor{keyword}{const} void\_pointer \mbox{\hyperlink{stack__allocator_8cpp_a156eb536d1933730c8d9aa522f53e437}{buf}} = mr.allocate(space, \textcolor{keyword}{alignof}(control\_type));}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00080}00080             front\_ = \textcolor{keyword}{new}(\mbox{\hyperlink{stack__allocator_8cpp_a156eb536d1933730c8d9aa522f53e437}{buf}}) control\_type;}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00081}00081             *front\_ = \{front\_, \textcolor{keyword}{static\_cast<}std::byte*\textcolor{keyword}{>}(\mbox{\hyperlink{stack__allocator_8cpp_a156eb536d1933730c8d9aa522f53e437}{buf}}) + space\};}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00079}00079             \textcolor{keyword}{const} void\_pointer buf = mr.allocate(space, \textcolor{keyword}{alignof}(control\_type));}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00080}00080             front\_ = \textcolor{keyword}{new}(buf) control\_type;}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00081}00081             *front\_ = \{front\_, \textcolor{keyword}{static\_cast<}std::byte*\textcolor{keyword}{>}(buf) + space\};}
 \DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00082}00082         \}}
 \DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00089}00089         \textcolor{keyword}{template} <\textcolor{keyword}{typename} U, \textcolor{keywordtype}{bool} S>}
 \DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00090}00090         \textcolor{keyword}{explicit}(S != Sync) stack\_allocator(\textcolor{keyword}{const} stack\_allocator<U, S>\& other) noexcept : front\_(other.front\_) \{\}}
@@ -61,68 +61,68 @@
 \DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00097}00097         \textcolor{keywordtype}{void} release(std::pmr::memory\_resource\& mr, size\_type space) \textcolor{keyword}{noexcept} \{}
 \DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00098}00098             mr.deallocate(front\_, space, \textcolor{keyword}{alignof}(control\_type));}
 \DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00099}00099         \}}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00101}00101         pointer allocate(size\_type n, std::align\_val\_t alignment = std::align\_val\_t(\textcolor{keyword}{alignof}(T)))\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00102}00102             control\_type sentinel;}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00103}00103             \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00104}00104                 void\_pointer back = Sync}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00105}00105                     ? std::atomic\_ref(front\_-\/>prev).load(std::memory\_order::relaxed)}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00106}00106                     : front\_-\/>prev;}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00107}00107                 sentinel.prev = back;}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00108}00108                 sentinel.obj = \textcolor{keyword}{static\_cast<}std::byte*\textcolor{keyword}{>}(back) + \textcolor{keyword}{sizeof}(control\_type);}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00109}00109                 \textcolor{keyword}{const} size\_type bytes = \textcolor{keyword}{sizeof}(T) * n;}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00110}00110                 sentinel.obj = align(\textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(alignment), bytes, sentinel.obj, front\_-\/>obj);}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00111}00111                 \textcolor{keywordflow}{if} (!sentinel.obj) \textcolor{keywordflow}{throw} std::bad\_alloc();}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00112}00112                 void\_pointer sentinel\_ptr = align(\textcolor{keyword}{alignof}(control\_type), \textcolor{keyword}{sizeof}(control\_type),}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00113}00113                     \textcolor{keyword}{static\_cast<}std::byte*\textcolor{keyword}{>}(sentinel.obj) + bytes, front\_-\/>obj);}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00114}00114                 \textcolor{keywordflow}{if} (!sentinel\_ptr) \textcolor{keywordflow}{throw} std::bad\_alloc();}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00115}00115                 \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (Sync) \{}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00116}00116                     \textcolor{keywordflow}{if} (std::atomic\_ref(front\_-\/>prev).compare\_exchange\_weak(}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00117}00117                         back, sentinel\_ptr, std::memory\_order::relaxed)) \{}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00118}00118                         \textcolor{keyword}{new}(sentinel\_ptr) control\_type(sentinel);}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00119}00119                         \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00120}00120                     \}}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00121}00121                 \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00122}00122                     front\_-\/>prev = \textcolor{keyword}{new}(sentinel\_ptr) control\_type(sentinel);}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00123}00123                     \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00124}00124                 \}}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00125}00125             \}}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00126}00126             \textcolor{keywordflow}{return} std::start\_lifetime\_as\_array<T>(sentinel.obj, n);}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00127}00127         \}}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00138}00138         \textcolor{keywordtype}{void} deallocate(pointer p, size\_type n, std::align\_val\_t = std::align\_val\_t(\textcolor{keyword}{alignof}(T))) \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \{}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00139}00139             control\_type* \textcolor{keyword}{const} next = std::launder(\textcolor{keyword}{static\_cast<}control\_type*\textcolor{keyword}{>}(}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00140}00140                 align(\textcolor{keyword}{alignof}(control\_type), \textcolor{keyword}{sizeof}(control\_type), p + n, front\_-\/>obj)));}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00141}00141             void\_pointer back = Sync}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00142}00142                 ? std::atomic\_ref(front\_-\/>prev).load(std::memory\_order::relaxed)}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00143}00143                 : front\_-\/>prev;}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00144}00144             \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00145}00145                 \textcolor{keywordflow}{if} (next == back) \{}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00146}00146                     control\_type* new\_back = std::launder(\textcolor{keyword}{static\_cast<}control\_type*\textcolor{keyword}{>}(back));}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00147}00147                     \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00148}00148                         new\_back = std::launder(\textcolor{keyword}{static\_cast<}control\_type*\textcolor{keyword}{>}(new\_back-\/>prev));}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00149}00149                         \textcolor{keywordflow}{if} (new\_back == front\_) \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00150}00150                         \textcolor{keyword}{const} void\_pointer obj = Sync}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00151}00151                             ? std::atomic\_ref(new\_back-\/>obj).load(std::memory\_order::relaxed)}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00152}00152                             : new\_back-\/>obj;}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00153}00153                         \textcolor{keywordflow}{if} (obj) \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00154}00154                     \}}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00155}00155                     \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (Sync) \{}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00156}00156                         \textcolor{keywordflow}{if} (std::atomic\_ref(front\_-\/>prev).compare\_exchange\_weak(}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00157}00157                             back, new\_back, std::memory\_order::relaxed)) \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00158}00158                     \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00159}00159                         front\_-\/>prev = new\_back;}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00160}00160                         \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00161}00161                     \}}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00162}00162                 \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00163}00163                     \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (Sync) \{}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00164}00164                         std::atomic\_ref(next-\/>obj).store(\textcolor{keyword}{nullptr}, std::memory\_order::relaxed);}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00165}00165                     \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00166}00166                         next-\/>obj = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00167}00167                     \}}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00168}00168                     \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00169}00169                 \}}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00170}00170             \}}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00171}00171         \}}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00172}00172     \};}
-\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00173}00173 \}}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00103}00103         pointer allocate(size\_type n, std::align\_val\_t alignment = std::align\_val\_t(\textcolor{keyword}{alignof}(T)))\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00104}00104             control\_type sentinel;}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00105}00105             \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00106}00106                 void\_pointer back = Sync}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00107}00107                     ? std::atomic\_ref(front\_-\/>prev).load(std::memory\_order::relaxed)}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00108}00108                     : front\_-\/>prev;}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00109}00109                 sentinel.prev = back;}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00110}00110                 sentinel.obj = \textcolor{keyword}{static\_cast<}std::byte*\textcolor{keyword}{>}(back) + \textcolor{keyword}{sizeof}(control\_type);}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00111}00111                 \textcolor{keyword}{const} size\_type bytes = \textcolor{keyword}{sizeof}(T) * n;}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00112}00112                 sentinel.obj = align(\textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(alignment), bytes, sentinel.obj, front\_-\/>obj);}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00113}00113                 \textcolor{keywordflow}{if} (!sentinel.obj) \textcolor{keywordflow}{throw} std::bad\_alloc();}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00114}00114                 void\_pointer sentinel\_ptr = align(\textcolor{keyword}{alignof}(control\_type), \textcolor{keyword}{sizeof}(control\_type),}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00115}00115                     \textcolor{keyword}{static\_cast<}std::byte*\textcolor{keyword}{>}(sentinel.obj) + bytes, front\_-\/>obj);}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00116}00116                 \textcolor{keywordflow}{if} (!sentinel\_ptr) \textcolor{keywordflow}{throw} std::bad\_alloc();}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00117}00117                 \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (Sync) \{}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00118}00118                     \textcolor{keywordflow}{if} (std::atomic\_ref(front\_-\/>prev).compare\_exchange\_weak(}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00119}00119                         back, sentinel\_ptr, std::memory\_order::relaxed)) \{}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00120}00120                         \textcolor{keyword}{new}(sentinel\_ptr) control\_type(sentinel);}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00121}00121                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00122}00122                     \}}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00123}00123                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00124}00124                     front\_-\/>prev = \textcolor{keyword}{new}(sentinel\_ptr) control\_type(sentinel);}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00125}00125                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00126}00126                 \}}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00127}00127             \}}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00128}00128             \textcolor{keywordflow}{return} std::start\_lifetime\_as\_array<T>(sentinel.obj, n);}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00129}00129         \}}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00142}00142         \textcolor{keywordtype}{void} deallocate(pointer p, size\_type n, std::align\_val\_t = std::align\_val\_t(\textcolor{keyword}{alignof}(T))) \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00143}00143             control\_type* \textcolor{keyword}{const} next = std::launder(\textcolor{keyword}{static\_cast<}control\_type*\textcolor{keyword}{>}(}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00144}00144                 align(\textcolor{keyword}{alignof}(control\_type), \textcolor{keyword}{sizeof}(control\_type), p + n, front\_-\/>obj)));}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00145}00145             void\_pointer back = Sync}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00146}00146                 ? std::atomic\_ref(front\_-\/>prev).load(std::memory\_order::relaxed)}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00147}00147                 : front\_-\/>prev;}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00148}00148             \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00149}00149                 \textcolor{keywordflow}{if} (next == back) \{}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00150}00150                     control\_type* new\_back = std::launder(\textcolor{keyword}{static\_cast<}control\_type*\textcolor{keyword}{>}(back));}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00151}00151                     \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00152}00152                         new\_back = std::launder(\textcolor{keyword}{static\_cast<}control\_type*\textcolor{keyword}{>}(new\_back-\/>prev));}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00153}00153                         \textcolor{keywordflow}{if} (new\_back == front\_) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00154}00154                         \textcolor{keyword}{const} void\_pointer obj = Sync}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00155}00155                             ? std::atomic\_ref(new\_back-\/>obj).load(std::memory\_order::relaxed)}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00156}00156                             : new\_back-\/>obj;}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00157}00157                         \textcolor{keywordflow}{if} (obj) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00158}00158                     \}}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00159}00159                     \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (Sync) \{}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00160}00160                         \textcolor{keywordflow}{if} (std::atomic\_ref(front\_-\/>prev).compare\_exchange\_weak(}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00161}00161                             back, new\_back, std::memory\_order::relaxed)) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00162}00162                     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00163}00163                         front\_-\/>prev = new\_back;}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00164}00164                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00165}00165                     \}}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00166}00166                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00167}00167                     \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (Sync) \{}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00168}00168                         std::atomic\_ref(next-\/>obj).store(\textcolor{keyword}{nullptr}, std::memory\_order::relaxed);}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00169}00169                     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00170}00170                         next-\/>obj = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00171}00171                     \}}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00172}00172                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00173}00173                 \}}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00174}00174             \}}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00175}00175         \}}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00176}00176     \};}
+\DoxyCodeLine{\Hypertarget{stack__allocator_8hpp_source_l00177}00177 \}}
 
 \end{DoxyCode}

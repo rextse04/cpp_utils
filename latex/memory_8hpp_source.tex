@@ -33,9 +33,9 @@
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00044}00044     \}}
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00045}00045 }
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00047}00047     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00048}00048     \textcolor{keyword}{concept }simple\_allocator = \textcolor{keyword}{requires}(T \mbox{\hyperlink{stack__allocator_8cpp_a2c2cc7cfdabcb42d76ff2f1769ed7a30}{alloc}}, std::size\_t n) \{}
-\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00049}00049         \{ *\mbox{\hyperlink{stack__allocator_8cpp_a2c2cc7cfdabcb42d76ff2f1769ed7a30}{alloc}}.allocate(n) \} -\/> std::same\_as<typename T::value\_type\&>;}
-\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00050}00050         \{ \mbox{\hyperlink{stack__allocator_8cpp_a2c2cc7cfdabcb42d76ff2f1769ed7a30}{alloc}}.deallocate(\mbox{\hyperlink{stack__allocator_8cpp_a2c2cc7cfdabcb42d76ff2f1769ed7a30}{alloc}}.allocate(n), n) \};}
+\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00048}00048     \textcolor{keyword}{concept }simple\_allocator = \textcolor{keyword}{requires}(T alloc, std::size\_t n) \{}
+\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00049}00049         \{ *alloc.allocate(n) \} -\/> std::same\_as<typename T::value\_type\&>;}
+\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00050}00050         \{ alloc.deallocate(alloc.allocate(n), n) \};}
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00051}00051     \} \&\& std::copy\_constructible<T> \&\& std::equality\_comparable<T>;}
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00052}00052 \}}
 

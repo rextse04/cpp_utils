@@ -27,7 +27,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">cpp_utils
    </div>
-   <div id="projectbrief">An std-like header-only utility library for modern C++</div>
+   <div id="projectbrief">A header-only utility library written in modern C++ (C++23 or above).</div>
   </td>
  </tr>
  </tbody>
@@ -273,11 +273,11 @@ Typedefs</h2></td></tr>
 <tr class="memitem:aa2a651da2caee87aff06087795119502"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aa2a651da2caee87aff06087795119502"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aa2a651da2caee87aff06087795119502">lambda_decay_t</a> = <a class="el" href="structutils_1_1lambda__decay.html">lambda_decay</a>&lt; T &gt;::type</td></tr>
 <tr class="separator:aa2a651da2caee87aff06087795119502"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec2f7d8a4a6a70e231ae13dd1a18606a"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="structF.html">F</a> &gt; </td></tr>
-<tr class="memitem:aec2f7d8a4a6a70e231ae13dd1a18606a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aec2f7d8a4a6a70e231ae13dd1a18606a">result_of_t</a> = <a class="el" href="structutils_1_1result__of.html">result_of</a>&lt; <a class="el" href="structF.html">F</a> &gt;::type</td></tr>
+<tr class="memitem:aec2f7d8a4a6a70e231ae13dd1a18606a"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:aec2f7d8a4a6a70e231ae13dd1a18606a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aec2f7d8a4a6a70e231ae13dd1a18606a">result_of_t</a> = <a class="el" href="structutils_1_1result__of.html">result_of</a>&lt; F &gt;::type</td></tr>
 <tr class="separator:aec2f7d8a4a6a70e231ae13dd1a18606a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4674b772ff1c668b49f1867630f3d54"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="structF.html">F</a> &gt; </td></tr>
-<tr class="memitem:ac4674b772ff1c668b49f1867630f3d54"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#ac4674b772ff1c668b49f1867630f3d54">arguments_of_t</a> = <a class="el" href="structutils_1_1arguments__of.html">arguments_of</a>&lt; <a class="el" href="structF.html">F</a> &gt;::type</td></tr>
+<tr class="memitem:ac4674b772ff1c668b49f1867630f3d54"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:ac4674b772ff1c668b49f1867630f3d54"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#ac4674b772ff1c668b49f1867630f3d54">arguments_of_t</a> = <a class="el" href="structutils_1_1arguments__of.html">arguments_of</a>&lt; F &gt;::type</td></tr>
 <tr class="separator:ac4674b772ff1c668b49f1867630f3d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdc92300a8a41d794e21ecfade137492"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#acdc92300a8a41d794e21ecfade137492">variadic_arity</a> = <a class="el" href="structutils_1_1arity.html">arity</a>&lt; static_cast&lt; std::size_t &gt;(-1)&gt;</td></tr>
 <tr class="separator:acdc92300a8a41d794e21ecfade137492"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -296,8 +296,8 @@ Functions</h2></td></tr>
 <tr class="memitem:aeae858e40387fdfac0f8629db4991dbb"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aeae858e40387fdfac0f8629db4991dbb"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aeae858e40387fdfac0f8629db4991dbb">bind</a> (T &amp;&amp;) -&gt; <a class="el" href="structutils_1_1bind.html">bind</a>&lt; T &amp;&amp; &gt;</td></tr>
 <tr class="separator:aeae858e40387fdfac0f8629db4991dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75ce48a3fb2e45c2eb6917e6d32ceb84"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="structF.html">F</a> , typename... Gs&gt; </td></tr>
-<tr class="memitem:a75ce48a3fb2e45c2eb6917e6d32ceb84"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a75ce48a3fb2e45c2eb6917e6d32ceb84">composite</a> (<a class="el" href="structF.html">F</a> &amp;&amp;f, Gs &amp;&amp;... gs)</td></tr>
+<tr class="memitem:a75ce48a3fb2e45c2eb6917e6d32ceb84"><td class="memTemplParams" colspan="2">template&lt;typename F , typename... Gs&gt; </td></tr>
+<tr class="memitem:a75ce48a3fb2e45c2eb6917e6d32ceb84"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a75ce48a3fb2e45c2eb6917e6d32ceb84">composite</a> (F &amp;&amp;f, Gs &amp;&amp;... gs)</td></tr>
 <tr class="separator:a75ce48a3fb2e45c2eb6917e6d32ceb84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4515012627113facd242ccb5f3d59374"><td class="memTemplParams" colspan="2">template&lt;std::ptrdiff_t Exp, typename CastT &gt; </td></tr>
 <tr class="memitem:a4515012627113facd242ccb5f3d59374"><td class="memTemplItemLeft" align="right" valign="top">constexpr CastT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a4515012627113facd242ccb5f3d59374">pow</a> (CastT base)</td></tr>
@@ -315,8 +315,8 @@ Variables</h2></td></tr>
 <tr class="memitem:a66e65835c8cea64e6a28ccf70f71ea28"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a66e65835c8cea64e6a28ccf70f71ea28">synth_three_way</a></td></tr>
 <tr class="memdesc:a66e65835c8cea64e6a28ccf70f71ea28"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++ standard exposition-only functor: <em>synth-three-way</em>.  <a href="namespaceutils.html#a66e65835c8cea64e6a28ccf70f71ea28">More...</a><br /></td></tr>
 <tr class="separator:a66e65835c8cea64e6a28ccf70f71ea28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a720537626a2d6e7ae840a1212a67f2"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="structF.html">F</a> &gt; </td></tr>
-<tr class="memitem:a5a720537626a2d6e7ae840a1212a67f2"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a5a720537626a2d6e7ae840a1212a67f2">arity_of_v</a> = <a class="el" href="structutils_1_1arity__of.html">arity_of</a>&lt;<a class="el" href="structF.html">F</a>&gt;::value</td></tr>
+<tr class="memitem:a5a720537626a2d6e7ae840a1212a67f2"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:a5a720537626a2d6e7ae840a1212a67f2"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a5a720537626a2d6e7ae840a1212a67f2">arity_of_v</a> = <a class="el" href="structutils_1_1arity__of.html">arity_of</a>&lt;F&gt;::value</td></tr>
 <tr class="separator:a5a720537626a2d6e7ae840a1212a67f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -326,10 +326,10 @@ Variables</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename F &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceutils.html#ac4674b772ff1c668b49f1867630f3d54">utils::arguments_of_t</a> = typedef <a class="el" href="structutils_1_1arguments__of.html">arguments_of</a>&lt;<a class="el" href="structF.html">F</a>&gt;::type</td>
+          <td class="memname">using <a class="el" href="namespaceutils.html#ac4674b772ff1c668b49f1867630f3d54">utils::arguments_of_t</a> = typedef <a class="el" href="structutils_1_1arguments__of.html">arguments_of</a>&lt;F&gt;::type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -416,10 +416,10 @@ template&lt;typename T &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename F &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceutils.html#aec2f7d8a4a6a70e231ae13dd1a18606a">utils::result_of_t</a> = typedef <a class="el" href="structutils_1_1result__of.html">result_of</a>&lt;<a class="el" href="structF.html">F</a>&gt;::type</td>
+          <td class="memname">using <a class="el" href="namespaceutils.html#aec2f7d8a4a6a70e231ae13dd1a18606a">utils::result_of_t</a> = typedef <a class="el" href="structutils_1_1result__of.html">result_of</a>&lt;F&gt;::type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -494,7 +494,7 @@ template&lt;typename T &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="structF.html">F</a> , typename... Gs&gt; </div>
+template&lt;typename F , typename... Gs&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -502,7 +502,7 @@ template&lt;typename <a class="el" href="structF.html">F</a> , typename... Gs&gt
         <tr>
           <td class="memname">constexpr auto utils::composite </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structF.html">F</a> &amp;&amp;&#160;</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em>, </td>
         </tr>
         <tr>
@@ -650,13 +650,13 @@ template&lt;typename G , std::size_t Arity&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="structF.html">F</a> &gt; </div>
+template&lt;typename F &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto utils::arity_of_v = <a class="el" href="structutils_1_1arity__of.html">arity_of</a>&lt;<a class="el" href="structF.html">F</a>&gt;::value</td>
+          <td class="memname">constexpr auto utils::arity_of_v = <a class="el" href="structutils_1_1arity__of.html">arity_of</a>&lt;F&gt;::value</td>
         </tr>
       </table>
   </td>

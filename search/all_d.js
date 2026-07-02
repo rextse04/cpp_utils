@@ -1,19 +1,10 @@
 var searchData=
 [
-  ['plus_0',['plus',['../structutils_1_1integral__op__functors.html#a1708ff07ec497739f9dd95e88ef2ebf9',1,'utils::integral_op_functors']]],
-  ['plus_5fasg_1',['plus_asg',['../structutils_1_1integral__asg__op__functors.html#a4b77527ca426dd453c9c5dc0ae45cfed',1,'utils::integral_asg_op_functors']]],
-  ['pointer_2',['pointer',['../classutils_1_1pointer__iterator.html#aabaf47a4ce09476dea071f003f7fab3b',1,'utils::pointer_iterator']]],
-  ['pointer_5fiterator_3',['pointer_iterator',['../classutils_1_1pointer__iterator.html#aa9a00e07b6385c6afe7cd242bfc93f4a',1,'utils::pointer_iterator::pointer_iterator(pointer ptr) noexcept'],['../classutils_1_1pointer__iterator.html#a0c200668168839fe5e07252ba7398d7c',1,'utils::pointer_iterator::pointer_iterator() noexcept'],['../classutils_1_1pointer__iterator.html',1,'utils::pointer_iterator&lt; T &gt;']]],
-  ['poison_4',['poison',['../allocators_2common_8hpp.html#aa45660a424e4ff9b8ce5ad08532436e4',1,'common.hpp']]],
-  ['post_5fdecrement_5',['post_decrement',['../structutils_1_1fix__op__functors.html#a7aa1a32ae8c4d80e65ea2d13c7367978',1,'utils::fix_op_functors::post_decrement()'],['../structutils_1_1post__decrement.html',1,'utils::post_decrement&lt; T &gt;']]],
-  ['post_5fdecrement_3c_3e_6',['post_decrement&lt;&gt;',['../structutils_1_1post__decrement_3_4.html',1,'utils']]],
-  ['post_5fincrement_7',['post_increment',['../structutils_1_1fix__op__functors.html#a037e077bda56de55e5a699e4b822da4e',1,'utils::fix_op_functors::post_increment()'],['../structutils_1_1post__increment.html',1,'utils::post_increment&lt; T &gt;']]],
-  ['post_5fincrement_3c_3e_8',['post_increment&lt;&gt;',['../structutils_1_1post__increment_3_4.html',1,'utils']]],
-  ['pow_9',['pow',['../namespaceutils.html#a4515012627113facd242ccb5f3d59374',1,'utils']]],
-  ['pre_5fdecrement_10',['pre_decrement',['../structutils_1_1fix__op__functors.html#a8fb3c170524ef6da2f56de975295ac56',1,'utils::fix_op_functors::pre_decrement()'],['../structutils_1_1pre__decrement.html',1,'utils::pre_decrement&lt; T &gt;']]],
-  ['pre_5fdecrement_3c_20void_20_3e_11',['pre_decrement&lt; void &gt;',['../structutils_1_1pre__decrement_3_01void_01_4.html',1,'utils']]],
-  ['pre_5fincrement_12',['pre_increment',['../structutils_1_1fix__op__functors.html#a7417e7a4ba7547bb81656a214ced194c',1,'utils::fix_op_functors::pre_increment()'],['../structutils_1_1pre__increment.html',1,'utils::pre_increment&lt; T &gt;']]],
-  ['pre_5fincrement_3c_20void_20_3e_13',['pre_increment&lt; void &gt;',['../structutils_1_1pre__increment_3_01void_01_4.html',1,'utils']]],
-  ['promote_14',['promote',['../structutils_1_1promote.html',1,'utils']]],
-  ['promote_3c_20void_20_3e_15',['promote&lt; void &gt;',['../structutils_1_1promote_3_01void_01_4.html',1,'utils']]]
+  ['ranges_2ehpp_0',['ranges.hpp',['../ranges_8hpp.html',1,'']]],
+  ['reference_1',['reference',['../classutils_1_1pointer__iterator.html#a2e89ed88cc00093992f602a5af9dd5d9',1,'utils::pointer_iterator']]],
+  ['resourceallocator_2emd_2',['ResourceAllocator.md',['../ResourceAllocator_8md.html',1,'']]],
+  ['result_3',['result',['../structutils_1_1binary__op__traits_1_1result.html',1,'utils::binary_op_traits&lt; ResultTrait, ConstraintTrait &gt;::result&lt; Self, Other &gt;'],['../structutils_1_1unary__op__traits_1_1result.html',1,'utils::unary_op_traits&lt; ResultTrait &gt;::result&lt; Self &gt;']]],
+  ['result_5fof_4',['result_of',['../structutils_1_1result__of.html',1,'utils']]],
+  ['result_5fof_3c_20r_28args_2e_2e_2e_29_3e_5',['result_of&lt; R(Args...)&gt;',['../structutils_1_1result__of_3_01R_07Args_8_8_8_08_4.html',1,'utils']]],
+  ['result_5fof_5ft_6',['result_of_t',['../namespaceutils.html#aec2f7d8a4a6a70e231ae13dd1a18606a',1,'utils']]]
 ];

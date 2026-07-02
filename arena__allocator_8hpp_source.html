@@ -27,7 +27,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">cpp_utils
    </div>
-   <div id="projectbrief">An std-like header-only utility library for modern C++</div>
+   <div id="projectbrief">A header-only utility library written in modern C++ (C++23 or above).</div>
   </td>
  </tr>
  </tbody>
@@ -126,18 +126,18 @@ $(document).ready(function(){initNavTree('arena__allocator_8hpp_source.html','')
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span>, <span class="keywordtype">bool</span>&gt;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keyword">friend</span> <span class="keyword">class </span>arena_allocator;</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        arena_allocator(void_pointer <a class="code hl_variable" href="stack__allocator_8cpp.html#a156eb536d1933730c8d9aa522f53e437">buf</a>, size_type space) {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="keywordflow">if</span> (!std::align(<span class="keyword">alignof</span>(control_type), <span class="keyword">sizeof</span>(control_type), <a class="code hl_variable" href="stack__allocator_8cpp.html#a156eb536d1933730c8d9aa522f53e437">buf</a>, space)) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        arena_allocator(void_pointer buf, size_type space) {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="keywordflow">if</span> (!std::align(<span class="keyword">alignof</span>(control_type), <span class="keyword">sizeof</span>(control_type), buf, space)) {</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                <span class="keywordflow">throw</span> std::bad_alloc();</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            }</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            control_ = <span class="keyword">new</span>(<a class="code hl_variable" href="stack__allocator_8cpp.html#a156eb536d1933730c8d9aa522f53e437">buf</a>)</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                control_type(<span class="keyword">static_cast&lt;</span>std::byte*<span class="keyword">&gt;</span>(<a class="code hl_variable" href="stack__allocator_8cpp.html#a156eb536d1933730c8d9aa522f53e437">buf</a>) + <span class="keyword">sizeof</span>(control_type), <span class="keyword">static_cast&lt;</span>std::byte*<span class="keyword">&gt;</span>(<a class="code hl_variable" href="stack__allocator_8cpp.html#a156eb536d1933730c8d9aa522f53e437">buf</a>) + space);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            control_ = <span class="keyword">new</span>(buf)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                control_type(<span class="keyword">static_cast&lt;</span>std::byte*<span class="keyword">&gt;</span>(buf) + <span class="keyword">sizeof</span>(control_type), <span class="keyword">static_cast&lt;</span>std::byte*<span class="keyword">&gt;</span>(buf) + space);</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        }</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        arena_allocator(std::pmr::memory_resource&amp; mr, size_type space) {</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="keywordflow">if</span> (space &lt; <span class="keyword">sizeof</span>(control_type)) <span class="keywordflow">throw</span> std::bad_alloc();</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <span class="keyword">const</span> void_pointer <a class="code hl_variable" href="stack__allocator_8cpp.html#a156eb536d1933730c8d9aa522f53e437">buf</a> = mr.allocate(space, <span class="keyword">alignof</span>(control_type));</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            control_ = <span class="keyword">new</span>(<a class="code hl_variable" href="stack__allocator_8cpp.html#a156eb536d1933730c8d9aa522f53e437">buf</a>)</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                control_type(<span class="keyword">static_cast&lt;</span>std::byte*<span class="keyword">&gt;</span>(<a class="code hl_variable" href="stack__allocator_8cpp.html#a156eb536d1933730c8d9aa522f53e437">buf</a>) + <span class="keyword">sizeof</span>(control_type), <span class="keyword">static_cast&lt;</span>std::byte*<span class="keyword">&gt;</span>(<a class="code hl_variable" href="stack__allocator_8cpp.html#a156eb536d1933730c8d9aa522f53e437">buf</a>) + space);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <span class="keyword">const</span> void_pointer buf = mr.allocate(space, <span class="keyword">alignof</span>(control_type));</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            control_ = <span class="keyword">new</span>(buf)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                control_type(<span class="keyword">static_cast&lt;</span>std::byte*<span class="keyword">&gt;</span>(buf) + <span class="keyword">sizeof</span>(control_type), <span class="keyword">static_cast&lt;</span>std::byte*<span class="keyword">&gt;</span>(buf) + space);</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        }</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> U, <span class="keywordtype">bool</span> S&gt;</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keyword">explicit</span>(S != Sync) arena_allocator(<span class="keyword">const</span> arena_allocator&lt;U, S&gt;&amp; other) noexcept : control_(other.control_) {}</div>
@@ -145,33 +145,32 @@ $(document).ready(function(){initNavTree('arena__allocator_8hpp_source.html','')
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordtype">void</span> release(std::pmr::memory_resource&amp; mr, size_type space) <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            mr.deallocate(control_, space, <span class="keyword">alignof</span>(control_type));</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        }</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        pointer allocate(size_type n, std::align_val_t alignment = std::align_val_t(<span class="keyword">alignof</span>(T)))<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            <span class="keyword">const</span> size_type bytes = <span class="keyword">sizeof</span>(T) * n;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            void_pointer aligned;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            void_pointer data = Sync</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                ? std::atomic_ref(control_-&gt;data).load(std::memory_order::relaxed)</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                : control_-&gt;data;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                aligned = align(<span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(alignment), bytes, data, control_-&gt;end);</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                <span class="keywordflow">if</span> (!aligned) <span class="keywordflow">throw</span> std::bad_alloc();</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (Sync) {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                    <span class="keywordflow">if</span> (std::atomic_ref(control_-&gt;data).compare_exchange_weak(</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                        data, aligned + bytes, std::memory_order::relaxed)) <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                    control_-&gt;data = aligned + bytes;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                }</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            }</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <span class="keywordflow">return</span> std::start_lifetime_as_array&lt;T&gt;(aligned, n);</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        }</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> deallocate(pointer, size_type, std::align_val_t = std::align_val_t(<span class="keyword">alignof</span>(T))) <span class="keyword">noexcept</span> {}</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    };</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>}</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        pointer allocate(size_type n, std::align_val_t alignment = std::align_val_t(<span class="keyword">alignof</span>(T)))<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="keyword">const</span> size_type bytes = <span class="keyword">sizeof</span>(T) * n;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            void_pointer aligned;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            void_pointer data = Sync</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                ? std::atomic_ref(control_-&gt;data).load(std::memory_order::relaxed)</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                : control_-&gt;data;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                aligned = align(<span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(alignment), bytes, data, control_-&gt;end);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                <span class="keywordflow">if</span> (!aligned) <span class="keywordflow">throw</span> std::bad_alloc();</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (Sync) {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                    <span class="keywordflow">if</span> (std::atomic_ref(control_-&gt;data).compare_exchange_weak(</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                        data, aligned + bytes, std::memory_order::relaxed)) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                    control_-&gt;data = aligned + bytes;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            <span class="keywordflow">return</span> std::start_lifetime_as_array&lt;T&gt;(aligned, n);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> deallocate(pointer, size_type, std::align_val_t = std::align_val_t(<span class="keyword">alignof</span>(T))) <span class="keyword">noexcept</span> {}</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    };</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>}</div>
 <div class="ttc" id="aallocator__base_8hpp_html"><div class="ttname"><a href="allocator__base_8hpp.html">allocator_base.hpp</a></div></div>
 <div class="ttc" id="aatomic_8hpp_html"><div class="ttname"><a href="atomic_8hpp.html">atomic.hpp</a></div></div>
 <div class="ttc" id="aatomic_8hpp_html_a906f5f112892dd56d532e9be72443840"><div class="ttname"><a href="atomic_8hpp.html#a906f5f112892dd56d532e9be72443840">UTILS_ATOMIC_ALIGN</a></div><div class="ttdeci">#define UTILS_ATOMIC_ALIGN(T)</div><div class="ttdef"><b>Definition:</b> <a href="atomic_8hpp_source.html#l00005">atomic.hpp:5</a></div></div>
 <div class="ttc" id="amemory_8hpp_html"><div class="ttname"><a href="memory_8hpp.html">memory.hpp</a></div></div>
-<div class="ttc" id="astack__allocator_8cpp_html_a156eb536d1933730c8d9aa522f53e437"><div class="ttname"><a href="stack__allocator_8cpp.html#a156eb536d1933730c8d9aa522f53e437">buf</a></div><div class="ttdeci">std::byte buf[sizeof(detail::stack_allocator_control) *4+32]</div><div class="ttdef"><b>Definition:</b> <a href="stack__allocator_8cpp_source.html#l00010">stack_allocator.cpp:10</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

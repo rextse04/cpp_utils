@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['is_5fnot_5fsettable_5fv_0',['is_not_settable_v',['../dynamic_8cpp.html#a30599e8888b40d03c7d64cb23ffb5dd8',1,'dynamic.cpp']]],
-  ['is_5fsettable_5fv_1',['is_settable_v',['../dynamic_8cpp.html#a62d327c26862c17c7b9893965a282f36',1,'dynamic.cpp']]],
-  ['is_5fsquare_2',['is_square',['../structrectangular.html#ab2157ddd5cc206d82bc4ce8244885f65',1,'rectangular']]],
-  ['is_5fvariadic_3',['is_variadic',['../structutils_1_1with.html#ab98f662c0666d9b8a1a47ef88c0a3a96',1,'utils::with']]]
+  ['logical_5fand_0',['logical_and',['../structutils_1_1logical__op__functors.html#ac3f868c65d3df2568d839f06389d5b68',1,'utils::logical_op_functors']]],
+  ['logical_5fnot_1',['logical_not',['../structutils_1_1logical__op__functors.html#a3a7bdb91ca5241021d5e2741b03ee22c',1,'utils::logical_op_functors']]],
+  ['logical_5for_2',['logical_or',['../structutils_1_1logical__op__functors.html#a6ac32e82a7722948d235f3521d565485',1,'utils::logical_op_functors']]]
 ];

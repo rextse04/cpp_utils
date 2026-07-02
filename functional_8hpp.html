@@ -27,7 +27,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">cpp_utils
    </div>
-   <div id="projectbrief">An std-like header-only utility library for modern C++</div>
+   <div id="projectbrief">A header-only utility library written in modern C++ (C++23 or above).</div>
   </td>
  </tr>
  </tbody>
@@ -120,20 +120,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="functional_8hpp__dep__incl.png" border="0" usemap="#afunctional_8hppdep" alt=""/></div>
 <map name="afunctional_8hppdep" id="afunctional_8hppdep">
-<area shape="rect" title=" " alt="" coords="311,5,413,32"/>
-<area shape="rect" href="segment__tree_8hpp.html" title=" " alt="" coords="137,80,273,121"/>
-<area shape="rect" href="dynamic_8hpp.html" title=" " alt="" coords="247,259,341,285"/>
-<area shape="rect" href="operators_8hpp.html" title=" " alt="" coords="356,87,456,114"/>
-<area shape="rect" href="functional_8cpp.html" title=" " alt="" coords="480,87,615,114"/>
-<area shape="rect" href="segment__tree_8cpp.html" title=" " alt="" coords="111,169,280,211"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="5,333,191,360"/>
-<area shape="rect" href="dynamic_8cpp.html" title=" " alt="" coords="215,333,341,360"/>
-<area shape="rect" href="integer_8hpp.html" title=" " alt="" coords="389,177,474,203"/>
-<area shape="rect" href="concurrency_8hpp.html" title=" " alt="" coords="373,259,489,285"/>
-<area shape="rect" href="static__string_8hpp.html" title=" " alt="" coords="514,259,631,285"/>
-<area shape="rect" href="integer_8cpp.html" title=" " alt="" coords="655,259,773,285"/>
-<area shape="rect" href="concurrency_8cpp.html" title=" " alt="" coords="366,333,515,360"/>
-<area shape="rect" href="static__string_8cpp.html" title=" " alt="" coords="540,333,691,360"/>
+<area shape="rect" title=" " alt="" coords="127,5,230,32"/>
+<area shape="rect" href="segment__tree_8hpp.html" title=" " alt="" coords="5,80,141,121"/>
+<area shape="rect" href="dynamic_8hpp.html" title=" " alt="" coords="111,244,206,271"/>
+<area shape="rect" href="operators_8hpp.html" title=" " alt="" coords="227,87,327,114"/>
+<area shape="rect" href="integer_8hpp.html" title=" " alt="" coords="240,169,325,196"/>
+<area shape="rect" href="concurrency_8hpp.html" title=" " alt="" coords="230,244,346,271"/>
+<area shape="rect" href="static__string_8hpp.html" title=" " alt="" coords="371,244,488,271"/>
 </map>
 </div>
 </div>
@@ -238,11 +231,11 @@ Typedefs</h2></td></tr>
 <tr class="memitem:aa2a651da2caee87aff06087795119502"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aa2a651da2caee87aff06087795119502"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aa2a651da2caee87aff06087795119502">utils::lambda_decay_t</a> = lambda_decay&lt; T &gt;::type</td></tr>
 <tr class="separator:aa2a651da2caee87aff06087795119502"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec2f7d8a4a6a70e231ae13dd1a18606a"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="structF.html">F</a> &gt; </td></tr>
-<tr class="memitem:aec2f7d8a4a6a70e231ae13dd1a18606a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aec2f7d8a4a6a70e231ae13dd1a18606a">utils::result_of_t</a> = result_of&lt; <a class="el" href="structF.html">F</a> &gt;::type</td></tr>
+<tr class="memitem:aec2f7d8a4a6a70e231ae13dd1a18606a"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:aec2f7d8a4a6a70e231ae13dd1a18606a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aec2f7d8a4a6a70e231ae13dd1a18606a">utils::result_of_t</a> = result_of&lt; F &gt;::type</td></tr>
 <tr class="separator:aec2f7d8a4a6a70e231ae13dd1a18606a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4674b772ff1c668b49f1867630f3d54"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="structF.html">F</a> &gt; </td></tr>
-<tr class="memitem:ac4674b772ff1c668b49f1867630f3d54"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#ac4674b772ff1c668b49f1867630f3d54">utils::arguments_of_t</a> = arguments_of&lt; <a class="el" href="structF.html">F</a> &gt;::type</td></tr>
+<tr class="memitem:ac4674b772ff1c668b49f1867630f3d54"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:ac4674b772ff1c668b49f1867630f3d54"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#ac4674b772ff1c668b49f1867630f3d54">utils::arguments_of_t</a> = arguments_of&lt; F &gt;::type</td></tr>
 <tr class="separator:ac4674b772ff1c668b49f1867630f3d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdc92300a8a41d794e21ecfade137492"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#acdc92300a8a41d794e21ecfade137492">utils::variadic_arity</a> = arity&lt; static_cast&lt; std::size_t &gt;(-1)&gt;</td></tr>
 <tr class="separator:acdc92300a8a41d794e21ecfade137492"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -255,14 +248,14 @@ Functions</h2></td></tr>
 <tr class="memitem:aeae858e40387fdfac0f8629db4991dbb"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aeae858e40387fdfac0f8629db4991dbb"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aeae858e40387fdfac0f8629db4991dbb">utils::bind</a> (T &amp;&amp;) -&gt; bind&lt; T &amp;&amp; &gt;</td></tr>
 <tr class="separator:aeae858e40387fdfac0f8629db4991dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75ce48a3fb2e45c2eb6917e6d32ceb84"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="structF.html">F</a> , typename... Gs&gt; </td></tr>
-<tr class="memitem:a75ce48a3fb2e45c2eb6917e6d32ceb84"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a75ce48a3fb2e45c2eb6917e6d32ceb84">utils::composite</a> (<a class="el" href="structF.html">F</a> &amp;&amp;f, Gs &amp;&amp;... gs)</td></tr>
+<tr class="memitem:a75ce48a3fb2e45c2eb6917e6d32ceb84"><td class="memTemplParams" colspan="2">template&lt;typename F , typename... Gs&gt; </td></tr>
+<tr class="memitem:a75ce48a3fb2e45c2eb6917e6d32ceb84"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a75ce48a3fb2e45c2eb6917e6d32ceb84">utils::composite</a> (F &amp;&amp;f, Gs &amp;&amp;... gs)</td></tr>
 <tr class="separator:a75ce48a3fb2e45c2eb6917e6d32ceb84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a5a720537626a2d6e7ae840a1212a67f2"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="structF.html">F</a> &gt; </td></tr>
-<tr class="memitem:a5a720537626a2d6e7ae840a1212a67f2"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a5a720537626a2d6e7ae840a1212a67f2">utils::arity_of_v</a> = arity_of&lt;<a class="el" href="structF.html">F</a>&gt;::value</td></tr>
+<tr class="memitem:a5a720537626a2d6e7ae840a1212a67f2"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:a5a720537626a2d6e7ae840a1212a67f2"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a5a720537626a2d6e7ae840a1212a67f2">utils::arity_of_v</a> = arity_of&lt;F&gt;::value</td></tr>
 <tr class="separator:a5a720537626a2d6e7ae840a1212a67f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>

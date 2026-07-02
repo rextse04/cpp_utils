@@ -1,13 +1,5 @@
 var annotated_dup =
 [
-    [ "MyLibrary", "namespaceMyLibrary.html", [
-      [ "Example", "classMyLibrary_1_1Example.html", "classMyLibrary_1_1Example" ],
-      [ "SecondExample", "classMyLibrary_1_1SecondExample.html", null ],
-      [ "SubclassExample", "classMyLibrary_1_1SubclassExample.html", "classMyLibrary_1_1SubclassExample" ]
-    ] ],
-    [ "random", "namespacerandom.html", [
-      [ "test", "structrandom_1_1test.html", "structrandom_1_1test" ]
-    ] ],
     [ "utils", "namespaceutils.html", [
       [ "arguments_of", "structutils_1_1arguments__of.html", null ],
       [ "arguments_of< R(Args...)>", "structutils_1_1arguments__of_3_01R_07Args_8_8_8_08_4.html", "structutils_1_1arguments__of_3_01R_07Args_8_8_8_08_4" ],
@@ -85,13 +77,5 @@ var annotated_dup =
       [ "unary_op_traits", "structutils_1_1unary__op__traits.html", "structutils_1_1unary__op__traits" ],
       [ "visitor", "classutils_1_1visitor.html", "classutils_1_1visitor" ],
       [ "with", "structutils_1_1with.html", "structutils_1_1with" ]
-    ] ],
-    [ "circle", "structcircle.html", "structcircle" ],
-    [ "dotted_square", "structdotted__square.html", "structdotted__square" ],
-    [ "F", "structF.html", null ],
-    [ "rectangle", "structrectangle.html", "structrectangle" ],
-    [ "rectangular", "structrectangular.html", "structrectangular" ],
-    [ "shape", "structshape.html", "structshape" ],
-    [ "square", "structsquare.html", "structsquare" ],
-    [ "test", "structtest.html", "structtest" ]
+    ] ]
 ];

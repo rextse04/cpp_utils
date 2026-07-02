@@ -27,7 +27,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">cpp_utils
    </div>
-   <div id="projectbrief">An std-like header-only utility library for modern C++</div>
+   <div id="projectbrief">A header-only utility library written in modern C++ (C++23 or above).</div>
   </td>
  </tr>
  </tbody>
@@ -94,38 +94,29 @@ $(document).ready(function(){initNavTree('structutils_1_1with.html',''); initRes
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="functional_8hpp_source.html">functional.hpp</a>&gt;</code></p>
-<div class="dynheader">
-Collaboration diagram for utils::with&lt; F, Arity, Owning &gt;:</div>
-<div class="dyncontent">
-<div class="center"><img src="structutils_1_1with__coll__graph.png" border="0" usemap="#autils_1_1with_3_01F_00_01Arity_00_01Owning_01_4_coll__map" alt="Collaboration graph"/></div>
-<map name="autils_1_1with_3_01F_00_01Arity_00_01Owning_01_4_coll__map" id="autils_1_1with_3_01F_00_01Arity_00_01Owning_01_4_coll__map">
-<area shape="rect" title=" " alt="" coords="5,95,137,136"/>
-<area shape="rect" href="structF.html" title=" " alt="" coords="37,5,106,32"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a6e8cd2421fb4c8e92e7c8f9a706b197d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1with.html#a6e8cd2421fb4c8e92e7c8f9a706b197d">tag</a> = with_tag</td></tr>
 <tr class="separator:a6e8cd2421fb4c8e92e7c8f9a706b197d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f17c5a37bc24efac7d827255b449668"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1with.html#a3f17c5a37bc24efac7d827255b449668">type</a> = <a class="el" href="structF.html">F</a></td></tr>
+<tr class="memitem:a3f17c5a37bc24efac7d827255b449668"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1with.html#a3f17c5a37bc24efac7d827255b449668">type</a> = F</td></tr>
 <tr class="separator:a3f17c5a37bc24efac7d827255b449668"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7bf42d208e5f8e3909f69e0e152cf817"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1with.html#a7bf42d208e5f8e3909f69e0e152cf817">with</a> (<a class="el" href="structF.html">F</a> <a class="el" href="structutils_1_1with.html#a2aa4545d2660c2b1395f4776c21ed2df">func</a>) noexcept</td></tr>
+<tr class="memitem:a7bf42d208e5f8e3909f69e0e152cf817"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1with.html#a7bf42d208e5f8e3909f69e0e152cf817">with</a> (F <a class="el" href="structutils_1_1with.html#a2aa4545d2660c2b1395f4776c21ed2df">func</a>) noexcept</td></tr>
 <tr class="separator:a7bf42d208e5f8e3909f69e0e152cf817"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9073329b3290a5c94e3520f9db4b2cff"><td class="memTemplParams" colspan="2">template&lt;typename G &gt; <br />
 requires (Owning)</td></tr>
 <tr class="memitem:a9073329b3290a5c94e3520f9db4b2cff"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structutils_1_1with.html#a9073329b3290a5c94e3520f9db4b2cff">with</a> (G &amp;&amp;<a class="el" href="structutils_1_1with.html#a2aa4545d2660c2b1395f4776c21ed2df">func</a>)</td></tr>
 <tr class="separator:a9073329b3290a5c94e3520f9db4b2cff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c0bc757fc628b8fbabcf33bc5a15425"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1with.html#a3c0bc757fc628b8fbabcf33bc5a15425">with</a> (<a class="el" href="structutils_1_1arity.html">utils::arity</a>&lt; Arity &gt;, <a class="el" href="structF.html">F</a> <a class="el" href="structutils_1_1with.html#a2aa4545d2660c2b1395f4776c21ed2df">func</a>) noexcept</td></tr>
+<tr class="memitem:a3c0bc757fc628b8fbabcf33bc5a15425"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1with.html#a3c0bc757fc628b8fbabcf33bc5a15425">with</a> (<a class="el" href="structutils_1_1arity.html">utils::arity</a>&lt; Arity &gt;, F <a class="el" href="structutils_1_1with.html#a2aa4545d2660c2b1395f4776c21ed2df">func</a>) noexcept</td></tr>
 <tr class="separator:a3c0bc757fc628b8fbabcf33bc5a15425"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c23fbf5807b7286e27d4c3fb3095357"><td class="memTemplParams" colspan="2">template&lt;typename G &gt; <br />
 requires (Owning)</td></tr>
 <tr class="memitem:a2c23fbf5807b7286e27d4c3fb3095357"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structutils_1_1with.html#a2c23fbf5807b7286e27d4c3fb3095357">with</a> (<a class="el" href="structutils_1_1arity.html">utils::arity</a>&lt; Arity &gt;, <a class="el" href="structutils_1_1owning.html">owning</a>, G &amp;&amp;<a class="el" href="structutils_1_1with.html#a2aa4545d2660c2b1395f4776c21ed2df">func</a>)</td></tr>
 <tr class="separator:a2c23fbf5807b7286e27d4c3fb3095357"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7176aa858c7aad377a11d6db3e75cd04"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structutils_1_1with.html">with</a>&lt; std::remove_cvref_t&lt; <a class="el" href="structF.html">F</a> &gt;, Arity, true &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1with.html#a7176aa858c7aad377a11d6db3e75cd04">to_owning</a> () const</td></tr>
+<tr class="memitem:a7176aa858c7aad377a11d6db3e75cd04"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structutils_1_1with.html">with</a>&lt; std::remove_cvref_t&lt; F &gt;, Arity, true &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1with.html#a7176aa858c7aad377a11d6db3e75cd04">to_owning</a> () const</td></tr>
 <tr class="separator:a7176aa858c7aad377a11d6db3e75cd04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0db9b1bc954776700c5bd56de35d3ac"><td class="memTemplParams" colspan="2">template&lt;std::size_t Begin = 0&gt; </td></tr>
 <tr class="memitem:ae0db9b1bc954776700c5bd56de35d3ac"><td class="memTemplItemLeft" align="right" valign="top">constexpr decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structutils_1_1with.html#ae0db9b1bc954776700c5bd56de35d3ac">operator()</a> (meta::tuple_like auto &amp;&amp;args) const</td></tr>
@@ -133,7 +124,7 @@ requires (Owning)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a2aa4545d2660c2b1395f4776c21ed2df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structF.html">F</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1with.html#a2aa4545d2660c2b1395f4776c21ed2df">func</a></td></tr>
+<tr class="memitem:a2aa4545d2660c2b1395f4776c21ed2df"><td class="memItemLeft" align="right" valign="top">F&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1with.html#a2aa4545d2660c2b1395f4776c21ed2df">func</a></td></tr>
 <tr class="separator:a2aa4545d2660c2b1395f4776c21ed2df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
@@ -144,7 +135,7 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:ab98f662c0666d9b8a1a47ef88c0a3a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename <a class="el" href="structF.html">F</a>, std::size_t Arity, bool Owning = false&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename F, std::size_t Arity, bool Owning = false&gt;<br />
 struct utils::with&lt; F, Arity, Owning &gt;</div>
 <p class="definition">Definition at line <a class="el" href="functional_8hpp_source.html#l00264">264</a> of file <a class="el" href="functional_8hpp_source.html">functional.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
@@ -154,10 +145,10 @@ struct utils::with&lt; F, Arity, Owning &gt;</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="structF.html">F</a> , std::size_t Arity, bool Owning = false&gt; </div>
+template&lt;typename F , std::size_t Arity, bool Owning = false&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; <a class="el" href="structF.html">F</a>, Arity, Owning &gt;::<a class="el" href="structutils_1_1with.html#a6e8cd2421fb4c8e92e7c8f9a706b197d">tag</a> =  with_tag</td>
+          <td class="memname">using <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; F, Arity, Owning &gt;::<a class="el" href="structutils_1_1with.html#a6e8cd2421fb4c8e92e7c8f9a706b197d">tag</a> =  with_tag</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -172,10 +163,10 @@ template&lt;typename <a class="el" href="structF.html">F</a> , std::size_t Arity
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="structF.html">F</a> , std::size_t Arity, bool Owning = false&gt; </div>
+template&lt;typename F , std::size_t Arity, bool Owning = false&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; <a class="el" href="structF.html">F</a>, Arity, Owning &gt;::<a class="el" href="structutils_1_1with.html#a3f17c5a37bc24efac7d827255b449668">type</a> =  <a class="el" href="structF.html">F</a></td>
+          <td class="memname">using <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; F, Arity, Owning &gt;::<a class="el" href="structutils_1_1with.html#a3f17c5a37bc24efac7d827255b449668">type</a> =  F</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -191,15 +182,15 @@ template&lt;typename <a class="el" href="structF.html">F</a> , std::size_t Arity
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="structF.html">F</a> , std::size_t Arity, bool Owning = false&gt; </div>
+template&lt;typename F , std::size_t Arity, bool Owning = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; <a class="el" href="structF.html">F</a>, Arity, Owning &gt;::<a class="el" href="structutils_1_1with.html">with</a> </td>
+          <td class="memname">constexpr <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; F, Arity, Owning &gt;::<a class="el" href="structutils_1_1with.html">with</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structF.html">F</a>&#160;</td>
+          <td class="paramtype">F&#160;</td>
           <td class="paramname"><em>func</em></td><td>)</td>
           <td></td>
         </tr>
@@ -221,7 +212,7 @@ template&lt;typename <a class="el" href="structF.html">F</a> , std::size_t Arity
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="structF.html">F</a> , std::size_t Arity, bool Owning = false&gt; </div>
+template&lt;typename F , std::size_t Arity, bool Owning = false&gt; </div>
 <div class="memtemplate">
 template&lt;typename G &gt; <br />
 requires (Owning)</div>
@@ -230,7 +221,7 @@ requires (Owning)</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; <a class="el" href="structF.html">F</a>, Arity, Owning &gt;::<a class="el" href="structutils_1_1with.html">with</a> </td>
+          <td class="memname">constexpr <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; F, Arity, Owning &gt;::<a class="el" href="structutils_1_1with.html">with</a> </td>
           <td>(</td>
           <td class="paramtype">G &amp;&amp;&#160;</td>
           <td class="paramname"><em>func</em></td><td>)</td>
@@ -254,13 +245,13 @@ requires (Owning)</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="structF.html">F</a> , std::size_t Arity, bool Owning = false&gt; </div>
+template&lt;typename F , std::size_t Arity, bool Owning = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; <a class="el" href="structF.html">F</a>, Arity, Owning &gt;::<a class="el" href="structutils_1_1with.html">with</a> </td>
+          <td class="memname">constexpr <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; F, Arity, Owning &gt;::<a class="el" href="structutils_1_1with.html">with</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structutils_1_1arity.html">utils::arity</a>&lt; Arity &gt;&#160;</td>
           <td class="paramname">, </td>
@@ -268,7 +259,7 @@ template&lt;typename <a class="el" href="structF.html">F</a> , std::size_t Arity
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structF.html">F</a>&#160;</td>
+          <td class="paramtype">F&#160;</td>
           <td class="paramname"><em>func</em>&#160;</td>
         </tr>
         <tr>
@@ -294,7 +285,7 @@ template&lt;typename <a class="el" href="structF.html">F</a> , std::size_t Arity
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="structF.html">F</a> , std::size_t Arity, bool Owning = false&gt; </div>
+template&lt;typename F , std::size_t Arity, bool Owning = false&gt; </div>
 <div class="memtemplate">
 template&lt;typename G &gt; <br />
 requires (Owning)</div>
@@ -303,7 +294,7 @@ requires (Owning)</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; <a class="el" href="structF.html">F</a>, Arity, Owning &gt;::<a class="el" href="structutils_1_1with.html">with</a> </td>
+          <td class="memname">constexpr <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; F, Arity, Owning &gt;::<a class="el" href="structutils_1_1with.html">with</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structutils_1_1arity.html">utils::arity</a>&lt; Arity &gt;&#160;</td>
           <td class="paramname">, </td>
@@ -344,7 +335,7 @@ requires (Owning)</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="structF.html">F</a> , std::size_t Arity, bool Owning = false&gt; </div>
+template&lt;typename F , std::size_t Arity, bool Owning = false&gt; </div>
 <div class="memtemplate">
 template&lt;std::size_t Begin = 0&gt; </div>
 <table class="mlabels">
@@ -352,7 +343,7 @@ template&lt;std::size_t Begin = 0&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr decltype(auto) <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; <a class="el" href="structF.html">F</a>, Arity, Owning &gt;::operator() </td>
+          <td class="memname">constexpr decltype(auto) <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; F, Arity, Owning &gt;::operator() </td>
           <td>(</td>
           <td class="paramtype">meta::tuple_like auto &amp;&amp;&#160;</td>
           <td class="paramname"><em>args</em></td><td>)</td>
@@ -376,13 +367,13 @@ template&lt;std::size_t Begin = 0&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="structF.html">F</a> , std::size_t Arity, bool Owning = false&gt; </div>
+template&lt;typename F , std::size_t Arity, bool Owning = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="structutils_1_1with.html">with</a>&lt; std::remove_cvref_t&lt; <a class="el" href="structF.html">F</a> &gt;, Arity, true &gt; <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; <a class="el" href="structF.html">F</a>, Arity, Owning &gt;::to_owning </td>
+          <td class="memname">constexpr <a class="el" href="structutils_1_1with.html">with</a>&lt; std::remove_cvref_t&lt; F &gt;, Arity, true &gt; <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; F, Arity, Owning &gt;::to_owning </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -406,13 +397,13 @@ template&lt;typename <a class="el" href="structF.html">F</a> , std::size_t Arity
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="structF.html">F</a> , std::size_t Arity, bool Owning = false&gt; </div>
+template&lt;typename F , std::size_t Arity, bool Owning = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::size_t <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; <a class="el" href="structF.html">F</a>, Arity, Owning &gt;::<a class="el" href="structutils_1_1arity.html">arity</a> = Arity</td>
+          <td class="memname">constexpr std::size_t <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; F, Arity, Owning &gt;::<a class="el" href="structutils_1_1arity.html">arity</a> = Arity</td>
         </tr>
       </table>
   </td>
@@ -432,10 +423,10 @@ template&lt;typename <a class="el" href="structF.html">F</a> , std::size_t Arity
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="structF.html">F</a> , std::size_t Arity, bool Owning = false&gt; </div>
+template&lt;typename F , std::size_t Arity, bool Owning = false&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structF.html">F</a> <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; <a class="el" href="structF.html">F</a>, Arity, Owning &gt;::func</td>
+          <td class="memname">F <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; F, Arity, Owning &gt;::func</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -450,13 +441,13 @@ template&lt;typename <a class="el" href="structF.html">F</a> , std::size_t Arity
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="structF.html">F</a> , std::size_t Arity, bool Owning = false&gt; </div>
+template&lt;typename F , std::size_t Arity, bool Owning = false&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr bool <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; <a class="el" href="structF.html">F</a>, Arity, Owning &gt;::is_variadic = <a class="el" href="structutils_1_1arity.html">arity</a> == static_cast&lt;std::size_t&gt;(-1)</td>
+          <td class="memname">constexpr bool <a class="el" href="structutils_1_1with.html">utils::with</a>&lt; F, Arity, Owning &gt;::is_variadic = <a class="el" href="structutils_1_1arity.html">arity</a> == static_cast&lt;std::size_t&gt;(-1)</td>
         </tr>
       </table>
   </td>

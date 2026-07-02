@@ -42,18 +42,18 @@
 \DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00060}00060         \textcolor{keyword}{template} <\textcolor{keyword}{typename}, \textcolor{keywordtype}{bool}>}
 \DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00061}00061         \textcolor{keyword}{friend} \textcolor{keyword}{class }arena\_allocator;}
 \DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00062}00062     \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00069}00069         arena\_allocator(void\_pointer \mbox{\hyperlink{stack__allocator_8cpp_a156eb536d1933730c8d9aa522f53e437}{buf}}, size\_type space) \{}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00070}00070             \textcolor{keywordflow}{if} (!std::align(\textcolor{keyword}{alignof}(control\_type), \textcolor{keyword}{sizeof}(control\_type), \mbox{\hyperlink{stack__allocator_8cpp_a156eb536d1933730c8d9aa522f53e437}{buf}}, space)) \{}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00069}00069         arena\_allocator(void\_pointer buf, size\_type space) \{}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00070}00070             \textcolor{keywordflow}{if} (!std::align(\textcolor{keyword}{alignof}(control\_type), \textcolor{keyword}{sizeof}(control\_type), buf, space)) \{}
 \DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00071}00071                 \textcolor{keywordflow}{throw} std::bad\_alloc();}
 \DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00072}00072             \}}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00073}00073             control\_ = \textcolor{keyword}{new}(\mbox{\hyperlink{stack__allocator_8cpp_a156eb536d1933730c8d9aa522f53e437}{buf}})}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00074}00074                 control\_type(\textcolor{keyword}{static\_cast<}std::byte*\textcolor{keyword}{>}(\mbox{\hyperlink{stack__allocator_8cpp_a156eb536d1933730c8d9aa522f53e437}{buf}}) + \textcolor{keyword}{sizeof}(control\_type), \textcolor{keyword}{static\_cast<}std::byte*\textcolor{keyword}{>}(\mbox{\hyperlink{stack__allocator_8cpp_a156eb536d1933730c8d9aa522f53e437}{buf}}) + space);}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00073}00073             control\_ = \textcolor{keyword}{new}(buf)}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00074}00074                 control\_type(\textcolor{keyword}{static\_cast<}std::byte*\textcolor{keyword}{>}(buf) + \textcolor{keyword}{sizeof}(control\_type), \textcolor{keyword}{static\_cast<}std::byte*\textcolor{keyword}{>}(buf) + space);}
 \DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00075}00075         \}}
 \DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00078}00078         arena\_allocator(std::pmr::memory\_resource\& mr, size\_type space) \{}
 \DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00079}00079             \textcolor{keywordflow}{if} (space < \textcolor{keyword}{sizeof}(control\_type)) \textcolor{keywordflow}{throw} std::bad\_alloc();}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00080}00080             \textcolor{keyword}{const} void\_pointer \mbox{\hyperlink{stack__allocator_8cpp_a156eb536d1933730c8d9aa522f53e437}{buf}} = mr.allocate(space, \textcolor{keyword}{alignof}(control\_type));}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00081}00081             control\_ = \textcolor{keyword}{new}(\mbox{\hyperlink{stack__allocator_8cpp_a156eb536d1933730c8d9aa522f53e437}{buf}})}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00082}00082                 control\_type(\textcolor{keyword}{static\_cast<}std::byte*\textcolor{keyword}{>}(\mbox{\hyperlink{stack__allocator_8cpp_a156eb536d1933730c8d9aa522f53e437}{buf}}) + \textcolor{keyword}{sizeof}(control\_type), \textcolor{keyword}{static\_cast<}std::byte*\textcolor{keyword}{>}(\mbox{\hyperlink{stack__allocator_8cpp_a156eb536d1933730c8d9aa522f53e437}{buf}}) + space);}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00080}00080             \textcolor{keyword}{const} void\_pointer buf = mr.allocate(space, \textcolor{keyword}{alignof}(control\_type));}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00081}00081             control\_ = \textcolor{keyword}{new}(buf)}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00082}00082                 control\_type(\textcolor{keyword}{static\_cast<}std::byte*\textcolor{keyword}{>}(buf) + \textcolor{keyword}{sizeof}(control\_type), \textcolor{keyword}{static\_cast<}std::byte*\textcolor{keyword}{>}(buf) + space);}
 \DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00083}00083         \}}
 \DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00090}00090         \textcolor{keyword}{template} <\textcolor{keyword}{typename} U, \textcolor{keywordtype}{bool} S>}
 \DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00091}00091         \textcolor{keyword}{explicit}(S != Sync) arena\_allocator(\textcolor{keyword}{const} arena\_allocator<U, S>\& other) noexcept : control\_(other.control\_) \{\}}
@@ -61,27 +61,27 @@
 \DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00098}00098         \textcolor{keywordtype}{void} release(std::pmr::memory\_resource\& mr, size\_type space) \textcolor{keyword}{noexcept} \{}
 \DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00099}00099             mr.deallocate(control\_, space, \textcolor{keyword}{alignof}(control\_type));}
 \DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00100}00100         \}}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00102}00102         pointer allocate(size\_type n, std::align\_val\_t alignment = std::align\_val\_t(\textcolor{keyword}{alignof}(T)))\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00103}00103             \textcolor{keyword}{const} size\_type bytes = \textcolor{keyword}{sizeof}(T) * n;}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00104}00104             void\_pointer aligned;}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00105}00105             void\_pointer data = Sync}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00106}00106                 ? std::atomic\_ref(control\_-\/>data).load(std::memory\_order::relaxed)}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00107}00107                 : control\_-\/>data;}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00108}00108             \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00109}00109                 aligned = align(\textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(alignment), bytes, data, control\_-\/>end);}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00110}00110                 \textcolor{keywordflow}{if} (!aligned) \textcolor{keywordflow}{throw} std::bad\_alloc();}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00111}00111                 \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (Sync) \{}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00112}00112                     \textcolor{keywordflow}{if} (std::atomic\_ref(control\_-\/>data).compare\_exchange\_weak(}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00113}00113                         data, aligned + bytes, std::memory\_order::relaxed)) \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00114}00114                 \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00115}00115                     control\_-\/>data = aligned + bytes;}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00116}00116                     \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00117}00117                 \}}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00118}00118             \}}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00119}00119             \textcolor{keywordflow}{return} std::start\_lifetime\_as\_array<T>(aligned, n);}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00120}00120         \}}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00122}00122         \textcolor{keyword}{static} \textcolor{keywordtype}{void} deallocate(pointer, size\_type, std::align\_val\_t = std::align\_val\_t(\textcolor{keyword}{alignof}(T))) \textcolor{keyword}{noexcept} \{\}}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00123}00123     \};}
-\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00124}00124 \}}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00104}00104         pointer allocate(size\_type n, std::align\_val\_t alignment = std::align\_val\_t(\textcolor{keyword}{alignof}(T)))\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00105}00105             \textcolor{keyword}{const} size\_type bytes = \textcolor{keyword}{sizeof}(T) * n;}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00106}00106             void\_pointer aligned;}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00107}00107             void\_pointer data = Sync}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00108}00108                 ? std::atomic\_ref(control\_-\/>data).load(std::memory\_order::relaxed)}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00109}00109                 : control\_-\/>data;}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00110}00110             \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00111}00111                 aligned = align(\textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(alignment), bytes, data, control\_-\/>end);}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00112}00112                 \textcolor{keywordflow}{if} (!aligned) \textcolor{keywordflow}{throw} std::bad\_alloc();}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00113}00113                 \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (Sync) \{}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00114}00114                     \textcolor{keywordflow}{if} (std::atomic\_ref(control\_-\/>data).compare\_exchange\_weak(}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00115}00115                         data, aligned + bytes, std::memory\_order::relaxed)) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00116}00116                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00117}00117                     control\_-\/>data = aligned + bytes;}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00118}00118                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00119}00119                 \}}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00120}00120             \}}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00121}00121             \textcolor{keywordflow}{return} std::start\_lifetime\_as\_array<T>(aligned, n);}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00122}00122         \}}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00124}00124         \textcolor{keyword}{static} \textcolor{keywordtype}{void} deallocate(pointer, size\_type, std::align\_val\_t = std::align\_val\_t(\textcolor{keyword}{alignof}(T))) \textcolor{keyword}{noexcept} \{\}}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00125}00125     \};}
+\DoxyCodeLine{\Hypertarget{arena__allocator_8hpp_source_l00126}00126 \}}
 
 \end{DoxyCode}

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['test_0',['test',['../structrandom_1_1test.html',1,'random::test'],['../structtest.html',1,'test']]],
-  ['transform_5fiterator_1',['transform_iterator',['../classutils_1_1transform__iterator.html',1,'utils']]]
+  ['unary_5fop_5ftraits_0',['unary_op_traits',['../structutils_1_1unary__op__traits.html',1,'utils']]]
 ];

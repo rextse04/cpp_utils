@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['l_0',['l',['../structsquare.html#a7fac16660c47a6934cdd8b2a56f88e55',1,'square']]],
-  ['logical_5fand_1',['logical_and',['../structutils_1_1logical__op__functors.html#ac3f868c65d3df2568d839f06389d5b68',1,'utils::logical_op_functors']]],
-  ['logical_5fnot_2',['logical_not',['../structutils_1_1logical__op__functors.html#a3a7bdb91ca5241021d5e2741b03ee22c',1,'utils::logical_op_functors']]],
-  ['logical_5for_3',['logical_or',['../structutils_1_1logical__op__functors.html#a6ac32e82a7722948d235f3521d565485',1,'utils::logical_op_functors']]]
+  ['minus_0',['minus',['../structutils_1_1integral__op__functors.html#a4da9e384f5fab9c40ea968591ea3cbd6',1,'utils::integral_op_functors']]],
+  ['minus_5fasg_1',['minus_asg',['../structutils_1_1integral__asg__op__functors.html#a8f0d68446390f36ff0706aff24e7ea2e',1,'utils::integral_asg_op_functors']]],
+  ['modulus_2',['modulus',['../structutils_1_1integral__op__functors.html#a55835d18aa697b3b61b63028391ffc36',1,'utils::integral_op_functors']]],
+  ['modulus_5fasg_3',['modulus_asg',['../structutils_1_1integral__asg__op__functors.html#a76afa9e5cca863cf9b1200ae285b869b',1,'utils::integral_asg_op_functors']]],
+  ['multiplies_4',['multiplies',['../structutils_1_1integral__op__functors.html#a2cb315e8c4359ccba7e9ec7861b47802',1,'utils::integral_op_functors']]],
+  ['multiplies_5fasg_5',['multiplies_asg',['../structutils_1_1integral__asg__op__functors.html#aa33238e6a093fb9b2cc7ae98d1ab38e5',1,'utils::integral_asg_op_functors']]]
 ];

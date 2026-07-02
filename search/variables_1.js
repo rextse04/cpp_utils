@@ -7,6 +7,5 @@ var searchData=
   ['bit_5for_4',['bit_or',['../structutils_1_1bit__op__functors.html#a7a0bc086ca2fa68809e20b7ea9cf3532',1,'utils::bit_op_functors']]],
   ['bit_5for_5fasg_5',['bit_or_asg',['../structutils_1_1bit__asg__op__functors.html#a3996d62bfc0dd3912b71d5cde8d096cb',1,'utils::bit_asg_op_functors']]],
   ['bit_5fxor_6',['bit_xor',['../structutils_1_1bit__op__functors.html#ac5399c67717aa49284327b2f04b1e47d',1,'utils::bit_op_functors']]],
-  ['bit_5fxor_5fasg_7',['bit_xor_asg',['../structutils_1_1bit__asg__op__functors.html#ae5274e6ed7e6f6ed1b0975afa07cce5d',1,'utils::bit_asg_op_functors']]],
-  ['buf_8',['buf',['../stack__allocator_8cpp.html#a156eb536d1933730c8d9aa522f53e437',1,'stack_allocator.cpp']]]
+  ['bit_5fxor_5fasg_7',['bit_xor_asg',['../structutils_1_1bit__asg__op__functors.html#ae5274e6ed7e6f6ed1b0975afa07cce5d',1,'utils::bit_asg_op_functors']]]
 ];

@@ -1,19 +1,12 @@
 <map id="bitmask.hpp" name="bitmask.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="464,5,556,32"/>
-<area shape="rect" id="node2" href="$type_8hpp.html" title="Type manipulation and qualification utilities for compile&#45;time type introspection and transformation." alt="" coords="475,80,545,107"/>
-<area shape="rect" id="node3" href="$compare_8hpp.html" title=" " alt="" coords="70,155,166,181"/>
-<area shape="rect" id="node6" href="$concurrency_8hpp.html" title=" " alt="" coords="489,408,605,435"/>
-<area shape="rect" id="node8" href="$dynamic_8hpp.html" title=" " alt="" coords="216,408,311,435"/>
-<area shape="rect" id="node11" href="$functional_8hpp.html" title=" " alt="" coords="317,155,420,181"/>
-<area shape="rect" id="node12" href="$operators_8hpp.html" title=" " alt="" coords="460,237,560,263"/>
-<area shape="rect" id="node13" href="$integer_8hpp.html" title=" " alt="" coords="486,326,571,353"/>
-<area shape="rect" id="node14" href="$static__string_8hpp.html" title=" " alt="" coords="641,408,758,435"/>
-<area shape="rect" id="node4" href="$segment__tree_8hpp.html" title=" " alt="" coords="39,229,175,271"/>
-<area shape="rect" id="node5" href="$segment__tree_8cpp.html" title=" " alt="" coords="5,319,175,360"/>
-<area shape="rect" id="node7" href="$concurrency_8cpp.html" title=" " alt="" coords="462,483,611,509"/>
-<area shape="rect" id="node9" href="$main_8cpp.html" title=" " alt="" coords="36,483,221,509"/>
-<area shape="rect" id="node10" href="$dynamic_8cpp.html" title=" " alt="" coords="245,483,372,509"/>
-<area shape="rect" id="node17" href="$functional_8cpp.html" title=" " alt="" coords="301,237,436,263"/>
-<area shape="rect" id="node16" href="$integer_8cpp.html" title=" " alt="" coords="347,408,465,435"/>
-<area shape="rect" id="node15" href="$static__string_8cpp.html" title=" " alt="" coords="636,483,787,509"/>
+<area shape="rect" id="node1" title=" " alt="" coords="267,5,359,32"/>
+<area shape="rect" id="node2" href="$type_8hpp.html" title="Type manipulation and qualification utilities for compile&#45;time type introspection and transformation." alt="" coords="278,80,349,107"/>
+<area shape="rect" id="node3" href="$compare_8hpp.html" title=" " alt="" coords="52,155,148,181"/>
+<area shape="rect" id="node5" href="$concurrency_8hpp.html" title=" " alt="" coords="283,393,399,420"/>
+<area shape="rect" id="node6" href="$dynamic_8hpp.html" title=" " alt="" coords="158,393,253,420"/>
+<area shape="rect" id="node7" href="$functional_8hpp.html" title=" " alt="" coords="173,155,275,181"/>
+<area shape="rect" id="node8" href="$operators_8hpp.html" title=" " alt="" coords="243,237,343,263"/>
+<area shape="rect" id="node9" href="$integer_8hpp.html" title=" " alt="" coords="299,319,384,345"/>
+<area shape="rect" id="node10" href="$static__string_8hpp.html" title=" " alt="" coords="424,393,541,420"/>
+<area shape="rect" id="node4" href="$segment__tree_8hpp.html" title=" " alt="" coords="32,229,168,271"/>
 </map>

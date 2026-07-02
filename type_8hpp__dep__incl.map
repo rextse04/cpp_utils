@@ -1,18 +1,11 @@
 <map id="type.hpp" name="type.hpp">
-<area shape="rect" id="node1" title="Type manipulation and qualification utilities for compile&#45;time type introspection and transformation." alt="" coords="475,5,545,32"/>
-<area shape="rect" id="node2" href="$compare_8hpp.html" title=" " alt="" coords="70,80,166,107"/>
-<area shape="rect" id="node5" href="$concurrency_8hpp.html" title=" " alt="" coords="489,333,605,360"/>
-<area shape="rect" id="node7" href="$dynamic_8hpp.html" title=" " alt="" coords="216,333,311,360"/>
-<area shape="rect" id="node10" href="$functional_8hpp.html" title=" " alt="" coords="317,80,420,107"/>
-<area shape="rect" id="node11" href="$operators_8hpp.html" title=" " alt="" coords="460,162,560,189"/>
-<area shape="rect" id="node12" href="$integer_8hpp.html" title=" " alt="" coords="486,251,571,278"/>
-<area shape="rect" id="node13" href="$static__string_8hpp.html" title=" " alt="" coords="641,333,758,360"/>
-<area shape="rect" id="node3" href="$segment__tree_8hpp.html" title=" " alt="" coords="39,155,175,196"/>
-<area shape="rect" id="node4" href="$segment__tree_8cpp.html" title=" " alt="" coords="5,244,175,285"/>
-<area shape="rect" id="node6" href="$concurrency_8cpp.html" title=" " alt="" coords="462,408,611,435"/>
-<area shape="rect" id="node8" href="$main_8cpp.html" title=" " alt="" coords="36,408,221,435"/>
-<area shape="rect" id="node9" href="$dynamic_8cpp.html" title=" " alt="" coords="245,408,372,435"/>
-<area shape="rect" id="node16" href="$functional_8cpp.html" title=" " alt="" coords="301,162,436,189"/>
-<area shape="rect" id="node15" href="$integer_8cpp.html" title=" " alt="" coords="347,333,465,360"/>
-<area shape="rect" id="node14" href="$static__string_8cpp.html" title=" " alt="" coords="636,408,787,435"/>
+<area shape="rect" id="node1" title="Type manipulation and qualification utilities for compile&#45;time type introspection and transformation." alt="" coords="278,5,349,32"/>
+<area shape="rect" id="node2" href="$compare_8hpp.html" title=" " alt="" coords="52,80,148,107"/>
+<area shape="rect" id="node4" href="$concurrency_8hpp.html" title=" " alt="" coords="283,319,399,345"/>
+<area shape="rect" id="node5" href="$dynamic_8hpp.html" title=" " alt="" coords="158,319,253,345"/>
+<area shape="rect" id="node6" href="$functional_8hpp.html" title=" " alt="" coords="173,80,275,107"/>
+<area shape="rect" id="node7" href="$operators_8hpp.html" title=" " alt="" coords="243,162,343,189"/>
+<area shape="rect" id="node8" href="$integer_8hpp.html" title=" " alt="" coords="299,244,384,271"/>
+<area shape="rect" id="node9" href="$static__string_8hpp.html" title=" " alt="" coords="424,319,541,345"/>
+<area shape="rect" id="node3" href="$segment__tree_8hpp.html" title=" " alt="" coords="32,155,168,196"/>
 </map>

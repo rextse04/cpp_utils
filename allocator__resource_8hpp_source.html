@@ -27,7 +27,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">cpp_utils
    </div>
-   <div id="projectbrief">An std-like header-only utility library for modern C++</div>
+   <div id="projectbrief">A header-only utility library written in modern C++ (C++23 or above).</div>
   </td>
  </tr>
  </tbody>
@@ -95,43 +95,43 @@ $(document).ready(function(){initNavTree('allocator__resource_8hpp_source.html',
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="memory_8hpp.html">memory.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span>utils::pmr {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">concept </span>resource_allocator = (</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        simple_allocator&lt;T&gt; &amp;&amp; std::is_same_v&lt;typename T::value_type, std::byte&gt; &amp;&amp;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keyword">requires</span> (T a, std::pmr::memory_resource&amp; mr, std::size_t space, std::size_t bytes, std::align_val_t alignment, std::byte* p) {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            { a.release(mr, space) } <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            { a.allocate(bytes, alignment) } -&gt; std::same_as&lt;std::byte*&gt;;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            { a.deallocate(p, bytes, alignment) };</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        });</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">template</span> &lt;resource_allocator Allocator&gt;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">class </span>allocator_resource : <span class="keyword">public</span> std::pmr::memory_resource, <span class="keyword">private</span> Allocator {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keyword">using</span> allocator_type = Allocator;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        memory_resource* upstream_;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        std::size_t space_;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        allocator_resource(memory_resource* upstream, std::size_t space, Args&amp;&amp;... args)</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keyword">requires</span> (std::is_constructible_v&lt;Allocator, memory_resource&amp;, std::size_t, Args&amp;&amp;...&gt;) :</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            Allocator(*upstream, space, std::forward&lt;Args&gt;(args)...), upstream_(upstream), space_(space) {}</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        allocator_resource(<span class="keyword">const</span> allocator_resource&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        allocator_resource&amp; operator=(<span class="keyword">const</span> allocator_resource&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        ~allocator_resource() noexcept<span class="keyword"> override </span>{ Allocator::release(*upstream_, space_); }</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordtype">void</span>* do_allocate(std::size_t bytes, std::size_t alignment)<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">return</span> Allocator::allocate(bytes, std::align_val_t(alignment));</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordtype">void</span> do_deallocate(<span class="keywordtype">void</span>* ptr, std::size_t bytes, std::size_t alignment)<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            Allocator::deallocate(<span class="keyword">static_cast&lt;</span>std::byte*<span class="keyword">&gt;</span>(ptr), bytes, std::align_val_t(alignment));</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordtype">bool</span> do_is_equal(<span class="keyword">const</span> memory_resource&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keyword">const</span> <span class="keyword">auto</span> other_ = <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span>Allocator*<span class="keyword">&gt;</span>(&amp;other);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">if</span> (other_ == <span class="keyword">nullptr</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keyword">const </span>Allocator&amp;<span class="keyword">&gt;</span>(*this) == *other_;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        }</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    };</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> A&gt;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">concept </span>resource_allocator = (</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        simple_allocator&lt;A&gt; &amp;&amp; std::is_same_v&lt;typename A::value_type, std::byte&gt; &amp;&amp;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">requires</span> (A a, std::pmr::memory_resource&amp; mr, std::size_t space, std::size_t bytes, std::align_val_t alignment, std::byte* p) {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            { a.release(mr, space) } <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            { a.allocate(bytes, alignment) } -&gt; std::same_as&lt;std::byte*&gt;;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            { a.deallocate(p, bytes, alignment) };</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        });</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">template</span> &lt;resource_allocator Allocator&gt;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">class </span>allocator_resource : <span class="keyword">public</span> std::pmr::memory_resource, <span class="keyword">private</span> Allocator {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">using</span> allocator_type = Allocator;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        memory_resource* upstream_;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        std::size_t space_;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        allocator_resource(memory_resource* upstream, std::size_t space, Args&amp;&amp;... args)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keyword">requires</span> (std::is_constructible_v&lt;Allocator, memory_resource&amp;, std::size_t, Args&amp;&amp;...&gt;) :</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            Allocator(*upstream, space, std::forward&lt;Args&gt;(args)...), upstream_(upstream), space_(space) {}</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        allocator_resource(<span class="keyword">const</span> allocator_resource&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        allocator_resource&amp; operator=(<span class="keyword">const</span> allocator_resource&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        ~allocator_resource() noexcept<span class="keyword"> override </span>{ Allocator::release(*upstream_, space_); }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordtype">void</span>* do_allocate(std::size_t bytes, std::size_t alignment)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">return</span> Allocator::allocate(bytes, std::align_val_t(alignment));</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordtype">void</span> do_deallocate(<span class="keywordtype">void</span>* ptr, std::size_t bytes, std::size_t alignment)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            Allocator::deallocate(<span class="keyword">static_cast&lt;</span>std::byte*<span class="keyword">&gt;</span>(ptr), bytes, std::align_val_t(alignment));</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordtype">bool</span> do_is_equal(<span class="keyword">const</span> memory_resource&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="keyword">const</span> <span class="keyword">auto</span> other_ = <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span>Allocator*<span class="keyword">&gt;</span>(&amp;other);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keywordflow">if</span> (other_ == <span class="keyword">nullptr</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keyword">const </span>Allocator&amp;<span class="keyword">&gt;</span>(*this) == *other_;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    };</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
 <div class="ttc" id="amemory_8hpp_html"><div class="ttname"><a href="memory_8hpp.html">memory.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

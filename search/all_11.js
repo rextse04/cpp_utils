@@ -1,28 +1,6 @@
 var searchData=
 [
-  ['appendable_5fcontainer_0',['appendable_container',['../conceptutils_1_1appendable__container.html',1,'utils']]],
-  ['container_5fcompatible_5fiterator_1',['container_compatible_iterator',['../conceptutils_1_1container__compatible__iterator.html',1,'utils']]],
-  ['container_5fcompatible_5frange_2',['container_compatible_range',['../conceptutils_1_1container__compatible__range.html',1,'utils']]],
-  ['reservable_5fcontainer_3',['reservable_container',['../conceptutils_1_1reservable__container.html',1,'utils']]],
-  ['unary_5fop_5ftraits_4',['unary_op_traits',['../structutils_1_1unary__op__traits.html',1,'utils']]],
-  ['unary_5ftraits_5',['unary_traits',['../structutils_1_1bit__op__functors.html#a5421a2994d4443906604a137fd8ddedf',1,'utils::bit_op_functors::unary_traits()'],['../structutils_1_1sign__op__functors.html#a34cb760d2219d7bc9524ea0c4c8d1ac9',1,'utils::sign_op_functors::unary_traits()']]],
-  ['unsigned_5ftest_5ftypes_6',['unsigned_test_types',['../integer_8cpp.html#a155017e110cec08bad03b1b0faf994fc',1,'integer.cpp']]],
-  ['unsync_5fallocators_7',['unsync_allocators',['../common_8cpp.html#ad0d0a5ec8384f291de2d87cfb81e940f',1,'common.cpp']]],
-  ['utility_2ehpp_8',['utility.hpp',['../utility_8hpp.html',1,'']]],
-  ['utils_9',['utils',['../namespaceutils.html',1,'']]],
-  ['utils_5fasg_5ffunctor_10',['UTILS_ASG_FUNCTOR',['../functional_8hpp.html#a69a73f8bd2d609ea3c21cf9e76ed788d',1,'functional.hpp']]],
-  ['utils_5fasg_5fop_11',['UTILS_ASG_OP',['../operators_8hpp.html#a1cf629983c1d541c5e1badd9753ecb9c',1,'operators.hpp']]],
-  ['utils_5fatomic_5falign_12',['UTILS_ATOMIC_ALIGN',['../atomic_8hpp.html#a906f5f112892dd56d532e9be72443840',1,'atomic.hpp']]],
-  ['utils_5fbinary_5fop_13',['UTILS_BINARY_OP',['../operators_8hpp.html#a1d9fcd4bbeb49a815fa8249cdb4e41a5',1,'operators.hpp']]],
-  ['utils_5fbitmask_14',['UTILS_BITMASK',['../bitmask_8hpp.html#a764d2cb0d4a2da0c7d4d10eb67b89970',1,'bitmask.hpp']]],
-  ['utils_5fdyn_15',['UTILS_DYN',['../dynamic_8hpp.html#a4ea298754f78cee61561d73527480ba0',1,'UTILS_DYN():&#160;dynamic.hpp'],['../structdotted__square.html#ad94788c12d4964f65a8802303e7009a5',1,'dotted_square::UTILS_DYN()'],['../structdotted__square.html#ad94788c12d4964f65a8802303e7009a5',1,'dotted_square::UTILS_DYN()']]],
-  ['utils_5fdyn_5fend_16',['UTILS_DYN_END',['../dynamic_8hpp.html#a5c1bb59a2913f7e47ebd09366c0dd01d',1,'dynamic.hpp']]],
-  ['utils_5fdyn_5fno_5farr_17',['UTILS_DYN_NO_ARR',['../main_8cpp.html#af96a4b94873f4fed9c5c9c2a6a8a0172',1,'main.cpp']]],
-  ['utils_5fdyn_5fno_5farr_5ferr_5fmsg_18',['UTILS_DYN_NO_ARR_ERR_MSG',['../dynamic_8hpp.html#a715ab85251d4469384bbbfa91eaa3214',1,'dynamic.hpp']]],
-  ['utils_5ffind_5fself_19',['UTILS_FIND_SELF',['../self_8hpp.html#a0fd91b8deec89b8d0a02352439b62ded',1,'UTILS_FIND_SELF():&#160;self.hpp'],['../structrandom_1_1test.html#acb8de4b8aede0c95a4e278c9e7798b8b',1,'random::test::UTILS_FIND_SELF()']]],
-  ['utils_5ffind_5fself_5ftype_20',['UTILS_FIND_SELF_TYPE',['../self_8hpp.html#a379c3395d69445241a0099fdaf0e68de',1,'self.hpp']]],
-  ['utils_5ffix_5fop_21',['UTILS_FIX_OP',['../operators_8hpp.html#af9a66ab382ee5d9ec749b9ba778ed41c',1,'operators.hpp']]],
-  ['utils_5ffunction_5ftype_5fdecl_22',['UTILS_FUNCTION_TYPE_DECL',['../functional_8hpp.html#adec1908d86ebbb39eaac70a616233791',1,'functional.hpp']]],
-  ['utils_5fops_5fbase_5ftype_23',['utils_ops_base_type',['../structutils_1_1shift__full__ops.html#a488c07b92235461b2050f382a273c4fc',1,'utils::shift_full_ops::utils_ops_base_type()'],['../structutils_1_1logical__ops.html#a8229866a55139817a5ba31a25ab9cb5d',1,'utils::logical_ops::utils_ops_base_type()'],['../structutils_1_1arithmetic__ops.html#a724c867687becc5d86d9f0fd733aa1b1',1,'utils::arithmetic_ops::utils_ops_base_type()'],['../structutils_1_1fix__ops.html#aa1acdc1ef3d44c19d8ebd294ba2631e2',1,'utils::fix_ops::utils_ops_base_type()'],['../structutils_1_1sign__ops.html#a6fdec53fe87d803b8e698baba62b939e',1,'utils::sign_ops::utils_ops_base_type()'],['../structutils_1_1shift__asg__ops.html#af41d3ecdb34318fbac039e18b0de2e8e',1,'utils::shift_asg_ops::utils_ops_base_type()'],['../structutils_1_1shift__ops.html#a7ab1b7506b7df98977f0cf2bdf87be51',1,'utils::shift_ops::utils_ops_base_type()'],['../structutils_1_1bit__full__ops.html#aaaa6ddcf0e5de32d95b8978ff8cdabe4',1,'utils::bit_full_ops::utils_ops_base_type()'],['../structutils_1_1bit__asg__ops.html#a9f574d9591984185dbd851fc2fe9298e',1,'utils::bit_asg_ops::utils_ops_base_type()'],['../structutils_1_1bit__ops.html#a57f238f5ef74620709e6c824350ab60c',1,'utils::bit_ops::utils_ops_base_type()'],['../structutils_1_1integral__full__ops.html#ae8339b90efa86ac0e874ab7a40754f46',1,'utils::integral_full_ops::utils_ops_base_type()'],['../structutils_1_1integral__asg__ops.html#ae0ef7b087e715d02a9690f6027b93274',1,'utils::integral_asg_ops::utils_ops_base_type()'],['../structutils_1_1integral__ops.html#a99374b37800d4536b32d9fee8c6f90bf',1,'utils::integral_ops::utils_ops_base_type()']]],
-  ['utils_5funary_5fop_24',['UTILS_UNARY_OP',['../operators_8hpp.html#a4e69170c3ed702202239ab85fcd07cf1',1,'operators.hpp']]]
+  ['value_5ftype_0',['value_type',['../classutils_1_1pointer__iterator.html#a7850e0c5043cb047a01890e23bdbd4c8',1,'utils::pointer_iterator']]],
+  ['variadic_5farity_1',['variadic_arity',['../namespaceutils.html#acdc92300a8a41d794e21ecfade137492',1,'utils']]],
+  ['visitor_2',['visitor',['../classutils_1_1visitor.html',1,'utils::visitor&lt; Fs &gt;'],['../classutils_1_1visitor.html#aafa75073512d69a3b17fb11c5a6809b9',1,'utils::visitor::visitor()'],['../namespaceutils.html#abae20f757c60321115ef587a2424452f',1,'utils::visitor()']]]
 ];

@@ -119,9 +119,9 @@ namespace \mbox{\hyperlink{namespaceutils}{utils}}
 \item 
 {\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceutils_aa2a651da2caee87aff06087795119502}{utils\+::lambda\+\_\+decay\+\_\+t}} = lambda\+\_\+decay$<$ T $>$\+::type
 \item 
-{\footnotesize template$<$typename \mbox{\hyperlink{structF}{F}} $>$ }\\using \mbox{\hyperlink{namespaceutils_aec2f7d8a4a6a70e231ae13dd1a18606a}{utils\+::result\+\_\+of\+\_\+t}} = result\+\_\+of$<$ \mbox{\hyperlink{structF}{F}} $>$\+::type
+{\footnotesize template$<$typename F $>$ }\\using \mbox{\hyperlink{namespaceutils_aec2f7d8a4a6a70e231ae13dd1a18606a}{utils\+::result\+\_\+of\+\_\+t}} = result\+\_\+of$<$ F $>$\+::type
 \item 
-{\footnotesize template$<$typename \mbox{\hyperlink{structF}{F}} $>$ }\\using \mbox{\hyperlink{namespaceutils_ac4674b772ff1c668b49f1867630f3d54}{utils\+::arguments\+\_\+of\+\_\+t}} = arguments\+\_\+of$<$ \mbox{\hyperlink{structF}{F}} $>$\+::type
+{\footnotesize template$<$typename F $>$ }\\using \mbox{\hyperlink{namespaceutils_ac4674b772ff1c668b49f1867630f3d54}{utils\+::arguments\+\_\+of\+\_\+t}} = arguments\+\_\+of$<$ F $>$\+::type
 \item 
 using \mbox{\hyperlink{namespaceutils_acdc92300a8a41d794e21ecfade137492}{utils\+::variadic\+\_\+arity}} = arity$<$ static\+\_\+cast$<$ std\+::size\+\_\+t $>$(-\/1)$>$
 \end{DoxyCompactItemize}
@@ -132,12 +132,12 @@ using \mbox{\hyperlink{namespaceutils_acdc92300a8a41d794e21ecfade137492}{utils\+
 \item 
 {\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{namespaceutils_aeae858e40387fdfac0f8629db4991dbb}{utils\+::bind}} (T \&\&) -\/$>$ bind$<$ T \&\& $>$
 \item 
-{\footnotesize template$<$typename \mbox{\hyperlink{structF}{F}} , typename... Gs$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a75ce48a3fb2e45c2eb6917e6d32ceb84}{utils\+::composite}} (\mbox{\hyperlink{structF}{F}} \&\&f, Gs \&\&... gs)
+{\footnotesize template$<$typename F , typename... Gs$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a75ce48a3fb2e45c2eb6917e6d32ceb84}{utils\+::composite}} (F \&\&f, Gs \&\&... gs)
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename \mbox{\hyperlink{structF}{F}} $>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a5a720537626a2d6e7ae840a1212a67f2}{utils\+::arity\+\_\+of\+\_\+v}} = arity\+\_\+of$<$\mbox{\hyperlink{structF}{F}}$>$\+::value
+{\footnotesize template$<$typename F $>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a5a720537626a2d6e7ae840a1212a67f2}{utils\+::arity\+\_\+of\+\_\+v}} = arity\+\_\+of$<$F$>$\+::value
 \end{DoxyCompactItemize}
 
 

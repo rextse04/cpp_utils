@@ -27,7 +27,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">cpp_utils
    </div>
-   <div id="projectbrief">An std-like header-only utility library for modern C++</div>
+   <div id="projectbrief">A header-only utility library written in modern C++ (C++23 or above).</div>
   </td>
  </tr>
  </tbody>
@@ -151,9 +151,9 @@ $(document).ready(function(){initNavTree('type_8hpp_source.html',''); initResiza
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keyword">namespace </span>detail {</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, auto F, <span class="keyword">typename</span> Seq&gt;</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keyword">struct </span>sequence_apply;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">auto</span> <a class="code hl_define" href="functional_8cpp.html#ade69077374d2ffb263c8074758eea543">F</a>, T... Ns&gt;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keyword">struct </span>sequence_apply&lt;T, <a class="code hl_struct" href="structF.html">F</a>, std::integer_sequence&lt;T, Ns...&gt;&gt; {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keyword">using</span> type = std::integer_sequence&lt;T, <a class="code hl_define" href="functional_8cpp.html#ade69077374d2ffb263c8074758eea543">F</a>(Ns)...&gt;;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">auto</span> F, T... Ns&gt;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keyword">struct </span>sequence_apply&lt;T, F, std::integer_sequence&lt;T, Ns...&gt;&gt; {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keyword">using</span> type = std::integer_sequence&lt;T, F(Ns)...&gt;;</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        };</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, T End, T Begin = 0, T Step = 1&gt;</div>
@@ -256,10 +256,8 @@ $(document).ready(function(){initNavTree('type_8hpp_source.html',''); initResiza
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>}</div>
 <div class="ttc" id="abitmask_8hpp_html"><div class="ttname"><a href="bitmask_8hpp.html">bitmask.hpp</a></div></div>
 <div class="ttc" id="abitmask_8hpp_html_a764d2cb0d4a2da0c7d4d10eb67b89970"><div class="ttname"><a href="bitmask_8hpp.html#a764d2cb0d4a2da0c7d4d10eb67b89970">UTILS_BITMASK</a></div><div class="ttdeci">#define UTILS_BITMASK(T)</div><div class="ttdef"><b>Definition:</b> <a href="bitmask_8hpp_source.html#l00005">bitmask.hpp:5</a></div></div>
-<div class="ttc" id="afunctional_8cpp_html_ade69077374d2ffb263c8074758eea543"><div class="ttname"><a href="functional_8cpp.html#ade69077374d2ffb263c8074758eea543">F</a></div><div class="ttdeci">#define F(T, U)</div></div>
 <div class="ttc" id="ameta_8hpp_html"><div class="ttname"><a href="meta_8hpp.html">meta.hpp</a></div></div>
 <div class="ttc" id="anamespaceutils_html"><div class="ttname"><a href="namespaceutils.html">utils</a></div><div class="ttdef"><b>Definition:</b> <a href="atomic_8hpp_source.html#l00004">atomic.hpp:4</a></div></div>
-<div class="ttc" id="astructF_html"><div class="ttname"><a href="structF.html">F</a></div><div class="ttdef"><b>Definition:</b> <a href="static__string_8cpp_source.html#l00009">static_string.cpp:9</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

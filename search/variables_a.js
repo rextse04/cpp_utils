@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['plus_0',['plus',['../structutils_1_1integral__op__functors.html#a1708ff07ec497739f9dd95e88ef2ebf9',1,'utils::integral_op_functors']]],
-  ['plus_5fasg_1',['plus_asg',['../structutils_1_1integral__asg__op__functors.html#a4b77527ca426dd453c9c5dc0ae45cfed',1,'utils::integral_asg_op_functors']]],
-  ['post_5fdecrement_2',['post_decrement',['../structutils_1_1fix__op__functors.html#a7aa1a32ae8c4d80e65ea2d13c7367978',1,'utils::fix_op_functors']]],
-  ['post_5fincrement_3',['post_increment',['../structutils_1_1fix__op__functors.html#a037e077bda56de55e5a699e4b822da4e',1,'utils::fix_op_functors']]],
-  ['pre_5fdecrement_4',['pre_decrement',['../structutils_1_1fix__op__functors.html#a8fb3c170524ef6da2f56de975295ac56',1,'utils::fix_op_functors']]],
-  ['pre_5fincrement_5',['pre_increment',['../structutils_1_1fix__op__functors.html#a7417e7a4ba7547bb81656a214ced194c',1,'utils::fix_op_functors']]]
+  ['shift_5fleft_0',['shift_left',['../structutils_1_1shift__op__functors.html#a37ef1585b903a4287dc0980f4fd4bfc9',1,'utils::shift_op_functors']]],
+  ['shift_5fleft_5fasg_1',['shift_left_asg',['../structutils_1_1shift__asg__op__functors.html#aa2c78409a3f64b900c7a7fe0730ec2b8',1,'utils::shift_asg_op_functors']]],
+  ['shift_5fright_2',['shift_right',['../structutils_1_1shift__op__functors.html#a4eccd3380e5dbaaca1290bab7edc82ba',1,'utils::shift_op_functors']]],
+  ['shift_5fright_5fasg_3',['shift_right_asg',['../structutils_1_1shift__asg__op__functors.html#aa44b7b8d5bfe727bcdbf59548f76dbe3',1,'utils::shift_asg_op_functors']]],
+  ['synth_5fthree_5fway_4',['synth_three_way',['../namespaceutils.html#a66e65835c8cea64e6a28ccf70f71ea28',1,'utils']]]
 ];
