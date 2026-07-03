@@ -10,7 +10,7 @@ foreach (TEST_FILE ${TEST_FILES})
     add_executable(${TEST_NAME} ${TEST_FILE})
     target_link_libraries(${TEST_NAME}
             PRIVATE cpp_utils_lib
-            PRIVATE ${Boost_LIBRARIES})
+            PRIVATE Boost::unit_test_framework)
 endforeach ()
 
 target_compile_options(integer_test PUBLIC -ftrapv)

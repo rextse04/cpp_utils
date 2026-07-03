@@ -112,9 +112,9 @@ namespace utils::pmr {
                 if (!aligned) throw std::bad_alloc();
                 if constexpr (Sync) {
                     if (std::atomic_ref(control_->data).compare_exchange_weak(
-                        data, aligned + bytes, std::memory_order::relaxed)) break;
+                        data, static_cast<std::byte*>(aligned) + bytes, std::memory_order::relaxed)) break;
                 } else {
-                    control_->data = aligned + bytes;
+                    control_->data = static_cast<std::byte*>(aligned) + bytes;
                     break;
                 }
             }
