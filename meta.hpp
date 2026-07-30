@@ -6,26 +6,12 @@
 #include <utility>
 
 /**
- * Key concepts and conventions:
- * - A class type @code T@endcode is a <i>Result</i> if it satisfies any of the following:
- *  1. <i>TypeResult</i>: @code T@endcode has a member type alias @code type@endcode.
- *  2. <i>ValueResult</i>: @code T@endcode has a constexpr static member @code value@endcode.
+ * @namespace utils::meta
  *
- *  For example, @code std::integer_constant@endcode instances are <i>ValueResult</i>s.
- *  This can be seen as a generalization of types obtained by applying <i>Trait</i>s.
- * - An <i>ErasedResult</i> is not a <i>Result</i>. It has a member type alias @code result@endcode,
- * which is defined to be a <i>TypeResult</i> or a <i>ValueResult</i>.
- * It can be inferred to a <i>Result</i> via @code infer@endcode, however.
- * - A <i>Trait</i> is a template that accepts a fixed or variadic number of template type arguments.
- * Any instance of a <i>Trait</i> should be a <i>Result</i>, or the program should be ill-formed
- * (which is usually guaranteed by setting @code static_assert@endcode checks).
- * In addition, valid instances of <i>Trait</i> should all be <i>TypeResult</i>s, or all be <i>ValueResult</i>s, or both.
- * They are named <i>TypeTrait</i>s and <i>ValueTrait</i>s respectively.
- * - A <i>MetaTrait</i> is a template whose valid instances have an inner template named @code trait@endcode
- * which satisfies <i>Trait</i>.
+ * Useful utilities for template metaprogramming.
  */
 namespace utils::meta {
-    /// @brief Checks if @code T@endcode is a (real) tuple.
+    /// @brief Checks if `T` is a (real) tuple.
     /// @{
     template <typename T>
     struct is_tuple : std::false_type {};
@@ -35,10 +21,10 @@ namespace utils::meta {
     constexpr bool is_tuple_v = is_tuple<T>::value;
     /// @}
 
-    /// @brief C++ exposition-only concept: @code tuple-like@endcode.
+    /// @brief C++ exposition-only concept: `tuple-like`.
     template <typename T>
     concept tuple_like = std::tuple_size<std::remove_cvref_t<T>>::value >= 0;
-    /// @brief C++ exposition-only concept: @code pair-like@endcode.
+    /// @brief C++ exposition-only concept: `pair-like`.
     template <typename T>
     concept pair_like = std::tuple_size<std::remove_cvref_t<T>>::value == 2;
 
@@ -69,7 +55,7 @@ namespace utils::meta {
             using type = std::tuple<std::tuple_element_t<Idxs, T>...>;
         };
     }
-    /// @brief Makes a tuple from a @code tuple-like@endcode type @code T@endcode.
+    /// @brief Makes a tuple from a `tuple-like` type `T`.
     /// @{
     template <tuple_like T>
     struct make_tuple : detail::make_tuple<T, std::make_index_sequence<std::tuple_size_v<T>>> {};
@@ -77,8 +63,8 @@ namespace utils::meta {
     using make_tuple_t = make_tuple<T>::type;
     /// @}
 
-    /// @brief Calculates a normalized index (in @f$ [0, N)@f$) from a possibly negative index @code Idx@endcode
-    /// and a tuple-like type @code Tuple@endcode of size @code N@endcode.
+    /// @brief Calculates a normalized index (in @f$ [0, N)@f$) from a possibly negative index `Idx`
+    /// and a tuple-like type `Tuple` of size `N`.
     /// @{
     template <tuple_like Tuple, std::ptrdiff_t Idx>
     struct actual_index : std::integral_constant<std::size_t, (Idx >= 0) ? Idx : (Idx + std::tuple_size_v<Tuple>)> {};
@@ -86,7 +72,7 @@ namespace utils::meta {
     constexpr std::size_t actual_index_v = actual_index<Tuple, Idx>::value;
     /// @}
 
-    /// @brief Similar to @code std::tuple_element@endcode but also accepts negative @code Idx@endcode.
+    /// @brief Similar to `std::tuple_element` but also accepts negative `Idx`.
     /// @{
     template <tuple_like Tuple, std::ptrdiff_t Idx>
     struct at {
@@ -96,10 +82,10 @@ namespace utils::meta {
     using at_t = at<Tuple, Idx>::type;
     /// @}
 
-    /// @brief Finds the first index @code Idx@endcode in [ @code Begin@endcode , @code End@endcode ) such that
-    /// @code PredTrait<at_t<Tuple, Idx>, T>::value@endcode is true.
+    /// @brief Finds the first index `Idx` in [ `Begin` , `End` ) such that
+    /// `PredTrait<at_t<Tuple, Idx>, T>::value` is true.
     ///
-    /// If such an element does not exist, @code End@endcode is returned.
+    /// If such an element does not exist, `End` is returned.
     /// @{
     template <tuple_like Tuple, typename T, template<typename, typename> typename PredTrait = std::is_same,
         std::ptrdiff_t Begin = 0, std::ptrdiff_t End = std::tuple_size_v<Tuple>>
@@ -114,8 +100,8 @@ namespace utils::meta {
     struct search_trait : search<Tuple, T> {};
     /// @}
 
-    /// @brief Checks if there exists an index @code Idx@endcode in @f$ [\text{Begin},\text{End})@f$ such that
-    /// @code PredTrait<at_t<Tuple, Idx>, T>::value@endcode is true.
+    /// @brief Checks if there exists an index `Idx` in @f$ [\text{Begin},\text{End})@f$ such that
+    /// `PredTrait<at_t<Tuple, Idx>, T>::value` is true.
     /// @{
     template <tuple_like Tuple, typename T, template<typename, typename> typename PredTrait = std::is_same,
         std::ptrdiff_t Begin = 0, std::ptrdiff_t End = std::tuple_size_v<Tuple>>
@@ -145,10 +131,10 @@ namespace utils::meta {
             using type = std::tuple<std::tuple_element_t<Begin + RelIdxs, Tuple>...>;
         };
     }
-    /// @brief Extracts a slice from a tuple type from index @code Begin@endcode to index @code End@endcode (exclusive).
+    /// @brief Extracts a slice from a tuple type from index `Begin` to index `End` (exclusive).
     ///
-    /// Both @code Begin@endcode and @code End@endcode can be negative indices, which are normalized relative to the tuple size.
-    /// If @code Begin >= End@endcode, an empty tuple is returned.
+    /// Both `Begin` and `End` can be negative indices, which are normalized relative to the tuple size.
+    /// If `Begin >= End`, an empty tuple is returned.
     /// @{
     template <tuple_like Tuple, std::ptrdiff_t Begin = 0, std::ptrdiff_t End = std::tuple_size_v<Tuple>>
     struct slice {
@@ -164,9 +150,9 @@ namespace utils::meta {
     using slice_t = slice<Tuple, Begin, End>::type;
     /// @}
 
-    /// @brief Inserts a tuple-like type @code Inserted@endcode into a tuple type @code Tuple@endcode at index @code Idx@endcode.
+    /// @brief Inserts a tuple-like type `Inserted` into a tuple type `Tuple` at index `Idx`.
     ///
-    /// The index @code Idx@endcode can be negative, which is normalized relative to the tuple size.
+    /// The index `Idx` can be negative, which is normalized relative to the tuple size.
     /// @{
     template <tuple_like Tuple, std::ptrdiff_t Idx, tuple_like Inserted>
     struct insert : concat<slice_t<Tuple, 0, Idx>, Inserted, slice_t<Tuple, Idx>> {};
@@ -174,9 +160,9 @@ namespace utils::meta {
     using insert_t = insert<Tuple, Idx, Inserted>::type;
     /// @}
 
-    /// @brief Erases elements from a tuple type @code Tuple@endcode in the range [@code Begin@endcode, @code End@endcode).
+    /// @brief Erases elements from a tuple type `Tuple` in the range [`Begin`, `End`).
     ///
-    /// Both @code Begin@endcode and @code End@endcode can be negative indices, which are normalized relative to the tuple size.
+    /// Both `Begin` and `End` can be negative indices, which are normalized relative to the tuple size.
     /// @{
     template <tuple_like Tuple, std::ptrdiff_t Begin, std::ptrdiff_t End>
     struct erase : concat<slice_t<Tuple, 0, Begin>, slice_t<Tuple, End>> {};
@@ -184,9 +170,9 @@ namespace utils::meta {
     using erase_t = erase<Tuple, Begin, End>::type;
     /// @}
 
-    /// @brief Replaces the element at index @code Idx@endcode in a tuple type @code Tuple@endcode with type @code T@endcode.
+    /// @brief Replaces the element at index `Idx` in a tuple type `Tuple` with type `T`.
     ///
-    /// The index @code Idx@endcode can be negative, which is normalized relative to the tuple size.
+    /// The index `Idx` can be negative, which is normalized relative to the tuple size.
     /// @{
     template <tuple_like Tuple, std::ptrdiff_t Idx, typename T>
     struct replace : concat<slice_t<Tuple, 0, Idx>, std::tuple<T>, slice_t<Tuple, Idx + 1>> {};
@@ -194,10 +180,9 @@ namespace utils::meta {
     using replace_t = replace<Tuple, Idx, T>::type;
     /// @}
 
-    /// @brief Converts an @code ErasedResult@endcode to a @code Result@endcode.
+    /// @brief Converts an `ErasedResult` to a `Result`.
     ///
-    /// If @code ErasedResult@endcode has a @code type@endcode member, that is returned;
-    /// otherwise, @code ErasedResult@endcode itself is returned.
+    /// If `ErasedResult` has a `type` member, that is returned; otherwise, `ErasedResult` itself is returned.
     /// @{
     template <typename ErasedResult>
     struct infer {
@@ -222,9 +207,9 @@ namespace utils::meta {
             using type = std::tuple<typename map_step<Idxs, Trait, TuplesTuple>::type...>;
         };
     }
-    /// @brief Applies a @code Trait@endcode template to corresponding elements across one or more tuple types.
+    /// @brief Applies a `Trait` template to corresponding elements across one or more tuple types.
     ///
-    /// This creates a new tuple type where each element is the result of applying @code Trait@endcode
+    /// This creates a new tuple type where each element is the result of applying `Trait`
     /// to the corresponding elements from the input tuples.
     /// @{
     template <template<typename...> typename Trait, tuple_like Tuple, tuple_like... Tuples>
@@ -233,9 +218,9 @@ namespace utils::meta {
     using map_t = map<Trait, Tuple, Tuples...>::type;
     /// @}
 
-    /// @brief Applies a @code Trait@endcode template to all elements of a tuple, producing a single result.
+    /// @brief Applies a `Trait` template to all elements of a tuple, producing a single result.
     ///
-    /// The result is either a @code TypeResult@endcode or a @code ValueResult@endcode depending on the trait.
+    /// The result is either a `TypeResult` or a `ValueResult` depending on the trait.
     /// @{
     template <template<typename...> typename Trait, tuple_like T>
     struct reduce : reduce<Trait, make_tuple_t<T>> {};
@@ -247,7 +232,7 @@ namespace utils::meta {
     constexpr auto reduce_v = reduce<Trait, T>::value;
     /// @}
 
-    /// @brief Computes the sum of @code value@endcode members from @code ValueResult@endcode types.
+    /// @brief Computes the sum of `value` members from `ValueResult` types.
     /// @{
     template <typename... ValueResults>
     struct sum : std::integral_constant<std::uintmax_t, (static_cast<std::uintmax_t>(ValueResults::value) + ...)> {};
@@ -255,7 +240,7 @@ namespace utils::meta {
     constexpr auto sum_v = sum<ValueResults...>::value;
     /// @}
 
-    /// @brief Computes the product of @code value@endcode members from @code ValueResult@endcode types.
+    /// @brief Computes the product of `value` members from `ValueResult` types.
     /// @{
     template <typename... ValueResults>
     struct product : std::integral_constant<std::uintmax_t, (static_cast<std::uintmax_t>(ValueResults::value) * ...)> {};
@@ -265,10 +250,10 @@ namespace utils::meta {
 
     /// @brief Extracts the template arguments from a template instantiation.
     ///
-    /// @code extract@endcode is both a <i>TypeTrait</i> and a <i>MetaTrait</i>.
-    /// If @code T@endcode is a template instantiation, @code extract<T>::type@endcode is a tuple of its template arguments,
-    /// and @code extract<T>::trait@endcode is a <i>Trait</i> which rebinds @code T@endcode to template arguments.
-    /// Otherwise, @code extract@endcode is empty.
+    /// `extract` is both a <i>TypeTrait</i> and a <i>MetaTrait</i>.
+    /// If `T` is a template instantiation, `extract<T>::type` is a tuple of its template arguments,
+    /// and `extract<T>::trait` is a <i>Trait</i> which rebinds `T` to template arguments.
+    /// Otherwise, `extract` is empty.
     /// @{
     template <typename T>
     struct extract {};
@@ -284,10 +269,9 @@ namespace utils::meta {
     using extract_t = extract<T>::type;
     /// @}
 
-    /// @brief Rebinds a template instance @code T@endcode to @code Args@endcode.
+    /// @brief Rebinds a template instance `T` to `Args`.
     ///
-    /// If @code T@endcode is in the form @code Tmpl<...>@endcode, @code rebind<T>::type@endcode is @code Tmpl<Args...>@endcode.
-    /// Otherwise, @code rebind<T>::type@endcode is @code T@endcode.
+    /// If `T` is in the form `Tmpl<...>`, `rebind<T>::type` is `Tmpl<Args...>`. Otherwise, `rebind<T>::type` is `T`.
     /// @{
     template <typename T, typename... Args>
     struct rebind {
@@ -302,7 +286,7 @@ namespace utils::meta {
     using rebind_t = rebind<T, Args...>::type;
     /// @}
 
-    /// @brief Binds template arguments to the front of a @code Trait@endcode template.
+    /// @brief Binds template arguments to the front of a `Trait` template.
     ///
     /// This creates a new template that accepts fewer arguments by pre-filling the first arguments.
     /// @{
@@ -313,7 +297,7 @@ namespace utils::meta {
     };
     /// @}
 
-    /// @brief Binds template arguments to the back of a @code Trait@endcode template.
+    /// @brief Binds template arguments to the back of a `Trait` template.
     ///
     /// This creates a new template that accepts fewer arguments by pre-filling the last arguments.
     /// @{
@@ -324,7 +308,7 @@ namespace utils::meta {
     };
     /// @}
 
-    /// @brief Checks if every type in @code SmallTuple@endcode is contained in @code BigTuple@endcode.
+    /// @brief Checks if every type in `SmallTuple` is contained in `BigTuple`.
     /// @{
     template <tuple_like SmallTuple, tuple_like BigTuple>
     struct subset_of :
@@ -333,7 +317,7 @@ namespace utils::meta {
     constexpr bool subset_of_v = subset_of<SmallTuple, BigTuple>::value;
     /// @}
 
-    /// @brief Checks if @code SmallTuple@endcode is a strict subset of @code BigTuple@endcode.
+    /// @brief Checks if `SmallTuple` is a strict subset of `BigTuple`.
     /// @{
     template <tuple_like SmallTuple, tuple_like BigTuple>
     struct strict_subset_of : std::bool_constant<
@@ -342,9 +326,9 @@ namespace utils::meta {
     constexpr bool strict_subset_of_v = strict_subset_of<SmallTuple, BigTuple>::value;
     /// @}
 
-    /// @brief Converts a pack of constexpr values into a tuple of @code ValueResult@endcode types.
+    /// @brief Converts a pack of constexpr values into a tuple of `ValueResult` types.
     ///
-    /// Each value is wrapped in a type with a @code value@endcode member.
+    /// Each value is wrapped in a type with a `value` member.
     /// @{
     template <auto... Values>
     struct to_value_results {
@@ -365,10 +349,10 @@ namespace utils::meta {
         struct range<Begin, Step, std::integer_sequence<std::ptrdiff_t, Idxs...>> :
                 pack<to_value_results_t<Begin + Idxs * Step>...> {};
     }
-    /// @brief Generates a tuple of @code ValueResult@endcode types representing an arithmetic sequence.
+    /// @brief Generates a tuple of `ValueResult` types representing an arithmetic sequence.
     ///
-    /// This generates a sequence starting at @code Begin@endcode, incrementing by @code Step@endcode,
-    /// until reaching @code End@endcode (exclusive). Returns a tuple of value results.
+    /// This generates a sequence starting at `Begin`, incrementing by `Step`,
+    /// until reaching `End` (exclusive). Returns a tuple of value results.
     /// @{
     template <std::ptrdiff_t End, std::ptrdiff_t Begin = 0, std::ptrdiff_t Step = 1>
     struct range : detail::range<Begin, Step,
@@ -379,7 +363,7 @@ namespace utils::meta {
 
     /// @brief Applies a template to a list of types or unpacks a tuple into a template.
     ///
-    /// If @code Ts@endcode contains a single @code std::tuple@endcode, it is unpacked automatically.
+    /// If `Ts` contains a single `std::tuple`, it is unpacked automatically.
     /// @{
     template <template<typename...> typename Tmpl, typename... Ts>
     struct apply { using type = Tmpl<Ts...>; };
@@ -389,12 +373,30 @@ namespace utils::meta {
     using apply_t = apply<Tmpl, Ts...>::type;
     /// @}
 
+    /// @brief Composite type traits.
+    ///
+    /// Given <i>TypeTrait</i>s `Trait1`, ..., `TraitN`, for any list of types `T1`, ..., `TM`,
+    /// `utils::composite<Trait1, ..., TraitN>::template trait<T1, ..., TM>` gives
+    /// `TraitN<...Trait1<T1, ..., TM>::type>::type`, if the expression is well-formed.
+    /// @{
+    template <template<typename...> typename First, template<typename> typename... After>
+    struct composite {
+        template <typename... Ts>
+        struct trait : composite<After...>::template trait<typename First<Ts...>::type> {};
+    };
+    template <template<typename...> typename First>
+    struct composite<First> {
+        template <typename... Ts>
+        struct trait : First<Ts...> {};
+    };
+    /// @}
+
     /// @brief Applies a function to each element of a tuple, returning a new tuple with the results.
     /// @param f A callable that accepts each element of the tuple.
     /// @param t A tuple-like object to transform.
-    /// @returns A tuple that represents the results of @code f@endcode applied to each element of @code t@endcode.
+    /// @returns A tuple that represents the results of `f` applied to each element of `t`.
     ///
-    /// The resulting tuple retains qualifiers and references of the result types of @code f@endcode.
+    /// The resulting tuple retains qualifiers and references of the result types of `f`.
     /// @{
     template <tuple_like Tuple>
     constexpr auto transform(const auto& f, Tuple&& t) {

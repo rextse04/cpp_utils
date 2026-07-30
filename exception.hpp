@@ -3,6 +3,7 @@
 #include <string_view>
 
 namespace utils {
+    /// @brief Represents an error at compilation due to incorrect use of library constructs.
     class compile_error : public std::exception {
     private:
         std::string_view msg_;

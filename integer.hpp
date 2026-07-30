@@ -2,6 +2,7 @@
 #include <concepts>
 #include <type_traits>
 #include <limits>
+#include <climits>
 #include <utility>
 #include <numeric>
 #include <stdexcept>
@@ -9,478 +10,694 @@
 #include <bit>
 #include <cstdint>
 #include <cstddef>
-#include <istream>
 #include <ostream>
 #include <format>
 #include "operators.hpp"
 #include "type.hpp"
 
 namespace utils {
-    /// @brief Same rules as integer promotion in the standard, except that the promoted type always preserves sign.
+    /// @brief Determines if a type is integer like.
+    ///
+    /// The construct is used by the library to determine if a type (ignoring cv-qualifiers) is integer like.
+    /// The program is ill-formed, no diagnostics required, if the user specializes `utils::is_integer_like`
+    /// such that there exists a type `T` where `std::remove_cvref_t<T>` is not a integer-like type
+    /// (as specified by the standard library), but `utils::is_integer_like<T>::value` is `true`.
+    /// @{
+    template <typename>
+    struct is_integer_like : std::false_type {};
     template <typename T>
-    struct sane_promotion {
+    struct is_integer_like<const T> : is_integer_like<std::remove_const_t<T>> {};
+    template <typename T>
+    struct is_integer_like<volatile T> : is_integer_like<std::remove_volatile_t<T>> {};
+    template <typename T>
+    struct is_integer_like<const volatile T> : is_integer_like<std::remove_cv_t<T>> {};
+    template <std::integral T>
+    struct is_integer_like<T> : std::true_type {};
+    template <typename T>
+    constexpr bool is_integer_like_v = is_integer_like<T>::value;
+    template <typename T>
+    concept integer_like = is_integer_like<T>::value;
+    /// @}
+    /// @brief Determines the width of `T` based on `Info`.
+    ///
+    /// "width" here is defined as the number of bits that participate in the determination of the value of the significand (mantissa)
+    /// in base-2 scientific notation.
+    /// @tparam Info: A type which provides the interface of `std::numeric_limits` and gives information about `T`.
+    /// @{
+    template <typename T, typename Info = std::numeric_limits<T>>
+    struct width_of : std::integral_constant<int, Info::digits + Info::is_signed> {};
+    template <typename T>
+    constexpr int width_of_v = width_of<T>::value;
+    /// @}
+    /// @brief Similar to usual arithmetic conversion, except that the promotion step is replaced by `utils::sane_promotion`.
+    ///
+    /// Given any types `T` and `U`, let `TD` and `UD` be `std::decay_t<T>` and `std::decay_t<U>` respectively.
+    /// Their `sane_common_type` `C` is determined through the following steps:
+    /// 1. If any of `TD` and `UD` is not specialized for `std::numeric_limits`, `C` is `std::common_type_t<T, U>`.
+    /// 2. Otherwise, if `TD` and `UD` have different widths, `C` is the one with the greater width.
+    /// 3. Otherwise, if at least one of `TD` and `UD` is unsigned, `C` is the first unsigned type out of the two.
+    /// 4. Otherwise, `C` is `TD`.
+    ///
+    /// In the above, the definition of `width` is identical to that in `utils::width_of`.
+    /// @{
+    template <typename T, typename U>
+    struct sane_common_type : std::common_type<T, U> {};
+    template <typename T, typename U>
+    requires (std::numeric_limits<std::decay_t<T>>::is_specialized && std::numeric_limits<std::decay_t<U>>::is_specialized)
+    struct sane_common_type<T, U> {
     private:
-        using P = decltype(+std::declval<T>());
+        using TD = std::decay_t<T>; using UD = std::decay_t<U>;
+        using TInfo = std::numeric_limits<TD>; using UInfo = std::numeric_limits<UD>;
+        static constexpr bool TUS = !TInfo::is_signed, UUS = !UInfo::is_signed;
+        static constexpr int TW = width_of_v<TD>, UW = width_of_v<UD>;
     public:
-        using type = std::conditional_t<std::is_signed_v<T>, P, std::make_unsigned_t<P>>;
-        static constexpr bool conv = !std::is_same_v<type, T>;
+        using type = std::conditional_t<(TW > UW), TD,
+            std::conditional_t<TW < UW, UD,
+            std::conditional_t<TUS || UUS, std::conditional_t<TUS, TD, UD>,
+            TD
+        >>>;
     };
+    template <typename T, typename U>
+    using sane_common_type_t = sane_common_type<T, U>::type;
+    /// @}
+    /// @brief Determines if `T` and `U` have the same sign.
+    /// @{
+    /// Calculation is based on `TInfo` and `UInfo`, which default to respective instantiations of
+    /// `std::numeric_limits`. They can be replaced by class types that provide the same interface as `std::numeric_limits`.
+    template <typename T, typename U, typename TInfo = std::numeric_limits<T>, typename UInfo = std::numeric_limits<U>>
+    struct is_same_sign : std::bool_constant<TInfo::is_signed == UInfo::is_signed> {};
+    template <typename T, typename U>
+    constexpr bool is_same_sign_v = is_same_sign<T, U>::value;
+    template <typename T, typename U>
+    concept same_sign_as = is_same_sign<T, U>::value;
+    /// @}
+    /// @brief Extends the definition of `epsilon` in `std::numeric_limits` to integral types.
+    ///
+    /// The epsilon of a floating-point type is given by `Info::epsilon()`, while that of an integral type is `T(1)`.
+    /// The classification of `T` is based on `Info`, which can be replaced by a class type that provides the same interface
+    /// as `std::numeric_limits`.
+    /// @{
+    template <typename T, typename Info = std::numeric_limits<T>>
+    struct epsilon_of : std::integral_constant<T, Info::is_integer ? T(1) : Info::epsilon()> {};
     template <typename T>
-    using sane_promotion_t = typename sane_promotion<T>::type;
-    template <typename T>
-    constexpr sane_promotion_t<T> sane_promote(T n) { return n; }
-
-    template <typename T>
-    constexpr T epsilon_of = std::numeric_limits<T>::is_integer ? T(1) : std::numeric_limits<T>::epsilon();
-    template <typename From, typename To>
-    concept lossless_convertible_to = requires {
-        requires std::numeric_limits<From>::is_specialized && std::numeric_limits<To>::is_specialized;
-        requires !std::numeric_limits<From>::is_signed || std::numeric_limits<To>::is_signed;
-        requires std::numeric_limits<From>::max() <= std::numeric_limits<To>::max();
-        requires std::numeric_limits<From>::lowest() >= std::numeric_limits<To>::lowest();
-        requires epsilon_of<From> >= epsilon_of<To>;
-    };
-    template <typename From, typename To>
-    struct is_lossless_convertible : std::bool_constant<lossless_convertible_to<From, To>> {};
+    constexpr T epsilon_of_v = epsilon_of<T>::value;
+    /// @}
+    /// @brief Determines if `From` can be converted to `To` without loss of information.
+    ///
+    /// Calculation is based on `FromInfo` and `ToInfo`, which default to respective instantiations of
+    /// `std::numeric_limits`. They can be replaced by class types that provide the same interface as `std::numeric_limits`.
+    /// @remark This does not check if `From` is actually convertible to `To`.
+    /// @{
+    template <
+        typename From, typename To,
+        typename FromInfo = std::numeric_limits<std::remove_cvref_t<From>>,
+        typename ToInfo = std::numeric_limits<std::remove_cvref_t<To>>>
+    struct is_lossless_convertible : std::bool_constant<requires {
+        requires FromInfo::is_specialized && ToInfo::is_specialized;
+        requires !FromInfo::is_signed || ToInfo::is_signed;
+        requires +FromInfo::max() <= +ToInfo::max();
+        requires +FromInfo::lowest() >= +ToInfo::lowest();
+        requires +epsilon_of<std::remove_cvref_t<From>, FromInfo>::value >= +epsilon_of<std::remove_cvref_t<To>, ToInfo>::value;
+    }> {};
     template <typename From, typename To>
     constexpr bool is_lossless_convertible_v = is_lossless_convertible<From, To>::value;
-
-    namespace integral_behavior {
-        /// @brief Default C++ integral arithmetic rules.
-        template <std::integral>
-        struct standard {
-            static constexpr integral_op_functors ops{};
-            static constexpr integral_asg_op_functors asg_ops{};
-        };
-
-        /// @brief Default C++ integral arithmetic rules, but using @code sane_promotion@endcode.
-        ///
-        /// This prevents @code unsigned short(-1) * 2@endcode from being undefined (it instead wraps around as expected).
-        template <std::integral Under>
-        struct sane {
-        private:
-            using U = sane_promotion_t<Under>;
-        public:
-            static constexpr integral_op_functors ops = {
-                .plus = std::plus<U>{},
-                .minus = std::minus<U>{},
-                .multiplies = std::multiplies<U>{},
-                .divides = std::divides<U>{},
-                .modulus = std::modulus<U>{}
-            };
-            static constexpr integral_asg_op_functors asg_ops = {
-                .plus_asg = plus_asg<U>{},
-                .minus_asg = minus_asg<U>{},
-                .multiplies_asg = multiplies_asg<U>{},
-                .divides_asg = divides_asg<U>{},
-                .modulus_asg = modulus_asg<U>{}
-            };
-        };
-
-        /// @brief Invokes UB for any overflow (even for unsigned types), in addition to standard C++ arithmetic rules.
-        template <std::integral Under>
-        struct ub {
-        private:
-            using SP = sane_promotion<Under>;
-            using U = SP::type;
-            static constexpr U max = std::numeric_limits<Under>::max(),
-            min = std::numeric_limits<Under>::min();
-            static constexpr U plus(U lhs, U rhs) noexcept {
-                [[assume(rhs < 0 || lhs <= max - rhs)]];
-                [[assume(rhs > 0 || lhs >= min - rhs)]];
-                return lhs + rhs;
-            }
-            static constexpr U minus(U lhs, U rhs) noexcept {
-                if constexpr (SP::conv) {
-                    [[assume(lhs - rhs >= min)]];
-                    [[assume(lhs - rhs <= max)]];
-                } else if constexpr (std::is_unsigned_v<Under>) {
-                    [[assume(lhs >= rhs)]];
-                }
-                return lhs - rhs;
-            }
-            static constexpr U multiplies(U lhs, U rhs) noexcept {
-                if constexpr (SP::conv) {
-                    // if lhs * rhs overflow even as promoted integers, it would overflow in Under anyway
-                    [[assume(lhs * rhs >= min)]];
-                    [[assume(lhs * rhs <= max)]];
-                } else if constexpr (std::is_unsigned_v<Under>) {
-                    [[assume(rhs == 0 || lhs <= max / rhs)]];
-                }
-                return lhs * rhs;
-            }
-        public:
-            static constexpr integral_op_functors ops = {
-                .plus = plus,
-                .minus = minus,
-                .multiplies = multiplies,
-                .divides = std::divides<U>{},
-                .modulus = std::modulus<U>{}
-            };
-            static constexpr integral_asg_op_functors asg_ops = {
-                .plus_asg = asg_wrap<plus>{},
-                .minus_asg = asg_wrap<minus>{},
-                .multiplies_asg = asg_wrap<multiplies>{},
-                .divides_asg = divides_asg<U>{},
-                .modulus_asg = modulus_asg<U>{}
-            };
-        };
-
-        /// @brief Wraps around for any overflow, even for signed types and division by -1.
-        template <std::integral Under>
-        struct wrap {
-        private:
-            using U = sane_promotion_t<Under>;
-            using UU = std::make_unsigned_t<U>;
-            static constexpr U divides(U lhs, U rhs) noexcept {
-                if (std::is_signed_v<Under> && lhs == std::numeric_limits<U>::min() && rhs == -1) return lhs;
-                return lhs / rhs;
-            }
-        public:
-            static constexpr integral_op_functors ops = {
-                .plus = std::plus<UU>{},
-                .minus = std::minus<UU>{},
-                .multiplies = std::multiplies<UU>{},
-                .divides = divides,
-                .modulus = std::modulus<U>{}
-            };
-            static constexpr integral_asg_op_functors asg_ops = {
-                .plus_asg = plus_asg<UU>{},
-                .minus_asg = minus_asg<UU>{},
-                .multiplies_asg = multiplies_asg<UU>{},
-                .divides_asg = asg_wrap<divides>{},
-                .modulus_asg = modulus_asg<U>{}
-            };
-        };
-
-#ifdef __cpp_lib_saturation_arithmetic
-        /// Saturated arithmetic.
-        /// In particular, @code signed_min % -1@endcode is defined to be 0.
-        template <std::integral Under>
-        struct sat {
-        private:
-            using U = sane_promotion_t<Under>;
-            static constexpr U modulus(U lhs, U rhs) noexcept {
-                if (std::is_signed_v<Under> && lhs == std::numeric_limits<U>::min() && rhs == -1) return 0;
-                return lhs % rhs;
-            }
-        public:
-            static constexpr integral_op_functors ops = {
-                .plus = std::add_sat<Under>,
-                .minus = std::sub_sat<Under>,
-                .multiplies = std::mul_sat<Under>,
-                .divides = std::div_sat<Under>,
-                .modulus = modulus
-            };
-            static constexpr integral_asg_op_functors asg_ops = {
-                .plus_asg = asg_wrap<std::add_sat<Under>>{},
-                .minus_asg = asg_wrap<std::sub_sat<Under>>{},
-                .multiplies_asg = asg_wrap<std::mul_sat<Under>>{},
-                .divides_asg = asg_wrap<std::div_sat<Under>>{},
-                .modulus_asg = asg_wrap<modulus>{}
-            };
-        };
-#endif
-
-        /// @brief Throws an exception for any overflow (including division) and division by 0.
-        ///
-        /// In other words, every arithmetic operation is defined under this trait.
-        template <std::integral Under>
-        struct checked {
-        private:
-            static constexpr Under plus(Under lhs, Under rhs) {
-                Under res;
-                if (ckd_add(&res, lhs, rhs)) throw std::overflow_error("integer overflow");
-                return res;
-            }
-            static constexpr Under minus(Under lhs, Under rhs) {
-                Under res;
-                if (ckd_sub(&res, lhs, rhs)) throw std::overflow_error("integer underflow");
-                return res;
-            }
-            static constexpr Under multiplies(Under lhs, Under rhs) {
-                Under res;
-                if (ckd_mul(&res, lhs, rhs)) throw std::overflow_error("integer overflow");
-                return res;
-            }
-            static constexpr Under divides(Under lhs, Under rhs) {
-                if (std::is_signed_v<Under> && lhs == std::numeric_limits<Under>::min() && rhs == -1) {
-                    throw std::overflow_error("integer overflow");
-                }
-                if (rhs == 0) throw std::domain_error("integer division by zero");
-                return lhs / rhs;
-            }
-            static constexpr Under modulus(Under lhs, Under rhs) {
-                if (std::is_signed_v<Under> && lhs == std::numeric_limits<Under>::min() && rhs == -1) {
-                    throw std::overflow_error("integer overflow");
-                }
-                if (rhs == 0) throw std::domain_error("integer division by zero");
-                return lhs % rhs;
-            }
-        public:
-            static constexpr integral_op_functors ops = {
-                .plus = plus,
-                .minus = minus,
-                .multiplies = multiplies,
-                .divides = divides,
-                .modulus = modulus
-            };
-            static constexpr integral_asg_op_functors asg_ops = {
-                .plus_asg = asg_wrap<plus>{},
-                .minus_asg = asg_wrap<minus>{},
-                .multiplies_asg = asg_wrap<multiplies>{},
-                .divides_asg = asg_wrap<divides>{},
-                .modulus_asg = asg_wrap<modulus>{}
-            };
-        };
-    }
-
-    namespace shift_behavior {
-        /// @brief Default C++ bit-shift operation rules.
-        template <std::integral>
-        struct standard {
-            static constexpr shift_op_functors ops{};
-            static constexpr shift_asg_op_functors asg_ops{};
-        };
-
-        /// @brief Treats bit-shifting as a scalar operation.
-        ///
-        /// Shifting by a negative @code n@endcode means shifting in the other direction,
-        /// and we assume @code lhs@endcode has an infinite range before truncating it to the original type.
-        /// Every operation is defined under this trait.
-        template <std::integral Under>
-        struct scalar {
-        private:
-            static constexpr int bits = std::numeric_limits<std::make_unsigned_t<Under>>::digits;
-            struct shift_right;
-            struct shift_left {
-                static Under operator()(Under lhs, auto n) noexcept {
-                    if (n < 0) return shift_right{}(lhs, -n);
-                    if (n >= bits) return 0;
-                    return lhs << n;
-                }
-            };
-            struct shift_right {
-                static Under operator()(Under lhs, auto n) noexcept {
-                    if (n < 0) return shift_left{}(lhs, -n);
-                    if (n >= bits) return lhs < 0 ? -1 : 0;
-                    return lhs >> n;
-                }
-            };
-        public:
-            static constexpr shift_op_functors ops = {
-                .shift_left = shift_left{},
-                .shift_right = shift_right{}
-            };
-            static constexpr shift_asg_op_functors asg_ops = {
-                .shift_left_asg = asg_wrap<shift_left{}>{},
-                .shift_right_asg = asg_wrap<shift_right{}>{}
-            };
-        };
-
-        /// @brief Circular bit-shifting.
-        ///
-        /// Every operation is defined under this trait.
-        template <std::unsigned_integral Under>
-        struct circular {
-        private:
-            using U = std::make_unsigned_t<Under>;
-            template <typename Self, typename Other>
-            struct convertible_to_int : is_lossless_convertible<make_fundamental_t<Other>, int> {};
-        public:
-            static constexpr shift_op_functors ops = {
-                .shift_left = std::rotl<U>,
-                .shift_right = std::rotr<U>,
-                // because @code std::rotl@endcode and @code std::rotr@endcode takes @code int@endcode as argument
-                .binary_traits = binary_op_traits<detail::get_self, convertible_to_int>{}
-            };
-            static constexpr shift_asg_op_functors asg_ops = {
-                .shift_left_asg = asg_wrap<std::rotl<U>>{},
-                .shift_right_asg = asg_wrap<std::rotr<U>>{},
-                .asg_traits = asg_op_traits<convertible_to_int>{}
-            };
-        };
-
-        /// @brief Throws an exception for invalid @code n@endcode.
-        ///
-        /// Every operation is defined under this trait.
-        template <std::integral Under>
-        struct checked {
-        private:
-            static constexpr int bits = std::numeric_limits<std::make_unsigned_t<Under>>::digits;
-            static constexpr auto shift_left = [](Under lhs, auto n) {
-                if (n < 0 || n >= bits) throw std::domain_error("shift out of range");
-                return lhs << n;
-            };
-            static constexpr auto shift_right = [](Under lhs, auto n) {
-                if (n < 0 || n >= bits) throw std::domain_error("shift out of range");
-                return lhs >> n;
-            };
-        public:
-            static constexpr shift_op_functors ops = {
-                .shift_left = shift_left,
-                .shift_right = shift_right,
-            };
-            static constexpr shift_asg_op_functors asg_ops = {
-                .shift_left_asg = asg_wrap<shift_left>{},
-                .shift_right_asg = asg_wrap<shift_right>{}
-            };
-        };
-    }
-
-    template <
-        typename Self, typename Other,
-        typename SelfInfo = std::numeric_limits<Self>,
-        typename OtherInfo = std::numeric_limits<std::remove_cvref_t<Other>>>
-    struct is_same_width : std::bool_constant<requires {
-        requires integer_like<std::remove_cvref_t<Self>>;
-        requires integer_like<std::remove_cvref_t<Other>>;
-        requires SelfInfo::digits + SelfInfo::is_signed == OtherInfo::digits + OtherInfo::is_signed;
-    }> {};
-    template <typename T, typename Ref>
-    concept same_sign_as = requires {
-        requires integer_like<T>;
-        requires std::numeric_limits<T>::is_signed == std::numeric_limits<Ref>::is_signed;
-    };
+    template <typename From, typename To>
+    concept lossless_convertible_to = is_lossless_convertible<From, To>::value;
+    /// @}
 
     namespace detail {
-        template <typename IB>
-        constexpr fix_op_functors integer_fix_ops = {
+        template <template<typename, typename> typename Trait, typename Self, typename A, typename B,
+            typename SelfD = std::remove_cvref_t<Self>,
+            typename AU = decltype(SelfD::to_underlying(std::declval<A>())),
+            typename BU = decltype(SelfD::to_underlying(std::declval<B>()))>
+        using integer_common_t = Trait<AU, BU>::type;
+        template <auto F, template<typename...> typename Trait>
+        struct integer_transform :
+            common_cast_transform<F, meta::composite<Trait, std::add_const, std::add_lvalue_reference>::template trait> {};
+        template <auto F>
+        struct integer_asg_wrap {
+            template <typename A, typename B>
+            static constexpr A& operator()(A& a, B&& b) {
+                return a = F(a, static_cast<const A&>(std::forward<B>(b)));
+            }
+        };
+    }
+    /// @namespace utils::integral_behavior
+    /// @brief Common strategies for integral arithmetics.
+    namespace integral_behavior {
+        /// @brief An [<i>IntegerBehaviorProfileTemplate</i>](IntegerBehaviorProfile.md) for integral arithmetics.
+        template <integral_op_functors Funcs, integral_asg_op_functors AsgFuncs>
+        struct profile {
+            static constexpr auto op_functors = Funcs;
+            static constexpr auto asg_op_functors = AsgFuncs;
+        };
+        /// @brief Default trait set for binary operators for `utils::integral_behavior::profile_from`.
+        /// @tparam CommonTypeTrait, ResultTrait: [<i>TypeTraits</i>](Trait.md).
+        template <template<typename, typename> typename CommonTypeTrait, template<typename, typename> typename ResultTrait>
+        struct default_binary_op_traits {
+            /// `a @ b` passes the constraint if and only if `A`, `B` both satisfy `utils::lossless_convertible_to<C>`,
+            /// where `A` and `B` are the types of expressions `a` and `b` respectively,
+            /// and `C` is `CommonTypeTrait` applied to the underlying types of `A` and `B`, in that order.
+            template <typename Self, typename A, typename B, typename C = detail::integer_common_t<CommonTypeTrait, Self, A, B>>
+            struct constraint : std::conjunction<is_lossless_convertible<A, C>, is_lossless_convertible<B, C>> {};
+            /// The result type is `Self` rebound to `R`,
+            /// which is `ResultTrait` applied to the underlying types of `A` and `B`, in that order.
+            template <typename Self, typename A, typename B, typename R = detail::integer_common_t<ResultTrait, Self, A, B>>
+            struct result { using type = std::remove_cvref_t<Self>::template rebind<R>; };
+        };
+        /// @brief Default trait set for assignment operators for `utils::integral_behavior::profile_from`.
+        struct default_asg_op_traits {
+            /// `a @= b` passes the constraint if `B` satisfies `utils::lossless_convertible_to<A>`,
+            /// where `A` and `B` are the types of expressions `a` and `b` respectively,
+            /// and `a` is a lvalue-reference.
+            template <typename Self, typename A, typename B>
+            struct constraint : std::conjunction<std::is_lvalue_reference<Self>, is_lossless_convertible<B, A>> {};
+        };
+        /// @brief Convenience variable template to make an [<i>IntegerBehaviorProfile</i>](IntegerBehaviorProfile.md)
+        /// for integral arithmetics.
+        ///
+        /// For every relevant operator `@` and the corresponding functor `F` (supplied in template parameters),
+        /// the synthesized functor `op` behaves as follows:
+        /// 1. If `@` is a binary operator, `op(a, b)` is equivalent to `F(static_cast<const C&>(a), static_cast<const C&>(b))`;
+        /// where `a` and `b` are expressions of types `A` and `B` respectively,
+        /// and `C` is `CommonTypeTrait<A, B>::type`.
+        /// 2. If `@` is an assignment operator, `op(a, b)` is equivalent to `a = F(a, static_cast<const A&>(b))`,
+        /// where `a` and `b` are expressions of types `A` and `B` respectively.
+        /// @tparam Plus, Minus, Mul, Div, Mod:
+        /// Base functors from which functors supplied to `utils::integral_behavior::profile` are synthesized.
+        /// They must return an integer-like type on every well-formed invocation.
+        /// @tparam BinaryTraits: Trait set supplied to `utils::integral_op_functors`.
+        /// @tparam AsgTraits: Trait set supplied to `utils::integral_asg_op_functors`.
+        template <
+            auto Plus, auto Minus, auto Mul, auto Div, auto Mod,
+            template<typename, typename> typename CommonTypeTrait = sane_common_type,
+            template<typename, typename> typename ResultTrait = CommonTypeTrait,
+            typename BinaryTraits = default_binary_op_traits<CommonTypeTrait, ResultTrait>,
+            typename AsgTraits = default_asg_op_traits>
+        constexpr profile<{
+            .plus = detail::integer_transform<Plus, CommonTypeTrait>{},
+            .minus = detail::integer_transform<Minus, CommonTypeTrait>{},
+            .multiplies = detail::integer_transform<Mul, CommonTypeTrait>{},
+            .divides = detail::integer_transform<Div, CommonTypeTrait>{},
+            .modulus = detail::integer_transform<Mod, CommonTypeTrait>{},
+            .binary_traits = BinaryTraits{}
+        }, {
+            .plus_asg = detail::integer_asg_wrap<Plus>{},
+            .minus_asg = detail::integer_asg_wrap<Minus>{},
+            .multiplies_asg = detail::integer_asg_wrap<Mul>{},
+            .divides_asg = detail::integer_asg_wrap<Div>{},
+            .modulus_asg = detail::integer_asg_wrap<Mod>{},
+            .asg_traits = AsgTraits{}
+        }> profile_from;
+
+        /// @brief Default C++ integral arithmetic rules.
+        inline constexpr auto standard = profile_from<
+            std::plus{}, std::minus{}, std::multiplies{}, std::divides{}, std::modulus{}, std::common_type>;
+
+        /// @brief Default C++ integral arithmetic rules, but the result type is determined by `utils::sane_common_type`.
+        ///
+        /// This prevents `(unsigned short)-1 * 2` from being undefined on a machine where `sizeof(int) == sizeof(short)`.
+        /// It instead wraps around as expected.
+        inline constexpr auto sane = profile_from<
+            std::plus{}, std::minus{}, std::multiplies{}, std::divides{}, std::modulus{}>;
+
+        namespace detail {
+            struct ub_plus {
+                template <typename T>
+                static constexpr decltype(auto) operator()(const T& a, const T& b) noexcept {
+                    [[assume(std::numeric_limits<T>::is_signed || a <= std::numeric_limits<T>::max() - b)]];
+                    return a + b;
+                }
+            };
+            struct ub_minus {
+                template <typename T>
+                static constexpr decltype(auto) operator()(const T& a, const T& b) noexcept {
+                    [[assume(std::numeric_limits<T>::is_signed || a >= b)]];
+                    return a - b;
+                }
+            };
+            struct ub_multiplies {
+                template <typename T>
+                static constexpr decltype(auto) operator()(const T& a, const T& b) noexcept {
+                    [[assume(std::numeric_limits<T>::is_signed || b == 0 || a <= std::numeric_limits<T>::max() / b)]];
+                    return a * b;
+                }
+            };
+        }
+        /// @brief Invokes undefined behavior for any overflow (even for unsigned types), in addition to standard C++ arithmetic rules.
+        inline constexpr auto ub = profile_from<
+            detail::ub_plus{}, detail::ub_minus{}, detail::ub_multiplies{}, std::divides{}, std::modulus{}>;
+
+        namespace detail {
+            struct wrap_divides {
+                template <typename T>
+                static constexpr auto operator()(const T& a, const T& b) -> decltype(a / b) {
+                    if (std::numeric_limits<T>::is_signed && a == std::numeric_limits<T>::min() && b == -1) return a;
+                    return a / b;
+                }
+            };
+        }
+        /// @brief Wraps around for any overflow, even for signed types and division by -1.
+        inline constexpr auto wrap = profile_from<
+            std::plus{}, std::minus{}, std::multiplies{}, detail::wrap_divides{}, std::modulus{},
+            meta::composite<sane_common_type, std::make_unsigned>::trait, sane_common_type,
+            default_binary_op_traits<sane_common_type, sane_common_type>>;
+
+#ifdef __cpp_lib_saturation_arithmetic
+#if __cpp_lib_saturation_arithmetic >= 202603L
+#define UTILS_INTEGER_SAT_FUNC(op) saturating_##op
+#elif __cpp_lib_saturation_arithmetic >= 202311L
+#define UTILS_INTEGER_SAT_FUNC(op) op##_sat
+#endif
+#define UTILS_INTEGER_SAT_CLASS(op_name, func_name)\
+    struct sat_##op_name {\
+        template <typename T>\
+        static constexpr T operator()(const T& a, const T& b) noexcept {\
+            using std:: UTILS_INTEGER_SAT_FUNC(func_name);\
+            return UTILS_INTEGER_SAT_FUNC(func_name)(a, b);\
+        }\
+    };
+        namespace detail {
+            UTILS_INTEGER_SAT_CLASS(plus, add)
+            UTILS_INTEGER_SAT_CLASS(minus, sub)
+            UTILS_INTEGER_SAT_CLASS(multiplies, mul)
+            UTILS_INTEGER_SAT_CLASS(divides, div)
+            struct sat_modulus {
+                template <typename T>
+                static constexpr auto operator()(const T& a, const T& b) noexcept -> decltype(a % b) {
+                    if (std::numeric_limits<T>::is_signed && a == std::numeric_limits<T>::min() && b == -1) return 0;
+                    return a % b;
+                }
+            };
+        }
+        /// @brief Saturation arithmetic.
+        ///
+        /// In particular, `signed_min % -1` is defined to be 0.
+        inline constexpr auto saturation = profile_from<
+            detail::sat_plus{}, detail::sat_minus{}, detail::sat_multiplies{}, detail::sat_divides{}, detail::sat_modulus{}>;
+#undef UTILS_INTEGER_SAT_CLASS
+#undef UTILS_INTEGER_SAT_FUNC
+#endif
+
+#define UTILS_INTEGER_CKD_CLASS(op_name, func_name)\
+    struct ckd_##op_name {\
+        template <typename T>\
+        static constexpr T operator()(const T& a, const T& b) {\
+            T out;\
+            if (ckd_##func_name(&out, a, b)) throw std::overflow_error("integer overflow");\
+            return out;\
+        }\
+    };
+        namespace detail {
+            UTILS_INTEGER_CKD_CLASS(plus, add)
+            UTILS_INTEGER_CKD_CLASS(minus, sub)
+            UTILS_INTEGER_CKD_CLASS(multiplies, mul)
+            struct ckd_divides {
+                template <typename T>
+                static void check(const T& a, const T& b) {
+                    if (std::is_signed_v<T> && a == std::numeric_limits<T>::min() && b == -1) {
+                        throw std::overflow_error("integer overflow");
+                    }
+                    if (b == 0) throw std::domain_error("integer division by zero");
+                }
+                template <typename T>
+                static constexpr decltype(auto) operator()(const T& a, const T& b) {
+                    check<T>(a, b);
+                    return a / b;
+                }
+            };
+            struct ckd_modulus {
+                template <typename T>
+                static constexpr decltype(auto) operator()(const T& a, const T& b) {
+                    ckd_divides::check<T>(a, b);
+                    return a % b;
+                }
+            };
+        }
+        /// @brief Throws an exception for any overflow (including division) and division by 0.
+        /// @remark Every arithmetic operation is defined under this trait.
+        inline constexpr auto checked = profile_from<
+            detail::ckd_plus{}, detail::ckd_minus{}, detail::ckd_multiplies{}, detail::ckd_divides{}, detail::ckd_modulus{}>;
+#undef UTILS_INTEGER_CKD_CLASS
+    }
+
+    /// @namespace utils::bit_behavior
+    /// @brief Common strategies for bit operations.
+    namespace bit_behavior {
+        /// @brief An [<i>IntegerBehaviorProfileTemplate</i>](IntegerBehaviorProfile.md) for bit operations.
+        template <bit_op_functors Funcs, bit_asg_op_functors AsgFuncs>
+        struct profile {
+            static constexpr auto op_functors = Funcs;
+            static constexpr auto asg_op_functors = AsgFuncs;
+        };
+        /// @brief Default trait set for binary operations for `utils::bit_behavior::profile_from`.
+        /// /// @tparam ResultTrait: [<i>TypeTraits</i>](Trait.md).
+        template <template<typename, typename> typename ResultTrait>
+        struct default_binary_op_traits {
+            /// `a @ b` passes the constraint if and only if `a` and `b` have the same width.
+            template <typename, typename A, typename B>
+            struct constraint : std::bool_constant<width_of_v<std::remove_cvref_t<A>> == width_of_v<std::remove_cvref_t<B>>> {};
+            /// The result type is `Self` rebound to the type obtained by applying `ResultTrait`
+            /// to the underlying types of `A` and `B`, in that order.
+            template <typename Self, typename A, typename B, typename R = detail::integer_common_t<ResultTrait, Self, A, B>>
+            struct result { using type = std::remove_cvref_t<Self>::template rebind<R>; };
+        };
+        /// @brief Default trait set for assignment operations for `utils::bit_behavior::profile_from`.
+        struct default_asg_op_traits {
+            /// `a @= b` passes constraint if and only if `a` is an lvalue reference and `a` and `b` have the same width.
+            template <typename Self, typename A, typename B>
+            struct constraint : std::conjunction<
+                std::is_lvalue_reference<Self>,
+                std::bool_constant<width_of_v<std::remove_cvref_t<A>> == width_of_v<std::remove_cvref_t<B>>>> {};
+        };
+        /// @brief Convenience variable template to make an [<i>IntegerBehaviorProfile</i>](IntegerBehaviorProfile.md)
+        /// for bit operations.
+        ///
+        /// For every relevant operator `@` and the corresponding functor `F` (supplied in template parameters),
+        /// the synthesized functor `op` behaves as follows:
+        /// 1. If `@` is a binary operator, `op(a, b)` is equivalent to `F(static_cast<const C&>(a), static_cast<const C&>(b))`;
+        /// where `a` and `b` are expressions of types `A` and `B` respectively,
+        /// and `C` is `CommonTypeTrait<A, B>::type`.
+        /// 2. If `@` is an assignment operator, `op(a, b)` is equivalent to `a = F(a, static_cast<const A&>(b))`,
+        /// where `a` and `b` are expressions of types `A` and `B` respectively.
+        /// @tparam BitAnd, BitOr, BitXor, BitNot:
+        /// Base functors from which functors supplied to `utils::bit_behavior::profile` are synthesized.
+        /// They must return an integer-like type on every well-formed invocation.
+        /// @tparam BinaryTraits: Trait set supplied to `utils::bit_op_functors`.
+        /// @tparam AsgTraits: Trait set supplied to `utils::bit_asg_op_functors`.
+        template <
+            auto BitAnd, auto BitOr, auto BitXor, auto BitNot,
+            template<typename, typename> typename CommonTypeTrait = sane_common_type,
+            template<typename, typename> typename ResultTrait = CommonTypeTrait,
+            typename BinaryTraits = default_binary_op_traits<ResultTrait>,
+            typename AsgTraits = default_asg_op_traits>
+        constexpr profile<{
+            .bit_and = utils::detail::integer_transform<BitAnd, CommonTypeTrait>{},
+            .bit_or = utils::detail::integer_transform<BitOr, CommonTypeTrait>{},
+            .bit_xor = utils::detail::integer_transform<BitXor, CommonTypeTrait>{},
+            .bit_not = BitNot,
+            .binary_traits = BinaryTraits{}
+        }, {
+            .bit_and_asg = utils::detail::integer_asg_wrap<BitAnd>{},
+            .bit_or_asg = utils::detail::integer_asg_wrap<BitOr>{},
+            .bit_xor_asg = utils::detail::integer_asg_wrap<BitXor>{},
+            .asg_traits = AsgTraits{}
+        }> profile_from;
+
+        /// @brief Default C++ bit operation rules.
+        inline constexpr auto standard = profile_from<
+            std::bit_and{}, std::bit_or{}, std::bit_xor{}, std::bit_not{}, std::common_type>;
+
+        /// @brief Default C++ bit operation rules, but the result type is determined by `utils::sane_common_type`.
+        inline constexpr auto sane = profile_from<
+            std::bit_and{}, std::bit_or{}, std::bit_xor{}, std::bit_not{}, sane_common_type>;
+    }
+
+    /// @namespace utils::shift_behavior
+    /// @brief Common strategies for bit shifts.
+    namespace shift_behavior {
+        /// @brief An [<i>IntegerBehaviorProfileTemplate</i>](IntegerBehaviorProfile.md) for bit shifts.
+        template <shift_op_functors Funcs, shift_asg_op_functors AsgFuncs>
+        struct profile {
+            static constexpr auto op_functors = Funcs;
+            static constexpr auto asg_op_functors = AsgFuncs;
+        };
+        /// @brief Default trait set for binary operations for `utils::shift_behavior::profile_from`.
+        struct default_binary_op_traits : utils::default_binary_op_traits {
+            /// The result type is `Self` rebound to the underlying type of `A`.
+            template <typename Self, typename A, typename,
+                typename SelfD = std::remove_cvref_t<Self>,
+                typename AU = decltype(SelfD::to_underlying(std::declval<A>()))>
+            struct result { using type = std::remove_cvref_t<Self>::template rebind<std::remove_cvref_t<AU>>; };
+        };
+        /// @brief Convenience variable template to make an [<i>IntegerBehaviorProfile</i>](IntegerBehaviorProfile.md)
+        /// for bit shifts.
+        ///
+        /// For every relevant operator `@` and the corresponding functor `F` (supplied in template parameters),
+        /// the synthesized functor `op` behaves as follows:
+        /// 1. If `@` is a binary operator, `op(a, b)` is equivalent to `F(a, b)`.
+        /// In other words, `op` is identical to `F` in this case.
+        /// 2. If `@` is an assignment operator, `op(a, b)` is equivalent to `a = F(a, b)`.
+        /// @tparam ShiftLeft, ShiftRight:
+        /// Base functors from which functors supplied to `utils::shift_behavior::profile` are synthesized.
+        /// They must return an integer-like type on every well-formed invocation.
+        /// @tparam BinaryTraits: Trait set supplied to `utils::shift_op_functors`.
+        /// @tparam AsgTraits: Trait set supplied to `utils::shift_asg_op_functors`.
+        template <auto ShiftLeft, auto ShiftRight,
+            typename BinaryTraits = default_binary_op_traits,
+            typename AsgTraits = default_asg_op_traits>
+        constexpr profile<{
+            .shift_left = ShiftLeft,
+            .shift_right = ShiftRight,
+            .binary_traits = BinaryTraits{}
+        }, {
+            .shift_left_asg = asg_wrap<ShiftLeft>{},
+            .shift_right_asg = asg_wrap<ShiftRight>{},
+            .asg_traits = AsgTraits{}
+        }> profile_from;
+
+        /// @brief Default C++ bit-shift operation rules.
+        inline constexpr auto standard = profile_from<shift_left{}, shift_right{}>;
+
+        namespace detail {
+            struct scalar_shift_left {
+                template <typename T, typename S>
+                static constexpr auto operator()(T&& t, S&& s) noexcept
+                -> decltype(std::declval<T&&>() << std::declval<S&&>());
+            };
+            struct scalar_shift_right {
+                template <typename T, typename S>
+                static constexpr auto operator()(T&& t, S&& s) noexcept
+                -> decltype(std::declval<T&&>() >> std::declval<S&&>());
+            };
+            template <typename T, typename S>
+            constexpr auto scalar_shift_left::operator()(T&& t, S&& s) noexcept
+            -> decltype(std::declval<T&&>() << std::declval<S&&>()) {
+                if (s < 0) return scalar_shift_right{}(std::forward<T>(t), -std::forward<S>(s));
+                if (s >= width_of_v<std::remove_cvref_t<T>>) return 0;
+                return std::forward<T>(t) << std::forward<S>(s);
+            }
+            template <typename T, typename S>
+            constexpr auto scalar_shift_right::operator()(T&& t, S&& s) noexcept
+            -> decltype(std::declval<T&&>() >> std::declval<S&&>()) {
+                using TD = std::remove_cvref_t<T>;
+                if (s < 0) return scalar_shift_left{}(std::forward<T>(t), -std::forward<S>(s));
+                if (s >= width_of_v<TD>) {
+                    if constexpr (std::numeric_limits<TD>::is_signed) return -1;
+                    else return 0;
+                }
+                return std::forward<T>(t) >> std::forward<S>(s);
+            }
+        }
+        /// @brief Treats bit-shifting as a scalar operation.
+        ///
+        /// Shifting by a negative `n` means shifting in the other direction,
+        /// and we assume `a` has an infinite range before truncating it to the original type.
+        /// @remark Every shift operation is defined under this trait.
+        inline constexpr auto scalar = profile_from<detail::scalar_shift_left{}, detail::scalar_shift_right{}>;
+
+#define UTILS_INTEGER_CIRC_CLASS(op_name, func_name)\
+    struct circ_##op_name {\
+        template <typename T, typename S>\
+        static constexpr decltype(auto) operator()(T&& t, S&& s) noexcept {\
+            using SInfo = std::numeric_limits<S>;\
+            using std:: func_name;\
+            if constexpr (!std::has_single_bit<unsigned>(width_of_v<T>) && (SInfo::min() < INT_MIN || SInfo::max() > INT_MAX)) {\
+                return func_name(std::forward<T>(t), std::forward<S>(s) % width_of_v<T>);\
+            } else {\
+                return func_name(std::forward<T>(t), std::forward<S>(s));\
+            }\
+        }\
+    };
+        namespace detail {
+            UTILS_INTEGER_CIRC_CLASS(shift_left, rotl)
+            UTILS_INTEGER_CIRC_CLASS(shift_right, rotr)
+        }
+        /// @brief Circular bit-shifting.
+        /// @remark Every shift operation is defined under this trait.
+        inline constexpr auto circular = profile_from<detail::circ_shift_left{}, detail::circ_shift_right{}>;
+#undef UTILS_INTEGER_CIRC_CLASS
+
+        namespace detail {
+            template <auto F>
+            struct ckd_base {
+                template <typename T, typename N>
+                static constexpr decltype(auto) operator()(T&& t, N&& n) {
+                    if (n < 0 || n >= width_of_v<std::remove_cvref_t<T>>) throw std::domain_error("shift out of range");
+                    return F(std::forward<T>(t), std::forward<N>(n));
+                }
+            };
+        }
+        /// @brief Throws an exception for invalid `n`.
+        /// @remark Every shift operation is defined under this trait.
+        inline constexpr auto checked = profile_from<detail::ckd_base<shift_left{}>{}, detail::ckd_base<shift_right{}>{}>;
+    }
+
+    namespace detail {
+        template <auto IB>
+        inline constexpr fix_op_functors integer_fix_ops = {
             .pre_increment = [](auto& self) {
-                return IB::asg_ops.plus_asg(self, 1);
+                return IB.asg_op_functors.plus_asg(self, 1);
             },
             .post_increment = [](auto& self) {
                 const auto old = self;
-                IB::asg_ops.plus_asg(self, 1);
+                IB.asg_op_functors.plus_asg(self, 1);
                 return old;
             },
             .pre_decrement = [](auto& self) {
-                return IB::asg_ops.minus_asg(self, 1);
+                return IB.asg_op_functors.minus_asg(self, 1);
             },
             .post_decrement = [](auto& self) {
                 const auto old = self;
-                IB::asg_ops.minus_asg(self, 1);
+                IB.asg_op_functors.minus_asg(self, 1);
                 return old;
             }
         };
     }
+    /// @brief An integer wrapper with added type safety and customizable behavior in arithmetic operations.
+    ///
+    /// This class template is meant as a near drop-in replacement of built-in integers in the language.
+    /// It provides better type safety: an explicit conversion call is needed when there is potential value change;
+    /// and fully customizable behavior in arithmetic operations,
+    /// which is controlled by the behavior profiles in template parameters.
+    /// One may, for example, define overflow and underflow for signed integers to provide better safety guarantees.
+    ///
+    /// The template is also flexible, in that the underlying type `T` can be any <i>integer-like</i> type.
+    /// In other words, it is possible to use the class template on a non-standard big integer type as long as
+    /// it meets all requirements specified in the standard for <i>integer-like</i> types.
+    /// Specialize `utils::is_integer_like` to declare as a type as <i>integer-like</i>.
+    ///
+    /// @tparam IB: [<i>IntegerBehaviorProfile</i>](IntegerBehaviorProfile.md) for integral operations.
+    /// @tparam BB: [<i>IntegerBehaviorProfile</i>](IntegerBehaviorProfile.md) for bit operations.
+    /// @tparam SB: [<i>IntegerBehaviorProfile</i>](IntegerBehaviorProfile.md) for bit shifts.
     template <
-        std::integral Under,
-        template<typename> typename IBTrait = integral_behavior::sane,
-        template<typename> typename SBTrait = shift_behavior::standard>
-    requires (
-        tagged<decltype(IBTrait<Under>::ops), integral_op_functors_tag> &&
-        tagged<decltype(IBTrait<Under>::asg_ops), integral_asg_op_functors_tag> &&
-        tagged<decltype(SBTrait<Under>::ops), shift_op_functors_tag> &&
-        tagged<decltype(SBTrait<Under>::asg_ops), shift_asg_op_functors_tag>
-    )
+        integer_like T,
+        integral_behavior::profile IB = integral_behavior::sane,
+        bit_behavior::profile BB = bit_behavior::sane,
+        shift_behavior::profile SB = shift_behavior::standard>
     struct integer : arithmetic_ops<
-        IBTrait<Under>::ops, IBTrait<Under>::asg_ops,
-        {.binary_traits = binary_op_traits<detail::get_self, is_same_width>{}},
-        {.asg_traits = asg_op_traits<is_same_width>{}},
-        SBTrait<Under>::ops, SBTrait<Under>::asg_ops,
-        {}, detail::integer_fix_ops<IBTrait<Under>>
+        IB.op_functors, IB.asg_op_functors,
+        BB.op_functors, BB.asg_op_functors,
+        SB.op_functors, SB.asg_op_functors,
+        {},
+        detail::integer_fix_ops<IB>
     > {
         using tag = struct integer_tag;
-        using underlying_type = Under;
-        using integral_behavior = IBTrait<Under>;
-        using shift_behavior = SBTrait<Under>;
-        template <std::integral ToUnder>
-        using to = integer<ToUnder, IBTrait>;
-        template <template<typename> typename ToIBTrait = IBTrait, template<typename> typename ToSBTrait = SBTrait>
-        using adopt = integer<Under, ToIBTrait, ToSBTrait>;
+        using underlying_type = T;
+        static constexpr integral_behavior::profile integral_behavior = IB;
+        static constexpr bit_behavior::profile bit_behavior = BB;
+        static constexpr shift_behavior::profile shift_behavior = SB;
+        template <integer_like U>
+        using rebind = integer<U, IB, BB, SB>;
+        template <integral_behavior::profile ToIB>
+        using rebind_integral_behavior = integer<T, ToIB, BB, SB>;
+        template <bit_behavior::profile ToBB>
+        using rebind_bit_behavior = integer<T, IB, ToBB, SB>;
+        template <shift_behavior::profile ToSB>
+        using rebind_shift_behavior = integer<T, IB, BB, ToSB>;
 
-        /// @remark Made public to preserve structural type. Use at your own risk.
-        underlying_type under_;
-
-        static constexpr integer max() noexcept {
-            return std::numeric_limits<underlying_type>::max();
-        }
-        static constexpr integer min() noexcept {
-            return std::numeric_limits<underlying_type>::min();
-        }
-        static constexpr bool is_signed = std::numeric_limits<underlying_type>::is_signed;
-
-        constexpr integer() noexcept = default;
-        /// @brief Conversion from a @code number_like@endcode value @code other@endcode.
+        /// @brief The underlying integer.
         ///
-        /// If @code underlying_type@endcode is unsigned and @code other < 0@endcode, it wraps around.
-        /// Explicit if @code other@endcode is not @code lossless_convertible_to@endcode @code Under@endcode.
-        template <typename T>
-        requires (std::is_convertible_v<make_fundamental_t<T>, underlying_type>)
-        explicit(!lossless_convertible_to<make_fundamental_t<T>, underlying_type>)
-        constexpr integer(const T& other) noexcept : under_(to_fundamental(other)) {}
+        /// The behavior is undefined if it is used in user code.
+        /// @remark The member is only made public to preserve structural type.
+        T under_;
+
+        /// @brief Get a reference to the underlying object of `x`.
+        ///
+        /// The static member function only has overloads for
+        /// 1. `utils::integer_like` types, and
+        /// 2. `utils::integer` instances with identical behavior profiles.
+        /// @{
+        template <typename U>
+        requires (is_integer_like_v<std::remove_cvref_t<U>>)
+        static constexpr U&& to_underlying(U&& x) noexcept { return std::forward<U>(x); }
+        template <tagged<integer_tag> U>
+        requires (std::is_same_v<typename std::remove_cvref_t<U>::template rebind<T>, integer>)
+        static constexpr decltype(auto) to_underlying(U&& x) noexcept { return std::forward_like<U>(x.under_); }
+        /// @}
+
+        /// @defgroup utils::integer<T, IB, BB, SB>
+        /// @{
+        /// @brief Default-initializes `under_`.
+        constexpr integer() = default;
+        /// @brief Conversion from a (possibly wrapped) integer-like value `other`.
+        ///
+        /// If `T` is unsigned and `other < 0`, it wraps around.
+        /// Explicit if `utils::lossless_convertible_to<U, T>` is false.
+        template <typename Other, typename U = decltype(to_underlying(std::declval<Other&&>()))>
+        explicit(!lossless_convertible_to<U, T>)
+        constexpr integer(Other&& other) noexcept(std::is_nothrow_constructible_v<T, U>) :
+            under_(to_underlying(std::forward<Other>(other))) {}
+        /// @brief Conversion from a floating point value `other`.
+        /// The constructor is explicit as there is potential precision loss.
+        template <typename Other>
+        requires (std::is_floating_point_v<std::remove_cvref_t<Other>>)
+        explicit constexpr integer(Other&& other) noexcept(std::is_nothrow_constructible_v<T, Other&&>) :
+            under_(std::forward<Other>(other)) {}
         /// @brief This allows implicit conversions from numbers known at compile time.
-        /// @throw std::overflow_error (at compile time)
-        /// if the number (with sign preserved) cannot be represented by @code underlying_type@endcode.
-        /// @remark @code Ts@endcode exists solely to lower the priority of this constructor (in overload resolution).
-        template <typename... Ts>
-        requires (sizeof...(Ts) == 0)
-        consteval integer(const std::integral auto& other, Ts...) : under_(other) {
-            if (!is_signed && other < 0) {
-                throw std::overflow_error("negative number assigned to an unsigned type. "
-                    "Use the explicit constructor if you want it to wrap around.");
-            }
-            if (other > +max()) {
-                throw std::overflow_error("integer overflow");
-            }
-            if (other < +min()) {
-                throw std::overflow_error("integer underflow");
-            }
+        /// @throw std::overflow_error (at compile time) if `other` cannot be represented by `T`,
+        /// after wrapping around `other` if `T` is unsigned.
+        /// @remark `Ts` exists solely to lower the priority of this constructor in overload resolution.
+        template <typename Other, typename... Ts, typename OtherD = std::remove_cvref_t<Other>>
+        requires ((std::is_arithmetic_v<OtherD> || is_integer_like_v<OtherD>) && sizeof...(Ts) == 0)
+        consteval integer(Other&& other, Ts...) : under_(std::forward<Other>(other)) {
+            using TInfo = std::numeric_limits<T>;
+            const auto& x = (!TInfo::is_signed && under_ < 0) ? (TInfo::max() + under_) : under_;
+            if (x > TInfo::max()) throw std::overflow_error("integer overflow");
+            if (x < TInfo::min()) throw std::underflow_error("integer underflow");
         }
-        constexpr underlying_type& to_underlying() noexcept { return under_; }
-        constexpr underlying_type to_underlying() const noexcept { return under_; }
-        /// @brief Conversion to integer-like type @code T@endcode.
+        /// @}
+
+        /// @brief Comparison operators.
         ///
-        /// Explicit if @code underlying_type@endcode is not @code lossless_convertible_to@endcode @code T@endcode.
-        template <typename T>
-        requires (!tagged<T, integer_tag>)
-        explicit(!lossless_convertible_to<underlying_type, T>)
-        constexpr operator T() const noexcept { return static_cast<T>(under_); }
-
-        constexpr bool operator==(const same_sign_as<integer> auto& other) const noexcept {
-            return under_ == to_fundamental(other);
+        /// `utils::integer` can be compared with an `utils::integer_like` type if and only if
+        /// both have the same signedness (either both signed, or both unsigned).
+        /// @{
+        template <typename Self, typename Other,
+            typename SelfD = std::remove_cvref_t<Self>, typename OtherD = std::remove_cvref_t<Other>>
+        requires (is_same_sign_v<SelfD, OtherD>)
+        constexpr decltype(auto) operator==(this Self&& self, Other&& other)
+        noexcept(noexcept(std::forward_like<Self>(self.under_) == to_underlying(std::forward<Other>(other)))) {
+            return std::forward_like<Self>(self.under_) == to_underlying(std::forward<Other>(other));
         }
-        constexpr auto operator<=>(const same_sign_as<integer> auto& other) const noexcept {
-            return under_ <=> to_fundamental(other);
+        template <typename Self, typename Other,
+            typename SelfD = std::remove_cvref_t<Self>, typename OtherD = std::remove_cvref_t<Other>>
+        requires (is_same_sign_v<SelfD, OtherD>)
+        constexpr decltype(auto) operator<=>(this Self&& self, Other&& other)
+        noexcept(noexcept(std::forward_like<Self>(self.under_) <=> to_underlying(std::forward<Other>(other)))) {
+            return std::forward_like<Self>(self.under_) <=> to_underlying(std::forward<Other>(other));
         }
+        /// @}
 
-        using integer::utils_ops_base_type::operator+;
-        constexpr underlying_type operator+() const noexcept { return under_; }
+        /// @brief Conversion to references to underlying type.
+        /// @{
+        template <std::same_as<T> U>
+        constexpr operator U&() & noexcept { return under_; }
+        template <std::same_as<T> U>
+        constexpr operator const U&() const& noexcept { return under_; }
+        template <std::same_as<T> U>
+        constexpr operator U&&() && noexcept { return std::move(under_); }
+        template <std::same_as<T> U>
+        constexpr operator const U&&() const&& noexcept { return std::move(under_); }
+        /// @}
+        /// @brief Conversion to integer-like type `U`.
+        ///
+        /// Explicit if `utils::lossless_convertible_to<T, U>` is false.
+        template <typename U>
+        requires (!std::is_same_v<U, T> && is_explicitly_convertible_v<T, U>)
+        explicit(!lossless_convertible_to<T, U>)
+        constexpr operator U() const noexcept { return static_cast<U>(under_); }
 
+        /// @brief Returns the underlying object.
+        constexpr T operator+() const noexcept { return under_; }
+
+        /// @brief `operator<<` overload for output streams.
         template <typename CharT, typename Traits>
-        friend auto& operator<<(std::basic_ostream<CharT, Traits>& os, const integer& i) {
-            return os << i.under_;
-        }
-        template <typename CharT, typename Traits>
-        friend auto& operator>>(std::basic_istream<CharT, Traits>& is, integer& i) {
-            using std_types = std::tuple<short, int, long, long long,
-                unsigned short, unsigned int, unsigned long, unsigned long long>;
-            if constexpr (meta::contained_in_v<std_types, underlying_type>) {
-                is >> i.under_;
-            } else {
-                using max_t = std::conditional_t<std::is_signed_v<underlying_type>, long long, unsigned long long>;
-                max_t u;
-                is >> u;
-                if (u > std::numeric_limits<underlying_type>::max()) {
-                    is.setstate(std::ios_base::failbit);
-                    u = std::numeric_limits<underlying_type>::max();
-                }
-                if (u < std::numeric_limits<underlying_type>::min()) {
-                    is.setstate(std::ios_base::failbit);
-                    u = std::numeric_limits<underlying_type>::min();
-                }
-                i.under_ = static_cast<underlying_type>(u);
-            }
-            return is;
+        friend decltype(auto) operator<<(std::basic_ostream<CharT, Traits>& is, const integer& value)
+        requires requires { is << value.under_; } {
+            return is << value.under_;
         }
     };
-    template <typename T>
-    constexpr T* operator+(T* ptr, tagged<integer_tag> auto offset) noexcept { return ptr + +offset; }
-    template <typename T>
-    constexpr T* operator-(T* ptr, tagged<integer_tag> auto offset) noexcept { return ptr - +offset; }
-    template <tagged<integer_tag> T>
-    struct make_fundamental<T> { using type = T::underlying_type; };
 
     namespace integer_alias {
         using schar = integer<signed char>;
@@ -493,7 +710,6 @@ namespace utils {
         using ulong = integer<unsigned long>;
         using sllong = integer<signed long long>;
         using ullong = integer<unsigned long long>;
-
 #ifdef INT8_MAX
         using s8 = integer<int8_t>;
 #endif
@@ -536,7 +752,6 @@ namespace utils {
         using ufast64 = integer<std::uint_fast64_t>;
         using smax = integer<std::intmax_t>;
         using umax = integer<std::uintmax_t>;
-
         using size_t = integer<std::size_t>;
         using ptrdiff_t = integer<std::ptrdiff_t>;
 #ifdef INTPTR_MAX
@@ -550,30 +765,29 @@ namespace utils {
 
 template <utils::tagged<utils::integer_tag> T>
 struct std::numeric_limits<T> : std::numeric_limits<typename T::underlying_type> {
-    static constexpr T min() noexcept { return std::numeric_limits<typename T::underlying_type>::min(); }
-    static constexpr T max() noexcept { return std::numeric_limits<typename T::underlying_type>::max(); }
-    static constexpr T lowest() noexcept { return std::numeric_limits<typename T::underlying_type>::lowest(); }
-    static constexpr T epsilon() noexcept { return std::numeric_limits<typename T::underlying_type>::epsilon(); }
-    static constexpr T round_error() noexcept {
-        return std::numeric_limits<typename T::underlying_type>::round_error();
-    }
-    static constexpr T infinity() noexcept { return std::numeric_limits<typename T::underlying_type>::infinity(); }
-    static constexpr T quiet_NaN() noexcept { return std::numeric_limits<typename T::underlying_type>::quiet_NaN(); }
-    static constexpr T signaling_NaN() noexcept {
-        return std::numeric_limits<typename T::underlying_type>::signaling_NaN();
-    }
-    static constexpr T denorm_min() noexcept { return std::numeric_limits<typename T::underlying_type>::denorm_min(); }
+private:
+    using base_type = std::numeric_limits<typename T::underlying_type>;
+public:
+    static constexpr T min() noexcept { return base_type::min(); }
+    static constexpr T max() noexcept { return base_type::max(); }
+    static constexpr T lowest() noexcept { return base_type::lowest(); }
+    static constexpr T epsilon() noexcept { return base_type::epsilon(); }
+    static constexpr T round_error() noexcept { return base_type::round_error(); }
+    static constexpr T infinity() noexcept { return base_type::infinity(); }
+    static constexpr T quiet_NaN() noexcept { return base_type::quiet_NaN(); }
+    static constexpr T signaling_NaN() noexcept { return base_type::signaling_NaN(); }
+    static constexpr T denorm_min() noexcept { return base_type::denorm_min(); }
 };
 
 template <utils::tagged<utils::integer_tag> T, typename CharT>
 struct std::formatter<T, CharT> : std::formatter<typename T::underlying_type, CharT> {
 private:
-    using parent = std::formatter<typename T::underlying_type, CharT>;
+    using base_type = std::formatter<typename T::underlying_type, CharT>;
 public:
     constexpr auto parse(auto& parse_ctx) {
-        return parent::parse(parse_ctx);
+        return base_type::parse(parse_ctx);
     }
-    constexpr auto format(T arg, auto& fmt_ctx) const {
-        return parent::format(arg.to_underlying(), fmt_ctx);
+    constexpr auto format(const T& arg, auto& fmt_ctx) const {
+        return base_type::format(T::to_underlying(arg), fmt_ctx);
     }
 };

@@ -69,43 +69,43 @@ namespace utils {
         };
     }
     /// @brief A disambiguation flag to declare that keys and mapped values given to the constructor
-    /// conform to the internal layout of @code segment_tree@endcode.
+    /// conform to the internal layout of `segment_tree`.
     inline constexpr struct segment_tree_nodes_t {} segment_tree_nodes;
-    /// @brief Enumeration type representing the direction a @code segment_tree_traverser_for@endcode chooses to go,
+    /// @brief Enumeration type representing the direction a `segment_tree_traverser_for` chooses to go,
     /// from root to leaves.
     enum class segment_tree_traverse_direction { stop, left, right, both };
-    /// @brief Specifies that @code T@endcode is a traverser for @code segment_tree@endcode @code ST@endcode.
+    /// @brief Specifies that `T` is a traverser for `segment_tree` `ST`.
     ///
     /// Given the following values:
     /// | Value | Definition |
     /// | ----- | ---------- |
-    /// | @code traverser@endcode | A traverser of type @code T@endcode |
-    /// | @code st@endcode | The segment tree (of type @code ST@endcode) @code traverser@endcode is traversing |
-    /// | @code info@endcode | A @code segment_tree_node_info@endcode describing the node @code traverser@endcode is at |
+    /// | `traverser` | A traverser of type `T` |
+    /// | `st` | The segment tree (of type `ST`) `traverser` is traversing |
+    /// | `info` | A `segment_tree_node_info` describing the node `traverser` is at |
     /// The following operations should be supported:
     /// | Statement | Semantics |
     /// | --------- | --------- |
-    /// | @code traverser(st, info)@endcode | Returns which child(ren) of the current node @code traverser@endcode should visit next. |
+    /// | `traverser(st, info)` | Returns which child(ren) of the current node `traverser` should visit next. |
     template <typename T, typename ST>
     concept segment_tree_traverser_for = requires (T traverser, const ST& st, const typename ST::node_info& info) {
         { traverser(st, info) } -> std::convertible_to<segment_tree_traverse_direction>;
     };
-    /// @brief Specifies that @code T@endcode is a strategy for traversing @code ST@endcode.
+    /// @brief Specifies that `T` is a strategy for traversing `ST`.
     ///
-    /// A traverser strategy produces a value at every node (in @code st@endcode) the traverser visits,
+    /// A traverser strategy produces a value at every node (in `st`) the traverser visits,
     /// which is "joined" in a bottom-up manner to produce a final output from the traversal.
-    /// Suppose a traverser following @code strategy@endcode is currently at a node @code v@endcode. Define the following values:
+    /// Suppose a traverser following `strategy` is currently at a node `v`. Define the following values:
     /// | Value | Definition |
     /// | ----- | ---------- |
-    /// | @code st@endcode | A const reference to the segment tree (of type @code ST@endcode) the traverser is traversing. |
-    /// | @code info@endcode | A pointer to a @code segment_tree_node_info@endcode describing the node @code v@endcode, or @code nullptr@endcode if @code v@endcode does not exist. |
-    /// | @code L@endcode | The value produced by the left child of @code v@endcode, or @code nullptr@endcode if not visited by @code st@endcode. |
-    /// | @code R@endcode | The value produced by the right child of @code v@endcode, or @code nullptr@endcode if not visited by @code st @endcode. |
+    /// | `st` | A const reference to the segment tree (of type `ST`) the traverser is traversing. |
+    /// | `info` | A pointer to a `segment_tree_node_info` describing the node `v`, or `nullptr` if `v` does not exist. |
+    /// | `L` | The value produced by the left child of `v`, or `nullptr` if not visited by `st`. |
+    /// | `R` | The value produced by the right child of `v`, or `nullptr` if not visited by `st `. |
     /// The following operations are then executed in the order presented:
-    /// 1. If @code strategy@endcode does not stop at @code v@endcode and @code strategy.prepare(st, *info)@endcode is well-formed,
+    /// 1. If `strategy` does not stop at `v` and `strategy.prepare(st, *info)` is well-formed,
     /// it is invoked with return value discarded.
-    /// 2. @code L@endcode and @code R@endcode are collected.
-    /// 3. @code strategy(st, info, L, R)@endcode is produced at @f$v@f$.
+    /// 2. `L` and `R` are collected.
+    /// 3. `strategy(st, info, L, R)` is produced at @f$v@f$.
     template <typename T, typename ST>
     concept segment_tree_strategy_for = requires (
         T strategy, const ST& st, const typename ST::node_info& info,
@@ -120,44 +120,44 @@ namespace utils {
     ///
     /// Segment tree is a data structure which partitions a set of keys into contiguous segments of lengths of powers of 2,
     /// where length is defined as the number of keys contained in the segment.
-    /// @code segment_tree@endcode, similar to @code std::flat_multimap@endcode, is a container adaptor which stores
+    /// `segment_tree`, similar to `std::flat_multimap`, is a container adaptor which stores
     /// keys and mapped values in two underlying containers of respective types
-    /// @code KeyContainer@endcode and @code MappedContainer@endcode.
-    /// Given @f$n@f$ key-mapped pairs, @code keys@endcode (of type @code KeyContainer@endcode) and
-    /// @code nodes@endcode (of type @code MappedContainer@endcode) conforms to the <i>internal layout</i> of the class
+    /// `KeyContainer` and `MappedContainer`.
+    /// Given @f$n@f$ key-mapped pairs, `keys` (of type `KeyContainer`) and
+    /// `nodes` (of type `MappedContainer`) conforms to the <i>internal layout</i> of the class
     /// if and only if all of the following hold:
-    /// 1. @code keys.size() == n@endcode and contains the keys in non-decreasing order according to @code Compare@endcode.
+    /// 1. `keys.size() == n` and contains the keys in non-decreasing order according to `Compare`.
     /// (Order of equivalent keys is unspecified.)
-    /// 2. For @f$i\in\{0,...,n-1\}@f$, @code node[i]@endcode is paired with @code keys[i]@endcode in the original input.
+    /// 2. For @f$i\in\{0,...,n-1\}@f$, `node[i]` is paired with `keys[i]` in the original input.
     /// 3. Let @f$L(0)=n@f$ and @f$L(\ell)=\lceil L(\ell-1)/2\rceil@f$ for @f$\ell\in\mathbb{N}@f$.
     /// Further let @f$S@f$ be the partial sum of @f$L@f$, that is, @f$S(\ell)=\sum_{i=0}^{\ell} L(i)@f$.
     /// Denote by @f$h@f$ the height of the tree, that is, the smallest integer such that @f$L(h)=1@f$.
     /// Then, for @f$\ell\in\{0,...,h\}@f$ and @f$j\in\{0,...,L(h)-1@f$,
     /// @f$\mathrm{nodes}[S(\ell)+j]=\sum_{i=2^\ell j}^{2^\ell(j+1)-1}N[j]@f$,
-    /// where @f$N[j]@f$ is @code nodes[j]@endcode if @f$j<n@f$ and the identity (defined by @code Identity@endcode otherwise,
-    /// and the sum operator is defined by @code Sum@endcode.
+    /// where @f$N[j]@f$ is `nodes[j]` if @f$j<n@f$ and the identity (defined by `Identity` otherwise,
+    /// and the sum operator is defined by `Sum`.
     ///
-    /// @code segment_tree@endcode is only meaningful on mapped values in a monoid.
-    /// More specifically, given an object @code sum@endcode of type @code Sum@endcode and
-    /// @code e@endcode of type @code Identity@endcode, constructing the class is undefined unless
+    /// `segment_tree` is only meaningful on mapped values in a monoid.
+    /// More specifically, given an object `sum` of type `Sum` and
+    /// `e` of type `Identity`, constructing the class is undefined unless
     /// all following semantic requirements are met:
-    /// 1. Associativity: For (possibly cv-qualified) objects @code a@endcode,
-    /// @code b@endcode and @code c@endcode of type @code T@endcode,
-    /// @code sum(sum(a,b),c)@endcode and @code sum(a,sum(b,c))@endcode are equivalent.
-    /// 2. Identity: For any (possibly cv-qualified) object @code a@endcode of type @code T@endcode,
-    /// @code sum(a,e())@endcode, @code sum(e(),a)@endcode and @code a@endcode are equivalent.
+    /// 1. Associativity: For (possibly cv-qualified) objects `a`,
+    /// `b` and `c` of type `T`,
+    /// `sum(sum(a,b),c)` and `sum(a,sum(b,c))` are equivalent.
+    /// 2. Identity: For any (possibly cv-qualified) object `a` of type `T`,
+    /// `sum(a,e())`, `sum(e(),a)` and `a` are equivalent.
     ///
-    /// An <i>update record</i> is a container of type @code update_type@endcode
-    /// produced by some member functions of @code segment_tree@endcode
+    /// An <i>update record</i> is a container of type `update_type`
+    /// produced by some member functions of `segment_tree`
     /// that represents extraneous updates to mapped values not reflected in the underlying containers.
     /// Although the internal layout of an update record is implementation-defined,
-    /// it can be identified by a map @f$U@f$ from @code keys()@endcode to @code mapped_type@endcode.
-    /// Any member function that accepts an update record behaves as if for any @code k@endcode in @code keys()@endcode,
-    /// the corresponding mapped value is @code sum()(at(k)+U[k])@endcode.
-    /// It is undefined to pass an object of @code update_type@endcode to any such member function that is not
-    /// produced by the same @code segment_tree@endcode.
+    /// it can be identified by a map @f$U@f$ from `keys()` to `mapped_type`.
+    /// Any member function that accepts an update record behaves as if for any `k` in `keys()`,
+    /// the corresponding mapped value is `sum()(at(k)+U[k])`.
+    /// It is undefined to pass an object of `update_type` to any such member function that is not
+    /// produced by the same `segment_tree`.
     ///
-    /// @code segment_tree@endcode meets the requirements of <i>Container</i>, <i>ReversibleContainer</i>,
+    /// `segment_tree` meets the requirements of <i>Container</i>, <i>ReversibleContainer</i>,
     /// optional container requirements, and <i>AssociativeContainer</i>
     /// except all operations that are only supported on non-const instances.
     ///
@@ -167,22 +167,22 @@ namespace utils {
     /// In particular, invalidated update records still remain valid containers.
     ///
     /// <h3>Additional Type Requirements</h3>
-    /// In any member function that accepts a @code multiplies@endcode argument,
+    /// In any member function that accepts a `multiplies` argument,
     /// it is undefined (unless ill-formed) to call to such function unless all the following hold true
-    /// for any (possibly cv-qualified) object @code a@endcode of type @code T@endcode:
-    /// 1. @code multiplies(a,0)@endcode is equivalent to @code identity()()@endcode.
-    /// 2. For any non-zero @code n@endcode of @code size_type@endcode,
-    /// @code multiplies(a,n)@endcode is equivalent to @f$\sum_{i=1}^n a@f$ (with respect to @code sum()@endcode).
+    /// for any (possibly cv-qualified) object `a` of type `T`:
+    /// 1. `multiplies(a,0)` is equivalent to `identity()()`.
+    /// 2. For any non-zero `n` of `size_type`,
+    /// `multiplies(a,n)` is equivalent to @f$\sum_{i=1}^n a@f$ (with respect to `sum()`).
     ///
     /// @tparam Key: Type of keys
     /// @tparam T: Type of mapped values
     /// @tparam Compare: Functor type for comparing keys that satisfies <i>Compare</i>
     /// @tparam Sum: Functor type providing monoid operation on two mapped values
-    /// @tparam Identity: Functor type providing the identity in @code T@endcode
+    /// @tparam Identity: Functor type providing the identity in `T`
     /// @tparam KeyContainer, MappedContainer: Container types that satisfies <i>SequentialContainer</i>
     /// for storing keys and mapped values respectively.
-    /// The iterators of such containers should model @code std::random_access_iterator@endcode.
-    /// Invocations of their member functions @code size@endcode and @code max_size@endcode should not exit via an exception.
+    /// The iterators of such containers should model `std::random_access_iterator`.
+    /// Invocations of their member functions `size` and `max_size` should not exit via an exception.
     template <
         typename Key, typename T,
         std::copyable Compare = std::less<Key>,
@@ -286,7 +286,7 @@ namespace utils {
         }
         /// @brief Returns a const reference to the underlying container for nodes.
         ///
-        /// It is guaranteed that the first @code size()@endcode nodes are mapped values corresponding to @code keys()@endcode.
+        /// It is guaranteed that the first `size()` nodes are mapped values corresponding to `keys()`.
         constexpr const mapped_container_type& nodes() const noexcept {
             return *std::launder(reinterpret_cast<const mapped_container_type*>(nodes_));
         }
@@ -294,7 +294,7 @@ namespace utils {
         constexpr const decltype(level_offsets_)& level_offsets() const noexcept { return level_offsets_; }
         /// @brief Returns a copy of the key comparison functor.
         constexpr key_compare key_comp() const { return comp_; }
-        /// @brief Returns a comparison functor for @code value_type@endcode based on @code key_comp()@endcode.
+        /// @brief Returns a comparison functor for `value_type` based on `key_comp()`.
         constexpr value_compare value_comp() const { return value_compare(comp_); }
         /// @brief Returns a copy of the monoid operation functor.
         constexpr mapped_sum sum() const { return sum_; }
@@ -318,17 +318,17 @@ namespace utils {
             }
         }
     public:
-        /// @defgroup segment_tree<Key,T,Compare,Sum,Identity,KeyContainer,MappedContainer>::segment_tree
+        /// @defgroup utils::segment_tree<Key,T,Compare,Sum,Identity,KeyContainer,MappedContainer>::segment_tree
         ///
-        /// When the @code std::sorted_equivalent@endcode flag is passed to any constructor overload that accepts it,
+        /// When the `std::sorted_equivalent` flag is passed to any constructor overload that accepts it,
         /// it indicates that the range of keys passed to the constructor is sorted in non-decreasing order
-        /// with respect to @code key_compare()@endcode, and the range of mapped values passed corresponds to it.
+        /// with respect to `key_compare()`, and the range of mapped values passed corresponds to it.
         /// The behavior is undefined if the flag is passed without satisfying this requirement.
         ///
-        /// When an allocator is passed to @code alloc@endcode in any of the following constructor overloads,
+        /// When an allocator is passed to `alloc` in any of the following constructor overloads,
         /// the underlying containers are constructed with uses-allocator construction.
         /// Such overloads only participate in overload resolution only if
-        /// @code std::uses_constructor_v<segment_tree, Allocator>@endcode is @code true@endcode.
+        /// `std::uses_constructor_v<segment_tree, Allocator>` is `true`.
         /// @{
         /// Default constructor. Constructs an empty container adaptor.
         /// @{
@@ -361,7 +361,7 @@ namespace utils {
         }
         /// @}
         /// Move constructor. Move-constructs all underlying containers and functors.
-        /// @code other@endcode is left in a valid empty state.
+        /// `other` is left in a valid empty state.
         /// @{
         constexpr segment_tree(segment_tree&& other)
         noexcept(
@@ -376,8 +376,8 @@ namespace utils {
             other.fast_clear();
         }
         /// @}
-        /// Directly constructs the underlying containers using @code keys@endcode and @code nodes@endcode.
-        /// The behavior is undefined if they do not conform to the internal layout of @code segment_tree@endcode.
+        /// Directly constructs the underlying containers using `keys` and `nodes`.
+        /// The behavior is undefined if they do not conform to the internal layout of `segment_tree`.
         /// @{
         template <equiv_to<key_container_type> Keys, equiv_to<mapped_container_type> Nodes,
             container_allocator<segment_tree> Allocator = detail::void_allocator_t>
@@ -404,9 +404,9 @@ namespace utils {
             segment_tree(segment_tree_nodes, std::forward<Keys>(keys), std::forward<Nodes>(nodes),
                 key_compare(), mapped_sum(), mapped_identity(), alloc) {}
         /// @}
-        /// Constructs the underlying containers from @code keys@endcode and @code mapped@endcode,
+        /// Constructs the underlying containers from `keys` and `mapped`,
         /// sorts them if unsorted, and builds the segment tree.
-        /// The behavior is undefined if @code keys.size() != mapped.size()@endcode.
+        /// The behavior is undefined if `keys.size() != mapped.size()`.
         /// @{
         template <equiv_to<key_container_type> Keys, equiv_to<mapped_container_type> Mapped,
             container_allocator<segment_tree> Allocator = detail::void_allocator_t>
@@ -447,7 +447,7 @@ namespace utils {
             segment_tree(std::sorted_equivalent, std::forward<Keys>(keys), std::forward<Mapped>(mapped),
                 key_compare(), mapped_sum(), mapped_identity(), alloc) {}
         /// @}
-        /// Inserts key-mapped pairs from @code pairs@endcode, which should be a range of @code value_type@endcode,
+        /// Inserts key-mapped pairs from `pairs`, which should be a range of `value_type`,
         /// sorts them if unsorted, then builds the segment tree.
         /// @{
         template <container_compatible_range<value_type> Pairs,
@@ -491,8 +491,8 @@ namespace utils {
             segment_tree(std::sorted_equivalent, std::from_range, std::forward<Pairs>(pairs),
                 key_compare(), mapped_sum(), mapped_identity(), alloc) {}
         /// @}
-        /// Inserts key-mapped pairs from [ @code pairs_begin@endcode, @code pairs_end@endcode ),
-        /// which should be a valid range of @code value_type@endcode,
+        /// Inserts key-mapped pairs from [ `pairs_begin`, `pairs_end` ),
+        /// which should be a valid range of `value_type`,
         /// sorts them if unsorted, then builds the segment tree.
         /// @{
         template <container_compatible_iterator<value_type> PairsIt, std::sentinel_for<PairsIt> PairsSent,
@@ -530,7 +530,7 @@ namespace utils {
             segment_tree(std::sorted_equivalent, pairs_begin, pairs_end,
                 key_compare(), mapped_sum(), mapped_identity(), alloc) {}
         /// @}
-        /// Inserts key-value pairs from @code pairs@endcode, sorts them if unsorted, then builds the segment tree.
+        /// Inserts key-value pairs from `pairs`, sorts them if unsorted, then builds the segment tree.
         /// @{
         template <container_allocator<segment_tree> Allocator = detail::void_allocator_t>
         constexpr segment_tree(std::initializer_list<value_type> pairs,
@@ -571,7 +571,7 @@ namespace utils {
             std::destroy_at(&m_keys());
             std::destroy_at(&m_nodes());
         }
-        /// @defgroup segment_tree<Key,T,Compare,Sum,Identity,KeyContainer,MappedContainer>::operator=
+        /// @defgroup utils::segment_tree<Key,T,Compare,Sum,Identity,KeyContainer,MappedContainer>::operator=
         /// @{
         /// Copy-assigns all underlying containers and functors.
         constexpr segment_tree& operator=(const segment_tree& other)
@@ -590,7 +590,7 @@ namespace utils {
             identity_ = other.identity_;
             return *this;
         }
-        /// Move-assigns all underlying containers and functors. @code other@endcode is left in a valid empty state.
+        /// Move-assigns all underlying containers and functors. `other` is left in a valid empty state.
         constexpr segment_tree& operator=(segment_tree&& other)
         noexcept(
             std::is_nothrow_move_constructible_v<key_container_type> &&
@@ -608,7 +608,7 @@ namespace utils {
             other.fast_clear();
             return *this;
         }
-        /// Clears the underlying containers, inserts key-value pairs @code pairs@endcode,
+        /// Clears the underlying containers, inserts key-value pairs `pairs`,
         /// sorts them if unsorted, then rebuilds the segment tree.
         constexpr segment_tree& operator=(std::initializer_list<value_type> pairs)
         requires (std::swappable<key_type> && std::swappable<mapped_type>) {
@@ -638,9 +638,9 @@ namespace utils {
             return found;
         }
     public:
-        /// Returns a (potentially proxy) reference to the mapped value of @code key@endcode.
+        /// Returns a (potentially proxy) reference to the mapped value of `key`.
         /// The behavior is undefined if
-        /// @code key@endcode does not have a @code key_compare()@endcode-equivalent in @code keys()@endcode.
+        /// `key` does not have a `key_compare()`-equivalent in `keys()`.
         /// @{
         constexpr reference operator[](const searchable_in<segment_tree> auto& key) {
             return {*this, search<true>(key)};
@@ -656,11 +656,11 @@ namespace utils {
                 levels_ - 1, 0, 0, size());
         }
         /// @}
-        /// Returns a (potentially proxy) reference to the mapped value of @code key@endcode.
-        /// If @code key@endcode does not have a @code key_compare()@endcode-equivalent in @code keys()@endcode,
+        /// Returns a (potentially proxy) reference to the mapped value of `key`.
+        /// If `key` does not have a `key_compare()`-equivalent in `keys()`,
         /// an exception is thrown with strong exception guarantee.
         /// @throws std::out_of_range:
-        /// If @code key@endcode does not have a @code key_compare()@endcode-equivalent in @code keys()@endcode
+        /// If `key` does not have a `key_compare()`-equivalent in `keys()`
         /// @{
         constexpr reference at(const searchable_in<segment_tree> auto& key) {
             return {*this, exact_search<true>(key)};
@@ -711,7 +711,7 @@ namespace utils {
         constexpr const_iterator iter(size_type node) const noexcept { return {iota_iterator(node), const_iterator_func(this)}; }
     public:
         /// @name Iterator utilities
-        /// Returns specified iterators to @code value_type@endcode.
+        /// Returns specified iterators to `value_type`.
         /// @{
         constexpr auto begin(this auto&& self) noexcept { return self.iter(0); }
         constexpr const_iterator cbegin() const noexcept { return iter(0); }
@@ -726,7 +726,7 @@ namespace utils {
         constexpr bool empty() const noexcept { return size() == 0; }
         /// @brief Returns the number of key-value pairs stored in the container.
         constexpr size_type size() const noexcept { return level_offsets_[1]; }
-        /// @brief Returns the theoretical maximum number of key-value pairs that can be stored in a @code segement_tree@endcode.
+        /// @brief Returns the theoretical maximum number of key-value pairs that can be stored in a `segement_tree`.
         constexpr size_type max_size() const noexcept {
             // s: nodes, n: size
             // s = n + ceil(n/2) + ceil(ceil(n/2)/2) + ... + 1
@@ -763,7 +763,7 @@ namespace utils {
             m_nodes().clear();
             fast_clear();
         }
-        /// @brief Swap the underlying containers and functors with @code other@endcode.
+        /// @brief Swap the underlying containers and functors with `other`.
         constexpr void swap(segment_tree& other) noexcept {
             using std::swap;
             swap(keys(), other.keys());
@@ -773,50 +773,50 @@ namespace utils {
             swap(comp_, other.comp_);
             swap(sum_, other.sum_);
         }
-        /// @brief Returns the number of keys that are @code key_compare()@endcode-equivalent to @code key@endcode.
+        /// @brief Returns the number of keys that are `key_compare()`-equivalent to `key`.
         constexpr size_type count(const searchable_in<segment_tree> auto& key) const {
             return upper_bound(key) - lower_bound(key);
         }
         /// @brief Returns an iterator to any key-value pair
-        /// whose key is @code key_compare()@endcode-equivalent to @code key@endcode.
-        /// If such a key does not exist, returns @code end()@endcode.
+        /// whose key is `key_compare()`-equivalent to `key`.
+        /// If such a key does not exist, returns `end()`.
         constexpr auto find(this auto&& self, const searchable_in<segment_tree> auto& key) {
             return self.iter(self.template exact_search<false>(key));
         }
-        /// @brief Checks if any key is @code key_compare()@endcode-equivalent to @code key@endcode.
+        /// @brief Checks if any key is `key_compare()`-equivalent to `key`.
         constexpr bool contains(const searchable_in<segment_tree> auto& key) const {
             return exact_search<false>(key) != size();
         }
-        /// @brief Returns an iterator to the first key-value pair whose key is not less than @code key@endcode.
-        /// If such a key does not exist, returns @code end()@endcode.
+        /// @brief Returns an iterator to the first key-value pair whose key is not less than `key`.
+        /// If such a key does not exist, returns `end()`.
         constexpr auto lower_bound(this auto&& self, const searchable_in<segment_tree> auto& key) {
             return self.iter(self.template search<true>(key));
         }
-        /// @brief Returns an iterator to the first key-value pair whose key is greater than @code key@endcode.
-        /// If such a key does not exist, returns @code end()@endcode.
+        /// @brief Returns an iterator to the first key-value pair whose key is greater than `key`.
+        /// If such a key does not exist, returns `end()`.
         constexpr auto upper_bound(this auto&& self, const searchable_in<segment_tree> auto& key) {
             return self.iter(self.template search<false>(key));
         }
         /// @brief Returns a pair of iterators to the range of key-value pairs
-        /// whose keys are @code key_compare()@endcode-equivalent to @code key@endcode.
-        /// @returns [ @code lower_bound(key)@endcode, @code upper_bound(key)@endcode )
+        /// whose keys are `key_compare()`-equivalent to `key`.
+        /// @returns [ `lower_bound(key)`, `upper_bound(key)` )
         constexpr auto equal_range(this auto&& self, const searchable_in<segment_tree> auto& key) {
             return std::pair(self.lower_bound(key), self.upper_bound(key));
         }
     public:
         /// @brief Stores properties of the node the traverser is visiting.
         ///
-        /// Let @f$v@f$ be the subject of the struct, and @code left@endcode and @code right@endcode be its children.
-        /// Then @code level@endcode is the height of @f$v@f$ (distance of @f$v@f$ to the nearest leaf),
-        /// and @code level_idx@endcode is the number of nodes preceding @f$v@f$ is its level.
-        /// @code *_level@endcode and @code *_idx@endcode represent the level and index of
-        /// @code left@endcode / @code right@endcode, respectively.
-        /// Level @code-1@endcode indicates a non-existent node.
+        /// Let @f$v@f$ be the subject of the struct, and `left` and `right` be its children.
+        /// Then `level` is the height of @f$v@f$ (distance of @f$v@f$ to the nearest leaf),
+        /// and `level_idx` is the number of nodes preceding @f$v@f$ is its level.
+        /// `*_level` and `*_idx` represent the level and index of
+        /// `left` / `right`, respectively.
+        /// Level @code-1` indicates a non-existent node.
         ///
-        /// [ @code begin@endcode, @code end@endcode ) gives the range of indices of mapped values
+        /// [ `begin`, `end` ) gives the range of indices of mapped values
         /// the sub-tree rooted at @f$v@f$ encompasses,
         /// and the sub-trees rooted at the left and right child of the current node encompass
-        /// [ @code begin@endcode, @code div_node@endcode ) and [ @code div_node@endcode, @code end@endcode ), respectively.
+        /// [ `begin`, `div_node` ) and [ `div_node`, `end` ), respectively.
         struct node_info {
             int level, left_level, right_level;
             size_type level_idx, left_idx, right_idx, begin, end, div_node;
@@ -973,10 +973,10 @@ namespace utils {
         /// @brief Applies a ranged update to an update record.
         ///
         /// Suppose @f$K@f$ is the set of keys contained in the given interval.
-        /// Let @f$U@f$ be the map that identifies @code update@endcode before the call.
-        /// @code update@endcode is modified such that the new map @f$U'@f$ satisfies the following:
-        /// 1. For @f$k\in K@f$, @f$U'[k]@f$ is equivalent to @code sum()(U[k],diff)@endcode.
-        /// 2. For @f$k@f$ in @code keys()@endcode but not in @f$K@f$, @f$U'[k]@f$ is equivalent to @f$U[k]@f$.
+        /// Let @f$U@f$ be the map that identifies `update` before the call.
+        /// `update` is modified such that the new map @f$U'@f$ satisfies the following:
+        /// 1. For @f$k\in K@f$, @f$U'[k]@f$ is equivalent to `sum()(U[k],diff)`.
+        /// 2. For @f$k@f$ in `keys()` but not in @f$K@f$, @f$U'[k]@f$ is equivalent to @f$U[k]@f$.
         /// @{
         template <searchable_in<segment_tree> K1, searchable_in<segment_tree> K2,
             detail::multiplies_for<mapped_type, size_type> Mul = std::multiplies<>>
@@ -993,9 +993,9 @@ namespace utils {
             traverse(node_traverser(begin - begin(), end - begin()), update_strategy(update, diff, multiplies));
         }
         /// @}
-        /// @brief Traverse the tree using @code traverser@endcode, and produce a value using @code strategy@endcode.
+        /// @brief Traverse the tree using `traverser`, and produce a value using `strategy`.
         ///
-        /// Check concepts @code segment_tree_traverser_for@endcode and @code segment_tree_strategy_for@endcode
+        /// Check concepts `segment_tree_traverser_for` and `segment_tree_strategy_for`
         /// for more details.
         constexpr decltype(auto) traverse(
             const segment_tree_traverser_for<segment_tree> auto& traverser,
@@ -1005,10 +1005,10 @@ namespace utils {
         }
         /// @brief Aggregate values in the given key or iterator interval.
         /// @returns A value equivalent to that produced by the following process:
-        /// 1. Gather all key-value pairs @f$S@f$ contained in the given interval, in the order defined by @code keys()@endcode.
-        /// 2. Compute @f$\sum_{(k,v)\in S} v@f$ using @code sum()@endcode.
-        /// @warning For overloads that accept an @code update@endcode,
-        /// the returned value is unspecified (but still valid) if @code sum()@endcode is not commutative on @code mapped_type@endcode.
+        /// 1. Gather all key-value pairs @f$S@f$ contained in the given interval, in the order defined by `keys()`.
+        /// 2. Compute @f$\sum_{(k,v)\in S} v@f$ using `sum()`.
+        /// @warning For overloads that accept an `update`,
+        /// the returned value is unspecified (but still valid) if `sum()` is not commutative on `mapped_type`.
         /// @{
         template <searchable_in<segment_tree> K1, searchable_in<segment_tree> K2>
         constexpr T aggregate(const interval<K1, K2>& key_itv) const {
@@ -1036,13 +1036,13 @@ namespace utils {
         }
         /// @}
         /// @brief Gives the sum of all stored mapped values.
-        /// @returns A value equivalent to @code aggregate(begin(), end())@endcode.
+        /// @returns A value equivalent to `aggregate(begin(), end())`.
         /// @{
         constexpr T total() const {
             return empty() ? identity_() : nodes().back();
         }
         /// @warning The returned value is unspecified (but still valid) if
-        /// @code sum()@endcode is not commutative on @code mapped_type@endcode.
+        /// `sum()` is not commutative on `mapped_type`.
         template <detail::multiplies_for<mapped_type, size_type> Mul = std::multiplies<>>
         constexpr T total(const update_type& update, const Mul& multiplies = {}) const {
             return empty() ? identity_() : sum_(
@@ -1059,7 +1059,7 @@ namespace utils {
         /// @brief Three-way comparison function.
         ///
         /// Delegates to the three-way comparison functions of underlying containers.
-        /// @note The function does not use @code key_compare()@endcode of @code lhs@endcode or @code rhs@endcode.
+        /// @note The function does not use `key_compare()` of `lhs` or `rhs`.
         friend constexpr decltype(auto) operator<=>(const segment_tree& lhs, const segment_tree& rhs)
         requires (container_three_way_comparable<segment_tree>) {
             return std::lexicographical_compare_three_way(lhs.begin(), lhs.end(), rhs.begin(), rhs.end(), synth_three_way);

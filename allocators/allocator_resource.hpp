@@ -16,8 +16,8 @@ namespace utils::pmr {
             { a.allocate(bytes, alignment) } -> std::same_as<std::byte*>;
             { a.deallocate(p, bytes, alignment) };
         });
-    /// @brief A @code std::pmr::memory_resource@endcode which reserves specified amount of memory and
-    /// allocates it using a given @code resource_allocator@endcode.
+    /// @brief A `std::pmr::memory_resource` which reserves specified amount of memory and
+    /// allocates it using a given `resource_allocator`.
     template <resource_allocator Allocator>
     class allocator_resource : public std::pmr::memory_resource, private Allocator {
     public:
@@ -26,19 +26,19 @@ namespace utils::pmr {
         memory_resource* upstream_;
         std::size_t space_;
     public:
-        /// @brief Constructs a @code allocator_resource@endcode with a given upstream memory resource and space to reserve.
+        /// @brief Constructs a `allocator_resource` with a given upstream memory resource and space to reserve.
         ///
         /// Semantic requirement:
-        /// @code Allocator@endcode should reserve @code space@endcode amount of memory from @code upstream@endcode.
+        /// `Allocator` should reserve `space` amount of memory from `upstream`.
         template <typename... Args>
         allocator_resource(memory_resource* upstream, std::size_t space, Args&&... args)
         requires (std::is_constructible_v<Allocator, memory_resource&, std::size_t, Args&&...>) :
             Allocator(*upstream, space, std::forward<Args>(args)...), upstream_(upstream), space_(space) {}
         /// @brief Copy constructor is deleted because
-        /// @code allocator_resource@endcode has unique and non-transferable ownership of the reserved memory.
+        /// `allocator_resource` has unique and non-transferable ownership of the reserved memory.
         allocator_resource(const allocator_resource&) = delete;
         /// @brief Copy assignment operator is deleted because
-        /// @code allocator_resource@endcode has unique and non-transferable ownership of the reserved memory.
+        /// `allocator_resource` has unique and non-transferable ownership of the reserved memory.
         allocator_resource& operator=(const allocator_resource&) = delete;
         /// @brief Destructor. Releases ownership of reserved memory.
         ~allocator_resource() noexcept override { Allocator::release(*upstream_, space_); }

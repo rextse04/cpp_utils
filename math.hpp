@@ -2,7 +2,7 @@
 #include <cstddef>
 
 namespace utils {
-    /// @brief Calculates @code base@endcode raised to the power of @code Exp@endcode. Supports zero and negative exponents.
+    /// @brief Calculates `base` raised to the power of `Exp`. Supports zero and negative exponents.
     template <std::ptrdiff_t Exp, typename CastT>
     constexpr CastT pow(CastT base) {
         if constexpr (Exp == 0) return CastT(1);

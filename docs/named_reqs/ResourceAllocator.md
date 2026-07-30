@@ -1,6 +1,6 @@
 # Named Requirement: <i>ResourceAllocator</i> {#ResourceAllocator}
 A resource allocator is an <i>Allocator</i> which operates on buffer memory allocated from an upstream `std::pmr::memory_resource`.
-It can be wrapped in `pmr::allocator_resource` to act as an `std::pmr::memory_resource`,
+It can be wrapped in `utils::pmr::allocator_resource` to act as an `std::pmr::memory_resource`,
 which is useful when one would like to reuse the same allocation strategy with or without virtual dispatch.
 
 ## Requirements
@@ -89,4 +89,4 @@ A class type `A` meets the named requirement if it satisfies <i>Allocator</i> an
 </table>
 
 ## Associated Concept
-The library provides `pmr::resource_allocator<A>` as an equivalent constraint to the named requirement.
+The library provides `utils::pmr::resource_allocator<A>` as an equivalent constraint to the named requirement.

@@ -33,10 +33,10 @@ namespace utils::pmr {
     /// The following diagram is a simple diagram illustrating the allocation strategy:
     /// @image html stack_allocator_internal.svg
     ///
-    /// All instances of this class satisfy [<i>BufferAllocator</i>](BufferAllocator.md) and @code resource_allocator@endcode.
-    /// Instances with @code Sync@endcode equal to @code true@endcode also satisfy [<i>ConvertibleAllocator</i>](BufferAllocator.md).
+    /// All instances of this class satisfy [<i>BufferAllocator</i>](BufferAllocator.md) and `resource_allocator`.
+    /// Instances with `Sync` equal to `true` also satisfy [<i>ConvertibleAllocator</i>](BufferAllocator.md).
     /// Consult their documentation for conditions and effects of member functions.
-    /// @tparam T: @code value_type@endcode
+    /// @tparam T: `value_type`
     /// @tparam Sync: Whether allocator operations should be synchronized.
     template <typename T, bool Sync = false>
     class stack_allocator : public allocator_base<T, detail::stack_allocator_control> {
@@ -58,12 +58,12 @@ namespace utils::pmr {
         template <typename, bool>
         friend class stack_allocator;
     public:
-        /// @defgroup pmr::stack_allocator<T, Sync>::stack_allocator
+        /// @defgroup utils::pmr::stack_allocator<T, Sync>::stack_allocator
         /// @{
         /// @brief Takes ownership of the buffer and uses it for allocations.
         /// @throws std::bad_alloc: If the internal control structure does not fit in the given buffer.
-        /// @note The construction can throw even if @code space@endcode is not less than the size of the control structure
-        /// depending on the alignment of @code buf@endcode.
+        /// @note The construction can throw even if `space` is not less than the size of the control structure
+        /// depending on the alignment of `buf`.
         stack_allocator(void_pointer buf, size_type space) {
             void_pointer back = buf;
             if (!std::align(alignof(control_type), sizeof(control_type), back, space)) {
@@ -72,8 +72,8 @@ namespace utils::pmr {
             front_ = new(back) control_type;
             *front_ = {front_, static_cast<std::byte*>(buf) + space};
         }
-        /// @brief Allocates a buffer of size @code space@endcode through @code mr@endcode and uses it for allocations.
-        /// @throws std::bad_alloc: If @code space@endcode is insufficient to accommodate the internal control structure.
+        /// @brief Allocates a buffer of size `space` through `mr` and uses it for allocations.
+        /// @throws std::bad_alloc: If `space` is insufficient to accommodate the internal control structure.
         stack_allocator(std::pmr::memory_resource& mr, size_type space) {
             if (space < sizeof(control_type)) throw std::bad_alloc();
             const void_pointer buf = mr.allocate(space, alignof(control_type));
@@ -82,7 +82,7 @@ namespace utils::pmr {
         }
         /// @brief Conversion constructor.
         ///
-        /// The constructor is explicit if @code synchronized != other.synchronized@endcode.
+        /// The constructor is explicit if `synchronized != other.synchronized`.
         /// This is to remind users to exercise caution when converting between synchronized and unsynchronized allocators,
         /// as mixing allocation operations on the same buffer with different synchronization schemes is UB.
         /// @remark Allocators of different types can share the same buffer due to the common control structure.
@@ -97,7 +97,7 @@ namespace utils::pmr {
         void release(std::pmr::memory_resource& mr, size_type space) noexcept {
             mr.deallocate(front_, space, alignof(control_type));
         }
-        /// @brief Allocates storage for @code T[n]@endcode with specified alignment from the underlying buffer.
+        /// @brief Allocates storage for `T[n]` with specified alignment from the underlying buffer.
         ///
         /// The behavior is undefined if `alignment` is less than that of `T`.
         pointer allocate(size_type n, std::align_val_t alignment = std::align_val_t(alignof(T))) const {

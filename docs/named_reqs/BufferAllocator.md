@@ -27,12 +27,12 @@ A class type `A` meets the named requirement if it satisfies <i>Allocator</i> an
 | `b`     | A (non-cv-qualified) object of type `B`                                                                                 |
 | `cb`    | A potentially const-qualified object of type `B`                                                                        |
 | `c`     | A (non-cv-qualified) object of type `C`                                                                                 |
-| `cc`    | A potentially const-qualified object of type `C`.                                                                       |
+| `cc`    | A potentially const-qualified object of type `C`                                                                        |
 | `buf`   | An `std::byte` pointer to a contiguous block of memory                                                                  |
 | `space` | A value of type `std::size_t` that represents the size (in bytes) of the contiguous block of memory pointed to by `buf` |
 | `n`     | A value of type `AT::size_type`                                                                                         |
-| `p`     | A value of type `P` obtained from a call to `AT::allocate`.                                                             |
-| `cvp`   | A value of type `AT::const_void_pointer` obtained by conversion from `p`.                                               |                                                                                                      
+| `p`     | A value of type `P` obtained from a call to `AT::allocate`                                                              |
+| `cvp`   | A value of type `AT::const_void_pointer` obtained by conversion from `p`                                                |                                                                                                      
 ### Supported Operations
 <table>
 <tr><th>Expression</th><th>Return Type</th><th>Semantics</th></tr>
@@ -41,7 +41,7 @@ A class type `A` meets the named requirement if it satisfies <i>Allocator</i> an
         <span style="color:green">(for <i>SynchronizedBufferAllocator</i>)</span><br>
         <code>A::synchronized</code>
     </td>
-    <td>bool</td>
+    <td><code>bool</code></td>
     <td>Must be <code>true</code>.</td>
 </tr>
 <tr>

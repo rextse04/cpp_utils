@@ -6,6 +6,16 @@
 #include "meta.hpp"
 
 namespace utils {
+    template <typename To, typename From = void>
+    struct cast {
+        static constexpr To operator()(From&& from) { return static_cast<To>(std::forward<From>(from)); }
+    };
+    template <typename To>
+    struct cast<To, void> {
+        template <typename From>
+        static constexpr To operator()(From&& from) { return static_cast<To>(std::forward<From>(from)); }
+    };
+
 #define UTILS_ASG_FUNCTOR(name, op)\
     template <typename T = void>\
     struct name {\
@@ -146,19 +156,6 @@ namespace utils {
         }
     };
 
-    template <auto Op, typename T = void>
-    struct asg_wrap {
-        static constexpr T operator()(T& lhs, const T& rhs) {
-            return lhs = Op(lhs, rhs);
-        }
-    };
-    template <auto Op>
-    struct asg_wrap<Op, void> {
-        static constexpr decltype(auto) operator()(auto& lhs, auto&& rhs) {
-            return lhs = Op(lhs, std::forward<decltype(rhs)>(rhs));
-        }
-    };
-
     template <typename T>
     struct default_construct {
         static constexpr T operator()() { return T(); }
@@ -182,6 +179,60 @@ namespace utils {
     struct move_construct<> {
         template <typename T>
         static constexpr T operator()(T&& obj) { return T(std::move(obj)); }
+    };
+
+    template <auto Op, typename T = void>
+    struct asg_wrap {
+        static constexpr T& operator()(T& lhs, const T& rhs) {
+            return lhs = Op(lhs, rhs);
+        }
+    };
+    template <auto Op>
+    struct asg_wrap<Op, void> {
+        static constexpr decltype(auto) operator()(auto& lhs, auto&& rhs) {
+            return lhs = Op(lhs, std::forward<decltype(rhs)>(rhs));
+        }
+    };
+
+    template <auto F, template<typename> typename Trait>
+    struct cast_transform {
+        template <typename... Args>
+        requires requires { F(static_cast<Trait<Args>>(std::declval<Args>())...); }
+        static constexpr decltype(auto) operator()(Args&&... args)
+        noexcept(noexcept(F(static_cast<Trait<Args>>(std::declval<Args>())...))) {
+            return F(static_cast<Trait<Args>>(std::forward<Args>(args))...);
+        }
+    };
+    namespace detail {
+        template <auto F, typename... Tos>
+        struct joint_cast_transform_impl {
+            template <typename... Args>
+            requires requires { F(static_cast<Tos>(std::declval<Args>())...); }
+            static constexpr decltype(auto) operator()(Args&&... args)
+            noexcept(noexcept(F(static_cast<Tos>(std::declval<Args>())...))) {
+                return F(static_cast<Tos>(std::forward<Args>(args))...);
+            }
+        };
+        template <auto F, typename... Tos>
+        struct joint_cast_transform_impl<F, std::tuple<Tos...>> : joint_cast_transform_impl<F, Tos...> {};
+    }
+    template <auto F, template<typename...> typename Trait>
+    struct joint_cast_transform {
+        template <typename... Args, typename G = detail::joint_cast_transform_impl<F, typename Trait<Args...>::type>>
+        requires (std::is_invocable_v<G, Args...>)
+        static constexpr decltype(auto) operator()(Args&&... args)
+        noexcept(std::is_nothrow_invocable_v<G, Args...>) {
+            return G()(std::forward<Args>(args)...);
+        }
+    };
+    template <auto F, template<typename...> typename Trait>
+    struct common_cast_transform {
+        template <typename... Args, typename To = Trait<Args...>::type>
+        requires requires { F(static_cast<To>(std::declval<Args>())...); }
+        static constexpr decltype(auto) operator()(Args&&... args)
+        noexcept(noexcept(F(static_cast<To>(std::declval<Args>())...))) {
+            return F(static_cast<To>(std::forward<Args>(args))...);
+        }
     };
 
     template <typename T>
@@ -322,9 +373,6 @@ namespace utils {
             static constexpr bool variadic = false;
             static constexpr std::size_t value = 0;
         };
-    }
-
-    namespace detail {
         constexpr auto to_func_wrap = []<typename G>(G&& g) {
             if constexpr (tagged<G, with_tag>) {
                 return g.to_owning();

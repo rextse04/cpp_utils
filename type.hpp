@@ -18,9 +18,9 @@ namespace utils {
         v = 0b10  ///< Volatile qualifier
     };
     UTILS_BITMASK(type_qualifiers);
-    /// @{
     /// @brief Extracts the const and volatile qualifiers from a type.
     /// @remark Ignores reference and pointer decorations, extracting qualifiers from the underlying type.
+    /// @{
     template <typename T>
     struct qualifiers_of {
     private:
@@ -33,9 +33,8 @@ namespace utils {
     constexpr type_qualifiers qualifiers_of_v = qualifiers_of<T>::value;
     /// @}
 
+    /// @brief Applies specified const and volatile qualifiers to a type, while retaining reference category/pointer.
     /// @{
-    /// @brief Applies specified const and volatile qualifiers to a type.
-    /// @remark Preserves reference and pointer qualifiers of the input type @code T@endcode.
     template <typename T, type_qualifiers Q>
     struct apply_qualifiers {
     private:
@@ -52,9 +51,8 @@ namespace utils {
     using apply_qualifiers_t = apply_qualifiers<T, Q>::type;
     /// @}
 
+    /// @brief Copies the qualifiers and reference category from one type to another.
     /// @{
-    /// @brief Copies the qualifiers and reference kind from one type to another.
-    /// @remark Applies the qualifiers extracted from @code RefT@endcode to the type @code T@endcode.
     template <typename RefT, typename T>
     struct follow {
         using type = apply_qualifiers_t<T, qualifiers_of_v<RefT>>;
@@ -63,28 +61,40 @@ namespace utils {
     using follow_t = follow<RefT, T>::type;
     /// @}
 
+    /// @brief Checks if two types are equivalent.
+    ///
+    /// Two types are equivalent if they are the same after removing all const, volatile, and reference qualifiers.
     /// @{
-    /// @brief Checks if two types are equivalent, ignoring cv-references.
-    /// @remark Two types are equivalent if they are the same after removing all const, volatile, and reference qualifiers.
     template <typename T, typename U>
     struct is_equiv : std::is_same<std::remove_cvref_t<T>, std::remove_cvref_t<U>> {};
     template <typename T, typename U>
     constexpr bool is_equiv_v = is_equiv<T, U>::value;
-    /// @}
-
-    /// @brief Concept: @code T@endcode is equivalent to @code Ref@endcode (ignoring cv-references).
     template <typename T, typename Ref>
     concept equiv_to = is_equiv_v<T, Ref>;
+    /// @}
 
-    /// @{
     /// @brief Checks if a type is an instance of a given template.
-    /// @remark The check ignores const, volatile, and reference qualifiers on the type being checked.
+    ///
+    /// The check ignores cv qualifiers and reference categories on the type being checked.
+    /// @{
     template <template<typename...> typename, typename>
     struct is_template_instance : std::false_type {};
     template <template<typename...> typename Tmpl, typename... Ts>
     struct is_template_instance<Tmpl, Tmpl<Ts...>> : std::true_type {};
     template <template<typename...> typename Tmpl, typename T>
     constexpr bool is_template_instance_v = is_template_instance<Tmpl, std::remove_cvref_t<T>>::value;
+    /// @}
+
+    /// @brief Determines if `From` is explicitly convertible to `To`.
+    ///
+    /// `From` is explicitly convertible to `To` if the expression `static_cast<To>(std::declval<From>())` is well-formed.
+    /// @{
+    template <typename From, typename To>
+    concept explicitly_convertible_to = requires { static_cast<To>(std::declval<From>()); };
+    template <typename From, typename To>
+    struct is_explicitly_convertible : std::bool_constant<explicitly_convertible_to<From, To>> {};
+    template <typename From, typename To>
+    constexpr bool is_explicitly_convertible_v = is_explicitly_convertible<From, To>::value;
     /// @}
 
     namespace detail {
@@ -95,71 +105,45 @@ namespace utils {
             using type = std::integer_sequence<T, F(Ns)...>;
         };
     }
-    /// @{
     /// @brief Creates an integer sequence with custom Begin and Step values.
     /// @tparam T The underlying integer type for the sequence.
     /// @tparam End The exclusive end value of the range.
     /// @tparam Begin The starting value of the range (default: 0).
     /// @tparam Step The step size between elements (default: 1).
-    /// @remark Generates a sequence [Begin, Begin+Step, Begin+2*Step, ...) up to End.
+    /// @remark Generates a sequence [ `Begin` , `Begin+Step` , `Begin+2*Step` , ...) up to `End`.
+    /// @{
     template <typename T, T End, T Begin = 0, T Step = 1>
     requires (End >= Begin)
     using make_integer_range = detail::sequence_apply<T, [](T n) { return Begin + n * Step; },
         std::make_integer_sequence<T, (End - Begin) / Step>>::type;
 
     /// @brief Creates a size_t index sequence with custom Begin and Step values.
-    /// @remark Convenience alias for @code make_integer_range@endcode with @code std::size_t@endcode type.
+    /// @remark Convenience alias for `make_integer_range` with `std::size_t` type.
     template <std::size_t End, std::size_t Begin = 0, std::size_t Step = 1>
     requires (End >= Begin)
     using make_index_range = make_integer_range<std::size_t, End, Begin, Step>;
     /// @}
 
-    /// @{
-    /// @brief A trait that is always @code true_type@endcode, regardless of template arguments.
+    /// @brief A trait that is always `true_type`, regardless of template arguments.
     /// @remark Useful as a template argument or specialization fallback.
     template <typename...>
     struct always_true : std::true_type {};
 
-    /// @brief A trait that is always @code false_type@endcode, regardless of template arguments.
+    /// @brief A trait that is always `false_type`, regardless of template arguments.
     /// @remark Useful as a template argument or specialization fallback.
     template <typename...>
     struct always_false : std::false_type {};
-    /// @}
 
+    /// @brief Checks if `T` has a `tag` member alias matching or containing `Tag`.
     /// @{
-    /// @brief Concept: @code T@endcode has a tag member that is or contains @code Tag@endcode.
-    /// @remark Checks if the type has a @code tag@endcode member alias matching or containing @code Tag@endcode.
     template <typename T, typename Tag>
     concept tagged = (std::is_same_v<typename std::remove_cvref_t<T>::tag, Tag> ||
         meta::contained_in_v<typename std::remove_cvref_t<T>::tag, Tag>);
-
-    /// @brief Trait version of the @code tagged@endcode concept.
     template <typename Tag, typename T>
     struct is_tagged : std::bool_constant<tagged<T, Tag>> {};
     template <typename Tag, typename T>
     constexpr bool is_tagged_v = is_tagged<Tag, T>::value;
     /// @}
-
-    /// @{
-    /// @brief Converts a type to its fundamental type equivalent.
-    /// @remark For fundamental types, returns the type unchanged. Specializations may handle user-defined types.
-    template <typename T>
-    struct make_fundamental;
-    template <typename T>
-    requires (std::is_fundamental_v<T>)
-    struct make_fundamental<T> { using type = T; };
-    template <typename T>
-    using make_fundamental_t = make_fundamental<T>::type;
-
-    /// @brief Casts an object to its fundamental type equivalent.
-    /// @remark Uses @code make_fundamental_t@endcode for the conversion.
-    template <typename T>
-    constexpr auto to_fundamental(const T& obj) { return static_cast<make_fundamental_t<T>>(obj); }
-    /// @}
-
-    /// @brief Concept: @code T@endcode is an integer-like type (has integer numeric limits and integral fundamental type).
-    template <typename T>
-    concept integer_like = std::numeric_limits<T>::is_integer && std::is_integral_v<make_fundamental_t<T>>;
 
     namespace detail {
         template <typename B>
@@ -170,6 +154,10 @@ namespace utils {
     concept boolean_testable = detail::boolean_testable_impl<B> && requires (B&& b) {
         { !std::forward<B>(b) } -> detail::boolean_testable_impl;
     };
+
+    /// @brief C++ standard exposition-only concept: <i>can-reference</i>.
+    template <typename T>
+    concept can_reference = requires { typename std::type_identity_t<T&>; };
 
     /// @brief A class that cannot be copied or moved.
     /// @remark Useful as a base class for types that should only be used by reference or unique ownership.
@@ -183,7 +171,7 @@ namespace utils {
 
     /// @brief A key type that can only be constructed by specified friend types.
     /// @tparam Ts The friend types that can construct instances of this key (C++26 variadic friends).
-    /// @remark When __cpp_variadic_friend is not supported, only a single template parameter @code T@endcode is used.
+    /// @remark When __cpp_variadic_friend is not supported, only a single template parameter `T` is used.
     /// @remark Useful for controlled access to private or protected constructors.
 #ifdef __cpp_variadic_friend
     template <typename... Ts>
@@ -208,19 +196,19 @@ namespace utils {
     /// @{
     /// @brief Casts a forwarding reference to a const reference of the same category.
     /// @param ref A forwarding reference to const-qualify.
-    /// @returns A const reference preserving the reference category (lvalue/rvalue) of @code ref@endcode.
+    /// @returns A const reference preserving the reference category (lvalue/rvalue) of `ref`.
     template <typename T>
     constexpr const T&& as_const(T&& ref) noexcept { return ref; }
 
     /// @brief Casts a forwarding reference to a volatile reference of the same category.
     /// @param ref A forwarding reference to volatile-qualify.
-    /// @returns A volatile reference preserving the reference category (lvalue/rvalue) of @code ref@endcode.
+    /// @returns A volatile reference preserving the reference category (lvalue/rvalue) of `ref`.
     template <typename T>
     constexpr volatile T&& as_volatile(T&& ref) noexcept { return ref; }
 
     /// @brief Casts a forwarding reference to a const volatile reference of the same category.
     /// @param ref A forwarding reference to const volatile-qualify.
-    /// @returns A const volatile reference preserving the reference category (lvalue/rvalue) of @code ref@endcode.
+    /// @returns A const volatile reference preserving the reference category (lvalue/rvalue) of `ref`.
     template <typename T>
     constexpr const volatile T&& as_cv(T&& ref) noexcept { return ref; }
     /// @}
@@ -245,9 +233,9 @@ namespace utils {
     constexpr const volatile T* as_cv_ptr(T* ptr) noexcept { return ptr; }
     /// @}
 
-    /// @brief Returns a reference to @code u@endcode, which has similar properties to @code T@endcode.
+    /// @brief Returns a reference to `u`, which has similar properties to `T`.
     ///
-    /// Behaves like @code std::forward_like@endcode, except when @code T@endcode is not a reference,
+    /// Behaves like `std::forward_like`, except when `T` is not a reference,
     /// it returns an lvalue reference instead of an rvalue reference.
     /// This is useful for forwarding generic member variables of classes.
     template <typename T, typename U>

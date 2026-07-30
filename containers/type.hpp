@@ -9,7 +9,7 @@ namespace utils {
     namespace detail {
         inline constexpr struct void_allocator_t {} void_allocator;
     }
-    /// @brief Specifies if @code T@endcode is an allocator which can be used in a constructor of @code C@endcode.
+    /// @brief Specifies if `T` is an allocator which can be used in a constructor of `C`.
     /// @tparam C: <i>Container</i>
     template <typename T, typename C>
     concept container_allocator =
@@ -79,14 +79,14 @@ namespace utils {
             { ct < ct } -> boolean_testable;
         });
 
-    /// @brief Checks if @code Key@endcode can be used to query @code C@endcode.
+    /// @brief Checks if `Key` can be used to query `C`.
     /// @tparam C: an <i>AssociativeContainer</i> or <i>UnorderedAssociativeContainer</i>
     template <typename Key, typename C>
     concept searchable_in = std::convertible_to<Key, typename C::key_type> || (
         std::strict_weak_order<typename C::key_compare, const typename C::key_type&, const Key&> &&
         requires { typename C::key_compare::is_transparent; }
     );
-    /// @brief Make a search key for container @code C@endcode from @code Key@endcode, converting if necessary.
+    /// @brief Make a search key for container `C` from `Key`, converting if necessary.
     /// @tparam C: an <i>AssociativeContainer</i> or <i>UnorderedAssociativeContainer</i>
     template <typename C, searchable_in<C> Key>
     constexpr decltype(auto) make_search_key(const Key& key) {

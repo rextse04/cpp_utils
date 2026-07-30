@@ -7,11 +7,11 @@ namespace utils::meta {
 /// @deprecated Use C++26 reflection.
 /// @brief A macro for retrieving the current class.
 ///
-/// This macro stores the innermost class @code Self@endcode enclosing the current context into
-/// @code meta::const_var<utils_find_self_result_>@endcode (the type of the value being @code std::type_identity<Self>@endcode).
+/// This macro stores the innermost class `Self` enclosing the current context into
+/// `meta::const_var<utils_find_self_result_>` (the type of the value being `std::type_identity<Self>`).
 ///
 /// The program is ill-formed if the macro is not used inside a class declaration,
-/// or if a method named @code utils_find_self_@endcode or a member type named @code utils_find_self_result_@endcode is already declared.
+/// or if a method named `utils_find_self_` or a member type named `utils_find_self_result_` is already declared.
 #define UTILS_FIND_SELF\
     struct utils_find_self_result_;\
     consteval auto utils_find_self_()\
@@ -20,6 +20,6 @@ namespace utils::meta {
             "You are not supposed to call this method. See the documentation for UTILS_FIND_SELF.");\
     }
 /// @deprecated Use C++26 reflection.
-/// @brief Retrieves the type found by @code UTILS_FIND_SELF@endcode.
+/// @brief Retrieves the type found by `UTILS_FIND_SELF`.
 #define UTILS_FIND_SELF_TYPE typename decltype(get(utils::meta::const_var<utils_find_self_result_>{}))::type
 }

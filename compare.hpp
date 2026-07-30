@@ -19,12 +19,12 @@ namespace utils {
             return std::weak_ordering::equivalent;
         }
     };
-    /// @brief Trait to deduce the result type of the <i>synth-three-way</i> functor for types @code T@endcode and @code U@endcode.
+    /// @brief Trait to deduce the result type of the <i>synth-three-way</i> functor for types `T` and `U`.
     template <typename T, typename U = T>
     struct synth_three_way_result {
         using type = decltype(synth_three_way(std::declval<T&>(), std::declval<U&>()));
     };
-    /// @brief Result type of the <i>synth-three-way</i> functor for types @code T@endcode and @code U@endcode.
+    /// @brief Result type of the <i>synth-three-way</i> functor for types `T` and `U`.
     template <typename T, typename U = T>
     using synth_three_way_result_t = synth_three_way_result<T, U>::type;
 }

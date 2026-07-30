@@ -20,11 +20,11 @@ namespace utils {
     ///
     /// Access to the underlying resource is done via "permits" that are issued by the class.
     /// @tparam Sync: adds an internal mutex such that modifications via permit is synchronized
-    /// (this should not be set to true if @code T@endcode is inherently synchronized, such as atomics)
-    /// @tparam Semaphore: a type that follows the interface of @code std::counting_semaphore@endcode
-    /// @tparam SharedMutex: a type that satisfies <i>SharedMutex</i> (can be any type if @code Sync@endcode is false)
-    /// @remark In the context of this class, @code read-only access@endcode is synonymous with const reference,
-    /// while @code read/write access@endcode is synonymous with non-const reference (to the underlying resource).
+    /// (this should not be set to true if `T` is inherently synchronized, such as atomics)
+    /// @tparam Semaphore: a type that follows the interface of `std::counting_semaphore`
+    /// @tparam SharedMutex: a type that satisfies <i>SharedMutex</i> (can be any type if `Sync` is false)
+    /// @remark In the context of this class, `read-only access` is synonymous with const reference,
+    /// while `read/write access` is synonymous with non-const reference (to the underlying resource).
     template <
         typename T, bool Sync = false,
         typename Semaphore = std::counting_semaphore<>, typename SharedMutex = std::shared_mutex>
@@ -56,24 +56,24 @@ namespace utils {
             // a private constructor with friend doesn't work because it is also constructed through std::optional
             constexpr permit(permit_key, unique_resource* owner) : owner_(*owner) {}
             /// @brief Provides read-only access to the resource.
-            /// @remark If @code sync@endcode is true, a fancy pointer (@code permit_ptr@endcode) is returned.
+            /// @remark If `sync` is true, a fancy pointer (`permit_ptr`) is returned.
             constexpr auto read() const noexcept {
                 if constexpr (sync) return permit_ptr<std::shared_lock<SharedMutex>, type_qualifiers::c>(owner_);
                 else return &std::as_const(owner_.base_);
             }
             /// @brief Provides read-write access to the resource.
-            /// @remark If @code sync@endcode is true, a fancy pointer (@code permit_ptr@endcode) is returned.
+            /// @remark If `sync` is true, a fancy pointer (`permit_ptr`) is returned.
             constexpr auto write() noexcept {
                 if constexpr (sync) return permit_ptr<std::scoped_lock<SharedMutex>>(owner_);
                 else return &owner_.base_;
             }
-            /// @brief Equivalent to @code read@endcode.
+            /// @brief Equivalent to `read`.
             constexpr auto operator->() const noexcept {
                 return read();
             }
             /// @brief Returns a const reference to the resource.
             ///
-            /// Only available if @code sync@endcode is false.
+            /// Only available if `sync` is false.
             constexpr const value_type& operator*() const noexcept requires(!sync) {
                 return owner_.base_;
             }
@@ -89,7 +89,7 @@ namespace utils {
             return success ? permit_opt(std::in_place, key, this) : permit_opt(std::nullopt);
         }
     public:
-        /// @defgroup Constructors
+        /// @defgroup utils::unique_resource::unique_resource
         /// @{
         constexpr unique_resource(unique_resource_sync_t, integer_alias::ptrdiff_t quota, T&& base)
         requires (std::is_move_constructible_v<T>) :
@@ -102,15 +102,15 @@ namespace utils {
         /// @}
         /// @brief Get read access to the resource.
         ///
-        /// Only available if @code sync@endcode is false.
+        /// Only available if `sync` is false.
         constexpr const T& operator*() const noexcept requires(!sync) { return base_; }
         constexpr std::add_pointer_t<const T> operator->() const noexcept requires(!sync) { return &base_; }
         /// @brief Get read/write access to the resource, bypassing semaphore and mutex.
         /// @warning Dangerous operation.
         constexpr T& raw_access() noexcept { return base_; }
         /// @brief Get read access to the resource, bypassing mutex.
-        /// @warning Dangerous operation if @code sync@endcode is true.
-        /// @code operator*@endcode and @code operator->@endcode are better choices even when @code sync@endcode is false.
+        /// @warning Dangerous operation if `sync` is true.
+        /// `operator*` and `operator->` are better choices even when `sync` is false.
         constexpr const T& raw_access() const noexcept { return base_; }
         /// @brief Blocks until a permit is issued.
         permit acquire() {
@@ -120,23 +120,23 @@ namespace utils {
         /// @brief Try to acquire permit once.
         ///
         /// This method first checks if a permit is instantly available.
-        /// If yes, returns the issued permit, otherwise returns a @code std::nullopt@endcode .
+        /// If yes, returns the issued permit, otherwise returns a `std::nullopt` .
         /// No blocking occurs nevertheless.
         permit_opt try_acquire() noexcept {
             return issue(sem_.try_acquire());
         }
         /// @brief Try to acquire permit with timeout.
         ///
-        /// Wait for @code timeout@endcode for a permit, returns a permit once it is issued.
-        /// If a permit is still not available, returns a @code std::nullopt@endcode .
+        /// Wait for `timeout` for a permit, returns a permit once it is issued.
+        /// If a permit is still not available, returns a `std::nullopt` .
         template <typename Rep, typename Period>
         permit_opt try_acquire_for(const std::chrono::duration<Rep, Period>& timeout) {
             return issue(sem_.try_acquire_for(timeout));
         }
         /// @brief Try to acquire permit until specified time.
         ///
-        /// Wait until @code ddl@endcode  for a permit, returns a permit once it is issued.
-        /// If a permit is still not available, returns a @code std::nullopt@endcode .
+        /// Wait until `ddl`  for a permit, returns a permit once it is issued.
+        /// If a permit is still not available, returns a `std::nullopt` .
         template <typename Clock, typename Duration>
         permit_opt try_acquire_until(const std::chrono::time_point<Clock, Duration>& ddl) {
             return issue(sem_.try_acquire_until(ddl));
@@ -148,7 +148,7 @@ namespace utils {
 
     /// @brief A semaphore that does not do any counting.
     ///
-    /// Used for disabling the semaphore in @code unique_resource@endcode.
+    /// Used for disabling the semaphore in `unique_resource`.
     struct trivial_semaphore : stale_class {
         explicit constexpr trivial_semaphore(integer_alias::ptrdiff_t) noexcept {}
         static constexpr void release() noexcept {}

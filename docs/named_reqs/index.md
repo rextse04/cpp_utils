@@ -16,7 +16,8 @@ A type models the concept if and only if it satisfies the named requirement.
 In other words, it may fulfill all semantics specified in the named requirement, apart from the type constraints.
 
 ## Key Terms
-A named requirement consists of a list of expressions that a candidate entity has to support,
+A named requirement consists of a list of expressions that a candidate entity has to support
+(i.e. the expressions must be well-formed and have defined behavior),
 with extra semantic requirements as specified.
 Semantic requirements are usually divided into two parts:
 - <b>Conditions</b>
@@ -43,3 +44,9 @@ Semantic requirements are usually divided into two parts:
 ### Allocators
 - @subpage BufferAllocator
 - @subpage ResourceAllocator
+### Operators
+- @subpage IntegerBehaviorProfile
+- @subpage OperatorFunctorSet
+### Template Metaprogramming
+- @subpage Result
+- @subpage Trait

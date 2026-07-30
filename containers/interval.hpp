@@ -60,21 +60,21 @@ namespace utils {
          * @f$E1<E2@f$ if and only if the set represented by @f$E1@f$ is a proper subset of the set represented by @f$E2@f$.
          * This defines a strict weak ordering on endpoints.
          *
-         * Let @f$v@f$ be @code this->value@endcode and @f$ov@f$ be @code other.value@endcode.
-         * The program is ill-formed if there is not a restriction of @code std::less<>@endcode such that
+         * Let @f$v@f$ be `this->value` and @f$ov@f$ be `other.value`.
+         * The program is ill-formed if there is not a restriction of `std::less<>` such that
          * @f$v@f$ and @f$ov@f$ are in the domain.
          * It is UB if such a restriction does not satisfy <i>Compare</i>.
          * @{
          */
         /// @brief Three-way comparison operator.
         ///
-        /// All endpoints are assumed to be right endpoints. The comparator is taken to be @code std::less<>@endcode.
+        /// All endpoints are assumed to be right endpoints. The comparator is taken to be `std::less<>`.
         template <typename U>
         constexpr std::weak_ordering operator<=>(const interval_endpoint<U>& other) const
         requires (detail::strict_weak_order<std::less<>, const T&, const U&>) {
             return compare(other, true);
         }
-        /// @f$E1@f$ is taken to be @code *this@endcode, @f$E2@f$ is taken to be @code other@endcode.
+        /// @f$E1@f$ is taken to be `*this`, @f$E2@f$ is taken to be `other`.
         template <typename U, detail::strict_weak_order<const T&, const U&> Compare = std::less<>>
         constexpr std::weak_ordering compare(const interval_endpoint<U>& other, bool right, const Compare& comp = {}) const {
             if (comp(value, other.value)) return right ? std::weak_ordering::less : std::weak_ordering::greater;
@@ -93,9 +93,9 @@ namespace utils {
     ///
     /// The set represented by the interval is defined to be the intersection of that of the two endpoints.
     ///
-    /// @warning In any member function which takes a @code point@endcode (resp. an @code interval@endcode @code other@endcode),
-    /// the program is ill-formed if there is not a restriction of @code comp@endcode such that @code point@endcode
-    /// (resp. @code other.left@endcode, @code other.right@endcode) and the two endpoints are in the domain.
+    /// @warning In any member function which takes a `point` (resp. an `interval` `other`),
+    /// the program is ill-formed if there is not a restriction of `comp` such that `point`
+    /// (resp. `other.left`, `other.right`) and the two endpoints are in the domain.
     /// It is UB if such a restriction does not satisfy <i>Compare</i>.
     template <typename L, typename R>
     struct interval {
@@ -117,7 +117,7 @@ namespace utils {
             if (comp(right.value, left.value)) return true;
             return !(left.type == closed && right.type == closed);
         }
-        /// @brief Determines whether @code point@endcode is contained in the set represented by the interval.
+        /// @brief Determines whether `point` is contained in the set represented by the interval.
         template <typename P, detail::strict_weak_order<const L&, const R&, const P&> Compare = std::less<>>
         constexpr bool contains(const P& point, const Compare& comp = {}) const {
             bool out;
@@ -159,7 +159,7 @@ namespace utils {
             return other.strict_superset_of(*this, comp);
         }
         /**@}*/
-        /// @brief Constructs the intersection between the interval and @code other@endcode.
+        /// @brief Constructs the intersection between the interval and `other`.
         /// @{
         template <typename CL, typename CR,
             typename L2, typename R2, detail::strict_weak_order<const L&, const R&, const L2&, const R2&> Compare = std::less<>>
@@ -191,13 +191,13 @@ namespace utils {
          */
         /// @brief Three-way comparison operator.
         ///
-        /// The comparator is taken to be @code std::less<>@endcode.
+        /// The comparator is taken to be `std::less<>`.
         template <typename L2, typename R2>
         constexpr std::partial_ordering operator<=>(const interval<L2, R2>& other) const
         requires (detail::strict_weak_order<std::less<>, const L&, const R&, const L2&, const R2&>) {
             return compare(other);
         }
-        /// @f$I1@f$ is taken to be @code *this@endcode, @f$I2@f$ is taken to be @code other@endcode.
+        /// @f$I1@f$ is taken to be `*this`, @f$I2@f$ is taken to be `other`.
         template <typename L2, typename R2,
             detail::strict_weak_order<const L&, const R&, const L2&, const R2&> Compare = std::less<>>
         constexpr std::partial_ordering compare(const interval<L2, R2>& other, const Compare& comp = {}) const {
