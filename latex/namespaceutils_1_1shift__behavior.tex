@@ -1,0 +1,126 @@
+\hypertarget{namespaceutils_1_1shift__behavior}{}\doxysection{utils\+::shift\+\_\+behavior Namespace Reference}
+\label{namespaceutils_1_1shift__behavior}\index{utils::shift\_behavior@{utils::shift\_behavior}}
+
+
+Common strategies for bit shifts.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structutils_1_1shift__behavior_1_1default__binary__op__traits}{default\+\_\+binary\+\_\+op\+\_\+traits}}
+\begin{DoxyCompactList}\small\item\em Default trait set for binary operations for {\ttfamily \mbox{\hyperlink{namespaceutils_1_1shift__behavior_a661ce0fc9bfb0fb4f8c15cb656cf03ae}{utils\+::shift\+\_\+behavior\+::profile\+\_\+from}}}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{profile}}
+\begin{DoxyCompactList}\small\item\em An \mbox{\hyperlink{IntegerBehaviorProfile_8md}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Integer\+Behavior\+Profile\+Template\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}} for bit shifts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$auto Shift\+Left, auto Shift\+Right, typename Binary\+Traits  = default\+\_\+binary\+\_\+op\+\_\+traits, typename Asg\+Traits  = default\+\_\+asg\+\_\+op\+\_\+traits$>$ }\\constexpr \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{profile}}$<$\{ .\mbox{\hyperlink{structutils_1_1shift__left}{shift\+\_\+left}}=Shift\+Left,.\mbox{\hyperlink{structutils_1_1shift__right}{shift\+\_\+right}}=Shift\+Right,.binary\+\_\+traits=Binary\+Traits\{\} \}, \{ .\mbox{\hyperlink{structutils_1_1shift__left__asg}{shift\+\_\+left\+\_\+asg}}=\mbox{\hyperlink{structutils_1_1asg__wrap}{asg\+\_\+wrap}}$<$ Shift\+Left $>$\{\},.\mbox{\hyperlink{structutils_1_1shift__right__asg}{shift\+\_\+right\+\_\+asg}}=\mbox{\hyperlink{structutils_1_1asg__wrap}{asg\+\_\+wrap}}$<$ Shift\+Right $>$\{\},.asg\+\_\+traits=Asg\+Traits\{\} \}$>$ \mbox{\hyperlink{namespaceutils_1_1shift__behavior_a661ce0fc9bfb0fb4f8c15cb656cf03ae}{profile\+\_\+from}}
+\begin{DoxyCompactList}\small\item\em Convenience variable template to make an \mbox{\hyperlink{IntegerBehaviorProfile_8md}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Integer\+Behavior\+Profile\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}} for bit shifts. \end{DoxyCompactList}\item 
+constexpr auto \mbox{\hyperlink{namespaceutils_1_1shift__behavior_ad19cce7bdb19977b0ddb72994867aefb}{standard}} = \mbox{\hyperlink{namespaceutils_1_1shift__behavior_a661ce0fc9bfb0fb4f8c15cb656cf03ae}{profile\+\_\+from}}$<$\mbox{\hyperlink{structutils_1_1shift__left}{shift\+\_\+left}}\{\}, \mbox{\hyperlink{structutils_1_1shift__right}{shift\+\_\+right}}\{\}$>$
+\begin{DoxyCompactList}\small\item\em Default C++ bit-\/shift operation rules. \end{DoxyCompactList}\item 
+constexpr auto \mbox{\hyperlink{namespaceutils_1_1shift__behavior_a77008e298b1f980039cf05e51ac23515}{scalar}} = \mbox{\hyperlink{namespaceutils_1_1shift__behavior_a661ce0fc9bfb0fb4f8c15cb656cf03ae}{profile\+\_\+from}}$<$detail\+::scalar\+\_\+shift\+\_\+left\{\}, detail\+::scalar\+\_\+shift\+\_\+right\{\}$>$
+\begin{DoxyCompactList}\small\item\em Treats bit-\/shifting as a scalar operation. \end{DoxyCompactList}\item 
+constexpr auto \mbox{\hyperlink{namespaceutils_1_1shift__behavior_aaa3b65aca486508aee767a5e4091bc98}{circular}} = \mbox{\hyperlink{namespaceutils_1_1shift__behavior_a661ce0fc9bfb0fb4f8c15cb656cf03ae}{profile\+\_\+from}}$<$detail\+::circ\+\_\+shift\+\_\+left\{\}, detail\+::circ\+\_\+shift\+\_\+right\{\}$>$
+\begin{DoxyCompactList}\small\item\em Circular bit-\/shifting. \end{DoxyCompactList}\item 
+constexpr auto \mbox{\hyperlink{namespaceutils_1_1shift__behavior_ac9db62511912a83ec50c416a1efbc72e}{checked}} = \mbox{\hyperlink{namespaceutils_1_1shift__behavior_a661ce0fc9bfb0fb4f8c15cb656cf03ae}{profile\+\_\+from}}$<$detail\+::ckd\+\_\+base$<$\mbox{\hyperlink{structutils_1_1shift__left}{shift\+\_\+left}}\{\}$>$\{\}, detail\+::ckd\+\_\+base$<$\mbox{\hyperlink{structutils_1_1shift__right}{shift\+\_\+right}}\{\}$>$\{\}$>$
+\begin{DoxyCompactList}\small\item\em Throws an exception for invalid {\ttfamily n}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Common strategies for bit shifts. 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceutils_1_1shift__behavior_ac9db62511912a83ec50c416a1efbc72e}\label{namespaceutils_1_1shift__behavior_ac9db62511912a83ec50c416a1efbc72e}} 
+\index{utils::shift\_behavior@{utils::shift\_behavior}!checked@{checked}}
+\index{checked@{checked}!utils::shift\_behavior@{utils::shift\_behavior}}
+\doxysubsubsection{\texorpdfstring{checked}{checked}}
+{\footnotesize\ttfamily constexpr auto utils\+::shift\+\_\+behavior\+::checked = \mbox{\hyperlink{namespaceutils_1_1shift__behavior_a661ce0fc9bfb0fb4f8c15cb656cf03ae}{profile\+\_\+from}}$<$detail\+::ckd\+\_\+base$<$\mbox{\hyperlink{structutils_1_1shift__left}{shift\+\_\+left}}\{\}$>$\{\}, detail\+::ckd\+\_\+base$<$\mbox{\hyperlink{structutils_1_1shift__right}{shift\+\_\+right}}\{\}$>$\{\}$>$\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Throws an exception for invalid {\ttfamily n}. 
+
+\begin{DoxyRemark}{Remarks}
+Every shift operation is defined under this trait. 
+\end{DoxyRemark}
+
+
+Definition at line \mbox{\hyperlink{integer_8hpp_source_l00533}{533}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1shift__behavior_aaa3b65aca486508aee767a5e4091bc98}\label{namespaceutils_1_1shift__behavior_aaa3b65aca486508aee767a5e4091bc98}} 
+\index{utils::shift\_behavior@{utils::shift\_behavior}!circular@{circular}}
+\index{circular@{circular}!utils::shift\_behavior@{utils::shift\_behavior}}
+\doxysubsubsection{\texorpdfstring{circular}{circular}}
+{\footnotesize\ttfamily constexpr auto utils\+::shift\+\_\+behavior\+::circular = \mbox{\hyperlink{namespaceutils_1_1shift__behavior_a661ce0fc9bfb0fb4f8c15cb656cf03ae}{profile\+\_\+from}}$<$detail\+::circ\+\_\+shift\+\_\+left\{\}, detail\+::circ\+\_\+shift\+\_\+right\{\}$>$\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Circular bit-\/shifting. 
+
+\begin{DoxyRemark}{Remarks}
+Every shift operation is defined under this trait. 
+\end{DoxyRemark}
+
+
+Definition at line \mbox{\hyperlink{integer_8hpp_source_l00518}{518}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1shift__behavior_a661ce0fc9bfb0fb4f8c15cb656cf03ae}\label{namespaceutils_1_1shift__behavior_a661ce0fc9bfb0fb4f8c15cb656cf03ae}} 
+\index{utils::shift\_behavior@{utils::shift\_behavior}!profile\_from@{profile\_from}}
+\index{profile\_from@{profile\_from}!utils::shift\_behavior@{utils::shift\_behavior}}
+\doxysubsubsection{\texorpdfstring{profile\_from}{profile\_from}}
+{\footnotesize\ttfamily template$<$auto Shift\+Left, auto Shift\+Right, typename Binary\+Traits  = default\+\_\+binary\+\_\+op\+\_\+traits, typename Asg\+Traits  = default\+\_\+asg\+\_\+op\+\_\+traits$>$ \\
+constexpr \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{profile}}$<$\{ .\mbox{\hyperlink{structutils_1_1shift__left}{shift\+\_\+left}} = Shift\+Left, .\mbox{\hyperlink{structutils_1_1shift__right}{shift\+\_\+right}} = Shift\+Right, .binary\+\_\+traits = Binary\+Traits\{\} \}, \{ .\mbox{\hyperlink{structutils_1_1shift__left__asg}{shift\+\_\+left\+\_\+asg}} = \mbox{\hyperlink{structutils_1_1asg__wrap}{asg\+\_\+wrap}}$<$Shift\+Left$>$\{\}, .\mbox{\hyperlink{structutils_1_1shift__right__asg}{shift\+\_\+right\+\_\+asg}} = \mbox{\hyperlink{structutils_1_1asg__wrap}{asg\+\_\+wrap}}$<$Shift\+Right$>$\{\}, .asg\+\_\+traits = Asg\+Traits\{\} \}$>$ utils\+::shift\+\_\+behavior\+::profile\+\_\+from\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Convenience variable template to make an \mbox{\hyperlink{IntegerBehaviorProfile_8md}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Integer\+Behavior\+Profile\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}} for bit shifts. 
+
+For every relevant operator {\ttfamily @} and the corresponding functor {\ttfamily F} (supplied in template parameters), the synthesized functor {\ttfamily op} behaves as follows\+:
+\begin{DoxyEnumerate}
+\item If {\ttfamily @} is a binary operator, {\ttfamily op(a, b)} is equivalent to {\ttfamily F(a, b)}. In other words, {\ttfamily op} is identical to {\ttfamily F} in this case.
+\item If {\ttfamily @} is an assignment operator, {\ttfamily op(a, b)} is equivalent to {\ttfamily a = F(a, b)}. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Shift\+Left,Shift\+Right} & Base functors from which functors supplied to {\ttfamily \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{utils\+::shift\+\_\+behavior\+::profile}}} are synthesized. They must return an integer-\/like type on every well-\/formed invocation. \\
+\hline
+{\em Binary\+Traits} & Trait set supplied to {\ttfamily \mbox{\hyperlink{structutils_1_1shift__op__functors}{utils\+::shift\+\_\+op\+\_\+functors}}}. \\
+\hline
+{\em Asg\+Traits} & Trait set supplied to {\ttfamily \mbox{\hyperlink{structutils_1_1shift__asg__op__functors}{utils\+::shift\+\_\+asg\+\_\+op\+\_\+functors}}}. \\
+\hline
+\end{DoxyTemplParams}
+
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{integer_8hpp_source_l00457}{457}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1shift__behavior_a77008e298b1f980039cf05e51ac23515}\label{namespaceutils_1_1shift__behavior_a77008e298b1f980039cf05e51ac23515}} 
+\index{utils::shift\_behavior@{utils::shift\_behavior}!scalar@{scalar}}
+\index{scalar@{scalar}!utils::shift\_behavior@{utils::shift\_behavior}}
+\doxysubsubsection{\texorpdfstring{scalar}{scalar}}
+{\footnotesize\ttfamily constexpr auto utils\+::shift\+\_\+behavior\+::scalar = \mbox{\hyperlink{namespaceutils_1_1shift__behavior_a661ce0fc9bfb0fb4f8c15cb656cf03ae}{profile\+\_\+from}}$<$detail\+::scalar\+\_\+shift\+\_\+left\{\}, detail\+::scalar\+\_\+shift\+\_\+right\{\}$>$\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Treats bit-\/shifting as a scalar operation. 
+
+Shifting by a negative {\ttfamily n} means shifting in the other direction, and we assume {\ttfamily a} has an infinite range before truncating it to the original type. \begin{DoxyRemark}{Remarks}
+Every shift operation is defined under this trait. 
+\end{DoxyRemark}
+
+
+Definition at line \mbox{\hyperlink{integer_8hpp_source_l00497}{497}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1shift__behavior_ad19cce7bdb19977b0ddb72994867aefb}\label{namespaceutils_1_1shift__behavior_ad19cce7bdb19977b0ddb72994867aefb}} 
+\index{utils::shift\_behavior@{utils::shift\_behavior}!standard@{standard}}
+\index{standard@{standard}!utils::shift\_behavior@{utils::shift\_behavior}}
+\doxysubsubsection{\texorpdfstring{standard}{standard}}
+{\footnotesize\ttfamily constexpr auto utils\+::shift\+\_\+behavior\+::standard = \mbox{\hyperlink{namespaceutils_1_1shift__behavior_a661ce0fc9bfb0fb4f8c15cb656cf03ae}{profile\+\_\+from}}$<$\mbox{\hyperlink{structutils_1_1shift__left}{shift\+\_\+left}}\{\}, \mbox{\hyperlink{structutils_1_1shift__right}{shift\+\_\+right}}\{\}$>$\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Default C++ bit-\/shift operation rules. 
+
+
+
+Definition at line \mbox{\hyperlink{integer_8hpp_source_l00460}{460}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
+

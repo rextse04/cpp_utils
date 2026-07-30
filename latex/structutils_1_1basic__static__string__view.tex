@@ -1,0 +1,227 @@
+\hypertarget{structutils_1_1basic__static__string__view}{}\doxysection{utils\+::basic\+\_\+static\+\_\+string\+\_\+view\texorpdfstring{$<$}{<} CharT, Traits \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structutils_1_1basic__static__string__view}\index{utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}}
+
+
+Identical interface to {\ttfamily std\+::basic\+\_\+string\+\_\+view}, except that this class can only be constructed at compile time, thus ensuring that it refers to a \char`\"{}static string\char`\"{}.  
+
+
+
+
+{\ttfamily \#include $<$static\+\_\+string.\+hpp$>$}
+
+
+
+Inheritance diagram for utils\+::basic\+\_\+static\+\_\+string\+\_\+view\texorpdfstring{$<$}{<} CharT, Traits \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{structutils_1_1basic__static__string__view__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for utils\+::basic\+\_\+static\+\_\+string\+\_\+view\texorpdfstring{$<$}{<} CharT, Traits \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{structutils_1_1basic__static__string__view__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{structutils_1_1basic__static__string__view_a1306248d86dfee14a52b668a8fd9f277}{const\+\_\+iterator}} = const CharT $\ast$
+\item 
+using \mbox{\hyperlink{structutils_1_1basic__static__string__view_a8ab0e79199fcfb43a4e9a41bdc7d1381}{iterator}} = \mbox{\hyperlink{structutils_1_1basic__static__string__view_a1306248d86dfee14a52b668a8fd9f277}{const\+\_\+iterator}}
+\item 
+using \mbox{\hyperlink{structutils_1_1basic__static__string__view_a70e5e9fe2ce35a2e5c7335f999c64036}{const\+\_\+reverse\+\_\+iterator}} = std\+::reverse\+\_\+iterator$<$ \mbox{\hyperlink{structutils_1_1basic__static__string__view_a1306248d86dfee14a52b668a8fd9f277}{const\+\_\+iterator}} $>$
+\item 
+using \mbox{\hyperlink{structutils_1_1basic__static__string__view_a15d1ab5de47c6a8fc80a5c3870814170}{reverse\+\_\+iterator}} = \mbox{\hyperlink{structutils_1_1basic__static__string__view_a70e5e9fe2ce35a2e5c7335f999c64036}{const\+\_\+reverse\+\_\+iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string__view_a1ddaadfefcad3b4610cc2fc3577fb752}{basic\+\_\+static\+\_\+string\+\_\+view}} (const CharT $\ast$s, size\+\_\+type len)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string__view_a4ffa73d5a90162c97eb491679e32c4e6}{basic\+\_\+static\+\_\+string\+\_\+view}} (const CharT $\ast$s)
+\item 
+constexpr const CharT $\ast$ \mbox{\hyperlink{structutils_1_1basic__static__string__view_a1aefc0e8a4758faf5244a22651cf62c2}{data}} () const noexcept
+\item 
+constexpr size\+\_\+type \mbox{\hyperlink{structutils_1_1basic__static__string__view_a030218d1ff0f160641d794476c9c44fd}{size}} () const noexcept
+\item 
+constexpr size\+\_\+type \mbox{\hyperlink{structutils_1_1basic__static__string__view_a3e8d4f8bf2d58f046385500ea9931f33}{max\+\_\+size}} (this const auto \&) noexcept
+\item 
+constexpr base\+\_\+string\+\_\+view\+\_\+type \mbox{\hyperlink{structutils_1_1basic__static__string__view_a0db65dbf8db157e1c5f7059c4e92e6a1}{substr}} (size\+\_\+type pos=0, size\+\_\+type count=npos) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const CharT $\ast$const \mbox{\hyperlink{structutils_1_1basic__static__string__view_a28a0e5b397590f97a66816ad56db26ae}{data\+\_\+}}
+\item 
+const size\+\_\+type \mbox{\hyperlink{structutils_1_1basic__static__string__view_a4b2fd24a12d365d3d054eef5d78d4ff6}{size\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename CharT, typename Traits = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$\newline
+struct utils\+::basic\+\_\+static\+\_\+string\+\_\+view$<$ Char\+T, Traits $>$}
+Identical interface to {\ttfamily std\+::basic\+\_\+string\+\_\+view}, except that this class can only be constructed at compile time, thus ensuring that it refers to a \char`\"{}static string\char`\"{}. 
+
+\begin{DoxyRemark}{Remarks}
+{\ttfamily data\+\_\+} and {\ttfamily size\+\_\+} are public to make this a structural type, thus allowing it to be passed as a template parameter. However, as pointers to string literals cannot be part of template parameters, {\ttfamily \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}} may be a better choice in this case. 
+\end{DoxyRemark}
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00192}{192}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structutils_1_1basic__static__string__view_a1306248d86dfee14a52b668a8fd9f277}\label{structutils_1_1basic__static__string__view_a1306248d86dfee14a52b668a8fd9f277}} 
+\index{utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}!const\_iterator@{const\_iterator}}
+\index{const\_iterator@{const\_iterator}!utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{const\_iterator}{const\_iterator}}
+{\footnotesize\ttfamily template$<$typename CharT , typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+using \mbox{\hyperlink{structutils_1_1basic__static__string__view}{utils\+::basic\+\_\+static\+\_\+string\+\_\+view}}$<$ CharT, Traits $>$\+::\mbox{\hyperlink{structutils_1_1basic__static__string__view_a1306248d86dfee14a52b668a8fd9f277}{const\+\_\+iterator}} =  const CharT$\ast$}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00199}{199}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string__view_a70e5e9fe2ce35a2e5c7335f999c64036}\label{structutils_1_1basic__static__string__view_a70e5e9fe2ce35a2e5c7335f999c64036}} 
+\index{utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}!const\_reverse\_iterator@{const\_reverse\_iterator}}
+\index{const\_reverse\_iterator@{const\_reverse\_iterator}!utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{const\_reverse\_iterator}{const\_reverse\_iterator}}
+{\footnotesize\ttfamily template$<$typename CharT , typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+using \mbox{\hyperlink{structutils_1_1basic__static__string__view}{utils\+::basic\+\_\+static\+\_\+string\+\_\+view}}$<$ CharT, Traits $>$\+::\mbox{\hyperlink{structutils_1_1basic__static__string__view_a70e5e9fe2ce35a2e5c7335f999c64036}{const\+\_\+reverse\+\_\+iterator}} =  std\+::reverse\+\_\+iterator$<$\mbox{\hyperlink{structutils_1_1basic__static__string__view_a1306248d86dfee14a52b668a8fd9f277}{const\+\_\+iterator}}$>$}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00201}{201}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string__view_a8ab0e79199fcfb43a4e9a41bdc7d1381}\label{structutils_1_1basic__static__string__view_a8ab0e79199fcfb43a4e9a41bdc7d1381}} 
+\index{utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}!iterator@{iterator}}
+\index{iterator@{iterator}!utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily template$<$typename CharT , typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+using \mbox{\hyperlink{structutils_1_1basic__static__string__view}{utils\+::basic\+\_\+static\+\_\+string\+\_\+view}}$<$ CharT, Traits $>$\+::\mbox{\hyperlink{structutils_1_1basic__static__string__view_a8ab0e79199fcfb43a4e9a41bdc7d1381}{iterator}} =  \mbox{\hyperlink{structutils_1_1basic__static__string__view_a1306248d86dfee14a52b668a8fd9f277}{const\+\_\+iterator}}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00200}{200}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string__view_a15d1ab5de47c6a8fc80a5c3870814170}\label{structutils_1_1basic__static__string__view_a15d1ab5de47c6a8fc80a5c3870814170}} 
+\index{utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}!reverse\_iterator@{reverse\_iterator}}
+\index{reverse\_iterator@{reverse\_iterator}!utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{reverse\_iterator}{reverse\_iterator}}
+{\footnotesize\ttfamily template$<$typename CharT , typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+using \mbox{\hyperlink{structutils_1_1basic__static__string__view}{utils\+::basic\+\_\+static\+\_\+string\+\_\+view}}$<$ CharT, Traits $>$\+::\mbox{\hyperlink{structutils_1_1basic__static__string__view_a15d1ab5de47c6a8fc80a5c3870814170}{reverse\+\_\+iterator}} =  \mbox{\hyperlink{structutils_1_1basic__static__string__view_a70e5e9fe2ce35a2e5c7335f999c64036}{const\+\_\+reverse\+\_\+iterator}}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00202}{202}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structutils_1_1basic__static__string__view_a1ddaadfefcad3b4610cc2fc3577fb752}\label{structutils_1_1basic__static__string__view_a1ddaadfefcad3b4610cc2fc3577fb752}} 
+\index{utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}!basic\_static\_string\_view@{basic\_static\_string\_view}}
+\index{basic\_static\_string\_view@{basic\_static\_string\_view}!utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_static\_string\_view()}{basic\_static\_string\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename CharT , typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string__view}{utils\+::basic\+\_\+static\+\_\+string\+\_\+view}}$<$ CharT, Traits $>$\+::\mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}} (\begin{DoxyParamCaption}\item[{const CharT $\ast$}]{s,  }\item[{size\+\_\+type}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00207}{207}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string__view_a4ffa73d5a90162c97eb491679e32c4e6}\label{structutils_1_1basic__static__string__view_a4ffa73d5a90162c97eb491679e32c4e6}} 
+\index{utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}!basic\_static\_string\_view@{basic\_static\_string\_view}}
+\index{basic\_static\_string\_view@{basic\_static\_string\_view}!utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_static\_string\_view()}{basic\_static\_string\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename CharT , typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string__view}{utils\+::basic\+\_\+static\+\_\+string\+\_\+view}}$<$ CharT, Traits $>$\+::\mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}} (\begin{DoxyParamCaption}\item[{const CharT $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00210}{210}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structutils_1_1basic__static__string__view_a1aefc0e8a4758faf5244a22651cf62c2}\label{structutils_1_1basic__static__string__view_a1aefc0e8a4758faf5244a22651cf62c2}} 
+\index{utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}!data@{data}}
+\index{data@{data}!utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily template$<$typename CharT , typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+constexpr const CharT $\ast$ \mbox{\hyperlink{structutils_1_1basic__static__string__view}{utils\+::basic\+\_\+static\+\_\+string\+\_\+view}}$<$ CharT, Traits $>$\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00212}{212}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string__view_a3e8d4f8bf2d58f046385500ea9931f33}\label{structutils_1_1basic__static__string__view_a3e8d4f8bf2d58f046385500ea9931f33}} 
+\index{utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}!max\_size@{max\_size}}
+\index{max\_size@{max\_size}!utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{max\_size()}{max\_size()}}
+{\footnotesize\ttfamily template$<$typename CharT , typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+constexpr size\+\_\+type \mbox{\hyperlink{structutils_1_1basic__static__string__view}{utils\+::basic\+\_\+static\+\_\+string\+\_\+view}}$<$ CharT, Traits $>$\+::max\+\_\+size (\begin{DoxyParamCaption}\item[{this const auto \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00214}{214}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string__view_a030218d1ff0f160641d794476c9c44fd}\label{structutils_1_1basic__static__string__view_a030218d1ff0f160641d794476c9c44fd}} 
+\index{utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}!size@{size}}
+\index{size@{size}!utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename CharT , typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+constexpr size\+\_\+type \mbox{\hyperlink{structutils_1_1basic__static__string__view}{utils\+::basic\+\_\+static\+\_\+string\+\_\+view}}$<$ CharT, Traits $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00213}{213}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string__view_a0db65dbf8db157e1c5f7059c4e92e6a1}\label{structutils_1_1basic__static__string__view_a0db65dbf8db157e1c5f7059c4e92e6a1}} 
+\index{utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}!substr@{substr}}
+\index{substr@{substr}!utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{substr()}{substr()}}
+{\footnotesize\ttfamily template$<$typename CharT , typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+constexpr base\+\_\+string\+\_\+view\+\_\+type \mbox{\hyperlink{structutils_1_1basic__static__string__view}{utils\+::basic\+\_\+static\+\_\+string\+\_\+view}}$<$ CharT, Traits $>$\+::substr (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{pos = {\ttfamily 0},  }\item[{size\+\_\+type}]{count = {\ttfamily npos} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00215}{215}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structutils_1_1basic__static__string__view_a28a0e5b397590f97a66816ad56db26ae}\label{structutils_1_1basic__static__string__view_a28a0e5b397590f97a66816ad56db26ae}} 
+\index{utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}!data\_@{data\_}}
+\index{data\_@{data\_}!utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{data\_}{data\_}}
+{\footnotesize\ttfamily template$<$typename CharT , typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+const CharT$\ast$ const \mbox{\hyperlink{structutils_1_1basic__static__string__view}{utils\+::basic\+\_\+static\+\_\+string\+\_\+view}}$<$ CharT, Traits $>$\+::data\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00204}{204}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string__view_a4b2fd24a12d365d3d054eef5d78d4ff6}\label{structutils_1_1basic__static__string__view_a4b2fd24a12d365d3d054eef5d78d4ff6}} 
+\index{utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}!size\_@{size\_}}
+\index{size\_@{size\_}!utils::basic\_static\_string\_view$<$ CharT, Traits $>$@{utils::basic\_static\_string\_view$<$ CharT, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{size\_}{size\_}}
+{\footnotesize\ttfamily template$<$typename CharT , typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+const size\+\_\+type \mbox{\hyperlink{structutils_1_1basic__static__string__view}{utils\+::basic\+\_\+static\+\_\+string\+\_\+view}}$<$ CharT, Traits $>$\+::size\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00205}{205}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{static__string_8hpp}{static\+\_\+string.\+hpp}}\end{DoxyCompactItemize}

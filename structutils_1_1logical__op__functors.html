@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>cpp_utils: utils::logical_op_functors&lt; And, Or, Not &gt; Struct Template Reference</title>
+<title>cpp_utils: utils::logical_op_functors&lt; And, Or, Not, BinaryTraits, UnaryTraits &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -84,104 +84,133 @@ $(document).ready(function(){initNavTree('structutils_1_1logical__op__functors.h
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structutils_1_1logical__op__functors-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">utils::logical_op_functors&lt; And, Or, Not &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">utils::logical_op_functors&lt; And, Or, Not, BinaryTraits, UnaryTraits &gt; Struct Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="OperatorFunctorSet_8md.html">&lt;i&gt;OperatorFunctorSetTemplate&lt;/i&gt;</a> for <code><a class="el" href="structutils_1_1logical__ops.html" title="Adds support for a &amp;&amp; b, a || b and !t.">utils::logical_ops</a></code>.  
+ <a href="structutils_1_1logical__op__functors.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="operators_8hpp_source.html">operators.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for utils::logical_op_functors&lt; And, Or, Not, BinaryTraits, UnaryTraits &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="structutils_1_1logical__op__functors__coll__graph.png" border="0" usemap="#autils_1_1logical__op__functors_3_01And_00_01Or_00_01Not_00_01BinaryTraits_00_01UnaryTraits_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="autils_1_1logical__op__functors_3_01And_00_01Or_00_01Not_00_01BinaryTraits_00_01UnaryTraits_01_4_coll__map" id="autils_1_1logical__op__functors_3_01And_00_01Or_00_01Not_00_01BinaryTraits_00_01UnaryTraits_01_4_coll__map">
+<area shape="rect" title="&lt;i&gt;OperatorFunctorSetTemplate&lt;/i&gt; for utils::logical_ops." alt="" coords="56,109,241,165"/>
+<area shape="rect" href="structutils_1_1default__binary__op__traits.html" title="The default trait set for binary operators, except assignment and prefix operators." alt="" coords="5,5,137,47"/>
+<area shape="rect" href="structutils_1_1default__unary__op__traits.html" title="The default trait set for unary operators, except postfix operators." alt="" coords="161,5,291,47"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a57598ff88651bbda4748a2bd71ac2881"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1logical__op__functors.html#a57598ff88651bbda4748a2bd71ac2881">tag</a> = logical_op_functors_tag</td></tr>
-<tr class="separator:a57598ff88651bbda4748a2bd71ac2881"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ac3f868c65d3df2568d839f06389d5b68"><td class="memItemLeft" align="right" valign="top">And&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1logical__op__functors.html#ac3f868c65d3df2568d839f06389d5b68">logical_and</a> {}</td></tr>
-<tr class="separator:ac3f868c65d3df2568d839f06389d5b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ac32e82a7722948d235f3521d565485"><td class="memItemLeft" align="right" valign="top">Or&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1logical__op__functors.html#a6ac32e82a7722948d235f3521d565485">logical_or</a> {}</td></tr>
-<tr class="separator:a6ac32e82a7722948d235f3521d565485"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a7bdb91ca5241021d5e2741b03ee22c"><td class="memItemLeft" align="right" valign="top">Not&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1logical__op__functors.html#a3a7bdb91ca5241021d5e2741b03ee22c">logical_not</a> {}</td></tr>
-<tr class="separator:a3a7bdb91ca5241021d5e2741b03ee22c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a427bb9762a11701327efff75d1fed7e8"><td class="memItemLeft" align="right" valign="top">And&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1logical__op__functors.html#a427bb9762a11701327efff75d1fed7e8">logical_and</a> {}</td></tr>
+<tr class="separator:a427bb9762a11701327efff75d1fed7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abab18dd318db519f7b6e703d2f9bb97d"><td class="memItemLeft" align="right" valign="top">Or&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1logical__op__functors.html#abab18dd318db519f7b6e703d2f9bb97d">logical_or</a> {}</td></tr>
+<tr class="separator:abab18dd318db519f7b6e703d2f9bb97d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd75a43fb750be64d8d113fe4eb0a4f6"><td class="memItemLeft" align="right" valign="top">Not&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1logical__op__functors.html#abd75a43fb750be64d8d113fe4eb0a4f6">logical_not</a> {}</td></tr>
+<tr class="separator:abd75a43fb750be64d8d113fe4eb0a4f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bfe0d2ded0fadc964ca644f279a25e4"><td class="memItemLeft" align="right" valign="top">BinaryTraits&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1logical__op__functors.html#a0bfe0d2ded0fadc964ca644f279a25e4">binary_traits</a> {}</td></tr>
+<tr class="separator:a0bfe0d2ded0fadc964ca644f279a25e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c1d3b5b874bf8c483d29dc6b526acb4"><td class="memItemLeft" align="right" valign="top">UnaryTraits&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1logical__op__functors.html#a8c1d3b5b874bf8c483d29dc6b526acb4">unary_traits</a> {}</td></tr>
+<tr class="separator:a8c1d3b5b874bf8c483d29dc6b526acb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename And = std::logical_and&lt;&gt;, typename Or = std::logical_or&lt;&gt;, typename Not = std::logical_not&lt;&gt;&gt;<br />
-struct utils::logical_op_functors&lt; And, Or, Not &gt;</div>
-<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00366">366</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a57598ff88651bbda4748a2bd71ac2881" name="a57598ff88651bbda4748a2bd71ac2881"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57598ff88651bbda4748a2bd71ac2881">&#9670;&nbsp;</a></span>tag</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename And = std::logical_and&lt;&gt;, typename Or = std::logical_or&lt;&gt;, typename Not = std::logical_not&lt;&gt;, typename BinaryTraits = default_binary_op_traits, typename UnaryTraits = default_unary_op_traits&gt;<br />
+struct utils::logical_op_functors&lt; And, Or, Not, BinaryTraits, UnaryTraits &gt;</div><p ><a class="el" href="OperatorFunctorSet_8md.html">&lt;i&gt;OperatorFunctorSetTemplate&lt;/i&gt;</a> for <code><a class="el" href="structutils_1_1logical__ops.html" title="Adds support for a &amp;&amp; b, a || b and !t.">utils::logical_ops</a></code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00324">324</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a0bfe0d2ded0fadc964ca644f279a25e4" name="a0bfe0d2ded0fadc964ca644f279a25e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bfe0d2ded0fadc964ca644f279a25e4">&#9670;&nbsp;</a></span>binary_traits</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename And  = std::logical_and&lt;&gt;, typename Or  = std::logical_or&lt;&gt;, typename Not  = std::logical_not&lt;&gt;&gt; </div>
+template&lt;typename And  = std::logical_and&lt;&gt;, typename Or  = std::logical_or&lt;&gt;, typename Not  = std::logical_not&lt;&gt;, typename BinaryTraits  = default_binary_op_traits, typename UnaryTraits  = default_unary_op_traits&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structutils_1_1logical__op__functors.html">utils::logical_op_functors</a>&lt; And, Or, Not &gt;::<a class="el" href="structutils_1_1logical__op__functors.html#a57598ff88651bbda4748a2bd71ac2881">tag</a> =  logical_op_functors_tag</td>
+          <td class="memname">BinaryTraits <a class="el" href="structutils_1_1logical__op__functors.html">utils::logical_op_functors</a>&lt; And, Or, Not, BinaryTraits, UnaryTraits &gt;::binary_traits {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00367">367</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00328">328</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="ac3f868c65d3df2568d839f06389d5b68" name="ac3f868c65d3df2568d839f06389d5b68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3f868c65d3df2568d839f06389d5b68">&#9670;&nbsp;</a></span>logical_and</h2>
+<a id="a427bb9762a11701327efff75d1fed7e8" name="a427bb9762a11701327efff75d1fed7e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a427bb9762a11701327efff75d1fed7e8">&#9670;&nbsp;</a></span>logical_and</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename And  = std::logical_and&lt;&gt;, typename Or  = std::logical_or&lt;&gt;, typename Not  = std::logical_not&lt;&gt;&gt; </div>
+template&lt;typename And  = std::logical_and&lt;&gt;, typename Or  = std::logical_or&lt;&gt;, typename Not  = std::logical_not&lt;&gt;, typename BinaryTraits  = default_binary_op_traits, typename UnaryTraits  = default_unary_op_traits&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">And <a class="el" href="structutils_1_1logical__op__functors.html">utils::logical_op_functors</a>&lt; And, Or, Not &gt;::logical_and {}</td>
+          <td class="memname">And <a class="el" href="structutils_1_1logical__op__functors.html">utils::logical_op_functors</a>&lt; And, Or, Not, BinaryTraits, UnaryTraits &gt;::logical_and {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00368">368</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00325">325</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a3a7bdb91ca5241021d5e2741b03ee22c" name="a3a7bdb91ca5241021d5e2741b03ee22c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a7bdb91ca5241021d5e2741b03ee22c">&#9670;&nbsp;</a></span>logical_not</h2>
+<a id="abd75a43fb750be64d8d113fe4eb0a4f6" name="abd75a43fb750be64d8d113fe4eb0a4f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd75a43fb750be64d8d113fe4eb0a4f6">&#9670;&nbsp;</a></span>logical_not</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename And  = std::logical_and&lt;&gt;, typename Or  = std::logical_or&lt;&gt;, typename Not  = std::logical_not&lt;&gt;&gt; </div>
+template&lt;typename And  = std::logical_and&lt;&gt;, typename Or  = std::logical_or&lt;&gt;, typename Not  = std::logical_not&lt;&gt;, typename BinaryTraits  = default_binary_op_traits, typename UnaryTraits  = default_unary_op_traits&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">Not <a class="el" href="structutils_1_1logical__op__functors.html">utils::logical_op_functors</a>&lt; And, Or, Not &gt;::logical_not {}</td>
+          <td class="memname">Not <a class="el" href="structutils_1_1logical__op__functors.html">utils::logical_op_functors</a>&lt; And, Or, Not, BinaryTraits, UnaryTraits &gt;::logical_not {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00370">370</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00327">327</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a6ac32e82a7722948d235f3521d565485" name="a6ac32e82a7722948d235f3521d565485"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ac32e82a7722948d235f3521d565485">&#9670;&nbsp;</a></span>logical_or</h2>
+<a id="abab18dd318db519f7b6e703d2f9bb97d" name="abab18dd318db519f7b6e703d2f9bb97d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abab18dd318db519f7b6e703d2f9bb97d">&#9670;&nbsp;</a></span>logical_or</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename And  = std::logical_and&lt;&gt;, typename Or  = std::logical_or&lt;&gt;, typename Not  = std::logical_not&lt;&gt;&gt; </div>
+template&lt;typename And  = std::logical_and&lt;&gt;, typename Or  = std::logical_or&lt;&gt;, typename Not  = std::logical_not&lt;&gt;, typename BinaryTraits  = default_binary_op_traits, typename UnaryTraits  = default_unary_op_traits&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">Or <a class="el" href="structutils_1_1logical__op__functors.html">utils::logical_op_functors</a>&lt; And, Or, Not &gt;::logical_or {}</td>
+          <td class="memname">Or <a class="el" href="structutils_1_1logical__op__functors.html">utils::logical_op_functors</a>&lt; And, Or, Not, BinaryTraits, UnaryTraits &gt;::logical_or {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00369">369</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00326">326</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8c1d3b5b874bf8c483d29dc6b526acb4" name="a8c1d3b5b874bf8c483d29dc6b526acb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c1d3b5b874bf8c483d29dc6b526acb4">&#9670;&nbsp;</a></span>unary_traits</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename And  = std::logical_and&lt;&gt;, typename Or  = std::logical_or&lt;&gt;, typename Not  = std::logical_not&lt;&gt;, typename BinaryTraits  = default_binary_op_traits, typename UnaryTraits  = default_unary_op_traits&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">UnaryTraits <a class="el" href="structutils_1_1logical__op__functors.html">utils::logical_op_functors</a>&lt; And, Or, Not, BinaryTraits, UnaryTraits &gt;::unary_traits {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00329">329</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
 
 </div>
 </div>

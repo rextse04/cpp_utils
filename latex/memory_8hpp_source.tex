@@ -10,30 +10,30 @@
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00007}00007 }
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00008}00008 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutils}{utils}} \{}
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00011}00011     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
-\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00012}00012     \textcolor{keyword}{struct }max\_align \{}
-\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00013}00013         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} value = \textcolor{keyword}{static\_cast<}std::align\_val\_t\textcolor{keyword}{>}(std::max(\{\textcolor{keyword}{alignof}(Ts)...\}));}
+\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00012}\mbox{\hyperlink{structutils_1_1max__align}{00012}}     \textcolor{keyword}{struct }\mbox{\hyperlink{structutils_1_1max__align}{max\_align}} \{}
+\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00013}\mbox{\hyperlink{structutils_1_1max__align_af3111cee7b25a4f295a8c9fe8512e687}{00013}}         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} \mbox{\hyperlink{structutils_1_1max__align_af3111cee7b25a4f295a8c9fe8512e687}{value}} = \textcolor{keyword}{static\_cast<}std::align\_val\_t\textcolor{keyword}{>}(std::max(\{\textcolor{keyword}{alignof}(Ts)...\}));}
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00014}00014     \};}
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00015}00015     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
-\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00016}00016     \textcolor{keyword}{constexpr} std::align\_val\_t max\_align\_v = max\_align<Ts...>::value;}
+\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00016}\mbox{\hyperlink{namespaceutils_a261afe138d5120bb7ae53bac474fc8a7}{00016}}     \textcolor{keyword}{constexpr} std::align\_val\_t \mbox{\hyperlink{namespaceutils_a261afe138d5120bb7ae53bac474fc8a7}{max\_align\_v}} = \mbox{\hyperlink{structutils_1_1max__align}{max\_align}}<Ts...>::value;}
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00018}00018 }
-\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00026}00026     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}* align(std::size\_t alignment, std::size\_t size, \textcolor{keywordtype}{void}* ptr, \textcolor{keywordtype}{void}* end) \{}
-\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00027}00027         std::size\_t space = \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }std::byte*\textcolor{keyword}{>}(end) -\/ \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }std::byte*\textcolor{keyword}{>}(ptr);}
-\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00028}00028         \textcolor{keywordflow}{return} std::align(alignment, size, ptr, space);}
+\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00026}\mbox{\hyperlink{namespaceutils_a8d2503c40d18bf18ecc897b57dd968ab}{00026}}     \textcolor{keyword}{inline} \textcolor{keywordtype}{void}* \mbox{\hyperlink{namespaceutils_a8d2503c40d18bf18ecc897b57dd968ab}{align}}(\mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} alignment, \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} size, \textcolor{keywordtype}{void}* ptr, \textcolor{keywordtype}{void}* end) \{}
+\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00027}00027         \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} space = \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }std::byte*\textcolor{keyword}{>}(end) -\/ \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }std::byte*\textcolor{keyword}{>}(ptr);}
+\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00028}00028         \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceutils_a8d2503c40d18bf18ecc897b57dd968ab}{std::align}}(alignment, size, ptr, space);}
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00029}00029     \}}
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00030}00030 }
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00033}00033     \textcolor{keyword}{template} <std::\textcolor{keywordtype}{size\_t} Alignment>}
-\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00034}00034     \textcolor{keyword}{struct }aligned\_t \{}
-\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00035}00035         \textcolor{keyword}{alignas}(Alignment) std::byte data[Alignment];}
+\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00034}\mbox{\hyperlink{structutils_1_1aligned__t}{00034}}     \textcolor{keyword}{struct }\mbox{\hyperlink{structutils_1_1aligned__t}{aligned\_t}} \{}
+\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00035}\mbox{\hyperlink{structutils_1_1aligned__t_aede3dd467efb54ac7dc8c765a45c7f90}{00035}}         \textcolor{keyword}{alignas}(Alignment) std::byte \mbox{\hyperlink{structutils_1_1aligned__t_aede3dd467efb54ac7dc8c765a45c7f90}{data}}[Alignment];}
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00036}00036     \};}
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00037}00037 }
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00040}00040     \textcolor{keyword}{template} <\textcolor{keyword}{typename} To>}
-\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00041}00041     \textcolor{keyword}{constexpr} To rcast(\textcolor{keyword}{auto}* from) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00041}\mbox{\hyperlink{namespaceutils_a412fc76b0efe03804baebd2a13f6e790}{00041}}     \textcolor{keyword}{constexpr} To \mbox{\hyperlink{namespaceutils_a412fc76b0efe03804baebd2a13f6e790}{rcast}}(\textcolor{keyword}{auto}* from) \textcolor{keyword}{noexcept}}
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00042}00042     \textcolor{keyword}{requires} \textcolor{keyword}{requires} \{\textcolor{keyword}{static\_cast<}To\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}*\textcolor{keyword}{>}(from));\} \{}
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00043}00043         \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}To\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}*\textcolor{keyword}{>}(from));}
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00044}00044     \}}
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00045}00045 }
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00047}00047     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00048}00048     \textcolor{keyword}{concept }simple\_allocator = \textcolor{keyword}{requires}(T alloc, std::size\_t n) \{}
+\DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00048}\mbox{\hyperlink{conceptutils_1_1simple__allocator}{00048}}     \textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1simple__allocator}{simple\_allocator}} = \textcolor{keyword}{requires}(T alloc, \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} n) \{}
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00049}00049         \{ *alloc.allocate(n) \} -\/> std::same\_as<typename T::value\_type\&>;}
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00050}00050         \{ alloc.deallocate(alloc.allocate(n), n) \};}
 \DoxyCodeLine{\Hypertarget{memory_8hpp_source_l00051}00051     \} \&\& std::copy\_constructible<T> \&\& std::equality\_comparable<T>;}

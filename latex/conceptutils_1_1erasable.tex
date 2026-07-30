@@ -1,0 +1,27 @@
+\hypertarget{conceptutils_1_1erasable}{}\doxysection{utils\+::erasable Concept Reference}
+\label{conceptutils_1_1erasable}\index{utils::erasable@{utils::erasable}}
+
+
+C++ named requirements\+: {\itshape Erasable}  
+
+
+
+
+{\ttfamily \#include $<$type.\+hpp$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} Allocator>}
+\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1erasable}{utils::erasable}} =  \textcolor{keyword}{requires}(Allocator m, T* p) \{}
+\DoxyCodeLine{        std::allocator\_traits<Allocator>::destroy(m, p);}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Detailed Description}
+C++ named requirements\+: {\itshape Erasable} 
+
+Definition at line \mbox{\hyperlink{containers_2type_8hpp_source_l00062}{62}} of file \mbox{\hyperlink{containers_2type_8hpp_source}{type.\+hpp}}.
+

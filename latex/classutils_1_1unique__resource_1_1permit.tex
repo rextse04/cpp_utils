@@ -1,0 +1,149 @@
+\hypertarget{classutils_1_1unique__resource_1_1permit}{}\doxysection{utils\+::unique\+\_\+resource\texorpdfstring{$<$}{<} T, Sync, Semaphore, Shared\+Mutex \texorpdfstring{$>$}{>}\+::permit Class Reference}
+\label{classutils_1_1unique__resource_1_1permit}\index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit}}
+
+
+{\ttfamily \#include $<$concurrency.\+hpp$>$}
+
+
+
+Inheritance diagram for utils\+::unique\+\_\+resource\texorpdfstring{$<$}{<} T, Sync, Semaphore, Shared\+Mutex \texorpdfstring{$>$}{>}\+::permit\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classutils_1_1unique__resource_1_1permit__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for utils\+::unique\+\_\+resource\texorpdfstring{$<$}{<} T, Sync, Semaphore, Shared\+Mutex \texorpdfstring{$>$}{>}\+::permit\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classutils_1_1unique__resource_1_1permit__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{classutils_1_1unique__resource_1_1permit_a7024e643c1a2ed39f0361dd959160b30}{permit}} (permit\+\_\+key, \mbox{\hyperlink{classutils_1_1unique__resource}{unique\+\_\+resource}} $\ast$owner)
+\item 
+constexpr auto \mbox{\hyperlink{classutils_1_1unique__resource_1_1permit_a312f31b740caaa8cf2fa2cdbdd2ddd51}{read}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Provides read-\/only access to the resource. \end{DoxyCompactList}\item 
+constexpr auto \mbox{\hyperlink{classutils_1_1unique__resource_1_1permit_abca148f6491a2956de2dbe1c554c79b2}{write}} () noexcept
+\begin{DoxyCompactList}\small\item\em Provides read-\/write access to the resource. \end{DoxyCompactList}\item 
+constexpr auto \mbox{\hyperlink{classutils_1_1unique__resource_1_1permit_ac01e5e2a1a1a57e6499e768514652cbd}{operator-\/$>$}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Equivalent to {\ttfamily read}. \end{DoxyCompactList}\item 
+constexpr const \mbox{\hyperlink{classutils_1_1unique__resource_add226441a6c8860e16acf90bf7d98b52}{value\+\_\+type}} \& \mbox{\hyperlink{classutils_1_1unique__resource_1_1permit_a99fdc4d95f40e467297b68104e28cf8f}{operator$\ast$}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns a const reference to the resource. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classutils_1_1unique__resource_1_1permit_aecf2385d946b783b7b544c0c90a8d0cb}{$\sim$permit}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, bool Sync = false, typename Semaphore = std\+::counting\+\_\+semaphore$<$$>$, typename Shared\+Mutex = std\+::shared\+\_\+mutex$>$\newline
+class utils\+::unique\+\_\+resource$<$ T, Sync, Semaphore, Shared\+Mutex $>$\+::permit}
+
+
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classutils_1_1unique__resource_1_1permit_a7024e643c1a2ed39f0361dd959160b30}\label{classutils_1_1unique__resource_1_1permit_a7024e643c1a2ed39f0361dd959160b30}} 
+\index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit}!permit@{permit}}
+\index{permit@{permit}!utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit}}
+\doxysubsubsection{\texorpdfstring{permit()}{permit()}}
+{\footnotesize\ttfamily template$<$typename T , bool Sync = false, typename Semaphore  = std\+::counting\+\_\+semaphore$<$$>$, typename Shared\+Mutex  = std\+::shared\+\_\+mutex$>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1unique__resource}{utils\+::unique\+\_\+resource}}$<$ T, Sync, Semaphore, Shared\+Mutex $>$\+::permit\+::permit (\begin{DoxyParamCaption}\item[{permit\+\_\+key}]{,  }\item[{\mbox{\hyperlink{classutils_1_1unique__resource}{unique\+\_\+resource}} $\ast$}]{owner }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00057}{57}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1unique__resource_1_1permit_aecf2385d946b783b7b544c0c90a8d0cb}\label{classutils_1_1unique__resource_1_1permit_aecf2385d946b783b7b544c0c90a8d0cb}} 
+\index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit}!````~permit@{$\sim$permit}}
+\index{````~permit@{$\sim$permit}!utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit}}
+\doxysubsubsection{\texorpdfstring{$\sim$permit()}{~permit()}}
+{\footnotesize\ttfamily template$<$typename T , bool Sync = false, typename Semaphore  = std\+::counting\+\_\+semaphore$<$$>$, typename Shared\+Mutex  = std\+::shared\+\_\+mutex$>$ \\
+constexpr \mbox{\hyperlink{classutils_1_1unique__resource}{utils\+::unique\+\_\+resource}}$<$ T, Sync, Semaphore, Shared\+Mutex $>$\+::permit\+::$\sim$permit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00080}{80}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutils_1_1unique__resource_1_1permit_a99fdc4d95f40e467297b68104e28cf8f}\label{classutils_1_1unique__resource_1_1permit_a99fdc4d95f40e467297b68104e28cf8f}} 
+\index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$typename T , bool Sync = false, typename Semaphore  = std\+::counting\+\_\+semaphore$<$$>$, typename Shared\+Mutex  = std\+::shared\+\_\+mutex$>$ \\
+constexpr const \mbox{\hyperlink{classutils_1_1unique__resource_add226441a6c8860e16acf90bf7d98b52}{value\+\_\+type}} \& \mbox{\hyperlink{classutils_1_1unique__resource}{utils\+::unique\+\_\+resource}}$<$ T, Sync, Semaphore, Shared\+Mutex $>$\+::permit\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Returns a const reference to the resource. 
+
+Only available if {\ttfamily sync} is false. 
+
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00077}{77}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1unique__resource_1_1permit_ac01e5e2a1a1a57e6499e768514652cbd}\label{classutils_1_1unique__resource_1_1permit_ac01e5e2a1a1a57e6499e768514652cbd}} 
+\index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily template$<$typename T , bool Sync = false, typename Semaphore  = std\+::counting\+\_\+semaphore$<$$>$, typename Shared\+Mutex  = std\+::shared\+\_\+mutex$>$ \\
+constexpr auto \mbox{\hyperlink{classutils_1_1unique__resource}{utils\+::unique\+\_\+resource}}$<$ T, Sync, Semaphore, Shared\+Mutex $>$\+::permit\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Equivalent to {\ttfamily read}. 
+
+
+
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00071}{71}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1unique__resource_1_1permit_a312f31b740caaa8cf2fa2cdbdd2ddd51}\label{classutils_1_1unique__resource_1_1permit_a312f31b740caaa8cf2fa2cdbdd2ddd51}} 
+\index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit}!read@{read}}
+\index{read@{read}!utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily template$<$typename T , bool Sync = false, typename Semaphore  = std\+::counting\+\_\+semaphore$<$$>$, typename Shared\+Mutex  = std\+::shared\+\_\+mutex$>$ \\
+constexpr auto \mbox{\hyperlink{classutils_1_1unique__resource}{utils\+::unique\+\_\+resource}}$<$ T, Sync, Semaphore, Shared\+Mutex $>$\+::permit\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Provides read-\/only access to the resource. 
+
+\begin{DoxyRemark}{Remarks}
+If {\ttfamily sync} is true, a fancy pointer ({\ttfamily \mbox{\hyperlink{classutils_1_1unique__resource_1_1permit__ptr}{permit\+\_\+ptr}}}) is returned. 
+\end{DoxyRemark}
+
+
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00060}{60}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1unique__resource_1_1permit_abca148f6491a2956de2dbe1c554c79b2}\label{classutils_1_1unique__resource_1_1permit_abca148f6491a2956de2dbe1c554c79b2}} 
+\index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit}!write@{write}}
+\index{write@{write}!utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily template$<$typename T , bool Sync = false, typename Semaphore  = std\+::counting\+\_\+semaphore$<$$>$, typename Shared\+Mutex  = std\+::shared\+\_\+mutex$>$ \\
+constexpr auto \mbox{\hyperlink{classutils_1_1unique__resource}{utils\+::unique\+\_\+resource}}$<$ T, Sync, Semaphore, Shared\+Mutex $>$\+::permit\+::write (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Provides read-\/write access to the resource. 
+
+\begin{DoxyRemark}{Remarks}
+If {\ttfamily sync} is true, a fancy pointer ({\ttfamily \mbox{\hyperlink{classutils_1_1unique__resource_1_1permit__ptr}{permit\+\_\+ptr}}}) is returned. 
+\end{DoxyRemark}
+
+
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00066}{66}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{concurrency_8hpp}{concurrency.\+hpp}}\end{DoxyCompactItemize}

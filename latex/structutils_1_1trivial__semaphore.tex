@@ -1,0 +1,155 @@
+\hypertarget{structutils_1_1trivial__semaphore}{}\doxysection{utils\+::trivial\+\_\+semaphore Struct Reference}
+\label{structutils_1_1trivial__semaphore}\index{utils::trivial\_semaphore@{utils::trivial\_semaphore}}
+
+
+A semaphore that does not do any counting.  
+
+
+
+
+{\ttfamily \#include $<$concurrency.\+hpp$>$}
+
+
+
+Inheritance diagram for utils\+::trivial\+\_\+semaphore\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{structutils_1_1trivial__semaphore__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for utils\+::trivial\+\_\+semaphore\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{structutils_1_1trivial__semaphore__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{structutils_1_1trivial__semaphore_a3dabe6712719ef81d847a68e7b5f1435}{trivial\+\_\+semaphore}} (\mbox{\hyperlink{namespaceutils_1_1integer__alias_aca05a61d14a516c6dd53450e823075b7}{integer\+\_\+alias\+::ptrdiff\+\_\+t}}) noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr void \mbox{\hyperlink{structutils_1_1trivial__semaphore_a8c3a74536c0b0a8ad1aa58f074a2517c}{release}} () noexcept
+\item 
+static constexpr void \mbox{\hyperlink{structutils_1_1trivial__semaphore_aea8127b7d54a078c97179608923c1b02}{release}} (\mbox{\hyperlink{namespaceutils_1_1integer__alias_aca05a61d14a516c6dd53450e823075b7}{integer\+\_\+alias\+::ptrdiff\+\_\+t}}) noexcept
+\item 
+static constexpr void \mbox{\hyperlink{structutils_1_1trivial__semaphore_a337c24b242f5f8b78239947b994a5c61}{acquire}} () noexcept
+\item 
+static constexpr bool \mbox{\hyperlink{structutils_1_1trivial__semaphore_a22df7ea87002d1b5a0f72273f9483703}{try\+\_\+acquire}} () noexcept
+\item 
+{\footnotesize template$<$typename Rep , typename Period $>$ }\\static constexpr bool \mbox{\hyperlink{structutils_1_1trivial__semaphore_a52dc3a7ee6859f52b1898e7346cc6231}{try\+\_\+acquire\+\_\+for}} (const std\+::chrono\+::duration$<$ Rep, Period $>$ \&) noexcept
+\item 
+{\footnotesize template$<$typename Clock , typename Duration $>$ }\\static constexpr bool \mbox{\hyperlink{structutils_1_1trivial__semaphore_a3bbe0a42cf76395be4381cafdb766f9c}{try\+\_\+acquire\+\_\+until}} (const std\+::chrono\+::time\+\_\+point$<$ Clock, Duration $>$ \&) noexcept
+\item 
+static constexpr \mbox{\hyperlink{namespaceutils_1_1integer__alias_aca05a61d14a516c6dd53450e823075b7}{integer\+\_\+alias\+::ptrdiff\+\_\+t}} \mbox{\hyperlink{structutils_1_1trivial__semaphore_ab1df416403e0f66ed17cadf74c175f44}{max}} () noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A semaphore that does not do any counting. 
+
+Used for disabling the semaphore in {\ttfamily \mbox{\hyperlink{classutils_1_1unique__resource}{unique\+\_\+resource}}}. 
+
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00152}{152}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structutils_1_1trivial__semaphore_a3dabe6712719ef81d847a68e7b5f1435}\label{structutils_1_1trivial__semaphore_a3dabe6712719ef81d847a68e7b5f1435}} 
+\index{utils::trivial\_semaphore@{utils::trivial\_semaphore}!trivial\_semaphore@{trivial\_semaphore}}
+\index{trivial\_semaphore@{trivial\_semaphore}!utils::trivial\_semaphore@{utils::trivial\_semaphore}}
+\doxysubsubsection{\texorpdfstring{trivial\_semaphore()}{trivial\_semaphore()}}
+{\footnotesize\ttfamily constexpr utils\+::trivial\+\_\+semaphore\+::trivial\+\_\+semaphore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceutils_1_1integer__alias_aca05a61d14a516c6dd53450e823075b7}{integer\+\_\+alias\+::ptrdiff\+\_\+t}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00153}{153}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structutils_1_1trivial__semaphore_a337c24b242f5f8b78239947b994a5c61}\label{structutils_1_1trivial__semaphore_a337c24b242f5f8b78239947b994a5c61}} 
+\index{utils::trivial\_semaphore@{utils::trivial\_semaphore}!acquire@{acquire}}
+\index{acquire@{acquire}!utils::trivial\_semaphore@{utils::trivial\_semaphore}}
+\doxysubsubsection{\texorpdfstring{acquire()}{acquire()}}
+{\footnotesize\ttfamily static constexpr void utils\+::trivial\+\_\+semaphore\+::acquire (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00156}{156}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1trivial__semaphore_ab1df416403e0f66ed17cadf74c175f44}\label{structutils_1_1trivial__semaphore_ab1df416403e0f66ed17cadf74c175f44}} 
+\index{utils::trivial\_semaphore@{utils::trivial\_semaphore}!max@{max}}
+\index{max@{max}!utils::trivial\_semaphore@{utils::trivial\_semaphore}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}}
+{\footnotesize\ttfamily static constexpr \mbox{\hyperlink{namespaceutils_1_1integer__alias_aca05a61d14a516c6dd53450e823075b7}{integer\+\_\+alias\+::ptrdiff\+\_\+t}} utils\+::trivial\+\_\+semaphore\+::max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00162}{162}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1trivial__semaphore_a8c3a74536c0b0a8ad1aa58f074a2517c}\label{structutils_1_1trivial__semaphore_a8c3a74536c0b0a8ad1aa58f074a2517c}} 
+\index{utils::trivial\_semaphore@{utils::trivial\_semaphore}!release@{release}}
+\index{release@{release}!utils::trivial\_semaphore@{utils::trivial\_semaphore}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static constexpr void utils\+::trivial\+\_\+semaphore\+::release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00154}{154}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1trivial__semaphore_aea8127b7d54a078c97179608923c1b02}\label{structutils_1_1trivial__semaphore_aea8127b7d54a078c97179608923c1b02}} 
+\index{utils::trivial\_semaphore@{utils::trivial\_semaphore}!release@{release}}
+\index{release@{release}!utils::trivial\_semaphore@{utils::trivial\_semaphore}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static constexpr void utils\+::trivial\+\_\+semaphore\+::release (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceutils_1_1integer__alias_aca05a61d14a516c6dd53450e823075b7}{integer\+\_\+alias\+::ptrdiff\+\_\+t}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00155}{155}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1trivial__semaphore_a22df7ea87002d1b5a0f72273f9483703}\label{structutils_1_1trivial__semaphore_a22df7ea87002d1b5a0f72273f9483703}} 
+\index{utils::trivial\_semaphore@{utils::trivial\_semaphore}!try\_acquire@{try\_acquire}}
+\index{try\_acquire@{try\_acquire}!utils::trivial\_semaphore@{utils::trivial\_semaphore}}
+\doxysubsubsection{\texorpdfstring{try\_acquire()}{try\_acquire()}}
+{\footnotesize\ttfamily static constexpr bool utils\+::trivial\+\_\+semaphore\+::try\+\_\+acquire (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00157}{157}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1trivial__semaphore_a52dc3a7ee6859f52b1898e7346cc6231}\label{structutils_1_1trivial__semaphore_a52dc3a7ee6859f52b1898e7346cc6231}} 
+\index{utils::trivial\_semaphore@{utils::trivial\_semaphore}!try\_acquire\_for@{try\_acquire\_for}}
+\index{try\_acquire\_for@{try\_acquire\_for}!utils::trivial\_semaphore@{utils::trivial\_semaphore}}
+\doxysubsubsection{\texorpdfstring{try\_acquire\_for()}{try\_acquire\_for()}}
+{\footnotesize\ttfamily template$<$typename Rep , typename Period $>$ \\
+static constexpr bool utils\+::trivial\+\_\+semaphore\+::try\+\_\+acquire\+\_\+for (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::duration$<$ Rep, Period $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00159}{159}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1trivial__semaphore_a3bbe0a42cf76395be4381cafdb766f9c}\label{structutils_1_1trivial__semaphore_a3bbe0a42cf76395be4381cafdb766f9c}} 
+\index{utils::trivial\_semaphore@{utils::trivial\_semaphore}!try\_acquire\_until@{try\_acquire\_until}}
+\index{try\_acquire\_until@{try\_acquire\_until}!utils::trivial\_semaphore@{utils::trivial\_semaphore}}
+\doxysubsubsection{\texorpdfstring{try\_acquire\_until()}{try\_acquire\_until()}}
+{\footnotesize\ttfamily template$<$typename Clock , typename Duration $>$ \\
+static constexpr bool utils\+::trivial\+\_\+semaphore\+::try\+\_\+acquire\+\_\+until (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::time\+\_\+point$<$ Clock, Duration $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00161}{161}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{concurrency_8hpp}{concurrency.\+hpp}}\end{DoxyCompactItemize}

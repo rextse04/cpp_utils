@@ -83,6 +83,12 @@ $(document).ready(function(){initNavTree('static__string_8hpp.html',''); initRes
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">static_string.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -99,38 +105,111 @@ Include dependency graph for static_string.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="static__string_8hpp__incl.png" border="0" usemap="#astatic__string_8hpp" alt=""/></div>
 <map name="astatic__string_8hpp" id="astatic__string_8hpp">
-<area shape="rect" title=" " alt="" coords="857,5,974,32"/>
-<area shape="rect" title=" " alt="" coords="443,80,531,107"/>
+<area shape="rect" title=" " alt="" coords="835,5,953,32"/>
+<area shape="rect" title=" " alt="" coords="485,80,573,107"/>
 <area shape="rect" title=" " alt="" coords="5,155,84,181"/>
-<area shape="rect" title=" " alt="" coords="1197,80,1271,107"/>
+<area shape="rect" title=" " alt="" coords="1101,80,1175,107"/>
 <area shape="rect" title=" " alt="" coords="109,155,167,181"/>
-<area shape="rect" href="type_8hpp.html" title="Type manipulation and qualification utilities for compile&#45;time type introspection and transformation." alt="" coords="793,304,864,331"/>
-<area shape="rect" href="integer_8hpp.html" title=" " alt="" coords="657,80,742,107"/>
-<area shape="rect" href="ranges_8hpp.html" title=" " alt="" coords="1295,80,1381,107"/>
-<area shape="rect" href="swap_8hpp.html" title=" " alt="" coords="1405,80,1482,107"/>
-<area shape="rect" title=" " alt="" coords="461,453,543,480"/>
-<area shape="rect" title=" " alt="" coords="1009,379,1062,405"/>
-<area shape="rect" title=" " alt="" coords="753,453,805,480"/>
-<area shape="rect" href="bitmask_8hpp.html" title=" " alt="" coords="892,379,984,405"/>
-<area shape="rect" href="meta_8hpp.html" title=" " alt="" coords="742,379,817,405"/>
-<area shape="rect" title=" " alt="" coords="627,453,678,480"/>
-<area shape="rect" title=" " alt="" coords="1101,453,1167,480"/>
-<area shape="rect" title=" " alt="" coords="949,453,1010,480"/>
-<area shape="rect" title=" " alt="" coords="881,155,955,181"/>
-<area shape="rect" title=" " alt="" coords="980,155,1048,181"/>
-<area shape="rect" title=" " alt="" coords="191,155,277,181"/>
-<area shape="rect" title=" " alt="" coords="301,155,340,181"/>
-<area shape="rect" title=" " alt="" coords="364,155,429,181"/>
-<area shape="rect" title=" " alt="" coords="454,155,523,181"/>
-<area shape="rect" href="operators_8hpp.html" title=" " alt="" coords="649,155,749,181"/>
-<area shape="rect" title=" " alt="" coords="543,229,621,256"/>
-<area shape="rect" href="functional_8hpp.html" title=" " alt="" coords="645,229,748,256"/>
-<area shape="rect" title=" " alt="" coords="1279,155,1341,181"/>
-<area shape="rect" title=" " alt="" coords="1365,155,1428,181"/>
+<area shape="rect" href="type_8hpp.html" title="Type manipulation and qualification utilities for compile&#45;time type introspection and transformation." alt="" coords="612,304,683,331"/>
+<area shape="rect" href="integer_8hpp.html" title=" " alt="" coords="698,80,783,107"/>
+<area shape="rect" href="ranges_8hpp.html" title=" " alt="" coords="1199,80,1285,107"/>
+<area shape="rect" href="swap_8hpp.html" title=" " alt="" coords="1309,80,1386,107"/>
+<area shape="rect" title=" " alt="" coords="305,453,387,480"/>
+<area shape="rect" title=" " alt="" coords="802,379,855,405"/>
+<area shape="rect" title=" " alt="" coords="655,453,707,480"/>
+<area shape="rect" href="bitmask_8hpp.html" title=" " alt="" coords="685,379,777,405"/>
+<area shape="rect" href="meta_8hpp.html" title=" " alt="" coords="535,379,610,405"/>
+<area shape="rect" title=" " alt="" coords="513,453,563,480"/>
+<area shape="rect" title=" " alt="" coords="863,453,928,480"/>
+<area shape="rect" title=" " alt="" coords="1042,453,1103,480"/>
+<area shape="rect" title=" " alt="" coords="679,229,754,256"/>
+<area shape="rect" title=" " alt="" coords="981,155,1041,181"/>
+<area shape="rect" title=" " alt="" coords="192,155,260,181"/>
+<area shape="rect" title=" " alt="" coords="285,155,370,181"/>
+<area shape="rect" title=" " alt="" coords="395,155,433,181"/>
+<area shape="rect" title=" " alt="" coords="458,155,527,181"/>
+<area shape="rect" href="operators_8hpp.html" title=" " alt="" coords="603,155,703,181"/>
+<area shape="rect" title=" " alt="" coords="525,229,604,256"/>
+<area shape="rect" href="functional_8hpp.html" title=" " alt="" coords="347,229,449,256"/>
+<area shape="rect" title=" " alt="" coords="1197,155,1258,181"/>
+<area shape="rect" title=" " alt="" coords="1283,155,1345,181"/>
 </map>
 </div>
 </div>
 <p><a href="static__string_8hpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1basic__static__string__view.html">utils::basic_static_string_view&lt; CharT, Traits &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identical interface to <code>std::basic_string_view</code>, except that this class can only be constructed at compile time, thus ensuring that it refers to a "static string".  <a href="structutils_1_1basic__static__string__view.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1basic__static__string.html">utils::basic_static_string&lt; CharT, N, Traits &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An owning string defined at compile time.  <a href="structutils_1_1basic__static__string.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1trim.html">utils::trim&lt; S &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstd_1_1formatter_3_01S_00_01typename_01S_1_1value__type_01_4.html">std::formatter&lt; S, typename S::value_type &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceutils"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html">utils</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceutils_1_1static__string__literals"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1static__string__literals.html">utils::static_string_literals</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a145ea814e7f8a159dda04fd61f74c2a2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a145ea814e7f8a159dda04fd61f74c2a2">utils::static_string_view</a> = basic_static_string_view&lt; char &gt;</td></tr>
+<tr class="separator:a145ea814e7f8a159dda04fd61f74c2a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a024354295af32aee7ed2220d3a52d8f5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a024354295af32aee7ed2220d3a52d8f5">utils::wstatic_string_view</a> = basic_static_string_view&lt; wchar_t &gt;</td></tr>
+<tr class="separator:a024354295af32aee7ed2220d3a52d8f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d9158916669d9f93599022e9201c016"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a6d9158916669d9f93599022e9201c016">utils::u8static_string_view</a> = basic_static_string_view&lt; char8_t &gt;</td></tr>
+<tr class="separator:a6d9158916669d9f93599022e9201c016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52a16a9740cf3b0b2e963198ebcd7ca9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a52a16a9740cf3b0b2e963198ebcd7ca9">utils::u16static_string_view</a> = basic_static_string_view&lt; char16_t &gt;</td></tr>
+<tr class="separator:a52a16a9740cf3b0b2e963198ebcd7ca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a607e1c30fad8199a766afa327008d13f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a607e1c30fad8199a766afa327008d13f">utils::u32static_string_view</a> = basic_static_string_view&lt; char32_t &gt;</td></tr>
+<tr class="separator:a607e1c30fad8199a766afa327008d13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74b48c2315cd329e92dc844eacbec5ae"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:a74b48c2315cd329e92dc844eacbec5ae"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a74b48c2315cd329e92dc844eacbec5ae">utils::static_string</a> = basic_static_string&lt; char, N &gt;</td></tr>
+<tr class="separator:a74b48c2315cd329e92dc844eacbec5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0ea072dbe2b847ec65a37641f0352fc"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:af0ea072dbe2b847ec65a37641f0352fc"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#af0ea072dbe2b847ec65a37641f0352fc">utils::wstatic_string</a> = basic_static_string&lt; wchar_t, N &gt;</td></tr>
+<tr class="separator:af0ea072dbe2b847ec65a37641f0352fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab905b8e2c36d6ed84b4653a2551f6001"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:ab905b8e2c36d6ed84b4653a2551f6001"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#ab905b8e2c36d6ed84b4653a2551f6001">utils::u8static_string</a> = basic_static_string&lt; char8_t, N &gt;</td></tr>
+<tr class="separator:ab905b8e2c36d6ed84b4653a2551f6001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf9bbe5b2bd0925138bff5c0b7a9c16c"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:aaf9bbe5b2bd0925138bff5c0b7a9c16c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aaf9bbe5b2bd0925138bff5c0b7a9c16c">utils::u16static_string</a> = basic_static_string&lt; char16_t, N &gt;</td></tr>
+<tr class="separator:aaf9bbe5b2bd0925138bff5c0b7a9c16c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a879e6085361f9a698393a071df0e9b"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:a8a879e6085361f9a698393a071df0e9b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a8a879e6085361f9a698393a071df0e9b">utils::u32static_string</a> = basic_static_string&lt; char32_t, N &gt;</td></tr>
+<tr class="separator:a8a879e6085361f9a698393a071df0e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a0d6a61ddc9d0f2cfe4c97111c367c9af"><td class="memItemLeft" align="right" valign="top">consteval static_string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1static__string__literals.html#a0d6a61ddc9d0f2cfe4c97111c367c9af">utils::static_string_literals::operator&quot;&quot;_ssv</a> (const char *s, std::size_t len)</td></tr>
+<tr class="separator:a0d6a61ddc9d0f2cfe4c97111c367c9af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07fb702117f3fe3eac335110e148bd95"><td class="memItemLeft" align="right" valign="top">consteval wstatic_string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1static__string__literals.html#a07fb702117f3fe3eac335110e148bd95">utils::static_string_literals::operator&quot;&quot;_ssv</a> (const wchar_t *s, std::size_t len)</td></tr>
+<tr class="separator:a07fb702117f3fe3eac335110e148bd95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a313a07149768178def6856736b70c3a6"><td class="memItemLeft" align="right" valign="top">consteval u8static_string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1static__string__literals.html#a313a07149768178def6856736b70c3a6">utils::static_string_literals::operator&quot;&quot;_ssv</a> (const char8_t *s, std::size_t len)</td></tr>
+<tr class="separator:a313a07149768178def6856736b70c3a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cede4c06691e18897290f15cc0b5f04"><td class="memItemLeft" align="right" valign="top">consteval u16static_string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1static__string__literals.html#a8cede4c06691e18897290f15cc0b5f04">utils::static_string_literals::operator&quot;&quot;_ssv</a> (const char16_t *s, std::size_t len)</td></tr>
+<tr class="separator:a8cede4c06691e18897290f15cc0b5f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1877eb027b8378628c1a713c4ac1912"><td class="memItemLeft" align="right" valign="top">consteval u32static_string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1static__string__literals.html#ae1877eb027b8378628c1a713c4ac1912">utils::static_string_literals::operator&quot;&quot;_ssv</a> (const char32_t *s, std::size_t len)</td></tr>
+<tr class="separator:ae1877eb027b8378628c1a713c4ac1912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a972dc33cde31ee82f5ea0ba78611761f"><td class="memTemplParams" colspan="2">template&lt;basic_static_string S&gt; </td></tr>
+<tr class="memitem:a972dc33cde31ee82f5ea0ba78611761f"><td class="memTemplItemLeft" align="right" valign="top">consteval auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1static__string__literals.html#a972dc33cde31ee82f5ea0ba78611761f">utils::static_string_literals::operator&quot;&quot;_ss</a> ()</td></tr>
+<tr class="separator:a972dc33cde31ee82f5ea0ba78611761f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a610c726ab1f1a35f461b1d64c34e9f11"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a610c726ab1f1a35f461b1d64c34e9f11">utils::operator&lt;&lt;</a> (std::ostream &amp;os, const tagged&lt; static_string_tag &gt; auto &amp;str)</td></tr>
+<tr class="separator:a610c726ab1f1a35f461b1d64c34e9f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a026f0efc276a6d7eba427c611cd569ff"><td class="memTemplParams" colspan="2">template&lt;basic_static_string S&gt; </td></tr>
+<tr class="memitem:a026f0efc276a6d7eba427c611cd569ff"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a026f0efc276a6d7eba427c611cd569ff">utils::trim_v</a> = trim&lt;S&gt;::value</td></tr>
+<tr class="separator:a026f0efc276a6d7eba427c611cd569ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

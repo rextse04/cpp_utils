@@ -1,0 +1,25 @@
+var group__utils =
+[
+    [ "utils::pmr::arena_allocator::rebind::other", "group__utils.html#gac89d1022d898a47eb7f9f259b77747a6", null ],
+    [ "utils::pmr::stack_allocator::rebind::other", "group__utils.html#ga2be1957b3930cfaf19b421d8c1690153", null ],
+    [ "utils::pmr::arena_allocator::allocate", "group__utils.html#ga57fd29bd785e147ffa226bc0d52f07c6", null ],
+    [ "utils::pmr::stack_allocator::allocate", "group__utils.html#gafdb36bfd5513dee4589f339386bf8e8c", null ],
+    [ "utils::pmr::arena_allocator::arena_allocator", "group__utils.html#ga182c9597d8e46eee55ccbd3d5714eaa6", null ],
+    [ "utils::pmr::arena_allocator::arena_allocator", "group__utils.html#gae5dfff367930d9f2e6ad7380ba4c7a70", null ],
+    [ "utils::pmr::stack_allocator::deallocate", "group__utils.html#gab607356fe93ec169799735ebea50f8c6", null ],
+    [ "utils::pmr::arena_allocator::deallocate", "group__utils.html#ga6deae5a28ef57aebac240cd3de5faef1", null ],
+    [ "utils::integer::explicit", "group__utils.html#gaf70aa92e30b685f150ed14eedb1474b6", null ],
+    [ "utils::pmr::arena_allocator::explicit", "group__utils.html#ga557d2109484928e15525a1083b0b8e26", null ],
+    [ "utils::pmr::stack_allocator::explicit", "group__utils.html#ga3fc5d53309c8c22900137af934c5107f", null ],
+    [ "utils::integer::integer", "group__utils.html#gaa02e1252b219efc689eeb9e0db2eb689", null ],
+    [ "utils::integer::integer", "group__utils.html#ga91c823090d72a537bd3c956431720387", null ],
+    [ "utils::integer::integer", "group__utils.html#ga55a3f0ae8dc08e5697d2cf1233302463", null ],
+    [ "utils::pmr::arena_allocator::release", "group__utils.html#gab2f3f5595719c9fc771f2fc044b6a306", null ],
+    [ "utils::pmr::stack_allocator::release", "group__utils.html#gac4713049e86502fa957493fc1ab484ea", null ],
+    [ "utils::pmr::stack_allocator::stack_allocator", "group__utils.html#gaa1ac4dbee6bdd25ed6d882a027b53dae", null ],
+    [ "utils::pmr::stack_allocator::stack_allocator", "group__utils.html#ga746f7cd5478f9442fc3808375aeae3e3", null ],
+    [ "utils::unique_resource::unique_resource", "group__utils.html#gac00009a69797ad51a0da55519acd6f77", null ],
+    [ "utils::unique_resource::unique_resource", "group__utils.html#ga2fda395430bd620ce5f95e941c1aa1e8", null ],
+    [ "utils::pmr::arena_allocator::noexcept", "group__utils.html#gaecabf6002d8eda53bb01b8e3103d1701", null ],
+    [ "utils::pmr::stack_allocator::noexcept", "group__utils.html#ga9112aed083ab4d8d31d5cd3b16ac2eae", null ]
+];

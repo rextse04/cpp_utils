@@ -108,8 +108,8 @@
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00204}00204         \textcolor{keyword}{using} key\_compare = Compare;}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00205}00205         \textcolor{keyword}{using} mapped\_sum = Sum;}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00206}00206         \textcolor{keyword}{using} mapped\_identity = Identity;}
-\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00207}00207         \textcolor{keyword}{using} size\_type = std::size\_t;}
-\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00208}00208         \textcolor{keyword}{using} difference\_type = std::ptrdiff\_t;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00207}00207         \textcolor{keyword}{using} size\_type = \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00208}00208         \textcolor{keyword}{using} difference\_type = \mbox{\hyperlink{namespaceutils_1_1integer__alias_aca05a61d14a516c6dd53450e823075b7}{std::ptrdiff\_t}};}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00209}00209         \textcolor{keyword}{using} reference = detail::segment\_tree\_reference<segment\_tree>;}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00210}00210         \textcolor{keyword}{using} const\_reference = std::pair<const Key\&, const T\&>;}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00211}00211         \textcolor{keyword}{using} update\_type = mapped\_container\_type;}
@@ -172,9 +172,9 @@
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00268}00268                 \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (reservable\_container<mapped\_container\_type>) m\_nodes().reserve(size);}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00269}00269             \}}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00270}00270             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\&\& pair : pairs) \{}
-\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00271}00271                 \textcolor{keyword}{auto}\&\& v = \textcolor{keyword}{static\_cast<}follow\_t<decltype(pair), value\_type\&\&\textcolor{keyword}{>}>(pair);}
-\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00272}00272                 m\_keys().push\_back(std::move(v.first));}
-\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00273}00273                 m\_nodes().push\_back(std::move(v.second));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00271}00271                 \textcolor{keyword}{auto}\&\& \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea9e3669d19b675bd57058fd4664205d2a}{v}} = \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespaceutils_a9cee2155b4c7479372bc3ffc2dc06a59}{follow\_t}}<decltype(pair), value\_type\&\&\textcolor{keyword}{>}>(pair);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00272}00272                 m\_keys().push\_back(std::move(\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea9e3669d19b675bd57058fd4664205d2a}{v}}.first));}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00273}00273                 m\_nodes().push\_back(std::move(\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea9e3669d19b675bd57058fd4664205d2a}{v}}.second));}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00274}00274             \}}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00275}00275             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (Sort) sort();}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00276}00276             build();}
@@ -587,14 +587,14 @@
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00763}00763             m\_nodes().clear();}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00764}00764             fast\_clear();}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00765}00765         \}}
-\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00767}00767         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} swap(segment\_tree\& other) \textcolor{keyword}{noexcept} \{}
-\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00768}00768             \textcolor{keyword}{using} std::swap;}
-\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00769}00769             swap(keys(), other.keys());}
-\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00770}00770             swap(nodes(), other.nodes());}
-\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00771}00771             swap(level\_offsets\_, other.level\_offsets\_);}
-\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00772}00772             swap(levels\_, other.levels\_);}
-\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00773}00773             swap(comp\_, other.comp\_);}
-\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00774}00774             swap(sum\_, other.sum\_);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00767}00767         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{swap}}(segment\_tree\& other) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00768}00768             \textcolor{keyword}{using} \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{std::swap}};}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00769}00769             \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{swap}}(keys(), other.keys());}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00770}00770             \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{swap}}(nodes(), other.nodes());}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00771}00771             \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{swap}}(level\_offsets\_, other.level\_offsets\_);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00772}00772             \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{swap}}(levels\_, other.levels\_);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00773}00773             \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{swap}}(comp\_, other.comp\_);}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00774}00774             \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{swap}}(sum\_, other.sum\_);}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00775}00775         \}}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00777}00777         \textcolor{keyword}{constexpr} size\_type count(\textcolor{keyword}{const} searchable\_in<segment\_tree> \textcolor{keyword}{auto}\& key)\textcolor{keyword}{ const }\{}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00778}00778             \textcolor{keywordflow}{return} upper\_bound(key) -\/ lower\_bound(key);}
@@ -622,7 +622,7 @@
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00824}00824     \textcolor{keyword}{private}:}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00825}00825         \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} do\_traverse(\textcolor{keyword}{this} \textcolor{keyword}{auto}\&\& \textcolor{keyword}{self}, \textcolor{keyword}{const} \textcolor{keyword}{auto}\& traverser, \textcolor{keyword}{const} \textcolor{keyword}{auto}\& strategy,}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00826}00826             \textcolor{keywordtype}{int} level, size\_type level\_idx, size\_type begin, size\_type end) \{}
-\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00827}00827             \textcolor{keyword}{using} \textcolor{keyword}{enum} interval\_endpoint\_type;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00827}00827             \textcolor{keyword}{using} \textcolor{keyword}{enum} \mbox{\hyperlink{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2e}{interval\_endpoint\_type}};}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00828}00828             node\_info info;}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00829}00829             info.level = level;}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00830}00830             info.level\_idx = level\_idx;}
@@ -665,7 +665,7 @@
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00867}00867 }
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00868}00868             \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} operator()(\textcolor{keyword}{const} segment\_tree\& base, \textcolor{keyword}{const} node\_info\& info) \textcolor{keyword}{const}}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00869}00869             -\/> segment\_tree\_traverse\_direction \{}
-\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00870}00870                 \textcolor{keyword}{using} \textcolor{keyword}{enum} interval\_endpoint\_type;}
+\DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00870}00870                 \textcolor{keyword}{using} \textcolor{keyword}{enum} \mbox{\hyperlink{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2e}{interval\_endpoint\_type}};}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00871}00871                 \textcolor{keyword}{const} interval<const Key\&, const Key\&> root\_itv(}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00872}00872                     \{base.keys()[info.begin], closed\}, \{base.keys()[info.end -\/ 1], closed\});}
 \DoxyCodeLine{\Hypertarget{segment__tree_8hpp_source_l00873}00873                 \textcolor{keywordflow}{if} (itv\_.superset\_of(root\_itv, base.comp\_)) \textcolor{keywordflow}{return} stop;}

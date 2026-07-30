@@ -1,0 +1,55 @@
+\hypertarget{structutils_1_1sane__common__type}{}\doxysection{utils\+::sane\+\_\+common\+\_\+type\texorpdfstring{$<$}{<} T, U \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structutils_1_1sane__common__type}\index{utils::sane\_common\_type$<$ T, U $>$@{utils::sane\_common\_type$<$ T, U $>$}}
+
+
+Similar to usual arithmetic conversion, except that the promotion step is replaced by {\ttfamily utils\+::sane\+\_\+promotion}.  
+
+
+
+
+{\ttfamily \#include $<$integer.\+hpp$>$}
+
+
+
+Inheritance diagram for utils\+::sane\+\_\+common\+\_\+type\texorpdfstring{$<$}{<} T, U \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{structutils_1_1sane__common__type__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for utils\+::sane\+\_\+common\+\_\+type\texorpdfstring{$<$}{<} T, U \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{structutils_1_1sane__common__type__coll__graph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, typename U$>$\newline
+struct utils\+::sane\+\_\+common\+\_\+type$<$ T, U $>$}
+Similar to usual arithmetic conversion, except that the promotion step is replaced by {\ttfamily utils\+::sane\+\_\+promotion}. 
+
+Given any types {\ttfamily T} and {\ttfamily U}, let {\ttfamily TD} and {\ttfamily UD} be {\ttfamily std\+::decay\+\_\+t\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} and {\ttfamily std\+::decay\+\_\+t\texorpdfstring{$<$}{<}U\texorpdfstring{$>$}{>}} respectively. Their {\ttfamily \mbox{\hyperlink{structutils_1_1sane__common__type}{sane\+\_\+common\+\_\+type}}} {\ttfamily C} is determined through the following steps\+:
+\begin{DoxyEnumerate}
+\item If any of {\ttfamily TD} and {\ttfamily UD} is not specialized for {\ttfamily std\+::numeric\+\_\+limits}, {\ttfamily C} is {\ttfamily std\+::common\+\_\+type\+\_\+t\texorpdfstring{$<$}{<}T, U\texorpdfstring{$>$}{>}}.
+\item Otherwise, if {\ttfamily TD} and {\ttfamily UD} have different widths, {\ttfamily C} is the one with the greater width.
+\item Otherwise, if at least one of {\ttfamily TD} and {\ttfamily UD} is unsigned, {\ttfamily C} is the first unsigned type out of the two.
+\item Otherwise, {\ttfamily C} is {\ttfamily TD}.
+\end{DoxyEnumerate}
+
+In the above, the definition of {\ttfamily width} is identical to that in {\ttfamily \mbox{\hyperlink{structutils_1_1width__of}{utils\+::width\+\_\+of}}}. 
+
+Definition at line \mbox{\hyperlink{integer_8hpp_source_l00064}{64}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{integer_8hpp}{integer.\+hpp}}\end{DoxyCompactItemize}

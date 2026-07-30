@@ -1,0 +1,42 @@
+\hypertarget{structutils_1_1joint__cast__transform}{}\doxysection{utils\+::joint\+\_\+cast\+\_\+transform\texorpdfstring{$<$}{<} F, Trait \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structutils_1_1joint__cast__transform}\index{utils::joint\_cast\_transform$<$ F, Trait $>$@{utils::joint\_cast\_transform$<$ F, Trait $>$}}
+
+
+{\ttfamily \#include $<$functional.\+hpp$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Args, typename G  = detail\+::joint\+\_\+cast\+\_\+transform\+\_\+impl$<$\+F, typename Trait$<$\+Args...$>$\+::type$>$$>$ \newline
+requires (std\+::is\+\_\+invocable\+\_\+v$<$G, Args...$>$)}\\static constexpr decltype(auto) \mbox{\hyperlink{structutils_1_1joint__cast__transform_a8abbe5bd505c277f8b8c30141a31b361}{operator()}} (Args \&\&... args) noexcept(std\+::is\+\_\+nothrow\+\_\+invocable\+\_\+v$<$ G, Args... $>$)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$auto F, template$<$ typename... $>$ typename Trait$>$\newline
+struct utils\+::joint\+\_\+cast\+\_\+transform$<$ F, Trait $>$}
+
+
+Definition at line \mbox{\hyperlink{functional_8hpp_source_l00220}{220}} of file \mbox{\hyperlink{functional_8hpp_source}{functional.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structutils_1_1joint__cast__transform_a8abbe5bd505c277f8b8c30141a31b361}\label{structutils_1_1joint__cast__transform_a8abbe5bd505c277f8b8c30141a31b361}} 
+\index{utils::joint\_cast\_transform$<$ F, Trait $>$@{utils::joint\_cast\_transform$<$ F, Trait $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!utils::joint\_cast\_transform$<$ F, Trait $>$@{utils::joint\_cast\_transform$<$ F, Trait $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily template$<$auto F, template$<$ typename... $>$ typename Trait$>$ \\
+template$<$typename... Args, typename G  = detail\+::joint\+\_\+cast\+\_\+transform\+\_\+impl$<$\+F, typename Trait$<$\+Args...$>$\+::type$>$$>$ \newline
+requires (std\+::is\+\_\+invocable\+\_\+v$<$G, Args...$>$)\\
+static constexpr decltype(auto) \mbox{\hyperlink{structutils_1_1joint__cast__transform}{utils\+::joint\+\_\+cast\+\_\+transform}}$<$ F, Trait $>$\+::operator() (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{functional_8hpp_source_l00223}{223}} of file \mbox{\hyperlink{functional_8hpp_source}{functional.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{functional_8hpp}{functional.\+hpp}}\end{DoxyCompactItemize}

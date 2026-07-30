@@ -1,17 +1,16 @@
 var searchData=
 [
-  ['filter_0',['filter',['../classutils_1_1filter__iterator.html#ad02b855f6d91ae3e74d9d0080a2be7b3',1,'utils::filter_iterator']]],
-  ['filter_5fiterator_1',['filter_iterator',['../classutils_1_1filter__iterator.html#ad752fb42ee0bfffc3cfd3545ade3b027',1,'utils::filter_iterator::filter_iterator(const filter_iterator&lt; U, S, Q &gt; &amp;other)'],['../classutils_1_1filter__iterator.html#a69e39fabc5b92cb7099506518150b608',1,'utils::filter_iterator::filter_iterator()=default'],['../classutils_1_1filter__iterator.html#a47a0eaac703914a036120e4978090638',1,'utils::filter_iterator::filter_iterator(Iter it, Sent st, P pred)'],['../classutils_1_1filter__iterator.html',1,'utils::filter_iterator&lt; Iter, Sent, P &gt;']]],
-  ['fix_5fop_5ffunctors_2',['fix_op_functors',['../structutils_1_1fix__op__functors.html',1,'utils']]],
-  ['fix_5fops_3',['fix_ops',['../structutils_1_1fix__ops.html',1,'utils']]],
-  ['fix_5fops_3c_20_7b_7d_20_3e_4',['fix_ops&lt; {} &gt;',['../structutils_1_1fix__ops.html',1,'utils']]],
-  ['func_5',['func',['../structutils_1_1with.html#a2aa4545d2660c2b1395f4776c21ed2df',1,'utils::with']]],
-  ['function_5fdecay_6',['function_decay',['../structutils_1_1function__decay.html',1,'utils']]],
-  ['function_5fdecay_3c_20decltype_28_26t_3a_3aoperator_28_29_29_3e_7',['function_decay&lt; decltype(&amp;T::operator())&gt;',['../structutils_1_1function__decay.html',1,'utils']]],
-  ['function_5fdecay_3c_20r_28args_2e_2e_2e_29_20noexcept_20_3e_8',['function_decay&lt; R(Args...) noexcept &gt;',['../structutils_1_1function__decay_3_01R_07Args_8_8_8_08_01noexcept_01_4.html',1,'utils']]],
-  ['function_5fdecay_3c_20r_28args_2e_2e_2e_29_3e_9',['function_decay&lt; R(Args...)&gt;',['../structutils_1_1function__decay_3_01R_07Args_8_8_8_08_4.html',1,'utils']]],
-  ['function_5fdecay_3c_20std_3a_3aremove_5fpointer_5ft_3c_20std_3a_3aremove_5fcvref_5ft_3c_20t_20_3e_20_3e_20_3e_10',['function_decay&lt; std::remove_pointer_t&lt; std::remove_cvref_t&lt; T &gt; &gt; &gt;',['../structutils_1_1function__decay.html',1,'utils']]],
-  ['function_5fdecay_3c_20t_20_3e_11',['function_decay&lt; T &gt;',['../structutils_1_1function__decay_3_01T_01_4.html',1,'utils']]],
-  ['function_5fdecay_5ft_12',['function_decay_t',['../namespaceutils.html#a4ff95410c7281fc810a9e8cfef9855e8',1,'utils']]],
-  ['functional_2ehpp_13',['functional.hpp',['../functional_8hpp.html',1,'']]]
+  ['empty_0',['empty',['../structutils_1_1interval.html#a8f939b3442aeb1b8011773e9be42bedb',1,'utils::interval']]],
+  ['epsilon_1',['epsilon',['../structstd_1_1numeric__limits_3_01T_01_4.html#ad67f8f13fb9f7f7114727a1bb582f657',1,'std::numeric_limits&lt; T &gt;']]],
+  ['epsilon_5fof_2',['epsilon_of',['../structutils_1_1epsilon__of.html',1,'utils']]],
+  ['epsilon_5fof_5fv_3',['epsilon_of_v',['../namespaceutils.html#a237a9d163e61fab7413f93616669f2c9',1,'utils']]],
+  ['erase_4',['erase',['../structutils_1_1basic__static__string.html#a1a3136256055a3d016fcf546b4fb6311',1,'utils::basic_static_string::erase(size_type index=0, size_type count=npos)'],['../structutils_1_1basic__static__string.html#aae09ae06ff685c8ec545e3a820989f84',1,'utils::basic_static_string::erase(const_iterator pos)'],['../structutils_1_1basic__static__string.html#aacd798574e04cdbfb491e53847001730',1,'utils::basic_static_string::erase(const_iterator first, const_iterator last)'],['../structutils_1_1meta_1_1erase.html',1,'utils::meta::erase&lt; Tuple, Begin, End &gt;']]],
+  ['erase_5ft_5',['erase_t',['../namespaceutils_1_1meta.html#a57e2e26a9ed32b0384df07a98f53b377',1,'utils::meta']]],
+  ['erasedresult_6',['ErasedResult',['../structutils_1_1meta_1_1infer.html#a1cf91fddec6a7f669b55820814674e71',1,'utils::meta::infer']]],
+  ['exception_2ehpp_7',['exception.hpp',['../exception_8hpp.html',1,'']]],
+  ['exists_8',['exists',['../namespaceutils_1_1meta.html#a663523ca9759fbbba5c59040d339416c',1,'utils::meta::exists(const_var&lt; Var &gt;)'],['../namespaceutils_1_1meta.html#a7ecd2bb074afc4484c62aa40fb97ac97',1,'utils::meta::exists(...)'],['../namespaceutils_1_1meta.html#ad2935ed0730cf850927f58cdf5fa8fdf',1,'utils::meta::exists(var&lt; Var, Version &gt;)']]],
+  ['explicit_9',['explicit',['../group__utils.html#ga557d2109484928e15525a1083b0b8e26',1,'utils::pmr::arena_allocator::explicit()'],['../group__utils.html#ga3fc5d53309c8c22900137af934c5107f',1,'utils::pmr::stack_allocator::explicit()'],['../group__utils.html#gaf70aa92e30b685f150ed14eedb1474b6',1,'utils::integer::explicit()']]],
+  ['extract_10',['extract',['../structutils_1_1meta_1_1extract.html',1,'utils::meta']]],
+  ['extract_3c_20tmpl_3c_20args_2e_2e_2e_20_3e_20_3e_11',['extract&lt; Tmpl&lt; Args... &gt; &gt;',['../structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4.html',1,'utils::meta']]],
+  ['extract_5ft_12',['extract_t',['../namespaceutils_1_1meta.html#acd07985a63eb37381aaa77c70f6ea190',1,'utils::meta']]]
 ];

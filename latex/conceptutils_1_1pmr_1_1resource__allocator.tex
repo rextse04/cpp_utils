@@ -1,0 +1,31 @@
+\hypertarget{conceptutils_1_1pmr_1_1resource__allocator}{}\doxysection{utils\+::pmr\+::resource\+\_\+allocator Concept Reference}
+\label{conceptutils_1_1pmr_1_1resource__allocator}\index{utils::pmr::resource\_allocator@{utils::pmr::resource\_allocator}}
+
+
+Named requirement\+: \mbox{\hyperlink{ResourceAllocator_8md}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Resource\+Allocator\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}}.  
+
+
+
+
+{\ttfamily \#include $<$allocator\+\_\+resource.\+hpp$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} A>}
+\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1pmr_1_1resource__allocator}{utils::pmr::resource\_allocator}} =  (}
+\DoxyCodeLine{        \mbox{\hyperlink{conceptutils_1_1simple__allocator}{simple\_allocator<A>}} \&\& std::is\_same\_v<typename A::value\_type, std::byte> \&\&}
+\DoxyCodeLine{        \textcolor{keyword}{requires} (A a, std::pmr::memory\_resource\& mr, \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} space, \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} bytes, std::align\_val\_t alignment, std::byte* p) \{}
+\DoxyCodeLine{            \{ a.release(mr, space) \} \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{            \{ a.allocate(bytes, alignment) \} -\/> std::same\_as<std::byte*>;}
+\DoxyCodeLine{            \{ a.deallocate(p, bytes, alignment) \};}
+\DoxyCodeLine{        \})}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Detailed Description}
+Named requirement\+: \mbox{\hyperlink{ResourceAllocator_8md}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Resource\+Allocator\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}}. 
+
+Definition at line \mbox{\hyperlink{allocator__resource_8hpp_source_l00012}{12}} of file \mbox{\hyperlink{allocator__resource_8hpp_source}{allocator\+\_\+resource.\+hpp}}.
+

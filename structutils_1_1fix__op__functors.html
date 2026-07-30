@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>cpp_utils: utils::fix_op_functors&lt; PreInc, PostInc, PreDec, PostDec &gt; Struct Template Reference</title>
+<title>cpp_utils: utils::fix_op_functors&lt; PreInc, PostInc, PreDec, PostDec, PrefixTraits, UnaryTraits &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -84,134 +84,155 @@ $(document).ready(function(){initNavTree('structutils_1_1fix__op__functors.html'
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structutils_1_1fix__op__functors-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">utils::fix_op_functors&lt; PreInc, PostInc, PreDec, PostDec &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">utils::fix_op_functors&lt; PreInc, PostInc, PreDec, PostDec, PrefixTraits, UnaryTraits &gt; Struct Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="OperatorFunctorSet_8md.html">&lt;i&gt;OperatorFunctorSetTemplate&lt;/i&gt;</a> for <code><a class="el" href="structutils_1_1fix__ops.html" title="Adds support for ++t, t++, --t and t--.">utils::fix_ops</a></code>.  
+ <a href="structutils_1_1fix__op__functors.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="operators_8hpp_source.html">operators.hpp</a>&gt;</code></p>
 <div class="dynheader">
-Collaboration diagram for utils::fix_op_functors&lt; PreInc, PostInc, PreDec, PostDec &gt;:</div>
+Collaboration diagram for utils::fix_op_functors&lt; PreInc, PostInc, PreDec, PostDec, PrefixTraits, UnaryTraits &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="structutils_1_1fix__op__functors__coll__graph.png" border="0" usemap="#autils_1_1fix__op__functors_3_01PreInc_00_01PostInc_00_01PreDec_00_01PostDec_01_4_coll__map" alt="Collaboration graph"/></div>
-<map name="autils_1_1fix__op__functors_3_01PreInc_00_01PostInc_00_01PreDec_00_01PostDec_01_4_coll__map" id="autils_1_1fix__op__functors_3_01PreInc_00_01PostInc_00_01PreDec_00_01PostDec_01_4_coll__map">
-<area shape="rect" title=" " alt="" coords="87,95,265,151"/>
-<area shape="rect" href="structutils_1_1post__increment_3_4.html" title=" " alt="" coords="5,5,163,32"/>
-<area shape="rect" href="structutils_1_1post__decrement_3_4.html" title=" " alt="" coords="187,5,349,32"/>
+<div class="center"><img src="structutils_1_1fix__op__functors__coll__graph.png" border="0" usemap="#autils_1_1fix__op__functors_3_01PreInc_00_01PostInc_00_01PreDec_00_01PostDec_00_01PrefixTraits_00_01UnaryTraits_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="autils_1_1fix__op__functors_3_01PreInc_00_01PostInc_00_01PreDec_00_01PostDec_00_01PrefixTraits_00_01UnaryTraits_01_4_coll__map" id="autils_1_1fix__op__functors_3_01PreInc_00_01PostInc_00_01PreDec_00_01PostDec_00_01PrefixTraits_00_01UnaryTraits_01_4_coll__map">
+<area shape="rect" title="&lt;i&gt;OperatorFunctorSetTemplate&lt;/i&gt; for utils::fix_ops." alt="" coords="312,71,544,127"/>
+<area shape="rect" href="structutils_1_1post__increment_3_4.html" title=" " alt="" coords="7,5,165,32"/>
+<area shape="rect" href="structutils_1_1post__decrement_3_4.html" title=" " alt="" coords="5,56,167,83"/>
+<area shape="rect" href="structutils_1_1default__prefix__op__traits.html" title="The default trait set for prefix operators (i.e. ++t and &#45;&#45;t)." alt="" coords="22,107,150,149"/>
+<area shape="rect" href="structutils_1_1default__postfix__op__traits.html" title="The default trait set for postfix operators (i.e. t++ and t&#45;&#45;)." alt="" coords="19,173,153,214"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a68112298a9dc8bb89c511b585e8b2eb3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1fix__op__functors.html#a68112298a9dc8bb89c511b585e8b2eb3">tag</a> = fix_op_functors_tag</td></tr>
-<tr class="separator:a68112298a9dc8bb89c511b585e8b2eb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a7417e7a4ba7547bb81656a214ced194c"><td class="memItemLeft" align="right" valign="top">PreInc&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1fix__op__functors.html#a7417e7a4ba7547bb81656a214ced194c">pre_increment</a> {}</td></tr>
-<tr class="separator:a7417e7a4ba7547bb81656a214ced194c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a037e077bda56de55e5a699e4b822da4e"><td class="memItemLeft" align="right" valign="top">PostInc&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1fix__op__functors.html#a037e077bda56de55e5a699e4b822da4e">post_increment</a> {}</td></tr>
-<tr class="separator:a037e077bda56de55e5a699e4b822da4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fb3c170524ef6da2f56de975295ac56"><td class="memItemLeft" align="right" valign="top">PreDec&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1fix__op__functors.html#a8fb3c170524ef6da2f56de975295ac56">pre_decrement</a> {}</td></tr>
-<tr class="separator:a8fb3c170524ef6da2f56de975295ac56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7aa1a32ae8c4d80e65ea2d13c7367978"><td class="memItemLeft" align="right" valign="top">PostDec&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1fix__op__functors.html#a7aa1a32ae8c4d80e65ea2d13c7367978">post_decrement</a> {}</td></tr>
-<tr class="separator:a7aa1a32ae8c4d80e65ea2d13c7367978"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a649c36d8020335ee6d79abfbe61385"><td class="memItemLeft" align="right" valign="top">PreInc&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1fix__op__functors.html#a6a649c36d8020335ee6d79abfbe61385">pre_increment</a> {}</td></tr>
+<tr class="separator:a6a649c36d8020335ee6d79abfbe61385"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add63d0bedfd41cbfc1127462ddf1e92e"><td class="memItemLeft" align="right" valign="top">PostInc&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1fix__op__functors.html#add63d0bedfd41cbfc1127462ddf1e92e">post_increment</a> {}</td></tr>
+<tr class="separator:add63d0bedfd41cbfc1127462ddf1e92e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc1856cbf44d83273205f5a081d0d1c5"><td class="memItemLeft" align="right" valign="top">PreDec&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1fix__op__functors.html#afc1856cbf44d83273205f5a081d0d1c5">pre_decrement</a> {}</td></tr>
+<tr class="separator:afc1856cbf44d83273205f5a081d0d1c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1844b578a85846ae1172515c4eb4d8d4"><td class="memItemLeft" align="right" valign="top">PostDec&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1fix__op__functors.html#a1844b578a85846ae1172515c4eb4d8d4">post_decrement</a> {}</td></tr>
+<tr class="separator:a1844b578a85846ae1172515c4eb4d8d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bccc1cf06b1d6b199e47506141d0d72"><td class="memItemLeft" align="right" valign="top">PrefixTraits&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1fix__op__functors.html#a3bccc1cf06b1d6b199e47506141d0d72">prefix_traits</a> {}</td></tr>
+<tr class="separator:a3bccc1cf06b1d6b199e47506141d0d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71a43a02e16697e022f9344738026f39"><td class="memItemLeft" align="right" valign="top">UnaryTraits&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1fix__op__functors.html#a71a43a02e16697e022f9344738026f39">unary_traits</a> {}</td></tr>
+<tr class="separator:a71a43a02e16697e022f9344738026f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename PreInc = pre_increment&lt;&gt;, typename PostInc = post_increment&lt;&gt;, typename PreDec = pre_decrement&lt;&gt;, typename PostDec = post_decrement&lt;&gt;&gt;<br />
-struct utils::fix_op_functors&lt; PreInc, PostInc, PreDec, PostDec &gt;</div>
-<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00328">328</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a68112298a9dc8bb89c511b585e8b2eb3" name="a68112298a9dc8bb89c511b585e8b2eb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68112298a9dc8bb89c511b585e8b2eb3">&#9670;&nbsp;</a></span>tag</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename PreInc = pre_increment&lt;&gt;, typename PostInc = post_increment&lt;&gt;, typename PreDec = pre_decrement&lt;&gt;, typename PostDec = post_decrement&lt;&gt;, typename PrefixTraits = default_prefix_op_traits, typename UnaryTraits = default_postfix_op_traits&gt;<br />
+struct utils::fix_op_functors&lt; PreInc, PostInc, PreDec, PostDec, PrefixTraits, UnaryTraits &gt;</div><p ><a class="el" href="OperatorFunctorSet_8md.html">&lt;i&gt;OperatorFunctorSetTemplate&lt;/i&gt;</a> for <code><a class="el" href="structutils_1_1fix__ops.html" title="Adds support for ++t, t++, --t and t--.">utils::fix_ops</a></code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00278">278</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a1844b578a85846ae1172515c4eb4d8d4" name="a1844b578a85846ae1172515c4eb4d8d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1844b578a85846ae1172515c4eb4d8d4">&#9670;&nbsp;</a></span>post_decrement</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename PreInc  = pre_increment&lt;&gt;, typename PostInc  = post_increment&lt;&gt;, typename PreDec  = pre_decrement&lt;&gt;, typename PostDec  = post_decrement&lt;&gt;&gt; </div>
+template&lt;typename PreInc  = pre_increment&lt;&gt;, typename PostInc  = post_increment&lt;&gt;, typename PreDec  = pre_decrement&lt;&gt;, typename PostDec  = post_decrement&lt;&gt;, typename PrefixTraits  = default_prefix_op_traits, typename UnaryTraits  = default_postfix_op_traits&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structutils_1_1fix__op__functors.html">utils::fix_op_functors</a>&lt; PreInc, PostInc, PreDec, PostDec &gt;::<a class="el" href="structutils_1_1fix__op__functors.html#a68112298a9dc8bb89c511b585e8b2eb3">tag</a> =  fix_op_functors_tag</td>
+          <td class="memname">PostDec <a class="el" href="structutils_1_1fix__op__functors.html">utils::fix_op_functors</a>&lt; PreInc, PostInc, PreDec, PostDec, PrefixTraits, UnaryTraits &gt;::<a class="el" href="structutils_1_1post__decrement.html">post_decrement</a> {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00329">329</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00282">282</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a7aa1a32ae8c4d80e65ea2d13c7367978" name="a7aa1a32ae8c4d80e65ea2d13c7367978"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7aa1a32ae8c4d80e65ea2d13c7367978">&#9670;&nbsp;</a></span>post_decrement</h2>
+<a id="add63d0bedfd41cbfc1127462ddf1e92e" name="add63d0bedfd41cbfc1127462ddf1e92e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add63d0bedfd41cbfc1127462ddf1e92e">&#9670;&nbsp;</a></span>post_increment</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename PreInc  = pre_increment&lt;&gt;, typename PostInc  = post_increment&lt;&gt;, typename PreDec  = pre_decrement&lt;&gt;, typename PostDec  = post_decrement&lt;&gt;&gt; </div>
+template&lt;typename PreInc  = pre_increment&lt;&gt;, typename PostInc  = post_increment&lt;&gt;, typename PreDec  = pre_decrement&lt;&gt;, typename PostDec  = post_decrement&lt;&gt;, typename PrefixTraits  = default_prefix_op_traits, typename UnaryTraits  = default_postfix_op_traits&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">PostDec <a class="el" href="structutils_1_1fix__op__functors.html">utils::fix_op_functors</a>&lt; PreInc, PostInc, PreDec, PostDec &gt;::<a class="el" href="structutils_1_1post__decrement.html">post_decrement</a> {}</td>
+          <td class="memname">PostInc <a class="el" href="structutils_1_1fix__op__functors.html">utils::fix_op_functors</a>&lt; PreInc, PostInc, PreDec, PostDec, PrefixTraits, UnaryTraits &gt;::<a class="el" href="structutils_1_1post__increment.html">post_increment</a> {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00333">333</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00280">280</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a037e077bda56de55e5a699e4b822da4e" name="a037e077bda56de55e5a699e4b822da4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a037e077bda56de55e5a699e4b822da4e">&#9670;&nbsp;</a></span>post_increment</h2>
+<a id="afc1856cbf44d83273205f5a081d0d1c5" name="afc1856cbf44d83273205f5a081d0d1c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc1856cbf44d83273205f5a081d0d1c5">&#9670;&nbsp;</a></span>pre_decrement</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename PreInc  = pre_increment&lt;&gt;, typename PostInc  = post_increment&lt;&gt;, typename PreDec  = pre_decrement&lt;&gt;, typename PostDec  = post_decrement&lt;&gt;&gt; </div>
+template&lt;typename PreInc  = pre_increment&lt;&gt;, typename PostInc  = post_increment&lt;&gt;, typename PreDec  = pre_decrement&lt;&gt;, typename PostDec  = post_decrement&lt;&gt;, typename PrefixTraits  = default_prefix_op_traits, typename UnaryTraits  = default_postfix_op_traits&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">PostInc <a class="el" href="structutils_1_1fix__op__functors.html">utils::fix_op_functors</a>&lt; PreInc, PostInc, PreDec, PostDec &gt;::<a class="el" href="structutils_1_1post__increment.html">post_increment</a> {}</td>
+          <td class="memname">PreDec <a class="el" href="structutils_1_1fix__op__functors.html">utils::fix_op_functors</a>&lt; PreInc, PostInc, PreDec, PostDec, PrefixTraits, UnaryTraits &gt;::<a class="el" href="structutils_1_1pre__decrement.html">pre_decrement</a> {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00331">331</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00281">281</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a8fb3c170524ef6da2f56de975295ac56" name="a8fb3c170524ef6da2f56de975295ac56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fb3c170524ef6da2f56de975295ac56">&#9670;&nbsp;</a></span>pre_decrement</h2>
+<a id="a6a649c36d8020335ee6d79abfbe61385" name="a6a649c36d8020335ee6d79abfbe61385"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a649c36d8020335ee6d79abfbe61385">&#9670;&nbsp;</a></span>pre_increment</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename PreInc  = pre_increment&lt;&gt;, typename PostInc  = post_increment&lt;&gt;, typename PreDec  = pre_decrement&lt;&gt;, typename PostDec  = post_decrement&lt;&gt;&gt; </div>
+template&lt;typename PreInc  = pre_increment&lt;&gt;, typename PostInc  = post_increment&lt;&gt;, typename PreDec  = pre_decrement&lt;&gt;, typename PostDec  = post_decrement&lt;&gt;, typename PrefixTraits  = default_prefix_op_traits, typename UnaryTraits  = default_postfix_op_traits&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">PreDec <a class="el" href="structutils_1_1fix__op__functors.html">utils::fix_op_functors</a>&lt; PreInc, PostInc, PreDec, PostDec &gt;::<a class="el" href="structutils_1_1pre__decrement.html">pre_decrement</a> {}</td>
+          <td class="memname">PreInc <a class="el" href="structutils_1_1fix__op__functors.html">utils::fix_op_functors</a>&lt; PreInc, PostInc, PreDec, PostDec, PrefixTraits, UnaryTraits &gt;::<a class="el" href="structutils_1_1pre__increment.html">pre_increment</a> {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00332">332</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00279">279</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a7417e7a4ba7547bb81656a214ced194c" name="a7417e7a4ba7547bb81656a214ced194c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7417e7a4ba7547bb81656a214ced194c">&#9670;&nbsp;</a></span>pre_increment</h2>
+<a id="a3bccc1cf06b1d6b199e47506141d0d72" name="a3bccc1cf06b1d6b199e47506141d0d72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bccc1cf06b1d6b199e47506141d0d72">&#9670;&nbsp;</a></span>prefix_traits</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename PreInc  = pre_increment&lt;&gt;, typename PostInc  = post_increment&lt;&gt;, typename PreDec  = pre_decrement&lt;&gt;, typename PostDec  = post_decrement&lt;&gt;&gt; </div>
+template&lt;typename PreInc  = pre_increment&lt;&gt;, typename PostInc  = post_increment&lt;&gt;, typename PreDec  = pre_decrement&lt;&gt;, typename PostDec  = post_decrement&lt;&gt;, typename PrefixTraits  = default_prefix_op_traits, typename UnaryTraits  = default_postfix_op_traits&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">PreInc <a class="el" href="structutils_1_1fix__op__functors.html">utils::fix_op_functors</a>&lt; PreInc, PostInc, PreDec, PostDec &gt;::<a class="el" href="structutils_1_1pre__increment.html">pre_increment</a> {}</td>
+          <td class="memname">PrefixTraits <a class="el" href="structutils_1_1fix__op__functors.html">utils::fix_op_functors</a>&lt; PreInc, PostInc, PreDec, PostDec, PrefixTraits, UnaryTraits &gt;::prefix_traits {}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00330">330</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00283">283</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a71a43a02e16697e022f9344738026f39" name="a71a43a02e16697e022f9344738026f39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71a43a02e16697e022f9344738026f39">&#9670;&nbsp;</a></span>unary_traits</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename PreInc  = pre_increment&lt;&gt;, typename PostInc  = post_increment&lt;&gt;, typename PreDec  = pre_decrement&lt;&gt;, typename PostDec  = post_decrement&lt;&gt;, typename PrefixTraits  = default_prefix_op_traits, typename UnaryTraits  = default_postfix_op_traits&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">UnaryTraits <a class="el" href="structutils_1_1fix__op__functors.html">utils::fix_op_functors</a>&lt; PreInc, PostInc, PreDec, PostDec, PrefixTraits, UnaryTraits &gt;::unary_traits {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00284">284</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
 
 </div>
 </div>

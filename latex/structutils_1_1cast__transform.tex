@@ -1,0 +1,42 @@
+\hypertarget{structutils_1_1cast__transform}{}\doxysection{utils\+::cast\+\_\+transform\texorpdfstring{$<$}{<} F, Trait \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structutils_1_1cast__transform}\index{utils::cast\_transform$<$ F, Trait $>$@{utils::cast\_transform$<$ F, Trait $>$}}
+
+
+{\ttfamily \#include $<$functional.\+hpp$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Args$>$ \newline
+requires requires}\\static constexpr decltype(auto) \mbox{\hyperlink{structutils_1_1cast__transform_a7a270ac3fe80912ae705de98cfd7f4c6}{operator()}} (Args \&\&... args) noexcept(noexcept(F(static\+\_\+cast$<$ Trait$<$ Args $>$ $>$(std\+::declval$<$ Args $>$())...)))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$auto F, template$<$ typename $>$ typename Trait$>$\newline
+struct utils\+::cast\+\_\+transform$<$ F, Trait $>$}
+
+
+Definition at line \mbox{\hyperlink{functional_8hpp_source_l00198}{198}} of file \mbox{\hyperlink{functional_8hpp_source}{functional.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structutils_1_1cast__transform_a7a270ac3fe80912ae705de98cfd7f4c6}\label{structutils_1_1cast__transform_a7a270ac3fe80912ae705de98cfd7f4c6}} 
+\index{utils::cast\_transform$<$ F, Trait $>$@{utils::cast\_transform$<$ F, Trait $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!utils::cast\_transform$<$ F, Trait $>$@{utils::cast\_transform$<$ F, Trait $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily template$<$auto F, template$<$ typename $>$ typename Trait$>$ \\
+template$<$typename... Args$>$ \newline
+requires requires\\
+static constexpr decltype(auto) \mbox{\hyperlink{structutils_1_1cast__transform}{utils\+::cast\+\_\+transform}}$<$ F, Trait $>$\+::operator() (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{functional_8hpp_source_l00201}{201}} of file \mbox{\hyperlink{functional_8hpp_source}{functional.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{functional_8hpp}{functional.\+hpp}}\end{DoxyCompactItemize}

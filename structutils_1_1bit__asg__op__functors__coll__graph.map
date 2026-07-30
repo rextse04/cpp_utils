@@ -1,0 +1,4 @@
+<map id="utils::bit_asg_op_functors&lt; BitAndAsg, BitOrAsg, BitXorAsg, AsgTraits &gt;" name="utils::bit_asg_op_functors&lt; BitAndAsg, BitOrAsg, BitXorAsg, AsgTraits &gt;">
+<area shape="rect" id="node1" title="&lt;i&gt;OperatorFunctorSetTemplate&lt;/i&gt; for utils::bit_asg_ops." alt="" coords="5,109,231,165"/>
+<area shape="rect" id="node2" href="$structutils_1_1default__asg__op__traits.html" title="The default trait set for assignment operators." alt="" coords="59,5,177,47"/>
+</map>

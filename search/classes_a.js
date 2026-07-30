@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['result_0',['result',['../structutils_1_1binary__op__traits_1_1result.html',1,'utils::binary_op_traits&lt; ResultTrait, ConstraintTrait &gt;::result&lt; Self, Other &gt;'],['../structutils_1_1unary__op__traits_1_1result.html',1,'utils::unary_op_traits&lt; ResultTrait &gt;::result&lt; Self &gt;']]],
-  ['result_5fof_1',['result_of',['../structutils_1_1result__of.html',1,'utils']]],
-  ['result_5fof_3c_20r_28args_2e_2e_2e_29_3e_2',['result_of&lt; R(Args...)&gt;',['../structutils_1_1result__of_3_01R_07Args_8_8_8_08_4.html',1,'utils']]]
+  ['make_5ftuple_0',['make_tuple',['../structutils_1_1meta_1_1make__tuple.html',1,'utils::meta']]],
+  ['map_1',['map',['../structutils_1_1meta_1_1map.html',1,'utils::meta']]],
+  ['max_5falign_2',['max_align',['../structutils_1_1max__align.html',1,'utils']]],
+  ['move_5fconstruct_3',['move_construct',['../structutils_1_1move__construct.html',1,'utils']]],
+  ['move_5fconstruct_3c_3e_4',['move_construct&lt;&gt;',['../structutils_1_1move__construct_3_4.html',1,'utils']]]
 ];

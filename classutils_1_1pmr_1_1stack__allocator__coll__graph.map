@@ -1,0 +1,4 @@
+<map id="utils::pmr::stack_allocator&lt; T, Sync &gt;" name="utils::pmr::stack_allocator&lt; T, Sync &gt;">
+<area shape="rect" id="node1" title="An allocator which allocates memory from a pre&#45;allocated buffer in a lazy&#45;stack&#45;like manner." alt="" coords="5,109,173,151"/>
+<area shape="rect" id="node2" title=" " alt="" coords="13,5,165,61"/>
+</map>

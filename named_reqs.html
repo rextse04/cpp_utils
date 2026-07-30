@@ -90,7 +90,7 @@ $(document).ready(function(){initNavTree('named_reqs.html',''); initResizable();
 <p >Whiles C++20 concepts allow static checking of most type requirements, named requirements often attach semantic meanings to expressions which are impossible to check statically or even dynamically. Nevertheless, they are useful at refining overload resolution and eliminating verbose type errors. As such, in instances where appropriate, a concept may be associated with a named requirement. A type models the concept if and only if it satisfies the named requirement. In other words, it may fulfill all semantics specified in the named requirement, apart from the type constraints.</p>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Key Terms</h1>
-<p >A named requirement consists of a list of expressions that a candidate entity has to support, with extra semantic requirements as specified. Semantic requirements are usually divided into two parts:</p><ul>
+<p >A named requirement consists of a list of expressions that a candidate entity has to support (i.e. the expressions must be well-formed and have defined behavior), with extra semantic requirements as specified. Semantic requirements are usually divided into two parts:</p><ul>
 <li><p class="startli"><b>Conditions</b></p>
 <p class="startli">Conditions are requirements the user of the expression has to fulfill. Otherwise, the behavior may be unspecified or undefined, or the program may be ill-formed (with or without diagnostics). In other words, the author of the entity may assume all conditions to hold if the expression is used.</p>
 <p class="startli">Conditions may be further classified into pre-conditions and post-conditions. <b>Pre-conditions</b> are conditions imposed on behavior before the expression is used, while <b>post-conditions</b> are that imposed on after.</p>
@@ -107,6 +107,18 @@ Allocators</h2>
 <ul>
 <li><a class="el" href="BufferAllocator.html">Named Requirement: <em>BufferAllocator</em></a></li>
 <li><a class="el" href="ResourceAllocator.html">Named Requirement: <em>ResourceAllocator</em></a> </li>
+</ul>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Operators</h2>
+<ul>
+<li><a class="el" href="IntegerBehaviorProfile.html">Named Requirements: <em>IntegerBehaviorProfile</em></a></li>
+<li><a class="el" href="OperatorFunctorSet.html">Named Requirements: <em>OperatorFunctorSet</em></a> </li>
+</ul>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Template Metaprogramming</h2>
+<ul>
+<li><a class="el" href="Result.html">Named Requirements: <em>Result</em></a></li>
+<li><a class="el" href="Trait.html">Named Requirements: <em>Trait</em></a> </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

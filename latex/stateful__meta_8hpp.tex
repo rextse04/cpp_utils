@@ -17,22 +17,41 @@ This graph shows which files directly or indirectly include this file\+:
 \includegraphics[width=174pt]{stateful__meta_8hpp__dep__incl}
 \end{center}
 \end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classutils_1_1meta_1_1const__var}{utils\+::meta\+::const\+\_\+var$<$ Var $>$}}
+\begin{DoxyCompactList}\small\item\em Read by calling {\ttfamily get(\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{const\+\_\+var}}\texorpdfstring{$<$}{<}Var\texorpdfstring{$>$}{>}\{\})}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classutils_1_1meta_1_1define}{utils\+::meta\+::define$<$ Var, Value $>$}}
+\begin{DoxyCompactList}\small\item\em Declare a {\ttfamily const-\/var} by instantiating the template. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classutils_1_1meta_1_1var}{utils\+::meta\+::var$<$ Var, Version $>$}}
+\begin{DoxyCompactList}\small\item\em Read by calling {\ttfamily get(var\texorpdfstring{$<$}{<}Var, Version\texorpdfstring{$>$}{>}\{\})}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classutils_1_1meta_1_1set}{utils\+::meta\+::set$<$ Var, Value, Version $>$}}
+\begin{DoxyCompactList}\small\item\em Sets {\ttfamily Var} to {\ttfamily Value}. {\ttfamily Version} is automatically incremented at every instantiation of this template. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceutils}{utils}}
+\item 
+namespace \mbox{\hyperlink{namespaceutils_1_1meta}{utils\+::meta}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Var , auto  = get(utils\+::meta\+::const\+\_\+var$<$\+Var$>$\{\})$>$ }\\consteval bool \mbox{\hyperlink{namespaceutils_1_1meta_a663523ca9759fbbba5c59040d339416c}{utils\+::meta\+::exists}} (const\+\_\+var$<$ Var $>$)
+\begin{DoxyCompactList}\small\item\em Checks the existence of a {\ttfamily \mbox{\hyperlink{classutils_1_1meta_1_1const__var}{const\+\_\+var}}}. \end{DoxyCompactList}\item 
+consteval bool \mbox{\hyperlink{namespaceutils_1_1meta_a7ecd2bb074afc4484c62aa40fb97ac97}{utils\+::meta\+::exists}} (...)
+\begin{DoxyCompactList}\small\item\em Fallback. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Var  = void, bool Increment = false, std\+::uintmax\+\_\+t Value = 0, typename Id  = decltype(\mbox{[}$\,$\mbox{]}\{\})$>$ }\\consteval std\+::uintmax\+\_\+t \mbox{\hyperlink{namespaceutils_1_1meta_ad02c270667465805004b1f692dfb6cf0}{utils\+::meta\+::get\+\_\+counter}} ()
+\begin{DoxyCompactList}\small\item\em A compile-\/time counter. An undeclared counter is defined to have the value 0. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Var , std\+::uintmax\+\_\+t Version, auto  = get(var$<$\+Var, Version$>$\{\})$>$ }\\constexpr bool \mbox{\hyperlink{namespaceutils_1_1meta_ad2935ed0730cf850927f58cdf5fa8fdf}{utils\+::meta\+::exists}} (var$<$ Var, Version $>$)
+\begin{DoxyCompactList}\small\item\em Checks the existence of a {\ttfamily var}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 This file contains utilities that enable stateful metaprogramming, which allows you to make compile-\/time {\bfseries{modifiable}} variables. This is done via a technique called \char`\"{}friend injection\char`\"{}.
 
-In this file, compile-\/time variables are named by types. That is, such variables are defined, accessed and modified via the types they are associated with. Note that you are allowed to use the same type to name variables of different categories. For example, you can define a 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{const\_var<T>}
-
-\end{DoxyCode}
- and 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{<i>counter</i><T>}
-
-\end{DoxyCode}
- and they will be separate variables. There are three categories of variables\+: \tabulinesep=1mm
+In this file, compile-\/time variables are named by types. That is, such variables are defined, accessed and modified via the types they are associated with. Note that you are allowed to use the same type to name variables of different categories. For example, you can define a {\ttfamily const\+\_\+var\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} and {\ttfamily \texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}counter\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} and they will be separate variables. There are three categories of variables\+: \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
 \hline
 \PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Category   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Written via   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Read via   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Remarks    }\\\cline{1-4}
@@ -42,65 +61,15 @@ In this file, compile-\/time variables are named by types. That is, such variabl
 \hline
 \PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Category   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Written via   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Read via   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Remarks    }\\\cline{1-4}
 \endhead
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{const\_var}
-
-\end{DoxyCode}
-   &
-\begin{DoxyCode}{0}
-\DoxyCodeLine{define}
-
-\end{DoxyCode}
-   &
-\begin{DoxyCode}{0}
-\DoxyCodeLine{get}
-
-\end{DoxyCode}
-   &A 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{const\_var}
-
-\end{DoxyCode}
- can only be written to once.    \\\cline{1-4}
+{\ttfamily const\+\_\+var}   &{\ttfamily define}   &{\ttfamily get}   &A {\ttfamily const\+\_\+var} can only be written to once.    \\\cline{1-4}
 
 \begin{DoxyPre}{\itshape counter}\end{DoxyPre}
-   &
-\begin{DoxyCode}{0}
-\DoxyCodeLine{get\_counter}
-
-\end{DoxyCode}
-   &
-\begin{DoxyCode}{0}
-\DoxyCodeLine{get\_counter}
-
-\end{DoxyCode}
-   &There is no explicit struct for this category.    \\\cline{1-4}
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{var}
-
-\end{DoxyCode}
-   &
-\begin{DoxyCode}{0}
-\DoxyCodeLine{set}
-
-\end{DoxyCode}
-   &
-\begin{DoxyCode}{0}
-\DoxyCodeLine{get}
-
-\end{DoxyCode}
-   &\\\cline{1-4}
+   &{\ttfamily get\+\_\+counter}   &{\ttfamily get\+\_\+counter}   &There is no explicit struct for this category.    \\\cline{1-4}
+{\ttfamily var}   &{\ttfamily set}   &{\ttfamily get}   &\\\cline{1-4}
 \end{longtabu}
 
 
-In the implementation, some structs may have 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{Id}
-
-\end{DoxyCode}
- as one of their template parameters. This is necessary to prevent the compiler from caching previous results. Do not fill in that parameter unless you know what you are doing. 
+In the implementation, some structs may have {\ttfamily Id} as one of their template parameters. This is necessary to prevent the compiler from caching previous results. Do not fill in that parameter unless you know what you are doing. 
 
 Definition in file \mbox{\hyperlink{stateful__meta_8hpp_source}{stateful\+\_\+meta.\+hpp}}.
 

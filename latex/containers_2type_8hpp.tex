@@ -21,3 +21,42 @@ This graph shows which files directly or indirectly include this file\+:
 \includegraphics[width=182pt]{containers_2type_8hpp__dep__incl}
 \end{center}
 \end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceutils}{utils}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Concepts}
+\begin{DoxyCompactItemize}
+\item 
+concept \mbox{\hyperlink{conceptutils_1_1container__allocator}{utils\+::container\+\_\+allocator}}
+\begin{DoxyCompactList}\small\item\em Specifies if {\ttfamily T} is an allocator which can be used in a constructor of {\ttfamily C}. \end{DoxyCompactList}\item 
+concept \mbox{\hyperlink{conceptutils_1_1emplace__constructible}{utils\+::emplace\+\_\+constructible}}
+\begin{DoxyCompactList}\small\item\em C++ named requirements\+: {\itshape Emplace\+Constructible} \end{DoxyCompactList}\item 
+concept \mbox{\hyperlink{conceptutils_1_1emplace__constructible__into}{utils\+::emplace\+\_\+constructible\+\_\+into}}
+\item 
+concept \mbox{\hyperlink{conceptutils_1_1default__insertable}{utils\+::default\+\_\+insertable}}
+\begin{DoxyCompactList}\small\item\em C++ named requirements\+: {\itshape Default\+Insertable} \end{DoxyCompactList}\item 
+concept \mbox{\hyperlink{conceptutils_1_1default__insertable__into}{utils\+::default\+\_\+insertable\+\_\+into}}
+\item 
+concept \mbox{\hyperlink{conceptutils_1_1move__insertable}{utils\+::move\+\_\+insertable}}
+\begin{DoxyCompactList}\small\item\em C++ named requirements\+: {\itshape Move\+Insertable} \end{DoxyCompactList}\item 
+concept \mbox{\hyperlink{conceptutils_1_1move__insertable__into}{utils\+::move\+\_\+insertable\+\_\+into}}
+\item 
+concept \mbox{\hyperlink{conceptutils_1_1copy__insertable}{utils\+::copy\+\_\+insertable}}
+\begin{DoxyCompactList}\small\item\em C++ named requirements\+: {\itshape Copy\+Insertable} \end{DoxyCompactList}\item 
+concept \mbox{\hyperlink{conceptutils_1_1copy__insertable__into}{utils\+::copy\+\_\+insertable\+\_\+into}}
+\item 
+concept \mbox{\hyperlink{conceptutils_1_1erasable}{utils\+::erasable}}
+\begin{DoxyCompactList}\small\item\em C++ named requirements\+: {\itshape Erasable} \end{DoxyCompactList}\item 
+concept \mbox{\hyperlink{conceptutils_1_1erasable__from}{utils\+::erasable\+\_\+from}}
+\item 
+concept \mbox{\hyperlink{conceptutils_1_1container__three__way__comparable}{utils\+::container\+\_\+three\+\_\+way\+\_\+comparable}}
+\begin{DoxyCompactList}\small\item\em Precondition of optional container requirements. \end{DoxyCompactList}\item 
+concept \mbox{\hyperlink{conceptutils_1_1searchable__in}{utils\+::searchable\+\_\+in}}
+\begin{DoxyCompactList}\small\item\em Checks if {\ttfamily Key} can be used to query {\ttfamily C}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename C , searchable\+\_\+in$<$ C $>$ Key$>$ }\\constexpr decltype(auto) \mbox{\hyperlink{namespaceutils_afb8127674294a339f6ccc7bbcd1640da}{utils\+::make\+\_\+search\+\_\+key}} (const Key \&key)
+\begin{DoxyCompactList}\small\item\em Make a search key for container {\ttfamily C} from {\ttfamily Key}, converting if necessary. \end{DoxyCompactList}\end{DoxyCompactItemize}

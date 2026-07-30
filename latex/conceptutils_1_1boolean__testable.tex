@@ -1,0 +1,27 @@
+\hypertarget{conceptutils_1_1boolean__testable}{}\doxysection{utils\+::boolean\+\_\+testable Concept Reference}
+\label{conceptutils_1_1boolean__testable}\index{utils::boolean\_testable@{utils::boolean\_testable}}
+
+
+C++ standard exposition-\/only concept\+: {\itshape boolean-\/testable}.  
+
+
+
+
+{\ttfamily \#include $<$type.\+hpp$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} B>}
+\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1boolean__testable}{utils::boolean\_testable}} =  detail::boolean\_testable\_impl<B> \&\& \textcolor{keyword}{requires} (B\&\& b) \{}
+\DoxyCodeLine{        \{ !std::forward<B>(b) \} -\/> detail::boolean\_testable\_impl;}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Detailed Description}
+C++ standard exposition-\/only concept\+: {\itshape boolean-\/testable}. 
+
+Definition at line \mbox{\hyperlink{type_8hpp_source_l00154}{154}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
+

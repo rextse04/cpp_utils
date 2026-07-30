@@ -1,0 +1,39 @@
+\hypertarget{conceptutils_1_1container__three__way__comparable}{}\doxysection{utils\+::container\+\_\+three\+\_\+way\+\_\+comparable Concept Reference}
+\label{conceptutils_1_1container__three__way__comparable}\index{utils::container\_three\_way\_comparable@{utils::container\_three\_way\_comparable}}
+
+
+Precondition of optional container requirements.  
+
+
+
+
+{\ttfamily \#include $<$type.\+hpp$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} C>}
+\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1container__three__way__comparable}{utils::container\_three\_way\_comparable}} =  (}
+\DoxyCodeLine{        std::three\_way\_comparable<typename C::value\_type> ||}
+\DoxyCodeLine{        \textcolor{keyword}{requires} (\textcolor{keyword}{typename} C::value\_type t, \textcolor{keyword}{const} \textcolor{keyword}{typename} C::value\_type ct) \{}
+\DoxyCodeLine{            \{ t < t \} -\/> boolean\_testable;}
+\DoxyCodeLine{            \{ t < ct \} -\/> boolean\_testable;}
+\DoxyCodeLine{            \{ ct < t \} -\/> boolean\_testable;}
+\DoxyCodeLine{            \{ ct < ct \} -\/> boolean\_testable;}
+\DoxyCodeLine{        \})}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Detailed Description}
+Precondition of optional container requirements. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em C} & {\itshape Container} \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line \mbox{\hyperlink{containers_2type_8hpp_source_l00073}{73}} of file \mbox{\hyperlink{containers_2type_8hpp_source}{type.\+hpp}}.
+

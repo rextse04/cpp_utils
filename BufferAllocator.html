@@ -122,7 +122,7 @@ Notations</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>c</code>   </td><td class="markdownTableBodyNone">A (non-cv-qualified) object of type <code>C</code>    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>cc</code>   </td><td class="markdownTableBodyNone">A potentially const-qualified object of type <code>C</code>.    </td></tr>
+<td class="markdownTableBodyNone"><code>cc</code>   </td><td class="markdownTableBodyNone">A potentially const-qualified object of type <code>C</code>    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>buf</code>   </td><td class="markdownTableBodyNone">An <code>std::byte</code> pointer to a contiguous block of memory    </td></tr>
 <tr class="markdownTableRowEven">
@@ -130,9 +130,9 @@ Notations</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>n</code>   </td><td class="markdownTableBodyNone">A value of type <code>AT::size_type</code>    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>p</code>   </td><td class="markdownTableBodyNone">A value of type <code>P</code> obtained from a call to <code>AT::allocate</code>.    </td></tr>
+<td class="markdownTableBodyNone"><code>p</code>   </td><td class="markdownTableBodyNone">A value of type <code>P</code> obtained from a call to <code>AT::allocate</code>    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>cvp</code>   </td><td class="markdownTableBodyNone">A value of type <code>AT::const_void_pointer</code> obtained by conversion from <code>p</code>.   </td></tr>
+<td class="markdownTableBodyNone"><code>cvp</code>   </td><td class="markdownTableBodyNone">A value of type <code>AT::const_void_pointer</code> obtained by conversion from <code>p</code>   </td></tr>
 </table>
 <h2><a class="anchor" id="autotoc_md2"></a>
 Supported Operations</h2>
@@ -141,7 +141,7 @@ Supported Operations</h2>
 <th>Expression</th><th>Return Type</th><th>Semantics </th></tr>
 <tr>
 <td><span style="color:green">(for <em>SynchronizedBufferAllocator</em>)</span><br  />
- <code>A::synchronized</code>  </td><td>bool </td><td>Must be <code>true</code>.  </td></tr>
+ <code>A::synchronized</code>  </td><td><code>bool</code> </td><td>Must be <code>true</code>.  </td></tr>
 <tr>
 <td><span style="color:green">(for <em>ConvertibleBufferAllocator</em>)</span><br  />
  <code>A::template rebind&lt;U, false&gt;::other</code>  </td><td><code>C</code> </td><td><code>C::template rebind&lt;T, true&gt;::other</code> must be the same as <code>A</code>.  </td></tr>

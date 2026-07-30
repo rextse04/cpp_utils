@@ -1,0 +1,25 @@
+\hypertarget{conceptutils_1_1emplace__constructible__into}{}\doxysection{utils\+::emplace\+\_\+constructible\+\_\+into Concept Reference}
+\label{conceptutils_1_1emplace__constructible__into}\index{utils::emplace\_constructible\_into@{utils::emplace\_constructible\_into}}
+
+
+{\ttfamily \#include $<$type.\+hpp$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} C, \textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1emplace__constructible__into}{utils::emplace\_constructible\_into}} =  \mbox{\hyperlink{conceptutils_1_1emplace__constructible}{emplace\_constructible}}<\textcolor{keyword}{typename} C::value\_type, \textcolor{keyword}{typename} C::allocator\_type, Args...>}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Detailed Description}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em C} & {\itshape Allocator\+Aware\+Container} \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line \mbox{\hyperlink{containers_2type_8hpp_source_l00026}{26}} of file \mbox{\hyperlink{containers_2type_8hpp_source}{type.\+hpp}}.
+

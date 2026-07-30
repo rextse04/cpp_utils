@@ -1,0 +1,4 @@
+<map id="utils::unique_resource&lt; T, Sync, Semaphore, SharedMutex &gt;" name="utils::unique_resource&lt; T, Sync, Semaphore, SharedMutex &gt;">
+<area shape="rect" id="node1" title="A user&#45;provided resource that is capable of limiting and synchronizing access to it." alt="" coords="17,109,172,165"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,184,61"/>
+</map>

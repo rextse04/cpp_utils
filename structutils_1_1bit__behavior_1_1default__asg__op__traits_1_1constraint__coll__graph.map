@@ -1,0 +1,4 @@
+<map id="utils::bit_behavior::default_asg_op_traits::constraint&lt; Self, A, B &gt;" name="utils::bit_behavior::default_asg_op_traits::constraint&lt; Self, A, B &gt;">
+<area shape="rect" id="node1" title="a @= b passes constraint if and only if a is an lvalue reference and a and b have the same width." alt="" coords="264,27,427,83"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,216,105"/>
+</map>

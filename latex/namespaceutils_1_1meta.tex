@@ -1,0 +1,543 @@
+\hypertarget{namespaceutils_1_1meta}{}\doxysection{utils\+::meta Namespace Reference}
+\label{namespaceutils_1_1meta}\index{utils::meta@{utils::meta}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1actual__index}{actual\+\_\+index}}
+\begin{DoxyCompactList}\small\item\em Calculates a normalized index (in $ [0, N)$) from a possibly negative index {\ttfamily Idx} and a tuple-\/like type {\ttfamily Tuple} of size {\ttfamily N}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1at}{at}}
+\begin{DoxyCompactList}\small\item\em Similar to {\ttfamily std\+::tuple\+\_\+element} but also accepts negative {\ttfamily Idx}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1bind__back}{bind\+\_\+back}}
+\begin{DoxyCompactList}\small\item\em Binds template arguments to the back of a {\ttfamily Trait} template. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1bind__front}{bind\+\_\+front}}
+\begin{DoxyCompactList}\small\item\em Binds template arguments to the front of a {\ttfamily Trait} template. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1concat}{concat}}
+\begin{DoxyCompactList}\small\item\em Concatenate multiple tuple-\/like types into a single tuple type. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classutils_1_1meta_1_1const__var}{const\+\_\+var}}
+\begin{DoxyCompactList}\small\item\em Read by calling {\ttfamily get(\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{const\+\_\+var}}\texorpdfstring{$<$}{<}Var\texorpdfstring{$>$}{>}\{\})}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1contained__in}{contained\+\_\+in}}
+\begin{DoxyCompactList}\small\item\em Checks if there exists an index {\ttfamily Idx} in $ [\text{Begin},\text{End})$ such that {\ttfamily Pred\+Trait\texorpdfstring{$<$}{<}at\+\_\+t\texorpdfstring{$<$}{<}Tuple, Idx\texorpdfstring{$>$}{>}, T\texorpdfstring{$>$}{>}\+::value} is true. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1contained__in__trait}{contained\+\_\+in\+\_\+trait}}
+\item 
+class \mbox{\hyperlink{classutils_1_1meta_1_1define}{define}}
+\begin{DoxyCompactList}\small\item\em Declare a {\ttfamily const-\/var} by instantiating the template. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1erase}{erase}}
+\begin{DoxyCompactList}\small\item\em Erases elements from a tuple type {\ttfamily Tuple} in the range \mbox{[}{\ttfamily Begin}, {\ttfamily End}). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1extract}{extract}}
+\begin{DoxyCompactList}\small\item\em Extracts the template arguments from a template instantiation. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4}{extract$<$ Tmpl$<$ Args... $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1infer}{infer}}
+\begin{DoxyCompactList}\small\item\em Converts an {\ttfamily Erased\+Result} to a {\ttfamily Result}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1insert}{insert}}
+\begin{DoxyCompactList}\small\item\em Inserts a tuple-\/like type {\ttfamily Inserted} into a tuple type {\ttfamily Tuple} at index {\ttfamily Idx}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1is__tuple}{is\+\_\+tuple}}
+\begin{DoxyCompactList}\small\item\em Checks if {\ttfamily T} is a (real) tuple. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1is__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4}{is\+\_\+tuple$<$ std\+::tuple$<$ Ts... $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1make__tuple}{make\+\_\+tuple}}
+\begin{DoxyCompactList}\small\item\em Makes a tuple from a {\ttfamily tuple-\/like} type {\ttfamily T}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1map}{map}}
+\begin{DoxyCompactList}\small\item\em Applies a {\ttfamily Trait} template to corresponding elements across one or more tuple types. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1pack}{pack}}
+\begin{DoxyCompactList}\small\item\em Wraps a parameter pack into a tuple type. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1product}{product}}
+\begin{DoxyCompactList}\small\item\em Computes the product of {\ttfamily value} members from {\ttfamily Value\+Result} types. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1product__t}{product\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Helper template for when you want a product type to be a variable name. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1rebind}{rebind}}
+\begin{DoxyCompactList}\small\item\em Rebinds a template instance {\ttfamily T} to {\ttfamily Args}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1rebind_3_01T_00_01Args_8_8_8_01_4}{rebind$<$ T, Args... $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1reduce}{reduce}}
+\begin{DoxyCompactList}\small\item\em Applies a {\ttfamily Trait} template to all elements of a tuple, producing a single result. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1reduce_3_01Trait_00_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4}{reduce$<$ Trait, std\+::tuple$<$ Ts... $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1replace}{replace}}
+\begin{DoxyCompactList}\small\item\em Replaces the element at index {\ttfamily Idx} in a tuple type {\ttfamily Tuple} with type {\ttfamily T}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1search}{search}}
+\begin{DoxyCompactList}\small\item\em Finds the first index {\ttfamily Idx} in \mbox{[} {\ttfamily Begin} , {\ttfamily End} ) such that {\ttfamily Pred\+Trait\texorpdfstring{$<$}{<}at\+\_\+t\texorpdfstring{$<$}{<}Tuple, Idx\texorpdfstring{$>$}{>}, T\texorpdfstring{$>$}{>}\+::value} is true. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1search_3_01Tuple_00_01T_00_01PredTrait_00_01End_00_01End_01_4}{search$<$ Tuple, T, Pred\+Trait, End, End $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1search__trait}{search\+\_\+trait}}
+\item 
+class \mbox{\hyperlink{classutils_1_1meta_1_1set}{set}}
+\begin{DoxyCompactList}\small\item\em Sets {\ttfamily Var} to {\ttfamily Value}. {\ttfamily Version} is automatically incremented at every instantiation of this template. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1slice}{slice}}
+\begin{DoxyCompactList}\small\item\em Extracts a slice from a tuple type from index {\ttfamily Begin} to index {\ttfamily End} (exclusive). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1smart__pack}{smart\+\_\+pack}}
+\begin{DoxyCompactList}\small\item\em Wraps a parameter pack into a tuple type, unless exactly one tuple is given. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1smart__pack_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4}{smart\+\_\+pack$<$ std\+::tuple$<$ Ts... $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1subset__of}{subset\+\_\+of}}
+\begin{DoxyCompactList}\small\item\em Checks if every type in {\ttfamily Small\+Tuple} is contained in {\ttfamily Big\+Tuple}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1meta_1_1sum}{sum}}
+\begin{DoxyCompactList}\small\item\em Computes the sum of {\ttfamily value} members from {\ttfamily Value\+Result} types. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classutils_1_1meta_1_1var}{var}}
+\begin{DoxyCompactList}\small\item\em Read by calling {\ttfamily get(var\texorpdfstring{$<$}{<}Var, Version\texorpdfstring{$>$}{>}\{\})}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Concepts}
+\begin{DoxyCompactItemize}
+\item 
+concept \mbox{\hyperlink{conceptutils_1_1meta_1_1tuple__like}{tuple\+\_\+like}}
+\begin{DoxyCompactList}\small\item\em C++ exposition-\/only concept\+: {\ttfamily tuple-\/like}. \end{DoxyCompactList}\item 
+concept \mbox{\hyperlink{conceptutils_1_1meta_1_1pair__like}{pair\+\_\+like}}
+\begin{DoxyCompactList}\small\item\em C++ exposition-\/only concept\+: {\ttfamily pair-\/like}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\using \mbox{\hyperlink{namespaceutils_1_1meta_a9522a2e8902edd0be2270e5d9f505fa9}{pack\+\_\+t}} = \mbox{\hyperlink{structutils_1_1meta_1_1pack}{pack}}$<$ Ts... $>$\+::type
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\using \mbox{\hyperlink{namespaceutils_1_1meta_a2c8c5ffdfd2792da0ed5c03737d910e8}{smart\+\_\+pack\+\_\+t}} = \mbox{\hyperlink{structutils_1_1meta_1_1smart__pack}{smart\+\_\+pack}}$<$ Ts... $>$\+::type
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$tuple\+\_\+like T$>$ }\\using \mbox{\hyperlink{namespaceutils_1_1meta_a7f3e3f258ae180aaf3a6cf1a9b9d45e6}{make\+\_\+tuple\+\_\+t}} = \mbox{\hyperlink{structutils_1_1meta_1_1make__tuple}{make\+\_\+tuple}}$<$ T $>$\+::type
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx$>$ }\\using \mbox{\hyperlink{namespaceutils_1_1meta_a61e11c441feed9dbfea860435a6745d6}{at\+\_\+t}} = \mbox{\hyperlink{structutils_1_1meta_1_1at}{at}}$<$ Tuple, Idx $>$\+::type
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$tuple\+\_\+like... Tuples$>$ }\\using \mbox{\hyperlink{namespaceutils_1_1meta_afed300336aba4802fc3481ef2944a880}{concat\+\_\+t}} = \mbox{\hyperlink{structutils_1_1meta_1_1concat}{concat}}$<$ Tuples... $>$\+::type
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Begin = 0, std\+::ptrdiff\+\_\+t End = std\+::tuple\+\_\+size\+\_\+v$<$\+Tuple$>$$>$ }\\using \mbox{\hyperlink{namespaceutils_1_1meta_a38abc3ef8e35eaf454eea88f36750bbc}{slice\+\_\+t}} = \mbox{\hyperlink{structutils_1_1meta_1_1slice}{slice}}$<$ Tuple, Begin, End $>$\+::type
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx, tuple\+\_\+like Inserted$>$ }\\using \mbox{\hyperlink{namespaceutils_1_1meta_a74db5bbf8f178b4db63af53a7f59a002}{insert\+\_\+t}} = \mbox{\hyperlink{structutils_1_1meta_1_1insert}{insert}}$<$ Tuple, Idx, Inserted $>$\+::type
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Begin, std\+::ptrdiff\+\_\+t End$>$ }\\using \mbox{\hyperlink{namespaceutils_1_1meta_a57e2e26a9ed32b0384df07a98f53b377}{erase\+\_\+t}} = \mbox{\hyperlink{structutils_1_1meta_1_1erase}{erase}}$<$ Tuple, Begin, End $>$\+::type
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx, typename T $>$ }\\using \mbox{\hyperlink{namespaceutils_1_1meta_a44e3856c9561e053226ad2c473572a43}{replace\+\_\+t}} = \mbox{\hyperlink{structutils_1_1meta_1_1replace}{replace}}$<$ Tuple, Idx, T $>$\+::type
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Erased\+Result $>$ }\\using \mbox{\hyperlink{namespaceutils_1_1meta_a589006341bea1c7475635f68058edb53}{infer\+\_\+t}} = \mbox{\hyperlink{structutils_1_1meta_1_1infer}{infer}}$<$ Erased\+Result $>$\+::type
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$template$<$ typename... $>$ typename Trait, tuple\+\_\+like Tuple, tuple\+\_\+like... Tuples$>$ }\\using \mbox{\hyperlink{namespaceutils_1_1meta_a3b38ac9e969ec6ebdba7cc79b96e7417}{map\+\_\+t}} = \mbox{\hyperlink{structutils_1_1meta_1_1map}{map}}$<$ Trait, Tuple, Tuples... $>$\+::type
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceutils_1_1meta_acd07985a63eb37381aaa77c70f6ea190}{extract\+\_\+t}} = \mbox{\hyperlink{structutils_1_1meta_1_1extract}{extract}}$<$ T $>$\+::type
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename... Args$>$ }\\using \mbox{\hyperlink{namespaceutils_1_1meta_afe8efef1673daf4f8ce44537acf10a3b}{rebind\+\_\+t}} = \mbox{\hyperlink{structutils_1_1meta_1_1rebind}{rebind}}$<$ T, Args... $>$\+::type
+\end{DoxyCompactItemize}
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Var , auto  = get(utils\+::meta\+::const\+\_\+var$<$\+Var$>$\{\})$>$ }\\consteval bool \mbox{\hyperlink{namespaceutils_1_1meta_a663523ca9759fbbba5c59040d339416c}{exists}} (\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{const\+\_\+var}}$<$ Var $>$)
+\begin{DoxyCompactList}\small\item\em Checks the existence of a {\ttfamily \mbox{\hyperlink{classutils_1_1meta_1_1const__var}{const\+\_\+var}}}. \end{DoxyCompactList}\item 
+consteval bool \mbox{\hyperlink{namespaceutils_1_1meta_a7ecd2bb074afc4484c62aa40fb97ac97}{exists}} (...)
+\begin{DoxyCompactList}\small\item\em Fallback. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Var  = void, bool Increment = false, std\+::uintmax\+\_\+t Value = 0, typename Id  = decltype(\mbox{[}$\,$\mbox{]}\{\})$>$ }\\consteval std\+::uintmax\+\_\+t \mbox{\hyperlink{namespaceutils_1_1meta_ad02c270667465805004b1f692dfb6cf0}{get\+\_\+counter}} ()
+\begin{DoxyCompactList}\small\item\em A compile-\/time counter. An undeclared counter is defined to have the value 0. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Var , std\+::uintmax\+\_\+t Version, auto  = get(var$<$\+Var, Version$>$\{\})$>$ }\\constexpr bool \mbox{\hyperlink{namespaceutils_1_1meta_ad2935ed0730cf850927f58cdf5fa8fdf}{exists}} (\mbox{\hyperlink{classutils_1_1meta_1_1var}{var}}$<$ Var, Version $>$)
+\begin{DoxyCompactList}\small\item\em Checks the existence of a {\ttfamily var}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\constexpr bool \mbox{\hyperlink{namespaceutils_1_1meta_ad2354777e112932691eea7de4623cbf0}{is\+\_\+tuple\+\_\+v}} = \mbox{\hyperlink{structutils_1_1meta_1_1is__tuple}{is\+\_\+tuple}}$<$T$>$\+::value
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx$>$ }\\constexpr std\+::size\+\_\+t \mbox{\hyperlink{namespaceutils_1_1meta_a4d133c7490f073188fc7eb130261cbd2}{actual\+\_\+index\+\_\+v}} = \mbox{\hyperlink{structutils_1_1meta_1_1actual__index}{actual\+\_\+index}}$<$Tuple, Idx$>$\+::value
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$tuple\+\_\+like Tuple, typename T , template$<$ typename, typename $>$ typename Pred\+Trait = std\+::is\+\_\+same$>$ }\\constexpr std\+::size\+\_\+t \mbox{\hyperlink{namespaceutils_1_1meta_aeb4f807ff8f6a11b97c26fb852d91b16}{search\+\_\+v}} = \mbox{\hyperlink{structutils_1_1meta_1_1search}{search}}$<$Tuple, T, Pred\+Trait$>$\+::value
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$tuple\+\_\+like Tuple, typename T , template$<$ typename, typename $>$ typename Pred\+Trait = std\+::is\+\_\+same$>$ }\\constexpr bool \mbox{\hyperlink{namespaceutils_1_1meta_a1047a3fe70ce04f9726a0e5d3fb74acd}{contained\+\_\+in\+\_\+v}} = \mbox{\hyperlink{structutils_1_1meta_1_1contained__in}{contained\+\_\+in}}$<$Tuple, T, Pred\+Trait$>$\+::value
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Value\+Results$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_1_1meta_aa6f94b0098e74cddc4241037e2a90844}{sum\+\_\+v}} = \mbox{\hyperlink{structutils_1_1meta_1_1sum}{sum}}$<$Value\+Results...$>$\+::value
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Value\+Results$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_1_1meta_a9a93c684aeb7e2311a64f82184e818e0}{product\+\_\+v}} = \mbox{\hyperlink{structutils_1_1meta_1_1product}{product}}$<$Value\+Results...$>$\+::value
+\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$tuple\+\_\+like Small\+Tuple, tuple\+\_\+like Big\+Tuple$>$ }\\constexpr bool \mbox{\hyperlink{namespaceutils_1_1meta_ae9e1e125419fe26992d7565a1c7f2045}{subset\+\_\+of\+\_\+v}} = \mbox{\hyperlink{structutils_1_1meta_1_1subset__of}{subset\+\_\+of}}$<$Small\+Tuple, Big\+Tuple$>$\+::value
+\end{DoxyCompactItemize}
+
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$template$<$ typename... $>$ typename Trait, tuple\+\_\+like T$>$ }\\using \mbox{\hyperlink{namespaceutils_1_1meta_ac678341b60759542f0fc5edb1c4f20f1}{reduce\+\_\+t}} = \mbox{\hyperlink{structutils_1_1meta_1_1reduce}{reduce}}$<$ Trait, T $>$\+::type
+\item 
+{\footnotesize template$<$template$<$ typename... $>$ typename Trait, tuple\+\_\+like T$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_1_1meta_a89bb8d8a2a70515ade89987c00ae2ba8}{reduce\+\_\+v}} = \mbox{\hyperlink{structutils_1_1meta_1_1reduce}{reduce}}$<$Trait, T$>$\+::value
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Useful utilities for template metaprogramming. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespaceutils_1_1meta_a61e11c441feed9dbfea860435a6745d6}\label{namespaceutils_1_1meta_a61e11c441feed9dbfea860435a6745d6}} 
+\index{utils::meta@{utils::meta}!at\_t@{at\_t}}
+\index{at\_t@{at\_t}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{at\_t}{at\_t}}
+{\footnotesize\ttfamily template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx$>$ \\
+using \mbox{\hyperlink{namespaceutils_1_1meta_a61e11c441feed9dbfea860435a6745d6}{utils\+::meta\+::at\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1meta_1_1at}{at}}$<$Tuple, Idx$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00082}{82}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_afed300336aba4802fc3481ef2944a880}\label{namespaceutils_1_1meta_afed300336aba4802fc3481ef2944a880}} 
+\index{utils::meta@{utils::meta}!concat\_t@{concat\_t}}
+\index{concat\_t@{concat\_t}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{concat\_t}{concat\_t}}
+{\footnotesize\ttfamily template$<$tuple\+\_\+like... Tuples$>$ \\
+using \mbox{\hyperlink{namespaceutils_1_1meta_afed300336aba4802fc3481ef2944a880}{utils\+::meta\+::concat\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1meta_1_1concat}{concat}}$<$Tuples...$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00123}{123}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_a57e2e26a9ed32b0384df07a98f53b377}\label{namespaceutils_1_1meta_a57e2e26a9ed32b0384df07a98f53b377}} 
+\index{utils::meta@{utils::meta}!erase\_t@{erase\_t}}
+\index{erase\_t@{erase\_t}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{erase\_t}{erase\_t}}
+{\footnotesize\ttfamily template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Begin, std\+::ptrdiff\+\_\+t End$>$ \\
+using \mbox{\hyperlink{namespaceutils_1_1meta_a57e2e26a9ed32b0384df07a98f53b377}{utils\+::meta\+::erase\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1meta_1_1erase}{erase}}$<$Tuple, Begin, End$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00170}{170}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_acd07985a63eb37381aaa77c70f6ea190}\label{namespaceutils_1_1meta_acd07985a63eb37381aaa77c70f6ea190}} 
+\index{utils::meta@{utils::meta}!extract\_t@{extract\_t}}
+\index{extract\_t@{extract\_t}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{extract\_t}{extract\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{namespaceutils_1_1meta_acd07985a63eb37381aaa77c70f6ea190}{utils\+::meta\+::extract\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1meta_1_1extract}{extract}}$<$T$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00269}{269}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_a589006341bea1c7475635f68058edb53}\label{namespaceutils_1_1meta_a589006341bea1c7475635f68058edb53}} 
+\index{utils::meta@{utils::meta}!infer\_t@{infer\_t}}
+\index{infer\_t@{infer\_t}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{infer\_t}{infer\_t}}
+{\footnotesize\ttfamily template$<$typename Erased\+Result $>$ \\
+using \mbox{\hyperlink{namespaceutils_1_1meta_a589006341bea1c7475635f68058edb53}{utils\+::meta\+::infer\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1meta_1_1infer}{infer}}$<$Erased\+Result$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00193}{193}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_a74db5bbf8f178b4db63af53a7f59a002}\label{namespaceutils_1_1meta_a74db5bbf8f178b4db63af53a7f59a002}} 
+\index{utils::meta@{utils::meta}!insert\_t@{insert\_t}}
+\index{insert\_t@{insert\_t}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{insert\_t}{insert\_t}}
+{\footnotesize\ttfamily template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx, tuple\+\_\+like Inserted$>$ \\
+using \mbox{\hyperlink{namespaceutils_1_1meta_a74db5bbf8f178b4db63af53a7f59a002}{utils\+::meta\+::insert\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1meta_1_1insert}{insert}}$<$Tuple, Idx, Inserted$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00160}{160}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_a7f3e3f258ae180aaf3a6cf1a9b9d45e6}\label{namespaceutils_1_1meta_a7f3e3f258ae180aaf3a6cf1a9b9d45e6}} 
+\index{utils::meta@{utils::meta}!make\_tuple\_t@{make\_tuple\_t}}
+\index{make\_tuple\_t@{make\_tuple\_t}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{make\_tuple\_t}{make\_tuple\_t}}
+{\footnotesize\ttfamily template$<$tuple\+\_\+like T$>$ \\
+using \mbox{\hyperlink{namespaceutils_1_1meta_a7f3e3f258ae180aaf3a6cf1a9b9d45e6}{utils\+::meta\+::make\+\_\+tuple\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1meta_1_1make__tuple}{make\+\_\+tuple}}$<$T$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00063}{63}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_a3b38ac9e969ec6ebdba7cc79b96e7417}\label{namespaceutils_1_1meta_a3b38ac9e969ec6ebdba7cc79b96e7417}} 
+\index{utils::meta@{utils::meta}!map\_t@{map\_t}}
+\index{map\_t@{map\_t}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{map\_t}{map\_t}}
+{\footnotesize\ttfamily template$<$template$<$ typename... $>$ typename Trait, tuple\+\_\+like Tuple, tuple\+\_\+like... Tuples$>$ \\
+using \mbox{\hyperlink{namespaceutils_1_1meta_a3b38ac9e969ec6ebdba7cc79b96e7417}{utils\+::meta\+::map\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1meta_1_1map}{map}}$<$Trait, Tuple, Tuples...$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00218}{218}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_a9522a2e8902edd0be2270e5d9f505fa9}\label{namespaceutils_1_1meta_a9522a2e8902edd0be2270e5d9f505fa9}} 
+\index{utils::meta@{utils::meta}!pack\_t@{pack\_t}}
+\index{pack\_t@{pack\_t}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{pack\_t}{pack\_t}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+using \mbox{\hyperlink{namespaceutils_1_1meta_a9522a2e8902edd0be2270e5d9f505fa9}{utils\+::meta\+::pack\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1meta_1_1pack}{pack}}$<$Ts...$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00037}{37}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_afe8efef1673daf4f8ce44537acf10a3b}\label{namespaceutils_1_1meta_afe8efef1673daf4f8ce44537acf10a3b}} 
+\index{utils::meta@{utils::meta}!rebind\_t@{rebind\_t}}
+\index{rebind\_t@{rebind\_t}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{rebind\_t}{rebind\_t}}
+{\footnotesize\ttfamily template$<$typename T , typename... Args$>$ \\
+using \mbox{\hyperlink{namespaceutils_1_1meta_afe8efef1673daf4f8ce44537acf10a3b}{utils\+::meta\+::rebind\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1meta_1_1rebind}{rebind}}$<$T, Args...$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00286}{286}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_ac678341b60759542f0fc5edb1c4f20f1}\label{namespaceutils_1_1meta_ac678341b60759542f0fc5edb1c4f20f1}} 
+\index{utils::meta@{utils::meta}!reduce\_t@{reduce\_t}}
+\index{reduce\_t@{reduce\_t}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{reduce\_t}{reduce\_t}}
+{\footnotesize\ttfamily template$<$template$<$ typename... $>$ typename Trait, tuple\+\_\+like T$>$ \\
+using \mbox{\hyperlink{namespaceutils_1_1meta_ac678341b60759542f0fc5edb1c4f20f1}{utils\+::meta\+::reduce\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1meta_1_1reduce}{reduce}}$<$Trait, T$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00230}{230}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_a44e3856c9561e053226ad2c473572a43}\label{namespaceutils_1_1meta_a44e3856c9561e053226ad2c473572a43}} 
+\index{utils::meta@{utils::meta}!replace\_t@{replace\_t}}
+\index{replace\_t@{replace\_t}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{replace\_t}{replace\_t}}
+{\footnotesize\ttfamily template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx, typename T $>$ \\
+using \mbox{\hyperlink{namespaceutils_1_1meta_a44e3856c9561e053226ad2c473572a43}{utils\+::meta\+::replace\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1meta_1_1replace}{replace}}$<$Tuple, Idx, T$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00180}{180}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_a38abc3ef8e35eaf454eea88f36750bbc}\label{namespaceutils_1_1meta_a38abc3ef8e35eaf454eea88f36750bbc}} 
+\index{utils::meta@{utils::meta}!slice\_t@{slice\_t}}
+\index{slice\_t@{slice\_t}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{slice\_t}{slice\_t}}
+{\footnotesize\ttfamily template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Begin = 0, std\+::ptrdiff\+\_\+t End = std\+::tuple\+\_\+size\+\_\+v$<$\+Tuple$>$$>$ \\
+using \mbox{\hyperlink{namespaceutils_1_1meta_a38abc3ef8e35eaf454eea88f36750bbc}{utils\+::meta\+::slice\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1meta_1_1slice}{slice}}$<$Tuple, Begin, End$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00150}{150}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_a2c8c5ffdfd2792da0ed5c03737d910e8}\label{namespaceutils_1_1meta_a2c8c5ffdfd2792da0ed5c03737d910e8}} 
+\index{utils::meta@{utils::meta}!smart\_pack\_t@{smart\_pack\_t}}
+\index{smart\_pack\_t@{smart\_pack\_t}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{smart\_pack\_t}{smart\_pack\_t}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+using \mbox{\hyperlink{namespaceutils_1_1meta_a2c8c5ffdfd2792da0ed5c03737d910e8}{utils\+::meta\+::smart\+\_\+pack\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1meta_1_1smart__pack}{smart\+\_\+pack}}$<$Ts...$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00047}{47}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceutils_1_1meta_a7ecd2bb074afc4484c62aa40fb97ac97}\label{namespaceutils_1_1meta_a7ecd2bb074afc4484c62aa40fb97ac97}} 
+\index{utils::meta@{utils::meta}!exists@{exists}}
+\index{exists@{exists}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{exists()}{exists()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily consteval bool utils\+::meta\+::exists (\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Fallback. 
+
+
+
+Definition at line \mbox{\hyperlink{stateful__meta_8hpp_source_l00044}{44}} of file \mbox{\hyperlink{stateful__meta_8hpp_source}{stateful\+\_\+meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_a663523ca9759fbbba5c59040d339416c}\label{namespaceutils_1_1meta_a663523ca9759fbbba5c59040d339416c}} 
+\index{utils::meta@{utils::meta}!exists@{exists}}
+\index{exists@{exists}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{exists()}{exists()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Var , auto  = get(utils\+::meta\+::const\+\_\+var$<$\+Var$>$\{\})$>$ \\
+consteval bool utils\+::meta\+::exists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{const\+\_\+var}}$<$ Var $>$}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks the existence of a {\ttfamily \mbox{\hyperlink{classutils_1_1meta_1_1const__var}{const\+\_\+var}}}. 
+
+
+
+Definition at line \mbox{\hyperlink{stateful__meta_8hpp_source_l00042}{42}} of file \mbox{\hyperlink{stateful__meta_8hpp_source}{stateful\+\_\+meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_ad2935ed0730cf850927f58cdf5fa8fdf}\label{namespaceutils_1_1meta_ad2935ed0730cf850927f58cdf5fa8fdf}} 
+\index{utils::meta@{utils::meta}!exists@{exists}}
+\index{exists@{exists}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{exists()}{exists()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Var , std\+::uintmax\+\_\+t Version, auto  = get(var$<$\+Var, Version$>$\{\})$>$ \\
+constexpr bool utils\+::meta\+::exists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1meta_1_1var}{var}}$<$ Var, Version $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Checks the existence of a {\ttfamily var}. 
+
+
+
+Definition at line \mbox{\hyperlink{stateful__meta_8hpp_source_l00081}{81}} of file \mbox{\hyperlink{stateful__meta_8hpp_source}{stateful\+\_\+meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_ad02c270667465805004b1f692dfb6cf0}\label{namespaceutils_1_1meta_ad02c270667465805004b1f692dfb6cf0}} 
+\index{utils::meta@{utils::meta}!get\_counter@{get\_counter}}
+\index{get\_counter@{get\_counter}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{get\_counter()}{get\_counter()}}
+{\footnotesize\ttfamily template$<$typename Var  = void, bool Increment = false, std\+::uintmax\+\_\+t Value = 0, typename Id  = decltype(\mbox{[}$\,$\mbox{]}\{\})$>$ \\
+consteval std\+::uintmax\+\_\+t utils\+::meta\+::get\+\_\+counter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A compile-\/time counter. An undeclared counter is defined to have the value 0. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Increment} & whether to increment the counter after the read \\
+\hline
+{\em Value} & sets the value of the counter to the maximum of its original value and {\ttfamily Value} before the read \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line \mbox{\hyperlink{stateful__meta_8hpp_source_l00054}{54}} of file \mbox{\hyperlink{stateful__meta_8hpp_source}{stateful\+\_\+meta.\+hpp}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceutils_1_1meta_a4d133c7490f073188fc7eb130261cbd2}\label{namespaceutils_1_1meta_a4d133c7490f073188fc7eb130261cbd2}} 
+\index{utils::meta@{utils::meta}!actual\_index\_v@{actual\_index\_v}}
+\index{actual\_index\_v@{actual\_index\_v}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{actual\_index\_v}{actual\_index\_v}}
+{\footnotesize\ttfamily template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx$>$ \\
+constexpr std\+::size\+\_\+t utils\+::meta\+::actual\+\_\+index\+\_\+v = \mbox{\hyperlink{structutils_1_1meta_1_1actual__index}{actual\+\_\+index}}$<$Tuple, Idx$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00072}{72}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_a1047a3fe70ce04f9726a0e5d3fb74acd}\label{namespaceutils_1_1meta_a1047a3fe70ce04f9726a0e5d3fb74acd}} 
+\index{utils::meta@{utils::meta}!contained\_in\_v@{contained\_in\_v}}
+\index{contained\_in\_v@{contained\_in\_v}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{contained\_in\_v}{contained\_in\_v}}
+{\footnotesize\ttfamily template$<$tuple\+\_\+like Tuple, typename T , template$<$ typename, typename $>$ typename Pred\+Trait = std\+::is\+\_\+same$>$ \\
+constexpr bool utils\+::meta\+::contained\+\_\+in\+\_\+v = \mbox{\hyperlink{structutils_1_1meta_1_1contained__in}{contained\+\_\+in}}$<$Tuple, T, Pred\+Trait$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00111}{111}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_ad2354777e112932691eea7de4623cbf0}\label{namespaceutils_1_1meta_ad2354777e112932691eea7de4623cbf0}} 
+\index{utils::meta@{utils::meta}!is\_tuple\_v@{is\_tuple\_v}}
+\index{is\_tuple\_v@{is\_tuple\_v}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{is\_tuple\_v}{is\_tuple\_v}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr bool utils\+::meta\+::is\+\_\+tuple\+\_\+v = \mbox{\hyperlink{structutils_1_1meta_1_1is__tuple}{is\+\_\+tuple}}$<$T$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00021}{21}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_a9a93c684aeb7e2311a64f82184e818e0}\label{namespaceutils_1_1meta_a9a93c684aeb7e2311a64f82184e818e0}} 
+\index{utils::meta@{utils::meta}!product\_v@{product\_v}}
+\index{product\_v@{product\_v}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{product\_v}{product\_v}}
+{\footnotesize\ttfamily template$<$typename... Value\+Results$>$ \\
+constexpr auto utils\+::meta\+::product\+\_\+v = \mbox{\hyperlink{structutils_1_1meta_1_1product}{product}}$<$Value\+Results...$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00248}{248}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_a89bb8d8a2a70515ade89987c00ae2ba8}\label{namespaceutils_1_1meta_a89bb8d8a2a70515ade89987c00ae2ba8}} 
+\index{utils::meta@{utils::meta}!reduce\_v@{reduce\_v}}
+\index{reduce\_v@{reduce\_v}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{reduce\_v}{reduce\_v}}
+{\footnotesize\ttfamily template$<$template$<$ typename... $>$ typename Trait, tuple\+\_\+like T$>$ \\
+constexpr auto utils\+::meta\+::reduce\+\_\+v = \mbox{\hyperlink{structutils_1_1meta_1_1reduce}{reduce}}$<$Trait, T$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00232}{232}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_aeb4f807ff8f6a11b97c26fb852d91b16}\label{namespaceutils_1_1meta_aeb4f807ff8f6a11b97c26fb852d91b16}} 
+\index{utils::meta@{utils::meta}!search\_v@{search\_v}}
+\index{search\_v@{search\_v}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{search\_v}{search\_v}}
+{\footnotesize\ttfamily template$<$tuple\+\_\+like Tuple, typename T , template$<$ typename, typename $>$ typename Pred\+Trait = std\+::is\+\_\+same$>$ \\
+constexpr std\+::size\+\_\+t utils\+::meta\+::search\+\_\+v = \mbox{\hyperlink{structutils_1_1meta_1_1search}{search}}$<$Tuple, T, Pred\+Trait$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00098}{98}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_ae9e1e125419fe26992d7565a1c7f2045}\label{namespaceutils_1_1meta_ae9e1e125419fe26992d7565a1c7f2045}} 
+\index{utils::meta@{utils::meta}!subset\_of\_v@{subset\_of\_v}}
+\index{subset\_of\_v@{subset\_of\_v}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{subset\_of\_v}{subset\_of\_v}}
+{\footnotesize\ttfamily template$<$tuple\+\_\+like Small\+Tuple, tuple\+\_\+like Big\+Tuple$>$ \\
+constexpr bool utils\+::meta\+::subset\+\_\+of\+\_\+v = \mbox{\hyperlink{structutils_1_1meta_1_1subset__of}{subset\+\_\+of}}$<$Small\+Tuple, Big\+Tuple$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00317}{317}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceutils_1_1meta_aa6f94b0098e74cddc4241037e2a90844}\label{namespaceutils_1_1meta_aa6f94b0098e74cddc4241037e2a90844}} 
+\index{utils::meta@{utils::meta}!sum\_v@{sum\_v}}
+\index{sum\_v@{sum\_v}!utils::meta@{utils::meta}}
+\doxysubsubsection{\texorpdfstring{sum\_v}{sum\_v}}
+{\footnotesize\ttfamily template$<$typename... Value\+Results$>$ \\
+constexpr auto utils\+::meta\+::sum\+\_\+v = \mbox{\hyperlink{structutils_1_1meta_1_1sum}{sum}}$<$Value\+Results...$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00240}{240}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+

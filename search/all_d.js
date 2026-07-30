@@ -1,10 +1,14 @@
 var searchData=
 [
-  ['ranges_2ehpp_0',['ranges.hpp',['../ranges_8hpp.html',1,'']]],
-  ['reference_1',['reference',['../classutils_1_1pointer__iterator.html#a2e89ed88cc00093992f602a5af9dd5d9',1,'utils::pointer_iterator']]],
-  ['resourceallocator_2emd_2',['ResourceAllocator.md',['../ResourceAllocator_8md.html',1,'']]],
-  ['result_3',['result',['../structutils_1_1binary__op__traits_1_1result.html',1,'utils::binary_op_traits&lt; ResultTrait, ConstraintTrait &gt;::result&lt; Self, Other &gt;'],['../structutils_1_1unary__op__traits_1_1result.html',1,'utils::unary_op_traits&lt; ResultTrait &gt;::result&lt; Self &gt;']]],
-  ['result_5fof_4',['result_of',['../structutils_1_1result__of.html',1,'utils']]],
-  ['result_5fof_3c_20r_28args_2e_2e_2e_29_3e_5',['result_of&lt; R(Args...)&gt;',['../structutils_1_1result__of_3_01R_07Args_8_8_8_08_4.html',1,'utils']]],
-  ['result_5fof_5ft_6',['result_of_t',['../namespaceutils.html#aec2f7d8a4a6a70e231ae13dd1a18606a',1,'utils']]]
+  ['named_20requirement_3a_20_3ci_3ebufferallocator_3c_2fi_3e_0',['Named Requirement: &lt;i&gt;BufferAllocator&lt;/i&gt;',['../BufferAllocator.html',1,'named_reqs']]],
+  ['named_20requirement_3a_20_3ci_3eresourceallocator_3c_2fi_3e_1',['Named Requirement: &lt;i&gt;ResourceAllocator&lt;/i&gt;',['../ResourceAllocator.html',1,'named_reqs']]],
+  ['named_20requirements_2',['Named Requirements',['../named_reqs.html',1,'']]],
+  ['named_20requirements_3a_20_3ci_3eintegerbehaviorprofile_3c_2fi_3e_3',['Named Requirements: &lt;i&gt;IntegerBehaviorProfile&lt;/i&gt;',['../IntegerBehaviorProfile.html',1,'named_reqs']]],
+  ['named_20requirements_3a_20_3ci_3eoperatorfunctorset_3c_2fi_3e_4',['Named Requirements: &lt;i&gt;OperatorFunctorSet&lt;/i&gt;',['../OperatorFunctorSet.html',1,'named_reqs']]],
+  ['named_20requirements_3a_20_3ci_3eresult_3c_2fi_3e_5',['Named Requirements: &lt;i&gt;Result&lt;/i&gt;',['../Result.html',1,'named_reqs']]],
+  ['named_20requirements_3a_20_3ci_3etrait_3c_2fi_3e_6',['Named Requirements: &lt;i&gt;Trait&lt;/i&gt;',['../Trait.html',1,'named_reqs']]],
+  ['negate_7',['negate',['../structutils_1_1sign__op__functors.html#a23b80421abc526261ddbd2b9789e44e1',1,'utils::sign_op_functors']]],
+  ['noexcept_8',['noexcept',['../group__utils.html#gaecabf6002d8eda53bb01b8e3103d1701',1,'utils::pmr::arena_allocator::noexcept()'],['../group__utils.html#ga9112aed083ab4d8d31d5cd3b16ac2eae',1,'utils::pmr::stack_allocator::noexcept()']]],
+  ['none_9',['none',['../namespaceutils.html#ab347f7fd31e7ee14b2e4e14686a2c21ea334c4a4c42fdb79d7ebc3e73b517e6f8',1,'utils']]],
+  ['numeric_5flimits_3c_20t_20_3e_10',['numeric_limits&lt; T &gt;',['../structstd_1_1numeric__limits_3_01T_01_4.html',1,'std']]]
 ];

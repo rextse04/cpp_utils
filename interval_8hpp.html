@@ -83,6 +83,11 @@ $(document).ready(function(){initNavTree('interval_8hpp.html',''); initResizable
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">interval.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -115,6 +120,41 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 </div>
 <p><a href="interval_8hpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1interval__endpoint.html">utils::interval_endpoint&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an endpoint of an interval, consisting of a value and its type (open or closed).  <a href="structutils_1_1interval__endpoint.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1interval.html">utils::interval&lt; L, R &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An interval defined by a left endpoint and a right endpoint.  <a href="structutils_1_1interval.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceutils"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html">utils</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a7b8bfbc22ae832dddfa89d9214454c2e"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a7b8bfbc22ae832dddfa89d9214454c2e">utils::interval_endpoint_type</a> : unsigned char { <a class="el" href="namespaceutils.html#a7b8bfbc22ae832dddfa89d9214454c2ea7cef8a734855777c2a9d0caf42666e69">utils::open</a>
+, <a class="el" href="namespaceutils.html#a7b8bfbc22ae832dddfa89d9214454c2ea349e686330723975502e9ef4f939a5ac">utils::closed</a>
+ }</td></tr>
+<tr class="memdesc:a7b8bfbc22ae832dddfa89d9214454c2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration representing the type of an interval endpoint (open or closed).  <a href="namespaceutils.html#a7b8bfbc22ae832dddfa89d9214454c2e">More...</a><br /></td></tr>
+<tr class="separator:a7b8bfbc22ae832dddfa89d9214454c2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a22a7c7da6ae7e5d01adb976235886f2e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a22a7c7da6ae7e5d01adb976235886f2e"><td class="memTemplItemLeft" align="right" valign="top">constexpr interval_endpoint&lt; std::decay_t&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a22a7c7da6ae7e5d01adb976235886f2e">utils::operator|</a> (T &amp;&amp;value, interval_endpoint_type type)</td></tr>
+<tr class="memdesc:a22a7c7da6ae7e5d01adb976235886f2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience operator overload to construct an interval endpoint.  <a href="namespaceutils.html#a22a7c7da6ae7e5d01adb976235886f2e">More...</a><br /></td></tr>
+<tr class="separator:a22a7c7da6ae7e5d01adb976235886f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa53feca4f8d1aaf5de3f3b32b8f233f"><td class="memTemplParams" colspan="2">template&lt;typename LE , typename RE &gt; <br />
+requires requires</td></tr>
+<tr class="memitem:aaa53feca4f8d1aaf5de3f3b32b8f233f"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aaa53feca4f8d1aaf5de3f3b32b8f233f">utils::operator,</a> (LE &amp;&amp;left, RE &amp;&amp;right)</td></tr>
+<tr class="memdesc:aaa53feca4f8d1aaf5de3f3b32b8f233f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience operator overload to construct an interval.  <a href="namespaceutils.html#aaa53feca4f8d1aaf5de3f3b32b8f233f">More...</a><br /></td></tr>
+<tr class="separator:aaa53feca4f8d1aaf5de3f3b32b8f233f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

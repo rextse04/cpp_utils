@@ -1,6 +1,5 @@
 var structutils_1_1bit__op__functors =
 [
-    [ "tag", "structutils_1_1bit__op__functors.html#abb489439a5024ba2f21e405a429eea5d", null ],
     [ "binary_traits", "structutils_1_1bit__op__functors.html#a660671d0a8db1670bd8cf7438d568a25", null ],
     [ "bit_and", "structutils_1_1bit__op__functors.html#a6fb30e37deee2d5ffa4838b573d36642", null ],
     [ "bit_not", "structutils_1_1bit__op__functors.html#a6c09fd34a5ea07d3f70b08d191ba4ae7", null ],

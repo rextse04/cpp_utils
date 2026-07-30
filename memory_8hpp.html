@@ -83,6 +83,11 @@ $(document).ready(function(){initNavTree('memory_8hpp.html',''); initResizable()
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#concepts">Concepts</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">memory.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -120,6 +125,45 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 </div>
 <p><a href="memory_8hpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1max__align.html">utils::max_align&lt; Ts &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the maximum alignment requirement among the types in <code>Ts</code>.  <a href="structutils_1_1max__align.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1aligned__t.html">utils::aligned_t&lt; Alignment &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A trivial class type that is aligned to <code>Alignment</code>.  <a href="structutils_1_1aligned__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceutils"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html">utils</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
+Concepts</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptutils_1_1simple__allocator.html">utils::simple_allocator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++ named requirements: <em>Allocator</em> <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a8d2503c40d18bf18ecc897b57dd968ab"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a8d2503c40d18bf18ecc897b57dd968ab">utils::align</a> (std::size_t alignment, std::size_t size, void *ptr, void *end)</td></tr>
+<tr class="memdesc:a8d2503c40d18bf18ecc897b57dd968ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Align a pointer to the specified alignment.  <a href="namespaceutils.html#a8d2503c40d18bf18ecc897b57dd968ab">More...</a><br /></td></tr>
+<tr class="separator:a8d2503c40d18bf18ecc897b57dd968ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a412fc76b0efe03804baebd2a13f6e790"><td class="memTemplParams" colspan="2">template&lt;typename To &gt; <br />
+requires requires</td></tr>
+<tr class="memitem:a412fc76b0efe03804baebd2a13f6e790"><td class="memTemplItemLeft" align="right" valign="top">constexpr To&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a412fc76b0efe03804baebd2a13f6e790">utils::rcast</a> (auto *from) noexcept</td></tr>
+<tr class="memdesc:a412fc76b0efe03804baebd2a13f6e790"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>constexpr</code>-friendly pointer punning  <a href="namespaceutils.html#a412fc76b0efe03804baebd2a13f6e790">More...</a><br /></td></tr>
+<tr class="separator:a412fc76b0efe03804baebd2a13f6e790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a261afe138d5120bb7ae53bac474fc8a7"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
+<tr class="memitem:a261afe138d5120bb7ae53bac474fc8a7"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::align_val_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a261afe138d5120bb7ae53bac474fc8a7">utils::max_align_v</a> = max_align&lt;Ts...&gt;::value</td></tr>
+<tr class="separator:a261afe138d5120bb7ae53bac474fc8a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

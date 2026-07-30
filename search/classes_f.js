@@ -1,4 +1,12 @@
 var searchData=
 [
-  ['with_0',['with',['../structutils_1_1with.html',1,'utils']]]
+  ['rebind_0',['rebind',['../structutils_1_1meta_1_1rebind.html',1,'utils::meta::rebind&lt; T, Args &gt;'],['../structutils_1_1pmr_1_1arena__allocator_1_1rebind.html',1,'utils::pmr::arena_allocator&lt; T, Sync &gt;::rebind&lt; U &gt;'],['../structutils_1_1pmr_1_1stack__allocator_1_1rebind.html',1,'utils::pmr::stack_allocator&lt; T, Sync &gt;::rebind&lt; U &gt;']]],
+  ['rebind_3c_20t_2c_20args_2e_2e_2e_20_3e_1',['rebind&lt; T, Args... &gt;',['../structutils_1_1meta_1_1rebind_3_01T_00_01Args_8_8_8_01_4.html',1,'utils::meta']]],
+  ['reduce_2',['reduce',['../structutils_1_1meta_1_1reduce.html',1,'utils::meta']]],
+  ['reduce_3c_20std_3a_3aconjunction_2c_20map_5ft_3c_20bind_5ffront_3c_20contained_5fin_5ftrait_2c_20bigtuple_20_3e_3a_3atemplate_20trait_2c_20smalltuple_20_3e_20_3e_3',['reduce&lt; std::conjunction, map_t&lt; bind_front&lt; contained_in_trait, BigTuple &gt;::template trait, SmallTuple &gt; &gt;',['../structutils_1_1meta_1_1reduce.html',1,'utils::meta']]],
+  ['reduce_3c_20trait_2c_20std_3a_3atuple_3c_20ts_2e_2e_2e_20_3e_20_3e_4',['reduce&lt; Trait, std::tuple&lt; Ts... &gt; &gt;',['../structutils_1_1meta_1_1reduce_3_01Trait_00_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4.html',1,'utils::meta']]],
+  ['replace_5',['replace',['../structutils_1_1meta_1_1replace.html',1,'utils::meta']]],
+  ['result_6',['result',['../structutils_1_1bit__behavior_1_1default__binary__op__traits_1_1result.html',1,'utils::bit_behavior::default_binary_op_traits&lt; ResultTrait &gt;::result&lt; Self, A, B, R &gt;'],['../structutils_1_1default__binary__op__traits_1_1result.html',1,'utils::default_binary_op_traits::result&lt; Self, typename, typename &gt;'],['../structutils_1_1default__postfix__op__traits_1_1result.html',1,'utils::default_postfix_op_traits::result&lt; Self &gt;'],['../structutils_1_1default__prefix__op__traits_1_1result.html',1,'utils::default_prefix_op_traits::result&lt; Self &gt;'],['../structutils_1_1default__unary__op__traits_1_1result.html',1,'utils::default_unary_op_traits::result&lt; Self &gt;'],['../structutils_1_1integral__behavior_1_1default__binary__op__traits_1_1result.html',1,'utils::integral_behavior::default_binary_op_traits&lt; CommonTypeTrait, ResultTrait &gt;::result&lt; Self, A, B, R &gt;'],['../structutils_1_1shift__behavior_1_1default__binary__op__traits_1_1result.html',1,'utils::shift_behavior::default_binary_op_traits::result&lt; Self, A, typename, SelfD, AU &gt;']]],
+  ['result_5fof_7',['result_of',['../structutils_1_1result__of.html',1,'utils']]],
+  ['result_5fof_3c_20r_28args_2e_2e_2e_29_3e_8',['result_of&lt; R(Args...)&gt;',['../structutils_1_1result__of_3_01R_07Args_8_8_8_08_4.html',1,'utils']]]
 ];

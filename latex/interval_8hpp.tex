@@ -21,3 +21,30 @@ This graph shows which files directly or indirectly include this file\+:
 \includegraphics[width=194pt]{interval_8hpp__dep__incl}
 \end{center}
 \end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structutils_1_1interval__endpoint}{utils\+::interval\+\_\+endpoint$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Represents an endpoint of an interval, consisting of a value and its type (open or closed). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1interval}{utils\+::interval$<$ L, R $>$}}
+\begin{DoxyCompactList}\small\item\em An interval defined by a left endpoint and a right endpoint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceutils}{utils}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2e}{utils\+::interval\+\_\+endpoint\+\_\+type}} \+: unsigned char \{ \mbox{\hyperlink{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2ea7cef8a734855777c2a9d0caf42666e69}{utils\+::open}}
+, \mbox{\hyperlink{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2ea349e686330723975502e9ef4f939a5ac}{utils\+::closed}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration representing the type of an interval endpoint (open or closed). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\constexpr interval\+\_\+endpoint$<$ std\+::decay\+\_\+t$<$ T $>$ $>$ \mbox{\hyperlink{namespaceutils_a22a7c7da6ae7e5d01adb976235886f2e}{utils\+::operator$\vert$}} (T \&\&value, interval\+\_\+endpoint\+\_\+type type)
+\begin{DoxyCompactList}\small\item\em Convenience operator overload to construct an interval endpoint. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename LE , typename RE $>$ \newline
+requires requires}\\constexpr auto \mbox{\hyperlink{namespaceutils_aaa53feca4f8d1aaf5de3f3b32b8f233f}{utils\+::operator,}} (LE \&\&left, RE \&\&right)
+\begin{DoxyCompactList}\small\item\em Convenience operator overload to construct an interval. \end{DoxyCompactList}\end{DoxyCompactItemize}

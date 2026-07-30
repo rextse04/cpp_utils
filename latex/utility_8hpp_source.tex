@@ -11,8 +11,8 @@
 \DoxyCodeLine{\Hypertarget{utility_8hpp_source_l00009}00009     \textcolor{keyword}{private}:}
 \DoxyCodeLine{\Hypertarget{utility_8hpp_source_l00010}00010         std::tuple<Fs...> fs\_;}
 \DoxyCodeLine{\Hypertarget{utility_8hpp_source_l00011}00011 }
-\DoxyCodeLine{\Hypertarget{utility_8hpp_source_l00012}00012         \textcolor{keyword}{template} <std::size\_t Idx = 0, \textcolor{keyword}{typename}... Ts>}
-\DoxyCodeLine{\Hypertarget{utility_8hpp_source_l00013}00013         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} std::size\_t match() \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{utility_8hpp_source_l00012}00012         \textcolor{keyword}{template} <\mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} Idx = 0, \textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{\Hypertarget{utility_8hpp_source_l00013}00013         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} match() \textcolor{keyword}{noexcept} \{}
 \DoxyCodeLine{\Hypertarget{utility_8hpp_source_l00014}00014             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (Idx == \textcolor{keyword}{sizeof}...(Fs)) \{}
 \DoxyCodeLine{\Hypertarget{utility_8hpp_source_l00015}00015                 \textcolor{keywordflow}{return} -\/1;}
 \DoxyCodeLine{\Hypertarget{utility_8hpp_source_l00016}00016             \} \textcolor{keywordflow}{else} \{}
@@ -30,7 +30,7 @@
 \DoxyCodeLine{\Hypertarget{utility_8hpp_source_l00028}00028         \textcolor{keyword}{noexcept}((std::is\_nothrow\_constructible\_v<Fs, Gs> \&\& ...)):}
 \DoxyCodeLine{\Hypertarget{utility_8hpp_source_l00029}00029             fs\_(std::forward<Gs>(gs)...) \{\}}
 \DoxyCodeLine{\Hypertarget{utility_8hpp_source_l00030}00030 }
-\DoxyCodeLine{\Hypertarget{utility_8hpp_source_l00031}00031         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts, std::size\_t Match = match<Ts...>()>}
+\DoxyCodeLine{\Hypertarget{utility_8hpp_source_l00031}00031         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts, \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} Match = match<Ts...>()>}
 \DoxyCodeLine{\Hypertarget{utility_8hpp_source_l00032}00032         \textcolor{keyword}{requires} (Match != -\/1)}
 \DoxyCodeLine{\Hypertarget{utility_8hpp_source_l00033}\mbox{\hyperlink{classutils_1_1visitor_a4c20a94876585a7cbd121db8dc79a54c}{00033}}         \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} \mbox{\hyperlink{classutils_1_1visitor_a4c20a94876585a7cbd121db8dc79a54c}{operator()}}(Ts\&\&... ts) \textcolor{keyword}{const}}
 \DoxyCodeLine{\Hypertarget{utility_8hpp_source_l00034}00034         \textcolor{keyword}{noexcept}(\textcolor{keyword}{noexcept}(std::get<Match>(fs\_)(std::forward<Ts>(ts)...))) \{}

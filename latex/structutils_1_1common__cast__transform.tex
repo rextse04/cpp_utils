@@ -1,0 +1,42 @@
+\hypertarget{structutils_1_1common__cast__transform}{}\doxysection{utils\+::common\+\_\+cast\+\_\+transform\texorpdfstring{$<$}{<} F, Trait \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structutils_1_1common__cast__transform}\index{utils::common\_cast\_transform$<$ F, Trait $>$@{utils::common\_cast\_transform$<$ F, Trait $>$}}
+
+
+{\ttfamily \#include $<$functional.\+hpp$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Args, typename To  = Trait$<$\+Args...$>$\+::type$>$ \newline
+requires requires}\\static constexpr decltype(auto) \mbox{\hyperlink{structutils_1_1common__cast__transform_a1acc4e6e2a05d700b3d070e4f92146b6}{operator()}} (Args \&\&... args) noexcept(noexcept(F(static\+\_\+cast$<$ To $>$(std\+::declval$<$ Args $>$())...)))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$auto F, template$<$ typename... $>$ typename Trait$>$\newline
+struct utils\+::common\+\_\+cast\+\_\+transform$<$ F, Trait $>$}
+
+
+Definition at line \mbox{\hyperlink{functional_8hpp_source_l00229}{229}} of file \mbox{\hyperlink{functional_8hpp_source}{functional.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structutils_1_1common__cast__transform_a1acc4e6e2a05d700b3d070e4f92146b6}\label{structutils_1_1common__cast__transform_a1acc4e6e2a05d700b3d070e4f92146b6}} 
+\index{utils::common\_cast\_transform$<$ F, Trait $>$@{utils::common\_cast\_transform$<$ F, Trait $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!utils::common\_cast\_transform$<$ F, Trait $>$@{utils::common\_cast\_transform$<$ F, Trait $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily template$<$auto F, template$<$ typename... $>$ typename Trait$>$ \\
+template$<$typename... Args, typename To  = Trait$<$\+Args...$>$\+::type$>$ \newline
+requires requires\\
+static constexpr decltype(auto) \mbox{\hyperlink{structutils_1_1common__cast__transform}{utils\+::common\+\_\+cast\+\_\+transform}}$<$ F, Trait $>$\+::operator() (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{functional_8hpp_source_l00232}{232}} of file \mbox{\hyperlink{functional_8hpp_source}{functional.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{functional_8hpp}{functional.\+hpp}}\end{DoxyCompactItemize}

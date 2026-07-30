@@ -19,13 +19,20 @@ This graph shows which files directly or indirectly include this file\+:
 \includegraphics[width=151pt]{self_8hpp__dep__incl}
 \end{center}
 \end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceutils}{utils}}
+\item 
+namespace \mbox{\hyperlink{namespaceutils_1_1meta}{utils\+::meta}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{self_8hpp_a0fd91b8deec89b8d0a02352439b62ded}{UTILS\+\_\+\+FIND\+\_\+\+SELF}}
-\item 
-\#define \mbox{\hyperlink{self_8hpp_a379c3395d69445241a0099fdaf0e68de}{UTILS\+\_\+\+FIND\+\_\+\+SELF\+\_\+\+TYPE}}~typename decltype(get(utils\+::meta\+::const\+\_\+var$<$utils\+\_\+find\+\_\+self\+\_\+result\+\_\+$>$\{\}))\+::type
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A macro for retrieving the current class. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{self_8hpp_a379c3395d69445241a0099fdaf0e68de}{UTILS\+\_\+\+FIND\+\_\+\+SELF\+\_\+\+TYPE}}~typename decltype(get(\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{utils\+::meta\+::const\+\_\+var}}$<$utils\+\_\+find\+\_\+self\+\_\+result\+\_\+$>$\{\}))\+::type
+\begin{DoxyCompactList}\small\item\em Retrieves the type found by {\ttfamily UTILS\+\_\+\+FIND\+\_\+\+SELF}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -39,15 +46,39 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCode}{0}
 \DoxyCodeLine{    \textcolor{keyword}{struct }utils\_find\_self\_result\_;\(\backslash\)}
 \DoxyCodeLine{    consteval \textcolor{keyword}{auto} utils\_find\_self\_()\(\backslash\)}
-\DoxyCodeLine{    -\/> \textcolor{keyword}{decltype}(utils::meta::define<utils\_find\_self\_result\_, std::type\_identity<std::remove\_cvref\_t<\textcolor{keyword}{decltype}(*this)>>\{\}>\{\}) \{\(\backslash\)}
+\DoxyCodeLine{    -\/> \textcolor{keyword}{decltype}(\mbox{\hyperlink{classutils_1_1meta_1_1define}{utils::meta::define}}<utils\_find\_self\_result\_, std::type\_identity<std::remove\_cvref\_t<\textcolor{keyword}{decltype}(*this)>>\{\}>\{\}) \{\(\backslash\)}
 \DoxyCodeLine{        throw \mbox{\hyperlink{classutils_1_1compile__error}{utils::compile\_error}}(\(\backslash\)}
 \DoxyCodeLine{            \textcolor{stringliteral}{"{}You are not supposed to call this method. See the documentation for UTILS\_FIND\_SELF."{}});\(\backslash\)}
 \DoxyCodeLine{    \}}
 
 \end{DoxyCode}
+
+
+A macro for retrieving the current class. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]Use C++26 reflection. \end{DoxyRefDesc}
+
+
+This macro stores the innermost class {\ttfamily Self} enclosing the current context into {\ttfamily meta\+::const\+\_\+var\texorpdfstring{$<$}{<}utils\+\_\+find\+\_\+self\+\_\+result\+\_\+\texorpdfstring{$>$}{>}} (the type of the value being {\ttfamily std\+::type\+\_\+identity\texorpdfstring{$<$}{<}Self\texorpdfstring{$>$}{>}}).
+
+The program is ill-\/formed if the macro is not used inside a class declaration, or if a method named {\ttfamily utils\+\_\+find\+\_\+self\+\_\+} or a member type named {\ttfamily utils\+\_\+find\+\_\+self\+\_\+result\+\_\+} is already declared. 
+
+Definition at line \mbox{\hyperlink{self_8hpp_source_l00015}{15}} of file \mbox{\hyperlink{self_8hpp_source}{self.\+hpp}}.
+
 \mbox{\Hypertarget{self_8hpp_a379c3395d69445241a0099fdaf0e68de}\label{self_8hpp_a379c3395d69445241a0099fdaf0e68de}} 
 \index{self.hpp@{self.hpp}!UTILS\_FIND\_SELF\_TYPE@{UTILS\_FIND\_SELF\_TYPE}}
 \index{UTILS\_FIND\_SELF\_TYPE@{UTILS\_FIND\_SELF\_TYPE}!self.hpp@{self.hpp}}
 \doxysubsubsection{\texorpdfstring{UTILS\_FIND\_SELF\_TYPE}{UTILS\_FIND\_SELF\_TYPE}}
-{\footnotesize\ttfamily \#define UTILS\+\_\+\+FIND\+\_\+\+SELF\+\_\+\+TYPE~typename decltype(get(utils\+::meta\+::const\+\_\+var$<$utils\+\_\+find\+\_\+self\+\_\+result\+\_\+$>$\{\}))\+::type}
+{\footnotesize\ttfamily \#define UTILS\+\_\+\+FIND\+\_\+\+SELF\+\_\+\+TYPE~typename decltype(get(\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{utils\+::meta\+::const\+\_\+var}}$<$utils\+\_\+find\+\_\+self\+\_\+result\+\_\+$>$\{\}))\+::type}
+
+
+
+Retrieves the type found by {\ttfamily UTILS\+\_\+\+FIND\+\_\+\+SELF}. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000002}{Deprecated}}]Use C++26 reflection. \end{DoxyRefDesc}
+
+
+Definition at line \mbox{\hyperlink{self_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{self_8hpp_source}{self.\+hpp}}.
 

@@ -1,0 +1,80 @@
+\hypertarget{classutils_1_1unique__resource_1_1permit__ptr}{}\doxysection{utils\+::unique\+\_\+resource\texorpdfstring{$<$}{<} T, Sync, Semaphore, Shared\+Mutex \texorpdfstring{$>$}{>}\+::permit\+\_\+ptr\texorpdfstring{$<$}{<} Lock, Q \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classutils_1_1unique__resource_1_1permit__ptr}\index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit\_ptr$<$ Lock, Q $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit\_ptr$<$ Lock, Q $>$}}
+
+
+A fancy pointer that holds a lock throughout its lifetime.  
+
+
+
+
+{\ttfamily \#include $<$concurrency.\+hpp$>$}
+
+
+
+Inheritance diagram for utils\+::unique\+\_\+resource\texorpdfstring{$<$}{<} T, Sync, Semaphore, Shared\+Mutex \texorpdfstring{$>$}{>}\+::permit\+\_\+ptr\texorpdfstring{$<$}{<} Lock, Q \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classutils_1_1unique__resource_1_1permit__ptr__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for utils\+::unique\+\_\+resource\texorpdfstring{$<$}{<} T, Sync, Semaphore, Shared\+Mutex \texorpdfstring{$>$}{>}\+::permit\+\_\+ptr\texorpdfstring{$<$}{<} Lock, Q \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classutils_1_1unique__resource_1_1permit__ptr__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr auto \mbox{\hyperlink{classutils_1_1unique__resource_1_1permit__ptr_a87f423b7fc8e11c250cb0fd5b0895f84}{operator-\/$>$}} () const noexcept
+\item 
+constexpr auto \& \mbox{\hyperlink{classutils_1_1unique__resource_1_1permit__ptr_a25defa377d5c0602e77fd11b11a17bc3}{operator$\ast$}} () const noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, bool Sync = false, typename Semaphore = std\+::counting\+\_\+semaphore$<$$>$, typename Shared\+Mutex = std\+::shared\+\_\+mutex$>$\newline
+template$<$typename Lock, \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} Q = type\+\_\+qualifiers\+::none$>$\newline
+class utils\+::unique\+\_\+resource$<$ T, Sync, Semaphore, Shared\+Mutex $>$\+::permit\+\_\+ptr$<$ Lock, Q $>$}
+A fancy pointer that holds a lock throughout its lifetime. 
+
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00042}{42}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutils_1_1unique__resource_1_1permit__ptr_a25defa377d5c0602e77fd11b11a17bc3}\label{classutils_1_1unique__resource_1_1permit__ptr_a25defa377d5c0602e77fd11b11a17bc3}} 
+\index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit\_ptr$<$ Lock, Q $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit\_ptr$<$ Lock, Q $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit\_ptr$<$ Lock, Q $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit\_ptr$<$ Lock, Q $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$typename T , bool Sync = false, typename Semaphore  = std\+::counting\+\_\+semaphore$<$$>$, typename Shared\+Mutex  = std\+::shared\+\_\+mutex$>$ \\
+template$<$typename Lock , \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} Q = type\+\_\+qualifiers\+::none$>$ \\
+constexpr auto \& \mbox{\hyperlink{classutils_1_1unique__resource}{utils\+::unique\+\_\+resource}}$<$ T, Sync, Semaphore, Shared\+Mutex $>$\+::\mbox{\hyperlink{classutils_1_1unique__resource_1_1permit__ptr}{permit\+\_\+ptr}}$<$ Lock, Q $>$\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00050}{50}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1unique__resource_1_1permit__ptr_a87f423b7fc8e11c250cb0fd5b0895f84}\label{classutils_1_1unique__resource_1_1permit__ptr_a87f423b7fc8e11c250cb0fd5b0895f84}} 
+\index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit\_ptr$<$ Lock, Q $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit\_ptr$<$ Lock, Q $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit\_ptr$<$ Lock, Q $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit\_ptr$<$ Lock, Q $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily template$<$typename T , bool Sync = false, typename Semaphore  = std\+::counting\+\_\+semaphore$<$$>$, typename Shared\+Mutex  = std\+::shared\+\_\+mutex$>$ \\
+template$<$typename Lock , \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} Q = type\+\_\+qualifiers\+::none$>$ \\
+constexpr auto \mbox{\hyperlink{classutils_1_1unique__resource}{utils\+::unique\+\_\+resource}}$<$ T, Sync, Semaphore, Shared\+Mutex $>$\+::\mbox{\hyperlink{classutils_1_1unique__resource_1_1permit__ptr}{permit\+\_\+ptr}}$<$ Lock, Q $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00049}{49}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{concurrency_8hpp}{concurrency.\+hpp}}\end{DoxyCompactItemize}

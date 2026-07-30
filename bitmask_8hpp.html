@@ -149,7 +149,7 @@ Macros</h2></td></tr>
 <div class="line">    constexpr <span class="keyword">auto</span> operator+(T a) <span class="keyword">noexcept</span> {\</div>
 <div class="line">        return std::to_underlying(a);\</div>
 <div class="line">    }\</div>
-<div class="line">    constexpr T operator|(T a, T b) <span class="keyword">noexcept</span> {\</div>
+<div class="line">    constexpr T <a class="code hl_function" href="namespaceutils.html#a22a7c7da6ae7e5d01adb976235886f2e">operator|</a>(T a, T b) <span class="keyword">noexcept</span> {\</div>
 <div class="line">        return <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(+a | +b);\</div>
 <div class="line">    }\</div>
 <div class="line">    constexpr T&amp; operator|=(T&amp; a, T b) <span class="keyword">noexcept</span> {\</div>
@@ -173,6 +173,7 @@ Macros</h2></td></tr>
 <div class="line">    constexpr <span class="keywordtype">bool</span> operator*(T a, T b) <span class="keyword">noexcept</span> {\</div>
 <div class="line">        return +a &amp; +b;\</div>
 <div class="line">    }</div>
+<div class="ttc" id="anamespaceutils_html_a22a7c7da6ae7e5d01adb976235886f2e"><div class="ttname"><a href="namespaceutils.html#a22a7c7da6ae7e5d01adb976235886f2e">utils::operator|</a></div><div class="ttdeci">constexpr interval_endpoint&lt; std::decay_t&lt; T &gt; &gt; operator|(T &amp;&amp;value, interval_endpoint_type type)</div><div class="ttdoc">Convenience operator overload to construct an interval endpoint.</div><div class="ttdef"><b>Definition:</b> <a href="interval_8hpp_source.html#l00088">interval.hpp:88</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="bitmask_8hpp_source.html#l00005">5</a> of file <a class="el" href="bitmask_8hpp_source.html">bitmask.hpp</a>.</p>
 

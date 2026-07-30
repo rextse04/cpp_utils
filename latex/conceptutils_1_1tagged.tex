@@ -1,0 +1,26 @@
+\hypertarget{conceptutils_1_1tagged}{}\doxysection{utils\+::tagged Concept Reference}
+\label{conceptutils_1_1tagged}\index{utils::tagged@{utils::tagged}}
+
+
+Checks if {\ttfamily T} has a {\ttfamily tag} member alias matching or containing {\ttfamily Tag}.  
+
+
+
+
+{\ttfamily \#include $<$type.\+hpp$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} Tag>}
+\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1tagged}{utils::tagged}} =  (std::is\_same\_v<typename std::remove\_cvref\_t<T>::tag, Tag> ||}
+\DoxyCodeLine{        meta::contained\_in\_v<typename std::remove\_cvref\_t<T>::tag, Tag>)}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Detailed Description}
+Checks if {\ttfamily T} has a {\ttfamily tag} member alias matching or containing {\ttfamily Tag}. 
+
+Definition at line \mbox{\hyperlink{type_8hpp_source_l00140}{140}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
+

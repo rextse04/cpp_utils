@@ -1,0 +1,25 @@
+\hypertarget{conceptutils_1_1meta_1_1pair__like}{}\doxysection{utils\+::meta\+::pair\+\_\+like Concept Reference}
+\label{conceptutils_1_1meta_1_1pair__like}\index{utils::meta::pair\_like@{utils::meta::pair\_like}}
+
+
+C++ exposition-\/only concept\+: {\ttfamily pair-\/like}.  
+
+
+
+
+{\ttfamily \#include $<$meta.\+hpp$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1meta_1_1pair__like}{utils::meta::pair\_like}} =  std::tuple\_size<std::remove\_cvref\_t<T>>::value == 2}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Detailed Description}
+C++ exposition-\/only concept\+: {\ttfamily pair-\/like}. 
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00029}{29}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+

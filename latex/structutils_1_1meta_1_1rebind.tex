@@ -1,0 +1,46 @@
+\hypertarget{structutils_1_1meta_1_1rebind}{}\doxysection{utils\+::meta\+::rebind\texorpdfstring{$<$}{<} T, Args \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structutils_1_1meta_1_1rebind}\index{utils::meta::rebind$<$ T, Args $>$@{utils::meta::rebind$<$ T, Args $>$}}
+
+
+Rebinds a template instance {\ttfamily T} to {\ttfamily Args}.  
+
+
+
+
+{\ttfamily \#include $<$meta.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{structutils_1_1meta_1_1rebind_a69eca927314093ceb631ff560340a761}{type}} = T
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, typename... Args$>$\newline
+struct utils\+::meta\+::rebind$<$ T, Args $>$}
+Rebinds a template instance {\ttfamily T} to {\ttfamily Args}. 
+
+If {\ttfamily T} is in the form {\ttfamily Tmpl\texorpdfstring{$<$}{<}...\texorpdfstring{$>$}{>}}, {\ttfamily rebind\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}\+::type} is {\ttfamily Tmpl\texorpdfstring{$<$}{<}Args...\texorpdfstring{$>$}{>}}. Otherwise, {\ttfamily rebind\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}\+::type} is {\ttfamily T}. 
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00277}{277}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structutils_1_1meta_1_1rebind_a69eca927314093ceb631ff560340a761}\label{structutils_1_1meta_1_1rebind_a69eca927314093ceb631ff560340a761}} 
+\index{utils::meta::rebind$<$ T, Args $>$@{utils::meta::rebind$<$ T, Args $>$}!type@{type}}
+\index{type@{type}!utils::meta::rebind$<$ T, Args $>$@{utils::meta::rebind$<$ T, Args $>$}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily template$<$typename T , typename... Args$>$ \\
+using \mbox{\hyperlink{structutils_1_1meta_1_1rebind}{utils\+::meta\+::rebind}}$<$ T, Args $>$\+::\mbox{\hyperlink{structutils_1_1meta_1_1rebind_a69eca927314093ceb631ff560340a761}{type}} =  T}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00278}{278}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{meta_8hpp}{meta.\+hpp}}\end{DoxyCompactItemize}

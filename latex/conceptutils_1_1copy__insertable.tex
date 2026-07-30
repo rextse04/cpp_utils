@@ -1,0 +1,28 @@
+\hypertarget{conceptutils_1_1copy__insertable}{}\doxysection{utils\+::copy\+\_\+insertable Concept Reference}
+\label{conceptutils_1_1copy__insertable}\index{utils::copy\_insertable@{utils::copy\_insertable}}
+
+
+C++ named requirements\+: {\itshape Copy\+Insertable}  
+
+
+
+
+{\ttfamily \#include $<$type.\+hpp$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} Allocator>}
+\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1copy__insertable}{utils::copy\_insertable}} =  \mbox{\hyperlink{conceptutils_1_1move__insertable}{move\_insertable<T, Allocator>}} \&\&}
+\DoxyCodeLine{        \mbox{\hyperlink{conceptutils_1_1emplace__constructible}{emplace\_constructible<T, Allocator, T\&>}} \&\&}
+\DoxyCodeLine{        \mbox{\hyperlink{conceptutils_1_1emplace__constructible}{emplace\_constructible<T, Allocator, const T\&>}} \&\&}
+\DoxyCodeLine{        \mbox{\hyperlink{conceptutils_1_1emplace__constructible}{emplace\_constructible<T, Allocator, const T\&\&>}}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Detailed Description}
+C++ named requirements\+: {\itshape Copy\+Insertable} 
+
+Definition at line \mbox{\hyperlink{containers_2type_8hpp_source_l00050}{50}} of file \mbox{\hyperlink{containers_2type_8hpp_source}{type.\+hpp}}.
+

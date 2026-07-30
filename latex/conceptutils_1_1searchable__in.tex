@@ -1,0 +1,35 @@
+\hypertarget{conceptutils_1_1searchable__in}{}\doxysection{utils\+::searchable\+\_\+in Concept Reference}
+\label{conceptutils_1_1searchable__in}\index{utils::searchable\_in@{utils::searchable\_in}}
+
+
+Checks if {\ttfamily Key} can be used to query {\ttfamily C}.  
+
+
+
+
+{\ttfamily \#include $<$type.\+hpp$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} Key, \textcolor{keyword}{typename} C>}
+\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1searchable__in}{utils::searchable\_in}} =  std::convertible\_to<Key, typename C::key\_type> || (}
+\DoxyCodeLine{        std::strict\_weak\_order<typename C::key\_compare, const typename C::key\_type\&, const Key\&> \&\&}
+\DoxyCodeLine{        \textcolor{keyword}{requires} \{ \textcolor{keyword}{typename} C::key\_compare::is\_transparent; \}}
+\DoxyCodeLine{    )}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Detailed Description}
+Checks if {\ttfamily Key} can be used to query {\ttfamily C}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em C} & an {\itshape Associative\+Container} or {\itshape Unordered\+Associative\+Container} \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line \mbox{\hyperlink{containers_2type_8hpp_source_l00085}{85}} of file \mbox{\hyperlink{containers_2type_8hpp_source}{type.\+hpp}}.
+

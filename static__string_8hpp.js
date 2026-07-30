@@ -1,0 +1,25 @@
+var static__string_8hpp =
+[
+    [ "utils::basic_static_string_view< CharT, Traits >", "structutils_1_1basic__static__string__view.html", "structutils_1_1basic__static__string__view" ],
+    [ "utils::basic_static_string< CharT, N, Traits >", "structutils_1_1basic__static__string.html", "structutils_1_1basic__static__string" ],
+    [ "utils::trim< S >", "structutils_1_1trim.html", null ],
+    [ "std::formatter< S, typename S::value_type >", "structstd_1_1formatter_3_01S_00_01typename_01S_1_1value__type_01_4.html", "structstd_1_1formatter_3_01S_00_01typename_01S_1_1value__type_01_4" ],
+    [ "static_string", "static__string_8hpp.html#a74b48c2315cd329e92dc844eacbec5ae", null ],
+    [ "static_string_view", "static__string_8hpp.html#a145ea814e7f8a159dda04fd61f74c2a2", null ],
+    [ "u16static_string", "static__string_8hpp.html#aaf9bbe5b2bd0925138bff5c0b7a9c16c", null ],
+    [ "u16static_string_view", "static__string_8hpp.html#a52a16a9740cf3b0b2e963198ebcd7ca9", null ],
+    [ "u32static_string", "static__string_8hpp.html#a8a879e6085361f9a698393a071df0e9b", null ],
+    [ "u32static_string_view", "static__string_8hpp.html#a607e1c30fad8199a766afa327008d13f", null ],
+    [ "u8static_string", "static__string_8hpp.html#ab905b8e2c36d6ed84b4653a2551f6001", null ],
+    [ "u8static_string_view", "static__string_8hpp.html#a6d9158916669d9f93599022e9201c016", null ],
+    [ "wstatic_string", "static__string_8hpp.html#af0ea072dbe2b847ec65a37641f0352fc", null ],
+    [ "wstatic_string_view", "static__string_8hpp.html#a024354295af32aee7ed2220d3a52d8f5", null ],
+    [ "operator\"\"_ss", "static__string_8hpp.html#a972dc33cde31ee82f5ea0ba78611761f", null ],
+    [ "operator\"\"_ssv", "static__string_8hpp.html#a0d6a61ddc9d0f2cfe4c97111c367c9af", null ],
+    [ "operator\"\"_ssv", "static__string_8hpp.html#a8cede4c06691e18897290f15cc0b5f04", null ],
+    [ "operator\"\"_ssv", "static__string_8hpp.html#ae1877eb027b8378628c1a713c4ac1912", null ],
+    [ "operator\"\"_ssv", "static__string_8hpp.html#a313a07149768178def6856736b70c3a6", null ],
+    [ "operator\"\"_ssv", "static__string_8hpp.html#a07fb702117f3fe3eac335110e148bd95", null ],
+    [ "operator<<", "static__string_8hpp.html#a610c726ab1f1a35f461b1d64c34e9f11", null ],
+    [ "trim_v", "static__string_8hpp.html#a026f0efc276a6d7eba427c611cd569ff", null ]
+];

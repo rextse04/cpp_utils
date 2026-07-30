@@ -21,3 +21,35 @@ This graph shows which files directly or indirectly include this file\+:
 \includegraphics[width=350pt]{memory_8hpp__dep__incl}
 \end{center}
 \end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structutils_1_1max__align}{utils\+::max\+\_\+align$<$ Ts $>$}}
+\begin{DoxyCompactList}\small\item\em Calculates the maximum alignment requirement among the types in {\ttfamily Ts}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1aligned__t}{utils\+::aligned\+\_\+t$<$ Alignment $>$}}
+\begin{DoxyCompactList}\small\item\em A trivial class type that is aligned to {\ttfamily Alignment}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceutils}{utils}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Concepts}
+\begin{DoxyCompactItemize}
+\item 
+concept \mbox{\hyperlink{conceptutils_1_1simple__allocator}{utils\+::simple\+\_\+allocator}}
+\begin{DoxyCompactList}\small\item\em C++ named requirements\+: {\itshape Allocator} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{namespaceutils_a8d2503c40d18bf18ecc897b57dd968ab}{utils\+::align}} (std\+::size\+\_\+t alignment, std\+::size\+\_\+t size, void $\ast$ptr, void $\ast$end)
+\begin{DoxyCompactList}\small\item\em Align a pointer to the specified alignment. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename To $>$ \newline
+requires requires}\\constexpr To \mbox{\hyperlink{namespaceutils_a412fc76b0efe03804baebd2a13f6e790}{utils\+::rcast}} (auto $\ast$from) noexcept
+\begin{DoxyCompactList}\small\item\em {\ttfamily constexpr}-\/friendly pointer punning \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\constexpr std\+::align\+\_\+val\+\_\+t \mbox{\hyperlink{namespaceutils_a261afe138d5120bb7ae53bac474fc8a7}{utils\+::max\+\_\+align\+\_\+v}} = max\+\_\+align$<$Ts...$>$\+::value
+\end{DoxyCompactItemize}
+

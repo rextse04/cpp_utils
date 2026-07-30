@@ -92,12 +92,13 @@ $(document).ready(function(){initNavTree('conceptutils_1_1reservable__container.
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Container&gt;</div>
 <div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptutils_1_1reservable__container.html">utils::reservable_container</a> = </div>
 <div class="line">        std::ranges::sized_range&lt;Container&gt; &amp;&amp;</div>
-<div class="line">        <span class="keyword">requires</span> (Container&amp; c, std::ranges::range_size_t&lt;Container&gt; n) {</div>
-<div class="line">            c.reserve(n);</div>
-<div class="line">            { c.capacity() } -&gt; std::same_as&lt;<span class="keyword">decltype</span>(n)&gt;;</div>
+<div class="line">        <span class="keyword">requires</span> (Container&amp; <a class="code hl_enumvalue" href="namespaceutils.html#ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33">c</a>, std::ranges::range_size_t&lt;Container&gt; n) {</div>
+<div class="line">            <a class="code hl_enumvalue" href="namespaceutils.html#ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33">c</a>.reserve(n);</div>
+<div class="line">            { <a class="code hl_enumvalue" href="namespaceutils.html#ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33">c</a>.capacity() } -&gt; std::same_as&lt;<span class="keyword">decltype</span>(n)&gt;;</div>
 <div class="line">            { c.max_size() } -&gt; std::same_as&lt;<span class="keyword">decltype</span>(n)&gt;;</div>
 <div class="line">        }</div>
 <div class="ttc" id="aconceptutils_1_1reservable__container_html"><div class="ttname"><a href="conceptutils_1_1reservable__container.html">utils::reservable_container</a></div><div class="ttdef"><b>Definition:</b> <a href="ranges_8hpp_source.html#l00017">ranges.hpp:17</a></div></div>
+<div class="ttc" id="anamespaceutils_html_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33"><div class="ttname"><a href="namespaceutils.html#ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33">utils::type_qualifiers::c</a></div><div class="ttdeci">@ c</div><div class="ttdoc">Const qualifier.</div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="ranges_8hpp_source.html#l00017">17</a> of file <a class="el" href="ranges_8hpp_source.html">ranges.hpp</a>.</p>

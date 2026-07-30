@@ -1,0 +1,1136 @@
+\hypertarget{structutils_1_1basic__static__string}{}\doxysection{utils\+::basic\+\_\+static\+\_\+string\texorpdfstring{$<$}{<} CharT, N, Traits \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structutils_1_1basic__static__string}\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+
+
+An owning string defined at compile time.  
+
+
+
+
+{\ttfamily \#include $<$static\+\_\+string.\+hpp$>$}
+
+
+
+Inheritance diagram for utils\+::basic\+\_\+static\+\_\+string\texorpdfstring{$<$}{<} CharT, N, Traits \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{structutils_1_1basic__static__string__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for utils\+::basic\+\_\+static\+\_\+string\texorpdfstring{$<$}{<} CharT, N, Traits \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{structutils_1_1basic__static__string__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}{iterator}} = CharT $\ast$
+\item 
+using \mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} = const CharT $\ast$
+\item 
+using \mbox{\hyperlink{structutils_1_1basic__static__string_ac47365924afedb811709d742edd80f5f}{reverse\+\_\+iterator}} = std\+::reverse\+\_\+iterator$<$ \mbox{\hyperlink{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}{iterator}} $>$
+\item 
+using \mbox{\hyperlink{structutils_1_1basic__static__string_a5785fccbaac58b24c5447812467c2bb3}{const\+\_\+reverse\+\_\+iterator}} = std\+::reverse\+\_\+iterator$<$ \mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} $>$
+\item 
+using \mbox{\hyperlink{structutils_1_1basic__static__string_a0387fe20da651cad0e2741b7e23cd56a}{string\+\_\+view\+\_\+type}} = \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$ CharT, Traits $>$
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t M$>$ }\\using \mbox{\hyperlink{structutils_1_1basic__static__string_a1bf4d7106bf93b6889a17e7af7a023e3}{resize\+\_\+t}} = \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$ CharT, M, Traits $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_acaa78887931169885347ba3a3c635335}{basic\+\_\+static\+\_\+string}} (const CharT(\&s)\mbox{[}N\mbox{]})
+\item 
+{\footnotesize template$<$typename... $>$ }\\consteval \mbox{\hyperlink{structutils_1_1basic__static__string_aaf951b9377b2cb3db2763211b9fefb5e}{basic\+\_\+static\+\_\+string}} (const CharT $\ast$s)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_acf7eae27b7d6e520b44f5e3f804e0cf4}{basic\+\_\+static\+\_\+string}} (const CharT $\ast$s, size\+\_\+type len)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_ab9078ca1efa621e114e1ebd9f7536539}{basic\+\_\+static\+\_\+string}} (size\+\_\+type count, const CharT c)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a2ccf463f586c5decbe25f4e8c303d36a}{basic\+\_\+static\+\_\+string}} (std\+::nullptr\+\_\+t)=delete
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a89cd4f1c939b1ae7b08a69027b0d650a}{basic\+\_\+static\+\_\+string}} (\mbox{\hyperlink{structutils_1_1basic__static__string_a0387fe20da651cad0e2741b7e23cd56a}{string\+\_\+view\+\_\+type}} sv, size\+\_\+type pos=0, size\+\_\+type count=npos)
+\item 
+{\footnotesize template$<$typename I , typename S $>$ \newline
+requires (container\+\_\+compatible\+\_\+iterator$<$I, CharT$>$ \&\& std\+::sentinel\+\_\+for$<$S, I$>$)}\\consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a2d6066965659629212adb977489d5baf}{basic\+\_\+static\+\_\+string}} (I \mbox{\hyperlink{structutils_1_1basic__static__string_a6094c59d94552abd43f0d30819177494}{begin}}, S end)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a79dfaf89b450ad0fa400e5ca56e979c0}{basic\+\_\+static\+\_\+string}} (std\+::from\+\_\+range\+\_\+t, container\+\_\+compatible\+\_\+range$<$ CharT $>$ auto \&\&rng)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a3455747c81a2b5419097145f61afdf3d}{basic\+\_\+static\+\_\+string}} (std\+::initializer\+\_\+list$<$ CharT $>$ ilist)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a8c43545175d7d0b068abc4209c4b31d2}{assign}} (const CharT(\&s)\mbox{[}N\mbox{]})
+\item 
+{\footnotesize template$<$typename... $>$ }\\consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_ad1221d95815996a33804ddbf6d1dfaa3}{assign}} (const CharT $\ast$s)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_acf784cbe46b583c7acc7ec23477dc3bf}{assign}} (const CharT $\ast$s, size\+\_\+type len)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a2e02c362f7c9e9502a5e2453409b1161}{assign}} (size\+\_\+type count, const CharT c)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a6cf7121de5db066bec934c96a9f21007}{assign}} (\mbox{\hyperlink{structutils_1_1basic__static__string_a0387fe20da651cad0e2741b7e23cd56a}{string\+\_\+view\+\_\+type}} sv, size\+\_\+type pos=0, size\+\_\+type count=npos)
+\item 
+{\footnotesize template$<$typename I , typename S $>$ \newline
+requires (container\+\_\+compatible\+\_\+iterator$<$I, CharT$>$ \&\& std\+::sentinel\+\_\+for$<$S, I$>$)}\\consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a8c371c1bcb7ebea258415677895e9dbc}{assign}} (I \mbox{\hyperlink{structutils_1_1basic__static__string_a6094c59d94552abd43f0d30819177494}{begin}}, S end)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a30962e6f697f21f9ae82aa8ef03983df}{assign}} (std\+::initializer\+\_\+list$<$ CharT $>$ ilist)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a4bdfa1f4197f2b3fa5c4cc738aa4d0bc}{assign\+\_\+range}} (container\+\_\+compatible\+\_\+range$<$ CharT $>$ auto \&\&rng)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}{iterator}} \mbox{\hyperlink{structutils_1_1basic__static__string_a6094c59d94552abd43f0d30819177494}{begin}} ()
+\item 
+constexpr \mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} \mbox{\hyperlink{structutils_1_1basic__static__string_a9caeb048f66c572486db1a75d9657b6c}{begin}} () const noexcept
+\item 
+constexpr CharT $\ast$ \mbox{\hyperlink{structutils_1_1basic__static__string_abddb39f2ed05d63b7d48571903f67870}{data}} () noexcept
+\item 
+constexpr const CharT $\ast$ \mbox{\hyperlink{structutils_1_1basic__static__string_ae12461b9fa8f756191e8861746af6259}{data}} () const noexcept
+\item 
+constexpr const CharT $\ast$ \mbox{\hyperlink{structutils_1_1basic__static__string_abc42da8283eb1278c9f65b05638983a1}{c\+\_\+str}} () const noexcept
+\item 
+constexpr size\+\_\+type \mbox{\hyperlink{structutils_1_1basic__static__string_a877f835d6f2565e679f0ffd2259470c7}{size}} () const noexcept
+\item 
+consteval void \mbox{\hyperlink{structutils_1_1basic__static__string_afd11ed8f4054524545e881ee43ecaad1}{clear}} ()
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a1a8716783d4183c5e4ba1cba6bd5e2fb}{insert}} (size\+\_\+type index, size\+\_\+type count, CharT c)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_ac36bdd509dcd990105f26a765987bc29}{insert}} (size\+\_\+type index, const CharT $\ast$s)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_acd08e92cd333d927b5c47f555fbb3de0}{insert}} (size\+\_\+type index, const CharT $\ast$s, size\+\_\+type count)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}{iterator}} \mbox{\hyperlink{structutils_1_1basic__static__string_af47f6378de8b4d5b37c90352ab611892}{insert}} (\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} pos, const CharT c)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}{iterator}} \mbox{\hyperlink{structutils_1_1basic__static__string_a8ed655b82d16380d754566179f16229c}{insert}} (\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} pos, size\+\_\+type count, CharT c)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a0197c32ba0e3058d0f7e530807f5130a}{insert}} (size\+\_\+type index, \mbox{\hyperlink{structutils_1_1basic__static__string_a0387fe20da651cad0e2741b7e23cd56a}{string\+\_\+view\+\_\+type}} sv, size\+\_\+type pos=0, size\+\_\+type count=npos)
+\item 
+{\footnotesize template$<$typename I , typename S $>$ \newline
+requires (container\+\_\+compatible\+\_\+iterator$<$I, CharT$>$ \&\& std\+::sentinel\+\_\+for$<$S, I$>$)}\\consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}{iterator}} \mbox{\hyperlink{structutils_1_1basic__static__string_a6aa789deed61cba63c702565e1365139}{insert}} (\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} pos, I \mbox{\hyperlink{structutils_1_1basic__static__string_a6094c59d94552abd43f0d30819177494}{begin}}, S end)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}{iterator}} \mbox{\hyperlink{structutils_1_1basic__static__string_afdf6690b4eaa7c65c09d7b0be6266e41}{insert}} (\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} pos, std\+::initializer\+\_\+list$<$ CharT $>$ ilist)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}{iterator}} \mbox{\hyperlink{structutils_1_1basic__static__string_acb9c43b764b4ed68d05ab18ecfddddb3}{insert\+\_\+range}} (\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} pos, container\+\_\+compatible\+\_\+range$<$ CharT $>$ auto \&\&rng)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a1a3136256055a3d016fcf546b4fb6311}{erase}} (size\+\_\+type index=0, size\+\_\+type count=npos)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}{iterator}} \mbox{\hyperlink{structutils_1_1basic__static__string_aae09ae06ff685c8ec545e3a820989f84}{erase}} (\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} pos)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}{iterator}} \mbox{\hyperlink{structutils_1_1basic__static__string_aacd798574e04cdbfb491e53847001730}{erase}} (\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} first, \mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} last)
+\item 
+consteval void \mbox{\hyperlink{structutils_1_1basic__static__string_ad2a1586fb8f8e73e4230bd38ea5c0d44}{push\+\_\+back}} (CharT c)
+\item 
+consteval void \mbox{\hyperlink{structutils_1_1basic__static__string_a2a2bdad06f4df5c2ad6e72d4f0f1b338}{pop\+\_\+back}} ()
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_aede5d56580abbecf55efd02494aea262}{append}} (size\+\_\+type count, CharT c)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_af18228c3e37c9d7aacd31044efeaf745}{append}} (const CharT $\ast$s, size\+\_\+type count)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a9170300adc9ac1e5f3549763d5d628dc}{append}} (const CharT $\ast$s)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a7e287a68912a089d84e4980ecec75549}{append}} (\mbox{\hyperlink{structutils_1_1basic__static__string_a0387fe20da651cad0e2741b7e23cd56a}{string\+\_\+view\+\_\+type}} sv, size\+\_\+type pos=0, size\+\_\+type count=npos)
+\item 
+{\footnotesize template$<$typename I , typename S $>$ \newline
+requires (container\+\_\+compatible\+\_\+iterator$<$I, CharT$>$ \&\& std\+::sentinel\+\_\+for$<$S, I$>$)}\\consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a6e76abe30e721523960929ec7238ea48}{append}} (I \mbox{\hyperlink{structutils_1_1basic__static__string_a6094c59d94552abd43f0d30819177494}{begin}}, S end)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a479647d460a6d54f2a333caff2a92b91}{append}} (std\+::initializer\+\_\+list$<$ CharT $>$ ilist)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_abae0d455ceee7e09c2b2e21a1f0a24ce}{append\+\_\+range}} (container\+\_\+compatible\+\_\+range$<$ CharT $>$ auto \&\&rng)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a2446cb110faa540d564b8daff069ea27}{operator+=}} (CharT c)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a5bce21be21829af3b1a752f1d3bb77fa}{operator+=}} (const CharT $\ast$s)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a58ae23deef80c6e44854e9315623968a}{operator+=}} (\mbox{\hyperlink{structutils_1_1basic__static__string_a0387fe20da651cad0e2741b7e23cd56a}{string\+\_\+view\+\_\+type}} sv)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a59e545991ba4792bc8c34f2176c9a60d}{operator+=}} (std\+::initializer\+\_\+list$<$ CharT $>$ ilist)
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t M$>$ }\\consteval auto \mbox{\hyperlink{structutils_1_1basic__static__string_a7698ccee41c702807d86ea85d7fdaee7}{operator+}} (const \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$ CharT, M, Traits $>$ \&str)
+\item 
+consteval auto \mbox{\hyperlink{structutils_1_1basic__static__string_a6e345f2f1854f7110b870ce3f6ccffce}{operator+}} (CharT c)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_ad17ada98a65015172dc6b9f1cee14732}{replace}} (size\+\_\+type pos, size\+\_\+type count, \mbox{\hyperlink{structutils_1_1basic__static__string_a0387fe20da651cad0e2741b7e23cd56a}{string\+\_\+view\+\_\+type}} sv, size\+\_\+type pos2=0, size\+\_\+type count2=npos)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_ad1b2e75a6d4acef3077719fe116e59aa}{replace}} (\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} first, \mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} last, \mbox{\hyperlink{structutils_1_1basic__static__string_a0387fe20da651cad0e2741b7e23cd56a}{string\+\_\+view\+\_\+type}} sv, size\+\_\+type pos2=0, size\+\_\+type count2=npos)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_ac55cc29da89251ad05cb8b6566880a23}{replace}} (size\+\_\+type pos, size\+\_\+type count, const CharT $\ast$s, size\+\_\+type count2)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a7f24c7f5965a4f715ee854a052b9fc1e}{replace}} (\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} first, \mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} last, const CharT $\ast$s, size\+\_\+type count2)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a330fefd2dadf96ba3fa56562049e8199}{replace}} (size\+\_\+type pos, size\+\_\+type count, const CharT $\ast$s)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a91d1e2a6da8da2af8d19e877b08f13b2}{replace}} (\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} first, \mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} last, const CharT $\ast$s)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_ac577e22534e36f7a2a047d82ab0a25ff}{replace}} (size\+\_\+type pos, size\+\_\+type count, size\+\_\+type count2, CharT c)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a6566e2893ac3ca4fd05d7f875fcdb257}{replace}} (\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} first, \mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} last, size\+\_\+type count2, CharT c)
+\item 
+{\footnotesize template$<$typename I , typename S $>$ \newline
+requires (container\+\_\+compatible\+\_\+iterator$<$I, CharT$>$ \&\& std\+::sentinel\+\_\+for$<$S, I$>$)}\\consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a87a06654232ee9c15ebc48dbe91bd982}{replace}} (\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} first, \mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} last, S first2, I last2)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_aa11fe5c55bfa7b6c7a2a3abaf6e89a18}{replace}} (\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} first, \mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} last, std\+::initializer\+\_\+list$<$ CharT $>$ ilist)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string_a4c665f69958053a940f5557a799b56b8}{replace\+\_\+range}} (\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} first, \mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} last, container\+\_\+compatible\+\_\+range$<$ CharT $>$ auto \&\&rng)
+\item 
+consteval void \mbox{\hyperlink{structutils_1_1basic__static__string_a40568731742f8076d9910d2b9b32875b}{resize}} (size\+\_\+type count)
+\item 
+consteval void \mbox{\hyperlink{structutils_1_1basic__static__string_a0342105be67a285c412dbf44661143cc}{resize}} (size\+\_\+type count, CharT c)
+\item 
+consteval void \mbox{\hyperlink{structutils_1_1basic__static__string_ad7c46bf91e0a112a1073d5374f491296}{swap}} (\mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \&other)
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \mbox{\hyperlink{structutils_1_1basic__static__string_a564453bdf9d3883dedfcdbc85900a7e9}{substr}} (size\+\_\+type pos=0, size\+\_\+type count=npos) const
+\item 
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a00cf16537294c230aedcf65841d1795a}{operator basic\+\_\+static\+\_\+string\+\_\+view$<$ Char\+T, Traits $>$}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr size\+\_\+type \mbox{\hyperlink{structutils_1_1basic__static__string_a20e561fced4a89f98e1fec464a867fa4}{max\+\_\+size}} () noexcept
+\item 
+static consteval void \mbox{\hyperlink{structutils_1_1basic__static__string_ab18bcf6046cf57ed49a5e8a4efadb8a6}{reserve}} (size\+\_\+type new\+\_\+cap)
+\item 
+static constexpr size\+\_\+type \mbox{\hyperlink{structutils_1_1basic__static__string_a4c5f8e2b1304dbae69ea3af651b37824}{capacity}} () noexcept
+\item 
+static consteval void \mbox{\hyperlink{structutils_1_1basic__static__string_ab803ad21c2dad933dd89ec8b6916ce1b}{shrink\+\_\+to\+\_\+fit}} () noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+CharT \mbox{\hyperlink{structutils_1_1basic__static__string_a102ebad9f5da17c52ed03163a0d63cca}{data\+\_\+}} \mbox{[}N\mbox{]}
+\item 
+size\+\_\+type \mbox{\hyperlink{structutils_1_1basic__static__string_af66e822ce87cbc785b8b89d83ea87903}{size\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename CharU , std\+::size\+\_\+t M, typename TraitsU $>$ }\\struct \mbox{\hyperlink{structutils_1_1basic__static__string_a8ed62ad4929514bd380d98578b09b246}{basic\+\_\+static\+\_\+string}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename CharT, std\+::size\+\_\+t N, typename Traits = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$\newline
+struct utils\+::basic\+\_\+static\+\_\+string$<$ Char\+T, N, Traits $>$}
+An owning string defined at compile time. 
+
+This class implements a subset of the interface of {\ttfamily std\+::basic\+\_\+string}, excluding members that would require the string to be resizable. In addition, all modifying operations are consteval, maintaining the variant that the class is immutable at runtime. \begin{DoxyNote}{Note}
+The underlying character sequence ({\ttfamily data}) is null-\/terminated. 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00234}{234}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}\label{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!const\_iterator@{const\_iterator}}
+\index{const\_iterator@{const\_iterator}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{const\_iterator}{const\_iterator}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+using \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} =  const CharT$\ast$}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00245}{245}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a5785fccbaac58b24c5447812467c2bb3}\label{structutils_1_1basic__static__string_a5785fccbaac58b24c5447812467c2bb3}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!const\_reverse\_iterator@{const\_reverse\_iterator}}
+\index{const\_reverse\_iterator@{const\_reverse\_iterator}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{const\_reverse\_iterator}{const\_reverse\_iterator}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+using \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::\mbox{\hyperlink{structutils_1_1basic__static__string_a5785fccbaac58b24c5447812467c2bb3}{const\+\_\+reverse\+\_\+iterator}} =  std\+::reverse\+\_\+iterator$<$\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}$>$}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00247}{247}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}\label{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!iterator@{iterator}}
+\index{iterator@{iterator}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+using \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::\mbox{\hyperlink{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}{iterator}} =  CharT$\ast$}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00244}{244}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a1bf4d7106bf93b6889a17e7af7a023e3}\label{structutils_1_1basic__static__string_a1bf4d7106bf93b6889a17e7af7a023e3}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!resize\_t@{resize\_t}}
+\index{resize\_t@{resize\_t}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{resize\_t}{resize\_t}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+template$<$std\+::size\+\_\+t M$>$ \\
+using \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::\mbox{\hyperlink{structutils_1_1basic__static__string_a1bf4d7106bf93b6889a17e7af7a023e3}{resize\+\_\+t}} =  \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$CharT, M, Traits$>$}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00250}{250}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_ac47365924afedb811709d742edd80f5f}\label{structutils_1_1basic__static__string_ac47365924afedb811709d742edd80f5f}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!reverse\_iterator@{reverse\_iterator}}
+\index{reverse\_iterator@{reverse\_iterator}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{reverse\_iterator}{reverse\_iterator}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+using \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::\mbox{\hyperlink{structutils_1_1basic__static__string_ac47365924afedb811709d742edd80f5f}{reverse\+\_\+iterator}} =  std\+::reverse\+\_\+iterator$<$\mbox{\hyperlink{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}{iterator}}$>$}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00246}{246}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a0387fe20da651cad0e2741b7e23cd56a}\label{structutils_1_1basic__static__string_a0387fe20da651cad0e2741b7e23cd56a}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!string\_view\_type@{string\_view\_type}}
+\index{string\_view\_type@{string\_view\_type}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{string\_view\_type}{string\_view\_type}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+using \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::\mbox{\hyperlink{structutils_1_1basic__static__string_a0387fe20da651cad0e2741b7e23cd56a}{string\+\_\+view\+\_\+type}} =  \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$CharT, Traits$>$}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00248}{248}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structutils_1_1basic__static__string_acaa78887931169885347ba3a3c635335}\label{structutils_1_1basic__static__string_acaa78887931169885347ba3a3c635335}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!basic\_static\_string@{basic\_static\_string}}
+\index{basic\_static\_string@{basic\_static\_string}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_static\_string()}{basic\_static\_string()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::\mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} (\begin{DoxyParamCaption}\item[{const CharT(\&)}]{s\mbox{[}\+N\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00255}{255}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_aaf951b9377b2cb3db2763211b9fefb5e}\label{structutils_1_1basic__static__string_aaf951b9377b2cb3db2763211b9fefb5e}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!basic\_static\_string@{basic\_static\_string}}
+\index{basic\_static\_string@{basic\_static\_string}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_static\_string()}{basic\_static\_string()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+template$<$typename... $>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::\mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} (\begin{DoxyParamCaption}\item[{const CharT $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00257}{257}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_acf7eae27b7d6e520b44f5e3f804e0cf4}\label{structutils_1_1basic__static__string_acf7eae27b7d6e520b44f5e3f804e0cf4}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!basic\_static\_string@{basic\_static\_string}}
+\index{basic\_static\_string@{basic\_static\_string}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_static\_string()}{basic\_static\_string()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::\mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} (\begin{DoxyParamCaption}\item[{const CharT $\ast$}]{s,  }\item[{size\+\_\+type}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00258}{258}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_ab9078ca1efa621e114e1ebd9f7536539}\label{structutils_1_1basic__static__string_ab9078ca1efa621e114e1ebd9f7536539}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!basic\_static\_string@{basic\_static\_string}}
+\index{basic\_static\_string@{basic\_static\_string}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_static\_string()}{basic\_static\_string()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::\mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{count,  }\item[{const CharT}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00259}{259}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a2ccf463f586c5decbe25f4e8c303d36a}\label{structutils_1_1basic__static__string_a2ccf463f586c5decbe25f4e8c303d36a}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!basic\_static\_string@{basic\_static\_string}}
+\index{basic\_static\_string@{basic\_static\_string}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_static\_string()}{basic\_static\_string()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::\mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} (\begin{DoxyParamCaption}\item[{std\+::nullptr\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a89cd4f1c939b1ae7b08a69027b0d650a}\label{structutils_1_1basic__static__string_a89cd4f1c939b1ae7b08a69027b0d650a}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!basic\_static\_string@{basic\_static\_string}}
+\index{basic\_static\_string@{basic\_static\_string}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_static\_string()}{basic\_static\_string()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::\mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a0387fe20da651cad0e2741b7e23cd56a}{string\+\_\+view\+\_\+type}}}]{sv,  }\item[{size\+\_\+type}]{pos = {\ttfamily 0},  }\item[{size\+\_\+type}]{count = {\ttfamily npos} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00261}{261}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a2d6066965659629212adb977489d5baf}\label{structutils_1_1basic__static__string_a2d6066965659629212adb977489d5baf}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!basic\_static\_string@{basic\_static\_string}}
+\index{basic\_static\_string@{basic\_static\_string}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_static\_string()}{basic\_static\_string()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+template$<$typename I , typename S $>$ \newline
+requires (container\+\_\+compatible\+\_\+iterator$<$I, CharT$>$ \&\& std\+::sentinel\+\_\+for$<$S, I$>$)\\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::\mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} (\begin{DoxyParamCaption}\item[{I}]{begin,  }\item[{S}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00266}{266}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a79dfaf89b450ad0fa400e5ca56e979c0}\label{structutils_1_1basic__static__string_a79dfaf89b450ad0fa400e5ca56e979c0}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!basic\_static\_string@{basic\_static\_string}}
+\index{basic\_static\_string@{basic\_static\_string}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_static\_string()}{basic\_static\_string()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::\mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} (\begin{DoxyParamCaption}\item[{std\+::from\+\_\+range\+\_\+t}]{,  }\item[{container\+\_\+compatible\+\_\+range$<$ CharT $>$ auto \&\&}]{rng }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00267}{267}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a3455747c81a2b5419097145f61afdf3d}\label{structutils_1_1basic__static__string_a3455747c81a2b5419097145f61afdf3d}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!basic\_static\_string@{basic\_static\_string}}
+\index{basic\_static\_string@{basic\_static\_string}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_static\_string()}{basic\_static\_string()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::\mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ CharT $>$}]{ilist }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00270}{270}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a9170300adc9ac1e5f3549763d5d628dc}\label{structutils_1_1basic__static__string_a9170300adc9ac1e5f3549763d5d628dc}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!append@{append}}
+\index{append@{append}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::append (\begin{DoxyParamCaption}\item[{const CharT $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00409}{409}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_af18228c3e37c9d7aacd31044efeaf745}\label{structutils_1_1basic__static__string_af18228c3e37c9d7aacd31044efeaf745}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!append@{append}}
+\index{append@{append}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::append (\begin{DoxyParamCaption}\item[{const CharT $\ast$}]{s,  }\item[{size\+\_\+type}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00408}{408}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a6e76abe30e721523960929ec7238ea48}\label{structutils_1_1basic__static__string_a6e76abe30e721523960929ec7238ea48}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!append@{append}}
+\index{append@{append}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+template$<$typename I , typename S $>$ \newline
+requires (container\+\_\+compatible\+\_\+iterator$<$I, CharT$>$ \&\& std\+::sentinel\+\_\+for$<$S, I$>$)\\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::append (\begin{DoxyParamCaption}\item[{I}]{begin,  }\item[{S}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00415}{415}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_aede5d56580abbecf55efd02494aea262}\label{structutils_1_1basic__static__string_aede5d56580abbecf55efd02494aea262}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!append@{append}}
+\index{append@{append}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::append (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{count,  }\item[{CharT}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00407}{407}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a479647d460a6d54f2a333caff2a92b91}\label{structutils_1_1basic__static__string_a479647d460a6d54f2a333caff2a92b91}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!append@{append}}
+\index{append@{append}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::append (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ CharT $>$}]{ilist }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00419}{419}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a7e287a68912a089d84e4980ecec75549}\label{structutils_1_1basic__static__string_a7e287a68912a089d84e4980ecec75549}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!append@{append}}
+\index{append@{append}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::append (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a0387fe20da651cad0e2741b7e23cd56a}{string\+\_\+view\+\_\+type}}}]{sv,  }\item[{size\+\_\+type}]{pos = {\ttfamily 0},  }\item[{size\+\_\+type}]{count = {\ttfamily npos} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00410}{410}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_abae0d455ceee7e09c2b2e21a1f0a24ce}\label{structutils_1_1basic__static__string_abae0d455ceee7e09c2b2e21a1f0a24ce}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!append\_range@{append\_range}}
+\index{append\_range@{append\_range}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{append\_range()}{append\_range()}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::append\+\_\+range (\begin{DoxyParamCaption}\item[{container\+\_\+compatible\+\_\+range$<$ CharT $>$ auto \&\&}]{rng }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00423}{423}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_ad1221d95815996a33804ddbf6d1dfaa3}\label{structutils_1_1basic__static__string_ad1221d95815996a33804ddbf6d1dfaa3}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!assign@{assign}}
+\index{assign@{assign}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{assign()}{assign()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+template$<$typename... $>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::assign (\begin{DoxyParamCaption}\item[{const CharT $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00279}{279}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_acf784cbe46b583c7acc7ec23477dc3bf}\label{structutils_1_1basic__static__string_acf784cbe46b583c7acc7ec23477dc3bf}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!assign@{assign}}
+\index{assign@{assign}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{assign()}{assign()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::assign (\begin{DoxyParamCaption}\item[{const CharT $\ast$}]{s,  }\item[{size\+\_\+type}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00283}{283}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a8c43545175d7d0b068abc4209c4b31d2}\label{structutils_1_1basic__static__string_a8c43545175d7d0b068abc4209c4b31d2}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!assign@{assign}}
+\index{assign@{assign}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{assign()}{assign()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::assign (\begin{DoxyParamCaption}\item[{const CharT(\&)}]{s\mbox{[}\+N\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00272}{272}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a8c371c1bcb7ebea258415677895e9dbc}\label{structutils_1_1basic__static__string_a8c371c1bcb7ebea258415677895e9dbc}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!assign@{assign}}
+\index{assign@{assign}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{assign()}{assign()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+template$<$typename I , typename S $>$ \newline
+requires (container\+\_\+compatible\+\_\+iterator$<$I, CharT$>$ \&\& std\+::sentinel\+\_\+for$<$S, I$>$)\\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::assign (\begin{DoxyParamCaption}\item[{I}]{begin,  }\item[{S}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00301}{301}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a2e02c362f7c9e9502a5e2453409b1161}\label{structutils_1_1basic__static__string_a2e02c362f7c9e9502a5e2453409b1161}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!assign@{assign}}
+\index{assign@{assign}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{assign()}{assign()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::assign (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{count,  }\item[{const CharT}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00289}{289}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a30962e6f697f21f9ae82aa8ef03983df}\label{structutils_1_1basic__static__string_a30962e6f697f21f9ae82aa8ef03983df}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!assign@{assign}}
+\index{assign@{assign}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{assign()}{assign()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::assign (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ CharT $>$}]{ilist }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00310}{310}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a6cf7121de5db066bec934c96a9f21007}\label{structutils_1_1basic__static__string_a6cf7121de5db066bec934c96a9f21007}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!assign@{assign}}
+\index{assign@{assign}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{assign()}{assign()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::assign (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a0387fe20da651cad0e2741b7e23cd56a}{string\+\_\+view\+\_\+type}}}]{sv,  }\item[{size\+\_\+type}]{pos = {\ttfamily 0},  }\item[{size\+\_\+type}]{count = {\ttfamily npos} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00295}{295}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a4bdfa1f4197f2b3fa5c4cc738aa4d0bc}\label{structutils_1_1basic__static__string_a4bdfa1f4197f2b3fa5c4cc738aa4d0bc}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!assign\_range@{assign\_range}}
+\index{assign\_range@{assign\_range}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{assign\_range()}{assign\_range()}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::assign\+\_\+range (\begin{DoxyParamCaption}\item[{container\+\_\+compatible\+\_\+range$<$ CharT $>$ auto \&\&}]{rng }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00316}{316}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a6094c59d94552abd43f0d30819177494}\label{structutils_1_1basic__static__string_a6094c59d94552abd43f0d30819177494}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!begin@{begin}}
+\index{begin@{begin}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}{iterator}} \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00320}{320}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a9caeb048f66c572486db1a75d9657b6c}\label{structutils_1_1basic__static__string_a9caeb048f66c572486db1a75d9657b6c}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!begin@{begin}}
+\index{begin@{begin}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+constexpr \mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}} \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00321}{321}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_abc42da8283eb1278c9f65b05638983a1}\label{structutils_1_1basic__static__string_abc42da8283eb1278c9f65b05638983a1}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!c\_str@{c\_str}}
+\index{c\_str@{c\_str}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{c\_str()}{c\_str()}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+constexpr const CharT $\ast$ \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::c\+\_\+str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00325}{325}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a4c5f8e2b1304dbae69ea3af651b37824}\label{structutils_1_1basic__static__string_a4c5f8e2b1304dbae69ea3af651b37824}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!capacity@{capacity}}
+\index{capacity@{capacity}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+static constexpr size\+\_\+type \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00331}{331}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_afd11ed8f4054524545e881ee43ecaad1}\label{structutils_1_1basic__static__string_afd11ed8f4054524545e881ee43ecaad1}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!clear@{clear}}
+\index{clear@{clear}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval void \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00334}{334}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_ae12461b9fa8f756191e8861746af6259}\label{structutils_1_1basic__static__string_ae12461b9fa8f756191e8861746af6259}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!data@{data}}
+\index{data@{data}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+constexpr const CharT $\ast$ \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00324}{324}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_abddb39f2ed05d63b7d48571903f67870}\label{structutils_1_1basic__static__string_abddb39f2ed05d63b7d48571903f67870}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!data@{data}}
+\index{data@{data}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+constexpr CharT $\ast$ \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00323}{323}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_aacd798574e04cdbfb491e53847001730}\label{structutils_1_1basic__static__string_aacd798574e04cdbfb491e53847001730}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!erase@{erase}}
+\index{erase@{erase}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}{iterator}} \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{first,  }\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{last }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00395}{395}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_aae09ae06ff685c8ec545e3a820989f84}\label{structutils_1_1basic__static__string_aae09ae06ff685c8ec545e3a820989f84}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!erase@{erase}}
+\index{erase@{erase}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}{iterator}} \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00392}{392}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a1a3136256055a3d016fcf546b4fb6311}\label{structutils_1_1basic__static__string_a1a3136256055a3d016fcf546b4fb6311}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!erase@{erase}}
+\index{erase@{erase}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::erase (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{index = {\ttfamily 0},  }\item[{size\+\_\+type}]{count = {\ttfamily npos} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00387}{387}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_af47f6378de8b4d5b37c90352ab611892}\label{structutils_1_1basic__static__string_af47f6378de8b4d5b37c90352ab611892}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!insert@{insert}}
+\index{insert@{insert}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}{iterator}} \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{pos,  }\item[{const CharT}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00351}{351}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a6aa789deed61cba63c702565e1365139}\label{structutils_1_1basic__static__string_a6aa789deed61cba63c702565e1365139}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!insert@{insert}}
+\index{insert@{insert}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+template$<$typename I , typename S $>$ \newline
+requires (container\+\_\+compatible\+\_\+iterator$<$I, CharT$>$ \&\& std\+::sentinel\+\_\+for$<$S, I$>$)\\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}{iterator}} \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{pos,  }\item[{I}]{begin,  }\item[{S}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00367}{367}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a8ed655b82d16380d754566179f16229c}\label{structutils_1_1basic__static__string_a8ed655b82d16380d754566179f16229c}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!insert@{insert}}
+\index{insert@{insert}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}{iterator}} \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{pos,  }\item[{size\+\_\+type}]{count,  }\item[{CharT}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00354}{354}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_afdf6690b4eaa7c65c09d7b0be6266e41}\label{structutils_1_1basic__static__string_afdf6690b4eaa7c65c09d7b0be6266e41}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!insert@{insert}}
+\index{insert@{insert}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}{iterator}} \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{pos,  }\item[{std\+::initializer\+\_\+list$<$ CharT $>$}]{ilist }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00381}{381}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_ac36bdd509dcd990105f26a765987bc29}\label{structutils_1_1basic__static__string_ac36bdd509dcd990105f26a765987bc29}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!insert@{insert}}
+\index{insert@{insert}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::insert (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{index,  }\item[{const CharT $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00340}{340}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_acd08e92cd333d927b5c47f555fbb3de0}\label{structutils_1_1basic__static__string_acd08e92cd333d927b5c47f555fbb3de0}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!insert@{insert}}
+\index{insert@{insert}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::insert (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{index,  }\item[{const CharT $\ast$}]{s,  }\item[{size\+\_\+type}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00343}{343}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a1a8716783d4183c5e4ba1cba6bd5e2fb}\label{structutils_1_1basic__static__string_a1a8716783d4183c5e4ba1cba6bd5e2fb}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!insert@{insert}}
+\index{insert@{insert}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::insert (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{index,  }\item[{size\+\_\+type}]{count,  }\item[{CharT}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00335}{335}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a0197c32ba0e3058d0f7e530807f5130a}\label{structutils_1_1basic__static__string_a0197c32ba0e3058d0f7e530807f5130a}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!insert@{insert}}
+\index{insert@{insert}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::insert (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{index,  }\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a0387fe20da651cad0e2741b7e23cd56a}{string\+\_\+view\+\_\+type}}}]{sv,  }\item[{size\+\_\+type}]{pos = {\ttfamily 0},  }\item[{size\+\_\+type}]{count = {\ttfamily npos} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00360}{360}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_acb9c43b764b4ed68d05ab18ecfddddb3}\label{structutils_1_1basic__static__string_acb9c43b764b4ed68d05ab18ecfddddb3}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!insert\_range@{insert\_range}}
+\index{insert\_range@{insert\_range}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{insert\_range()}{insert\_range()}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string_a5b87110447fd9e0f2186dc3061a50e0b}{iterator}} \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::insert\+\_\+range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{pos,  }\item[{container\+\_\+compatible\+\_\+range$<$ CharT $>$ auto \&\&}]{rng }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00384}{384}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a20e561fced4a89f98e1fec464a867fa4}\label{structutils_1_1basic__static__string_a20e561fced4a89f98e1fec464a867fa4}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!max\_size@{max\_size}}
+\index{max\_size@{max\_size}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{max\_size()}{max\_size()}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+static constexpr size\+\_\+type \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::max\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00327}{327}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a00cf16537294c230aedcf65841d1795a}\label{structutils_1_1basic__static__string_a00cf16537294c230aedcf65841d1795a}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!operator basic\_static\_string\_view$<$ CharT, Traits $>$@{operator basic\_static\_string\_view$<$ CharT, Traits $>$}}
+\index{operator basic\_static\_string\_view$<$ CharT, Traits $>$@{operator basic\_static\_string\_view$<$ CharT, Traits $>$}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{operator basic\_static\_string\_view$<$ CharT, Traits $>$()}{operator basic\_static\_string\_view< CharT, Traits >()}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::operator \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$ CharT, Traits $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00512}{512}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a6e345f2f1854f7110b870ce3f6ccffce}\label{structutils_1_1basic__static__string_a6e345f2f1854f7110b870ce3f6ccffce}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval auto \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::operator+ (\begin{DoxyParamCaption}\item[{CharT}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00438}{438}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a7698ccee41c702807d86ea85d7fdaee7}\label{structutils_1_1basic__static__string_a7698ccee41c702807d86ea85d7fdaee7}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+template$<$std\+::size\+\_\+t M$>$ \\
+consteval auto \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$ CharT, M, Traits $>$ \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00431}{431}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a2446cb110faa540d564b8daff069ea27}\label{structutils_1_1basic__static__string_a2446cb110faa540d564b8daff069ea27}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::operator+= (\begin{DoxyParamCaption}\item[{CharT}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00426}{426}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a5bce21be21829af3b1a752f1d3bb77fa}\label{structutils_1_1basic__static__string_a5bce21be21829af3b1a752f1d3bb77fa}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const CharT $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00427}{427}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a59e545991ba4792bc8c34f2176c9a60d}\label{structutils_1_1basic__static__string_a59e545991ba4792bc8c34f2176c9a60d}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::operator+= (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ CharT $>$}]{ilist }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00429}{429}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a58ae23deef80c6e44854e9315623968a}\label{structutils_1_1basic__static__string_a58ae23deef80c6e44854e9315623968a}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a0387fe20da651cad0e2741b7e23cd56a}{string\+\_\+view\+\_\+type}}}]{sv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00428}{428}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a2a2bdad06f4df5c2ad6e72d4f0f1b338}\label{structutils_1_1basic__static__string_a2a2bdad06f4df5c2ad6e72d4f0f1b338}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!pop\_back@{pop\_back}}
+\index{pop\_back@{pop\_back}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{pop\_back()}{pop\_back()}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval void \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::pop\+\_\+back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00406}{406}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_ad2a1586fb8f8e73e4230bd38ea5c0d44}\label{structutils_1_1basic__static__string_ad2a1586fb8f8e73e4230bd38ea5c0d44}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval void \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{CharT}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00401}{401}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a91d1e2a6da8da2af8d19e877b08f13b2}\label{structutils_1_1basic__static__string_a91d1e2a6da8da2af8d19e877b08f13b2}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!replace@{replace}}
+\index{replace@{replace}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{replace()}{replace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::replace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{first,  }\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{last,  }\item[{const CharT $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00473}{473}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a7f24c7f5965a4f715ee854a052b9fc1e}\label{structutils_1_1basic__static__string_a7f24c7f5965a4f715ee854a052b9fc1e}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!replace@{replace}}
+\index{replace@{replace}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{replace()}{replace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::replace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{first,  }\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{last,  }\item[{const CharT $\ast$}]{s,  }\item[{size\+\_\+type}]{count2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00460}{460}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a87a06654232ee9c15ebc48dbe91bd982}\label{structutils_1_1basic__static__string_a87a06654232ee9c15ebc48dbe91bd982}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!replace@{replace}}
+\index{replace@{replace}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{replace()}{replace()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+template$<$typename I , typename S $>$ \newline
+requires (container\+\_\+compatible\+\_\+iterator$<$I, CharT$>$ \&\& std\+::sentinel\+\_\+for$<$S, I$>$)\\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::replace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{first,  }\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{last,  }\item[{S}]{first2,  }\item[{I}]{last2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00490}{490}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a6566e2893ac3ca4fd05d7f875fcdb257}\label{structutils_1_1basic__static__string_a6566e2893ac3ca4fd05d7f875fcdb257}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!replace@{replace}}
+\index{replace@{replace}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{replace()}{replace()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::replace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{first,  }\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{last,  }\item[{size\+\_\+type}]{count2,  }\item[{CharT}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00481}{481}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_aa11fe5c55bfa7b6c7a2a3abaf6e89a18}\label{structutils_1_1basic__static__string_aa11fe5c55bfa7b6c7a2a3abaf6e89a18}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!replace@{replace}}
+\index{replace@{replace}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{replace()}{replace()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::replace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{first,  }\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{last,  }\item[{std\+::initializer\+\_\+list$<$ CharT $>$}]{ilist }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00493}{493}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_ad1b2e75a6d4acef3077719fe116e59aa}\label{structutils_1_1basic__static__string_ad1b2e75a6d4acef3077719fe116e59aa}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!replace@{replace}}
+\index{replace@{replace}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{replace()}{replace()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::replace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{first,  }\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{last,  }\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a0387fe20da651cad0e2741b7e23cd56a}{string\+\_\+view\+\_\+type}}}]{sv,  }\item[{size\+\_\+type}]{pos2 = {\ttfamily 0},  }\item[{size\+\_\+type}]{count2 = {\ttfamily npos} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00450}{450}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a330fefd2dadf96ba3fa56562049e8199}\label{structutils_1_1basic__static__string_a330fefd2dadf96ba3fa56562049e8199}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!replace@{replace}}
+\index{replace@{replace}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{replace()}{replace()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::replace (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{pos,  }\item[{size\+\_\+type}]{count,  }\item[{const CharT $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00470}{470}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_ac55cc29da89251ad05cb8b6566880a23}\label{structutils_1_1basic__static__string_ac55cc29da89251ad05cb8b6566880a23}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!replace@{replace}}
+\index{replace@{replace}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{replace()}{replace()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::replace (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{pos,  }\item[{size\+\_\+type}]{count,  }\item[{const CharT $\ast$}]{s,  }\item[{size\+\_\+type}]{count2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00455}{455}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_ac577e22534e36f7a2a047d82ab0a25ff}\label{structutils_1_1basic__static__string_ac577e22534e36f7a2a047d82ab0a25ff}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!replace@{replace}}
+\index{replace@{replace}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{replace()}{replace()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::replace (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{pos,  }\item[{size\+\_\+type}]{count,  }\item[{size\+\_\+type}]{count2,  }\item[{CharT}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00476}{476}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_ad17ada98a65015172dc6b9f1cee14732}\label{structutils_1_1basic__static__string_ad17ada98a65015172dc6b9f1cee14732}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!replace@{replace}}
+\index{replace@{replace}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{replace()}{replace()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::replace (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{pos,  }\item[{size\+\_\+type}]{count,  }\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a0387fe20da651cad0e2741b7e23cd56a}{string\+\_\+view\+\_\+type}}}]{sv,  }\item[{size\+\_\+type}]{pos2 = {\ttfamily 0},  }\item[{size\+\_\+type}]{count2 = {\ttfamily npos} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00445}{445}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a4c665f69958053a940f5557a799b56b8}\label{structutils_1_1basic__static__string_a4c665f69958053a940f5557a799b56b8}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!replace\_range@{replace\_range}}
+\index{replace\_range@{replace\_range}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{replace\_range()}{replace\_range()}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \& \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::replace\+\_\+range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{first,  }\item[{\mbox{\hyperlink{structutils_1_1basic__static__string_a79faaaec4417e6f046c65d57eebf1e27}{const\+\_\+iterator}}}]{last,  }\item[{container\+\_\+compatible\+\_\+range$<$ CharT $>$ auto \&\&}]{rng }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00497}{497}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_ab18bcf6046cf57ed49a5e8a4efadb8a6}\label{structutils_1_1basic__static__string_ab18bcf6046cf57ed49a5e8a4efadb8a6}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!reserve@{reserve}}
+\index{reserve@{reserve}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{reserve()}{reserve()}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+static consteval void \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::reserve (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{new\+\_\+cap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00328}{328}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a40568731742f8076d9910d2b9b32875b}\label{structutils_1_1basic__static__string_a40568731742f8076d9910d2b9b32875b}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!resize@{resize}}
+\index{resize@{resize}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval void \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::resize (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00501}{501}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a0342105be67a285c412dbf44661143cc}\label{structutils_1_1basic__static__string_a0342105be67a285c412dbf44661143cc}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!resize@{resize}}
+\index{resize@{resize}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval void \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::resize (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{count,  }\item[{CharT}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00505}{505}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_ab803ad21c2dad933dd89ec8b6916ce1b}\label{structutils_1_1basic__static__string_ab803ad21c2dad933dd89ec8b6916ce1b}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!shrink\_to\_fit@{shrink\_to\_fit}}
+\index{shrink\_to\_fit@{shrink\_to\_fit}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{shrink\_to\_fit()}{shrink\_to\_fit()}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+static consteval void \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::shrink\+\_\+to\+\_\+fit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00332}{332}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a877f835d6f2565e679f0ffd2259470c7}\label{structutils_1_1basic__static__string_a877f835d6f2565e679f0ffd2259470c7}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!size@{size}}
+\index{size@{size}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+constexpr size\+\_\+type \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00326}{326}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a564453bdf9d3883dedfcdbc85900a7e9}\label{structutils_1_1basic__static__string_a564453bdf9d3883dedfcdbc85900a7e9}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!substr@{substr}}
+\index{substr@{substr}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{substr()}{substr()}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::substr (\begin{DoxyParamCaption}\item[{size\+\_\+type}]{pos = {\ttfamily 0},  }\item[{size\+\_\+type}]{count = {\ttfamily npos} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00508}{508}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_ad7c46bf91e0a112a1073d5374f491296}\label{structutils_1_1basic__static__string_ad7c46bf91e0a112a1073d5374f491296}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!swap@{swap}}
+\index{swap@{swap}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+consteval void \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00506}{506}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a8ed62ad4929514bd380d98578b09b246}\label{structutils_1_1basic__static__string_a8ed62ad4929514bd380d98578b09b246}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!basic\_static\_string@{basic\_static\_string}}
+\index{basic\_static\_string@{basic\_static\_string}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_static\_string}{basic\_static\_string}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+template$<$typename CharU , std\+::size\+\_\+t M, typename TraitsU $>$ \\
+friend struct \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00242}{242}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structutils_1_1basic__static__string_a102ebad9f5da17c52ed03163a0d63cca}\label{structutils_1_1basic__static__string_a102ebad9f5da17c52ed03163a0d63cca}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!data\_@{data\_}}
+\index{data\_@{data\_}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{data\_}{data\_}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+CharT \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::data\+\_\+\mbox{[}N\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00252}{252}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+\mbox{\Hypertarget{structutils_1_1basic__static__string_af66e822ce87cbc785b8b89d83ea87903}\label{structutils_1_1basic__static__string_af66e822ce87cbc785b8b89d83ea87903}} 
+\index{utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}!size\_@{size\_}}
+\index{size\_@{size\_}!utils::basic\_static\_string$<$ CharT, N, Traits $>$@{utils::basic\_static\_string$<$ CharT, N, Traits $>$}}
+\doxysubsubsection{\texorpdfstring{size\_}{size\_}}
+{\footnotesize\ttfamily template$<$typename CharT , std\+::size\+\_\+t N, typename Traits  = std\+::char\+\_\+traits$<$\+Char\+T$>$$>$ \\
+size\+\_\+type \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string}}$<$ CharT, N, Traits $>$\+::size\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00253}{253}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{static__string_8hpp}{static\+\_\+string.\+hpp}}\end{DoxyCompactItemize}

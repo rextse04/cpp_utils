@@ -86,11 +86,11 @@ $(document).ready(function(){initNavTree('ResourceAllocator.html',''); initResiz
   <div class="headertitle"><div class="title">Named Requirement: <em>ResourceAllocator</em> </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p ><a class="anchor" id="md_docs_named_reqs_ResourceAllocator"></a>A resource allocator is an <em>Allocator</em> which operates on buffer memory allocated from an upstream <code>std::pmr::memory_resource</code>. It can be wrapped in <code>pmr::allocator_resource</code> to act as an <code>std::pmr::memory_resource</code>, which is useful when one would like to reuse the same allocation strategy with or without virtual dispatch.</p>
-<h1><a class="anchor" id="autotoc_md6"></a>
+<div class="textblock"><p ><a class="anchor" id="md_docs_named_reqs_ResourceAllocator"></a>A resource allocator is an <em>Allocator</em> which operates on buffer memory allocated from an upstream <code>std::pmr::memory_resource</code>. It can be wrapped in <code><a class="el" href="classutils_1_1pmr_1_1allocator__resource.html" title="A std::pmr::memory_resource which reserves specified amount of memory and allocates it using a given ...">utils::pmr::allocator_resource</a></code> to act as an <code>std::pmr::memory_resource</code>, which is useful when one would like to reuse the same allocation strategy with or without virtual dispatch.</p>
+<h1><a class="anchor" id="autotoc_md14"></a>
 Requirements</h1>
 <p >A class type <code>A</code> meets the named requirement if it satisfies <em>Allocator</em> and all requirements below. </p>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 Notations</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -108,7 +108,7 @@ Notations</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>p</code>   </td><td class="markdownTableBodyNone">A value of type <code>std::byte*</code>   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 Supported Operations</h2>
 <table class="doxtable">
 <tr>
@@ -158,9 +158,9 @@ No exceptions are thrown. </li>
 </ul>
 </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md17"></a>
 Associated Concept</h1>
-<p >The library provides <code>pmr::resource_allocator&lt;A&gt;</code> as an equivalent constraint to the named requirement. </p>
+<p >The library provides <code><a class="el" href="conceptutils_1_1pmr_1_1resource__allocator.html" title="Named requirement: &lt;i&gt;ResourceAllocator&lt;/i&gt;.">utils::pmr::resource_allocator</a>&lt;A&gt;</code> as an equivalent constraint to the named requirement. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

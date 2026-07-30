@@ -16,3 +16,66 @@ Include dependency graph for static\+\_\+string.\+hpp\+:
 \includegraphics[width=350pt]{static__string_8hpp__incl}
 \end{center}
 \end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structutils_1_1basic__static__string__view}{utils\+::basic\+\_\+static\+\_\+string\+\_\+view$<$ Char\+T, Traits $>$}}
+\begin{DoxyCompactList}\small\item\em Identical interface to {\ttfamily std\+::basic\+\_\+string\+\_\+view}, except that this class can only be constructed at compile time, thus ensuring that it refers to a \char`\"{}static string\char`\"{}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1basic__static__string}{utils\+::basic\+\_\+static\+\_\+string$<$ Char\+T, N, Traits $>$}}
+\begin{DoxyCompactList}\small\item\em An owning string defined at compile time. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structutils_1_1trim}{utils\+::trim$<$ S $>$}}
+\item 
+struct \mbox{\hyperlink{structstd_1_1formatter_3_01S_00_01typename_01S_1_1value__type_01_4}{std\+::formatter$<$ S, typename S\+::value\+\_\+type $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceutils}{utils}}
+\item 
+namespace \mbox{\hyperlink{namespaceutils_1_1static__string__literals}{utils\+::static\+\_\+string\+\_\+literals}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespaceutils_a145ea814e7f8a159dda04fd61f74c2a2}{utils\+::static\+\_\+string\+\_\+view}} = basic\+\_\+static\+\_\+string\+\_\+view$<$ char $>$
+\item 
+using \mbox{\hyperlink{namespaceutils_a024354295af32aee7ed2220d3a52d8f5}{utils\+::wstatic\+\_\+string\+\_\+view}} = basic\+\_\+static\+\_\+string\+\_\+view$<$ wchar\+\_\+t $>$
+\item 
+using \mbox{\hyperlink{namespaceutils_a6d9158916669d9f93599022e9201c016}{utils\+::u8static\+\_\+string\+\_\+view}} = basic\+\_\+static\+\_\+string\+\_\+view$<$ char8\+\_\+t $>$
+\item 
+using \mbox{\hyperlink{namespaceutils_a52a16a9740cf3b0b2e963198ebcd7ca9}{utils\+::u16static\+\_\+string\+\_\+view}} = basic\+\_\+static\+\_\+string\+\_\+view$<$ char16\+\_\+t $>$
+\item 
+using \mbox{\hyperlink{namespaceutils_a607e1c30fad8199a766afa327008d13f}{utils\+::u32static\+\_\+string\+\_\+view}} = basic\+\_\+static\+\_\+string\+\_\+view$<$ char32\+\_\+t $>$
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\using \mbox{\hyperlink{namespaceutils_a74b48c2315cd329e92dc844eacbec5ae}{utils\+::static\+\_\+string}} = basic\+\_\+static\+\_\+string$<$ char, N $>$
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\using \mbox{\hyperlink{namespaceutils_af0ea072dbe2b847ec65a37641f0352fc}{utils\+::wstatic\+\_\+string}} = basic\+\_\+static\+\_\+string$<$ wchar\+\_\+t, N $>$
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\using \mbox{\hyperlink{namespaceutils_ab905b8e2c36d6ed84b4653a2551f6001}{utils\+::u8static\+\_\+string}} = basic\+\_\+static\+\_\+string$<$ char8\+\_\+t, N $>$
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\using \mbox{\hyperlink{namespaceutils_aaf9bbe5b2bd0925138bff5c0b7a9c16c}{utils\+::u16static\+\_\+string}} = basic\+\_\+static\+\_\+string$<$ char16\+\_\+t, N $>$
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\using \mbox{\hyperlink{namespaceutils_a8a879e6085361f9a698393a071df0e9b}{utils\+::u32static\+\_\+string}} = basic\+\_\+static\+\_\+string$<$ char32\+\_\+t, N $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+consteval static\+\_\+string\+\_\+view \mbox{\hyperlink{namespaceutils_1_1static__string__literals_a0d6a61ddc9d0f2cfe4c97111c367c9af}{utils\+::static\+\_\+string\+\_\+literals\+::operator\char`\"{}\char`\"{}\+\_\+ssv}} (const char $\ast$s, std\+::size\+\_\+t len)
+\item 
+consteval wstatic\+\_\+string\+\_\+view \mbox{\hyperlink{namespaceutils_1_1static__string__literals_a07fb702117f3fe3eac335110e148bd95}{utils\+::static\+\_\+string\+\_\+literals\+::operator\char`\"{}\char`\"{}\+\_\+ssv}} (const wchar\+\_\+t $\ast$s, std\+::size\+\_\+t len)
+\item 
+consteval u8static\+\_\+string\+\_\+view \mbox{\hyperlink{namespaceutils_1_1static__string__literals_a313a07149768178def6856736b70c3a6}{utils\+::static\+\_\+string\+\_\+literals\+::operator\char`\"{}\char`\"{}\+\_\+ssv}} (const char8\+\_\+t $\ast$s, std\+::size\+\_\+t len)
+\item 
+consteval u16static\+\_\+string\+\_\+view \mbox{\hyperlink{namespaceutils_1_1static__string__literals_a8cede4c06691e18897290f15cc0b5f04}{utils\+::static\+\_\+string\+\_\+literals\+::operator\char`\"{}\char`\"{}\+\_\+ssv}} (const char16\+\_\+t $\ast$s, std\+::size\+\_\+t len)
+\item 
+consteval u32static\+\_\+string\+\_\+view \mbox{\hyperlink{namespaceutils_1_1static__string__literals_ae1877eb027b8378628c1a713c4ac1912}{utils\+::static\+\_\+string\+\_\+literals\+::operator\char`\"{}\char`\"{}\+\_\+ssv}} (const char32\+\_\+t $\ast$s, std\+::size\+\_\+t len)
+\item 
+{\footnotesize template$<$basic\+\_\+static\+\_\+string S$>$ }\\consteval auto \mbox{\hyperlink{namespaceutils_1_1static__string__literals_a972dc33cde31ee82f5ea0ba78611761f}{utils\+::static\+\_\+string\+\_\+literals\+::operator\char`\"{}\char`\"{}\+\_\+ss}} ()
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespaceutils_a610c726ab1f1a35f461b1d64c34e9f11}{utils\+::operator$<$$<$}} (std\+::ostream \&os, const tagged$<$ static\+\_\+string\+\_\+tag $>$ auto \&str)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$basic\+\_\+static\+\_\+string S$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a026f0efc276a6d7eba427c611cd569ff}{utils\+::trim\+\_\+v}} = trim$<$S$>$\+::value
+\end{DoxyCompactItemize}

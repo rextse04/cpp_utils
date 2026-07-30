@@ -1,0 +1,33 @@
+\hypertarget{conceptutils_1_1container__allocator}{}\doxysection{utils\+::container\+\_\+allocator Concept Reference}
+\label{conceptutils_1_1container__allocator}\index{utils::container\_allocator@{utils::container\_allocator}}
+
+
+Specifies if {\ttfamily T} is an allocator which can be used in a constructor of {\ttfamily C}.  
+
+
+
+
+{\ttfamily \#include $<$type.\+hpp$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} C>}
+\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1container__allocator}{utils::container\_allocator}} = }
+\DoxyCodeLine{        std::is\_same\_v<T, detail::void\_allocator\_t> || (\mbox{\hyperlink{conceptutils_1_1simple__allocator}{simple\_allocator<T>}} \&\& std::uses\_allocator\_v<C, T>)}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Detailed Description}
+Specifies if {\ttfamily T} is an allocator which can be used in a constructor of {\ttfamily C}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em C} & {\itshape Container} \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line \mbox{\hyperlink{containers_2type_8hpp_source_l00015}{15}} of file \mbox{\hyperlink{containers_2type_8hpp_source}{type.\+hpp}}.
+

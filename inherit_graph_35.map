@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structutils_1_1lambda__decay_3_01R_07_6_08_07Args_8_8_8_08_4.html" title=" " alt="" coords="5,5,140,47"/>
+<area shape="rect" id="node1" href="$structutils_1_1default__binary__op__traits.html" title="The default trait set for binary operators, except assignment and prefix operators." alt="" coords="5,5,137,47"/>
+<area shape="rect" id="node2" href="$structutils_1_1shift__behavior_1_1default__binary__op__traits.html" title="Default trait set for binary operations for utils::shift_behavior::profile_from." alt="" coords="185,5,351,47"/>
 </map>

@@ -1,0 +1,37 @@
+\hypertarget{classutils_1_1key}{}\doxysection{utils\+::key\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classutils_1_1key}\index{utils::key$<$ T $>$@{utils::key$<$ T $>$}}
+
+
+A key type that can only be constructed by specified friend types.  
+
+
+
+
+{\ttfamily \#include $<$type.\+hpp$>$}
+
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class utils\+::key$<$ T $>$}
+A key type that can only be constructed by specified friend types. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Ts} & The friend types that can construct instances of this key (C++26 variadic friends). \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyRemark}{Remarks}
+When \+\_\+\+\_\+cpp\+\_\+variadic\+\_\+friend is not supported, only a single template parameter {\ttfamily T} is used. 
+
+Useful for controlled access to private or protected constructors. 
+\end{DoxyRemark}
+
+
+Definition at line \mbox{\hyperlink{type_8hpp_source_l00181}{181}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{type_8hpp}{type.\+hpp}}\end{DoxyCompactItemize}

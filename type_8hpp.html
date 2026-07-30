@@ -83,6 +83,12 @@ $(document).ready(function(){initNavTree('type_8hpp.html',''); initResizable(); 
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#concepts">Concepts</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">type.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -128,6 +134,155 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 </div>
 <p><a href="type_8hpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1qualifiers__of.html">utils::qualifiers_of&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the const and volatile qualifiers from a type.  <a href="structutils_1_1qualifiers__of.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1apply__qualifiers.html">utils::apply_qualifiers&lt; T, Q &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies specified const and volatile qualifiers to a type, while retaining reference category/pointer.  <a href="structutils_1_1apply__qualifiers.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1follow.html">utils::follow&lt; RefT, T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the qualifiers and reference category from one type to another.  <a href="structutils_1_1follow.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1is__equiv.html">utils::is_equiv&lt; T, U &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if two types are equivalent.  <a href="structutils_1_1is__equiv.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1is__template__instance.html">utils::is_template_instance&lt; typename, typename &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a type is an instance of a given template.  <a href="structutils_1_1is__template__instance.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1is__template__instance_3_01Tmpl_00_01Tmpl_3_01Ts_8_8_8_01_4_01_4.html">utils::is_template_instance&lt; Tmpl, Tmpl&lt; Ts... &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1is__explicitly__convertible.html">utils::is_explicitly_convertible&lt; From, To &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1always__true.html">utils::always_true&lt;... &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A trait that is always <code>true_type</code>, regardless of template arguments.  <a href="structutils_1_1always__true.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1always__false.html">utils::always_false&lt;... &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A trait that is always <code>false_type</code>, regardless of template arguments.  <a href="structutils_1_1always__false.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1is__tagged.html">utils::is_tagged&lt; Tag, T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1stale__class.html">utils::stale_class</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class that cannot be copied or moved.  <a href="structutils_1_1stale__class.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1key.html">utils::key&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A key type that can only be constructed by specified friend types.  <a href="classutils_1_1key.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1sink.html">utils::sink</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A sink type that discards any arguments passed to its constructor.  <a href="structutils_1_1sink.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceutils"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html">utils</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
+Concepts</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptutils_1_1equiv__to.html">utils::equiv_to</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptutils_1_1explicitly__convertible__to.html">utils::explicitly_convertible_to</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if <code>From</code> is explicitly convertible to <code>To</code>. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptutils_1_1tagged.html">utils::tagged</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if <code>T</code> has a <code>tag</code> member alias matching or containing <code>Tag</code>. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptutils_1_1boolean__testable.html">utils::boolean_testable</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++ standard exposition-only concept: <em>boolean-testable</em>. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptutils_1_1can__reference.html">utils::can_reference</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++ standard exposition-only concept: <em>can-reference</em>. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a0f1ae7032a6b8ec9503056a4ac3a0b46"><td class="memTemplParams" colspan="2">template&lt;typename T , type_qualifiers Q&gt; </td></tr>
+<tr class="memitem:a0f1ae7032a6b8ec9503056a4ac3a0b46"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a0f1ae7032a6b8ec9503056a4ac3a0b46">utils::apply_qualifiers_t</a> = apply_qualifiers&lt; T, Q &gt;::type</td></tr>
+<tr class="separator:a0f1ae7032a6b8ec9503056a4ac3a0b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a9cee2155b4c7479372bc3ffc2dc06a59"><td class="memTemplParams" colspan="2">template&lt;typename RefT , typename T &gt; </td></tr>
+<tr class="memitem:a9cee2155b4c7479372bc3ffc2dc06a59"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a9cee2155b4c7479372bc3ffc2dc06a59">utils::follow_t</a> = follow&lt; RefT, T &gt;::type</td></tr>
+<tr class="separator:a9cee2155b4c7479372bc3ffc2dc06a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a011249984f152afb7307c44c21667c79"><td class="memTemplParams" colspan="2">template&lt;typename T , T End, T Begin = 0, T Step = 1&gt; </td></tr>
+<tr class="memitem:a011249984f152afb7307c44c21667c79"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a011249984f152afb7307c44c21667c79">utils::make_integer_range</a> = detail::sequence_apply&lt; T,[](T n) { return Begin+n *Step</td></tr>
+<tr class="memdesc:a011249984f152afb7307c44c21667c79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an integer sequence with custom Begin and Step values.  <a href="namespaceutils.html#a011249984f152afb7307c44c21667c79">More...</a><br /></td></tr>
+<tr class="separator:a011249984f152afb7307c44c21667c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6593b60afa5929e922ecc032ce2db4d1"><td class="memTemplParams" colspan="2">template&lt;std::size_t End, std::size_t Begin = 0, std::size_t Step = 1&gt; </td></tr>
+<tr class="memitem:a6593b60afa5929e922ecc032ce2db4d1"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a6593b60afa5929e922ecc032ce2db4d1">utils::make_index_range</a> = make_integer_range&lt; std::size_t, End, Begin, Step &gt;</td></tr>
+<tr class="memdesc:a6593b60afa5929e922ecc032ce2db4d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a size_t index sequence with custom Begin and Step values.  <a href="namespaceutils.html#a6593b60afa5929e922ecc032ce2db4d1">More...</a><br /></td></tr>
+<tr class="separator:a6593b60afa5929e922ecc032ce2db4d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ab347f7fd31e7ee14b2e4e14686a2c21e"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#ab347f7fd31e7ee14b2e4e14686a2c21e">utils::type_qualifiers</a> { <a class="el" href="namespaceutils.html#ab347f7fd31e7ee14b2e4e14686a2c21ea334c4a4c42fdb79d7ebc3e73b517e6f8">utils::none</a> = 0
+, <a class="el" href="namespaceutils.html#ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33">utils::c</a> = 0b1
+, <a class="el" href="namespaceutils.html#ab347f7fd31e7ee14b2e4e14686a2c21ea9e3669d19b675bd57058fd4664205d2a">utils::v</a> = 0b10
+ }</td></tr>
+<tr class="memdesc:ab347f7fd31e7ee14b2e4e14686a2c21e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask enumeration representing type qualifiers (const and volatile).  <a href="namespaceutils.html#ab347f7fd31e7ee14b2e4e14686a2c21e">More...</a><br /></td></tr>
+<tr class="separator:ab347f7fd31e7ee14b2e4e14686a2c21e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aed7303c206edcaa7cba652c07ca49240"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aed7303c206edcaa7cba652c07ca49240">utils::UTILS_BITMASK</a> (type_qualifiers)</td></tr>
+<tr class="separator:aed7303c206edcaa7cba652c07ca49240"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac60b73bc9e229724ebdb31555e939edb"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U &gt; </td></tr>
+<tr class="memitem:ac60b73bc9e229724ebdb31555e939edb"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#ac60b73bc9e229724ebdb31555e939edb">utils::forward_stored</a> (U &amp;&amp;u) noexcept</td></tr>
+<tr class="memdesc:ac60b73bc9e229724ebdb31555e939edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to <code>u</code>, which has similar properties to <code>T</code>.  <a href="namespaceutils.html#ac60b73bc9e229724ebdb31555e939edb">More...</a><br /></td></tr>
+<tr class="separator:ac60b73bc9e229724ebdb31555e939edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:aa0aaad636b78156361f43a4651536d56"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aa0aaad636b78156361f43a4651536d56"><td class="memTemplItemLeft" align="right" valign="top">constexpr const T &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aa0aaad636b78156361f43a4651536d56">utils::as_const</a> (T &amp;&amp;ref) noexcept</td></tr>
+<tr class="memdesc:aa0aaad636b78156361f43a4651536d56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a forwarding reference to a const reference of the same category.  <a href="namespaceutils.html#aa0aaad636b78156361f43a4651536d56">More...</a><br /></td></tr>
+<tr class="separator:aa0aaad636b78156361f43a4651536d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5efd377d9bd98cc665b5211b4e64e07f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a5efd377d9bd98cc665b5211b4e64e07f"><td class="memTemplItemLeft" align="right" valign="top">constexpr volatile T &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a5efd377d9bd98cc665b5211b4e64e07f">utils::as_volatile</a> (T &amp;&amp;ref) noexcept</td></tr>
+<tr class="memdesc:a5efd377d9bd98cc665b5211b4e64e07f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a forwarding reference to a volatile reference of the same category.  <a href="namespaceutils.html#a5efd377d9bd98cc665b5211b4e64e07f">More...</a><br /></td></tr>
+<tr class="separator:a5efd377d9bd98cc665b5211b4e64e07f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0922f693f86f61e5b05d43af01c05cb6"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a0922f693f86f61e5b05d43af01c05cb6"><td class="memTemplItemLeft" align="right" valign="top">constexpr const volatile T &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a0922f693f86f61e5b05d43af01c05cb6">utils::as_cv</a> (T &amp;&amp;ref) noexcept</td></tr>
+<tr class="memdesc:a0922f693f86f61e5b05d43af01c05cb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a forwarding reference to a const volatile reference of the same category.  <a href="namespaceutils.html#a0922f693f86f61e5b05d43af01c05cb6">More...</a><br /></td></tr>
+<tr class="separator:a0922f693f86f61e5b05d43af01c05cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a570f4db159e0862968337af153e091e5"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a570f4db159e0862968337af153e091e5"><td class="memTemplItemLeft" align="right" valign="top">constexpr const T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a570f4db159e0862968337af153e091e5">utils::as_const_ptr</a> (T *ptr) noexcept</td></tr>
+<tr class="memdesc:a570f4db159e0862968337af153e091e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Const-qualifies a pointer.  <a href="namespaceutils.html#a570f4db159e0862968337af153e091e5">More...</a><br /></td></tr>
+<tr class="separator:a570f4db159e0862968337af153e091e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a19d4a2f7dfda792458d6c0983c368f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a4a19d4a2f7dfda792458d6c0983c368f"><td class="memTemplItemLeft" align="right" valign="top">constexpr volatile T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a4a19d4a2f7dfda792458d6c0983c368f">utils::as_volatile_ptr</a> (T *ptr) noexcept</td></tr>
+<tr class="memdesc:a4a19d4a2f7dfda792458d6c0983c368f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Volatile-qualifies a pointer.  <a href="namespaceutils.html#a4a19d4a2f7dfda792458d6c0983c368f">More...</a><br /></td></tr>
+<tr class="separator:a4a19d4a2f7dfda792458d6c0983c368f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b359b4959abf1200f831e0febf5acd9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a9b359b4959abf1200f831e0febf5acd9"><td class="memTemplItemLeft" align="right" valign="top">constexpr const volatile T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a9b359b4959abf1200f831e0febf5acd9">utils::as_cv_ptr</a> (T *ptr) noexcept</td></tr>
+<tr class="memdesc:a9b359b4959abf1200f831e0febf5acd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Const volatile-qualifies a pointer.  <a href="namespaceutils.html#a9b359b4959abf1200f831e0febf5acd9">More...</a><br /></td></tr>
+<tr class="separator:a9b359b4959abf1200f831e0febf5acd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:ad6a8c3be8fd9c0f96263ed785cd8bff7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ad6a8c3be8fd9c0f96263ed785cd8bff7"><td class="memTemplItemLeft" align="right" valign="top">constexpr type_qualifiers&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#ad6a8c3be8fd9c0f96263ed785cd8bff7">utils::qualifiers_of_v</a> = qualifiers_of&lt;T&gt;::value</td></tr>
+<tr class="separator:ad6a8c3be8fd9c0f96263ed785cd8bff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:abc8a77dfb384195bd1be8468750888c0"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U &gt; </td></tr>
+<tr class="memitem:abc8a77dfb384195bd1be8468750888c0"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#abc8a77dfb384195bd1be8468750888c0">utils::is_equiv_v</a> = is_equiv&lt;T, U&gt;::value</td></tr>
+<tr class="separator:abc8a77dfb384195bd1be8468750888c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a1de78a43e2208a380d280c56bdd7947e"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename... &gt; typename Tmpl, typename T &gt; </td></tr>
+<tr class="memitem:a1de78a43e2208a380d280c56bdd7947e"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a1de78a43e2208a380d280c56bdd7947e">utils::is_template_instance_v</a> = is_template_instance&lt;Tmpl, std::remove_cvref_t&lt;T&gt;&gt;::value</td></tr>
+<tr class="separator:a1de78a43e2208a380d280c56bdd7947e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:aeeeecd5e5e48d738f1f779d9b8f46dcc"><td class="memTemplParams" colspan="2">template&lt;typename From , typename To &gt; </td></tr>
+<tr class="memitem:aeeeecd5e5e48d738f1f779d9b8f46dcc"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aeeeecd5e5e48d738f1f779d9b8f46dcc">utils::is_explicitly_convertible_v</a> = is_explicitly_convertible&lt;From, To&gt;::value</td></tr>
+<tr class="separator:aeeeecd5e5e48d738f1f779d9b8f46dcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a4cf6ed8a5af20f379e7e15fcb183c2bc"><td class="memTemplParams" colspan="2">template&lt;typename Tag , typename T &gt; </td></tr>
+<tr class="memitem:a4cf6ed8a5af20f379e7e15fcb183c2bc"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a4cf6ed8a5af20f379e7e15fcb183c2bc">utils::is_tagged_v</a> = is_tagged&lt;Tag, T&gt;::value</td></tr>
+<tr class="separator:a4cf6ed8a5af20f379e7e15fcb183c2bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Type manipulation and qualification utilities for compile-time type introspection and transformation. </p>
 

@@ -8,12 +8,12 @@
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} Container, \textcolor{keyword}{typename} Reference>}
-\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1appendable__container}{utils::appendable\_container}} =  \textcolor{keyword}{requires} (Container\& c, Reference\&\& ref) \{}
+\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1appendable__container}{utils::appendable\_container}} =  \textcolor{keyword}{requires} (Container\& \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}, Reference\&\& ref) \{}
 \DoxyCodeLine{        \textcolor{keyword}{requires} (}
-\DoxyCodeLine{            \textcolor{keyword}{requires} \{ c.emplace\_back(std::forward<Reference>(ref)); \}     ||}
+\DoxyCodeLine{            \textcolor{keyword}{requires} \{ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.emplace\_back(std::forward<Reference>(ref)); \}     ||}
 \DoxyCodeLine{            \textcolor{keyword}{requires} \{ c.push\_back(std::forward<Reference>(ref)); \}        ||}
-\DoxyCodeLine{            \textcolor{keyword}{requires} \{ c.emplace(c.end(), std::forward<Reference>(ref)); \} ||}
-\DoxyCodeLine{            \textcolor{keyword}{requires} \{ c.insert(c.end(), std::forward<Reference>(ref)); \}}
+\DoxyCodeLine{            \textcolor{keyword}{requires} \{ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.emplace(\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.end(), std::forward<Reference>(ref)); \} ||}
+\DoxyCodeLine{            \textcolor{keyword}{requires} \{ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.insert(\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.end(), std::forward<Reference>(ref)); \}}
 \DoxyCodeLine{        );}
 \DoxyCodeLine{    \}}
 

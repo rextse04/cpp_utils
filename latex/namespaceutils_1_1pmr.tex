@@ -1,0 +1,18 @@
+\hypertarget{namespaceutils_1_1pmr}{}\doxysection{utils\+::pmr Namespace Reference}
+\label{namespaceutils_1_1pmr}\index{utils::pmr@{utils::pmr}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base}{allocator\+\_\+base}}
+\begin{DoxyCompactList}\small\item\em A convenience base class providing typedefs for custom allocators. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{allocator\+\_\+resource}}
+\begin{DoxyCompactList}\small\item\em A {\ttfamily std\+::pmr\+::memory\+\_\+resource} which reserves specified amount of memory and allocates it using a given {\ttfamily resource\+\_\+allocator}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator}{arena\+\_\+allocator}}
+\begin{DoxyCompactList}\small\item\em An allocator which does not recycle allocated memory. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator}{stack\+\_\+allocator}}
+\begin{DoxyCompactList}\small\item\em An allocator which allocates memory from a pre-\/allocated buffer in a lazy-\/stack-\/like manner. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Concepts}
+\begin{DoxyCompactItemize}
+\item 
+concept \mbox{\hyperlink{conceptutils_1_1pmr_1_1resource__allocator}{resource\+\_\+allocator}}
+\begin{DoxyCompactList}\small\item\em Named requirement\+: \mbox{\hyperlink{ResourceAllocator_8md}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Resource\+Allocator\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}}. \end{DoxyCompactList}\end{DoxyCompactItemize}

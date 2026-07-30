@@ -1,0 +1,136 @@
+\hypertarget{classutils_1_1pmr_1_1allocator__resource}{}\doxysection{utils\+::pmr\+::allocator\+\_\+resource\texorpdfstring{$<$}{<} Allocator \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classutils_1_1pmr_1_1allocator__resource}\index{utils::pmr::allocator\_resource$<$ Allocator $>$@{utils::pmr::allocator\_resource$<$ Allocator $>$}}
+
+
+A {\ttfamily std\+::pmr\+::memory\+\_\+resource} which reserves specified amount of memory and allocates it using a given {\ttfamily resource\+\_\+allocator}.  
+
+
+
+
+{\ttfamily \#include $<$allocator\+\_\+resource.\+hpp$>$}
+
+
+
+Inheritance diagram for utils\+::pmr\+::allocator\+\_\+resource\texorpdfstring{$<$}{<} Allocator \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classutils_1_1pmr_1_1allocator__resource__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for utils\+::pmr\+::allocator\+\_\+resource\texorpdfstring{$<$}{<} Allocator \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classutils_1_1pmr_1_1allocator__resource__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource_a432ece7c5bb78859ed585bc0a8ab3a6b}{allocator\+\_\+type}} = Allocator
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Args$>$ \newline
+requires (std\+::is\+\_\+constructible\+\_\+v$<$Allocator, memory\+\_\+resource\&, std\+::size\+\_\+t, Args\&\&...$>$)}\\\mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource_ae0983e6a69bdb3cb4151c95ea4b24696}{allocator\+\_\+resource}} (memory\+\_\+resource $\ast$upstream, std\+::size\+\_\+t space, Args \&\&... args)
+\begin{DoxyCompactList}\small\item\em Constructs a {\ttfamily \mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{allocator\+\_\+resource}}} with a given upstream memory resource and space to reserve. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource_a6adb9a607f89f3310c5de496ef5c5102}{allocator\+\_\+resource}} (const \mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{allocator\+\_\+resource}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Copy constructor is deleted because {\ttfamily \mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{allocator\+\_\+resource}}} has unique and non-\/transferable ownership of the reserved memory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{allocator\+\_\+resource}} \& \mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource_a5c298d014040ca43fd38d33553add821}{operator=}} (const \mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{allocator\+\_\+resource}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Copy assignment operator is deleted because {\ttfamily \mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{allocator\+\_\+resource}}} has unique and non-\/transferable ownership of the reserved memory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource_a1df9321111404ac6d9592946051b2a61}{$\sim$allocator\+\_\+resource}} () noexcept override
+\begin{DoxyCompactList}\small\item\em Destructor. Releases ownership of reserved memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$resource\+\_\+allocator Allocator$>$\newline
+class utils\+::pmr\+::allocator\+\_\+resource$<$ Allocator $>$}
+A {\ttfamily std\+::pmr\+::memory\+\_\+resource} which reserves specified amount of memory and allocates it using a given {\ttfamily resource\+\_\+allocator}. 
+
+Definition at line \mbox{\hyperlink{allocator__resource_8hpp_source_l00022}{22}} of file \mbox{\hyperlink{allocator__resource_8hpp_source}{allocator\+\_\+resource.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classutils_1_1pmr_1_1allocator__resource_a432ece7c5bb78859ed585bc0a8ab3a6b}\label{classutils_1_1pmr_1_1allocator__resource_a432ece7c5bb78859ed585bc0a8ab3a6b}} 
+\index{utils::pmr::allocator\_resource$<$ Allocator $>$@{utils::pmr::allocator\_resource$<$ Allocator $>$}!allocator\_type@{allocator\_type}}
+\index{allocator\_type@{allocator\_type}!utils::pmr::allocator\_resource$<$ Allocator $>$@{utils::pmr::allocator\_resource$<$ Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{allocator\_type}{allocator\_type}}
+{\footnotesize\ttfamily template$<$resource\+\_\+allocator Allocator$>$ \\
+using \mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{utils\+::pmr\+::allocator\+\_\+resource}}$<$ Allocator $>$\+::\mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource_a432ece7c5bb78859ed585bc0a8ab3a6b}{allocator\+\_\+type}} =  Allocator}
+
+
+
+Definition at line \mbox{\hyperlink{allocator__resource_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{allocator__resource_8hpp_source}{allocator\+\_\+resource.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classutils_1_1pmr_1_1allocator__resource_ae0983e6a69bdb3cb4151c95ea4b24696}\label{classutils_1_1pmr_1_1allocator__resource_ae0983e6a69bdb3cb4151c95ea4b24696}} 
+\index{utils::pmr::allocator\_resource$<$ Allocator $>$@{utils::pmr::allocator\_resource$<$ Allocator $>$}!allocator\_resource@{allocator\_resource}}
+\index{allocator\_resource@{allocator\_resource}!utils::pmr::allocator\_resource$<$ Allocator $>$@{utils::pmr::allocator\_resource$<$ Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{allocator\_resource()}{allocator\_resource()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$resource\+\_\+allocator Allocator$>$ \\
+template$<$typename... Args$>$ \newline
+requires (std\+::is\+\_\+constructible\+\_\+v$<$Allocator, memory\+\_\+resource\&, std\+::size\+\_\+t, Args\&\&...$>$)\\
+\mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{utils\+::pmr\+::allocator\+\_\+resource}}$<$ Allocator $>$\+::\mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{allocator\+\_\+resource}} (\begin{DoxyParamCaption}\item[{memory\+\_\+resource $\ast$}]{upstream,  }\item[{std\+::size\+\_\+t}]{space,  }\item[{Args \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a {\ttfamily \mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{allocator\+\_\+resource}}} with a given upstream memory resource and space to reserve. 
+
+Semantic requirement\+: {\ttfamily Allocator} should reserve {\ttfamily space} amount of memory from {\ttfamily upstream}. 
+
+Definition at line \mbox{\hyperlink{allocator__resource_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{allocator__resource_8hpp_source}{allocator\+\_\+resource.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pmr_1_1allocator__resource_a6adb9a607f89f3310c5de496ef5c5102}\label{classutils_1_1pmr_1_1allocator__resource_a6adb9a607f89f3310c5de496ef5c5102}} 
+\index{utils::pmr::allocator\_resource$<$ Allocator $>$@{utils::pmr::allocator\_resource$<$ Allocator $>$}!allocator\_resource@{allocator\_resource}}
+\index{allocator\_resource@{allocator\_resource}!utils::pmr::allocator\_resource$<$ Allocator $>$@{utils::pmr::allocator\_resource$<$ Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{allocator\_resource()}{allocator\_resource()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$resource\+\_\+allocator Allocator$>$ \\
+\mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{utils\+::pmr\+::allocator\+\_\+resource}}$<$ Allocator $>$\+::\mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{allocator\+\_\+resource}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{allocator\+\_\+resource}}$<$ Allocator $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Copy constructor is deleted because {\ttfamily \mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{allocator\+\_\+resource}}} has unique and non-\/transferable ownership of the reserved memory. 
+
+\mbox{\Hypertarget{classutils_1_1pmr_1_1allocator__resource_a1df9321111404ac6d9592946051b2a61}\label{classutils_1_1pmr_1_1allocator__resource_a1df9321111404ac6d9592946051b2a61}} 
+\index{utils::pmr::allocator\_resource$<$ Allocator $>$@{utils::pmr::allocator\_resource$<$ Allocator $>$}!````~allocator\_resource@{$\sim$allocator\_resource}}
+\index{````~allocator\_resource@{$\sim$allocator\_resource}!utils::pmr::allocator\_resource$<$ Allocator $>$@{utils::pmr::allocator\_resource$<$ Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$allocator\_resource()}{~allocator\_resource()}}
+{\footnotesize\ttfamily template$<$resource\+\_\+allocator Allocator$>$ \\
+\mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{utils\+::pmr\+::allocator\+\_\+resource}}$<$ Allocator $>$\+::$\sim$\mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{allocator\+\_\+resource}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [noexcept]}}
+
+
+
+Destructor. Releases ownership of reserved memory. 
+
+
+
+Definition at line \mbox{\hyperlink{allocator__resource_8hpp_source_l00044}{44}} of file \mbox{\hyperlink{allocator__resource_8hpp_source}{allocator\+\_\+resource.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutils_1_1pmr_1_1allocator__resource_a5c298d014040ca43fd38d33553add821}\label{classutils_1_1pmr_1_1allocator__resource_a5c298d014040ca43fd38d33553add821}} 
+\index{utils::pmr::allocator\_resource$<$ Allocator $>$@{utils::pmr::allocator\_resource$<$ Allocator $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!utils::pmr::allocator\_resource$<$ Allocator $>$@{utils::pmr::allocator\_resource$<$ Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$resource\+\_\+allocator Allocator$>$ \\
+\mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{allocator\+\_\+resource}} \& \mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{utils\+::pmr\+::allocator\+\_\+resource}}$<$ Allocator $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{allocator\+\_\+resource}}$<$ Allocator $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Copy assignment operator is deleted because {\ttfamily \mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{allocator\+\_\+resource}}} has unique and non-\/transferable ownership of the reserved memory. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+allocators/\mbox{\hyperlink{allocator__resource_8hpp}{allocator\+\_\+resource.\+hpp}}\end{DoxyCompactItemize}

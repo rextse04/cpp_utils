@@ -1,0 +1,27 @@
+\hypertarget{conceptutils_1_1explicitly__convertible__to}{}\doxysection{utils\+::explicitly\+\_\+convertible\+\_\+to Concept Reference}
+\label{conceptutils_1_1explicitly__convertible__to}\index{utils::explicitly\_convertible\_to@{utils::explicitly\_convertible\_to}}
+
+
+Determines if {\ttfamily From} is explicitly convertible to {\ttfamily To}.  
+
+
+
+
+{\ttfamily \#include $<$type.\+hpp$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} From, \textcolor{keyword}{typename} To>}
+\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1explicitly__convertible__to}{utils::explicitly\_convertible\_to}} =  \textcolor{keyword}{requires} \{ \textcolor{keyword}{static\_cast<}To\textcolor{keyword}{>}(std::declval<From>()); \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Detailed Description}
+Determines if {\ttfamily From} is explicitly convertible to {\ttfamily To}. 
+
+{\ttfamily From} is explicitly convertible to {\ttfamily To} if the expression {\ttfamily static\+\_\+cast\texorpdfstring{$<$}{<}To\texorpdfstring{$>$}{>}(std\+::declval\texorpdfstring{$<$}{<}From\texorpdfstring{$>$}{>}())} is well-\/formed. 
+
+Definition at line \mbox{\hyperlink{type_8hpp_source_l00093}{93}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
+

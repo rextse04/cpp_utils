@@ -3,7 +3,7 @@
 Similar to that in the standard library, a named requirement is a set of expectations on a given entity (template, type or value). Named requirements are usually included in the specification of a library-\/provided template, and so act as contracts between the library author and the user on delivering correct and expected behavior. The program is ill-\/formed, no diagnostic required (IFNDR), if the user passes a entity that violates a named requirement as specified by the library. On the other hand, templates, types or values in the library can be declared to satisfy certain named requirements to aid with documentation and clarity.
 
 Whiles C++20 concepts allow static checking of most type requirements, named requirements often attach semantic meanings to expressions which are impossible to check statically or even dynamically. Nevertheless, they are useful at refining overload resolution and eliminating verbose type errors. As such, in instances where appropriate, a concept may be associated with a named requirement. A type models the concept if and only if it satisfies the named requirement. In other words, it may fulfill all semantics specified in the named requirement, apart from the type constraints.\hypertarget{named_reqs_autotoc_md3}{}\doxysection{Key Terms}\label{named_reqs_autotoc_md3}
-A named requirement consists of a list of expressions that a candidate entity has to support, with extra semantic requirements as specified. Semantic requirements are usually divided into two parts\+:
+A named requirement consists of a list of expressions that a candidate entity has to support (i.\+e. the expressions must be well-\/formed and have defined behavior), with extra semantic requirements as specified. Semantic requirements are usually divided into two parts\+:
 \begin{DoxyItemize}
 \item {\bfseries{Conditions}}
 
@@ -21,6 +21,16 @@ Unless otherwise specified, an expression is allowed to throw, in which case the
 \begin{DoxyItemize}
 \item \mbox{\hyperlink{BufferAllocator}{Named Requirement\+: {\itshape Buffer\+Allocator}}}
 \item \mbox{\hyperlink{ResourceAllocator}{Named Requirement\+: {\itshape Resource\+Allocator}}} 
+\end{DoxyItemize}\hypertarget{named_reqs_autotoc_md6}{}\doxysubsection{Operators}\label{named_reqs_autotoc_md6}
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{IntegerBehaviorProfile}{Named Requirements\+: {\itshape Integer\+Behavior\+Profile}}}
+\item \mbox{\hyperlink{OperatorFunctorSet}{Named Requirements\+: {\itshape Operator\+Functor\+Set}}} 
+\end{DoxyItemize}\hypertarget{named_reqs_autotoc_md7}{}\doxysubsection{Template Metaprogramming}\label{named_reqs_autotoc_md7}
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{Result}{Named Requirements\+: {\itshape Result}}}
+\item \mbox{\hyperlink{Trait}{Named Requirements\+: {\itshape Trait}}} 
 \end{DoxyItemize}\hypertarget{BufferAllocator}{}\doxysection{Named Requirement\+: \texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Buffer\+Allocator\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}\label{BufferAllocator}
 \label{BufferAllocator_md_docs_named_reqs_BufferAllocator}%
 \Hypertarget{BufferAllocator_md_docs_named_reqs_BufferAllocator}%
@@ -60,12 +70,12 @@ A class type {\ttfamily A} meets the named requirement if it satisfies {\itshape
 {\ttfamily b}   &A (non-\/cv-\/qualified) object of type {\ttfamily B}    \\\cline{1-2}
 {\ttfamily cb}   &A potentially const-\/qualified object of type {\ttfamily B}    \\\cline{1-2}
 {\ttfamily c}   &A (non-\/cv-\/qualified) object of type {\ttfamily C}    \\\cline{1-2}
-{\ttfamily cc}   &A potentially const-\/qualified object of type {\ttfamily C}.    \\\cline{1-2}
+{\ttfamily cc}   &A potentially const-\/qualified object of type {\ttfamily C}    \\\cline{1-2}
 {\ttfamily buf}   &An {\ttfamily std\+::byte} pointer to a contiguous block of memory    \\\cline{1-2}
 {\ttfamily space}   &A value of type {\ttfamily std\+::size\+\_\+t} that represents the size (in bytes) of the contiguous block of memory pointed to by {\ttfamily buf}    \\\cline{1-2}
 {\ttfamily n}   &A value of type {\ttfamily AT\+::size\+\_\+type}    \\\cline{1-2}
-{\ttfamily p}   &A value of type {\ttfamily P} obtained from a call to {\ttfamily AT\+::allocate}.    \\\cline{1-2}
-{\ttfamily cvp}   &A value of type {\ttfamily AT\+::const\+\_\+void\+\_\+pointer} obtained by conversion from {\ttfamily p}.   \\\cline{1-2}
+{\ttfamily p}   &A value of type {\ttfamily P} obtained from a call to {\ttfamily AT\+::allocate}    \\\cline{1-2}
+{\ttfamily cvp}   &A value of type {\ttfamily AT\+::const\+\_\+void\+\_\+pointer} obtained by conversion from {\ttfamily p}   \\\cline{1-2}
 \end{longtabu}
 \hypertarget{BufferAllocator_autotoc_md2}{}\doxysubsubsection{Supported Operations}\label{BufferAllocator_autotoc_md2}
 \tabulinesep=1mm
@@ -79,7 +89,7 @@ A class type {\ttfamily A} meets the named requirement if it satisfies {\itshape
 \cellcolor{\tableheadbgcolor}\textbf{ Expression}&\cellcolor{\tableheadbgcolor}\textbf{ Return Type}&\cellcolor{\tableheadbgcolor}\textbf{ Semantics }\\\cline{1-3}
 \endhead
 (for {\itshape Synchronized\+Buffer\+Allocator})~\newline
- {\ttfamily A\+::synchronized}  &bool &Must be {\ttfamily true}.  \\\cline{1-3}
+ {\ttfamily A\+::synchronized}  &{\ttfamily bool} &Must be {\ttfamily true}.  \\\cline{1-3}
 (for {\itshape Convertible\+Buffer\+Allocator})~\newline
  {\ttfamily A\+::template rebind\texorpdfstring{$<$}{<}U, false\texorpdfstring{$>$}{>}\+::other}  &{\ttfamily C} &{\ttfamily C\+::template rebind\texorpdfstring{$<$}{<}T, true\texorpdfstring{$>$}{>}\+::other} must be the same as {\ttfamily A}.  \\\cline{1-3}
 {\ttfamily A(buf, space)} &{\ttfamily A} &{\bfseries{Conditions}} 
@@ -147,8 +157,8 @@ A class type {\ttfamily A} meets the named requirement if it satisfies {\itshape
 \mbox{[}$^\wedge$1\mbox{]}\+: This is purely a semantic requirement. When and whether the buffer is actually freed is implementation-\/defined. \hypertarget{ResourceAllocator}{}\doxysection{Named Requirement\+: \texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Resource\+Allocator\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}\label{ResourceAllocator}
 \label{ResourceAllocator_md_docs_named_reqs_ResourceAllocator}%
 \Hypertarget{ResourceAllocator_md_docs_named_reqs_ResourceAllocator}%
-A resource allocator is an {\itshape Allocator} which operates on buffer memory allocated from an upstream {\ttfamily std\+::pmr\+::memory\+\_\+resource}. It can be wrapped in {\ttfamily pmr\+::allocator\+\_\+resource} to act as an {\ttfamily std\+::pmr\+::memory\+\_\+resource}, which is useful when one would like to reuse the same allocation strategy with or without virtual dispatch.\hypertarget{ResourceAllocator_autotoc_md6}{}\doxysubsection{Requirements}\label{ResourceAllocator_autotoc_md6}
-A class type {\ttfamily A} meets the named requirement if it satisfies {\itshape Allocator} and all requirements below. \hypertarget{ResourceAllocator_autotoc_md7}{}\doxysubsubsection{Notations}\label{ResourceAllocator_autotoc_md7}
+A resource allocator is an {\itshape Allocator} which operates on buffer memory allocated from an upstream {\ttfamily std\+::pmr\+::memory\+\_\+resource}. It can be wrapped in {\ttfamily \mbox{\hyperlink{classutils_1_1pmr_1_1allocator__resource}{utils\+::pmr\+::allocator\+\_\+resource}}} to act as an {\ttfamily std\+::pmr\+::memory\+\_\+resource}, which is useful when one would like to reuse the same allocation strategy with or without virtual dispatch.\hypertarget{ResourceAllocator_autotoc_md14}{}\doxysubsection{Requirements}\label{ResourceAllocator_autotoc_md14}
+A class type {\ttfamily A} meets the named requirement if it satisfies {\itshape Allocator} and all requirements below. \hypertarget{ResourceAllocator_autotoc_md15}{}\doxysubsubsection{Notations}\label{ResourceAllocator_autotoc_md15}
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
 \hline
@@ -166,7 +176,7 @@ A class type {\ttfamily A} meets the named requirement if it satisfies {\itshape
 {\ttfamily alignment}   &A value of type {\ttfamily std\+::size\+\_\+t} which is a power of 2    \\\cline{1-2}
 {\ttfamily p}   &A value of type {\ttfamily std\+::byte$\ast$}   \\\cline{1-2}
 \end{longtabu}
-\hypertarget{ResourceAllocator_autotoc_md8}{}\doxysubsubsection{Supported Operations}\label{ResourceAllocator_autotoc_md8}
+\hypertarget{ResourceAllocator_autotoc_md16}{}\doxysubsubsection{Supported Operations}\label{ResourceAllocator_autotoc_md16}
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
 \hline
@@ -207,5 +217,209 @@ A class type {\ttfamily A} meets the named requirement if it satisfies {\itshape
 \item No exceptions are thrown. 
 \end{DoxyItemize}\\\cline{1-3}
 \end{longtabu}
-\hypertarget{ResourceAllocator_autotoc_md9}{}\doxysubsection{Associated Concept}\label{ResourceAllocator_autotoc_md9}
-The library provides {\ttfamily pmr\+::resource\+\_\+allocator\texorpdfstring{$<$}{<}A\texorpdfstring{$>$}{>}} as an equivalent constraint to the named requirement. 
+\hypertarget{ResourceAllocator_autotoc_md17}{}\doxysubsection{Associated Concept}\label{ResourceAllocator_autotoc_md17}
+The library provides {\ttfamily \mbox{\hyperlink{conceptutils_1_1pmr_1_1resource__allocator}{utils\+::pmr\+::resource\+\_\+allocator}}\texorpdfstring{$<$}{<}A\texorpdfstring{$>$}{>}} as an equivalent constraint to the named requirement. \hypertarget{IntegerBehaviorProfile}{}\doxysection{Named Requirements\+: \texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Integer\+Behavior\+Profile\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}\label{IntegerBehaviorProfile}
+\label{IntegerBehaviorProfile_md_docs_named_reqs_IntegerBehaviorProfile}%
+\Hypertarget{IntegerBehaviorProfile_md_docs_named_reqs_IntegerBehaviorProfile}%
+An {\itshape Integer\+Behavior\+Profile} encapsulates how an integer wrapper type (such as {\ttfamily \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}}) ought to behave under a specified set of operations involving integer-\/like types.\hypertarget{IntegerBehaviorProfile_autotoc_md8}{}\doxysubsection{Requirements}\label{IntegerBehaviorProfile_autotoc_md8}
+An {\itshape Integer\+Behavior\+Profile\+Template} is a class template declared as such by the library in the following format\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c++\}}
+\DoxyCodeLine{template <op\_functors\_1 Funcs1, ..., op\_functors\_N FuncsN>}
+\DoxyCodeLine{struct IntegerBehaviorProfileTemplate \{}
+\DoxyCodeLine{    static constexpr auto funcs\_1 = Funcs1;}
+\DoxyCodeLine{    ...}
+\DoxyCodeLine{    static constexpr auto funcs\_n = FuncsN;}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+ where every {\ttfamily op\+\_\+functors\+\_\+I} is an \mbox{\hyperlink{OperatorFunctorSet_md_docs_named_reqs_OperatorFunctorSet}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Operator\+Functor\+Set\+Template\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}}. The names of template parameters and member variables are only for illustration and may appear otherwise in implementation.
+
+Let {\ttfamily IT} be a theoretical collection of wrapper types such that {\ttfamily IT\texorpdfstring{$<$}{<}Int\texorpdfstring{$>$}{>}} represents a unique wrapper around {\ttfamily Int} in {\ttfamily IT} for any integer-\/like type {\ttfamily Int}. In addition, every {\ttfamily IT\texorpdfstring{$<$}{<}Int\texorpdfstring{$>$}{>}} (denoted {\ttfamily I} below) satisfies the following properties\+:
+\begin{DoxyEnumerate}
+\item {\ttfamily I} has an instance variable of type {\ttfamily Int} that represents the value of the instance. (The variable is called the {\itshape underlying object} of the instance.)
+\item {\ttfamily I\+::underlying\+\_\+type} is {\ttfamily Int}.
+\item For every integer-\/like type {\ttfamily U}, let {\ttfamily u} be a (possibly cv-\/qualified) object of type {\ttfamily U} and {\ttfamily w} be a (possibly cv-\/qualified) object of type {\ttfamily Int\texorpdfstring{$<$}{<}U\texorpdfstring{$>$}{>}}. Denote by {\ttfamily R(obj)} a reference (of any value category) to an object {\ttfamily obj}. Then, {\ttfamily I\+::to\+\_\+underlying(\+R(u))} returns {\ttfamily R(u)} and {\ttfamily I\+::to\+\_\+underlying(\+R(w))} returns {\ttfamily R(v)}, where {\ttfamily v} is the underlying object of {\ttfamily w}. {\ttfamily I\+::to\+\_\+underlying} is not overloaded for any other types.
+\item {\ttfamily I\+::template rebind\texorpdfstring{$<$}{<}U\texorpdfstring{$>$}{>}} gives {\ttfamily IT\texorpdfstring{$<$}{<}U\texorpdfstring{$>$}{>}} for any integer-\/like type {\ttfamily U}.
+\item Given a (possibly cv-\/qualified) object {\ttfamily w} of type {\ttfamily I}, {\ttfamily +w} gives a copy of the underlying object.
+\item {\ttfamily std\+::numeric\+\_\+limits} is meaningfully specialized for {\ttfamily IT\texorpdfstring{$<$}{<}Int\texorpdfstring{$>$}{>}}.
+\end{DoxyEnumerate}
+
+Then, an instance of an {\itshape Integer\+Behavior\+Profile\+Template} is an {\itshape Integer\+Behavior\+Profile} if {\ttfamily FuncsI} is an \mbox{\hyperlink{OperatorFunctorSet_md_docs_named_reqs_OperatorFunctorSet}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Operator\+Functor\+Set\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}} for every type in {\ttfamily IT}, for every \$I\textbackslash{}in\mbox{[}N\mbox{]}\$. \hypertarget{OperatorFunctorSet}{}\doxysection{Named Requirements\+: \texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Operator\+Functor\+Set\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}\label{OperatorFunctorSet}
+\label{OperatorFunctorSet_md_docs_named_reqs_OperatorFunctorSet}%
+\Hypertarget{OperatorFunctorSet_md_docs_named_reqs_OperatorFunctorSet}%
+An {\itshape Operator\+Functor\+Set} is a structural type that encapsulates and unifies type constraints and behavior for overloaded operators of a user-\/provided class type. {\ttfamily utils\+:\+:$\ast$\+\_\+op} accepts {\itshape Operator\+Functor\+Set}(s) as template parameter and translates them into operator overloads, which is then expected to be inherited as part of the mixin pattern. Its use is most appropriate in a scenario where the child type is a wrapper around an underlying type for which such operations are well-\/defined.\hypertarget{OperatorFunctorSet_autotoc_md9}{}\doxysubsection{Requirements}\label{OperatorFunctorSet_autotoc_md9}
+An {\itshape Operator\+Functor\+Set\+Template} is a class template declared as such by the library in the following format\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c++\}}
+\DoxyCodeLine{template <typename Op1, ..., typename OpN, typename Traits1, ..., typename TraitsM>}
+\DoxyCodeLine{struct OperatorFunctorSetTemplate;}
+
+\end{DoxyCode}
+ Each {\ttfamily OpI} corresponds to an operator supported by the template, denoted by {\ttfamily @\+\_\+I}; and a {\itshape trait set} (from {\ttfamily Traits1} to {\ttfamily TraitsM}), denoted by {\ttfamily Traits\+\_\+I}. All overloadable operators are classified into {\itshape types}, each corresponding to a trait set given by a fixed template parameter name, as specified below\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Case   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Trait Parameter Name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Remarks    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Case   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Trait Parameter Name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Remarks    }\\\cline{1-4}
+\endhead
+1   &Binary operator   &{\ttfamily Binary\+Traits}   &This excludes assignment operators.    \\\cline{1-4}
+2   &Assignment operator   &{\ttfamily Asg\+Traits}   &-\/    \\\cline{1-4}
+3   &Unary operator   &{\ttfamily Unary\+Traits}   &This excludes prefix operators.    \\\cline{1-4}
+4   &Prefix operator   &{\ttfamily Prefix\+Traits}   &-\/   \\\cline{1-4}
+\end{longtabu}
+
+
+An instance of such a template is an {\itshape Operator\+Functor\+Set} for a class type {\ttfamily T} if it satisfies all requirements below, for each \$I\textbackslash{}in\mbox{[}N\mbox{]}\$. \hypertarget{OperatorFunctorSet_autotoc_md10}{}\doxysubsubsection{Notations}\label{OperatorFunctorSet_autotoc_md10}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Expression   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Definition    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Expression   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Definition    }\\\cline{1-2}
+\endhead
+{\ttfamily op\+\_\+i}   &A const-\/qualified object of {\ttfamily OpI}    \\\cline{1-2}
+{\ttfamily a}, {\ttfamily b}   &An expression of any value category and any (possibly cv-\/qualified) referencable type    \\\cline{1-2}
+{\ttfamily t}   &An expression of any value category and type {\ttfamily T} (possibly cv-\/qualified)   \\\cline{1-2}
+\end{longtabu}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Definition    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Definition    }\\\cline{1-2}
+\endhead
+{\ttfamily A}   &{\ttfamily decltype(a)\&\&}    \\\cline{1-2}
+{\ttfamily B}   &{\ttfamily decltype(b)\&\&}    \\\cline{1-2}
+{\ttfamily TR}   &{\ttfamily decltype(t)\&\&}   \\\cline{1-2}
+\end{longtabu}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Template   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Definition    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Template   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Definition    }\\\cline{1-2}
+\endhead
+{\ttfamily R}   &{\ttfamily Traits\+\_\+\+I\+::result}    \\\cline{1-2}
+{\ttfamily C}   &{\ttfamily Traits\+\_\+\+I\+::constraint}   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{OperatorFunctorSet_autotoc_md11}{}\doxysubsubsection{Type Requirements}\label{OperatorFunctorSet_autotoc_md11}
+
+\begin{DoxyItemize}
+\item {\ttfamily OpI} and {\ttfamily Traits} must be structural types. 
+\end{DoxyItemize}\hypertarget{OperatorFunctorSet_autotoc_md12}{}\doxysubsubsection{Supported Operations}\label{OperatorFunctorSet_autotoc_md12}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Expression ({\ttfamily exp}) }&\cellcolor{\tableheadbgcolor}\textbf{ Semantics  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Expression ({\ttfamily exp}) }&\cellcolor{\tableheadbgcolor}\textbf{ Semantics  }\\\cline{1-2}
+\endhead
+(for Case 1)~\newline
+ {\ttfamily op\+\_\+i(T\+::to\+\_\+underlying(a), T\+::to\+\_\+underlying(b))}  &{\bfseries{Conditions}} 
+\begin{DoxyItemize}
+\item {\ttfamily OpI} is not {\ttfamily \mbox{\hyperlink{namespaceutils_a73660fa40d7555f9ec8f74c3fd244253}{utils\+::disable\+\_\+op}}}. 
+\item At least one of {\ttfamily a} and {\ttfamily b} is of type {\ttfamily T}, discarding cv-\/qualifiers. Let {\ttfamily t} be the first expression (in {\ttfamily a} and {\ttfamily b}) that meets this requirement.  
+\item {\ttfamily C\texorpdfstring{$<$}{<}TR, A, B\texorpdfstring{$>$}{>}\+::value} is {\ttfamily true}. 
+\item {\ttfamily exp} is well-\/formed. 
+\end{DoxyItemize}{\bfseries{Effects}} 
+\begin{DoxyItemize}
+\item If {\ttfamily R\texorpdfstring{$<$}{<}A, B\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}} is {\ttfamily utils\+::deduce\+\_\+t}, {\ttfamily a @\+\_\+I b} is equivalent to {\ttfamily exp}; otherwise, it is equivalent to {\ttfamily static\+\_\+cast\texorpdfstring{$<$}{<}R\texorpdfstring{$<$}{<}TR, A, B\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}(exp)}.  
+\end{DoxyItemize}\\\cline{1-2}
+(for Case 2)~\newline
+ {\ttfamily op\+\_\+i(T\+::to\+\_\+underlying(a), T\+::to\+\_\+underlying(b))}  &{\bfseries{Conditions}} 
+\begin{DoxyItemize}
+\item {\ttfamily OpI} is not {\ttfamily \mbox{\hyperlink{namespaceutils_a73660fa40d7555f9ec8f74c3fd244253}{utils\+::disable\+\_\+op}}}. 
+\item {\ttfamily a} is or is a reference to an object of type {\ttfamily T}. 
+\item {\ttfamily C\texorpdfstring{$<$}{<}A, A, B\texorpdfstring{$>$}{>}\+::value} is {\ttfamily true}. 
+\item {\ttfamily exp} is well-\/formed. 
+\end{DoxyItemize}{\bfseries{Effects}} 
+\begin{DoxyItemize}
+\item {\ttfamily a @\+\_\+I b} is equivalent to {\ttfamily exp, a} (disregarding overloading of the comma operator). 
+\end{DoxyItemize}\\\cline{1-2}
+(for Case 3)~\newline
+ {\ttfamily op\+\_\+i(\+T\+::to\+\_\+underlying(t))}  &{\bfseries{Conditions}} 
+\begin{DoxyItemize}
+\item {\ttfamily OpI} is not {\ttfamily \mbox{\hyperlink{namespaceutils_a73660fa40d7555f9ec8f74c3fd244253}{utils\+::disable\+\_\+op}}}. 
+\item {\ttfamily C\texorpdfstring{$<$}{<}TR\texorpdfstring{$>$}{>}\+::value} is {\ttfamily true}. 
+\item {\ttfamily exp} is well-\/formed. 
+\end{DoxyItemize}{\bfseries{Effects}} 
+\begin{DoxyItemize}
+\item {\ttfamily @\+\_\+I a} or {\ttfamily a @\+\_\+I}, whichever is applicable, is equivalent to {\ttfamily exp} if {\ttfamily R\texorpdfstring{$<$}{<}TR\texorpdfstring{$>$}{>}} is {\ttfamily utils\+::deduce\+\_\+t}, or {\ttfamily static\+\_\+cast\texorpdfstring{$<$}{<}R\texorpdfstring{$<$}{<}TR\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}(exp)} otherwise.  
+\end{DoxyItemize}\\\cline{1-2}
+(for Case 4)~\newline
+ {\ttfamily op\+\_\+i(\+T\+::to\+\_\+underlying(t))}  &{\bfseries{Conditions}} 
+\begin{DoxyItemize}
+\item {\ttfamily OpI} is not {\ttfamily \mbox{\hyperlink{namespaceutils_a73660fa40d7555f9ec8f74c3fd244253}{utils\+::disable\+\_\+op}}}. 
+\item {\ttfamily C\texorpdfstring{$<$}{<}TR\texorpdfstring{$>$}{>}\+::value} is {\ttfamily true}. 
+\item {\ttfamily exp} is well-\/formed. 
+\end{DoxyItemize}{\bfseries{Effects}} 
+\begin{DoxyItemize}
+\item {\ttfamily @\+\_\+I a} is equivalent to {\ttfamily exp, a} (disregarding overloading for the comma operator).  
+\end{DoxyItemize}\\\cline{1-2}
+\end{longtabu}
+\hypertarget{OperatorFunctorSet_autotoc_md13}{}\doxysubsection{Remarks}\label{OperatorFunctorSet_autotoc_md13}
+For brevity, in library documentation, when a template parameter {\ttfamily Traits} is required to be an {\ttfamily Operator\+Functor\+Set} for {\ttfamily utils\+:\+:$\ast$\+\_\+op}, the meaning changes slightly. In this case, {\ttfamily Traits} is required to be an {\ttfamily Operator\+Functor\+Set} for each descendant of {\ttfamily utils\+:\+:$\ast$\+\_\+op} that the user uses any of its supported operators on. \hypertarget{Result}{}\doxysection{Named Requirements\+: \texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Result\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}\label{Result}
+\label{Result_md_docs_named_reqs_Result}%
+\Hypertarget{Result_md_docs_named_reqs_Result}%
+{\itshape Result} is a generalization of instances of templates in {\ttfamily \texorpdfstring{$<$}{<}type\+\_\+traits\texorpdfstring{$>$}{>}}.\hypertarget{Result_autotoc_md18}{}\doxysubsection{Requirements}\label{Result_autotoc_md18}
+A class type {\ttfamily T} is a {\ttfamily Result} if it fits into one of following categories\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Category   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Conditions    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Category   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Conditions    }\\\cline{1-2}
+\endhead
+{\itshape Type\+Result}   &{\ttfamily T\+::type} names a type.    \\\cline{1-2}
+{\itshape Value\+Result}   &{\ttfamily T} has a constexpr static data member named {\ttfamily value}.    \\\cline{1-2}
+{\itshape Trait\+Result}   &{\ttfamily T\+::trait} names a class template which satisfies \mbox{\hyperlink{Trait_md_docs_named_reqs_Trait}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Trait\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}}, such that a {\itshape Type\+Result} or {\itshape Value\+Result} can be obtained in a finite number of steps for any well-\/formed sequence of nested template instantiations.   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{Result_autotoc_md19}{}\doxysubsection{Remarks}\label{Result_autotoc_md19}
+The final clause in the conditions for {\itshape Trait\+Result} is necessary to prevent circular definition, as illustrated by the following contrived example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c++\}}
+\DoxyCodeLine{template <typename T>}
+\DoxyCodeLine{struct NotTraitResult \{}
+\DoxyCodeLine{    template <typename U>}
+\DoxyCodeLine{    using trait = NotTraitResult<U>;}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+ \hypertarget{Trait}{}\doxysection{Named Requirements\+: \texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Trait\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}\label{Trait}
+\label{Trait_md_docs_named_reqs_Trait}%
+\Hypertarget{Trait_md_docs_named_reqs_Trait}%
+{\itshape Trait} is a generalization of {\itshape Unary\+Type\+Trait} and {\itshape Binary\+Type\+Trait} in the standard library.\hypertarget{Trait_autotoc_md20}{}\doxysubsection{Requirements}\label{Trait_autotoc_md20}
+A class template or alias template {\ttfamily Tmpl} satisfies {\itshape Trait} if every well-\/formed instantiation of {\ttfamily Tmpl} produces a
+\begin{DoxyEnumerate}
+\item \mbox{\hyperlink{Result_md_docs_named_reqs_Result}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Type\+Result\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}}, in which case it is a {\itshape Type\+Trait}; or
+\item \mbox{\hyperlink{Result_md_docs_named_reqs_Result}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Value\+Result\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}}, in which case it is a {\itshape Value\+Trait}; or
+\item \mbox{\hyperlink{Result_md_docs_named_reqs_Result}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Trait\+Result\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}}, in which case it is a {\itshape Meta\+Trait}.
+\end{DoxyEnumerate}
+
+A {\itshape Trait} can belong to one or more of the above categories. 

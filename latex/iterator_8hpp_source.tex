@@ -20,7 +20,7 @@
 \DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00024}00024     \textcolor{keyword}{public}:}
 \DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00025}\mbox{\hyperlink{classutils_1_1pointer__iterator_ab0064b508bd6acc339f8d06b3260f859}{00025}}         \textcolor{keyword}{using} \mbox{\hyperlink{classutils_1_1pointer__iterator_ab0064b508bd6acc339f8d06b3260f859}{iterator\_type}} = T*;}
 \DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00026}\mbox{\hyperlink{classutils_1_1pointer__iterator_a7850e0c5043cb047a01890e23bdbd4c8}{00026}}         \textcolor{keyword}{using} \mbox{\hyperlink{classutils_1_1pointer__iterator_a7850e0c5043cb047a01890e23bdbd4c8}{value\_type}} = std::remove\_cv\_t<T>;}
-\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00027}\mbox{\hyperlink{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}{00027}}         \textcolor{keyword}{using} \mbox{\hyperlink{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}{difference\_type}} = std::ptrdiff\_t;}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00027}\mbox{\hyperlink{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}{00027}}         \textcolor{keyword}{using} \mbox{\hyperlink{classutils_1_1pointer__iterator_aadb03411056c8d7d88a2632b37a80e79}{difference\_type}} = \mbox{\hyperlink{namespaceutils_1_1integer__alias_aca05a61d14a516c6dd53450e823075b7}{std::ptrdiff\_t}};}
 \DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00028}\mbox{\hyperlink{classutils_1_1pointer__iterator_aabaf47a4ce09476dea071f003f7fab3b}{00028}}         \textcolor{keyword}{using} \mbox{\hyperlink{classutils_1_1pointer__iterator_aabaf47a4ce09476dea071f003f7fab3b}{pointer}} = T*;}
 \DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00029}\mbox{\hyperlink{classutils_1_1pointer__iterator_a2e89ed88cc00093992f602a5af9dd5d9}{00029}}         \textcolor{keyword}{using} \mbox{\hyperlink{classutils_1_1pointer__iterator_a2e89ed88cc00093992f602a5af9dd5d9}{reference}} = T\&;}
 \DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00030}\mbox{\hyperlink{classutils_1_1pointer__iterator_a75334ad2289ac33315a79eca6ab44518}{00030}}         \textcolor{keyword}{using} \mbox{\hyperlink{classutils_1_1pointer__iterator_a75334ad2289ac33315a79eca6ab44518}{iterator\_category}} = std::contiguous\_iterator\_tag;}
@@ -54,10 +54,10 @@
 \DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00058}00058 }
 \DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00059}00059     \textcolor{keyword}{namespace }detail \{}
 \DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00060}00060         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00061}00061         \textcolor{keyword}{concept }can\_reference = \textcolor{keyword}{requires} \{ \textcolor{keyword}{typename} std::type\_identity\_t<T\&>; \};}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00061}00061         \textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1can__reference}{can\_reference}} = \textcolor{keyword}{requires} \{ \textcolor{keyword}{typename} std::type\_identity\_t<T\&>; \};}
 \DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00062}00062         \textcolor{keyword}{template} <\textcolor{keyword}{typename} F, \textcolor{keyword}{typename}... Args>}
 \DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00063}00063         \textcolor{keyword}{concept }invoke\_capturable = \textcolor{keyword}{requires} (F f, Args... args) \{}
-\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00064}00064             \{ f(std::forward<Args>(args)...) \} -\/> can\_reference;}
+\DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00064}00064             \{ f(std::forward<Args>(args)...) \} -\/> \mbox{\hyperlink{conceptutils_1_1can__reference}{can\_reference}};}
 \DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00065}00065         \};}
 \DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00066}00066     \}}
 \DoxyCodeLine{\Hypertarget{iterator_8hpp_source_l00067}00067     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Iter, \textcolor{keyword}{typename} F>}
