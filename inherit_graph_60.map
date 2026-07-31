@@ -4,9 +4,9 @@
 <area shape="rect" id="node4" href="$structutils_1_1is__integer__like.html" title=" " alt="" coords="159,85,332,126"/>
 <area shape="rect" id="node6" href="$structutils_1_1is__integer__like.html" title=" " alt="" coords="171,149,319,205"/>
 <area shape="rect" id="node8" href="$structutils_1_1always__false.html" title="A trait that is always false_type, regardless of template arguments." alt="" coords="182,229,309,270"/>
-<area shape="rect" id="node9" href="$structutils_1_1is__integer__like.html" title="Determines if a type is integer like." alt="" coords="178,294,313,335"/>
-<area shape="rect" id="node10" href="$structutils_1_1is__template__instance.html" title="Checks if a type is an instance of a given template." alt="" coords="171,359,320,415"/>
-<area shape="rect" id="node11" href="$structutils_1_1meta_1_1is__tuple.html" title="Checks if T is a (real) tuple." alt="" coords="164,439,327,465"/>
+<area shape="rect" id="node9" href="$structutils_1_1is__integer__like.html" title=" " alt="" coords="178,294,313,335"/>
+<area shape="rect" id="node10" href="$structutils_1_1is__template__instance.html" title=" " alt="" coords="171,359,320,415"/>
+<area shape="rect" id="node11" href="$structutils_1_1meta_1_1is__tuple.html" title=" " alt="" coords="164,439,327,465"/>
 <area shape="rect" id="node3" href="$structutils_1_1is__integer__like_3_01const_01T_01_4.html" title=" " alt="" coords="380,13,515,54"/>
 <area shape="rect" id="node5" href="$structutils_1_1is__integer__like_3_01const_01volatile_01T_01_4.html" title=" " alt="" coords="380,85,515,126"/>
 <area shape="rect" id="node7" href="$structutils_1_1is__integer__like_3_01volatile_01T_01_4.html" title=" " alt="" coords="380,157,515,198"/>

@@ -115,7 +115,7 @@ Variables</h2></td></tr>
 <tr class="memdesc:a5a3d58f1086283b7dcae9045592988fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default C++ integral arithmetic rules.  <a href="namespaceutils_1_1integral__behavior.html#a5a3d58f1086283b7dcae9045592988fb">More...</a><br /></td></tr>
 <tr class="separator:a5a3d58f1086283b7dcae9045592988fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a044520a743b7f7e24fde855fad4563"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1integral__behavior.html#a7a044520a743b7f7e24fde855fad4563">sane</a></td></tr>
-<tr class="memdesc:a7a044520a743b7f7e24fde855fad4563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default C++ integral arithmetic rules, but the result type is determined by <code><a class="el" href="structutils_1_1sane__common__type.html" title="Similar to usual arithmetic conversion, except that the promotion step is replaced by utils::sane_pro...">utils::sane_common_type</a></code>.  <a href="namespaceutils_1_1integral__behavior.html#a7a044520a743b7f7e24fde855fad4563">More...</a><br /></td></tr>
+<tr class="memdesc:a7a044520a743b7f7e24fde855fad4563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default C++ integral arithmetic rules, but the result type is determined by <code><a class="el" href="structutils_1_1sane__common__type.html">utils::sane_common_type</a></code>.  <a href="namespaceutils_1_1integral__behavior.html#a7a044520a743b7f7e24fde855fad4563">More...</a><br /></td></tr>
 <tr class="separator:a7a044520a743b7f7e24fde855fad4563"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada3d172e83fd8ae4072c6a7ae80cf8d2"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1integral__behavior.html#ada3d172e83fd8ae4072c6a7ae80cf8d2">ub</a></td></tr>
 <tr class="memdesc:ada3d172e83fd8ae4072c6a7ae80cf8d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invokes undefined behavior for any overflow (even for unsigned types), in addition to standard C++ arithmetic rules.  <a href="namespaceutils_1_1integral__behavior.html#ada3d172e83fd8ae4072c6a7ae80cf8d2">More...</a><br /></td></tr>
@@ -151,12 +151,12 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= <a class="code hl_variable" href="namespaceutils_1_1shift__behavior.html#a661ce0fc9bfb0fb4f8c15cb656cf03ae">profile_from</a>&lt;</div>
 <div class="line">            detail::ckd_plus{}, detail::ckd_minus{}, detail::ckd_multiplies{}, detail::ckd_divides{}, detail::ckd_modulus{}&gt;</div>
-<div class="ttc" id="anamespaceutils_1_1shift__behavior_html_a661ce0fc9bfb0fb4f8c15cb656cf03ae"><div class="ttname"><a href="namespaceutils_1_1shift__behavior.html#a661ce0fc9bfb0fb4f8c15cb656cf03ae">utils::shift_behavior::profile_from</a></div><div class="ttdeci">constexpr profile&lt;{ .shift_left=ShiftLeft,.shift_right=ShiftRight,.binary_traits=BinaryTraits{} }, { .shift_left_asg=asg_wrap&lt; ShiftLeft &gt;{},.shift_right_asg=asg_wrap&lt; ShiftRight &gt;{},.asg_traits=AsgTraits{} }&gt; profile_from</div><div class="ttdoc">Convenience variable template to make an &lt;i&gt;IntegerBehaviorProfile&lt;/i&gt; for bit shifts.</div><div class="ttdef"><b>Definition:</b> <a href="integer_8hpp_source.html#l00457">integer.hpp:457</a></div></div>
+<div class="ttc" id="anamespaceutils_1_1shift__behavior_html_a661ce0fc9bfb0fb4f8c15cb656cf03ae"><div class="ttname"><a href="namespaceutils_1_1shift__behavior.html#a661ce0fc9bfb0fb4f8c15cb656cf03ae">utils::shift_behavior::profile_from</a></div><div class="ttdeci">constexpr profile&lt;{ .shift_left=ShiftLeft,.shift_right=ShiftRight,.binary_traits=BinaryTraits{} }, { .shift_left_asg=asg_wrap&lt; ShiftLeft &gt;{},.shift_right_asg=asg_wrap&lt; ShiftRight &gt;{},.asg_traits=AsgTraits{} }&gt; profile_from</div><div class="ttdoc">Convenience variable template to make an &lt;i&gt;IntegerBehaviorProfile&lt;/i&gt; for bit shifts.</div><div class="ttdef"><b>Definition:</b> <a href="integer_8hpp_source.html#l00463">integer.hpp:463</a></div></div>
 </div><!-- fragment -->
 <p>Throws an exception for any overflow (including division) and division by 0. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>Every arithmetic operation is defined under this trait. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00339">339</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00345">345</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 
 </div>
 </div>
@@ -196,7 +196,7 @@ template&lt;auto Plus, auto Minus, auto Mul, auto Div, auto Mod, template&lt; ty
 </li>
 </ol>
 
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00211">211</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00217">217</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 
 </div>
 </div>
@@ -222,10 +222,10 @@ template&lt;auto Plus, auto Minus, auto Mul, auto Div, auto Mod, template&lt; ty
 <b>Initial value:</b><div class="fragment"><div class="line">= <a class="code hl_variable" href="namespaceutils_1_1shift__behavior.html#a661ce0fc9bfb0fb4f8c15cb656cf03ae">profile_from</a>&lt;</div>
 <div class="line">            std::plus{}, std::minus{}, std::multiplies{}, std::divides{}, std::modulus{}&gt;</div>
 </div><!-- fragment -->
-<p>Default C++ integral arithmetic rules, but the result type is determined by <code><a class="el" href="structutils_1_1sane__common__type.html" title="Similar to usual arithmetic conversion, except that the promotion step is replaced by utils::sane_pro...">utils::sane_common_type</a></code>. </p>
+<p>Default C++ integral arithmetic rules, but the result type is determined by <code><a class="el" href="structutils_1_1sane__common__type.html">utils::sane_common_type</a></code>. </p>
 <p >This prevents <code>(unsigned short)-1 * 2</code> from being undefined on a machine where <code>sizeof(int) == sizeof(short)</code>. It instead wraps around as expected. </p>
 
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00221">221</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00227">227</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 
 </div>
 </div>
@@ -253,7 +253,7 @@ template&lt;auto Plus, auto Minus, auto Mul, auto Div, auto Mod, template&lt; ty
 </div><!-- fragment -->
 <p>Default C++ integral arithmetic rules. </p>
 
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00214">214</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00220">220</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 
 </div>
 </div>
@@ -281,7 +281,7 @@ template&lt;auto Plus, auto Minus, auto Mul, auto Div, auto Mod, template&lt; ty
 </div><!-- fragment -->
 <p>Invokes undefined behavior for any overflow (even for unsigned types), in addition to standard C++ arithmetic rules. </p>
 
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00248">248</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00254">254</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 
 </div>
 </div>
@@ -311,7 +311,7 @@ template&lt;auto Plus, auto Minus, auto Mul, auto Div, auto Mod, template&lt; ty
 </div><!-- fragment -->
 <p>Wraps around for any overflow, even for signed types and division by -1. </p>
 
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00261">261</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00267">267</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 
 </div>
 </div>

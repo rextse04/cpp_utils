@@ -120,11 +120,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a03d7067835085714a7915d8c8988f42d"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1interval__endpoint.html#a03d7067835085714a7915d8c8988f42d">operator==</a> (const <a class="el" href="structutils_1_1interval__endpoint.html">interval_endpoint</a> &amp;other) const =default</td></tr>
 <tr class="memdesc:a03d7067835085714a7915d8c8988f42d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality operator.  <a href="structutils_1_1interval__endpoint.html#a03d7067835085714a7915d8c8988f42d">More...</a><br /></td></tr>
 <tr class="separator:a03d7067835085714a7915d8c8988f42d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Comparison functions.</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p >Three-way comparison operator.</p>
+<p >Given endpoints <img class="formulaInl" alt="$E1$" src="form_13.png"/> and <img class="formulaInl" alt="$E2$" src="form_14.png"/>, <img class="formulaInl" alt="$E1&lt;E2$" src="form_15.png"/> if and only if the set represented by <img class="formulaInl" alt="$E1$" src="form_13.png"/> is a proper subset of the set represented by <img class="formulaInl" alt="$E2$" src="form_14.png"/>. This defines a strict weak ordering on endpoints.</p>
+<p >Let <img class="formulaInl" alt="$v$" src="form_5.png"/> be <code>this-&gt;value</code> and <img class="formulaInl" alt="$ov$" src="form_16.png"/> be <code>other.value</code>. The program is ill-formed if there is not a restriction of <code>std::less&lt;&gt;</code> such that <img class="formulaInl" alt="$v$" src="form_5.png"/> and <img class="formulaInl" alt="$ov$" src="form_16.png"/> are in the domain. It is UB if such a restriction does not satisfy <em>Compare</em>.</p>
+<p >All endpoints are assumed to be right endpoints. The comparator is taken to be <code>std::less&lt;&gt;</code>. </p>
+</div></td></tr>
 <tr class="memitem:a7531876b5ec7ffc958b3020f32b14a60"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; <br />
 requires (detail::strict_weak_order&lt;std::less&lt;&gt;, const T&amp;, const U&amp;&gt;)</td></tr>
 <tr class="memitem:a7531876b5ec7ffc958b3020f32b14a60"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::weak_ordering&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structutils_1_1interval__endpoint.html#a7531876b5ec7ffc958b3020f32b14a60">operator&lt;=&gt;</a> (const <a class="el" href="structutils_1_1interval__endpoint.html">interval_endpoint</a>&lt; U &gt; &amp;other) const</td></tr>
-<tr class="memdesc:a7531876b5ec7ffc958b3020f32b14a60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comparison functions.  <a href="structutils_1_1interval__endpoint.html#a7531876b5ec7ffc958b3020f32b14a60">More...</a><br /></td></tr>
 <tr class="separator:a7531876b5ec7ffc958b3020f32b14a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfe97454fff1e35e7177d9b24cf69801"><td class="memTemplParams" colspan="2">template&lt;typename U , detail::strict_weak_order&lt; const T &amp;, const U &amp; &gt; Compare = std::less&lt;&gt;&gt; </td></tr>
 <tr class="memitem:abfe97454fff1e35e7177d9b24cf69801"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::weak_ordering&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structutils_1_1interval__endpoint.html#abfe97454fff1e35e7177d9b24cf69801">compare</a> (const <a class="el" href="structutils_1_1interval__endpoint.html">interval_endpoint</a>&lt; U &gt; &amp;other, bool right, const Compare &amp;comp={}) const</td></tr>
@@ -222,7 +226,7 @@ template&lt;typename U , detail::strict_weak_order&lt; const T &amp;, const U &a
 
 <p><img class="formulaInl" alt="$E1$" src="form_13.png"/> is taken to be <code>*this</code>, <img class="formulaInl" alt="$E2$" src="form_14.png"/> is taken to be <code>other</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="interval_8hpp_source.html#l00079">79</a> of file <a class="el" href="interval_8hpp_source.html">interval.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="interval_8hpp_source.html#l00078">78</a> of file <a class="el" href="interval_8hpp_source.html">interval.hpp</a>.</p>
 
 </div>
 </div>
@@ -289,13 +293,7 @@ requires (detail::strict_weak_order&lt;std::less&lt;&gt;, const T&amp;, const U&
 </table>
 </div><div class="memdoc">
 
-<p>Comparison functions. </p>
-<p >Given endpoints <img class="formulaInl" alt="$E1$" src="form_13.png"/> and <img class="formulaInl" alt="$E2$" src="form_14.png"/>, <img class="formulaInl" alt="$E1&lt;E2$" src="form_15.png"/> if and only if the set represented by <img class="formulaInl" alt="$E1$" src="form_13.png"/> is a proper subset of the set represented by <img class="formulaInl" alt="$E2$" src="form_14.png"/>. This defines a strict weak ordering on endpoints.</p>
-<p >Let <img class="formulaInl" alt="$v$" src="form_5.png"/> be <code>this-&gt;value</code> and <img class="formulaInl" alt="$ov$" src="form_16.png"/> be <code>other.value</code>. The program is ill-formed if there is not a restriction of <code>std::less&lt;&gt;</code> such that <img class="formulaInl" alt="$v$" src="form_5.png"/> and <img class="formulaInl" alt="$ov$" src="form_16.png"/> are in the domain. It is UB if such a restriction does not satisfy <em>Compare</em>.</p>
-<p >Three-way comparison operator.</p>
-<p >All endpoints are assumed to be right endpoints. The comparator is taken to be <code>std::less&lt;&gt;</code>. </p>
-
-<p class="definition">Definition at line <a class="el" href="interval_8hpp_source.html#l00073">73</a> of file <a class="el" href="interval_8hpp_source.html">interval.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="interval_8hpp_source.html#l00072">72</a> of file <a class="el" href="interval_8hpp_source.html">interval.hpp</a>.</p>
 
 </div>
 </div>

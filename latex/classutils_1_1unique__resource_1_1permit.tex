@@ -2,6 +2,11 @@
 \label{classutils_1_1unique__resource_1_1permit}\index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit}}
 
 
+A proxy through which the user uses the resource to enforce thread safety.  
+
+
+
+
 {\ttfamily \#include $<$concurrency.\+hpp$>$}
 
 
@@ -27,8 +32,6 @@ Collaboration diagram for utils\+::unique\+\_\+resource\texorpdfstring{$<$}{<} T
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-constexpr \mbox{\hyperlink{classutils_1_1unique__resource_1_1permit_a7024e643c1a2ed39f0361dd959160b30}{permit}} (permit\+\_\+key, \mbox{\hyperlink{classutils_1_1unique__resource}{unique\+\_\+resource}} $\ast$owner)
-\item 
 constexpr auto \mbox{\hyperlink{classutils_1_1unique__resource_1_1permit_a312f31b740caaa8cf2fa2cdbdd2ddd51}{read}} () const noexcept
 \begin{DoxyCompactList}\small\item\em Provides read-\/only access to the resource. \end{DoxyCompactList}\item 
 constexpr auto \mbox{\hyperlink{classutils_1_1unique__resource_1_1permit_abca148f6491a2956de2dbe1c554c79b2}{write}} () noexcept
@@ -38,30 +41,21 @@ constexpr auto \mbox{\hyperlink{classutils_1_1unique__resource_1_1permit_ac01e5e
 constexpr const \mbox{\hyperlink{classutils_1_1unique__resource_add226441a6c8860e16acf90bf7d98b52}{value\+\_\+type}} \& \mbox{\hyperlink{classutils_1_1unique__resource_1_1permit_a99fdc4d95f40e467297b68104e28cf8f}{operator$\ast$}} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns a const reference to the resource. \end{DoxyCompactList}\item 
 constexpr \mbox{\hyperlink{classutils_1_1unique__resource_1_1permit_aecf2385d946b783b7b544c0c90a8d0cb}{$\sim$permit}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em At destruction, notify the owner of the resource that the current user has released control. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 \subsubsection*{template$<$typename T, bool Sync = false, typename Semaphore = std\+::counting\+\_\+semaphore$<$$>$, typename Shared\+Mutex = std\+::shared\+\_\+mutex$>$\newline
 class utils\+::unique\+\_\+resource$<$ T, Sync, Semaphore, Shared\+Mutex $>$\+::permit}
+A proxy through which the user uses the resource to enforce thread safety. 
 
+{\ttfamily \mbox{\hyperlink{classutils_1_1unique__resource}{unique\+\_\+resource}}} only issues a permit when there is available quota. The class has a private constructor to maintain the ownership of {\ttfamily \mbox{\hyperlink{classutils_1_1unique__resource}{unique\+\_\+resource}}}. In other words, the user and other constructs cannot issue permits. 
 
-Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00058}{58}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
 
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classutils_1_1unique__resource_1_1permit_a7024e643c1a2ed39f0361dd959160b30}\label{classutils_1_1unique__resource_1_1permit_a7024e643c1a2ed39f0361dd959160b30}} 
-\index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit}!permit@{permit}}
-\index{permit@{permit}!utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit}}
-\doxysubsubsection{\texorpdfstring{permit()}{permit()}}
-{\footnotesize\ttfamily template$<$typename T , bool Sync = false, typename Semaphore  = std\+::counting\+\_\+semaphore$<$$>$, typename Shared\+Mutex  = std\+::shared\+\_\+mutex$>$ \\
-constexpr \mbox{\hyperlink{classutils_1_1unique__resource}{utils\+::unique\+\_\+resource}}$<$ T, Sync, Semaphore, Shared\+Mutex $>$\+::permit\+::permit (\begin{DoxyParamCaption}\item[{permit\+\_\+key}]{,  }\item[{\mbox{\hyperlink{classutils_1_1unique__resource}{unique\+\_\+resource}} $\ast$}]{owner }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
-
-
-
-Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00057}{57}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
-
 \mbox{\Hypertarget{classutils_1_1unique__resource_1_1permit_aecf2385d946b783b7b544c0c90a8d0cb}\label{classutils_1_1unique__resource_1_1permit_aecf2385d946b783b7b544c0c90a8d0cb}} 
 \index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit}!````~permit@{$\sim$permit}}
 \index{````~permit@{$\sim$permit}!utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit}}
@@ -71,7 +65,11 @@ constexpr \mbox{\hyperlink{classutils_1_1unique__resource}{utils\+::unique\+\_\+
 
 
 
-Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00080}{80}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+At destruction, notify the owner of the resource that the current user has released control. 
+
+
+
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00089}{89}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
 
 
 
@@ -89,7 +87,7 @@ Returns a const reference to the resource.
 
 Only available if {\ttfamily sync} is false. 
 
-Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00077}{77}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00085}{85}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
 
 \mbox{\Hypertarget{classutils_1_1unique__resource_1_1permit_ac01e5e2a1a1a57e6499e768514652cbd}\label{classutils_1_1unique__resource_1_1permit_ac01e5e2a1a1a57e6499e768514652cbd}} 
 \index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit}!operator-\/$>$@{operator-\/$>$}}
@@ -104,7 +102,7 @@ Equivalent to {\ttfamily read}.
 
 
 
-Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00071}{71}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00079}{79}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
 
 \mbox{\Hypertarget{classutils_1_1unique__resource_1_1permit_a312f31b740caaa8cf2fa2cdbdd2ddd51}\label{classutils_1_1unique__resource_1_1permit_a312f31b740caaa8cf2fa2cdbdd2ddd51}} 
 \index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit}!read@{read}}
@@ -122,7 +120,7 @@ If {\ttfamily sync} is true, a fancy pointer ({\ttfamily \mbox{\hyperlink{classu
 \end{DoxyRemark}
 
 
-Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00060}{60}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00068}{68}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
 
 \mbox{\Hypertarget{classutils_1_1unique__resource_1_1permit_abca148f6491a2956de2dbe1c554c79b2}\label{classutils_1_1unique__resource_1_1permit_abca148f6491a2956de2dbe1c554c79b2}} 
 \index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$::permit}!write@{write}}
@@ -140,7 +138,7 @@ If {\ttfamily sync} is true, a fancy pointer ({\ttfamily \mbox{\hyperlink{classu
 \end{DoxyRemark}
 
 
-Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00066}{66}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00074}{74}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
 
 
 

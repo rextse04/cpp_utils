@@ -86,8 +86,6 @@ $(document).ready(function(){initNavTree('classutils_1_1pmr_1_1stack__allocator.
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classutils_1_1pmr_1_1stack__allocator-members.html">List of all members</a>  </div>
@@ -138,32 +136,6 @@ Public Types</h2></td></tr>
 <tr class="memitem:acec1005620dc77b29dc4844dc009d4c3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> = Traits::size_type</td></tr>
 <tr class="separator:acec1005620dc77b29dc4844dc009d4c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:ga746f7cd5478f9442fc3808375aeae3e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utils.html#ga746f7cd5478f9442fc3808375aeae3e3">stack_allocator</a> (<a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#a3fc5600dc9a5d1a01dc09a45d452f4ed">void_pointer</a> buf, <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> space)</td></tr>
-<tr class="separator:ga746f7cd5478f9442fc3808375aeae3e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa1ac4dbee6bdd25ed6d882a027b53dae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utils.html#gaa1ac4dbee6bdd25ed6d882a027b53dae">stack_allocator</a> (std::pmr::memory_resource &amp;mr, <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> space)</td></tr>
-<tr class="memdesc:gaa1ac4dbee6bdd25ed6d882a027b53dae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a buffer of size <code>space</code> through <code>mr</code> and uses it for allocations.  <a href="group__utils.html#gaa1ac4dbee6bdd25ed6d882a027b53dae">More...</a><br /></td></tr>
-<tr class="separator:gaa1ac4dbee6bdd25ed6d882a027b53dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3fc5d53309c8c22900137af934c5107f"><td class="memTemplParams" colspan="2">template&lt;typename U , bool S&gt; </td></tr>
-<tr class="memitem:ga3fc5d53309c8c22900137af934c5107f"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utils.html#ga3fc5d53309c8c22900137af934c5107f">explicit</a> (S !=Sync) <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html">stack_allocator</a>(const <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html">stack_allocator</a>&lt; U</td></tr>
-<tr class="memdesc:ga3fc5d53309c8c22900137af934c5107f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion constructor.  <a href="group__utils.html#ga3fc5d53309c8c22900137af934c5107f">More...</a><br /></td></tr>
-<tr class="separator:ga3fc5d53309c8c22900137af934c5107f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac4713049e86502fa957493fc1ab484ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utils.html#gac4713049e86502fa957493fc1ab484ea">release</a> (std::pmr::memory_resource &amp;mr, <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> space) <a class="el" href="group__utils.html#ga9112aed083ab4d8d31d5cd3b16ac2eae">noexcept</a></td></tr>
-<tr class="memdesc:gac4713049e86502fa957493fc1ab484ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deallocates the underlying buffer previously allocated through a memory resource.  <a href="group__utils.html#gac4713049e86502fa957493fc1ab484ea">More...</a><br /></td></tr>
-<tr class="separator:gac4713049e86502fa957493fc1ab484ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafdb36bfd5513dee4589f339386bf8e8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#abd9b603040f83e782f72afeb661d8892">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utils.html#gafdb36bfd5513dee4589f339386bf8e8c">allocate</a> (<a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> n, std::align_val_t alignment=std::align_val_t(alignof(T))) const</td></tr>
-<tr class="memdesc:gafdb36bfd5513dee4589f339386bf8e8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates storage for <code>T[n]</code> with specified alignment from the underlying buffer.  <a href="group__utils.html#gafdb36bfd5513dee4589f339386bf8e8c">More...</a><br /></td></tr>
-<tr class="separator:gafdb36bfd5513dee4589f339386bf8e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab607356fe93ec169799735ebea50f8c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utils.html#gab607356fe93ec169799735ebea50f8c6">deallocate</a> (<a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#abd9b603040f83e782f72afeb661d8892">pointer</a> p, <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> n, std::align_val_t=std::align_val_t(alignof(T))) const <a class="el" href="group__utils.html#ga9112aed083ab4d8d31d5cd3b16ac2eae">noexcept</a></td></tr>
-<tr class="memdesc:gab607356fe93ec169799735ebea50f8c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deallocates previously allocated memory and recycles it in a LIFO manner.  <a href="group__utils.html#gab607356fe93ec169799735ebea50f8c6">More...</a><br /></td></tr>
-<tr class="separator:gab607356fe93ec169799735ebea50f8c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:ga9112aed083ab4d8d31d5cd3b16ac2eae"><td class="memItemLeft" align="right" valign="top">S &amp;other&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utils.html#ga9112aed083ab4d8d31d5cd3b16ac2eae">noexcept</a>: front_(other.front_) {} bool operator==(const <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html">stack_allocator</a>&amp; other) const noexcept { return front_ == other.front_</td></tr>
-<tr class="separator:ga9112aed083ab4d8d31d5cd3b16ac2eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:aafad100834d2508fc141c824295fdb87"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#aafad100834d2508fc141c824295fdb87">synchronized</a> = Sync</td></tr>
@@ -174,6 +146,37 @@ Friends</h2></td></tr>
 <tr class="memitem:ac1cd4dd3ac5a3096a95a6f64ef2a24f1"><td class="memTemplParams" colspan="2">template&lt;typename , bool &gt; </td></tr>
 <tr class="memitem:ac1cd4dd3ac5a3096a95a6f64ef2a24f1"><td class="memTemplItemLeft" align="right" valign="top">class&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#ac1cd4dd3ac5a3096a95a6f64ef2a24f1">stack_allocator</a></td></tr>
 <tr class="separator:ac1cd4dd3ac5a3096a95a6f64ef2a24f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p ><a class="anchor" id="amgrp559a25fdb98a7d1fd1c3771ac568d5e9"></a>Takes ownership of the buffer and uses it for allocations.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>If the internal control structure does not fit in the given buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>The construction can throw even if <code>space</code> is not less than the size of the control structure depending on the alignment of <code>buf</code>. </dd></dl>
+</td></tr>
+<tr class="memitem:a9112aed083ab4d8d31d5cd3b16ac2eae"><td class="memItemLeft" align="right" valign="top">S &amp;other&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#a9112aed083ab4d8d31d5cd3b16ac2eae">noexcept</a>: front_(other.front_) {} bool operator==(const <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html">stack_allocator</a>&amp; other) const noexcept { return front_ == other.front_</td></tr>
+<tr class="separator:a9112aed083ab4d8d31d5cd3b16ac2eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a746f7cd5478f9442fc3808375aeae3e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#a746f7cd5478f9442fc3808375aeae3e3">stack_allocator</a> (<a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#a3fc5600dc9a5d1a01dc09a45d452f4ed">void_pointer</a> buf, <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> space)</td></tr>
+<tr class="separator:a746f7cd5478f9442fc3808375aeae3e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1ac4dbee6bdd25ed6d882a027b53dae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#aa1ac4dbee6bdd25ed6d882a027b53dae">stack_allocator</a> (std::pmr::memory_resource &amp;mr, <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> space)</td></tr>
+<tr class="memdesc:aa1ac4dbee6bdd25ed6d882a027b53dae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a buffer of size <code>space</code> through <code>mr</code> and uses it for allocations.  <a href="classutils_1_1pmr_1_1stack__allocator.html#aa1ac4dbee6bdd25ed6d882a027b53dae">More...</a><br /></td></tr>
+<tr class="separator:aa1ac4dbee6bdd25ed6d882a027b53dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fc5d53309c8c22900137af934c5107f"><td class="memTemplParams" colspan="2">template&lt;typename U , bool S&gt; </td></tr>
+<tr class="memitem:a3fc5d53309c8c22900137af934c5107f"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#a3fc5d53309c8c22900137af934c5107f">explicit</a> (S !=Sync) <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html">stack_allocator</a>(const <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html">stack_allocator</a>&lt; U</td></tr>
+<tr class="memdesc:a3fc5d53309c8c22900137af934c5107f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion constructor.  <a href="classutils_1_1pmr_1_1stack__allocator.html#a3fc5d53309c8c22900137af934c5107f">More...</a><br /></td></tr>
+<tr class="separator:a3fc5d53309c8c22900137af934c5107f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4713049e86502fa957493fc1ab484ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#ac4713049e86502fa957493fc1ab484ea">release</a> (std::pmr::memory_resource &amp;mr, <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> space) <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#a9112aed083ab4d8d31d5cd3b16ac2eae">noexcept</a></td></tr>
+<tr class="memdesc:ac4713049e86502fa957493fc1ab484ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deallocates the underlying buffer previously allocated through a memory resource.  <a href="classutils_1_1pmr_1_1stack__allocator.html#ac4713049e86502fa957493fc1ab484ea">More...</a><br /></td></tr>
+<tr class="separator:ac4713049e86502fa957493fc1ab484ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdb36bfd5513dee4589f339386bf8e8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#abd9b603040f83e782f72afeb661d8892">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#afdb36bfd5513dee4589f339386bf8e8c">allocate</a> (<a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> n, std::align_val_t alignment=std::align_val_t(alignof(T))) const</td></tr>
+<tr class="memdesc:afdb36bfd5513dee4589f339386bf8e8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates storage for <code>T[n]</code> with specified alignment from the underlying buffer.  <a href="classutils_1_1pmr_1_1stack__allocator.html#afdb36bfd5513dee4589f339386bf8e8c">More...</a><br /></td></tr>
+<tr class="separator:afdb36bfd5513dee4589f339386bf8e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab607356fe93ec169799735ebea50f8c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#ab607356fe93ec169799735ebea50f8c6">deallocate</a> (<a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#abd9b603040f83e782f72afeb661d8892">pointer</a> p, <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> n, std::align_val_t=std::align_val_t(alignof(T))) const <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#a9112aed083ab4d8d31d5cd3b16ac2eae">noexcept</a></td></tr>
+<tr class="memdesc:ab607356fe93ec169799735ebea50f8c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deallocates previously allocated memory and recycles it in a LIFO manner.  <a href="classutils_1_1pmr_1_1stack__allocator.html#ab607356fe93ec169799735ebea50f8c6">More...</a><br /></td></tr>
+<tr class="separator:ab607356fe93ec169799735ebea50f8c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T, bool Sync = false&gt;<br />
@@ -300,6 +303,255 @@ template&lt;typename T , bool Sync = false&gt; </div>
 
 </div>
 </div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a746f7cd5478f9442fc3808375aeae3e3" name="a746f7cd5478f9442fc3808375aeae3e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a746f7cd5478f9442fc3808375aeae3e3">&#9670;&nbsp;</a></span>stack_allocator() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , bool Sync = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html">utils::pmr::stack_allocator</a>&lt; T, Sync &gt;::<a class="el" href="classutils_1_1pmr_1_1stack__allocator.html">stack_allocator</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#a3fc5600dc9a5d1a01dc09a45d452f4ed">void_pointer</a>&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a>&#160;</td>
+          <td class="paramname"><em>space</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00067">67</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa1ac4dbee6bdd25ed6d882a027b53dae" name="aa1ac4dbee6bdd25ed6d882a027b53dae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1ac4dbee6bdd25ed6d882a027b53dae">&#9670;&nbsp;</a></span>stack_allocator() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , bool Sync = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html">utils::pmr::stack_allocator</a>&lt; T, Sync &gt;::<a class="el" href="classutils_1_1pmr_1_1stack__allocator.html">stack_allocator</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::pmr::memory_resource &amp;&#160;</td>
+          <td class="paramname"><em>mr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a>&#160;</td>
+          <td class="paramname"><em>space</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Allocates a buffer of size <code>space</code> through <code>mr</code> and uses it for allocations. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>If <code>space</code> is insufficient to accommodate the internal control structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00077">77</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="afdb36bfd5513dee4589f339386bf8e8c" name="afdb36bfd5513dee4589f339386bf8e8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdb36bfd5513dee4589f339386bf8e8c">&#9670;&nbsp;</a></span>allocate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , bool Sync = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#abd9b603040f83e782f72afeb661d8892">pointer</a> <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html">utils::pmr::stack_allocator</a>&lt; T, Sync &gt;::allocate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a>&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::align_val_t&#160;</td>
+          <td class="paramname"><em>alignment</em> = <code>std::align_val_t(alignof(T))</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Allocates storage for <code>T[n]</code> with specified alignment from the underlying buffer. </p>
+<p >The behavior is undefined if <code>alignment</code> is less than that of <code>T</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00103">103</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ab607356fe93ec169799735ebea50f8c6" name="ab607356fe93ec169799735ebea50f8c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab607356fe93ec169799735ebea50f8c6">&#9670;&nbsp;</a></span>deallocate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , bool Sync = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html">utils::pmr::stack_allocator</a>&lt; T, Sync &gt;::deallocate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#abd9b603040f83e782f72afeb661d8892">pointer</a>&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a>&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::align_val_t&#160;</td>
+          <td class="paramname"> = <code>std::align_val_t(alignof(T))</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deallocates previously allocated memory and recycles it in a LIFO manner. </p>
+<p >Formally, let <img class="formulaInl" alt="$(M_1,M_2,...,M_k)$" src="form_0.png"/> be the memory chunks previously allocated by any allocator equal to <code>*this</code> which have not been <em>recycled</em>, in the order of allocation. A memory chunk is <em>recycled</em> if <code>allocate</code> can use its storage. As noted in the documentation of the class, deallocation in <code><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html" title="An allocator which allocates memory from a pre-allocated buffer in a lazy-stack-like manner.">stack_allocator</a></code> does not always recycle memory but may simply mark it as <em>removed</em>. Let $D_i$ indicate if $M_i$ has been removed for <img class="formulaInl" alt="$i\in[k]$" src="form_1.png"/>. A call to <code>deallocate</code> first finds <img class="formulaInl" alt="$t$" src="form_2.png"/> such that <code>p</code> points to <img class="formulaInl" alt="$M_t$" src="form_3.png"/>, marks the chunk as removed, then recycles all chunks in the set <img class="formulaInl" alt="$\{M_i\mid D_i,...,D_k\}$" src="form_4.png"/>. </p><dl class="section remark"><dt>Remarks</dt><dd>The alignment argument is unused. It is defined to deallocate a pointer obtained through aligned allocation without passing the required alignment. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00142">142</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a3fc5d53309c8c22900137af934c5107f" name="a3fc5d53309c8c22900137af934c5107f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fc5d53309c8c22900137af934c5107f">&#9670;&nbsp;</a></span>explicit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , bool Sync = false&gt; </div>
+<div class="memtemplate">
+template&lt;typename U , bool S&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html">utils::pmr::stack_allocator</a>&lt; T, Sync &gt;::explicit </td>
+          <td>(</td>
+          <td class="paramtype">S !&#160;</td>
+          <td class="paramname"> = <code>Sync</code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Conversion constructor. </p>
+<p >The constructor is explicit if <code>synchronized != other.synchronized</code>. This is to remind users to exercise caution when converting between synchronized and unsynchronized allocators, as mixing allocation operations on the same buffer with different synchronization schemes is UB. </p><dl class="section remark"><dt>Remarks</dt><dd>Allocators of different types can share the same buffer due to the common control structure. </dd></dl>
+
+</div>
+</div>
+<a id="ac4713049e86502fa957493fc1ab484ea" name="ac4713049e86502fa957493fc1ab484ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4713049e86502fa957493fc1ab484ea">&#9670;&nbsp;</a></span>release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , bool Sync = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html">utils::pmr::stack_allocator</a>&lt; T, Sync &gt;::release </td>
+          <td>(</td>
+          <td class="paramtype">std::pmr::memory_resource &amp;&#160;</td>
+          <td class="paramname"><em>mr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a>&#160;</td>
+          <td class="paramname"><em>space</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deallocates the underlying buffer previously allocated through a memory resource. </p>
+
+<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00097">97</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Friends And Related Function Documentation</h2>
 <a id="ac1cd4dd3ac5a3096a95a6f64ef2a24f1" name="ac1cd4dd3ac5a3096a95a6f64ef2a24f1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac1cd4dd3ac5a3096a95a6f64ef2a24f1">&#9670;&nbsp;</a></span>stack_allocator</h2>
@@ -330,6 +582,24 @@ template&lt;typename , bool &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a9112aed083ab4d8d31d5cd3b16ac2eae" name="a9112aed083ab4d8d31d5cd3b16ac2eae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9112aed083ab4d8d31d5cd3b16ac2eae">&#9670;&nbsp;</a></span>noexcept</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , bool Sync = false&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">S&amp; other <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html">utils::pmr::stack_allocator</a>&lt; T, Sync &gt;::noexcept</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00090">90</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
+
+</div>
+</div>
 <a id="aafad100834d2508fc141c824295fdb87" name="aafad100834d2508fc141c824295fdb87"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aafad100834d2508fc141c824295fdb87">&#9670;&nbsp;</a></span>synchronized</h2>
 

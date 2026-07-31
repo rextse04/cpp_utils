@@ -30,15 +30,15 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structutils_1_1qualifiers__of}{utils\+::qualifiers\+\_\+of$<$ T $>$}}
-\begin{DoxyCompactList}\small\item\em Extracts the const and volatile qualifiers from a type. \end{DoxyCompactList}\item 
+\item 
 struct \mbox{\hyperlink{structutils_1_1apply__qualifiers}{utils\+::apply\+\_\+qualifiers$<$ T, Q $>$}}
-\begin{DoxyCompactList}\small\item\em Applies specified const and volatile qualifiers to a type, while retaining reference category/pointer. \end{DoxyCompactList}\item 
+\item 
 struct \mbox{\hyperlink{structutils_1_1follow}{utils\+::follow$<$ Ref\+T, T $>$}}
-\begin{DoxyCompactList}\small\item\em Copies the qualifiers and reference category from one type to another. \end{DoxyCompactList}\item 
+\item 
 struct \mbox{\hyperlink{structutils_1_1is__equiv}{utils\+::is\+\_\+equiv$<$ T, U $>$}}
-\begin{DoxyCompactList}\small\item\em Checks if two types are equivalent. \end{DoxyCompactList}\item 
+\item 
 struct \mbox{\hyperlink{structutils_1_1is__template__instance}{utils\+::is\+\_\+template\+\_\+instance$<$ typename, typename $>$}}
-\begin{DoxyCompactList}\small\item\em Checks if a type is an instance of a given template. \end{DoxyCompactList}\item 
+\item 
 struct \mbox{\hyperlink{structutils_1_1is__template__instance_3_01Tmpl_00_01Tmpl_3_01Ts_8_8_8_01_4_01_4}{utils\+::is\+\_\+template\+\_\+instance$<$ Tmpl, Tmpl$<$ Ts... $>$ $>$}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1is__explicitly__convertible}{utils\+::is\+\_\+explicitly\+\_\+convertible$<$ From, To $>$}}
@@ -66,34 +66,50 @@ namespace \mbox{\hyperlink{namespaceutils}{utils}}
 concept \mbox{\hyperlink{conceptutils_1_1equiv__to}{utils\+::equiv\+\_\+to}}
 \item 
 concept \mbox{\hyperlink{conceptutils_1_1explicitly__convertible__to}{utils\+::explicitly\+\_\+convertible\+\_\+to}}
-\begin{DoxyCompactList}\small\item\em Determines if {\ttfamily From} is explicitly convertible to {\ttfamily To}. \end{DoxyCompactList}\item 
+\item 
 concept \mbox{\hyperlink{conceptutils_1_1tagged}{utils\+::tagged}}
-\begin{DoxyCompactList}\small\item\em Checks if {\ttfamily T} has a {\ttfamily tag} member alias matching or containing {\ttfamily Tag}. \end{DoxyCompactList}\item 
+\item 
 concept \mbox{\hyperlink{conceptutils_1_1boolean__testable}{utils\+::boolean\+\_\+testable}}
 \begin{DoxyCompactList}\small\item\em C++ standard exposition-\/only concept\+: {\itshape boolean-\/testable}. \end{DoxyCompactList}\item 
 concept \mbox{\hyperlink{conceptutils_1_1can__reference}{utils\+::can\+\_\+reference}}
 \begin{DoxyCompactList}\small\item\em C++ standard exposition-\/only concept\+: {\itshape can-\/reference}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
-\textbf{ }\par
-\begin{DoxyCompactItemize}
+\begin{Indent}\textbf{ apply\+\_\+qualifiers}\par
+{\em Applies specified const and volatile qualifiers to a type, while retaining reference category/pointer. }\begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename T , type\+\_\+qualifiers Q$>$ }\\using \mbox{\hyperlink{namespaceutils_a0f1ae7032a6b8ec9503056a4ac3a0b46}{utils\+::apply\+\_\+qualifiers\+\_\+t}} = apply\+\_\+qualifiers$<$ T, Q $>$\+::type
 \end{DoxyCompactItemize}
-
-\textbf{ }\par
-\begin{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ follow}\par
+{\em Copies the qualifiers and reference category from one type to another. }\begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename RefT , typename T $>$ }\\using \mbox{\hyperlink{namespaceutils_a9cee2155b4c7479372bc3ffc2dc06a59}{utils\+::follow\+\_\+t}} = follow$<$ RefT, T $>$\+::type
 \end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ make\+\_\+integer\+\_\+range}\par
+{\em Creates an integer sequence with custom Begin and Step values.
 
-\textbf{ }\par
-\begin{DoxyCompactItemize}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The underlying integer type for the sequence. \\
+\hline
+{\em End} & The exclusive end value of the range. \\
+\hline
+{\em Begin} & The starting value of the range (default\+: 0). \\
+\hline
+{\em Step} & The step size between elements (default\+: 1). \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyRemark}{Remarks}
+Generates a sequence \mbox{[} {\ttfamily Begin} , {\ttfamily Begin+\+Step} , {\ttfamily Begin+2$\ast$\+Step} , ...) up to {\ttfamily End}. 
+\end{DoxyRemark}
+}\begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename T , T End, T Begin = 0, T Step = 1$>$ }\\using \mbox{\hyperlink{namespaceutils_a011249984f152afb7307c44c21667c79}{utils\+::make\+\_\+integer\+\_\+range}} = detail\+::sequence\+\_\+apply$<$ T,\mbox{[}$\,$\mbox{]}(T n) \{ return Begin+n $\ast$Step
-\begin{DoxyCompactList}\small\item\em Creates an integer sequence with custom Begin and Step values. \end{DoxyCompactList}\item 
+\item 
 {\footnotesize template$<$std\+::size\+\_\+t End, std\+::size\+\_\+t Begin = 0, std\+::size\+\_\+t Step = 1$>$ }\\using \mbox{\hyperlink{namespaceutils_a6593b60afa5929e922ecc032ce2db4d1}{utils\+::make\+\_\+index\+\_\+range}} = make\+\_\+integer\+\_\+range$<$ std\+::size\+\_\+t, End, Begin, Step $>$
 \begin{DoxyCompactList}\small\item\em Creates a size\+\_\+t index sequence with custom Begin and Step values. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
+\end{Indent}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -107,59 +123,62 @@ enum class \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{ut
 \item 
 \mbox{\hyperlink{namespaceutils_aed7303c206edcaa7cba652c07ca49240}{utils\+::\+UTILS\+\_\+\+BITMASK}} (type\+\_\+qualifiers)
 \item 
-{\footnotesize template$<$typename T , typename U $>$ }\\constexpr auto \&\& \mbox{\hyperlink{namespaceutils_ac60b73bc9e229724ebdb31555e939edb}{utils\+::forward\+\_\+stored}} (U \&\&u) noexcept
-\begin{DoxyCompactList}\small\item\em Returns a reference to {\ttfamily u}, which has similar properties to {\ttfamily T}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\textbf{ }\par
-\begin{DoxyCompactItemize}
-\item 
 {\footnotesize template$<$typename T $>$ }\\constexpr const T \&\& \mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{utils\+::as\+\_\+const}} (T \&\&ref) noexcept
 \begin{DoxyCompactList}\small\item\em Casts a forwarding reference to a const reference of the same category. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\constexpr volatile T \&\& \mbox{\hyperlink{namespaceutils_a5efd377d9bd98cc665b5211b4e64e07f}{utils\+::as\+\_\+volatile}} (T \&\&ref) noexcept
 \begin{DoxyCompactList}\small\item\em Casts a forwarding reference to a volatile reference of the same category. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\constexpr const volatile T \&\& \mbox{\hyperlink{namespaceutils_a0922f693f86f61e5b05d43af01c05cb6}{utils\+::as\+\_\+cv}} (T \&\&ref) noexcept
-\begin{DoxyCompactList}\small\item\em Casts a forwarding reference to a const volatile reference of the same category. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-\textbf{ }\par
-\begin{DoxyCompactItemize}
-\item 
+\begin{DoxyCompactList}\small\item\em Casts a forwarding reference to a const volatile reference of the same category. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\constexpr const T $\ast$ \mbox{\hyperlink{namespaceutils_a570f4db159e0862968337af153e091e5}{utils\+::as\+\_\+const\+\_\+ptr}} (T $\ast$ptr) noexcept
 \begin{DoxyCompactList}\small\item\em Const-\/qualifies a pointer. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\constexpr volatile T $\ast$ \mbox{\hyperlink{namespaceutils_a4a19d4a2f7dfda792458d6c0983c368f}{utils\+::as\+\_\+volatile\+\_\+ptr}} (T $\ast$ptr) noexcept
 \begin{DoxyCompactList}\small\item\em Volatile-\/qualifies a pointer. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\constexpr const volatile T $\ast$ \mbox{\hyperlink{namespaceutils_a9b359b4959abf1200f831e0febf5acd9}{utils\+::as\+\_\+cv\+\_\+ptr}} (T $\ast$ptr) noexcept
-\begin{DoxyCompactList}\small\item\em Const volatile-\/qualifies a pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
+\begin{DoxyCompactList}\small\item\em Const volatile-\/qualifies a pointer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\constexpr auto \&\& \mbox{\hyperlink{namespaceutils_ac60b73bc9e229724ebdb31555e939edb}{utils\+::forward\+\_\+stored}} (U \&\&u) noexcept
+\begin{DoxyCompactList}\small\item\em Returns a reference to {\ttfamily u}, which has similar properties to {\ttfamily T}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
-\textbf{ }\par
-\begin{DoxyCompactItemize}
+\begin{Indent}\textbf{ qualifiers\+\_\+of}\par
+{\em Extracts the const and volatile qualifiers from a type.
+
+\begin{DoxyRemark}{Remarks}
+Ignores reference and pointer decorations, extracting qualifiers from the underlying type. 
+\end{DoxyRemark}
+}\begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename T $>$ }\\constexpr type\+\_\+qualifiers \mbox{\hyperlink{namespaceutils_ad6a8c3be8fd9c0f96263ed785cd8bff7}{utils\+::qualifiers\+\_\+of\+\_\+v}} = qualifiers\+\_\+of$<$T$>$\+::value
 \end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ is\+\_\+equiv}\par
+{\em Checks if two types are equivalent.
 
-\textbf{ }\par
-\begin{DoxyCompactItemize}
+Two types are equivalent if they are the same after removing all const, volatile, and reference qualifiers. }\begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename T , typename U $>$ }\\constexpr bool \mbox{\hyperlink{namespaceutils_abc8a77dfb384195bd1be8468750888c0}{utils\+::is\+\_\+equiv\+\_\+v}} = is\+\_\+equiv$<$T, U$>$\+::value
 \end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ is\+\_\+template\+\_\+instance}\par
+{\em Checks if a type is an instance of a given template.
 
-\textbf{ }\par
-\begin{DoxyCompactItemize}
+The check ignores cv qualifiers and reference categories on the type being checked. }\begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$template$<$ typename... $>$ typename Tmpl, typename T $>$ }\\constexpr bool \mbox{\hyperlink{namespaceutils_a1de78a43e2208a380d280c56bdd7947e}{utils\+::is\+\_\+template\+\_\+instance\+\_\+v}} = is\+\_\+template\+\_\+instance$<$Tmpl, std\+::remove\+\_\+cvref\+\_\+t$<$T$>$$>$\+::value
 \end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ explicitly\+\_\+convertible\+\_\+to}\par
+{\em Determines if {\ttfamily From} is explicitly convertible to {\ttfamily To}.
 
-\textbf{ }\par
-\begin{DoxyCompactItemize}
+{\ttfamily From} is explicitly convertible to {\ttfamily To} if the expression {\ttfamily static\+\_\+cast\texorpdfstring{$<$}{<}To\texorpdfstring{$>$}{>}(std\+::declval\texorpdfstring{$<$}{<}From\texorpdfstring{$>$}{>}())} is well-\/formed. }\begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename From , typename To $>$ }\\constexpr bool \mbox{\hyperlink{namespaceutils_aeeeecd5e5e48d738f1f779d9b8f46dcc}{utils\+::is\+\_\+explicitly\+\_\+convertible\+\_\+v}} = is\+\_\+explicitly\+\_\+convertible$<$From, To$>$\+::value
 \end{DoxyCompactItemize}
-
-\textbf{ }\par
-\begin{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ is\+\_\+tagged}\par
+{\em Checks if {\ttfamily T} has a {\ttfamily tag} member alias matching or containing {\ttfamily Tag}. }\begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename Tag , typename T $>$ }\\constexpr bool \mbox{\hyperlink{namespaceutils_a4cf6ed8a5af20f379e7e15fcb183c2bc}{utils\+::is\+\_\+tagged\+\_\+v}} = is\+\_\+tagged$<$Tag, T$>$\+::value
 \end{DoxyCompactItemize}
-
+\end{Indent}
 
 
 \doxysubsection{Detailed Description}

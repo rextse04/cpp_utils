@@ -86,9 +86,6 @@ $(document).ready(function(){initNavTree('classutils_1_1pmr_1_1arena__allocator.
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classutils_1_1pmr_1_1arena__allocator-members.html">List of all members</a>  </div>
@@ -139,35 +136,6 @@ Public Types</h2></td></tr>
 <tr class="memitem:acec1005620dc77b29dc4844dc009d4c3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> = Traits::size_type</td></tr>
 <tr class="separator:acec1005620dc77b29dc4844dc009d4c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:gae5dfff367930d9f2e6ad7380ba4c7a70"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utils.html#gae5dfff367930d9f2e6ad7380ba4c7a70">arena_allocator</a> (<a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#a3fc5600dc9a5d1a01dc09a45d452f4ed">void_pointer</a> buf, <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> space)</td></tr>
-<tr class="separator:gae5dfff367930d9f2e6ad7380ba4c7a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga182c9597d8e46eee55ccbd3d5714eaa6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utils.html#ga182c9597d8e46eee55ccbd3d5714eaa6">arena_allocator</a> (std::pmr::memory_resource &amp;mr, <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> space)</td></tr>
-<tr class="memdesc:ga182c9597d8e46eee55ccbd3d5714eaa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a buffer of size <code>space</code> through <code>mr</code> and uses it for allocations.  <a href="group__utils.html#ga182c9597d8e46eee55ccbd3d5714eaa6">More...</a><br /></td></tr>
-<tr class="separator:ga182c9597d8e46eee55ccbd3d5714eaa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga557d2109484928e15525a1083b0b8e26"><td class="memTemplParams" colspan="2">template&lt;typename U , bool S&gt; </td></tr>
-<tr class="memitem:ga557d2109484928e15525a1083b0b8e26"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utils.html#ga557d2109484928e15525a1083b0b8e26">explicit</a> (S !=Sync) <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html">arena_allocator</a>(const <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html">arena_allocator</a>&lt; U</td></tr>
-<tr class="memdesc:ga557d2109484928e15525a1083b0b8e26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion constructor.  <a href="group__utils.html#ga557d2109484928e15525a1083b0b8e26">More...</a><br /></td></tr>
-<tr class="separator:ga557d2109484928e15525a1083b0b8e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab2f3f5595719c9fc771f2fc044b6a306"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utils.html#gab2f3f5595719c9fc771f2fc044b6a306">release</a> (std::pmr::memory_resource &amp;mr, <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> space) <a class="el" href="group__utils.html#gaecabf6002d8eda53bb01b8e3103d1701">noexcept</a></td></tr>
-<tr class="memdesc:gab2f3f5595719c9fc771f2fc044b6a306"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deallocates the underlying buffer previously allocated through a memory resource.  <a href="group__utils.html#gab2f3f5595719c9fc771f2fc044b6a306">More...</a><br /></td></tr>
-<tr class="separator:gab2f3f5595719c9fc771f2fc044b6a306"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga57fd29bd785e147ffa226bc0d52f07c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#abd9b603040f83e782f72afeb661d8892">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utils.html#ga57fd29bd785e147ffa226bc0d52f07c6">allocate</a> (<a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> n, std::align_val_t alignment=std::align_val_t(alignof(T))) const</td></tr>
-<tr class="memdesc:ga57fd29bd785e147ffa226bc0d52f07c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates storage for <code>T[n]</code> with specified alignment from the underlying buffer.  <a href="group__utils.html#ga57fd29bd785e147ffa226bc0d52f07c6">More...</a><br /></td></tr>
-<tr class="separator:ga57fd29bd785e147ffa226bc0d52f07c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ga6deae5a28ef57aebac240cd3de5faef1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utils.html#ga6deae5a28ef57aebac240cd3de5faef1">deallocate</a> (<a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#abd9b603040f83e782f72afeb661d8892">pointer</a>, <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a>, std::align_val_t=std::align_val_t(alignof(T))) <a class="el" href="group__utils.html#gaecabf6002d8eda53bb01b8e3103d1701">noexcept</a></td></tr>
-<tr class="memdesc:ga6deae5a28ef57aebac240cd3de5faef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deallocation is a no-op.  <a href="group__utils.html#ga6deae5a28ef57aebac240cd3de5faef1">More...</a><br /></td></tr>
-<tr class="separator:ga6deae5a28ef57aebac240cd3de5faef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:gaecabf6002d8eda53bb01b8e3103d1701"><td class="memItemLeft" align="right" valign="top">S &amp;other&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utils.html#gaecabf6002d8eda53bb01b8e3103d1701">noexcept</a>: control_(other.control_) {} bool operator==(const <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html">arena_allocator</a>&amp; other) const noexcept { return control_ == other.control_</td></tr>
-<tr class="separator:gaecabf6002d8eda53bb01b8e3103d1701"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a04bbeb10a4b3e3317ec92047f517192b"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#a04bbeb10a4b3e3317ec92047f517192b">synchronized</a> = Sync</td></tr>
@@ -178,6 +146,37 @@ Friends</h2></td></tr>
 <tr class="memitem:a45cd35ea8e76c966937c8c753f71ba0a"><td class="memTemplParams" colspan="2">template&lt;typename , bool &gt; </td></tr>
 <tr class="memitem:a45cd35ea8e76c966937c8c753f71ba0a"><td class="memTemplItemLeft" align="right" valign="top">class&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#a45cd35ea8e76c966937c8c753f71ba0a">arena_allocator</a></td></tr>
 <tr class="separator:a45cd35ea8e76c966937c8c753f71ba0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Constructors</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p ><a class="anchor" id="amgrp559a25fdb98a7d1fd1c3771ac568d5e9"></a>Takes ownership of the buffer and uses it for allocations.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>If the internal control structure does not fit in the given buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>The construction can throw even if <code>space</code> is not less than the size of the control structure depending on the alignment of <code>buf</code>. </dd></dl>
+</td></tr>
+<tr class="memitem:aecabf6002d8eda53bb01b8e3103d1701"><td class="memItemLeft" align="right" valign="top">S &amp;other&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#aecabf6002d8eda53bb01b8e3103d1701">noexcept</a>: control_(other.control_) {} bool operator==(const <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html">arena_allocator</a>&amp; other) const noexcept { return control_ == other.control_</td></tr>
+<tr class="separator:aecabf6002d8eda53bb01b8e3103d1701"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5dfff367930d9f2e6ad7380ba4c7a70"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#ae5dfff367930d9f2e6ad7380ba4c7a70">arena_allocator</a> (<a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#a3fc5600dc9a5d1a01dc09a45d452f4ed">void_pointer</a> buf, <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> space)</td></tr>
+<tr class="separator:ae5dfff367930d9f2e6ad7380ba4c7a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a182c9597d8e46eee55ccbd3d5714eaa6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#a182c9597d8e46eee55ccbd3d5714eaa6">arena_allocator</a> (std::pmr::memory_resource &amp;mr, <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> space)</td></tr>
+<tr class="memdesc:a182c9597d8e46eee55ccbd3d5714eaa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a buffer of size <code>space</code> through <code>mr</code> and uses it for allocations.  <a href="classutils_1_1pmr_1_1arena__allocator.html#a182c9597d8e46eee55ccbd3d5714eaa6">More...</a><br /></td></tr>
+<tr class="separator:a182c9597d8e46eee55ccbd3d5714eaa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a557d2109484928e15525a1083b0b8e26"><td class="memTemplParams" colspan="2">template&lt;typename U , bool S&gt; </td></tr>
+<tr class="memitem:a557d2109484928e15525a1083b0b8e26"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#a557d2109484928e15525a1083b0b8e26">explicit</a> (S !=Sync) <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html">arena_allocator</a>(const <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html">arena_allocator</a>&lt; U</td></tr>
+<tr class="memdesc:a557d2109484928e15525a1083b0b8e26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion constructor.  <a href="classutils_1_1pmr_1_1arena__allocator.html#a557d2109484928e15525a1083b0b8e26">More...</a><br /></td></tr>
+<tr class="separator:a557d2109484928e15525a1083b0b8e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2f3f5595719c9fc771f2fc044b6a306"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#ab2f3f5595719c9fc771f2fc044b6a306">release</a> (std::pmr::memory_resource &amp;mr, <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> space) <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#aecabf6002d8eda53bb01b8e3103d1701">noexcept</a></td></tr>
+<tr class="memdesc:ab2f3f5595719c9fc771f2fc044b6a306"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deallocates the underlying buffer previously allocated through a memory resource.  <a href="classutils_1_1pmr_1_1arena__allocator.html#ab2f3f5595719c9fc771f2fc044b6a306">More...</a><br /></td></tr>
+<tr class="separator:ab2f3f5595719c9fc771f2fc044b6a306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57fd29bd785e147ffa226bc0d52f07c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#abd9b603040f83e782f72afeb661d8892">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#a57fd29bd785e147ffa226bc0d52f07c6">allocate</a> (<a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> n, std::align_val_t alignment=std::align_val_t(alignof(T))) const</td></tr>
+<tr class="memdesc:a57fd29bd785e147ffa226bc0d52f07c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates storage for <code>T[n]</code> with specified alignment from the underlying buffer.  <a href="classutils_1_1pmr_1_1arena__allocator.html#a57fd29bd785e147ffa226bc0d52f07c6">More...</a><br /></td></tr>
+<tr class="separator:a57fd29bd785e147ffa226bc0d52f07c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6deae5a28ef57aebac240cd3de5faef1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#a6deae5a28ef57aebac240cd3de5faef1">deallocate</a> (<a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#abd9b603040f83e782f72afeb661d8892">pointer</a>, <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a>, std::align_val_t=std::align_val_t(alignof(T))) <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#aecabf6002d8eda53bb01b8e3103d1701">noexcept</a></td></tr>
+<tr class="memdesc:a6deae5a28ef57aebac240cd3de5faef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deallocation is a no-op.  <a href="classutils_1_1pmr_1_1arena__allocator.html#a6deae5a28ef57aebac240cd3de5faef1">More...</a><br /></td></tr>
+<tr class="separator:a6deae5a28ef57aebac240cd3de5faef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T, bool Sync = false&gt;<br />
@@ -304,6 +303,254 @@ template&lt;typename T , bool Sync = false&gt; </div>
 
 </div>
 </div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae5dfff367930d9f2e6ad7380ba4c7a70" name="ae5dfff367930d9f2e6ad7380ba4c7a70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5dfff367930d9f2e6ad7380ba4c7a70">&#9670;&nbsp;</a></span>arena_allocator() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , bool Sync = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html">utils::pmr::arena_allocator</a>&lt; T, Sync &gt;::<a class="el" href="classutils_1_1pmr_1_1arena__allocator.html">arena_allocator</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#a3fc5600dc9a5d1a01dc09a45d452f4ed">void_pointer</a>&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a>&#160;</td>
+          <td class="paramname"><em>space</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arena__allocator_8hpp_source.html#l00069">69</a> of file <a class="el" href="arena__allocator_8hpp_source.html">arena_allocator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a182c9597d8e46eee55ccbd3d5714eaa6" name="a182c9597d8e46eee55ccbd3d5714eaa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a182c9597d8e46eee55ccbd3d5714eaa6">&#9670;&nbsp;</a></span>arena_allocator() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , bool Sync = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html">utils::pmr::arena_allocator</a>&lt; T, Sync &gt;::<a class="el" href="classutils_1_1pmr_1_1arena__allocator.html">arena_allocator</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::pmr::memory_resource &amp;&#160;</td>
+          <td class="paramname"><em>mr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a>&#160;</td>
+          <td class="paramname"><em>space</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Allocates a buffer of size <code>space</code> through <code>mr</code> and uses it for allocations. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>If <code>space</code> is insufficient to accommodate the internal control structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="arena__allocator_8hpp_source.html#l00078">78</a> of file <a class="el" href="arena__allocator_8hpp_source.html">arena_allocator.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a57fd29bd785e147ffa226bc0d52f07c6" name="a57fd29bd785e147ffa226bc0d52f07c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57fd29bd785e147ffa226bc0d52f07c6">&#9670;&nbsp;</a></span>allocate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , bool Sync = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#abd9b603040f83e782f72afeb661d8892">pointer</a> <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html">utils::pmr::arena_allocator</a>&lt; T, Sync &gt;::allocate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a>&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::align_val_t&#160;</td>
+          <td class="paramname"><em>alignment</em> = <code>std::align_val_t(alignof(T))</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Allocates storage for <code>T[n]</code> with specified alignment from the underlying buffer. </p>
+<p >The behavior is undefined if <code>alignment</code> is less than that of <code>T</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="arena__allocator_8hpp_source.html#l00104">104</a> of file <a class="el" href="arena__allocator_8hpp_source.html">arena_allocator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a6deae5a28ef57aebac240cd3de5faef1" name="a6deae5a28ef57aebac240cd3de5faef1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6deae5a28ef57aebac240cd3de5faef1">&#9670;&nbsp;</a></span>deallocate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , bool Sync = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html">utils::pmr::arena_allocator</a>&lt; T, Sync &gt;::deallocate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#abd9b603040f83e782f72afeb661d8892">pointer</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::align_val_t&#160;</td>
+          <td class="paramname"> = <code>std::align_val_t(alignof(T))</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deallocation is a no-op. </p>
+
+<p class="definition">Definition at line <a class="el" href="arena__allocator_8hpp_source.html#l00124">124</a> of file <a class="el" href="arena__allocator_8hpp_source.html">arena_allocator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a557d2109484928e15525a1083b0b8e26" name="a557d2109484928e15525a1083b0b8e26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a557d2109484928e15525a1083b0b8e26">&#9670;&nbsp;</a></span>explicit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , bool Sync = false&gt; </div>
+<div class="memtemplate">
+template&lt;typename U , bool S&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html">utils::pmr::arena_allocator</a>&lt; T, Sync &gt;::explicit </td>
+          <td>(</td>
+          <td class="paramtype">S !&#160;</td>
+          <td class="paramname"> = <code>Sync</code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Conversion constructor. </p>
+<p >The constructor is explicit if <code>synchronized != other.synchronized</code>. This is to remind users to exercise caution when converting between synchronized and unsynchronized allocators, as mixing allocation operations on the same buffer with different synchronization schemes is UB. </p><dl class="section remark"><dt>Remarks</dt><dd>Allocators of different types can share the same buffer due to the common control structure. </dd></dl>
+
+</div>
+</div>
+<a id="ab2f3f5595719c9fc771f2fc044b6a306" name="ab2f3f5595719c9fc771f2fc044b6a306"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2f3f5595719c9fc771f2fc044b6a306">&#9670;&nbsp;</a></span>release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , bool Sync = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html">utils::pmr::arena_allocator</a>&lt; T, Sync &gt;::release </td>
+          <td>(</td>
+          <td class="paramtype">std::pmr::memory_resource &amp;&#160;</td>
+          <td class="paramname"><em>mr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a>&#160;</td>
+          <td class="paramname"><em>space</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deallocates the underlying buffer previously allocated through a memory resource. </p>
+
+<p class="definition">Definition at line <a class="el" href="arena__allocator_8hpp_source.html#l00098">98</a> of file <a class="el" href="arena__allocator_8hpp_source.html">arena_allocator.hpp</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Friends And Related Function Documentation</h2>
 <a id="a45cd35ea8e76c966937c8c753f71ba0a" name="a45cd35ea8e76c966937c8c753f71ba0a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a45cd35ea8e76c966937c8c753f71ba0a">&#9670;&nbsp;</a></span>arena_allocator</h2>
@@ -334,6 +581,24 @@ template&lt;typename , bool &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="aecabf6002d8eda53bb01b8e3103d1701" name="aecabf6002d8eda53bb01b8e3103d1701"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecabf6002d8eda53bb01b8e3103d1701">&#9670;&nbsp;</a></span>noexcept</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , bool Sync = false&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">S&amp; other <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html">utils::pmr::arena_allocator</a>&lt; T, Sync &gt;::noexcept</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arena__allocator_8hpp_source.html#l00091">91</a> of file <a class="el" href="arena__allocator_8hpp_source.html">arena_allocator.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a04bbeb10a4b3e3317ec92047f517192b" name="a04bbeb10a4b3e3317ec92047f517192b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a04bbeb10a4b3e3317ec92047f517192b">&#9670;&nbsp;</a></span>synchronized</h2>
 

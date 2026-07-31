@@ -1,11 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="node1" title=" " alt="" coords="5,215,151,242"/>
 <area shape="rect" id="node2" href="$structutils_1_1arity__of_3_01R_07Args_8_8_8_08_4.html" title=" " alt="" coords="247,5,361,47"/>
-<area shape="rect" id="node3" href="$structutils_1_1epsilon__of.html" title="Extends the definition of epsilon in std::numeric_limits to integral types." alt="" coords="245,71,363,112"/>
-<area shape="rect" id="node4" href="$structutils_1_1meta_1_1product.html" title="Computes the product of value members from ValueResult types." alt="" coords="239,136,369,177"/>
-<area shape="rect" id="node5" href="$structutils_1_1meta_1_1search.html" title="Finds the first index Idx in [ Begin , End ) such that PredTrait&lt;at_t&lt;Tuple, Idx&gt;,..." alt="" coords="232,201,376,257"/>
+<area shape="rect" id="node3" href="$structutils_1_1epsilon__of.html" title=" " alt="" coords="245,71,363,112"/>
+<area shape="rect" id="node4" href="$structutils_1_1meta_1_1product.html" title=" " alt="" coords="239,136,369,177"/>
+<area shape="rect" id="node5" href="$structutils_1_1meta_1_1search.html" title=" " alt="" coords="232,201,376,257"/>
 <area shape="rect" id="node7" href="$structutils_1_1meta_1_1search_3_01Tuple_00_01T_00_01PredTrait_00_01End_00_01End_01_4.html" title=" " alt="" coords="232,281,376,337"/>
-<area shape="rect" id="node8" href="$structutils_1_1meta_1_1sum.html" title="Computes the sum of value members from ValueResult types." alt="" coords="199,361,409,387"/>
-<area shape="rect" id="node9" href="$structutils_1_1width__of.html" title="Determines the width of T based on Info." alt="" coords="242,412,366,453"/>
+<area shape="rect" id="node8" href="$structutils_1_1meta_1_1sum.html" title=" " alt="" coords="199,361,409,387"/>
+<area shape="rect" id="node9" href="$structutils_1_1width__of.html" title=" " alt="" coords="242,412,366,453"/>
 <area shape="rect" id="node6" href="$structutils_1_1meta_1_1search__trait.html" title=" " alt="" coords="457,208,584,249"/>
 </map>

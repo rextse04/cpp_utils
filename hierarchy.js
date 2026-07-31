@@ -185,7 +185,6 @@ var hierarchy =
     ] ],
     [ "utils::joint_cast_transform< F, Trait >", "structutils_1_1joint__cast__transform.html", null ],
     [ "utils::key< T >", "classutils_1_1key.html", null ],
-    [ "utils::key< unique_resource >", "classutils_1_1key.html", null ],
     [ "utils::lambda_decay< T >", "structutils_1_1lambda__decay.html", null ],
     [ "utils::lambda_decay< decltype(*std::declval< T >())>", "structutils_1_1lambda__decay.html", [
       [ "utils::lambda_decay< T >", "structutils_1_1lambda__decay_3_01T_01_4.html", null ]

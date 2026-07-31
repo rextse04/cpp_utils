@@ -87,16 +87,13 @@ $(document).ready(function(){initNavTree('structutils_1_1sane__common__type.html
 </div><!--header-->
 <div class="contents">
 
-<p>Similar to usual arithmetic conversion, except that the promotion step is replaced by <code>utils::sane_promotion</code>.  
- <a href="structutils_1_1sane__common__type.html#details">More...</a></p>
-
 <p><code>#include &lt;<a class="el" href="integer_8hpp_source.html">integer.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for utils::sane_common_type&lt; T, U &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="structutils_1_1sane__common__type__inherit__graph.png" border="0" usemap="#autils_1_1sane__common__type_3_01T_00_01U_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="autils_1_1sane__common__type_3_01T_00_01U_01_4_inherit__map" id="autils_1_1sane__common__type_3_01T_00_01U_01_4_inherit__map">
-<area shape="rect" title="Similar to usual arithmetic conversion, except that the promotion step is replaced by utils::sane_pro..." alt="" coords="24,80,161,121"/>
+<area shape="rect" title=" " alt="" coords="24,80,161,121"/>
 <area shape="rect" title=" " alt="" coords="5,5,180,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -105,22 +102,14 @@ Collaboration diagram for utils::sane_common_type&lt; T, U &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="structutils_1_1sane__common__type__coll__graph.png" border="0" usemap="#autils_1_1sane__common__type_3_01T_00_01U_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="autils_1_1sane__common__type_3_01T_00_01U_01_4_coll__map" id="autils_1_1sane__common__type_3_01T_00_01U_01_4_coll__map">
-<area shape="rect" title="Similar to usual arithmetic conversion, except that the promotion step is replaced by utils::sane_pro..." alt="" coords="24,80,161,121"/>
+<area shape="rect" title=" " alt="" coords="24,80,161,121"/>
 <area shape="rect" title=" " alt="" coords="5,5,180,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T, typename U&gt;<br />
-struct utils::sane_common_type&lt; T, U &gt;</div><p >Similar to usual arithmetic conversion, except that the promotion step is replaced by <code>utils::sane_promotion</code>. </p>
-<p >Given any types <code>T</code> and <code>U</code>, let <code>TD</code> and <code>UD</code> be <code>std::decay_t&lt;T&gt;</code> and <code>std::decay_t&lt;U&gt;</code> respectively. Their <code><a class="el" href="structutils_1_1sane__common__type.html" title="Similar to usual arithmetic conversion, except that the promotion step is replaced by utils::sane_pro...">sane_common_type</a></code> <code>C</code> is determined through the following steps:</p><ol type="1">
-<li>If any of <code>TD</code> and <code>UD</code> is not specialized for <code>std::numeric_limits</code>, <code>C</code> is <code>std::common_type_t&lt;T, U&gt;</code>.</li>
-<li>Otherwise, if <code>TD</code> and <code>UD</code> have different widths, <code>C</code> is the one with the greater width.</li>
-<li>Otherwise, if at least one of <code>TD</code> and <code>UD</code> is unsigned, <code>C</code> is the first unsigned type out of the two.</li>
-<li>Otherwise, <code>C</code> is <code>TD</code>.</li>
-</ol>
-<p >In the above, the definition of <code>width</code> is identical to that in <code><a class="el" href="structutils_1_1width__of.html" title="Determines the width of T based on Info.">utils::width_of</a></code>. </p>
-
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00064">64</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
+struct utils::sane_common_type&lt; T, U &gt;</div>
+<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00067">67</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="integer_8hpp_source.html">integer.hpp</a></li>
 </ul>

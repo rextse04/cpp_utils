@@ -153,7 +153,6 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1is__integer__like.html">utils::is_integer_like&lt; typename &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if a type is integer like.  <a href="structutils_1_1is__integer__like.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1is__integer__like_3_01const_01T_01_4.html">utils::is_integer_like&lt; const T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,18 +163,14 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1is__integer__like_3_01T_01_4.html">utils::is_integer_like&lt; T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1width__of.html">utils::width_of&lt; T, Info &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the width of <code>T</code> based on <code>Info</code>.  <a href="structutils_1_1width__of.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1sane__common__type.html">utils::sane_common_type&lt; T, U &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to usual arithmetic conversion, except that the promotion step is replaced by <code>utils::sane_promotion</code>.  <a href="structutils_1_1sane__common__type.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1sane__common__type_3_01T_00_01U_01_4.html">utils::sane_common_type&lt; T, U &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1is__same__sign.html">utils::is_same_sign&lt; T, U, TInfo, UInfo &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if <code>T</code> and <code>U</code> have the same sign.Calculation is based on <code>TInfo</code> and <code>UInfo</code>, which default to respective instantiations of <code>std::numeric_limits</code>. They can be replaced by class types that provide the same interface as <code>std::numeric_limits</code>.  <a href="structutils_1_1is__same__sign.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1epsilon__of.html">utils::epsilon_of&lt; T, Info &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extends the definition of <code>epsilon</code> in <code>std::numeric_limits</code> to integral types.  <a href="structutils_1_1epsilon__of.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1integral__behavior_1_1profile.html">utils::integral_behavior::profile&lt; Funcs, AsgFuncs &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An <a class="el" href="IntegerBehaviorProfile_8md.html">&lt;i&gt;IntegerBehaviorProfileTemplate&lt;/i&gt;</a> for integral arithmetics.  <a href="structutils_1_1integral__behavior_1_1profile.html#details">More...</a><br /></td></tr>
@@ -320,7 +315,16 @@ Typedefs</h2></td></tr>
 <tr class="separator:aa8967fdcbd912fcd5a66fdeb551691cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca05a61d14a516c6dd53450e823075b7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1integer__alias.html#aca05a61d14a516c6dd53450e823075b7">utils::integer_alias::ptrdiff_t</a> = integer&lt; std::ptrdiff_t &gt;</td></tr>
 <tr class="separator:aca05a61d14a516c6dd53450e823075b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr><td colspan="2"><div class="groupHeader">sane_common_type</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p >Similar to usual arithmetic conversion, except that the promotion step is replaced by <code>utils::sane_promotion</code>.</p>
+<p >Given any types <code>T</code> and <code>U</code>, let <code>TD</code> and <code>UD</code> be <code>std::decay_t&lt;T&gt;</code> and <code>std::decay_t&lt;U&gt;</code> respectively. Their <code>sane_common_type</code> <code>C</code> is determined through the following steps:</p><ol type="1">
+<li>If any of <code>TD</code> and <code>UD</code> is not specialized for <code>std::numeric_limits</code>, <code>C</code> is <code>std::common_type_t&lt;T, U&gt;</code>.</li>
+<li>Otherwise, if <code>TD</code> and <code>UD</code> have different widths, <code>C</code> is the one with the greater width.</li>
+<li>Otherwise, if at least one of <code>TD</code> and <code>UD</code> is unsigned, <code>C</code> is the first unsigned type out of the two.</li>
+<li>Otherwise, <code>C</code> is <code>TD</code>.</li>
+</ol>
+<p >In the above, the definition of <code>width</code> is identical to that in <code><a class="el" href="structutils_1_1width__of.html">utils::width_of</a></code>. </p>
+</div></td></tr>
 <tr class="memitem:ab6b5848d6804531f450947c7fa15825c"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U &gt; </td></tr>
 <tr class="memitem:ab6b5848d6804531f450947c7fa15825c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#ab6b5848d6804531f450947c7fa15825c">utils::sane_common_type_t</a> = sane_common_type&lt; T, U &gt;::type</td></tr>
 <tr class="separator:ab6b5848d6804531f450947c7fa15825c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -335,7 +339,7 @@ Variables</h2></td></tr>
 <tr class="memdesc:a5a3d58f1086283b7dcae9045592988fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default C++ integral arithmetic rules.  <a href="namespaceutils_1_1integral__behavior.html#a5a3d58f1086283b7dcae9045592988fb">More...</a><br /></td></tr>
 <tr class="separator:a5a3d58f1086283b7dcae9045592988fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a044520a743b7f7e24fde855fad4563"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1integral__behavior.html#a7a044520a743b7f7e24fde855fad4563">utils::integral_behavior::sane</a></td></tr>
-<tr class="memdesc:a7a044520a743b7f7e24fde855fad4563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default C++ integral arithmetic rules, but the result type is determined by <code><a class="el" href="structutils_1_1sane__common__type.html" title="Similar to usual arithmetic conversion, except that the promotion step is replaced by utils::sane_pro...">utils::sane_common_type</a></code>.  <a href="namespaceutils_1_1integral__behavior.html#a7a044520a743b7f7e24fde855fad4563">More...</a><br /></td></tr>
+<tr class="memdesc:a7a044520a743b7f7e24fde855fad4563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default C++ integral arithmetic rules, but the result type is determined by <code><a class="el" href="structutils_1_1sane__common__type.html">utils::sane_common_type</a></code>.  <a href="namespaceutils_1_1integral__behavior.html#a7a044520a743b7f7e24fde855fad4563">More...</a><br /></td></tr>
 <tr class="separator:a7a044520a743b7f7e24fde855fad4563"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada3d172e83fd8ae4072c6a7ae80cf8d2"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1integral__behavior.html#ada3d172e83fd8ae4072c6a7ae80cf8d2">utils::integral_behavior::ub</a></td></tr>
 <tr class="memdesc:ada3d172e83fd8ae4072c6a7ae80cf8d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invokes undefined behavior for any overflow (even for unsigned types), in addition to standard C++ arithmetic rules.  <a href="namespaceutils_1_1integral__behavior.html#ada3d172e83fd8ae4072c6a7ae80cf8d2">More...</a><br /></td></tr>
@@ -354,7 +358,7 @@ Variables</h2></td></tr>
 <tr class="memdesc:a7ecfb3e0498c15492edd93b9d750b6ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default C++ bit operation rules.  <a href="namespaceutils_1_1bit__behavior.html#a7ecfb3e0498c15492edd93b9d750b6ca">More...</a><br /></td></tr>
 <tr class="separator:a7ecfb3e0498c15492edd93b9d750b6ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe4ae201007274cf3e7cfcf2a5b634d7"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1bit__behavior.html#afe4ae201007274cf3e7cfcf2a5b634d7">utils::bit_behavior::sane</a></td></tr>
-<tr class="memdesc:afe4ae201007274cf3e7cfcf2a5b634d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default C++ bit operation rules, but the result type is determined by <code><a class="el" href="structutils_1_1sane__common__type.html" title="Similar to usual arithmetic conversion, except that the promotion step is replaced by utils::sane_pro...">utils::sane_common_type</a></code>.  <a href="namespaceutils_1_1bit__behavior.html#afe4ae201007274cf3e7cfcf2a5b634d7">More...</a><br /></td></tr>
+<tr class="memdesc:afe4ae201007274cf3e7cfcf2a5b634d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default C++ bit operation rules, but the result type is determined by <code><a class="el" href="structutils_1_1sane__common__type.html">utils::sane_common_type</a></code>.  <a href="namespaceutils_1_1bit__behavior.html#afe4ae201007274cf3e7cfcf2a5b634d7">More...</a><br /></td></tr>
 <tr class="separator:afe4ae201007274cf3e7cfcf2a5b634d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a661ce0fc9bfb0fb4f8c15cb656cf03ae"><td class="memTemplParams" colspan="2">template&lt;auto ShiftLeft, auto ShiftRight, typename BinaryTraits  = default_binary_op_traits, typename AsgTraits  = default_asg_op_traits&gt; </td></tr>
 <tr class="memitem:a661ce0fc9bfb0fb4f8c15cb656cf03ae"><td class="memTemplItemLeft" align="right" valign="top">constexpr profile&lt;{ .shift_left=ShiftLeft,.shift_right=ShiftRight,.binary_traits=BinaryTraits{} }, { .shift_left_asg=asg_wrap&lt; ShiftLeft &gt;{},.shift_right_asg=asg_wrap&lt; ShiftRight &gt;{},.asg_traits=AsgTraits{} }&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1shift__behavior.html#a661ce0fc9bfb0fb4f8c15cb656cf03ae">utils::shift_behavior::profile_from</a></td></tr>
@@ -372,26 +376,45 @@ Variables</h2></td></tr>
 <tr class="memitem:ac9db62511912a83ec50c416a1efbc72e"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1shift__behavior.html#ac9db62511912a83ec50c416a1efbc72e">utils::shift_behavior::checked</a> = profile_from&lt;detail::ckd_base&lt;shift_left{}&gt;{}, detail::ckd_base&lt;shift_right{}&gt;{}&gt;</td></tr>
 <tr class="memdesc:ac9db62511912a83ec50c416a1efbc72e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throws an exception for invalid <code>n</code>.  <a href="namespaceutils_1_1shift__behavior.html#ac9db62511912a83ec50c416a1efbc72e">More...</a><br /></td></tr>
 <tr class="separator:ac9db62511912a83ec50c416a1efbc72e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr><td colspan="2"><div class="groupHeader">is_integer_like</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p >Determines if a type is integer like.</p>
+<p >The construct is used by the library to determine if a type (ignoring cv-qualifiers) is integer like. The program is ill-formed, no diagnostics required, if the user specializes <code><a class="el" href="structutils_1_1is__integer__like.html">utils::is_integer_like</a></code> such that there exists a type <code>T</code> where <code>std::remove_cvref_t&lt;T&gt;</code> is not a integer-like type (as specified by the standard library), but <code><a class="el" href="structutils_1_1is__integer__like.html">utils::is_integer_like</a>&lt;T&gt;::value</code> is <code>true</code>. </p>
+</div></td></tr>
 <tr class="memitem:a3e785f8bbe5579cdb6684c29d19d4fe7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a3e785f8bbe5579cdb6684c29d19d4fe7"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a3e785f8bbe5579cdb6684c29d19d4fe7">utils::is_integer_like_v</a> = is_integer_like&lt;T&gt;::value</td></tr>
 <tr class="separator:a3e785f8bbe5579cdb6684c29d19d4fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr><td colspan="2"><div class="groupHeader">width_of</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p >Determines the width of <code>T</code> based on <code>Info</code>.</p>
+<p >"width" here is defined as the number of bits that participate in the determination of the value of the significand (mantissa) in base-2 scientific notation. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Info</td><td>A type which provides the interface of <code>std::numeric_limits</code> and gives information about <code>T</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div></td></tr>
 <tr class="memitem:a576ed06f843b2217161f37a06cc6da31"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a576ed06f843b2217161f37a06cc6da31"><td class="memTemplItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a576ed06f843b2217161f37a06cc6da31">utils::width_of_v</a> = width_of&lt;T&gt;::value</td></tr>
 <tr class="separator:a576ed06f843b2217161f37a06cc6da31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr><td colspan="2"><div class="groupHeader">is_same_sign</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p >Determines if <code>T</code> and <code>U</code> have the same sign.</p>
+<p >Calculation is based on <code>TInfo</code> and <code>UInfo</code>, which default to respective instantiations of <code>std::numeric_limits</code>. They can be replaced by class types that provide the same interface as <code>std::numeric_limits</code>. </p>
+</div></td></tr>
 <tr class="memitem:ae1ba453ed44bcb43cd6d1b42e5ee9b82"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U &gt; </td></tr>
 <tr class="memitem:ae1ba453ed44bcb43cd6d1b42e5ee9b82"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#ae1ba453ed44bcb43cd6d1b42e5ee9b82">utils::is_same_sign_v</a> = is_same_sign&lt;T, U&gt;::value</td></tr>
 <tr class="separator:ae1ba453ed44bcb43cd6d1b42e5ee9b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr><td colspan="2"><div class="groupHeader">epsilon_of</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p >Extends the definition of <code>epsilon</code> in <code>std::numeric_limits</code> to integral types.</p>
+<p >The epsilon of a floating-point type is given by <code>Info::epsilon()</code>, while that of an integral type is <code>T(1)</code>. The classification of <code>T</code> is based on <code>Info</code>, which can be replaced by a class type that provides the same interface as <code>std::numeric_limits</code>. </p>
+</div></td></tr>
 <tr class="memitem:a237a9d163e61fab7413f93616669f2c9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a237a9d163e61fab7413f93616669f2c9"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a237a9d163e61fab7413f93616669f2c9">utils::epsilon_of_v</a> = epsilon_of&lt;T&gt;::value</td></tr>
 <tr class="separator:a237a9d163e61fab7413f93616669f2c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr><td colspan="2"><div class="groupHeader">is_lossless_convertible</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p >Determines if <code>From</code> can be converted to <code>To</code> without loss of information.</p>
+<p >Calculation is based on <code>FromInfo</code> and <code>ToInfo</code>, which default to respective instantiations of <code>std::numeric_limits</code>. They can be replaced by class types that provide the same interface as <code>std::numeric_limits</code>. </p><dl class="section remark"><dt>Remarks</dt><dd>This does not check if <code>From</code> is actually convertible to <code>To</code>. </dd></dl>
+</div></td></tr>
 <tr class="memitem:a0895531ec3b54ee68daa30b7fbd31996"><td class="memTemplParams" colspan="2">template&lt;typename From , typename To &gt; </td></tr>
 <tr class="memitem:a0895531ec3b54ee68daa30b7fbd31996"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a0895531ec3b54ee68daa30b7fbd31996">utils::is_lossless_convertible_v</a> = is_lossless_convertible&lt;From, To&gt;::value</td></tr>
-<tr class="memdesc:a0895531ec3b54ee68daa30b7fbd31996"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if <code>From</code> can be converted to <code>To</code> without loss of information.  <a href="namespaceutils.html#a0895531ec3b54ee68daa30b7fbd31996">More...</a><br /></td></tr>
 <tr class="separator:a0895531ec3b54ee68daa30b7fbd31996"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -433,7 +456,7 @@ Variables</h2></td></tr>
 <div class="line">        }\</div>
 <div class="line">    };</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00499">499</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00505">505</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 
 </div>
 </div>
@@ -471,7 +494,7 @@ Variables</h2></td></tr>
 <div class="line">        }\</div>
 <div class="line">    };</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00302">302</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00308">308</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 
 </div>
 </div>

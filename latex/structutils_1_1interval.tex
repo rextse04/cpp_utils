@@ -25,23 +25,14 @@ constexpr bool \mbox{\hyperlink{structutils_1_1interval_afba4323d395fd4ab185cc9d
 \begin{DoxyCompactList}\small\item\em Determines whether the interval represents an empty set. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename P , detail\+::strict\+\_\+weak\+\_\+order$<$ const L \&, const R \&, const P \& $>$ Compare = std\+::less$<$$>$$>$ }\\constexpr bool \mbox{\hyperlink{structutils_1_1interval_a2b616d8f95af510e2bd97ae77a4a4ca2}{contains}} (const P \&point, const Compare \&comp=\{\}) const
 \begin{DoxyCompactList}\small\item\em Determines whether {\ttfamily point} is contained in the set represented by the interval. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename L2 , typename R2 $>$ \newline
-requires (detail\+::strict\+\_\+weak\+\_\+order$<$std\+::less$<$$>$, const L\&, const R\&, const L2\&, const R2\&$>$)}\\constexpr std\+::partial\+\_\+ordering \mbox{\hyperlink{structutils_1_1interval_a25e12e71ad43636f184197a1329500df}{operator$<$=$>$}} (const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&other) const
-\begin{DoxyCompactList}\small\item\em Comparison functions. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename L2 , typename R2 , detail\+::strict\+\_\+weak\+\_\+order$<$ const L \&, const R \&, const L2 \&, const R2 \& $>$ Compare = std\+::less$<$$>$$>$ }\\constexpr std\+::partial\+\_\+ordering \mbox{\hyperlink{structutils_1_1interval_ab25eb88158269045c97d7649d0222dd5}{compare}} (const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&other, const Compare \&comp=\{\}) const
-\begin{DoxyCompactList}\small\item\em $I1$ is taken to be {\ttfamily $\ast$this}, $I2$ is taken to be {\ttfamily other}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\textbf{ }\par
-\begin{DoxyCompactItemize}
-\item 
 {\footnotesize template$<$typename L2 , typename R2 , detail\+::strict\+\_\+weak\+\_\+order$<$ const L \&, const R \&, const L2 \&, const R2 \& $>$ Compare = std\+::less$<$$>$$>$ }\\constexpr bool \mbox{\hyperlink{structutils_1_1interval_a05ca68ae9a324763e17dc4dee7aad2b6}{superset\+\_\+of}} (const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&other, const Compare \&comp=\{\}) const
-\begin{DoxyCompactList}\small\item\em Determines whether the interval is a superset/strict superset/subset/strict subset of another interval. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Determines whether {\ttfamily $\ast$this} is a superset of {\ttfamily other}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename L2 , typename R2 , detail\+::strict\+\_\+weak\+\_\+order$<$ const L \&, const R \&, const L2 \&, const R2 \& $>$ Compare = std\+::less$<$$>$$>$ }\\constexpr bool \mbox{\hyperlink{structutils_1_1interval_ae9b07ea61713c2cbf0cf13bbe8dce56d}{strict\+\_\+superset\+\_\+of}} (const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&other, const Compare \&comp=\{\}) const
-\item 
+\begin{DoxyCompactList}\small\item\em Determines whether {\ttfamily $\ast$this} is a strict superset of {\ttfamily other}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename L2 , typename R2 , detail\+::strict\+\_\+weak\+\_\+order$<$ const L \&, const R \&, const L2 \&, const R2 \& $>$ Compare = std\+::less$<$$>$$>$ }\\constexpr bool \mbox{\hyperlink{structutils_1_1interval_a34785fa10bece378c9ad6a192099ca1a}{subset\+\_\+of}} (const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&other, const Compare \&comp=\{\}) const
-\item 
+\begin{DoxyCompactList}\small\item\em Determines whether {\ttfamily $\ast$this} is a subset of {\ttfamily other}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename L2 , typename R2 , detail\+::strict\+\_\+weak\+\_\+order$<$ const L \&, const R \&, const L2 \&, const R2 \& $>$ Compare = std\+::less$<$$>$$>$ }\\constexpr bool \mbox{\hyperlink{structutils_1_1interval_a9164a14c5af6fad2f01f6d5e4fc28681}{strict\+\_\+subset\+\_\+of}} (const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&other, const Compare \&comp=\{\}) const
-\end{DoxyCompactItemize}
-
+\begin{DoxyCompactList}\small\item\em Determines whether {\ttfamily $\ast$this} is a strict subset of {\ttfamily other}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \textbf{ }\par
 \begin{DoxyCompactItemize}
 \item 
@@ -52,6 +43,19 @@ requires ( std\+::is\+\_\+constructible\+\_\+v$<$CL, const L\&$>$ \&\& std\+::is
 requires requires}\\constexpr \mbox{\hyperlink{structutils_1_1interval}{interval}} \mbox{\hyperlink{structutils_1_1interval_a0eac8db5d70e12c7cb5f4e161e3ec2f1}{intersection\+\_\+with}} (const \mbox{\hyperlink{structutils_1_1interval}{interval}} \&other, const Compare \&comp=\{\}) const
 \end{DoxyCompactItemize}
 
+\begin{Indent}\textbf{ Comparison functions.}\par
+{\em Three-\/way comparison operator.
+
+Given intervals $I1$ and $I2$, $I1<I2$ if and only if $I1$ is a proper subset of $I2$. This defines a strict partial ordering on intervals.
+
+The comparator is taken to be {\ttfamily std\+::less\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}}. }\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename L2 , typename R2 $>$ \newline
+requires (detail\+::strict\+\_\+weak\+\_\+order$<$std\+::less$<$$>$, const L\&, const R\&, const L2\&, const R2\&$>$)}\\constexpr std\+::partial\+\_\+ordering \mbox{\hyperlink{structutils_1_1interval_a25e12e71ad43636f184197a1329500df}{operator$<$=$>$}} (const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&other) const
+\item 
+{\footnotesize template$<$typename L2 , typename R2 , detail\+::strict\+\_\+weak\+\_\+order$<$ const L \&, const R \&, const L2 \&, const R2 \& $>$ Compare = std\+::less$<$$>$$>$ }\\constexpr std\+::partial\+\_\+ordering \mbox{\hyperlink{structutils_1_1interval_ab25eb88158269045c97d7649d0222dd5}{compare}} (const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&other, const Compare \&comp=\{\}) const
+\begin{DoxyCompactList}\small\item\em $I1$ is taken to be {\ttfamily $\ast$this}, $I2$ is taken to be {\ttfamily other}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -69,11 +73,11 @@ An interval defined by a left endpoint and a right endpoint.
 The set represented by the interval is defined to be the intersection of that of the two endpoints.
 
 \begin{DoxyWarning}{Warning}
-In any member function which takes a {\ttfamily point} (resp. an {\ttfamily interval} {\ttfamily other}), the program is ill-\/formed if there is not a restriction of {\ttfamily comp} such that {\ttfamily point} (resp. {\ttfamily other.\+left}, {\ttfamily other.\+right}) and the two endpoints are in the domain. It is UB if such a restriction does not satisfy {\itshape Compare}. 
+In any member function which takes a {\ttfamily point} (resp. an {\ttfamily interval} {\ttfamily other}), the program is ill-\/formed if there is not a restriction of {\ttfamily comp} such that {\ttfamily point} (resp. {\ttfamily other.\+left}, {\ttfamily other.\+right}) and the two endpoints are in the domain. The behavior is undefined if such a restriction does not satisfy {\itshape Compare}. 
 \end{DoxyWarning}
 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00101}{101}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00100}{100}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
 
 
@@ -87,7 +91,7 @@ using \mbox{\hyperlink{structutils_1_1interval}{utils\+::interval}}$<$ L, R $>$\
 
 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00102}{102}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00101}{101}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
 \mbox{\Hypertarget{structutils_1_1interval_a697d3c532c2cb4a521e596a1cce3246f}\label{structutils_1_1interval_a697d3c532c2cb4a521e596a1cce3246f}} 
 \index{utils::interval$<$ L, R $>$@{utils::interval$<$ L, R $>$}!right\_value\_type@{right\_value\_type}}
@@ -98,7 +102,7 @@ using \mbox{\hyperlink{structutils_1_1interval}{utils\+::interval}}$<$ L, R $>$\
 
 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00103}{103}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00102}{102}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
 
 
@@ -117,7 +121,7 @@ $I1$ is taken to be {\ttfamily $\ast$this}, $I2$ is taken to be {\ttfamily other
 
 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00203}{203}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00202}{202}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
 \mbox{\Hypertarget{structutils_1_1interval_a2b616d8f95af510e2bd97ae77a4a4ca2}\label{structutils_1_1interval_a2b616d8f95af510e2bd97ae77a4a4ca2}} 
 \index{utils::interval$<$ L, R $>$@{utils::interval$<$ L, R $>$}!contains@{contains}}
@@ -133,7 +137,7 @@ Determines whether {\ttfamily point} is contained in the set represented by the 
 
 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00122}{122}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00121}{121}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
 \mbox{\Hypertarget{structutils_1_1interval_a8f939b3442aeb1b8011773e9be42bedb}\label{structutils_1_1interval_a8f939b3442aeb1b8011773e9be42bedb}} 
 \index{utils::interval$<$ L, R $>$@{utils::interval$<$ L, R $>$}!empty@{empty}}
@@ -149,7 +153,7 @@ Determines whether the interval represents an empty set.
 
 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00115}{115}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00114}{114}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
 \mbox{\Hypertarget{structutils_1_1interval_a0eac8db5d70e12c7cb5f4e161e3ec2f1}\label{structutils_1_1interval_a0eac8db5d70e12c7cb5f4e161e3ec2f1}} 
 \index{utils::interval$<$ L, R $>$@{utils::interval$<$ L, R $>$}!intersection\_with@{intersection\_with}}
@@ -162,7 +166,7 @@ constexpr \mbox{\hyperlink{structutils_1_1interval}{interval}} \mbox{\hyperlink{
 
 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00181}{181}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00180}{180}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
 \mbox{\Hypertarget{structutils_1_1interval_a45eb22a52645446e31be3c52751fde9f}\label{structutils_1_1interval_a45eb22a52645446e31be3c52751fde9f}} 
 \index{utils::interval$<$ L, R $>$@{utils::interval$<$ L, R $>$}!intersection\_with@{intersection\_with}}
@@ -179,7 +183,7 @@ Constructs the intersection between the interval and {\ttfamily other}.
 
 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00169}{169}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00168}{168}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
 \mbox{\Hypertarget{structutils_1_1interval_a25e12e71ad43636f184197a1329500df}\label{structutils_1_1interval_a25e12e71ad43636f184197a1329500df}} 
 \index{utils::interval$<$ L, R $>$@{utils::interval$<$ L, R $>$}!operator$<$=$>$@{operator$<$=$>$}}
@@ -192,15 +196,7 @@ constexpr std\+::partial\+\_\+ordering \mbox{\hyperlink{structutils_1_1interval}
 
 
 
-Comparison functions. 
-
-Given intervals $I1$ and $I2$, $I1<I2$ if and only if $I1$ is a proper subset of $I2$. This defines a strict partial ordering on intervals.
-
-Three-\/way comparison operator.
-
-The comparator is taken to be {\ttfamily std\+::less\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}}. 
-
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00196}{196}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00195}{195}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
 \mbox{\Hypertarget{structutils_1_1interval_afba4323d395fd4ab185cc9df575c06ca}\label{structutils_1_1interval_afba4323d395fd4ab185cc9df575c06ca}} 
 \index{utils::interval$<$ L, R $>$@{utils::interval$<$ L, R $>$}!operator==@{operator==}}
@@ -223,6 +219,10 @@ constexpr bool \mbox{\hyperlink{structutils_1_1interval}{utils\+::interval}}$<$ 
 
 
 
+Determines whether {\ttfamily $\ast$this} is a strict subset of {\ttfamily other}. 
+
+
+
 Definition at line \mbox{\hyperlink{interval_8hpp_source_l00158}{158}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
 \mbox{\Hypertarget{structutils_1_1interval_ae9b07ea61713c2cbf0cf13bbe8dce56d}\label{structutils_1_1interval_ae9b07ea61713c2cbf0cf13bbe8dce56d}} 
@@ -235,7 +235,11 @@ constexpr bool \mbox{\hyperlink{structutils_1_1interval}{utils\+::interval}}$<$ 
 
 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00146}{146}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Determines whether {\ttfamily $\ast$this} is a strict superset of {\ttfamily other}. 
+
+
+
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00144}{144}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
 \mbox{\Hypertarget{structutils_1_1interval_a34785fa10bece378c9ad6a192099ca1a}\label{structutils_1_1interval_a34785fa10bece378c9ad6a192099ca1a}} 
 \index{utils::interval$<$ L, R $>$@{utils::interval$<$ L, R $>$}!subset\_of@{subset\_of}}
@@ -247,7 +251,11 @@ constexpr bool \mbox{\hyperlink{structutils_1_1interval}{utils\+::interval}}$<$ 
 
 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00153}{153}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Determines whether {\ttfamily $\ast$this} is a subset of {\ttfamily other}. 
+
+
+
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00152}{152}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
 \mbox{\Hypertarget{structutils_1_1interval_a05ca68ae9a324763e17dc4dee7aad2b6}\label{structutils_1_1interval_a05ca68ae9a324763e17dc4dee7aad2b6}} 
 \index{utils::interval$<$ L, R $>$@{utils::interval$<$ L, R $>$}!superset\_of@{superset\_of}}
@@ -259,11 +267,11 @@ constexpr bool \mbox{\hyperlink{structutils_1_1interval}{utils\+::interval}}$<$ 
 
 
 
-Determines whether the interval is a superset/strict superset/subset/strict subset of another interval. 
+Determines whether {\ttfamily $\ast$this} is a superset of {\ttfamily other}. 
 
 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00141}{141}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00138}{138}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
 
 
@@ -277,7 +285,7 @@ Definition at line \mbox{\hyperlink{interval_8hpp_source_l00141}{141}} of file \
 
 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00105}{105}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00104}{104}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
 \mbox{\Hypertarget{structutils_1_1interval_af846f7a87e5158acf7d405ae7c81e704}\label{structutils_1_1interval_af846f7a87e5158acf7d405ae7c81e704}} 
 \index{utils::interval$<$ L, R $>$@{utils::interval$<$ L, R $>$}!right@{right}}
@@ -288,7 +296,7 @@ Definition at line \mbox{\hyperlink{interval_8hpp_source_l00105}{105}} of file \
 
 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00106}{106}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00105}{105}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
 
 

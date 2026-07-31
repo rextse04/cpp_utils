@@ -31,15 +31,21 @@ using \mbox{\hyperlink{structutils_1_1interval__endpoint_a31d0cc19c5168cc40f6426
 \begin{DoxyCompactList}\small\item\em Conversion operator. \end{DoxyCompactList}\item 
 constexpr bool \mbox{\hyperlink{structutils_1_1interval__endpoint_a03d7067835085714a7915d8c8988f42d}{operator==}} (const \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}} \&other) const =default
 \begin{DoxyCompactList}\small\item\em Equality operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\textbf{ }\par
-\begin{DoxyCompactItemize}
+\begin{Indent}\textbf{ Comparison functions.}\par
+{\em Three-\/way comparison operator.
+
+Given endpoints $E1$ and $E2$, $E1<E2$ if and only if the set represented by $E1$ is a proper subset of the set represented by $E2$. This defines a strict weak ordering on endpoints.
+
+Let $v$ be {\ttfamily this-\/\texorpdfstring{$>$}{>}value} and $ov$ be {\ttfamily other.\+value}. The program is ill-\/formed if there is not a restriction of {\ttfamily std\+::less\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}} such that $v$ and $ov$ are in the domain. It is UB if such a restriction does not satisfy {\itshape Compare}.
+
+All endpoints are assumed to be right endpoints. The comparator is taken to be {\ttfamily std\+::less\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}}. }\begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename U $>$ \newline
 requires (detail\+::strict\+\_\+weak\+\_\+order$<$std\+::less$<$$>$, const T\&, const U\&$>$)}\\constexpr std\+::weak\+\_\+ordering \mbox{\hyperlink{structutils_1_1interval__endpoint_a7531876b5ec7ffc958b3020f32b14a60}{operator$<$=$>$}} (const \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ U $>$ \&other) const
-\begin{DoxyCompactList}\small\item\em Comparison functions. \end{DoxyCompactList}\item 
+\item 
 {\footnotesize template$<$typename U , detail\+::strict\+\_\+weak\+\_\+order$<$ const T \&, const U \& $>$ Compare = std\+::less$<$$>$$>$ }\\constexpr std\+::weak\+\_\+ordering \mbox{\hyperlink{structutils_1_1interval__endpoint_abfe97454fff1e35e7177d9b24cf69801}{compare}} (const \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ U $>$ \&other, bool right, const Compare \&comp=\{\}) const
 \begin{DoxyCompactList}\small\item\em $E1$ is taken to be {\ttfamily $\ast$this}, $E2$ is taken to be {\ttfamily other}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
+\end{Indent}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -107,7 +113,7 @@ $E1$ is taken to be {\ttfamily $\ast$this}, $E2$ is taken to be {\ttfamily other
 
 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00079}{79}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00078}{78}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
 \mbox{\Hypertarget{structutils_1_1interval__endpoint_a028d3823fbc68dc72353ab3e52d1223b}\label{structutils_1_1interval__endpoint_a028d3823fbc68dc72353ab3e52d1223b}} 
 \index{utils::interval\_endpoint$<$ T $>$@{utils::interval\_endpoint$<$ T $>$}!operator interval\_endpoint$<$ U $>$@{operator interval\_endpoint$<$ U $>$}}
@@ -139,17 +145,7 @@ constexpr std\+::weak\+\_\+ordering \mbox{\hyperlink{structutils_1_1interval__en
 
 
 
-Comparison functions. 
-
-Given endpoints $E1$ and $E2$, $E1<E2$ if and only if the set represented by $E1$ is a proper subset of the set represented by $E2$. This defines a strict weak ordering on endpoints.
-
-Let $v$ be {\ttfamily this-\/\texorpdfstring{$>$}{>}value} and $ov$ be {\ttfamily other.\+value}. The program is ill-\/formed if there is not a restriction of {\ttfamily std\+::less\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}} such that $v$ and $ov$ are in the domain. It is UB if such a restriction does not satisfy {\itshape Compare}.
-
-Three-\/way comparison operator.
-
-All endpoints are assumed to be right endpoints. The comparator is taken to be {\ttfamily std\+::less\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}}. 
-
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00073}{73}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00072}{72}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
 \mbox{\Hypertarget{structutils_1_1interval__endpoint_a03d7067835085714a7915d8c8988f42d}\label{structutils_1_1interval__endpoint_a03d7067835085714a7915d8c8988f42d}} 
 \index{utils::interval\_endpoint$<$ T $>$@{utils::interval\_endpoint$<$ T $>$}!operator==@{operator==}}

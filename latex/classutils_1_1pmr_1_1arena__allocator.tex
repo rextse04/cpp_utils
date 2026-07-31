@@ -49,29 +49,6 @@ using \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_a3fc5600dc9a5d1a01d
 \item 
 using \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} = Traits\+::size\+\_\+type
 \end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{group__utils_gae5dfff367930d9f2e6ad7380ba4c7a70}{arena\+\_\+allocator}} (\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}} buf, \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} space)
-\item 
-\mbox{\hyperlink{group__utils_ga182c9597d8e46eee55ccbd3d5714eaa6}{arena\+\_\+allocator}} (std\+::pmr\+::memory\+\_\+resource \&mr, \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} space)
-\begin{DoxyCompactList}\small\item\em Allocates a buffer of size {\ttfamily space} through {\ttfamily mr} and uses it for allocations. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename U , bool S$>$ }\\\mbox{\hyperlink{group__utils_ga557d2109484928e15525a1083b0b8e26}{explicit}} (S !=Sync) \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator}{arena\+\_\+allocator}}(const \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator}{arena\+\_\+allocator}}$<$ U
-\begin{DoxyCompactList}\small\item\em Conversion constructor. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group__utils_gab2f3f5595719c9fc771f2fc044b6a306}{release}} (std\+::pmr\+::memory\+\_\+resource \&mr, \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} space) \mbox{\hyperlink{group__utils_gaecabf6002d8eda53bb01b8e3103d1701}{noexcept}}
-\begin{DoxyCompactList}\small\item\em Deallocates the underlying buffer previously allocated through a memory resource. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_abd9b603040f83e782f72afeb661d8892}{pointer}} \mbox{\hyperlink{group__utils_ga57fd29bd785e147ffa226bc0d52f07c6}{allocate}} (\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} n, std\+::align\+\_\+val\+\_\+t alignment=std\+::align\+\_\+val\+\_\+t(alignof(T))) const
-\begin{DoxyCompactList}\small\item\em Allocates storage for {\ttfamily T\mbox{[}n\mbox{]}} with specified alignment from the underlying buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-static void \mbox{\hyperlink{group__utils_ga6deae5a28ef57aebac240cd3de5faef1}{deallocate}} (\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_abd9b603040f83e782f72afeb661d8892}{pointer}}, \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}}, std\+::align\+\_\+val\+\_\+t=std\+::align\+\_\+val\+\_\+t(alignof(T))) \mbox{\hyperlink{group__utils_gaecabf6002d8eda53bb01b8e3103d1701}{noexcept}}
-\begin{DoxyCompactList}\small\item\em Deallocation is a no-\/op. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-S \&other \mbox{\hyperlink{group__utils_gaecabf6002d8eda53bb01b8e3103d1701}{noexcept}}\+: control\+\_\+(other.\+control\+\_\+) \{\} bool operator==(const \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator}{arena\+\_\+allocator}}\& other) const noexcept \{ return control\+\_\+ == other.\+control\+\_\+
-\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -82,6 +59,34 @@ static constexpr bool \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_a04
 \item 
 {\footnotesize template$<$typename , bool $>$ }\\class \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_a45cd35ea8e76c966937c8c753f71ba0a}{arena\+\_\+allocator}}
 \end{DoxyCompactItemize}
+\doxysubsection*{Constructors}
+\label{_amgrp559a25fdb98a7d1fd1c3771ac568d5e9}%
+Takes ownership of the buffer and uses it for allocations.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::bad\+\_\+alloc} & If the internal control structure does not fit in the given buffer. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Note}
+The construction can throw even if {\ttfamily space} is not less than the size of the control structure depending on the alignment of {\ttfamily buf}. 
+\end{DoxyNote}
+\begin{DoxyCompactItemize}
+\item 
+S \&other \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_aecabf6002d8eda53bb01b8e3103d1701}{noexcept}}\+: control\+\_\+(other.\+control\+\_\+) \{\} bool operator==(const \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator}{arena\+\_\+allocator}}\& other) const noexcept \{ return control\+\_\+ == other.\+control\+\_\+
+\item 
+\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_ae5dfff367930d9f2e6ad7380ba4c7a70}{arena\+\_\+allocator}} (\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}} buf, \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} space)
+\item 
+\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_a182c9597d8e46eee55ccbd3d5714eaa6}{arena\+\_\+allocator}} (std\+::pmr\+::memory\+\_\+resource \&mr, \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} space)
+\begin{DoxyCompactList}\small\item\em Allocates a buffer of size {\ttfamily space} through {\ttfamily mr} and uses it for allocations. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename U , bool S$>$ }\\\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_a557d2109484928e15525a1083b0b8e26}{explicit}} (S !=Sync) \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator}{arena\+\_\+allocator}}(const \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator}{arena\+\_\+allocator}}$<$ U
+\begin{DoxyCompactList}\small\item\em Conversion constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_ab2f3f5595719c9fc771f2fc044b6a306}{release}} (std\+::pmr\+::memory\+\_\+resource \&mr, \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} space) \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_aecabf6002d8eda53bb01b8e3103d1701}{noexcept}}
+\begin{DoxyCompactList}\small\item\em Deallocates the underlying buffer previously allocated through a memory resource. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_abd9b603040f83e782f72afeb661d8892}{pointer}} \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_a57fd29bd785e147ffa226bc0d52f07c6}{allocate}} (\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} n, std\+::align\+\_\+val\+\_\+t alignment=std\+::align\+\_\+val\+\_\+t(alignof(T))) const
+\begin{DoxyCompactList}\small\item\em Allocates storage for {\ttfamily T\mbox{[}n\mbox{]}} with specified alignment from the underlying buffer. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_a6deae5a28ef57aebac240cd3de5faef1}{deallocate}} (\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_abd9b603040f83e782f72afeb661d8892}{pointer}}, \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}}, std\+::align\+\_\+val\+\_\+t=std\+::align\+\_\+val\+\_\+t(alignof(T))) \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_aecabf6002d8eda53bb01b8e3103d1701}{noexcept}}
+\begin{DoxyCompactList}\small\item\em Deallocation is a no-\/op. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -175,6 +180,103 @@ Definition at line \mbox{\hyperlink{allocator__base_8hpp_source_l00015}{15}} of 
 
 
 
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classutils_1_1pmr_1_1arena__allocator_ae5dfff367930d9f2e6ad7380ba4c7a70}\label{classutils_1_1pmr_1_1arena__allocator_ae5dfff367930d9f2e6ad7380ba4c7a70}} 
+\index{utils::pmr::arena\_allocator$<$ T, Sync $>$@{utils::pmr::arena\_allocator$<$ T, Sync $>$}!arena\_allocator@{arena\_allocator}}
+\index{arena\_allocator@{arena\_allocator}!utils::pmr::arena\_allocator$<$ T, Sync $>$@{utils::pmr::arena\_allocator$<$ T, Sync $>$}}
+\doxysubsubsection{\texorpdfstring{arena\_allocator()}{arena\_allocator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , bool Sync = false$>$ \\
+\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator}{utils\+::pmr\+::arena\+\_\+allocator}}$<$ T, Sync $>$\+::\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator}{arena\+\_\+allocator}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}}}]{buf,  }\item[{\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}}}]{space }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{arena__allocator_8hpp_source_l00069}{69}} of file \mbox{\hyperlink{arena__allocator_8hpp_source}{arena\+\_\+allocator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pmr_1_1arena__allocator_a182c9597d8e46eee55ccbd3d5714eaa6}\label{classutils_1_1pmr_1_1arena__allocator_a182c9597d8e46eee55ccbd3d5714eaa6}} 
+\index{utils::pmr::arena\_allocator$<$ T, Sync $>$@{utils::pmr::arena\_allocator$<$ T, Sync $>$}!arena\_allocator@{arena\_allocator}}
+\index{arena\_allocator@{arena\_allocator}!utils::pmr::arena\_allocator$<$ T, Sync $>$@{utils::pmr::arena\_allocator$<$ T, Sync $>$}}
+\doxysubsubsection{\texorpdfstring{arena\_allocator()}{arena\_allocator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , bool Sync = false$>$ \\
+\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator}{utils\+::pmr\+::arena\+\_\+allocator}}$<$ T, Sync $>$\+::\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator}{arena\+\_\+allocator}} (\begin{DoxyParamCaption}\item[{std\+::pmr\+::memory\+\_\+resource \&}]{mr,  }\item[{\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}}}]{space }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Allocates a buffer of size {\ttfamily space} through {\ttfamily mr} and uses it for allocations. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::bad\+\_\+alloc} & If {\ttfamily space} is insufficient to accommodate the internal control structure. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{arena__allocator_8hpp_source_l00078}{78}} of file \mbox{\hyperlink{arena__allocator_8hpp_source}{arena\+\_\+allocator.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutils_1_1pmr_1_1arena__allocator_a57fd29bd785e147ffa226bc0d52f07c6}\label{classutils_1_1pmr_1_1arena__allocator_a57fd29bd785e147ffa226bc0d52f07c6}} 
+\index{utils::pmr::arena\_allocator$<$ T, Sync $>$@{utils::pmr::arena\_allocator$<$ T, Sync $>$}!allocate@{allocate}}
+\index{allocate@{allocate}!utils::pmr::arena\_allocator$<$ T, Sync $>$@{utils::pmr::arena\_allocator$<$ T, Sync $>$}}
+\doxysubsubsection{\texorpdfstring{allocate()}{allocate()}}
+{\footnotesize\ttfamily template$<$typename T , bool Sync = false$>$ \\
+\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_abd9b603040f83e782f72afeb661d8892}{pointer}} \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator}{utils\+::pmr\+::arena\+\_\+allocator}}$<$ T, Sync $>$\+::allocate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}}}]{n,  }\item[{std\+::align\+\_\+val\+\_\+t}]{alignment = {\ttfamily std\+:\+:align\+\_\+val\+\_\+t(alignof(T))} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Allocates storage for {\ttfamily T\mbox{[}n\mbox{]}} with specified alignment from the underlying buffer. 
+
+The behavior is undefined if {\ttfamily alignment} is less than that of {\ttfamily T}. 
+
+Definition at line \mbox{\hyperlink{arena__allocator_8hpp_source_l00104}{104}} of file \mbox{\hyperlink{arena__allocator_8hpp_source}{arena\+\_\+allocator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pmr_1_1arena__allocator_a6deae5a28ef57aebac240cd3de5faef1}\label{classutils_1_1pmr_1_1arena__allocator_a6deae5a28ef57aebac240cd3de5faef1}} 
+\index{utils::pmr::arena\_allocator$<$ T, Sync $>$@{utils::pmr::arena\_allocator$<$ T, Sync $>$}!deallocate@{deallocate}}
+\index{deallocate@{deallocate}!utils::pmr::arena\_allocator$<$ T, Sync $>$@{utils::pmr::arena\_allocator$<$ T, Sync $>$}}
+\doxysubsubsection{\texorpdfstring{deallocate()}{deallocate()}}
+{\footnotesize\ttfamily template$<$typename T , bool Sync = false$>$ \\
+static void \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator}{utils\+::pmr\+::arena\+\_\+allocator}}$<$ T, Sync $>$\+::deallocate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_abd9b603040f83e782f72afeb661d8892}{pointer}}}]{,  }\item[{\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}}}]{,  }\item[{std\+::align\+\_\+val\+\_\+t}]{ = {\ttfamily std\+:\+:align\+\_\+val\+\_\+t(alignof(T))} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Deallocation is a no-\/op. 
+
+
+
+Definition at line \mbox{\hyperlink{arena__allocator_8hpp_source_l00124}{124}} of file \mbox{\hyperlink{arena__allocator_8hpp_source}{arena\+\_\+allocator.\+hpp}}.
+
+\mbox{\Hypertarget{classutils_1_1pmr_1_1arena__allocator_a557d2109484928e15525a1083b0b8e26}\label{classutils_1_1pmr_1_1arena__allocator_a557d2109484928e15525a1083b0b8e26}} 
+\index{utils::pmr::arena\_allocator$<$ T, Sync $>$@{utils::pmr::arena\_allocator$<$ T, Sync $>$}!explicit@{explicit}}
+\index{explicit@{explicit}!utils::pmr::arena\_allocator$<$ T, Sync $>$@{utils::pmr::arena\_allocator$<$ T, Sync $>$}}
+\doxysubsubsection{\texorpdfstring{explicit()}{explicit()}}
+{\footnotesize\ttfamily template$<$typename T , bool Sync = false$>$ \\
+template$<$typename U , bool S$>$ \\
+\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator}{utils\+::pmr\+::arena\+\_\+allocator}}$<$ T, Sync $>$\+::explicit (\begin{DoxyParamCaption}\item[{S !}]{ = {\ttfamily Sync} }\end{DoxyParamCaption}) const}
+
+
+
+Conversion constructor. 
+
+The constructor is explicit if {\ttfamily synchronized != other.\+synchronized}. This is to remind users to exercise caution when converting between synchronized and unsynchronized allocators, as mixing allocation operations on the same buffer with different synchronization schemes is UB. \begin{DoxyRemark}{Remarks}
+Allocators of different types can share the same buffer due to the common control structure. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{classutils_1_1pmr_1_1arena__allocator_ab2f3f5595719c9fc771f2fc044b6a306}\label{classutils_1_1pmr_1_1arena__allocator_ab2f3f5595719c9fc771f2fc044b6a306}} 
+\index{utils::pmr::arena\_allocator$<$ T, Sync $>$@{utils::pmr::arena\_allocator$<$ T, Sync $>$}!release@{release}}
+\index{release@{release}!utils::pmr::arena\_allocator$<$ T, Sync $>$@{utils::pmr::arena\_allocator$<$ T, Sync $>$}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily template$<$typename T , bool Sync = false$>$ \\
+void \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator}{utils\+::pmr\+::arena\+\_\+allocator}}$<$ T, Sync $>$\+::release (\begin{DoxyParamCaption}\item[{std\+::pmr\+::memory\+\_\+resource \&}]{mr,  }\item[{\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}}}]{space }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Deallocates the underlying buffer previously allocated through a memory resource. 
+
+
+
+Definition at line \mbox{\hyperlink{arena__allocator_8hpp_source_l00098}{98}} of file \mbox{\hyperlink{arena__allocator_8hpp_source}{arena\+\_\+allocator.\+hpp}}.
+
+
+
 \doxysubsection{Friends And Related Function Documentation}
 \mbox{\Hypertarget{classutils_1_1pmr_1_1arena__allocator_a45cd35ea8e76c966937c8c753f71ba0a}\label{classutils_1_1pmr_1_1arena__allocator_a45cd35ea8e76c966937c8c753f71ba0a}} 
 \index{utils::pmr::arena\_allocator$<$ T, Sync $>$@{utils::pmr::arena\_allocator$<$ T, Sync $>$}!arena\_allocator@{arena\_allocator}}
@@ -191,6 +293,17 @@ Definition at line \mbox{\hyperlink{arena__allocator_8hpp_source_l00061}{61}} of
 
 
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classutils_1_1pmr_1_1arena__allocator_aecabf6002d8eda53bb01b8e3103d1701}\label{classutils_1_1pmr_1_1arena__allocator_aecabf6002d8eda53bb01b8e3103d1701}} 
+\index{utils::pmr::arena\_allocator$<$ T, Sync $>$@{utils::pmr::arena\_allocator$<$ T, Sync $>$}!noexcept@{noexcept}}
+\index{noexcept@{noexcept}!utils::pmr::arena\_allocator$<$ T, Sync $>$@{utils::pmr::arena\_allocator$<$ T, Sync $>$}}
+\doxysubsubsection{\texorpdfstring{noexcept}{noexcept}}
+{\footnotesize\ttfamily template$<$typename T , bool Sync = false$>$ \\
+S\& other \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator}{utils\+::pmr\+::arena\+\_\+allocator}}$<$ T, Sync $>$\+::noexcept}
+
+
+
+Definition at line \mbox{\hyperlink{arena__allocator_8hpp_source_l00091}{91}} of file \mbox{\hyperlink{arena__allocator_8hpp_source}{arena\+\_\+allocator.\+hpp}}.
+
 \mbox{\Hypertarget{classutils_1_1pmr_1_1arena__allocator_a04bbeb10a4b3e3317ec92047f517192b}\label{classutils_1_1pmr_1_1arena__allocator_a04bbeb10a4b3e3317ec92047f517192b}} 
 \index{utils::pmr::arena\_allocator$<$ T, Sync $>$@{utils::pmr::arena\_allocator$<$ T, Sync $>$}!synchronized@{synchronized}}
 \index{synchronized@{synchronized}!utils::pmr::arena\_allocator$<$ T, Sync $>$@{utils::pmr::arena\_allocator$<$ T, Sync $>$}}
