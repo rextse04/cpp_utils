@@ -318,8 +318,7 @@ namespace utils {
             }
         }
     public:
-        /// @defgroup utils::segment_tree<Key,T,Compare,Sum,Identity,KeyContainer,MappedContainer>::segment_tree
-        ///
+        /// @name Constructors
         /// When the `std::sorted_equivalent` flag is passed to any constructor overload that accepts it,
         /// it indicates that the range of keys passed to the constructor is sorted in non-decreasing order
         /// with respect to `key_compare()`, and the range of mapped values passed corresponds to it.
@@ -329,9 +328,24 @@ namespace utils {
         /// the underlying containers are constructed with uses-allocator construction.
         /// Such overloads only participate in overload resolution only if
         /// `std::uses_constructor_v<segment_tree, Allocator>` is `true`.
+        ///
+        /// (1), (2): Default constructors. Constructs an empty container adaptor.\n
+        /// (3), (4): Copy constructors. Copy-constructs all underlying containers and functors.\n
+        /// (5), (6): Move constructors.
+        /// Move-constructs all underlying containers and functors. `other` is left in a valid empty state.\n
+        /// (7), (8): Directly constructs the underlying containers using `keys` and `nodes`.
+        /// The behavior is undefined if they do not conform to the internal layout of `segment_tree`.\n
+        /// (9), (10), (11), (12): Constructs the underlying containers from `keys` and `mapped`,
+        /// sorts them if unsorted, and builds the segment tree.
+        /// The behavior is undefined if `keys.size() != mapped.size()`.\n
+        /// (13), (14), (15), (16): Inserts key-mapped pairs from `pairs`, which should be a range of `value_type`,
+        /// sorts them if unsorted, then builds the segment tree.\n
+        /// (17), (18), (19), (20): Inserts key-mapped pairs from [ `pairs_begin`, `pairs_end` ),
+        /// which should be a valid range of `value_type`,
+        /// sorts them if unsorted, then builds the segment tree.\n
+        /// (21), (22), (23), (24): Inserts key-value pairs from `pairs`, sorts them if unsorted, then builds the segment tree.
         /// @{
-        /// Default constructor. Constructs an empty container adaptor.
-        /// @{
+        // (1)
         template <container_allocator<segment_tree> Allocator = detail::void_allocator_t>
         explicit constexpr segment_tree(
             const key_compare& comp = key_compare(),
@@ -342,32 +356,30 @@ namespace utils {
             construct_keys(alloc);
             construct_nodes(alloc);
         }
+        // (2)
         template <typename Allocator>
         explicit constexpr segment_tree(const Allocator& alloc) :
             segment_tree(key_compare(), mapped_sum(), mapped_identity(), alloc) {}
-        /// @}
-        /// Copy constructor. Copy-constructs all underlying containers and functors.
-        /// @{
+        // (3)
         constexpr segment_tree(const segment_tree& other)
         noexcept(
             std::is_nothrow_copy_constructible_v<key_container_type> &&
             std::is_nothrow_copy_constructible_v<mapped_container_type>) :
             segment_tree(other, detail::void_allocator) {}
+        // (4)
         constexpr segment_tree(const segment_tree& other, const container_allocator<segment_tree> auto& alloc):
             level_offsets_(other.level_offsets_), levels_(other.levels_),
             comp_(other.comp_), sum_(other.sum_), identity_(other.identity_) {
             construct_keys(alloc, other.keys());
             construct_nodes(alloc, other.nodes());
         }
-        /// @}
-        /// Move constructor. Move-constructs all underlying containers and functors.
-        /// `other` is left in a valid empty state.
-        /// @{
+        // (5)
         constexpr segment_tree(segment_tree&& other)
         noexcept(
             std::is_nothrow_move_constructible_v<key_container_type> &&
             std::is_nothrow_move_constructible_v<mapped_container_type>) :
             segment_tree(std::move(other), detail::void_allocator) {}
+        // (6)
         constexpr segment_tree(segment_tree&& other, const container_allocator<segment_tree> auto& alloc) :
             level_offsets_(other.level_offsets_), levels_(other.levels_),
             comp_(std::move(other.comp_)), sum_(std::move(other.sum_)), identity_(other.identity_) {
@@ -375,10 +387,7 @@ namespace utils {
             construct_nodes(alloc, std::move(other.m_nodes()));
             other.fast_clear();
         }
-        /// @}
-        /// Directly constructs the underlying containers using `keys` and `nodes`.
-        /// The behavior is undefined if they do not conform to the internal layout of `segment_tree`.
-        /// @{
+        // (7)
         template <equiv_to<key_container_type> Keys, equiv_to<mapped_container_type> Nodes,
             container_allocator<segment_tree> Allocator = detail::void_allocator_t>
         constexpr segment_tree(segment_tree_nodes_t, Keys&& keys, Nodes&& nodes,
@@ -398,16 +407,13 @@ namespace utils {
             std::partial_sum(level_offsets_.begin() + 1, level_offsets_.begin() + levels_ + 1,
                 level_offsets_.begin() + 1);
         }
+        // (8)
         template <equiv_to<key_container_type> Keys, equiv_to<mapped_container_type> Nodes,
             container_allocator<segment_tree> Allocator>
         constexpr segment_tree(segment_tree_nodes_t, Keys&& keys, Nodes&& nodes, const Allocator& alloc) :
             segment_tree(segment_tree_nodes, std::forward<Keys>(keys), std::forward<Nodes>(nodes),
                 key_compare(), mapped_sum(), mapped_identity(), alloc) {}
-        /// @}
-        /// Constructs the underlying containers from `keys` and `mapped`,
-        /// sorts them if unsorted, and builds the segment tree.
-        /// The behavior is undefined if `keys.size() != mapped.size()`.
-        /// @{
+        // (9)
         template <equiv_to<key_container_type> Keys, equiv_to<mapped_container_type> Mapped,
             container_allocator<segment_tree> Allocator = detail::void_allocator_t>
         constexpr segment_tree(Keys&& keys, Mapped&& mapped,
@@ -422,11 +428,13 @@ namespace utils {
             sort();
             build();
         }
+        // (10)
         template <equiv_to<key_container_type> Keys, equiv_to<mapped_container_type> Mapped,
             container_allocator<segment_tree> Allocator>
         constexpr segment_tree(Keys&& keys, Mapped&& mapped, const Allocator& alloc)
         requires (move_insertable_into<mapped_container_type> && std::swappable<key_type> && std::swappable<mapped_type>) :
             segment_tree(std::forward<Keys>(keys), std::forward<Mapped>(mapped), key_compare(), mapped_sum(), alloc) {}
+        // (11)
         template <equiv_to<key_container_type> Keys, equiv_to<mapped_container_type> Mapped,
             container_allocator<segment_tree> Allocator = detail::void_allocator_t>
         constexpr segment_tree(std::sorted_equivalent_t, Keys&& keys, Mapped&& mapped,
@@ -440,16 +448,14 @@ namespace utils {
             construct_nodes(alloc, std::forward<Mapped>(mapped));
             build();
         }
+        // (12)
         template <equiv_to<key_container_type> Keys, equiv_to<mapped_container_type> Mapped,
             container_allocator<segment_tree> Allocator>
         constexpr segment_tree(std::sorted_equivalent_t, Keys&& keys, Mapped&& mapped, const Allocator& alloc)
         requires (move_insertable_into<mapped_container_type>) :
             segment_tree(std::sorted_equivalent, std::forward<Keys>(keys), std::forward<Mapped>(mapped),
                 key_compare(), mapped_sum(), mapped_identity(), alloc) {}
-        /// @}
-        /// Inserts key-mapped pairs from `pairs`, which should be a range of `value_type`,
-        /// sorts them if unsorted, then builds the segment tree.
-        /// @{
+        // (13)
         template <container_compatible_range<value_type> Pairs,
             container_allocator<segment_tree> Allocator = detail::void_allocator_t>
         constexpr segment_tree(std::from_range_t, Pairs&& pairs,
@@ -465,12 +471,14 @@ namespace utils {
             construct_nodes(alloc);
             unzip<true>(std::forward<Pairs>(pairs));
         }
+        // (14)
         template <container_compatible_range<value_type> Pairs, container_allocator<segment_tree> Allocator>
         constexpr segment_tree(std::from_range_t, Pairs&& pairs, const Allocator& alloc)
         requires (
             move_insertable_into<key_container_type> && move_insertable_into<mapped_container_type> &&
             std::swappable<key_type> && std::swappable<mapped_type>) :
             segment_tree(std::from_range, std::forward<Pairs>(pairs), key_compare(), mapped_sum(), mapped_identity(), alloc) {}
+        // (15)
         template <
             container_compatible_range<value_type> Pairs,
             container_allocator<segment_tree> Allocator = detail::void_allocator_t>
@@ -485,16 +493,13 @@ namespace utils {
             construct_nodes(alloc);
             unzip<false>(std::forward<Pairs>(pairs));
         }
+        // (16)
         template <container_compatible_range<value_type> Pairs, container_allocator<segment_tree> Allocator>
         constexpr segment_tree(std::sorted_equivalent_t, std::from_range_t, Pairs&& pairs, const Allocator& alloc)
         requires (move_insertable_into<key_container_type> && move_insertable_into<mapped_container_type>) :
             segment_tree(std::sorted_equivalent, std::from_range, std::forward<Pairs>(pairs),
                 key_compare(), mapped_sum(), mapped_identity(), alloc) {}
-        /// @}
-        /// Inserts key-mapped pairs from [ `pairs_begin`, `pairs_end` ),
-        /// which should be a valid range of `value_type`,
-        /// sorts them if unsorted, then builds the segment tree.
-        /// @{
+        // (17)
         template <container_compatible_iterator<value_type> PairsIt, std::sentinel_for<PairsIt> PairsSent,
             container_allocator<segment_tree> Allocator = detail::void_allocator_t>
         constexpr segment_tree(PairsIt pairs_begin, PairsSent pairs_end,
@@ -506,6 +511,7 @@ namespace utils {
             move_insertable_into<key_container_type> && move_insertable_into<mapped_container_type> &&
             std::swappable<key_type> && std::swappable<mapped_type>):
             segment_tree(std::from_range, ranges::subrange(pairs_begin, pairs_end), comp, sum, identity, alloc) {}
+        // (18)
         template <container_compatible_iterator<value_type> PairsIt, std::sentinel_for<PairsIt> PairsSent,
             container_allocator<segment_tree> Allocator>
         constexpr segment_tree(PairsIt pairs_begin, PairsSent pairs_end, const Allocator& alloc)
@@ -513,6 +519,7 @@ namespace utils {
             move_insertable_into<key_container_type> && move_insertable_into<mapped_container_type> &&
             std::swappable<key_type> && std::swappable<mapped_type>) :
             segment_tree(pairs_begin, pairs_end, key_compare(), mapped_sum(), mapped_identity(), alloc) {}
+        // (19)
         template <container_compatible_iterator<value_type> PairsIt, std::sentinel_for<PairsIt> PairsSent,
             container_allocator<segment_tree> Allocator = detail::void_allocator_t>
         constexpr segment_tree(std::sorted_equivalent_t, PairsIt pairs_begin, PairsSent pairs_end,
@@ -523,15 +530,14 @@ namespace utils {
         requires (move_insertable_into<key_container_type> && move_insertable_into<mapped_container_type>) :
             segment_tree(std::sorted_equivalent, std::from_range, ranges::subrange(pairs_begin, pairs_end),
                 comp, sum, identity, alloc) {}
+        // (20)
         template <container_compatible_iterator<value_type> PairsIt, std::sentinel_for<PairsIt> PairsSent,
             container_allocator<segment_tree> Allocator>
         constexpr segment_tree(std::sorted_equivalent_t, PairsIt pairs_begin, PairsSent pairs_end, const Allocator& alloc)
         requires (move_insertable_into<key_container_type> && move_insertable_into<mapped_container_type>) :
             segment_tree(std::sorted_equivalent, pairs_begin, pairs_end,
                 key_compare(), mapped_sum(), mapped_identity(), alloc) {}
-        /// @}
-        /// Inserts key-value pairs from `pairs`, sorts them if unsorted, then builds the segment tree.
-        /// @{
+        // (21)
         template <container_allocator<segment_tree> Allocator = detail::void_allocator_t>
         constexpr segment_tree(std::initializer_list<value_type> pairs,
             const key_compare& comp = key_compare(),
@@ -542,12 +548,14 @@ namespace utils {
             move_insertable_into<key_container_type> && move_insertable_into<mapped_container_type> &&
             std::swappable<key_type> && std::swappable<mapped_type>) :
             segment_tree(std::from_range, pairs, comp, sum, identity, alloc) {}
+        // (22)
         template <container_allocator<segment_tree> Allocator>
         constexpr segment_tree(std::initializer_list<value_type> pairs, const Allocator& alloc)
         requires (
             move_insertable_into<key_container_type> && move_insertable_into<mapped_container_type> &&
             std::swappable<key_type> && std::swappable<mapped_type>) :
             segment_tree(std::from_range, pairs, alloc) {}
+        // (23)
         template <container_allocator<segment_tree> Allocator = detail::void_allocator_t>
         constexpr segment_tree(std::sorted_equivalent_t, std::initializer_list<value_type> pairs,
             const key_compare& comp = key_compare(),
@@ -556,13 +564,17 @@ namespace utils {
             const Allocator& alloc = detail::void_allocator)
         requires (move_insertable_into<key_container_type> && move_insertable_into<mapped_container_type>) :
             segment_tree(std::sorted_equivalent, std::from_range, pairs, comp, sum, identity, alloc) {}
+        // (24)
         template <container_allocator<segment_tree> Allocator>
         constexpr segment_tree(std::sorted_equivalent_t, std::initializer_list<value_type> pairs, const Allocator& alloc)
         requires (move_insertable_into<key_container_type> && move_insertable_into<mapped_container_type>) :
             segment_tree(std::sorted_equivalent, std::from_range, pairs,
                 key_compare(), mapped_sum(), mapped_identity(),alloc) {}
         /// @}
-        /// @}
+        /// @name Destructors
+        /// Use the default destructor if `KeyContainer` and `MappedContainer` are both trivially destructible.
+        /// Otherwise, call their destructors.
+        /// @{
         constexpr ~segment_tree()
         requires (
             std::is_trivially_destructible_v<key_container_type> &&
@@ -571,7 +583,8 @@ namespace utils {
             std::destroy_at(&m_keys());
             std::destroy_at(&m_nodes());
         }
-        /// @defgroup utils::segment_tree<Key,T,Compare,Sum,Identity,KeyContainer,MappedContainer>::operator=
+        /// @}
+        /// @name operator=
         /// @{
         /// Copy-assigns all underlying containers and functors.
         constexpr segment_tree& operator=(const segment_tree& other)
@@ -638,6 +651,7 @@ namespace utils {
             return found;
         }
     public:
+        /// @name operator[]
         /// Returns a (potentially proxy) reference to the mapped value of `key`.
         /// The behavior is undefined if
         /// `key` does not have a `key_compare()`-equivalent in `keys()`.
@@ -656,6 +670,7 @@ namespace utils {
                 levels_ - 1, 0, 0, size());
         }
         /// @}
+        /// @name at
         /// Returns a (potentially proxy) reference to the mapped value of `key`.
         /// If `key` does not have a `key_compare()`-equivalent in `keys()`,
         /// an exception is thrown with strong exception guarantee.
@@ -970,6 +985,7 @@ namespace utils {
         requires (copy_insertable_into<mapped_container_type>) {
             return update_type(nodes().size() * 2, identity_());
         }
+        /// @name make_update
         /// @brief Applies a ranged update to an update record.
         ///
         /// Suppose @f$K@f$ is the set of keys contained in the given interval.
@@ -1003,6 +1019,7 @@ namespace utils {
             if (levels_ <= 0) return strategy(*this, nullptr, nullptr, nullptr);
             else return do_traverse(traverser, strategy, levels_ - 1, 0, 0, size());
         }
+        /// @name aggregate
         /// @brief Aggregate values in the given key or iterator interval.
         /// @returns A value equivalent to that produced by the following process:
         /// 1. Gather all key-value pairs @f$S@f$ contained in the given interval, in the order defined by `keys()`.
@@ -1035,6 +1052,7 @@ namespace utils {
                 aggregate_with_update_strategy(update, multiplies));
         }
         /// @}
+        /// @name total
         /// @brief Gives the sum of all stored mapped values.
         /// @returns A value equivalent to `aggregate(begin(), end())`.
         /// @{

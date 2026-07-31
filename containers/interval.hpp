@@ -54,18 +54,17 @@ namespace utils {
         ///
         /// Two endpoints are equivalent if and only if their values and types are equivalent.
         constexpr bool operator==(const interval_endpoint& other) const = default;
-        /** @brief Comparison functions.
-         *
-         * Given endpoints @f$E1@f$ and @f$E2@f$,
-         * @f$E1<E2@f$ if and only if the set represented by @f$E1@f$ is a proper subset of the set represented by @f$E2@f$.
-         * This defines a strict weak ordering on endpoints.
-         *
-         * Let @f$v@f$ be `this->value` and @f$ov@f$ be `other.value`.
-         * The program is ill-formed if there is not a restriction of `std::less<>` such that
-         * @f$v@f$ and @f$ov@f$ are in the domain.
-         * It is UB if such a restriction does not satisfy <i>Compare</i>.
-         * @{
-         */
+        /// @name Comparison functions.
+        ///
+        /// Given endpoints @f$E1@f$ and @f$E2@f$,
+        /// @f$E1<E2@f$ if and only if the set represented by @f$E1@f$ is a proper subset of the set represented by @f$E2@f$.
+        /// This defines a strict weak ordering on endpoints.
+        ///
+        /// Let @f$v@f$ be `this->value` and @f$ov@f$ be `other.value`.
+        /// The program is ill-formed if there is not a restriction of `std::less<>` such that
+        /// @f$v@f$ and @f$ov@f$ are in the domain.
+        /// It is UB if such a restriction does not satisfy <i>Compare</i>.
+        /// @{
         /// @brief Three-way comparison operator.
         ///
         /// All endpoints are assumed to be right endpoints. The comparator is taken to be `std::less<>`.
@@ -81,7 +80,7 @@ namespace utils {
             if (comp(other.value, value)) return right ? std::weak_ordering::greater : std::weak_ordering::less;
             return std::to_underlying(type) <=> std::to_underlying(other.type);
         }
-        /**@}*/
+        /// @}
     };
     /// @brief Convenience operator overload to construct an interval endpoint.
     template <typename T>
@@ -96,7 +95,7 @@ namespace utils {
     /// @warning In any member function which takes a `point` (resp. an `interval` `other`),
     /// the program is ill-formed if there is not a restriction of `comp` such that `point`
     /// (resp. `other.left`, `other.right`) and the two endpoints are in the domain.
-    /// It is UB if such a restriction does not satisfy <i>Compare</i>.
+    /// The behavior is undefined if such a restriction does not satisfy <i>Compare</i>.
     template <typename L, typename R>
     struct interval {
         using left_value_type = L;
@@ -133,14 +132,13 @@ namespace utils {
             }
             return out;
         }
-        /** @brief Determines whether the interval is a superset/strict superset/subset/strict subset of another interval.
-         * @{
-         */
+        /// @brief Determines whether `*this` is a superset of `other`.
         template <typename L2, typename R2,
             detail::strict_weak_order<const L&, const R&, const L2&, const R2&> Compare = std::less<>>
         constexpr bool superset_of(const interval<L2, R2>& other, const Compare& comp = {}) const {
             return left.compare(other.left, false, comp) >= 0 && right.compare(other.right, true, comp) >= 0;
         }
+        /// @brief Determines whether `*this` is a strict superset of `other`.
         template <typename L2, typename R2,
             detail::strict_weak_order<const L&, const R&, const L2&, const R2&> Compare = std::less<>>
         constexpr bool strict_superset_of(const interval<L2, R2>& other, const Compare& comp = {}) const {
@@ -148,17 +146,18 @@ namespace utils {
                 right_cmp = right.compare(other.right, true, comp);
             return (left_cmp > 0 && right_cmp >= 0) || (left_cmp >= 0 && right_cmp > 0);
         }
+        /// @brief Determines whether `*this` is a subset of `other`.
         template <typename L2, typename R2,
             detail::strict_weak_order<const L&, const R&, const L2&, const R2&> Compare = std::less<>>
         constexpr bool subset_of(const interval<L2, R2>& other, const Compare& comp = {}) const {
             return other.superset_of(*this, comp);
         }
+        /// @brief Determines whether `*this` is a strict subset of `other`.
         template <typename L2, typename R2,
             detail::strict_weak_order<const L&, const R&, const L2&, const R2&> Compare = std::less<>>
         constexpr bool strict_subset_of(const interval<L2, R2>& other, const Compare& comp = {}) const {
             return other.strict_superset_of(*this, comp);
         }
-        /**@}*/
         /// @brief Constructs the intersection between the interval and `other`.
         /// @{
         template <typename CL, typename CR,
@@ -183,12 +182,12 @@ namespace utils {
             return intersection_with<L, R, L, R, Compare>(other, comp);
         }
         /// @}
-        /** @brief Comparison functions.
-         *
-         * Given intervals @f$I1@f$ and @f$I2@f$,
-         * @f$I1<I2@f$ if and only if @f$I1@f$ is a proper subset of @f$I2@f$.
-         * This defines a strict partial ordering on intervals.
-         */
+        /// @name Comparison functions.
+        ///
+        /// Given intervals @f$I1@f$ and @f$I2@f$,
+        /// @f$I1<I2@f$ if and only if @f$I1@f$ is a proper subset of @f$I2@f$.
+        /// This defines a strict partial ordering on intervals.
+        /// @{
         /// @brief Three-way comparison operator.
         ///
         /// The comparator is taken to be `std::less<>`.
@@ -208,7 +207,7 @@ namespace utils {
             if (left_cmp <= 0 && right_cmp <= 0) return std::partial_ordering::less;
             return std::partial_ordering::unordered;
         }
-        /**@}*/
+        /// @}
     };
     /// @brief Convenience operator overload to construct an interval.
     template <typename LE, typename RE>

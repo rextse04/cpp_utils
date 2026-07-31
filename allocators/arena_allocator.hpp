@@ -60,7 +60,7 @@ namespace utils::pmr {
         template <typename, bool>
         friend class arena_allocator;
     public:
-        /// @defgroup utils::pmr::arena_allocator::arena_allocator
+        /// @name Constructors
         /// @{
         /// @brief Takes ownership of the buffer and uses it for allocations.
         /// @throws std::bad_alloc: If the internal control structure does not fit in the given buffer.

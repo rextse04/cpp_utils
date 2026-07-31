@@ -9,6 +9,7 @@
 #include "type.hpp"
 
 namespace utils {
+    /// @brief Denotes a @ref utils::unique_resource should enable synchronization.
     constexpr struct unique_resource_sync_t {} unique_resource_sync{};
     namespace detail {
         template <bool Sync, typename SharedMutex>
@@ -23,8 +24,8 @@ namespace utils {
     /// (this should not be set to true if `T` is inherently synchronized, such as atomics)
     /// @tparam Semaphore: a type that follows the interface of `std::counting_semaphore`
     /// @tparam SharedMutex: a type that satisfies <i>SharedMutex</i> (can be any type if `Sync` is false)
-    /// @remark In the context of this class, `read-only access` is synonymous with const reference,
-    /// while `read/write access` is synonymous with non-const reference (to the underlying resource).
+    /// @remark In the context of this class, "read-only access" is synonymous with const reference,
+    /// while "read/write access" is synonymous with non-const reference (to the underlying resource).
     template <
         typename T, bool Sync = false,
         typename Semaphore = std::counting_semaphore<>, typename SharedMutex = std::shared_mutex>
@@ -33,10 +34,10 @@ namespace utils {
         using value_type = T;
         using semaphore_type = Semaphore;
         static constexpr bool sync = Sync;
-    private:
-        static constexpr struct permit_key : key<unique_resource> {} key{};
-    public:
         class permit;
+    private:
+        using permit_opt = std::optional<permit>;
+    public:
         /// @brief A fancy pointer that holds a lock throughout its lifetime.
         template <typename Lock, type_qualifiers Q = type_qualifiers::none>
         class permit_ptr : public stale_class {
@@ -49,12 +50,19 @@ namespace utils {
             constexpr auto operator->() const noexcept { return &base_; }
             constexpr auto& operator*() const noexcept { return base_; }
         };
+        /// @brief A proxy through which the user uses the resource to enforce thread safety.
+        ///
+        /// `unique_resource` only issues a permit when there is available quota.
+        /// The class has a private constructor to maintain the ownership of `unique_resource`.
+        /// In other words, the user and other constructs cannot issue permits.
         class permit : public stale_class {
         private:
             unique_resource& owner_;
+
+            explicit constexpr permit(unique_resource* owner) : owner_(*owner) {}
+            friend unique_resource;
+            friend permit_opt;
         public:
-            // a private constructor with friend doesn't work because it is also constructed through std::optional
-            constexpr permit(permit_key, unique_resource* owner) : owner_(*owner) {}
             /// @brief Provides read-only access to the resource.
             /// @remark If `sync` is true, a fancy pointer (`permit_ptr`) is returned.
             constexpr auto read() const noexcept {
@@ -77,6 +85,7 @@ namespace utils {
             constexpr const value_type& operator*() const noexcept requires(!sync) {
                 return owner_.base_;
             }
+            /// @brief At destruction, notify the owner of the resource that the current user has released control.
             constexpr ~permit() { owner_.sem_.release(); }
         };
     private:
@@ -84,21 +93,28 @@ namespace utils {
         [[no_unique_address]] semaphore_type sem_;
         [[no_unique_address]] std::conditional_t<sync, std::shared_mutex, std::monostate> mutex_;
 
-        using permit_opt = std::optional<permit>;
         constexpr permit_opt issue(bool success) noexcept {
-            return success ? permit_opt(std::in_place, key, this) : permit_opt(std::nullopt);
+            return success ? permit_opt(std::in_place, this) : permit_opt(std::nullopt);
         }
     public:
-        /// @defgroup utils::unique_resource::unique_resource
         /// @{
-        constexpr unique_resource(unique_resource_sync_t, integer_alias::ptrdiff_t quota, T&& base)
+        /// @brief Convenience constructor for enabling synchronization.
+        ///
+        /// @param s: Unused parameter. For CTAD only.
+        /// @param quota: Maximum number of concurrent users to the resource.
+        /// @param base: Forwarding reference to the resource of which ownership is to be passed to `*this`.
+        constexpr unique_resource([[maybe_unused]] unique_resource_sync_t s, integer_alias::ptrdiff_t quota, T&& base)
         requires (std::is_move_constructible_v<T>) :
-            base_(std::forward<T>(base)), sem_(+quota) {}
+            base_(std::forward<T>(base)), sem_(quota) {}
+        /// @brief Main constructor.
+        ///
+        /// @param quota: Maximum number of concurrent users to the resource.
+        /// @param args: Arguments to be passed to `T` for the construction of the underlying resource.
         template <typename... Args>
         requires (std::is_constructible_v<T, Args...>)
         explicit(sizeof...(Args) == 0)
         constexpr unique_resource(integer_alias::ptrdiff_t quota = 1, Args&&... args) :
-            base_(std::forward<Args>(args)...), sem_(+quota) {}
+            base_(std::forward<Args>(args)...), sem_(quota) {}
         /// @}
         /// @brief Get read access to the resource.
         ///
@@ -115,7 +131,7 @@ namespace utils {
         /// @brief Blocks until a permit is issued.
         permit acquire() {
             sem_.acquire();
-            return {key, this};
+            return permit(this);
         }
         /// @brief Try to acquire permit once.
         ///

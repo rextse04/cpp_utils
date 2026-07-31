@@ -11,6 +11,7 @@
  * Useful utilities for template metaprogramming.
  */
 namespace utils::meta {
+    /// @name is_tuple
     /// @brief Checks if `T` is a (real) tuple.
     /// @{
     template <typename T>
@@ -28,6 +29,7 @@ namespace utils::meta {
     template <typename T>
     concept pair_like = std::tuple_size<std::remove_cvref_t<T>>::value == 2;
 
+    /// @name pack
     /// @brief Wraps a parameter pack into a tuple type.
     /// @remark This is useful for converting variadic template parameters into a tuple type.
     /// @{
@@ -37,6 +39,7 @@ namespace utils::meta {
     using pack_t = pack<Ts...>::type;
     /// @}
 
+    /// @name smart_pack
     /// @brief Wraps a parameter pack into a tuple type, unless exactly one tuple is given.
     /// @{
     template <typename... Ts>
@@ -55,6 +58,7 @@ namespace utils::meta {
             using type = std::tuple<std::tuple_element_t<Idxs, T>...>;
         };
     }
+    /// @name make_tuple
     /// @brief Makes a tuple from a `tuple-like` type `T`.
     /// @{
     template <tuple_like T>
@@ -63,6 +67,7 @@ namespace utils::meta {
     using make_tuple_t = make_tuple<T>::type;
     /// @}
 
+    /// @name actual_index
     /// @brief Calculates a normalized index (in @f$ [0, N)@f$) from a possibly negative index `Idx`
     /// and a tuple-like type `Tuple` of size `N`.
     /// @{
@@ -72,6 +77,7 @@ namespace utils::meta {
     constexpr std::size_t actual_index_v = actual_index<Tuple, Idx>::value;
     /// @}
 
+    /// @name at
     /// @brief Similar to `std::tuple_element` but also accepts negative `Idx`.
     /// @{
     template <tuple_like Tuple, std::ptrdiff_t Idx>
@@ -82,6 +88,7 @@ namespace utils::meta {
     using at_t = at<Tuple, Idx>::type;
     /// @}
 
+    /// @name search
     /// @brief Finds the first index `Idx` in [ `Begin` , `End` ) such that
     /// `PredTrait<at_t<Tuple, Idx>, T>::value` is true.
     ///
@@ -100,6 +107,7 @@ namespace utils::meta {
     struct search_trait : search<Tuple, T> {};
     /// @}
 
+    /// @name contained_in
     /// @brief Checks if there exists an index `Idx` in @f$ [\text{Begin},\text{End})@f$ such that
     /// `PredTrait<at_t<Tuple, Idx>, T>::value` is true.
     /// @{
@@ -113,6 +121,7 @@ namespace utils::meta {
     struct contained_in_trait : contained_in<Tuple, T> {};
     /// @}
 
+    /// @name concat
     /// @brief Concatenate multiple tuple-like types into a single tuple type.
     /// @{
     template <tuple_like... Tuples>
@@ -131,6 +140,7 @@ namespace utils::meta {
             using type = std::tuple<std::tuple_element_t<Begin + RelIdxs, Tuple>...>;
         };
     }
+    /// @name slice
     /// @brief Extracts a slice from a tuple type from index `Begin` to index `End` (exclusive).
     ///
     /// Both `Begin` and `End` can be negative indices, which are normalized relative to the tuple size.
@@ -150,6 +160,7 @@ namespace utils::meta {
     using slice_t = slice<Tuple, Begin, End>::type;
     /// @}
 
+    /// @name insert
     /// @brief Inserts a tuple-like type `Inserted` into a tuple type `Tuple` at index `Idx`.
     ///
     /// The index `Idx` can be negative, which is normalized relative to the tuple size.
@@ -160,6 +171,7 @@ namespace utils::meta {
     using insert_t = insert<Tuple, Idx, Inserted>::type;
     /// @}
 
+    /// @name erase
     /// @brief Erases elements from a tuple type `Tuple` in the range [`Begin`, `End`).
     ///
     /// Both `Begin` and `End` can be negative indices, which are normalized relative to the tuple size.
@@ -170,6 +182,7 @@ namespace utils::meta {
     using erase_t = erase<Tuple, Begin, End>::type;
     /// @}
 
+    /// @name replace
     /// @brief Replaces the element at index `Idx` in a tuple type `Tuple` with type `T`.
     ///
     /// The index `Idx` can be negative, which is normalized relative to the tuple size.
@@ -180,6 +193,7 @@ namespace utils::meta {
     using replace_t = replace<Tuple, Idx, T>::type;
     /// @}
 
+    /// @name infer
     /// @brief Converts an `ErasedResult` to a `Result`.
     ///
     /// If `ErasedResult` has a `type` member, that is returned; otherwise, `ErasedResult` itself is returned.
@@ -207,6 +221,7 @@ namespace utils::meta {
             using type = std::tuple<typename map_step<Idxs, Trait, TuplesTuple>::type...>;
         };
     }
+    /// @name map
     /// @brief Applies a `Trait` template to corresponding elements across one or more tuple types.
     ///
     /// This creates a new tuple type where each element is the result of applying `Trait`
@@ -218,6 +233,7 @@ namespace utils::meta {
     using map_t = map<Trait, Tuple, Tuples...>::type;
     /// @}
 
+    /// @name reduce
     /// @brief Applies a `Trait` template to all elements of a tuple, producing a single result.
     ///
     /// The result is either a `TypeResult` or a `ValueResult` depending on the trait.
@@ -232,6 +248,7 @@ namespace utils::meta {
     constexpr auto reduce_v = reduce<Trait, T>::value;
     /// @}
 
+    /// @name sum
     /// @brief Computes the sum of `value` members from `ValueResult` types.
     /// @{
     template <typename... ValueResults>
@@ -240,6 +257,7 @@ namespace utils::meta {
     constexpr auto sum_v = sum<ValueResults...>::value;
     /// @}
 
+    /// @name product
     /// @brief Computes the product of `value` members from `ValueResult` types.
     /// @{
     template <typename... ValueResults>

@@ -497,11 +497,10 @@ namespace utils {
         template <detail::dptr_first V, interface... Vs>
         friend class dptr;
     public:
-        /** \defgroup dptr<I, Is...>::dptr
-         * @param args: arguments forwarded to `deleter_` succeeding a const reference to dptr
-         * (i.e. deleter_ is constructed with (const dptr&, std::forward(args)...))
-         * @{
-         */
+        /// @name Constructors
+        /// @param args: Arguments forwarded to `deleter_` succeeding a const reference to dptr
+        /// (i.e. deleter_ is constructed with (const dptr&, std::forward(args)...)).
+        /// @{
         /// @brief Default constructor.
         ///
         /// Initializes `ptr_` with `nullptr`.
@@ -579,21 +578,19 @@ namespace utils {
             deleter_(std::as_const(*this), std::forward<Args>(args)...) {
             if constexpr (DT::ownership != borrowed && !std::is_lvalue_reference_v<T>) other.quick_reset();
         }
-        /**@}*/
+        /// @}
 
-        /** \defgroup dptr<I, Is...>::~dptr
-         * Calls `destroy_and_delete()` if `ownership` is not `borrowed` and `ptr_` is not null.
-         * @{
-         */
+        /// @name Destructors
+        /// Calls `destroy_and_delete()` if `ownership` is not `borrowed` and `ptr_` is not null.
+        /// @{
         constexpr ~dptr() noexcept requires (ownership == borrowed) = default;
         constexpr ~dptr() noexcept requires (ownership != borrowed) {
             if (ptr_) destroy_and_delete();
         }
-        /**@}*/
+        /// @}
 
-        /** \defgroup dptr<I, Is...>::operator=
-         * @{
-         */
+        /// @name operator=
+        /// @{
         /// @brief Copy assignment operator.
         ///
         /// Not available if `ownership` is `unique`.
@@ -662,17 +659,20 @@ namespace utils {
             if constexpr (DT::ownership != borrowed && !std::is_lvalue_reference_v<T>) other.quick_reset();
             return *this;
         }
-        /** @}*/
+        /// @}
 
+        /// @brief Equality comparison operator delegates to that on the underlying pointer.
         constexpr bool operator==(const dptr& other) const noexcept { return ptr_ == other.ptr_; }
+        /// @brief Three-way comparison operator delegates to that on the underlying pointer.
         constexpr auto operator<=>(const dptr& other) const noexcept { return ptr_ <=> other.ptr_; }
+        /// @brief `*this` converts to `true` if and only if the underlying pointer is not `nullptr`.
         constexpr explicit operator bool() const noexcept { return ptr_ != nullptr; }
         /// @brief Returns the pointer.
         constexpr base_type get() const noexcept { return ptr_; }
         /// @brief Returns a copy of `ivtables_`.
         constexpr ivtable_pointer_types get_ivtables() const noexcept { return ivtables_; }
-        /// @brief Returns a reference to the deleter.
         /// @{
+        /// @brief Returns a reference to the deleter.
         constexpr deleter_type& get_deleter() noexcept { return deleter_; }
         constexpr const deleter_type& get_deleter() const noexcept { return deleter_; }
         /// @}
@@ -718,6 +718,7 @@ namespace utils {
         constexpr void destroy() const noexcept requires (!is_array) {
             std::get<0>(ivtables_)->dtor(const_cast<void*>(ptr_));
         }
+        /// @name destroy_and_delete
         /// @brief Destroy the underlying object and delete `ptr_` using `deleter_`, before setting it to `nullptr`.
         ///
         /// The behavior is undefined if `ptr_ == nullptr`.

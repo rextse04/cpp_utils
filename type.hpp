@@ -18,6 +18,7 @@ namespace utils {
         v = 0b10  ///< Volatile qualifier
     };
     UTILS_BITMASK(type_qualifiers);
+    /// @name qualifiers_of
     /// @brief Extracts the const and volatile qualifiers from a type.
     /// @remark Ignores reference and pointer decorations, extracting qualifiers from the underlying type.
     /// @{
@@ -33,6 +34,7 @@ namespace utils {
     constexpr type_qualifiers qualifiers_of_v = qualifiers_of<T>::value;
     /// @}
 
+    /// @name apply_qualifiers
     /// @brief Applies specified const and volatile qualifiers to a type, while retaining reference category/pointer.
     /// @{
     template <typename T, type_qualifiers Q>
@@ -51,6 +53,7 @@ namespace utils {
     using apply_qualifiers_t = apply_qualifiers<T, Q>::type;
     /// @}
 
+    /// @name follow
     /// @brief Copies the qualifiers and reference category from one type to another.
     /// @{
     template <typename RefT, typename T>
@@ -61,6 +64,7 @@ namespace utils {
     using follow_t = follow<RefT, T>::type;
     /// @}
 
+    /// @name is_equiv
     /// @brief Checks if two types are equivalent.
     ///
     /// Two types are equivalent if they are the same after removing all const, volatile, and reference qualifiers.
@@ -73,6 +77,7 @@ namespace utils {
     concept equiv_to = is_equiv_v<T, Ref>;
     /// @}
 
+    /// @name is_template_instance
     /// @brief Checks if a type is an instance of a given template.
     ///
     /// The check ignores cv qualifiers and reference categories on the type being checked.
@@ -85,6 +90,7 @@ namespace utils {
     constexpr bool is_template_instance_v = is_template_instance<Tmpl, std::remove_cvref_t<T>>::value;
     /// @}
 
+    /// @name explicitly_convertible_to
     /// @brief Determines if `From` is explicitly convertible to `To`.
     ///
     /// `From` is explicitly convertible to `To` if the expression `static_cast<To>(std::declval<From>())` is well-formed.
@@ -105,6 +111,7 @@ namespace utils {
             using type = std::integer_sequence<T, F(Ns)...>;
         };
     }
+    /// @name make_integer_range
     /// @brief Creates an integer sequence with custom Begin and Step values.
     /// @tparam T The underlying integer type for the sequence.
     /// @tparam End The exclusive end value of the range.
@@ -134,6 +141,7 @@ namespace utils {
     template <typename...>
     struct always_false : std::false_type {};
 
+    /// @name is_tagged
     /// @brief Checks if `T` has a `tag` member alias matching or containing `Tag`.
     /// @{
     template <typename T, typename Tag>
@@ -193,45 +201,37 @@ namespace utils {
         constexpr sink(auto&&...) noexcept {} ///< Accepts any arguments and discards them
     };
 
-    /// @{
     /// @brief Casts a forwarding reference to a const reference of the same category.
     /// @param ref A forwarding reference to const-qualify.
     /// @returns A const reference preserving the reference category (lvalue/rvalue) of `ref`.
     template <typename T>
     constexpr const T&& as_const(T&& ref) noexcept { return ref; }
-
     /// @brief Casts a forwarding reference to a volatile reference of the same category.
     /// @param ref A forwarding reference to volatile-qualify.
     /// @returns A volatile reference preserving the reference category (lvalue/rvalue) of `ref`.
     template <typename T>
     constexpr volatile T&& as_volatile(T&& ref) noexcept { return ref; }
-
     /// @brief Casts a forwarding reference to a const volatile reference of the same category.
     /// @param ref A forwarding reference to const volatile-qualify.
     /// @returns A const volatile reference preserving the reference category (lvalue/rvalue) of `ref`.
     template <typename T>
     constexpr const volatile T&& as_cv(T&& ref) noexcept { return ref; }
-    /// @}
 
-    /// @{
     /// @brief Const-qualifies a pointer.
     /// @param ptr A pointer to const-qualify.
     /// @returns A const-qualified pointer to the same type.
     template <typename T>
     constexpr const T* as_const_ptr(T* ptr) noexcept { return ptr; }
-
     /// @brief Volatile-qualifies a pointer.
     /// @param ptr A pointer to volatile-qualify.
     /// @returns A volatile-qualified pointer to the same type.
     template <typename T>
     constexpr volatile T* as_volatile_ptr(T* ptr) noexcept { return ptr; }
-
     /// @brief Const volatile-qualifies a pointer.
     /// @param ptr A pointer to const volatile-qualify.
     /// @returns A const volatile-qualified pointer to the same type.
     template <typename T>
     constexpr const volatile T* as_cv_ptr(T* ptr) noexcept { return ptr; }
-    /// @}
 
     /// @brief Returns a reference to `u`, which has similar properties to `T`.
     ///
