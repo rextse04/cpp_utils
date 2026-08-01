@@ -826,7 +826,7 @@ namespace utils {
         /// and `level_idx` is the number of nodes preceding @f$v@f$ is its level.
         /// `*_level` and `*_idx` represent the level and index of
         /// `left` / `right`, respectively.
-        /// Level @code-1` indicates a non-existent node.
+        /// Level `-1` indicates a non-existent node.
         ///
         /// [ `begin`, `end` ) gives the range of indices of mapped values
         /// the sub-tree rooted at @f$v@f$ encompasses,

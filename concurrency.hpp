@@ -9,7 +9,7 @@
 #include "type.hpp"
 
 namespace utils {
-    /// @brief Denotes a @ref utils::unique_resource should enable synchronization.
+    /// @brief Denotes a `utils::unique_resource` should enable synchronization.
     constexpr struct unique_resource_sync_t {} unique_resource_sync{};
     namespace detail {
         template <bool Sync, typename SharedMutex>
