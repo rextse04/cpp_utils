@@ -245,7 +245,7 @@ Let {\ttfamily IT} be a theoretical collection of wrapper types such that {\ttfa
 \item {\ttfamily std\+::numeric\+\_\+limits} is meaningfully specialized for {\ttfamily IT\texorpdfstring{$<$}{<}Int\texorpdfstring{$>$}{>}}.
 \end{DoxyEnumerate}
 
-Then, an instance of an {\itshape Integer\+Behavior\+Profile\+Template} is an {\itshape Integer\+Behavior\+Profile} if {\ttfamily FuncsI} is an \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set}}} for every type in {\ttfamily IT}, for every \$I\textbackslash{}in\mbox{[}N\mbox{]}\$. \hypertarget{OperatorFunctorSet}{}\doxysection{Named Requirements\+: \texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Operator\+Functor\+Set\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}\label{OperatorFunctorSet}
+Then, an instance of an {\itshape Integer\+Behavior\+Profile\+Template} is an {\itshape Integer\+Behavior\+Profile} if {\ttfamily FuncsI} is an \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set}}} for every type in {\ttfamily IT}, for every $I\in[N]$. \hypertarget{OperatorFunctorSet}{}\doxysection{Named Requirements\+: \texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Operator\+Functor\+Set\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}\label{OperatorFunctorSet}
 \label{OperatorFunctorSet_md_docs_named_reqs_OperatorFunctorSet}%
 \Hypertarget{OperatorFunctorSet_md_docs_named_reqs_OperatorFunctorSet}%
 An {\itshape Operator\+Functor\+Set} is a structural type that encapsulates and unifies type constraints and behavior for overloaded operators of a user-\/provided class type. {\ttfamily utils\+:\+:$\ast$\+\_\+op} accepts {\itshape Operator\+Functor\+Set}(s) as template parameter and translates them into operator overloads, which is then expected to be inherited as part of the mixin pattern. Its use is most appropriate in a scenario where the child type is a wrapper around an underlying type for which such operations are well-\/defined.\hypertarget{OperatorFunctorSet_autotoc_md9}{}\doxysubsection{Requirements}\label{OperatorFunctorSet_autotoc_md9}
@@ -275,7 +275,7 @@ An {\itshape Operator\+Functor\+Set\+Template} is a class template declared as s
 \end{longtabu}
 
 
-An instance of such a template is an {\itshape Operator\+Functor\+Set} for a class type {\ttfamily T} if it satisfies all requirements below, for each \$I\textbackslash{}in\mbox{[}N\mbox{]}\$. \hypertarget{OperatorFunctorSet_autotoc_md10}{}\doxysubsubsection{Notations}\label{OperatorFunctorSet_autotoc_md10}
+An instance of such a template is an {\itshape Operator\+Functor\+Set} for a class type {\ttfamily T} if it satisfies all requirements below, for each $I\in[N]$. \hypertarget{OperatorFunctorSet_autotoc_md10}{}\doxysubsubsection{Notations}\label{OperatorFunctorSet_autotoc_md10}
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
 \hline
