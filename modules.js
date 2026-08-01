@@ -6,5 +6,7 @@ var modules =
     [ "<sub>utils::</sub>is_same_sign", "group__is__same__sign.html", "group__is__same__sign" ],
     [ "<sub>utils::</sub>epsilon_of", "group__epsilon__of.html", "group__epsilon__of" ],
     [ "<sub>utils::</sub>is_lossless_convertible", "group__is__lossless__convertible.html", "group__is__lossless__convertible" ],
-    [ "$to_underlying <sub>utils::integer::</sub>to_underlying", "group__integer.html", "group__integer" ]
+    [ "$to_underlying utils::integer::to_underlying", "group__integer.html", "group__integer" ],
+    [ "utils::integer::integer", "group__integerinteger.html", "group__integerinteger" ],
+    [ "<=> utils::integer::operator==, utils::integer::operator<=>", "group__integeroperator.html", "group__integeroperator" ]
 ];

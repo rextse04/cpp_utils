@@ -1,0 +1,93 @@
+\hypertarget{group__integerinteger}{}\doxysection{utils\+::integer\+::integer}
+\label{group__integerinteger}\index{utils::integer::integer@{utils::integer::integer}}
+
+
+Default-\/initializes {\ttfamily under\+\_\+}.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{group__integerinteger_gaa02e1252b219efc689eeb9e0db2eb689}{utils\+::integer$<$ T, IB, BB, SB $>$\+::integer}} ()=default
+\item 
+{\footnotesize template$<$typename Other , typename U  = decltype(to\+\_\+underlying(std\+::declval$<$\+Other\&\&$>$()))$>$ }\\\mbox{\hyperlink{group__integerinteger_gaf70aa92e30b685f150ed14eedb1474b6}{utils\+::integer$<$ T, IB, BB, SB $>$\+::explicit}} (!lossless\+\_\+convertible\+\_\+to$<$ U, T $>$) const expr \mbox{\hyperlink{structutils_1_1integer}{integer}}(Other \&\&other) noexcept(std\+::is\+\_\+nothrow\+\_\+constructible\+\_\+v$<$ T, U $>$)
+\begin{DoxyCompactList}\small\item\em Conversion from a (possibly wrapped) integer-\/like value {\ttfamily other}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Other $>$ \newline
+requires (std\+::is\+\_\+floating\+\_\+point\+\_\+v$<$std\+::remove\+\_\+cvref\+\_\+t$<$Other$>$$>$)}\\constexpr \mbox{\hyperlink{group__integerinteger_ga91c823090d72a537bd3c956431720387}{utils\+::integer$<$ T, IB, BB, SB $>$\+::integer}} (Other \&\&other) noexcept(std\+::is\+\_\+nothrow\+\_\+constructible\+\_\+v$<$ T, Other \&\& $>$)
+\begin{DoxyCompactList}\small\item\em Conversion from a floating point value {\ttfamily other}. The constructor is explicit as there is potential precision loss. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Other , typename... Ts, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
+requires ((std\+::is\+\_\+arithmetic\+\_\+v$<$OtherD$>$ $\vert$$\vert$ \mbox{\hyperlink{group__is__integer__like_ga3e785f8bbe5579cdb6684c29d19d4fe7}{is\+\_\+integer\+\_\+like\+\_\+v}}$<$OtherD$>$) \&\& sizeof...(Ts) == 0)}\\consteval \mbox{\hyperlink{group__integerinteger_ga55a3f0ae8dc08e5697d2cf1233302463}{utils\+::integer$<$ T, IB, BB, SB $>$\+::integer}} (Other \&\&other, Ts...)
+\begin{DoxyCompactList}\small\item\em This allows implicit conversions from numbers known at compile time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Default-\/initializes {\ttfamily under\+\_\+}. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__integerinteger_gaf70aa92e30b685f150ed14eedb1474b6}\label{group__integerinteger_gaf70aa92e30b685f150ed14eedb1474b6}} 
+\index{utils::integer::integer@{utils::integer::integer}!explicit@{explicit}}
+\index{explicit@{explicit}!utils::integer::integer@{utils::integer::integer}}
+\doxysubsubsection{\texorpdfstring{explicit()}{explicit()}}
+{\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
+template$<$typename Other , typename U  = decltype(to\+\_\+underlying(std\+::declval$<$\+Other\&\&$>$()))$>$ \\
+\mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::explicit (\begin{DoxyParamCaption}\item[{!lossless\+\_\+convertible\+\_\+to$<$ U, T $>$}]{ }\end{DoxyParamCaption}) const \&\&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Conversion from a (possibly wrapped) integer-\/like value {\ttfamily other}. 
+
+If {\ttfamily T} is unsigned and {\ttfamily other \texorpdfstring{$<$}{<} 0}, it wraps around. Explicit if {\ttfamily \mbox{\hyperlink{conceptutils_1_1lossless__convertible__to}{utils\+::lossless\+\_\+convertible\+\_\+to}}\texorpdfstring{$<$}{<}U, T\texorpdfstring{$>$}{>}} is false. 
+
+Definition at line \mbox{\hyperlink{integer_8hpp_source_l00648}{648}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
+
+\mbox{\Hypertarget{group__integerinteger_gaa02e1252b219efc689eeb9e0db2eb689}\label{group__integerinteger_gaa02e1252b219efc689eeb9e0db2eb689}} 
+\index{utils::integer::integer@{utils::integer::integer}!integer@{integer}}
+\index{integer@{integer}!utils::integer::integer@{utils::integer::integer}}
+\doxysubsubsection{\texorpdfstring{integer()}{integer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
+constexpr \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::\mbox{\hyperlink{structutils_1_1integer}{integer}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [default]}}
+
+\mbox{\Hypertarget{group__integerinteger_ga91c823090d72a537bd3c956431720387}\label{group__integerinteger_ga91c823090d72a537bd3c956431720387}} 
+\index{utils::integer::integer@{utils::integer::integer}!integer@{integer}}
+\index{integer@{integer}!utils::integer::integer@{utils::integer::integer}}
+\doxysubsubsection{\texorpdfstring{integer()}{integer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
+template$<$typename Other $>$ \newline
+requires (std\+::is\+\_\+floating\+\_\+point\+\_\+v$<$std\+::remove\+\_\+cvref\+\_\+t$<$Other$>$$>$)\\
+constexpr \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::\mbox{\hyperlink{structutils_1_1integer}{integer}} (\begin{DoxyParamCaption}\item[{Other \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Conversion from a floating point value {\ttfamily other}. The constructor is explicit as there is potential precision loss. 
+
+
+
+Definition at line \mbox{\hyperlink{integer_8hpp_source_l00655}{655}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
+
+\mbox{\Hypertarget{group__integerinteger_ga55a3f0ae8dc08e5697d2cf1233302463}\label{group__integerinteger_ga55a3f0ae8dc08e5697d2cf1233302463}} 
+\index{utils::integer::integer@{utils::integer::integer}!integer@{integer}}
+\index{integer@{integer}!utils::integer::integer@{utils::integer::integer}}
+\doxysubsubsection{\texorpdfstring{integer()}{integer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
+template$<$typename Other , typename... Ts, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
+requires ((std\+::is\+\_\+arithmetic\+\_\+v$<$OtherD$>$ $\vert$$\vert$ \mbox{\hyperlink{group__is__integer__like_ga3e785f8bbe5579cdb6684c29d19d4fe7}{is\+\_\+integer\+\_\+like\+\_\+v}}$<$OtherD$>$) \&\& sizeof...(Ts) == 0)\\
+consteval \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::\mbox{\hyperlink{structutils_1_1integer}{integer}} (\begin{DoxyParamCaption}\item[{Other \&\&}]{other,  }\item[{Ts...}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This allows implicit conversions from numbers known at compile time. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::overflow\+\_\+error} & (at compile time) if {\ttfamily other} cannot be represented by {\ttfamily T}, after wrapping around {\ttfamily other} if {\ttfamily T} is unsigned. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyRemark}{Remarks}
+{\ttfamily Ts} exists solely to lower the priority of this constructor in overload resolution. 
+\end{DoxyRemark}
+
+
+Definition at line \mbox{\hyperlink{integer_8hpp_source_l00663}{663}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
+

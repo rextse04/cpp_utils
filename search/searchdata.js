@@ -11,7 +11,7 @@ var indexSectionsWithContent =
   8: "cnov",
   9: "abgos",
   10: "u",
-  11: "$<",
+  11: "$<u",
   12: "dn",
   13: "u"
 };

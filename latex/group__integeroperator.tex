@@ -1,0 +1,106 @@
+\hypertarget{group__integeroperator}{}\doxysection{\texorpdfstring{$<$}{<}=\texorpdfstring{$>$}{>} utils\+::integer\+::operator==, utils\+::integer\+::operator\texorpdfstring{$<$}{<}=\texorpdfstring{$>$}{>}}
+\label{group__integeroperator}\index{$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$@{$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$}}
+
+
+Conversion to references to underlying type.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Self , typename Other , typename SelfD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Self$>$, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
+requires (\mbox{\hyperlink{group__is__same__sign_gae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)}\\constexpr decltype(auto) \mbox{\hyperlink{group__integeroperator_gaf85e7fb0e0b45e09342748f906eace2f}{utils\+::integer$<$ T, IB, BB, SB $>$\+::operator==}} (this Self \&\&self, Other \&\&other) noexcept(noexcept(std\+::forward\+\_\+like$<$ Self $>$(self.\+under\+\_\+)==\mbox{\hyperlink{group__integer_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}}(std\+::forward$<$ Other $>$(other))))
+\item 
+{\footnotesize template$<$typename Self , typename Other , typename SelfD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Self$>$, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
+requires (\mbox{\hyperlink{group__is__same__sign_gae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)}\\constexpr decltype(auto) \mbox{\hyperlink{group__integeroperator_ga917fdd63d11629b7a48f77bb20bbb08a}{utils\+::integer$<$ T, IB, BB, SB $>$\+::operator$<$=$>$}} (this Self \&\&self, Other \&\&other) noexcept(noexcept(std\+::forward\+\_\+like$<$ Self $>$(self.\+under\+\_\+)$<$=$>$ \mbox{\hyperlink{group__integer_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}}(std\+::forward$<$ Other $>$(other))))
+\item 
+{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__integeroperator_ga527b405c4834bc14b214685992a408a6}{utils\+::integer$<$ T, IB, BB, SB $>$\+::operator U\&}} () \&noexcept
+\item 
+{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__integeroperator_ga44880db13000949ef632a1e7b5d8ea25}{utils\+::integer$<$ T, IB, BB, SB $>$\+::operator const U \&}} () const \&noexcept
+\item 
+{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__integeroperator_gaa8e0febb0ee6e7363027b03f33e507d1}{utils\+::integer$<$ T, IB, BB, SB $>$\+::operator U\&\&}} () \&\&noexcept
+\item 
+{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__integeroperator_gae93bf5d9fe4d50c5143053abab45416e}{utils\+::integer$<$ T, IB, BB, SB $>$\+::operator const U \&\&}} () const \&\&noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Conversion to references to underlying type. 
+
+{\ttfamily \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}} can be compared with an {\ttfamily \mbox{\hyperlink{conceptutils_1_1integer__like}{utils\+::integer\+\_\+like}}} type if and only if both have the same signedness (either both signed, or both unsigned). 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__integeroperator_ga44880db13000949ef632a1e7b5d8ea25}\label{group__integeroperator_ga44880db13000949ef632a1e7b5d8ea25}} 
+\index{$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$@{$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$}!operator const U \&@{operator const U \&}}
+\index{operator const U \&@{operator const U \&}!$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$@{$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$}}
+\doxysubsubsection{\texorpdfstring{operator const U \&()}{operator const U \&()}}
+{\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
+template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ \\
+constexpr \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::operator const U \& (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const \&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{integer_8hpp_source_l00697}{697}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
+
+\mbox{\Hypertarget{group__integeroperator_gae93bf5d9fe4d50c5143053abab45416e}\label{group__integeroperator_gae93bf5d9fe4d50c5143053abab45416e}} 
+\index{$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$@{$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$}!operator const U \&\&@{operator const U \&\&}}
+\index{operator const U \&\&@{operator const U \&\&}!$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$@{$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$}}
+\doxysubsubsection{\texorpdfstring{operator const U \&\&()}{operator const U \&\&()}}
+{\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
+template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ \\
+constexpr \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::operator const U \&\& (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const \&\&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{integer_8hpp_source_l00701}{701}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
+
+\mbox{\Hypertarget{group__integeroperator_ga527b405c4834bc14b214685992a408a6}\label{group__integeroperator_ga527b405c4834bc14b214685992a408a6}} 
+\index{$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$@{$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$}!operator U\&@{operator U\&}}
+\index{operator U\&@{operator U\&}!$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$@{$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$}}
+\doxysubsubsection{\texorpdfstring{operator U\&()}{operator U\&()}}
+{\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
+template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ \\
+constexpr \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::operator U\& (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) \&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{integer_8hpp_source_l00695}{695}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
+
+\mbox{\Hypertarget{group__integeroperator_gaa8e0febb0ee6e7363027b03f33e507d1}\label{group__integeroperator_gaa8e0febb0ee6e7363027b03f33e507d1}} 
+\index{$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$@{$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$}!operator U\&\&@{operator U\&\&}}
+\index{operator U\&\&@{operator U\&\&}!$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$@{$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$}}
+\doxysubsubsection{\texorpdfstring{operator U\&\&()}{operator U\&\&()}}
+{\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
+template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ \\
+constexpr \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::operator U\&\& (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) \&\&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{integer_8hpp_source_l00699}{699}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
+
+\mbox{\Hypertarget{group__integeroperator_ga917fdd63d11629b7a48f77bb20bbb08a}\label{group__integeroperator_ga917fdd63d11629b7a48f77bb20bbb08a}} 
+\index{$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$@{$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$}!operator$<$=$>$@{operator$<$=$>$}}
+\index{operator$<$=$>$@{operator$<$=$>$}!$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$@{$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$=$>$()}{operator<=>()}}
+{\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
+template$<$typename Self , typename Other , typename SelfD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Self$>$, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
+requires (\mbox{\hyperlink{group__is__same__sign_gae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)\\
+constexpr decltype(auto) \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::operator$<$=$>$ (\begin{DoxyParamCaption}\item[{this Self \&\&}]{self,  }\item[{Other \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{integer_8hpp_source_l00685}{685}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
+
+\mbox{\Hypertarget{group__integeroperator_gaf85e7fb0e0b45e09342748f906eace2f}\label{group__integeroperator_gaf85e7fb0e0b45e09342748f906eace2f}} 
+\index{$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$@{$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$}!operator==@{operator==}}
+\index{operator==@{operator==}!$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$@{$<$=$>$ utils::integer::operator==, utils::integer::operator$<$=$>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
+template$<$typename Self , typename Other , typename SelfD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Self$>$, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
+requires (\mbox{\hyperlink{group__is__same__sign_gae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)\\
+constexpr decltype(auto) \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::operator== (\begin{DoxyParamCaption}\item[{this Self \&\&}]{self,  }\item[{Other \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{integer_8hpp_source_l00678}{678}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
+
