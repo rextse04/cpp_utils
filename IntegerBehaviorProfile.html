@@ -96,7 +96,7 @@ Requirements</h1>
 <div class="line">    ...</div>
 <div class="line">    static constexpr auto funcs_n = FuncsN;</div>
 <div class="line">};</div>
-</div><!-- fragment --><p> where every <code>op_functors_I</code> is an [<em>OperatorFunctorSetTemplate</em>](OperatorFunctorSet). The names of template parameters and member variables are only for illustration and may appear otherwise in implementation.</p>
+</div><!-- fragment --><p> where every <code>op_functors_I</code> is an <a href="OperatorFunctorSet.html"><em>OperatorFunctorSetTemplate</em></a>. The names of template parameters and member variables are only for illustration and may appear otherwise in implementation.</p>
 <p >Let <code>IT</code> be a theoretical collection of wrapper types such that <code>IT&lt;Int&gt;</code> represents a unique wrapper around <code>Int</code> in <code>IT</code> for any integer-like type <code>Int</code>. In addition, every <code>IT&lt;Int&gt;</code> (denoted <code>I</code> below) satisfies the following properties:</p><ol type="1">
 <li><code>I</code> has an instance variable of type <code>Int</code> that represents the value of the instance. (The variable is called the <em>underlying object</em> of the instance.)</li>
 <li><code>I::underlying_type</code> is <code>Int</code>.</li>
@@ -105,7 +105,7 @@ Requirements</h1>
 <li>Given a (possibly cv-qualified) object <code>w</code> of type <code>I</code>, <code>+w</code> gives a copy of the underlying object.</li>
 <li><code>std::numeric_limits</code> is meaningfully specialized for <code>IT&lt;Int&gt;</code>.</li>
 </ol>
-<p >Then, an instance of an <em>IntegerBehaviorProfileTemplate</em> is an <em>IntegerBehaviorProfile</em> if <code>FuncsI</code> is an [<em>OperatorFunctorSet</em>](OperatorFunctorSet) for every type in <code>IT</code>, for every $I\in[N]$. </p>
+<p >Then, an instance of an <em>IntegerBehaviorProfileTemplate</em> is an <em>IntegerBehaviorProfile</em> if <code>FuncsI</code> is an <a href="OperatorFunctorSet.html"><em>OperatorFunctorSet</em></a> for every type in <code>IT</code>, for every $I\in[N]$. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

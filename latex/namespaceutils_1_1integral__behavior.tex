@@ -13,12 +13,12 @@ struct \mbox{\hyperlink{structutils_1_1integral__behavior_1_1default__asg__op__t
 struct \mbox{\hyperlink{structutils_1_1integral__behavior_1_1default__binary__op__traits}{default\+\_\+binary\+\_\+op\+\_\+traits}}
 \begin{DoxyCompactList}\small\item\em Default trait set for binary operators for {\ttfamily \mbox{\hyperlink{namespaceutils_1_1integral__behavior_a16c01446283f45b336955e3e2870dc98}{utils\+::integral\+\_\+behavior\+::profile\+\_\+from}}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{profile}}
-\begin{DoxyCompactList}\small\item\em An \mbox{[}{\itshape Integer\+Behavior\+Profile\+Template}\mbox{]}(Integer\+Behavior\+Profile) for integral arithmetics. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em An \href{IntegerBehaviorProfile.html}{\texttt{ {\itshape Integer\+Behavior\+Profile\+Template}}} for integral arithmetics. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$auto Plus, auto Minus, auto Mul, auto Div, auto Mod, template$<$ typename, typename $>$ typename Common\+Type\+Trait = sane\+\_\+common\+\_\+type, template$<$ typename, typename $>$ typename Result\+Trait = Common\+Type\+Trait, typename Binary\+Traits  = default\+\_\+binary\+\_\+op\+\_\+traits$<$\+Common\+Type\+Trait, Result\+Trait$>$, typename Asg\+Traits  = default\+\_\+asg\+\_\+op\+\_\+traits$>$ }\\constexpr \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{profile}}$<$\{ .plus=detail\+::integer\+\_\+transform$<$ Plus, Common\+Type\+Trait $>$\{\},.minus=detail\+::integer\+\_\+transform$<$ Minus, Common\+Type\+Trait $>$\{\},.multiplies=detail\+::integer\+\_\+transform$<$ Mul, Common\+Type\+Trait $>$\{\},.divides=detail\+::integer\+\_\+transform$<$ Div, Common\+Type\+Trait $>$\{\},.modulus=detail\+::integer\+\_\+transform$<$ Mod, Common\+Type\+Trait $>$\{\},.binary\+\_\+traits=Binary\+Traits\{\} \}, \{ .plus\+\_\+asg=detail\+::integer\+\_\+asg\+\_\+wrap$<$ Plus $>$\{\},.minus\+\_\+asg=detail\+::integer\+\_\+asg\+\_\+wrap$<$ Minus $>$\{\},.multiplies\+\_\+asg=detail\+::integer\+\_\+asg\+\_\+wrap$<$ Mul $>$\{\},.divides\+\_\+asg=detail\+::integer\+\_\+asg\+\_\+wrap$<$ Div $>$\{\},.modulus\+\_\+asg=detail\+::integer\+\_\+asg\+\_\+wrap$<$ Mod $>$\{\},.asg\+\_\+traits=Asg\+Traits\{\} \}$>$ \mbox{\hyperlink{namespaceutils_1_1integral__behavior_a16c01446283f45b336955e3e2870dc98}{profile\+\_\+from}}
-\begin{DoxyCompactList}\small\item\em Convenience variable template to make an \mbox{[}{\itshape Integer\+Behavior\+Profile}\mbox{]}(Integer\+Behavior\+Profile) for integral arithmetics. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Convenience variable template to make an \href{IntegerBehaviorProfile.html}{\texttt{ {\itshape Integer\+Behavior\+Profile}}} for integral arithmetics. \end{DoxyCompactList}\item 
 constexpr auto \mbox{\hyperlink{namespaceutils_1_1integral__behavior_a5a3d58f1086283b7dcae9045592988fb}{standard}}
 \begin{DoxyCompactList}\small\item\em Default C++ integral arithmetic rules. \end{DoxyCompactList}\item 
 constexpr auto \mbox{\hyperlink{namespaceutils_1_1integral__behavior_a7a044520a743b7f7e24fde855fad4563}{sane}}
@@ -67,7 +67,7 @@ constexpr \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{profile
 
 
 
-Convenience variable template to make an \mbox{[}{\itshape Integer\+Behavior\+Profile}\mbox{]}(Integer\+Behavior\+Profile) for integral arithmetics. 
+Convenience variable template to make an \href{IntegerBehaviorProfile.html}{\texttt{ {\itshape Integer\+Behavior\+Profile}}} for integral arithmetics. 
 
 For every relevant operator {\ttfamily @} and the corresponding functor {\ttfamily F} (supplied in template parameters), the synthesized functor {\ttfamily op} behaves as follows\+:
 \begin{DoxyEnumerate}

@@ -137,9 +137,9 @@ Collaboration diagram for utils::integer&lt; T, IB, BB, SB &gt;:</div>
 <area shape="rect" href="structutils_1_1shift__asg__ops.html" title=" " alt="" coords="6,305,139,347"/>
 <area shape="rect" href="structutils_1_1sign__ops.html" title="Adds support for +t and &#45;t." alt="" coords="195,313,358,339"/>
 <area shape="rect" href="structutils_1_1fix__ops.html" title="Adds support for ++t, t++, &#45;&#45;t and t&#45;&#45;." alt="" coords="201,363,352,390"/>
-<area shape="rect" href="structutils_1_1integral__behavior_1_1profile.html" title="An [IntegerBehaviorProfileTemplate](IntegerBehaviorProfile) for integral arithmetics." alt="" coords="484,363,671,404"/>
-<area shape="rect" href="structutils_1_1bit__behavior_1_1profile.html" title="An [IntegerBehaviorProfileTemplate](IntegerBehaviorProfile) for bit operations." alt="" coords="484,428,671,469"/>
-<area shape="rect" href="structutils_1_1shift__behavior_1_1profile.html" title="An [IntegerBehaviorProfileTemplate](IntegerBehaviorProfile) for bit shifts." alt="" coords="484,493,671,535"/>
+<area shape="rect" href="structutils_1_1integral__behavior_1_1profile.html" title="An IntegerBehaviorProfileTemplate for integral arithmetics." alt="" coords="484,363,671,404"/>
+<area shape="rect" href="structutils_1_1bit__behavior_1_1profile.html" title="An IntegerBehaviorProfileTemplate for bit operations." alt="" coords="484,428,671,469"/>
+<area shape="rect" href="structutils_1_1shift__behavior_1_1profile.html" title="An IntegerBehaviorProfileTemplate for bit shifts." alt="" coords="484,493,671,535"/>
 <area shape="rect" title=" " alt="" coords="558,559,597,586"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -251,9 +251,9 @@ struct utils::integer&lt; T, IB, BB, SB &gt;</div><p >An integer wrapper with ad
 <p >The template is also flexible, in that the underlying type <code>T</code> can be any <em>integer-like</em> type. In other words, it is possible to use the class template on a non-standard big integer type as long as it meets all requirements specified in the standard for <em>integer-like</em> types. Specialize <code><a class="el" href="group__is__integer__like.html#structutils_1_1is__integer__like">utils::is_integer_like</a></code> to declare as a type as <em>integer-like</em>.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">IB</td><td>[<em>IntegerBehaviorProfile</em>](IntegerBehaviorProfile) for integral operations. </td></tr>
-    <tr><td class="paramname">BB</td><td>[<em>IntegerBehaviorProfile</em>](IntegerBehaviorProfile) for bit operations. </td></tr>
-    <tr><td class="paramname">SB</td><td>[<em>IntegerBehaviorProfile</em>](IntegerBehaviorProfile) for bit shifts. </td></tr>
+    <tr><td class="paramname">IB</td><td><a href="IntegerBehaviorProfile.html"><em>IntegerBehaviorProfile</em></a> for integral operations. </td></tr>
+    <tr><td class="paramname">BB</td><td><a href="IntegerBehaviorProfile.html"><em>IntegerBehaviorProfile</em></a> for bit operations. </td></tr>
+    <tr><td class="paramname">SB</td><td><a href="IntegerBehaviorProfile.html"><em>IntegerBehaviorProfile</em></a> for bit shifts. </td></tr>
   </table>
   </dd>
 </dl>

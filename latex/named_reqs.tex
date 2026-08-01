@@ -233,7 +233,7 @@ An {\itshape Integer\+Behavior\+Profile\+Template} is a class template declared 
 \DoxyCodeLine{\};}
 
 \end{DoxyCode}
- where every {\ttfamily op\+\_\+functors\+\_\+I} is an \mbox{[}{\itshape Operator\+Functor\+Set\+Template}\mbox{]}(Operator\+Functor\+Set). The names of template parameters and member variables are only for illustration and may appear otherwise in implementation.
+ where every {\ttfamily op\+\_\+functors\+\_\+I} is an \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}}. The names of template parameters and member variables are only for illustration and may appear otherwise in implementation.
 
 Let {\ttfamily IT} be a theoretical collection of wrapper types such that {\ttfamily IT\texorpdfstring{$<$}{<}Int\texorpdfstring{$>$}{>}} represents a unique wrapper around {\ttfamily Int} in {\ttfamily IT} for any integer-\/like type {\ttfamily Int}. In addition, every {\ttfamily IT\texorpdfstring{$<$}{<}Int\texorpdfstring{$>$}{>}} (denoted {\ttfamily I} below) satisfies the following properties\+:
 \begin{DoxyEnumerate}
@@ -245,7 +245,7 @@ Let {\ttfamily IT} be a theoretical collection of wrapper types such that {\ttfa
 \item {\ttfamily std\+::numeric\+\_\+limits} is meaningfully specialized for {\ttfamily IT\texorpdfstring{$<$}{<}Int\texorpdfstring{$>$}{>}}.
 \end{DoxyEnumerate}
 
-Then, an instance of an {\itshape Integer\+Behavior\+Profile\+Template} is an {\itshape Integer\+Behavior\+Profile} if {\ttfamily FuncsI} is an \mbox{[}{\itshape Operator\+Functor\+Set}\mbox{]}(Operator\+Functor\+Set) for every type in {\ttfamily IT}, for every \$I\textbackslash{}in\mbox{[}N\mbox{]}\$. \hypertarget{OperatorFunctorSet}{}\doxysection{Named Requirements\+: \texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Operator\+Functor\+Set\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}\label{OperatorFunctorSet}
+Then, an instance of an {\itshape Integer\+Behavior\+Profile\+Template} is an {\itshape Integer\+Behavior\+Profile} if {\ttfamily FuncsI} is an \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set}}} for every type in {\ttfamily IT}, for every \$I\textbackslash{}in\mbox{[}N\mbox{]}\$. \hypertarget{OperatorFunctorSet}{}\doxysection{Named Requirements\+: \texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Operator\+Functor\+Set\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}\label{OperatorFunctorSet}
 \label{OperatorFunctorSet_md_docs_named_reqs_OperatorFunctorSet}%
 \Hypertarget{OperatorFunctorSet_md_docs_named_reqs_OperatorFunctorSet}%
 An {\itshape Operator\+Functor\+Set} is a structural type that encapsulates and unifies type constraints and behavior for overloaded operators of a user-\/provided class type. {\ttfamily utils\+:\+:$\ast$\+\_\+op} accepts {\itshape Operator\+Functor\+Set}(s) as template parameter and translates them into operator overloads, which is then expected to be inherited as part of the mixin pattern. Its use is most appropriate in a scenario where the child type is a wrapper around an underlying type for which such operations are well-\/defined.\hypertarget{OperatorFunctorSet_autotoc_md9}{}\doxysubsection{Requirements}\label{OperatorFunctorSet_autotoc_md9}
@@ -398,7 +398,7 @@ A class type {\ttfamily T} is a {\ttfamily Result} if it fits into one of follow
 \endhead
 {\itshape Type\+Result}   &{\ttfamily T\+::type} names a type.    \\\cline{1-2}
 {\itshape Value\+Result}   &{\ttfamily T} has a constexpr static data member named {\ttfamily value}.    \\\cline{1-2}
-{\itshape Trait\+Result}   &{\ttfamily T\+::trait} names a class template which satisfies \mbox{[}{\itshape Trait}\mbox{]}(Trait), such that a {\itshape Type\+Result} or {\itshape Value\+Result} can be obtained in a finite number of steps for any well-\/formed sequence of nested template instantiations.   \\\cline{1-2}
+{\itshape Trait\+Result}   &{\ttfamily T\+::trait} names a class template which satisfies \href{Trait.html}{\texttt{ {\itshape Trait}}}, such that a {\itshape Type\+Result} or {\itshape Value\+Result} can be obtained in a finite number of steps for any well-\/formed sequence of nested template instantiations.   \\\cline{1-2}
 \end{longtabu}
 \hypertarget{Result_autotoc_md19}{}\doxysubsection{Remarks}\label{Result_autotoc_md19}
 The final clause in the conditions for {\itshape Trait\+Result} is necessary to prevent circular definition, as illustrated by the following contrived example\+: 
@@ -417,9 +417,9 @@ The final clause in the conditions for {\itshape Trait\+Result} is necessary to 
 {\itshape Trait} is a generalization of {\itshape Unary\+Type\+Trait} and {\itshape Binary\+Type\+Trait} in the standard library.\hypertarget{Trait_autotoc_md20}{}\doxysubsection{Requirements}\label{Trait_autotoc_md20}
 A class template or alias template {\ttfamily Tmpl} satisfies {\itshape Trait} if every well-\/formed instantiation of {\ttfamily Tmpl} produces a
 \begin{DoxyEnumerate}
-\item \mbox{[}{\itshape Type\+Result}\mbox{]}(Result), in which case it is a {\itshape Type\+Trait}; or
-\item \mbox{[}{\itshape Value\+Result}\mbox{]}(Result), in which case it is a {\itshape Value\+Trait}; or
-\item \mbox{[}{\itshape Trait\+Result}\mbox{]}(Result), in which case it is a {\itshape Meta\+Trait}.
+\item \href{Result.html}{\texttt{ {\itshape Type\+Result}}}, in which case it is a {\itshape Type\+Trait}; or
+\item \href{Result.html}{\texttt{ {\itshape Value\+Result}}}, in which case it is a {\itshape Value\+Trait}; or
+\item \href{Result.html}{\texttt{ {\itshape Trait\+Result}}}, in which case it is a {\itshape Meta\+Trait}.
 \end{DoxyEnumerate}
 
 A {\itshape Trait} can belong to one or more of the above categories. 

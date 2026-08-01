@@ -1,4 +1,4 @@
 <map id="utils::shift_op_functors&lt; ShiftLeft, ShiftRight, BinaryTraits &gt;" name="utils::shift_op_functors&lt; ShiftLeft, ShiftRight, BinaryTraits &gt;">
-<area shape="rect" id="node1" title="[OperatorFunctorSetTemplate](OperatorFunctorSet) for utils::shift_ops." alt="" coords="5,109,157,165"/>
+<area shape="rect" id="node1" title="OperatorFunctorSetTemplate for utils::shift_ops." alt="" coords="5,109,157,165"/>
 <area shape="rect" id="node2" href="$structutils_1_1default__binary__op__traits.html" title="The default trait set for binary operators, except assignment and prefix operators." alt="" coords="15,5,147,47"/>
 </map>

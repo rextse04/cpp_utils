@@ -11,12 +11,12 @@ Common strategies for bit shifts.
 struct \mbox{\hyperlink{structutils_1_1shift__behavior_1_1default__binary__op__traits}{default\+\_\+binary\+\_\+op\+\_\+traits}}
 \begin{DoxyCompactList}\small\item\em Default trait set for binary operations for {\ttfamily \mbox{\hyperlink{namespaceutils_1_1shift__behavior_a661ce0fc9bfb0fb4f8c15cb656cf03ae}{utils\+::shift\+\_\+behavior\+::profile\+\_\+from}}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{profile}}
-\begin{DoxyCompactList}\small\item\em An \mbox{[}{\itshape Integer\+Behavior\+Profile\+Template}\mbox{]}(Integer\+Behavior\+Profile) for bit shifts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em An \href{IntegerBehaviorProfile.html}{\texttt{ {\itshape Integer\+Behavior\+Profile\+Template}}} for bit shifts. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$auto Shift\+Left, auto Shift\+Right, typename Binary\+Traits  = default\+\_\+binary\+\_\+op\+\_\+traits, typename Asg\+Traits  = default\+\_\+asg\+\_\+op\+\_\+traits$>$ }\\constexpr \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{profile}}$<$\{ .\mbox{\hyperlink{structutils_1_1shift__left}{shift\+\_\+left}}=Shift\+Left,.\mbox{\hyperlink{structutils_1_1shift__right}{shift\+\_\+right}}=Shift\+Right,.binary\+\_\+traits=Binary\+Traits\{\} \}, \{ .\mbox{\hyperlink{structutils_1_1shift__left__asg}{shift\+\_\+left\+\_\+asg}}=\mbox{\hyperlink{structutils_1_1asg__wrap}{asg\+\_\+wrap}}$<$ Shift\+Left $>$\{\},.\mbox{\hyperlink{structutils_1_1shift__right__asg}{shift\+\_\+right\+\_\+asg}}=\mbox{\hyperlink{structutils_1_1asg__wrap}{asg\+\_\+wrap}}$<$ Shift\+Right $>$\{\},.asg\+\_\+traits=Asg\+Traits\{\} \}$>$ \mbox{\hyperlink{namespaceutils_1_1shift__behavior_a661ce0fc9bfb0fb4f8c15cb656cf03ae}{profile\+\_\+from}}
-\begin{DoxyCompactList}\small\item\em Convenience variable template to make an \mbox{[}{\itshape Integer\+Behavior\+Profile}\mbox{]}(Integer\+Behavior\+Profile) for bit shifts. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Convenience variable template to make an \href{IntegerBehaviorProfile.html}{\texttt{ {\itshape Integer\+Behavior\+Profile}}} for bit shifts. \end{DoxyCompactList}\item 
 constexpr auto \mbox{\hyperlink{namespaceutils_1_1shift__behavior_ad19cce7bdb19977b0ddb72994867aefb}{standard}} = \mbox{\hyperlink{namespaceutils_1_1shift__behavior_a661ce0fc9bfb0fb4f8c15cb656cf03ae}{profile\+\_\+from}}$<$\mbox{\hyperlink{structutils_1_1shift__left}{shift\+\_\+left}}\{\}, \mbox{\hyperlink{structutils_1_1shift__right}{shift\+\_\+right}}\{\}$>$
 \begin{DoxyCompactList}\small\item\em Default C++ bit-\/shift operation rules. \end{DoxyCompactList}\item 
 constexpr auto \mbox{\hyperlink{namespaceutils_1_1shift__behavior_a77008e298b1f980039cf05e51ac23515}{scalar}} = \mbox{\hyperlink{namespaceutils_1_1shift__behavior_a661ce0fc9bfb0fb4f8c15cb656cf03ae}{profile\+\_\+from}}$<$detail\+::scalar\+\_\+shift\+\_\+left\{\}, detail\+::scalar\+\_\+shift\+\_\+right\{\}$>$
@@ -74,7 +74,7 @@ constexpr \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{profile}}$
 
 
 
-Convenience variable template to make an \mbox{[}{\itshape Integer\+Behavior\+Profile}\mbox{]}(Integer\+Behavior\+Profile) for bit shifts. 
+Convenience variable template to make an \href{IntegerBehaviorProfile.html}{\texttt{ {\itshape Integer\+Behavior\+Profile}}} for bit shifts. 
 
 For every relevant operator {\ttfamily @} and the corresponding functor {\ttfamily F} (supplied in template parameters), the synthesized functor {\ttfamily op} behaves as follows\+:
 \begin{DoxyEnumerate}
