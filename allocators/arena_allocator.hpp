@@ -35,8 +35,8 @@ namespace utils::pmr {
     /// The following is a simple diagram illustrating the allocation strategy:
     /// @image html arena_allocator_internal.svg
     ///
-    /// All instances of this class satisfy [<i>BufferAllocator</i>](BufferAllocator.md) and `resource_allocator`.
-    /// Instances with `Sync` equal to `true` also satisfy [<i>ConvertibleAllocator</i>](BufferAllocator.md).
+    /// All instances of this class satisfy [<i>BufferAllocator</i>](BufferAllocator) and `resource_allocator`.
+    /// Instances with `Sync` equal to `true` also satisfy [<i>ConvertibleAllocator</i>](BufferAllocator).
     /// Consult their documentation for conditions and effects of member functions.
     /// @tparam T: `value_type`
     /// @tparam Sync: Whether allocator operations should be synchronized.

@@ -12,7 +12,7 @@ struct IntegerBehaviorProfileTemplate {
     static constexpr auto funcs_n = FuncsN;
 };
 ```
-where every `op_functors_I` is an [<i>OperatorFunctorSetTemplate</i>](OperatorFunctorSet.md).
+where every `op_functors_I` is an [<i>OperatorFunctorSetTemplate</i>](OperatorFunctorSet).
 The names of template parameters and member variables are only for illustration and may appear otherwise in implementation.
 
 Let `IT` be a theoretical collection of wrapper types such that `IT<Int>` represents a unique wrapper around `Int` in `IT`
@@ -32,4 +32,4 @@ where `v` is the underlying object of `w`.
 6. `std::numeric_limits` is meaningfully specialized for `IT<Int>`.
 
 Then, an instance of an <i>IntegerBehaviorProfileTemplate</i> is an <i>IntegerBehaviorProfile</i>
-if `FuncsI` is an [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for every type in `IT`, for every $I\in[N]$.
+if `FuncsI` is an [<i>OperatorFunctorSet</i>](OperatorFunctorSet) for every type in `IT`, for every $I\in[N]$.
