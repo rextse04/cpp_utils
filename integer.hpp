@@ -16,7 +16,19 @@
 #include "type.hpp"
 
 namespace utils {
-    /// @name is_integer_like
+    namespace detail {
+        template <typename>
+        struct is_integer_like : std::false_type {};
+        template <typename T>
+        struct is_integer_like<const T> : is_integer_like<std::remove_const_t<T>> {};
+        template <typename T>
+        struct is_integer_like<volatile T> : is_integer_like<std::remove_volatile_t<T>> {};
+        template <typename T>
+        struct is_integer_like<const volatile T> : is_integer_like<std::remove_cv_t<T>> {};
+        template <std::integral T>
+        struct is_integer_like<T> : std::true_type {};
+    }
+    /// @defgroup utils::is_integer_like
     /// @brief Determines if a type is integer like.
     ///
     /// The construct is used by the library to determine if a type (ignoring cv-qualifiers) is integer like.
@@ -24,22 +36,15 @@ namespace utils {
     /// such that there exists a type `T` where `std::remove_cvref_t<T>` is not a integer-like type
     /// (as specified by the standard library), but `utils::is_integer_like<T>::value` is `true`.
     /// @{
-    template <typename>
-    struct is_integer_like : std::false_type {};
     template <typename T>
-    struct is_integer_like<const T> : is_integer_like<std::remove_const_t<T>> {};
-    template <typename T>
-    struct is_integer_like<volatile T> : is_integer_like<std::remove_volatile_t<T>> {};
-    template <typename T>
-    struct is_integer_like<const volatile T> : is_integer_like<std::remove_cv_t<T>> {};
-    template <std::integral T>
-    struct is_integer_like<T> : std::true_type {};
+    struct is_integer_like : detail::is_integer_like<T> {};
     template <typename T>
     constexpr bool is_integer_like_v = is_integer_like<T>::value;
     template <typename T>
     concept integer_like = is_integer_like<T>::value;
     /// @}
-    /// @name width_of
+
+    /// @defgroup utils::width_of
     /// @brief Determines the width of `T` based on `Info`.
     ///
     /// "width" here is defined as the number of bits that participate in the determination of the value of the significand (mantissa)
@@ -51,7 +56,27 @@ namespace utils {
     template <typename T>
     constexpr int width_of_v = width_of<T>::value;
     /// @}
-    /// @name sane_common_type
+
+    namespace detail {
+        template <typename T, typename U>
+        struct sane_common_type : std::common_type<T, U> {};
+        template <typename T, typename U>
+        requires (std::numeric_limits<std::decay_t<T>>::is_specialized && std::numeric_limits<std::decay_t<U>>::is_specialized)
+        struct sane_common_type<T, U> {
+        private:
+            using TD = std::decay_t<T>; using UD = std::decay_t<U>;
+            using TInfo = std::numeric_limits<TD>; using UInfo = std::numeric_limits<UD>;
+            static constexpr bool TUS = !TInfo::is_signed, UUS = !UInfo::is_signed;
+            static constexpr int TW = width_of_v<TD>, UW = width_of_v<UD>;
+        public:
+            using type = std::conditional_t<(TW > UW), TD,
+                std::conditional_t<TW < UW, UD,
+                std::conditional_t<TUS || UUS, std::conditional_t<TUS, TD, UD>,
+                TD
+            >>>;
+        };
+    }
+    /// @defgroup utils::sane_common_type
     /// @brief Similar to usual arithmetic conversion, except that the promotion step is replaced by `utils::sane_promotion`.
     ///
     /// Given any types `T` and `U`, let `TD` and `UD` be `std::decay_t<T>` and `std::decay_t<U>` respectively.
@@ -64,30 +89,16 @@ namespace utils {
     /// In the above, the definition of `width` is identical to that in `utils::width_of`.
     /// @{
     template <typename T, typename U>
-    struct sane_common_type : std::common_type<T, U> {};
-    template <typename T, typename U>
-    requires (std::numeric_limits<std::decay_t<T>>::is_specialized && std::numeric_limits<std::decay_t<U>>::is_specialized)
-    struct sane_common_type<T, U> {
-    private:
-        using TD = std::decay_t<T>; using UD = std::decay_t<U>;
-        using TInfo = std::numeric_limits<TD>; using UInfo = std::numeric_limits<UD>;
-        static constexpr bool TUS = !TInfo::is_signed, UUS = !UInfo::is_signed;
-        static constexpr int TW = width_of_v<TD>, UW = width_of_v<UD>;
-    public:
-        using type = std::conditional_t<(TW > UW), TD,
-            std::conditional_t<TW < UW, UD,
-            std::conditional_t<TUS || UUS, std::conditional_t<TUS, TD, UD>,
-            TD
-        >>>;
-    };
+    struct sane_common_type : detail::sane_common_type<T, U> {};
     template <typename T, typename U>
     using sane_common_type_t = sane_common_type<T, U>::type;
     /// @}
-    /// @name is_same_sign
+
+    /// @defgroup utils::is_same_sign
     /// @brief Determines if `T` and `U` have the same sign.
-    /// @{
     /// Calculation is based on `TInfo` and `UInfo`, which default to respective instantiations of
     /// `std::numeric_limits`. They can be replaced by class types that provide the same interface as `std::numeric_limits`.
+    /// @{
     template <typename T, typename U, typename TInfo = std::numeric_limits<T>, typename UInfo = std::numeric_limits<U>>
     struct is_same_sign : std::bool_constant<TInfo::is_signed == UInfo::is_signed> {};
     template <typename T, typename U>
@@ -95,7 +106,8 @@ namespace utils {
     template <typename T, typename U>
     concept same_sign_as = is_same_sign<T, U>::value;
     /// @}
-    /// @name epsilon_of
+
+    /// @defgroup utils::epsilon_of
     /// @brief Extends the definition of `epsilon` in `std::numeric_limits` to integral types.
     ///
     /// The epsilon of a floating-point type is given by `Info::epsilon()`, while that of an integral type is `T(1)`.
@@ -107,7 +119,8 @@ namespace utils {
     template <typename T>
     constexpr T epsilon_of_v = epsilon_of<T>::value;
     /// @}
-    /// @name is_lossless_convertible
+
+    /// @defgroup utils::is_lossless_convertible
     /// @brief Determines if `From` can be converted to `To` without loss of information.
     ///
     /// Calculation is based on `FromInfo` and `ToInfo`, which default to respective instantiations of
@@ -608,7 +621,7 @@ namespace utils {
         /// @remark The member is only made public to preserve structural type.
         T under_;
 
-        /// @name to_underlying
+        /// @defgroup utils::integer::to_underlying
         /// @brief Get a reference to the underlying object of `x`.
         ///
         /// The static member function only has overloads for
@@ -623,7 +636,7 @@ namespace utils {
         static constexpr decltype(auto) to_underlying(U&& x) noexcept { return std::forward_like<U>(x.under_); }
         /// @}
 
-        /// @name Constructors
+        /// @defgroup utils::integer::integer
         /// @{
         /// @brief Default-initializes `under_`.
         constexpr integer() = default;
@@ -655,8 +668,7 @@ namespace utils {
         }
         /// @}
 
-        /// @name Comparison operators.
-        ///
+        /// @defgroup utils::integer::operator==,utils::integer::operator<=>
         /// `utils::integer` can be compared with an `utils::integer_like` type if and only if
         /// both have the same signedness (either both signed, or both unsigned).
         /// @{
@@ -676,7 +688,8 @@ namespace utils {
         }
         /// @}
 
-        /// @name Conversion to references to underlying type.
+        /// @defgroup utils::integer::operator
+        /// @brief Conversion to references to underlying type.
         /// @{
         template <std::same_as<T> U>
         constexpr operator U&() & noexcept { return under_; }
