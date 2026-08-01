@@ -636,7 +636,8 @@ namespace utils {
         static constexpr decltype(auto) to_underlying(U&& x) noexcept { return std::forward_like<U>(x.under_); }
         /// @}
 
-        /// @defgroup integerinteger utils::integer::integer
+        /// @defgroup integerconstructors utils::integer::integer
+        /// @brief Constructors.
         /// @{
         /// @brief Default-initializes `under_`.
         constexpr integer() = default;
