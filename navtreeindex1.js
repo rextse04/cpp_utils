@@ -214,9 +214,10 @@ var NAVTREEINDEX1 =
 "group__metaerase.html#ga57e2e26a9ed32b0384df07a98f53b377":[2,26,1],
 "group__metaerase.html#structutils_1_1meta_1_1erase":[2,26,0],
 "group__metaextract.html":[2,33],
-"group__metaextract.html#gacd07985a63eb37381aaa77c70f6ea190":[2,33,2],
+"group__metaextract.html#gacd07985a63eb37381aaa77c70f6ea190":[2,33,3],
 "group__metaextract.html#structutils_1_1meta_1_1extract":[2,33,0],
 "group__metaextract.html#structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4":[2,33,1],
+"group__metaextract.html#structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4_1_1trait":[2,33,2],
 "group__metainfer.html":[2,28],
 "group__metainfer.html#ga589006341bea1c7475635f68058edb53":[2,28,1],
 "group__metainfer.html#structutils_1_1meta_1_1infer":[2,28,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "group__metareduce.html#gac678341b60759542f0fc5edb1c4f20f1":[2,30,2],
 "group__metareduce.html#structutils_1_1meta_1_1reduce":[2,30,0],
 "group__metareduce.html#structutils_1_1meta_1_1reduce_3_01Trait_00_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4":[2,30,1],
-"group__metareplace.html":[2,27],
-"group__metareplace.html#ga44e3856c9561e053226ad2c473572a43":[2,27,1]
+"group__metareplace.html":[2,27]
 };

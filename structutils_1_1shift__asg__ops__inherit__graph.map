@@ -1,5 +1,0 @@
-<map id="utils::shift_asg_ops&lt; Funcs &gt;" name="utils::shift_asg_ops&lt; Funcs &gt;">
-<area shape="rect" id="node1" title="Adds support for a &lt;&lt;= b and a &gt;&gt;= b." alt="" coords="5,27,139,69"/>
-<area shape="rect" id="node2" href="$structutils_1_1shift__full__ops.html" title=" " alt="" coords="187,27,316,69"/>
-<area shape="rect" id="node3" href="$structutils_1_1arithmetic__ops.html" title="A convenience template inheriting from utils::integral_full_ops, utils::bit_full_ops,..." alt="" coords="364,5,549,91"/>
-</map>

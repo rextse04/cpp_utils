@@ -1,5 +1,0 @@
-<map id="utils::fix_ops&lt; Funcs &gt;" name="utils::fix_ops&lt; Funcs &gt;">
-<area shape="rect" id="node1" title="Adds support for ++t, t++, &#45;&#45;t and t&#45;&#45;." alt="" coords="5,64,156,91"/>
-<area shape="rect" id="node2" title=" " alt="" coords="204,5,532,149"/>
-<area shape="rect" id="node3" href="$structutils_1_1integer.html" title="An integer wrapper with added type safety and customizable behavior in arithmetic operations." alt="" coords="580,57,695,98"/>
-</map>

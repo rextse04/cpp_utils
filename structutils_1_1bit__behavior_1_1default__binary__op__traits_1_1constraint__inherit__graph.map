@@ -1,4 +1,0 @@
-<map id="utils::bit_behavior::default_binary_op_traits&lt; ResultTrait &gt;::constraint&lt; typename, A, B &gt;" name="utils::bit_behavior::default_binary_op_traits&lt; ResultTrait &gt;::constraint&lt; typename, A, B &gt;">
-<area shape="rect" id="node1" title="a @ b passes the constraint if and only if a and b have the same width." alt="" coords="268,5,435,91"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,13,220,83"/>
-</map>

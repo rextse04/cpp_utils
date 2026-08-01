@@ -1,7 +1,0 @@
-<map id="utils::integral_full_ops&lt; Funcs, AsgFuncs &gt;" name="utils::integral_full_ops&lt; Funcs, AsgFuncs &gt;">
-<area shape="rect" id="node1" title="A convenience template inheriting from utils::integral_full_ops and utils::integral_asg_ops." alt="" coords="176,57,351,98"/>
-<area shape="rect" id="node4" title=" " alt="" coords="399,5,727,149"/>
-<area shape="rect" id="node2" href="$structutils_1_1integral__ops.html" title=" " alt="" coords="5,23,128,65"/>
-<area shape="rect" id="node3" href="$structutils_1_1integral__asg__ops.html" title=" " alt="" coords="5,89,128,130"/>
-<area shape="rect" id="node5" href="$structutils_1_1integer.html" title="An integer wrapper with added type safety and customizable behavior in arithmetic operations." alt="" coords="775,57,889,98"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="utils::shift_full_ops&lt; Funcs, AsgFuncs &gt;" name="utils::shift_full_ops&lt; Funcs, AsgFuncs &gt;">
-<area shape="rect" id="node1" title="A convenience template inheriting from utils::shift_ops and utils::shift_asg_ops." alt="" coords="188,57,335,98"/>
-<area shape="rect" id="node4" title=" " alt="" coords="383,5,711,149"/>
-<area shape="rect" id="node2" href="$structutils_1_1shift__ops.html" title=" " alt="" coords="5,35,140,61"/>
-<area shape="rect" id="node3" href="$structutils_1_1shift__asg__ops.html" title=" " alt="" coords="6,86,139,127"/>
-<area shape="rect" id="node5" href="$structutils_1_1integer.html" title="An integer wrapper with added type safety and customizable behavior in arithmetic operations." alt="" coords="759,57,873,98"/>
-</map>

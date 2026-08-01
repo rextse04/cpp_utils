@@ -11,6 +11,8 @@ Extracts the template arguments from a template instantiation.
 struct \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{utils\+::meta\+::extract$<$ T $>$}}
 \item 
 struct \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4}{utils\+::meta\+::extract$<$ Tmpl$<$ Args... $>$ $>$}}
+\item 
+struct \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4_1_1trait}{utils\+::meta\+::extract$<$ Tmpl$<$ Args... $>$ $>$\+::trait$<$ Ts $>$}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
@@ -47,6 +49,21 @@ Definition at line \mbox{\hyperlink{meta_8hpp_source_l00280}{280}} of file \mbox
 \begin{DoxyCompactItemize}
 \item 
 using \mbox{\hyperlink{group__metastrict__subset__of_ga0cabd8a79cff290bf18ede1db0ad70b8}{type}} = std\+::tuple$<$ Args... $>$
+\end{DoxyCompactItemize}
+\index{utils::meta::extract$<$ Tmpl$<$ Args... $>$ $>$::trait@{utils::meta::extract$<$ Tmpl$<$ Args... $>$ $>$::trait}}\label{structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4_1_1trait}
+\Hypertarget{group__metaextract_structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4_1_1trait}
+\doxysubsubsection{struct utils\+::meta\+::extract\texorpdfstring{$<$}{<} Tmpl\texorpdfstring{$<$}{<} Args... \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>}\+::trait}
+\subsubsection*{template$<$template$<$ typename... $>$ typename Tmpl, typename... Args$>$\newline
+template$<$typename... Ts$>$\newline
+struct utils\+::meta\+::extract$<$ Tmpl$<$ Args... $>$ $>$\+::trait$<$ Ts $>$}
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00283}{283}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{group__metastrict__subset__of_gae77aa35bc3629d5c81f2af493607edc9}{type}} = Tmpl$<$ Ts... $>$
 \end{DoxyCompactItemize}
 
 

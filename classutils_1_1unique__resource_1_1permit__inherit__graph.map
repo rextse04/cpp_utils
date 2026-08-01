@@ -1,4 +1,0 @@
-<map id="utils::unique_resource&lt; T, Sync, Semaphore, SharedMutex &gt;::permit" name="utils::unique_resource&lt; T, Sync, Semaphore, SharedMutex &gt;::permit">
-<area shape="rect" id="node1" title="A proxy through which the user uses the resource to enforce thread safety." alt="" coords="5,80,160,136"/>
-<area shape="rect" id="node2" href="$structutils_1_1stale__class.html" title="A class that cannot be copied or moved." alt="" coords="23,5,142,32"/>
-</map>

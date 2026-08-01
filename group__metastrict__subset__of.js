@@ -1,8 +1,5 @@
 var group__metastrict__subset__of =
 [
-    [ "utils::meta::extract< Tmpl< Args... > >::trait< Ts >", "group__metastrict__subset__of.html#structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4_1_1trait", [
-      [ "type", "group__metastrict__subset__of.html#gae77aa35bc3629d5c81f2af493607edc9", null ]
-    ] ],
     [ "utils::meta::bind_front< Trait, Args >::trait< Ts >", "group__metastrict__subset__of.html#structutils_1_1meta_1_1bind__front_1_1trait", null ],
     [ "utils::meta::bind_back< Trait, Args >::trait< Ts >", "group__metastrict__subset__of.html#structutils_1_1meta_1_1bind__back_1_1trait", null ],
     [ "utils::meta::pack::type", "group__metastrict__subset__of.html#gaf286e1f5eeb50395efd23b6d353959a2", null ],

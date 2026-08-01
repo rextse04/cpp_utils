@@ -285,7 +285,7 @@ var hierarchy =
       [ "utils::meta::bind_front< Trait, Args >::trait< Ts >", "group__metastrict__subset__of.html#structutils_1_1meta_1_1bind__front_1_1trait", null ],
       [ "utils::meta::reduce< Trait, std::tuple< Ts... > >", "group__metareduce.html#structutils_1_1meta_1_1reduce_3_01Trait_00_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4", null ]
     ] ],
-    [ "utils::meta::extract< Tmpl< Args... > >::trait< Ts >", "group__metastrict__subset__of.html#structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4_1_1trait", null ],
+    [ "utils::meta::extract< Tmpl< Args... > >::trait< Ts >", "group__metaextract.html#structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4_1_1trait", null ],
     [ "utils::trim< S >", "structutils_1_1trim.html", null ],
     [ "std::true_type", null, [
       [ "utils::always_true<... >", "structutils_1_1always__true.html", null ],
