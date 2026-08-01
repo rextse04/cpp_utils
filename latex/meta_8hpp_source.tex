@@ -9,263 +9,277 @@
 \DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include <utility>}}
 \DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00007}00007 }
 \DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00013}00013 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutils_1_1meta}{utils::meta}} \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00017}00017     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00018}\mbox{\hyperlink{group__metais__tuple}{00018}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metais__tuple_structutils_1_1meta_1_1is__tuple}{is\_tuple}} : std::false\_type \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00019}00019     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00020}\mbox{\hyperlink{group__metais__tuple}{00020}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metais__tuple_structutils_1_1meta_1_1is__tuple}{is\_tuple}}<std::tuple<Ts...>> : std::true\_type \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00021}00021     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00022}\mbox{\hyperlink{group__metais__tuple_gad2354777e112932691eea7de4623cbf0}{00022}}     \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} \mbox{\hyperlink{group__metais__tuple_gad2354777e112932691eea7de4623cbf0}{is\_tuple\_v}} = \mbox{\hyperlink{group__metais__tuple_structutils_1_1meta_1_1is__tuple}{is\_tuple<T>::value}};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00024}00024 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00026}00026     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00027}\mbox{\hyperlink{conceptutils_1_1meta_1_1tuple__like}{00027}}     \textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1meta_1_1tuple__like}{tuple\_like}} = std::tuple\_size<std::remove\_cvref\_t<T>>::value >= 0;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00029}00029     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00030}\mbox{\hyperlink{conceptutils_1_1meta_1_1pair__like}{00030}}     \textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1meta_1_1pair__like}{pair\_like}} = std::tuple\_size<std::remove\_cvref\_t<T>>::value == 2;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00031}00031 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00036}00036     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00037}\mbox{\hyperlink{group__metastrict__subset__of_gaf286e1f5eeb50395efd23b6d353959a2}{00037}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metapack_structutils_1_1meta_1_1pack}{pack}} \{ \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_gaf286e1f5eeb50395efd23b6d353959a2}{type}} = std::tuple<Ts...>; \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00018}00018     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00019}\mbox{\hyperlink{group__metais__tuple}{00019}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metais__tuple_structutils_1_1meta_1_1is__tuple}{is\_tuple}} : std::false\_type \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00020}00020     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00021}\mbox{\hyperlink{group__metais__tuple}{00021}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metais__tuple_structutils_1_1meta_1_1is__tuple}{is\_tuple}}<std::tuple<Ts...>> : std::true\_type \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00022}00022     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00023}\mbox{\hyperlink{group__metais__tuple_gad2354777e112932691eea7de4623cbf0}{00023}}     \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} \mbox{\hyperlink{group__metais__tuple_gad2354777e112932691eea7de4623cbf0}{is\_tuple\_v}} = \mbox{\hyperlink{group__metais__tuple_structutils_1_1meta_1_1is__tuple}{is\_tuple<T>::value}};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00027}00027     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00028}\mbox{\hyperlink{conceptutils_1_1meta_1_1tuple__like}{00028}}     \textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1meta_1_1tuple__like}{tuple\_like}} = std::tuple\_size<std::remove\_cvref\_t<T>>::value >= 0;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00030}00030     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00031}\mbox{\hyperlink{conceptutils_1_1meta_1_1pair__like}{00031}}     \textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1meta_1_1pair__like}{pair\_like}} = std::tuple\_size<std::remove\_cvref\_t<T>>::value == 2;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00037}00037 }
 \DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00038}00038     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00039}\mbox{\hyperlink{group__metapack_ga9522a2e8902edd0be2270e5d9f505fa9}{00039}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metapack_ga9522a2e8902edd0be2270e5d9f505fa9}{pack\_t}} = \mbox{\hyperlink{group__metapack_structutils_1_1meta_1_1pack}{pack}}<Ts...>::type;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00041}00041 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00045}00045     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00046}\mbox{\hyperlink{group__metastrict__subset__of_gaa1249e6243a05e8d4467c31f9507447c}{00046}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metasmart__pack_structutils_1_1meta_1_1smart__pack}{smart\_pack}} \{ \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_gaa1249e6243a05e8d4467c31f9507447c}{type}} = std::tuple<Ts...>; \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00047}00047     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00048}\mbox{\hyperlink{group__metastrict__subset__of_gab946929681d26e6d82525a686605bf55}{00048}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metasmart__pack_structutils_1_1meta_1_1smart__pack}{smart\_pack}}<std::tuple<Ts...>> \{ \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_gab946929681d26e6d82525a686605bf55}{type}} = std::tuple<Ts...>; \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00049}00049     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00050}\mbox{\hyperlink{group__metasmart__pack_ga2c8c5ffdfd2792da0ed5c03737d910e8}{00050}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metasmart__pack_ga2c8c5ffdfd2792da0ed5c03737d910e8}{smart\_pack\_t}} = \mbox{\hyperlink{group__metasmart__pack_structutils_1_1meta_1_1smart__pack}{smart\_pack}}<Ts...>::type;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00052}00052 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00053}00053     \textcolor{keyword}{namespace }detail \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00054}00054         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} IdxSeq>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00055}00055         \textcolor{keyword}{struct }\mbox{\hyperlink{group__metamake__tuple_structutils_1_1meta_1_1make__tuple}{make\_tuple}};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00056}00056         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}}... Idxs>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00057}00057         \textcolor{keyword}{struct }\mbox{\hyperlink{group__metamake__tuple_structutils_1_1meta_1_1make__tuple}{make\_tuple}}<T, std::index\_sequence<Idxs...>> \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00058}00058             \textcolor{keyword}{using} type = std::tuple<std::tuple\_element\_t<Idxs, T>...>;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00059}00059         \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00060}00060     \}}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00064}00064     \textcolor{keyword}{template} <tuple\_like T>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00065}\mbox{\hyperlink{group__metamake__tuple}{00065}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metamake__tuple_structutils_1_1meta_1_1make__tuple}{make\_tuple}} : detail::make\_tuple<T, std::make\_index\_sequence<std::tuple\_size\_v<T>>> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00066}00066     \textcolor{keyword}{template} <tuple\_like T>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00067}\mbox{\hyperlink{group__metamake__tuple_ga7f3e3f258ae180aaf3a6cf1a9b9d45e6}{00067}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metamake__tuple_ga7f3e3f258ae180aaf3a6cf1a9b9d45e6}{make\_tuple\_t}} = \mbox{\hyperlink{group__metamake__tuple_structutils_1_1meta_1_1make__tuple}{make\_tuple<T>::type}};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00069}00069 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00074}00074     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Idx>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00075}\mbox{\hyperlink{group__metaactual__index}{00075}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metaactual__index_structutils_1_1meta_1_1actual__index}{actual\_index}} : std::integral\_constant<std::size\_t, (Idx >= 0) ? Idx : (Idx + std::tuple\_size\_v<Tuple>)> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00076}00076     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Idx>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00077}\mbox{\hyperlink{group__metaactual__index_ga4d133c7490f073188fc7eb130261cbd2}{00077}}     \textcolor{keyword}{constexpr} \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} \mbox{\hyperlink{group__metaactual__index_ga4d133c7490f073188fc7eb130261cbd2}{actual\_index\_v}} = \mbox{\hyperlink{group__metaactual__index_structutils_1_1meta_1_1actual__index}{actual\_index<Tuple, Idx>::value}};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00079}00079 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00083}00083     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Idx>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00084}\mbox{\hyperlink{group__metaat}{00084}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metaat_structutils_1_1meta_1_1at}{at}} \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00085}\mbox{\hyperlink{group__metastrict__subset__of_gaa2a3f1c8887bcea874c62480dae1071f}{00085}}         \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_gaa2a3f1c8887bcea874c62480dae1071f}{type}} = std::tuple\_element\_t<actual\_index\_v<Tuple, Idx>, Tuple>;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00086}00086     \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00087}00087     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Idx>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00088}\mbox{\hyperlink{group__metaat_ga61e11c441feed9dbfea860435a6745d6}{00088}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metaat_ga61e11c441feed9dbfea860435a6745d6}{at\_t}} = \mbox{\hyperlink{group__metastrict__subset__of_gaa2a3f1c8887bcea874c62480dae1071f}{at<Tuple, Idx>::type}};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00090}00090 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00097}00097     \textcolor{keyword}{template} <tuple\_like Tuple, \textcolor{keyword}{typename} T, \textcolor{keyword}{template}<\textcolor{keyword}{typename}, \textcolor{keyword}{typename}> \textcolor{keyword}{typename} PredTrait = std::is\_same,}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00098}00098         \mbox{\hyperlink{namespaceutils_1_1integer__alias_aca05a61d14a516c6dd53450e823075b7}{std::ptrdiff\_t}} Begin = 0, \mbox{\hyperlink{namespaceutils_1_1integer__alias_aca05a61d14a516c6dd53450e823075b7}{std::ptrdiff\_t}} End = std::tuple\_size\_v<Tuple>>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00099}\mbox{\hyperlink{group__metasearch}{00099}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metasearch_structutils_1_1meta_1_1search}{search}} : std::integral\_constant<std::size\_t, PredTrait<at\_t<Tuple, Begin>, T>::value}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00100}00100         ? Begin}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00101}00101         : search<Tuple, T, PredTrait, Begin + 1, End>::value> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00102}00102     \textcolor{keyword}{template} <tuple\_like Tuple, \textcolor{keyword}{typename} T, \textcolor{keyword}{template}<\textcolor{keyword}{typename}, \textcolor{keyword}{typename}> \textcolor{keyword}{typename} PredTrait, \mbox{\hyperlink{namespaceutils_1_1integer__alias_aca05a61d14a516c6dd53450e823075b7}{std::ptrdiff\_t}} End>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00103}\mbox{\hyperlink{group__metasearch}{00103}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metasearch_structutils_1_1meta_1_1search}{search}}<Tuple, T, PredTrait, End, End> : std::integral\_constant<std::size\_t, actual\_index\_v<Tuple, End>> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00104}00104     \textcolor{keyword}{template} <tuple\_like Tuple, \textcolor{keyword}{typename} T, \textcolor{keyword}{template}<\textcolor{keyword}{typename}, \textcolor{keyword}{typename}> \textcolor{keyword}{typename} PredTrait = std::is\_same>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00105}\mbox{\hyperlink{group__metasearch_gaeb4f807ff8f6a11b97c26fb852d91b16}{00105}}     \textcolor{keyword}{constexpr} \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} \mbox{\hyperlink{group__metasearch_gaeb4f807ff8f6a11b97c26fb852d91b16}{search\_v}} = \mbox{\hyperlink{group__metasearch_structutils_1_1meta_1_1search}{search<Tuple, T, PredTrait>::value}};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00106}00106     \textcolor{keyword}{template} <tuple\_like Tuple, \textcolor{keyword}{typename} T>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00107}\mbox{\hyperlink{group__metasearch}{00107}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metasearch_structutils_1_1meta_1_1search__trait}{search\_trait}} : \mbox{\hyperlink{group__metasearch_structutils_1_1meta_1_1search}{search}}<Tuple, T> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00109}00109 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00114}00114     \textcolor{keyword}{template} <tuple\_like Tuple, \textcolor{keyword}{typename} T, \textcolor{keyword}{template}<\textcolor{keyword}{typename}, \textcolor{keyword}{typename}> \textcolor{keyword}{typename} PredTrait = std::is\_same,}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00115}00115         \mbox{\hyperlink{namespaceutils_1_1integer__alias_aca05a61d14a516c6dd53450e823075b7}{std::ptrdiff\_t}} Begin = 0, \mbox{\hyperlink{namespaceutils_1_1integer__alias_aca05a61d14a516c6dd53450e823075b7}{std::ptrdiff\_t}} End = std::tuple\_size\_v<Tuple>>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00116}\mbox{\hyperlink{group__metacontained__in}{00116}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metacontained__in_structutils_1_1meta_1_1contained__in}{contained\_in}} :}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00117}00117             std::bool\_constant<search<Tuple, T, PredTrait, Begin, End>::value != actual\_index\_v<Tuple, End>> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00118}00118     \textcolor{keyword}{template} <tuple\_like Tuple, \textcolor{keyword}{typename} T, \textcolor{keyword}{template}<\textcolor{keyword}{typename}, \textcolor{keyword}{typename}> \textcolor{keyword}{typename} PredTrait = std::is\_same>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00119}\mbox{\hyperlink{group__metacontained__in_ga1047a3fe70ce04f9726a0e5d3fb74acd}{00119}}     \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} \mbox{\hyperlink{group__metacontained__in_ga1047a3fe70ce04f9726a0e5d3fb74acd}{contained\_in\_v}} = \mbox{\hyperlink{group__metacontained__in_structutils_1_1meta_1_1contained__in}{contained\_in<Tuple, T, PredTrait>::value}};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00120}00120     \textcolor{keyword}{template} <tuple\_like Tuple, \textcolor{keyword}{typename} T>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00121}\mbox{\hyperlink{group__metacontained__in}{00121}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metacontained__in_structutils_1_1meta_1_1contained__in__trait}{contained\_in\_trait}} : \mbox{\hyperlink{group__metacontained__in_structutils_1_1meta_1_1contained__in}{contained\_in}}<Tuple, T> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00123}00123 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00127}00127     \textcolor{keyword}{template} <\mbox{\hyperlink{conceptutils_1_1meta_1_1tuple__like}{tuple\_like}}... Tuples>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00128}\mbox{\hyperlink{group__metaconcat}{00128}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metaconcat_structutils_1_1meta_1_1concat}{concat}} \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00129}\mbox{\hyperlink{group__metastrict__subset__of_gae0cc6b1113cbcb8e99c20146520ab37f}{00129}}         \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_gae0cc6b1113cbcb8e99c20146520ab37f}{type}} = \textcolor{keyword}{decltype}(std::tuple\_cat(std::declval<Tuples>()...));}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00130}00130     \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00131}00131     \textcolor{keyword}{template} <\mbox{\hyperlink{conceptutils_1_1meta_1_1tuple__like}{tuple\_like}}... Tuples>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00132}\mbox{\hyperlink{group__metaconcat_gafed300336aba4802fc3481ef2944a880}{00132}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metaconcat_gafed300336aba4802fc3481ef2944a880}{concat\_t}} = \mbox{\hyperlink{group__metaconcat_structutils_1_1meta_1_1concat}{concat}}<Tuples...>::type;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00134}00134 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00135}00135     \textcolor{keyword}{namespace }detail \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00136}00136         \textcolor{keyword}{template} <\textcolor{keyword}{typename} Tuple, std::\textcolor{keywordtype}{size\_t} Begin, \textcolor{keyword}{typename} RelIdxSeq>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00137}00137         \textcolor{keyword}{struct }\mbox{\hyperlink{group__metaslice_structutils_1_1meta_1_1slice}{slice}};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00138}00138         \textcolor{keyword}{template} <\textcolor{keyword}{typename} Tuple, \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} Begin, \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}}... RelIdxs>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00139}00139         \textcolor{keyword}{struct }\mbox{\hyperlink{group__metaslice_structutils_1_1meta_1_1slice}{slice}}<Tuple, Begin, std::index\_sequence<RelIdxs...>> \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00140}00140             \textcolor{keyword}{using} type = std::tuple<std::tuple\_element\_t<Begin + RelIdxs, Tuple>...>;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00141}00141         \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00142}00142     \}}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00149}00149     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Begin = 0, std::ptrdiff\_t End = std::tuple\_size\_v<Tuple>>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00150}\mbox{\hyperlink{group__metaslice}{00150}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metaslice_structutils_1_1meta_1_1slice}{slice}} \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00151}00151     \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00152}00152         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} begin = actual\_index\_v<Tuple, Begin>, end = actual\_index\_v<Tuple, End>;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00153}00153     \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00154}\mbox{\hyperlink{group__metastrict__subset__of_gad9768f6f6120d03d55fce41b53c335a8}{00154}}         \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_gad9768f6f6120d03d55fce41b53c335a8}{type}} = \textcolor{keyword}{decltype}([]() \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00155}00155             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (begin < end) \textcolor{keywordflow}{return} detail::slice<Tuple, begin, std::make\_index\_sequence<end -\/ begin>>\{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00156}00156             \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} std::type\_identity<std::tuple<>>\{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00157}00157         \}())\mbox{\hyperlink{group__metastrict__subset__of_gad9768f6f6120d03d55fce41b53c335a8}{::type}};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00158}00158     \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00039}\mbox{\hyperlink{group__metastrict__subset__of_gaf286e1f5eeb50395efd23b6d353959a2}{00039}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metapack_structutils_1_1meta_1_1pack}{pack}} \{ \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_gaf286e1f5eeb50395efd23b6d353959a2}{type}} = std::tuple<Ts...>; \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00040}00040     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00041}\mbox{\hyperlink{group__metapack_ga9522a2e8902edd0be2270e5d9f505fa9}{00041}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metapack_ga9522a2e8902edd0be2270e5d9f505fa9}{pack\_t}} = \mbox{\hyperlink{group__metapack_structutils_1_1meta_1_1pack}{pack}}<Ts...>::type;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00048}00048     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00049}\mbox{\hyperlink{group__metastrict__subset__of_gaa1249e6243a05e8d4467c31f9507447c}{00049}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metasmart__pack_structutils_1_1meta_1_1smart__pack}{smart\_pack}} \{ \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_gaa1249e6243a05e8d4467c31f9507447c}{type}} = std::tuple<Ts...>; \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00050}00050     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00051}\mbox{\hyperlink{group__metastrict__subset__of_gab946929681d26e6d82525a686605bf55}{00051}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metasmart__pack_structutils_1_1meta_1_1smart__pack}{smart\_pack}}<std::tuple<Ts...>> \{ \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_gab946929681d26e6d82525a686605bf55}{type}} = std::tuple<Ts...>; \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00052}00052     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00053}\mbox{\hyperlink{group__metasmart__pack_ga2c8c5ffdfd2792da0ed5c03737d910e8}{00053}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metasmart__pack_ga2c8c5ffdfd2792da0ed5c03737d910e8}{smart\_pack\_t}} = \mbox{\hyperlink{group__metasmart__pack_structutils_1_1meta_1_1smart__pack}{smart\_pack}}<Ts...>::type;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00056}00056     \textcolor{keyword}{namespace }detail \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00057}00057         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} IdxSeq>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00058}00058         \textcolor{keyword}{struct }\mbox{\hyperlink{group__metamake__tuple_structutils_1_1meta_1_1make__tuple}{make\_tuple}};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00059}00059         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}}... Idxs>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00060}00060         \textcolor{keyword}{struct }\mbox{\hyperlink{group__metamake__tuple_structutils_1_1meta_1_1make__tuple}{make\_tuple}}<T, std::index\_sequence<Idxs...>> \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00061}00061             \textcolor{keyword}{using} type = std::tuple<std::tuple\_element\_t<Idxs, T>...>;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00062}00062         \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00063}00063     \}}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00068}00068     \textcolor{keyword}{template} <tuple\_like T>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00069}\mbox{\hyperlink{group__metamake__tuple}{00069}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metamake__tuple_structutils_1_1meta_1_1make__tuple}{make\_tuple}} : detail::make\_tuple<T, std::make\_index\_sequence<std::tuple\_size\_v<T>>> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00070}00070     \textcolor{keyword}{template} <tuple\_like T>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00071}\mbox{\hyperlink{group__metamake__tuple_ga7f3e3f258ae180aaf3a6cf1a9b9d45e6}{00071}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metamake__tuple_ga7f3e3f258ae180aaf3a6cf1a9b9d45e6}{make\_tuple\_t}} = \mbox{\hyperlink{group__metamake__tuple_structutils_1_1meta_1_1make__tuple}{make\_tuple<T>::type}};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00079}00079     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Idx>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00080}\mbox{\hyperlink{group__metaactual__index}{00080}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metaactual__index_structutils_1_1meta_1_1actual__index}{actual\_index}} : std::integral\_constant<std::size\_t, (Idx >= 0) ? Idx : (Idx + std::tuple\_size\_v<Tuple>)> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00081}00081     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Idx>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00082}\mbox{\hyperlink{group__metaactual__index_ga4d133c7490f073188fc7eb130261cbd2}{00082}}     \textcolor{keyword}{constexpr} \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} \mbox{\hyperlink{group__metaactual__index_ga4d133c7490f073188fc7eb130261cbd2}{actual\_index\_v}} = \mbox{\hyperlink{group__metaactual__index_structutils_1_1meta_1_1actual__index}{actual\_index<Tuple, Idx>::value}};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00089}00089     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Idx>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00090}\mbox{\hyperlink{group__metaat}{00090}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metaat_structutils_1_1meta_1_1at}{at}} \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00091}\mbox{\hyperlink{group__metastrict__subset__of_gaa2a3f1c8887bcea874c62480dae1071f}{00091}}         \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_gaa2a3f1c8887bcea874c62480dae1071f}{type}} = std::tuple\_element\_t<actual\_index\_v<Tuple, Idx>, Tuple>;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00092}00092     \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00093}00093     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Idx>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00094}\mbox{\hyperlink{group__metaat_ga61e11c441feed9dbfea860435a6745d6}{00094}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metaat_ga61e11c441feed9dbfea860435a6745d6}{at\_t}} = \mbox{\hyperlink{group__metastrict__subset__of_gaa2a3f1c8887bcea874c62480dae1071f}{at<Tuple, Idx>::type}};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00104}00104     \textcolor{keyword}{template} <tuple\_like Tuple, \textcolor{keyword}{typename} T, \textcolor{keyword}{template}<\textcolor{keyword}{typename}, \textcolor{keyword}{typename}> \textcolor{keyword}{typename} PredTrait = std::is\_same,}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00105}00105         \mbox{\hyperlink{namespaceutils_1_1integer__alias_aca05a61d14a516c6dd53450e823075b7}{std::ptrdiff\_t}} Begin = 0, \mbox{\hyperlink{namespaceutils_1_1integer__alias_aca05a61d14a516c6dd53450e823075b7}{std::ptrdiff\_t}} End = std::tuple\_size\_v<Tuple>>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00106}\mbox{\hyperlink{group__metasearch}{00106}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metasearch_structutils_1_1meta_1_1search}{search}} : std::integral\_constant<std::size\_t, PredTrait<at\_t<Tuple, Begin>, T>::value}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00107}00107         ? Begin}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00108}00108         : search<Tuple, T, PredTrait, Begin + 1, End>::value> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00109}00109     \textcolor{keyword}{template} <tuple\_like Tuple, \textcolor{keyword}{typename} T, \textcolor{keyword}{template}<\textcolor{keyword}{typename}, \textcolor{keyword}{typename}> \textcolor{keyword}{typename} PredTrait, \mbox{\hyperlink{namespaceutils_1_1integer__alias_aca05a61d14a516c6dd53450e823075b7}{std::ptrdiff\_t}} End>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00110}\mbox{\hyperlink{group__metasearch}{00110}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metasearch_structutils_1_1meta_1_1search}{search}}<Tuple, T, PredTrait, End, End> : std::integral\_constant<std::size\_t, actual\_index\_v<Tuple, End>> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00111}00111     \textcolor{keyword}{template} <tuple\_like Tuple, \textcolor{keyword}{typename} T, \textcolor{keyword}{template}<\textcolor{keyword}{typename}, \textcolor{keyword}{typename}> \textcolor{keyword}{typename} PredTrait = std::is\_same>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00112}\mbox{\hyperlink{group__metasearch_gaeb4f807ff8f6a11b97c26fb852d91b16}{00112}}     \textcolor{keyword}{constexpr} \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} \mbox{\hyperlink{group__metasearch_gaeb4f807ff8f6a11b97c26fb852d91b16}{search\_v}} = \mbox{\hyperlink{group__metasearch_structutils_1_1meta_1_1search}{search<Tuple, T, PredTrait>::value}};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00113}00113     \textcolor{keyword}{template} <tuple\_like Tuple, \textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00114}\mbox{\hyperlink{group__metasearch}{00114}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metasearch_structutils_1_1meta_1_1search__trait}{search\_trait}} : \mbox{\hyperlink{group__metasearch_structutils_1_1meta_1_1search}{search}}<Tuple, T> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00116}00116 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00122}00122     \textcolor{keyword}{template} <tuple\_like Tuple, \textcolor{keyword}{typename} T, \textcolor{keyword}{template}<\textcolor{keyword}{typename}, \textcolor{keyword}{typename}> \textcolor{keyword}{typename} PredTrait = std::is\_same,}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00123}00123         \mbox{\hyperlink{namespaceutils_1_1integer__alias_aca05a61d14a516c6dd53450e823075b7}{std::ptrdiff\_t}} Begin = 0, \mbox{\hyperlink{namespaceutils_1_1integer__alias_aca05a61d14a516c6dd53450e823075b7}{std::ptrdiff\_t}} End = std::tuple\_size\_v<Tuple>>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00124}\mbox{\hyperlink{group__metacontained__in}{00124}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metacontained__in_structutils_1_1meta_1_1contained__in}{contained\_in}} :}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00125}00125             std::bool\_constant<search<Tuple, T, PredTrait, Begin, End>::value != actual\_index\_v<Tuple, End>> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00126}00126     \textcolor{keyword}{template} <tuple\_like Tuple, \textcolor{keyword}{typename} T, \textcolor{keyword}{template}<\textcolor{keyword}{typename}, \textcolor{keyword}{typename}> \textcolor{keyword}{typename} PredTrait = std::is\_same>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00127}\mbox{\hyperlink{group__metacontained__in_ga1047a3fe70ce04f9726a0e5d3fb74acd}{00127}}     \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} \mbox{\hyperlink{group__metacontained__in_ga1047a3fe70ce04f9726a0e5d3fb74acd}{contained\_in\_v}} = \mbox{\hyperlink{group__metacontained__in_structutils_1_1meta_1_1contained__in}{contained\_in<Tuple, T, PredTrait>::value}};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00128}00128     \textcolor{keyword}{template} <tuple\_like Tuple, \textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00129}\mbox{\hyperlink{group__metacontained__in}{00129}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metacontained__in_structutils_1_1meta_1_1contained__in__trait}{contained\_in\_trait}} : \mbox{\hyperlink{group__metacontained__in_structutils_1_1meta_1_1contained__in}{contained\_in}}<Tuple, T> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00135}00135 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00136}00136     \textcolor{keyword}{template} <\mbox{\hyperlink{conceptutils_1_1meta_1_1tuple__like}{tuple\_like}}... Tuples>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00137}\mbox{\hyperlink{group__metaconcat}{00137}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metaconcat_structutils_1_1meta_1_1concat}{concat}} \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00138}\mbox{\hyperlink{group__metastrict__subset__of_gae0cc6b1113cbcb8e99c20146520ab37f}{00138}}         \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_gae0cc6b1113cbcb8e99c20146520ab37f}{type}} = \textcolor{keyword}{decltype}(std::tuple\_cat(std::declval<Tuples>()...));}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00139}00139     \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00140}00140     \textcolor{keyword}{template} <\mbox{\hyperlink{conceptutils_1_1meta_1_1tuple__like}{tuple\_like}}... Tuples>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00141}\mbox{\hyperlink{group__metaconcat_gafed300336aba4802fc3481ef2944a880}{00141}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metaconcat_gafed300336aba4802fc3481ef2944a880}{concat\_t}} = \mbox{\hyperlink{group__metaconcat_structutils_1_1meta_1_1concat}{concat}}<Tuples...>::type;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00143}00143 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00144}00144     \textcolor{keyword}{namespace }detail \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00145}00145         \textcolor{keyword}{template} <\textcolor{keyword}{typename} Tuple, std::\textcolor{keywordtype}{size\_t} Begin, \textcolor{keyword}{typename} RelIdxSeq>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00146}00146         \textcolor{keyword}{struct }\mbox{\hyperlink{group__metaslice_structutils_1_1meta_1_1slice}{slice}};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00147}00147         \textcolor{keyword}{template} <\textcolor{keyword}{typename} Tuple, \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} Begin, \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}}... RelIdxs>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00148}00148         \textcolor{keyword}{struct }\mbox{\hyperlink{group__metaslice_structutils_1_1meta_1_1slice}{slice}}<Tuple, Begin, std::index\_sequence<RelIdxs...>> \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00149}00149             \textcolor{keyword}{using} type = std::tuple<std::tuple\_element\_t<Begin + RelIdxs, Tuple>...>;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00150}00150         \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00151}00151     \}}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00158}00158 }
 \DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00159}00159     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Begin = 0, std::ptrdiff\_t End = std::tuple\_size\_v<Tuple>>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00160}\mbox{\hyperlink{group__metaslice_ga38abc3ef8e35eaf454eea88f36750bbc}{00160}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metaslice_ga38abc3ef8e35eaf454eea88f36750bbc}{slice\_t}} = \mbox{\hyperlink{group__metastrict__subset__of_gad9768f6f6120d03d55fce41b53c335a8}{slice<Tuple, Begin, End>::type}};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00162}00162 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00168}00168     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Idx, tuple\_like Inserted>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00169}\mbox{\hyperlink{group__metainsert}{00169}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metainsert_structutils_1_1meta_1_1insert}{insert}} : \mbox{\hyperlink{group__metaconcat_structutils_1_1meta_1_1concat}{concat}}<slice\_t<Tuple, 0, Idx>, Inserted, slice\_t<Tuple, Idx>> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00170}00170     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Idx, tuple\_like Inserted>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00171}\mbox{\hyperlink{group__metainsert_ga74db5bbf8f178b4db63af53a7f59a002}{00171}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metainsert_ga74db5bbf8f178b4db63af53a7f59a002}{insert\_t}} = \mbox{\hyperlink{group__metastrict__subset__of_gae0cc6b1113cbcb8e99c20146520ab37f}{insert<Tuple, Idx, Inserted>::type}};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00173}00173 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00179}00179     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Begin, std::ptrdiff\_t End>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00180}\mbox{\hyperlink{group__metaerase}{00180}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metaerase_structutils_1_1meta_1_1erase}{erase}} : \mbox{\hyperlink{group__metaconcat_structutils_1_1meta_1_1concat}{concat}}<slice\_t<Tuple, 0, Begin>, slice\_t<Tuple, End>> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00181}00181     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Begin, std::ptrdiff\_t End>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00182}\mbox{\hyperlink{group__metaerase_ga57e2e26a9ed32b0384df07a98f53b377}{00182}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metaerase_ga57e2e26a9ed32b0384df07a98f53b377}{erase\_t}} = \mbox{\hyperlink{group__metastrict__subset__of_gae0cc6b1113cbcb8e99c20146520ab37f}{erase<Tuple, Begin, End>::type}};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00160}\mbox{\hyperlink{group__metaslice}{00160}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metaslice_structutils_1_1meta_1_1slice}{slice}} \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00161}00161     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00162}00162         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} begin = actual\_index\_v<Tuple, Begin>, end = actual\_index\_v<Tuple, End>;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00163}00163     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00164}\mbox{\hyperlink{group__metastrict__subset__of_gad9768f6f6120d03d55fce41b53c335a8}{00164}}         \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_gad9768f6f6120d03d55fce41b53c335a8}{type}} = \textcolor{keyword}{decltype}([]() \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00165}00165             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (begin < end) \textcolor{keywordflow}{return} detail::slice<Tuple, begin, std::make\_index\_sequence<end -\/ begin>>\{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00166}00166             \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} std::type\_identity<std::tuple<>>\{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00167}00167         \}())\mbox{\hyperlink{group__metastrict__subset__of_gad9768f6f6120d03d55fce41b53c335a8}{::type}};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00168}00168     \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00169}00169     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Begin = 0, std::ptrdiff\_t End = std::tuple\_size\_v<Tuple>>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00170}\mbox{\hyperlink{group__metaslice_ga38abc3ef8e35eaf454eea88f36750bbc}{00170}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metaslice_ga38abc3ef8e35eaf454eea88f36750bbc}{slice\_t}} = \mbox{\hyperlink{group__metastrict__subset__of_gad9768f6f6120d03d55fce41b53c335a8}{slice<Tuple, Begin, End>::type}};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00178}00178 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00179}00179     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Idx, tuple\_like Inserted>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00180}\mbox{\hyperlink{group__metainsert}{00180}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metainsert_structutils_1_1meta_1_1insert}{insert}} : \mbox{\hyperlink{group__metaconcat_structutils_1_1meta_1_1concat}{concat}}<slice\_t<Tuple, 0, Idx>, Inserted, slice\_t<Tuple, Idx>> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00181}00181     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Idx, tuple\_like Inserted>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00182}\mbox{\hyperlink{group__metainsert_ga74db5bbf8f178b4db63af53a7f59a002}{00182}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metainsert_ga74db5bbf8f178b4db63af53a7f59a002}{insert\_t}} = \mbox{\hyperlink{group__metastrict__subset__of_gae0cc6b1113cbcb8e99c20146520ab37f}{insert<Tuple, Idx, Inserted>::type}};}
 \DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00184}00184 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00190}00190     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Idx, \textcolor{keyword}{typename} T>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00191}\mbox{\hyperlink{group__metareplace}{00191}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metareplace_structutils_1_1meta_1_1replace}{replace}} : \mbox{\hyperlink{group__metaconcat_structutils_1_1meta_1_1concat}{concat}}<slice\_t<Tuple, 0, Idx>, std::tuple<T>, slice\_t<Tuple, Idx + 1>> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00192}00192     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Idx, \textcolor{keyword}{typename} T>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00193}\mbox{\hyperlink{group__metareplace_ga44e3856c9561e053226ad2c473572a43}{00193}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metareplace_ga44e3856c9561e053226ad2c473572a43}{replace\_t}} = \mbox{\hyperlink{group__metastrict__subset__of_gae0cc6b1113cbcb8e99c20146520ab37f}{replace<Tuple, Idx, T>::type}};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00195}00195 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00201}00201     \textcolor{keyword}{template} <\textcolor{keyword}{typename} ErasedResult>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00202}\mbox{\hyperlink{group__metainfer}{00202}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metainfer_structutils_1_1meta_1_1infer}{infer}} \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00203}\mbox{\hyperlink{group__metastrict__subset__of_ga43c3aa2423e04165a63b232a97ec2d92}{00203}}         \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_ga43c3aa2423e04165a63b232a97ec2d92}{type}} = std::conditional\_t<\textcolor{keyword}{requires} \{ \textcolor{keyword}{typename} ErasedResult::type; \},}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00204}\mbox{\hyperlink{group__metastrict__subset__of_ga1cf91fddec6a7f669b55820814674e71}{00204}}             \textcolor{keyword}{typename} ErasedResult::type, \mbox{\hyperlink{group__metastrict__subset__of_ga1cf91fddec6a7f669b55820814674e71}{ErasedResult}}>;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00205}00205     \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00206}00206     \textcolor{keyword}{template} <\textcolor{keyword}{typename} ErasedResult>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00207}\mbox{\hyperlink{group__metainfer_ga589006341bea1c7475635f68058edb53}{00207}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metainfer_ga589006341bea1c7475635f68058edb53}{infer\_t}} = \mbox{\hyperlink{group__metastrict__subset__of_ga43c3aa2423e04165a63b232a97ec2d92}{infer<ErasedResult>::type}};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00209}00209 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00210}00210     \textcolor{keyword}{namespace }detail \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00211}00211         \textcolor{keyword}{template} <\mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} Idx, \textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \textcolor{keyword}{typename} TuplesTuple>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00212}00212         \textcolor{keyword}{struct }map\_step;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00213}00213         \textcolor{keyword}{template} <\mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} Idx, \textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \textcolor{keyword}{typename}... Tuples>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00214}00214         \textcolor{keyword}{struct }map\_step<Idx, Trait, std::tuple<Tuples...>> \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00215}00215             \textcolor{keyword}{using} type = \mbox{\hyperlink{group__metainfer_ga589006341bea1c7475635f68058edb53}{infer\_t<Trait<std::tuple\_element\_t<Idx, Tuples>}}...>>;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00216}00216         \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00217}00217         \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \textcolor{keyword}{typename} TuplesTuple, \textcolor{keyword}{typename} IdxSeq>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00218}00218         \textcolor{keyword}{struct }\mbox{\hyperlink{group__metamap_structutils_1_1meta_1_1map}{map}};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00219}00219         \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \textcolor{keyword}{typename} TuplesTuple, \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}}... Idxs>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00220}00220         \textcolor{keyword}{struct }\mbox{\hyperlink{group__metamap_structutils_1_1meta_1_1map}{map}}<Trait, TuplesTuple, std::index\_sequence<Idxs...>> \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00221}00221             \textcolor{keyword}{using} type = std::tuple<typename map\_step<Idxs, Trait, TuplesTuple>::type...>;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00222}00222         \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00223}00223     \}}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00230}00230     \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, tuple\_like Tuple, tuple\_like... Tuples>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00231}\mbox{\hyperlink{group__metamap}{00231}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metamap_structutils_1_1meta_1_1map}{map}} : detail::map<Trait, std::tuple<Tuple, Tuples...>, std::make\_index\_sequence<std::tuple\_size\_v<Tuple>>> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00232}00232     \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \mbox{\hyperlink{conceptutils_1_1meta_1_1tuple__like}{tuple\_like}} Tuple, \mbox{\hyperlink{conceptutils_1_1meta_1_1tuple__like}{tuple\_like}}... Tuples>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00233}\mbox{\hyperlink{group__metamap_ga3b38ac9e969ec6ebdba7cc79b96e7417}{00233}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metamap_ga3b38ac9e969ec6ebdba7cc79b96e7417}{map\_t}} = \mbox{\hyperlink{group__metamap_structutils_1_1meta_1_1map}{map}}<Trait, Tuple, Tuples...>::type;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00235}00235 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00241}00241     \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \mbox{\hyperlink{conceptutils_1_1meta_1_1tuple__like}{tuple\_like}} T>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00242}\mbox{\hyperlink{group__metareduce}{00242}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metareduce_structutils_1_1meta_1_1reduce}{reduce}} : \mbox{\hyperlink{group__metareduce_structutils_1_1meta_1_1reduce}{reduce}}<Trait, make\_tuple\_t<T>> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00243}00243     \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \textcolor{keyword}{typename}... Ts>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00244}\mbox{\hyperlink{group__metareduce}{00244}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metareduce_structutils_1_1meta_1_1reduce}{reduce}}<Trait, std::tuple<Ts...>> : Trait<Ts...> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00245}00245     \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \mbox{\hyperlink{conceptutils_1_1meta_1_1tuple__like}{tuple\_like}} T>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00246}\mbox{\hyperlink{group__metareduce_gac678341b60759542f0fc5edb1c4f20f1}{00246}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metareduce_gac678341b60759542f0fc5edb1c4f20f1}{reduce\_t}} = \mbox{\hyperlink{group__metareduce_structutils_1_1meta_1_1reduce}{reduce<Trait, T>::type}};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00247}00247     \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \mbox{\hyperlink{conceptutils_1_1meta_1_1tuple__like}{tuple\_like}} T>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00248}\mbox{\hyperlink{group__metareduce_ga89bb8d8a2a70515ade89987c00ae2ba8}{00248}}     \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} \mbox{\hyperlink{group__metareduce_ga89bb8d8a2a70515ade89987c00ae2ba8}{reduce\_v}} = \mbox{\hyperlink{group__metareduce_structutils_1_1meta_1_1reduce}{reduce<Trait, T>::value}};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00250}00250 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00254}00254     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... ValueResults>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00255}\mbox{\hyperlink{group__metasum}{00255}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metasum_structutils_1_1meta_1_1sum}{sum}} : std::integral\_constant<std::uintmax\_t, (static\_cast<std::uintmax\_t>(ValueResults::value) + ...)> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00256}00256     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... ValueResults>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00257}\mbox{\hyperlink{group__metasum_gaa6f94b0098e74cddc4241037e2a90844}{00257}}     \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} \mbox{\hyperlink{group__metasum_gaa6f94b0098e74cddc4241037e2a90844}{sum\_v}} = \mbox{\hyperlink{group__metasum_structutils_1_1meta_1_1sum}{sum}}<ValueResults...>::value;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00259}00259 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00263}00263     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... ValueResults>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00264}\mbox{\hyperlink{group__metaproduct}{00264}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metaproduct_structutils_1_1meta_1_1product}{product}} : std::integral\_constant<std::uintmax\_t, (static\_cast<std::uintmax\_t>(ValueResults::value) * ...)> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00265}00265     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... ValueResults>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00266}\mbox{\hyperlink{group__metaproduct_ga9a93c684aeb7e2311a64f82184e818e0}{00266}}     \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} \mbox{\hyperlink{group__metaproduct_ga9a93c684aeb7e2311a64f82184e818e0}{product\_v}} = \mbox{\hyperlink{group__metaproduct_structutils_1_1meta_1_1product}{product}}<ValueResults...>::value;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00268}00268 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00277}00277     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00278}\mbox{\hyperlink{group__metaextract}{00278}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{extract}} \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00279}00279     \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Tmpl, \textcolor{keyword}{typename}... Args>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00280}\mbox{\hyperlink{group__metaextract}{00280}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{extract}}<Tmpl<Args...>> \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00281}\mbox{\hyperlink{group__metastrict__subset__of_ga0cabd8a79cff290bf18ede1db0ad70b8}{00281}}         \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_ga0cabd8a79cff290bf18ede1db0ad70b8}{type}} = std::tuple<Args...>;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00282}00282         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00283}\mbox{\hyperlink{group__metaextract}{00283}}         \textcolor{keyword}{struct }trait \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00284}\mbox{\hyperlink{group__metastrict__subset__of_gae77aa35bc3629d5c81f2af493607edc9}{00284}}             \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_gae77aa35bc3629d5c81f2af493607edc9}{type}} = Tmpl<Ts...>;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00285}00285         \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00286}00286     \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00287}00287     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00288}\mbox{\hyperlink{group__metaextract_gacd07985a63eb37381aaa77c70f6ea190}{00288}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metaextract_gacd07985a63eb37381aaa77c70f6ea190}{extract\_t}} = \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{extract<T>::type}};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00290}00290 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00296}00296     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename}... Args>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00297}\mbox{\hyperlink{group__metarebind}{00297}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metarebind_structutils_1_1meta_1_1rebind}{rebind}} \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00298}\mbox{\hyperlink{group__metastrict__subset__of_ga69eca927314093ceb631ff560340a761}{00298}}         \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_ga69eca927314093ceb631ff560340a761}{type}} = T;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00299}00299     \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00300}00300     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename}... Args>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00301}00301     \textcolor{keyword}{requires} \textcolor{keyword}{requires} \{ \textcolor{keyword}{typename} \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{extract<T>::template}} trait<Args...>; \}}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00302}\mbox{\hyperlink{group__metarebind}{00302}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metarebind_structutils_1_1meta_1_1rebind}{rebind}}<T, Args...> \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00303}\mbox{\hyperlink{group__metastrict__subset__of_gadd1a1b646abb378b8987a68f60a634a0}{00303}}         \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_gadd1a1b646abb378b8987a68f60a634a0}{type}} = \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{extract<T>::template}} trait<Args...>\mbox{\hyperlink{group__metastrict__subset__of_ga69eca927314093ceb631ff560340a761}{::type}};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00304}00304     \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00305}00305     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename}... Args>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00306}\mbox{\hyperlink{group__metarebind_gafe8efef1673daf4f8ce44537acf10a3b}{00306}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metarebind_gafe8efef1673daf4f8ce44537acf10a3b}{rebind\_t}} = \mbox{\hyperlink{group__metarebind_structutils_1_1meta_1_1rebind}{rebind}}<T, Args...>::type;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00308}00308 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00312}00312     \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \textcolor{keyword}{typename}... Args>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00313}\mbox{\hyperlink{structutils_1_1meta_1_1bind__front}{00313}}     \textcolor{keyword}{struct }\mbox{\hyperlink{structutils_1_1meta_1_1bind__front}{bind\_front}} \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00314}00314         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00315}\mbox{\hyperlink{group__metastrict__subset__of}{00315}}         \textcolor{keyword}{struct }\mbox{\hyperlink{group__metastrict__subset__of_structutils_1_1meta_1_1bind__front_1_1trait}{trait}} : Trait<Args..., Ts...> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00316}00316     \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00317}00317 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00321}00321     \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \textcolor{keyword}{typename}... Args>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00322}\mbox{\hyperlink{structutils_1_1meta_1_1bind__back}{00322}}     \textcolor{keyword}{struct }\mbox{\hyperlink{structutils_1_1meta_1_1bind__back}{bind\_back}} \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00323}00323         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00324}\mbox{\hyperlink{group__metastrict__subset__of}{00324}}         \textcolor{keyword}{struct }\mbox{\hyperlink{group__metastrict__subset__of_structutils_1_1meta_1_1bind__back_1_1trait}{trait}} : Trait<Ts..., Args...> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00325}00325     \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00326}00326 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00330}00330     \textcolor{keyword}{template} <tuple\_like SmallTuple, tuple\_like BigTuple>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00331}\mbox{\hyperlink{group__metasubset__of}{00331}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metasubset__of_structutils_1_1meta_1_1subset__of}{subset\_of}} :}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00332}00332             \mbox{\hyperlink{group__metareduce_structutils_1_1meta_1_1reduce}{reduce}}<std::conjunction, map\_t<bind\_front<contained\_in\_trait, BigTuple>::template trait, SmallTuple>> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00333}00333     \textcolor{keyword}{template} <tuple\_like SmallTuple, tuple\_like BigTuple>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00334}\mbox{\hyperlink{group__metasubset__of_gae9e1e125419fe26992d7565a1c7f2045}{00334}}     \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} \mbox{\hyperlink{group__metasubset__of_gae9e1e125419fe26992d7565a1c7f2045}{subset\_of\_v}} = \mbox{\hyperlink{group__metasubset__of_structutils_1_1meta_1_1subset__of}{subset\_of<SmallTuple, BigTuple>::value}};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00336}00336 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00340}00340     \textcolor{keyword}{template} <tuple\_like SmallTuple, tuple\_like BigTuple>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00341}00341     \textcolor{keyword}{struct }strict\_subset\_of : std::bool\_constant<}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00342}00342                 std::tuple\_size\_v<SmallTuple> < std::tuple\_size\_v<BigTuple> \&\& subset\_of<SmallTuple, BigTuple>::value> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00343}00343     template <tuple\_like SmallTuple, tuple\_like BigTuple>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00344}00344     constexpr bool strict\_subset\_of\_v = strict\_subset\_of<SmallTuple, BigTuple>::value;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00346}00346 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00352}00352     template <auto... Values>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00353}00353     struct to\_value\_results \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00354}00354         using type = std::tuple<typename to\_value\_results<Values>::type...>;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00355}00355     \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00356}00356     template <auto Value>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00357}00357     struct to\_value\_results<Value> \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00358}00358         struct type \{ static constexpr auto value = Value; \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00359}00359     \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00360}00360     template <auto... Values>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00361}00361     using to\_value\_results\_t = to\_value\_results<Values...>::type;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00363}00363 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00364}00364     namespace detail \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00365}00365         template <std::ptrdiff\_t Begin, std::ptrdiff\_t Step, typename T>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00366}00366         struct range;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00367}00367         template <std::ptrdiff\_t Begin, std::ptrdiff\_t Step, std::ptrdiff\_t... Idxs>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00368}00368         struct range<Begin, Step, std::integer\_sequence<std::ptrdiff\_t, Idxs...>> :}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00369}00369                 pack<to\_value\_results\_t<Begin + Idxs * Step>...> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00370}00370     \}}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00377}00377     template <std::ptrdiff\_t End, std::ptrdiff\_t Begin = 0, std::ptrdiff\_t Step = 1>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00378}00378     struct range : detail::range<Begin, Step,}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00379}00379                 std::make\_integer\_sequence<std::ptrdiff\_t, (End -\/ Begin) / Step>> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00380}00380     template <std::ptrdiff\_t End, std::ptrdiff\_t Begin = 0, std::ptrdiff\_t Step = 1>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00381}00381     using range\_t = range<End, Begin, Step>::type;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00383}00383 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00389}00389     template <template<typename...> typename Tmpl, typename... Ts>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00390}00390     struct apply \{ using type = Tmpl<Ts...>; \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00391}00391     template <template<typename...> typename Tmpl, typename... Ts>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00392}00392     struct apply<Tmpl, std::tuple<Ts...>> : apply<Tmpl, Ts...> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00393}00393     template <template<typename...> typename Tmpl, typename... Ts>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00394}00394     using apply\_t = apply<Tmpl, Ts...>::type;}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00396}00396 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00403}00403     template <template<typename...> typename First, template<typename> typename... After>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00404}00404     struct composite \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00405}00405         template <typename... Ts>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00406}00406         struct trait : composite<After...>::template trait<typename First<Ts...>::type> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00407}00407     \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00408}00408     template <template<typename...> typename First>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00409}00409     struct composite<First> \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00410}00410         template <typename... Ts>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00411}00411         struct trait : First<Ts...> \{\};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00412}00412     \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00414}00414 }
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00422}00422     template <tuple\_like Tuple>}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00423}00423     constexpr auto transform(const auto\& f, Tuple\&\& t) \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00424}00424         const auto expand\_transform = [\&f]<typename... Ts>(Ts\&\&... elems) \{}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00425}00425             return std::tuple<decltype(f(std::forward<Ts>(elems)))...>(f(std::forward<Ts>(elems))...);}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00426}00426         \};}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00427}00427         return std::apply(expand\_transform, std::forward<Tuple>(t));}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00428}00428     \}}
-\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00429}00429 \}}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00190}00190 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00191}00191     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Begin, std::ptrdiff\_t End>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00192}\mbox{\hyperlink{group__metaerase}{00192}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metaerase_structutils_1_1meta_1_1erase}{erase}} : \mbox{\hyperlink{group__metaconcat_structutils_1_1meta_1_1concat}{concat}}<slice\_t<Tuple, 0, Begin>, slice\_t<Tuple, End>> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00193}00193     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Begin, std::ptrdiff\_t End>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00194}\mbox{\hyperlink{group__metaerase_ga57e2e26a9ed32b0384df07a98f53b377}{00194}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metaerase_ga57e2e26a9ed32b0384df07a98f53b377}{erase\_t}} = \mbox{\hyperlink{group__metastrict__subset__of_gae0cc6b1113cbcb8e99c20146520ab37f}{erase<Tuple, Begin, End>::type}};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00196}00196 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00202}00202 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00203}00203     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Idx, \textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00204}\mbox{\hyperlink{group__metareplace}{00204}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metareplace_structutils_1_1meta_1_1replace}{replace}} : \mbox{\hyperlink{group__metaconcat_structutils_1_1meta_1_1concat}{concat}}<slice\_t<Tuple, 0, Idx>, std::tuple<T>, slice\_t<Tuple, Idx + 1>> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00205}00205     \textcolor{keyword}{template} <tuple\_like Tuple, std::ptrdiff\_t Idx, \textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00206}\mbox{\hyperlink{group__metareplace_ga44e3856c9561e053226ad2c473572a43}{00206}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metareplace_ga44e3856c9561e053226ad2c473572a43}{replace\_t}} = \mbox{\hyperlink{group__metastrict__subset__of_gae0cc6b1113cbcb8e99c20146520ab37f}{replace<Tuple, Idx, T>::type}};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00208}00208 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00214}00214 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00215}00215     \textcolor{keyword}{template} <\textcolor{keyword}{typename} ErasedResult>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00216}\mbox{\hyperlink{group__metainfer}{00216}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metainfer_structutils_1_1meta_1_1infer}{infer}} \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00217}\mbox{\hyperlink{group__metastrict__subset__of_ga43c3aa2423e04165a63b232a97ec2d92}{00217}}         \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_ga43c3aa2423e04165a63b232a97ec2d92}{type}} = std::conditional\_t<\textcolor{keyword}{requires} \{ \textcolor{keyword}{typename} ErasedResult::type; \},}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00218}\mbox{\hyperlink{group__metastrict__subset__of_ga1cf91fddec6a7f669b55820814674e71}{00218}}             \textcolor{keyword}{typename} ErasedResult::type, \mbox{\hyperlink{group__metastrict__subset__of_ga1cf91fddec6a7f669b55820814674e71}{ErasedResult}}>;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00219}00219     \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00220}00220     \textcolor{keyword}{template} <\textcolor{keyword}{typename} ErasedResult>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00221}\mbox{\hyperlink{group__metainfer_ga589006341bea1c7475635f68058edb53}{00221}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metainfer_ga589006341bea1c7475635f68058edb53}{infer\_t}} = \mbox{\hyperlink{group__metastrict__subset__of_ga43c3aa2423e04165a63b232a97ec2d92}{infer<ErasedResult>::type}};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00223}00223 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00224}00224     \textcolor{keyword}{namespace }detail \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00225}00225         \textcolor{keyword}{template} <\mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} Idx, \textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \textcolor{keyword}{typename} TuplesTuple>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00226}00226         \textcolor{keyword}{struct }map\_step;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00227}00227         \textcolor{keyword}{template} <\mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} Idx, \textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \textcolor{keyword}{typename}... Tuples>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00228}00228         \textcolor{keyword}{struct }map\_step<Idx, Trait, std::tuple<Tuples...>> \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00229}00229             \textcolor{keyword}{using} type = \mbox{\hyperlink{group__metainfer_ga589006341bea1c7475635f68058edb53}{infer\_t<Trait<std::tuple\_element\_t<Idx, Tuples>}}...>>;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00230}00230         \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00231}00231         \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \textcolor{keyword}{typename} TuplesTuple, \textcolor{keyword}{typename} IdxSeq>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00232}00232         \textcolor{keyword}{struct }\mbox{\hyperlink{group__metamap_structutils_1_1meta_1_1map}{map}};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00233}00233         \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \textcolor{keyword}{typename} TuplesTuple, \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}}... Idxs>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00234}00234         \textcolor{keyword}{struct }\mbox{\hyperlink{group__metamap_structutils_1_1meta_1_1map}{map}}<Trait, TuplesTuple, std::index\_sequence<Idxs...>> \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00235}00235             \textcolor{keyword}{using} type = std::tuple<typename map\_step<Idxs, Trait, TuplesTuple>::type...>;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00236}00236         \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00237}00237     \}}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00244}00244     \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, tuple\_like Tuple, tuple\_like... Tuples>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00245}\mbox{\hyperlink{group__metamap}{00245}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metamap_structutils_1_1meta_1_1map}{map}} : detail::map<Trait, std::tuple<Tuple, Tuples...>, std::make\_index\_sequence<std::tuple\_size\_v<Tuple>>> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00246}00246     \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \mbox{\hyperlink{conceptutils_1_1meta_1_1tuple__like}{tuple\_like}} Tuple, \mbox{\hyperlink{conceptutils_1_1meta_1_1tuple__like}{tuple\_like}}... Tuples>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00247}\mbox{\hyperlink{group__metamap_ga3b38ac9e969ec6ebdba7cc79b96e7417}{00247}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metamap_ga3b38ac9e969ec6ebdba7cc79b96e7417}{map\_t}} = \mbox{\hyperlink{group__metamap_structutils_1_1meta_1_1map}{map}}<Trait, Tuple, Tuples...>::type;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00249}00249 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00255}00255     \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \mbox{\hyperlink{conceptutils_1_1meta_1_1tuple__like}{tuple\_like}} T>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00256}\mbox{\hyperlink{group__metareduce}{00256}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metareduce_structutils_1_1meta_1_1reduce}{reduce}} : \mbox{\hyperlink{group__metareduce_structutils_1_1meta_1_1reduce}{reduce}}<Trait, make\_tuple\_t<T>> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00257}00257     \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00258}\mbox{\hyperlink{group__metareduce}{00258}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metareduce_structutils_1_1meta_1_1reduce}{reduce}}<Trait, std::tuple<Ts...>> : Trait<Ts...> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00259}00259     \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \mbox{\hyperlink{conceptutils_1_1meta_1_1tuple__like}{tuple\_like}} T>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00260}\mbox{\hyperlink{group__metareduce_gac678341b60759542f0fc5edb1c4f20f1}{00260}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metareduce_gac678341b60759542f0fc5edb1c4f20f1}{reduce\_t}} = \mbox{\hyperlink{group__metareduce_structutils_1_1meta_1_1reduce}{reduce<Trait, T>::type}};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00261}00261     \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \mbox{\hyperlink{conceptutils_1_1meta_1_1tuple__like}{tuple\_like}} T>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00262}\mbox{\hyperlink{group__metareduce_ga89bb8d8a2a70515ade89987c00ae2ba8}{00262}}     \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} \mbox{\hyperlink{group__metareduce_ga89bb8d8a2a70515ade89987c00ae2ba8}{reduce\_v}} = \mbox{\hyperlink{group__metareduce_structutils_1_1meta_1_1reduce}{reduce<Trait, T>::value}};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00264}00264 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00268}00268     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... ValueResults>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00269}\mbox{\hyperlink{group__metasum}{00269}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metasum_structutils_1_1meta_1_1sum}{sum}} : std::integral\_constant<std::uintmax\_t, (static\_cast<std::uintmax\_t>(ValueResults::value) + ...)> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00270}00270     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... ValueResults>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00271}\mbox{\hyperlink{group__metasum_gaa6f94b0098e74cddc4241037e2a90844}{00271}}     \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} \mbox{\hyperlink{group__metasum_gaa6f94b0098e74cddc4241037e2a90844}{sum\_v}} = \mbox{\hyperlink{group__metasum_structutils_1_1meta_1_1sum}{sum}}<ValueResults...>::value;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00273}00273 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00277}00277     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... ValueResults>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00278}\mbox{\hyperlink{group__metaproduct}{00278}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metaproduct_structutils_1_1meta_1_1product}{product}} : std::integral\_constant<std::uintmax\_t, (static\_cast<std::uintmax\_t>(ValueResults::value) * ...)> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00279}00279     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... ValueResults>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00280}\mbox{\hyperlink{group__metaproduct_ga9a93c684aeb7e2311a64f82184e818e0}{00280}}     \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} \mbox{\hyperlink{group__metaproduct_ga9a93c684aeb7e2311a64f82184e818e0}{product\_v}} = \mbox{\hyperlink{group__metaproduct_structutils_1_1meta_1_1product}{product}}<ValueResults...>::value;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00282}00282 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00291}00291     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00292}\mbox{\hyperlink{group__metaextract}{00292}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{extract}} \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00293}00293     \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Tmpl, \textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00294}\mbox{\hyperlink{group__metaextract}{00294}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{extract}}<Tmpl<Args...>> \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00295}\mbox{\hyperlink{group__metastrict__subset__of_ga0cabd8a79cff290bf18ede1db0ad70b8}{00295}}         \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_ga0cabd8a79cff290bf18ede1db0ad70b8}{type}} = std::tuple<Args...>;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00296}00296         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00297}\mbox{\hyperlink{group__metaextract}{00297}}         \textcolor{keyword}{struct }trait \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00298}\mbox{\hyperlink{group__metastrict__subset__of_gae77aa35bc3629d5c81f2af493607edc9}{00298}}             \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_gae77aa35bc3629d5c81f2af493607edc9}{type}} = Tmpl<Ts...>;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00299}00299         \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00300}00300     \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00301}00301     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00302}\mbox{\hyperlink{group__metaextract_gacd07985a63eb37381aaa77c70f6ea190}{00302}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metaextract_gacd07985a63eb37381aaa77c70f6ea190}{extract\_t}} = \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{extract<T>::type}};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00304}00304 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00310}00310     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00311}\mbox{\hyperlink{group__metarebind}{00311}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metarebind_structutils_1_1meta_1_1rebind}{rebind}} \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00312}\mbox{\hyperlink{group__metastrict__subset__of_ga69eca927314093ceb631ff560340a761}{00312}}         \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_ga69eca927314093ceb631ff560340a761}{type}} = T;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00313}00313     \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00314}00314     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00315}00315     \textcolor{keyword}{requires} \textcolor{keyword}{requires} \{ \textcolor{keyword}{typename} \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{extract<T>::template}} trait<Args...>; \}}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00316}\mbox{\hyperlink{group__metarebind}{00316}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metarebind_structutils_1_1meta_1_1rebind}{rebind}}<T, Args...> \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00317}\mbox{\hyperlink{group__metastrict__subset__of_gadd1a1b646abb378b8987a68f60a634a0}{00317}}         \textcolor{keyword}{using} \mbox{\hyperlink{group__metastrict__subset__of_gadd1a1b646abb378b8987a68f60a634a0}{type}} = \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{extract<T>::template}} trait<Args...>\mbox{\hyperlink{group__metastrict__subset__of_ga69eca927314093ceb631ff560340a761}{::type}};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00318}00318     \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00319}00319     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00320}\mbox{\hyperlink{group__metarebind_gafe8efef1673daf4f8ce44537acf10a3b}{00320}}     \textcolor{keyword}{using} \mbox{\hyperlink{group__metarebind_gafe8efef1673daf4f8ce44537acf10a3b}{rebind\_t}} = \mbox{\hyperlink{group__metarebind_structutils_1_1meta_1_1rebind}{rebind}}<T, Args...>::type;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00322}00322 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00326}00326     \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00327}\mbox{\hyperlink{structutils_1_1meta_1_1bind__front}{00327}}     \textcolor{keyword}{struct }\mbox{\hyperlink{structutils_1_1meta_1_1bind__front}{bind\_front}} \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00328}00328         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00329}\mbox{\hyperlink{group__metastrict__subset__of}{00329}}         \textcolor{keyword}{struct }\mbox{\hyperlink{group__metastrict__subset__of_structutils_1_1meta_1_1bind__front_1_1trait}{trait}} : Trait<Args..., Ts...> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00330}00330     \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00331}00331 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00335}00335     \textcolor{keyword}{template} <\textcolor{keyword}{template}<\textcolor{keyword}{typename}...> \textcolor{keyword}{typename} Trait, \textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00336}\mbox{\hyperlink{structutils_1_1meta_1_1bind__back}{00336}}     \textcolor{keyword}{struct }\mbox{\hyperlink{structutils_1_1meta_1_1bind__back}{bind\_back}} \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00337}00337         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00338}\mbox{\hyperlink{group__metastrict__subset__of}{00338}}         \textcolor{keyword}{struct }\mbox{\hyperlink{group__metastrict__subset__of_structutils_1_1meta_1_1bind__back_1_1trait}{trait}} : Trait<Ts..., Args...> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00339}00339     \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00340}00340 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00344}00344     \textcolor{keyword}{template} <tuple\_like SmallTuple, tuple\_like BigTuple>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00345}\mbox{\hyperlink{group__metasubset__of}{00345}}     \textcolor{keyword}{struct }\mbox{\hyperlink{group__metasubset__of_structutils_1_1meta_1_1subset__of}{subset\_of}} :}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00346}00346             \mbox{\hyperlink{group__metareduce_structutils_1_1meta_1_1reduce}{reduce}}<std::conjunction, map\_t<bind\_front<contained\_in\_trait, BigTuple>::template trait, SmallTuple>> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00347}00347     \textcolor{keyword}{template} <tuple\_like SmallTuple, tuple\_like BigTuple>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00348}\mbox{\hyperlink{group__metasubset__of_gae9e1e125419fe26992d7565a1c7f2045}{00348}}     \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} \mbox{\hyperlink{group__metasubset__of_gae9e1e125419fe26992d7565a1c7f2045}{subset\_of\_v}} = \mbox{\hyperlink{group__metasubset__of_structutils_1_1meta_1_1subset__of}{subset\_of<SmallTuple, BigTuple>::value}};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00350}00350 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00354}00354     \textcolor{keyword}{template} <tuple\_like SmallTuple, tuple\_like BigTuple>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00355}00355     \textcolor{keyword}{struct }strict\_subset\_of : std::bool\_constant<}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00356}00356                 std::tuple\_size\_v<SmallTuple> < std::tuple\_size\_v<BigTuple> \&\& subset\_of<SmallTuple, BigTuple>::value> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00357}00357     template <tuple\_like SmallTuple, tuple\_like BigTuple>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00358}00358     constexpr bool strict\_subset\_of\_v = strict\_subset\_of<SmallTuple, BigTuple>::value;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00360}00360 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00366}00366     template <auto... Values>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00367}00367     struct to\_value\_results \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00368}00368         using type = std::tuple<typename to\_value\_results<Values>::type...>;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00369}00369     \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00370}00370     template <auto Value>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00371}00371     struct to\_value\_results<Value> \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00372}00372         struct type \{ static constexpr auto value = Value; \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00373}00373     \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00374}00374     template <auto... Values>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00375}00375     using to\_value\_results\_t = to\_value\_results<Values...>::type;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00377}00377 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00378}00378     namespace detail \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00379}00379         template <std::ptrdiff\_t Begin, std::ptrdiff\_t Step, typename T>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00380}00380         struct range;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00381}00381         template <std::ptrdiff\_t Begin, std::ptrdiff\_t Step, std::ptrdiff\_t... Idxs>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00382}00382         struct range<Begin, Step, std::integer\_sequence<std::ptrdiff\_t, Idxs...>> :}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00383}00383                 pack<to\_value\_results\_t<Begin + Idxs * Step>...> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00384}00384     \}}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00391}00391     template <std::ptrdiff\_t End, std::ptrdiff\_t Begin = 0, std::ptrdiff\_t Step = 1>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00392}00392     struct range : detail::range<Begin, Step,}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00393}00393                 std::make\_integer\_sequence<std::ptrdiff\_t, (End -\/ Begin) / Step>> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00394}00394     template <std::ptrdiff\_t End, std::ptrdiff\_t Begin = 0, std::ptrdiff\_t Step = 1>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00395}00395     using range\_t = range<End, Begin, Step>::type;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00397}00397 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00403}00403     template <template<typename...> typename Tmpl, typename... Ts>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00404}00404     struct apply \{ using type = Tmpl<Ts...>; \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00405}00405     template <template<typename...> typename Tmpl, typename... Ts>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00406}00406     struct apply<Tmpl, std::tuple<Ts...>> : apply<Tmpl, Ts...> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00407}00407     template <template<typename...> typename Tmpl, typename... Ts>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00408}00408     using apply\_t = apply<Tmpl, Ts...>::type;}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00410}00410 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00417}00417     template <template<typename...> typename First, template<typename> typename... After>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00418}00418     struct composite \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00419}00419         template <typename... Ts>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00420}00420         struct trait : composite<After...>::template trait<typename First<Ts...>::type> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00421}00421     \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00422}00422     template <template<typename...> typename First>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00423}00423     struct composite<First> \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00424}00424         template <typename... Ts>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00425}00425         struct trait : First<Ts...> \{\};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00426}00426     \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00428}00428 }
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00436}00436     template <tuple\_like Tuple>}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00437}00437     constexpr auto transform(const auto\& f, Tuple\&\& t) \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00438}00438         const auto expand\_transform = [\&f]<typename... Ts>(Ts\&\&... elems) \{}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00439}00439             return std::tuple<decltype(f(std::forward<Ts>(elems)))...>(f(std::forward<Ts>(elems))...);}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00440}00440         \};}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00441}00441         return std::apply(expand\_transform, std::forward<Tuple>(t));}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00442}00442     \}}
+\DoxyCodeLine{\Hypertarget{meta_8hpp_source_l00443}00443 \}}
 
 \end{DoxyCode}

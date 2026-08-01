@@ -1,10 +1,5 @@
 \hypertarget{group__utilspmrstack__allocatorconstructors}{}\doxysection{utils\+::pmr\+::stack\+\_\+allocator\+::stack\+\_\+allocator}
 \label{group__utilspmrstack__allocatorconstructors}\index{utils::pmr::stack\_allocator::stack\_allocator@{utils::pmr::stack\_allocator::stack\_allocator}}
-
-
-Takes ownership of the buffer and uses it for allocations.  
-
-
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
@@ -14,7 +9,7 @@ using \mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_ga2be1957b393
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_ga746f7cd5478f9442fc3808375aeae3e3}{utils\+::pmr\+::stack\+\_\+allocator$<$ T, Sync $>$\+::stack\+\_\+allocator}} (\mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}} buf, \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} space)
-\item 
+\begin{DoxyCompactList}\small\item\em Takes ownership of the buffer and uses it for allocations. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_gaa1ac4dbee6bdd25ed6d882a027b53dae}{utils\+::pmr\+::stack\+\_\+allocator$<$ T, Sync $>$\+::stack\+\_\+allocator}} (std\+::pmr\+::memory\+\_\+resource \&mr, \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} space)
 \begin{DoxyCompactList}\small\item\em Allocates a buffer of size {\ttfamily space} through {\ttfamily mr} and uses it for allocations. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename U , bool S$>$ }\\\mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_ga3fc5d53309c8c22900137af934c5107f}{utils\+::pmr\+::stack\+\_\+allocator$<$ T, Sync $>$\+::explicit}} (S !=Sync) \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator}{stack\+\_\+allocator}}(const \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator}{stack\+\_\+allocator}}$<$ U
@@ -33,16 +28,6 @@ S \&other \mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_ga9112aed
 
 
 \doxysubsection{Detailed Description}
-Takes ownership of the buffer and uses it for allocations. 
-
-
-\begin{DoxyExceptions}{Exceptions}
-{\em std\+::bad\+\_\+alloc} & If the internal control structure does not fit in the given buffer. \\
-\hline
-\end{DoxyExceptions}
-\begin{DoxyNote}{Note}
-The construction can throw even if {\ttfamily space} is not less than the size of the control structure depending on the alignment of {\ttfamily buf}. 
-\end{DoxyNote}
 
 
 \doxysubsection{Typedef Documentation}
@@ -74,7 +59,7 @@ Allocates storage for {\ttfamily T\mbox{[}n\mbox{]}} with specified alignment fr
 
 The behavior is undefined if {\ttfamily alignment} is less than that of {\ttfamily T}. 
 
-Definition at line \mbox{\hyperlink{stack__allocator_8hpp_source_l00103}{103}} of file \mbox{\hyperlink{stack__allocator_8hpp_source}{stack\+\_\+allocator.\+hpp}}.
+Definition at line \mbox{\hyperlink{stack__allocator_8hpp_source_l00104}{104}} of file \mbox{\hyperlink{stack__allocator_8hpp_source}{stack\+\_\+allocator.\+hpp}}.
 
 \mbox{\Hypertarget{group__utilspmrstack__allocatorconstructors_gab607356fe93ec169799735ebea50f8c6}\label{group__utilspmrstack__allocatorconstructors_gab607356fe93ec169799735ebea50f8c6}} 
 \index{utils::pmr::stack\_allocator::stack\_allocator@{utils::pmr::stack\_allocator::stack\_allocator}!deallocate@{deallocate}}
@@ -92,7 +77,7 @@ The alignment argument is unused. It is defined to deallocate a pointer obtained
 \end{DoxyRemark}
 
 
-Definition at line \mbox{\hyperlink{stack__allocator_8hpp_source_l00142}{142}} of file \mbox{\hyperlink{stack__allocator_8hpp_source}{stack\+\_\+allocator.\+hpp}}.
+Definition at line \mbox{\hyperlink{stack__allocator_8hpp_source_l00143}{143}} of file \mbox{\hyperlink{stack__allocator_8hpp_source}{stack\+\_\+allocator.\+hpp}}.
 
 \mbox{\Hypertarget{group__utilspmrstack__allocatorconstructors_ga3fc5d53309c8c22900137af934c5107f}\label{group__utilspmrstack__allocatorconstructors_ga3fc5d53309c8c22900137af934c5107f}} 
 \index{utils::pmr::stack\_allocator::stack\_allocator@{utils::pmr::stack\_allocator::stack\_allocator}!explicit@{explicit}}
@@ -122,7 +107,7 @@ Deallocates the underlying buffer previously allocated through a memory resource
 
 
 
-Definition at line \mbox{\hyperlink{stack__allocator_8hpp_source_l00097}{97}} of file \mbox{\hyperlink{stack__allocator_8hpp_source}{stack\+\_\+allocator.\+hpp}}.
+Definition at line \mbox{\hyperlink{stack__allocator_8hpp_source_l00098}{98}} of file \mbox{\hyperlink{stack__allocator_8hpp_source}{stack\+\_\+allocator.\+hpp}}.
 
 \mbox{\Hypertarget{group__utilspmrstack__allocatorconstructors_gaa1ac4dbee6bdd25ed6d882a027b53dae}\label{group__utilspmrstack__allocatorconstructors_gaa1ac4dbee6bdd25ed6d882a027b53dae}} 
 \index{utils::pmr::stack\_allocator::stack\_allocator@{utils::pmr::stack\_allocator::stack\_allocator}!stack\_allocator@{stack\_allocator}}
@@ -142,7 +127,7 @@ Allocates a buffer of size {\ttfamily space} through {\ttfamily mr} and uses it 
 \end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{stack__allocator_8hpp_source_l00077}{77}} of file \mbox{\hyperlink{stack__allocator_8hpp_source}{stack\+\_\+allocator.\+hpp}}.
+Definition at line \mbox{\hyperlink{stack__allocator_8hpp_source_l00078}{78}} of file \mbox{\hyperlink{stack__allocator_8hpp_source}{stack\+\_\+allocator.\+hpp}}.
 
 \mbox{\Hypertarget{group__utilspmrstack__allocatorconstructors_ga746f7cd5478f9442fc3808375aeae3e3}\label{group__utilspmrstack__allocatorconstructors_ga746f7cd5478f9442fc3808375aeae3e3}} 
 \index{utils::pmr::stack\_allocator::stack\_allocator@{utils::pmr::stack\_allocator::stack\_allocator}!stack\_allocator@{stack\_allocator}}
@@ -153,7 +138,19 @@ Definition at line \mbox{\hyperlink{stack__allocator_8hpp_source_l00077}{77}} of
 
 
 
-Definition at line \mbox{\hyperlink{stack__allocator_8hpp_source_l00067}{67}} of file \mbox{\hyperlink{stack__allocator_8hpp_source}{stack\+\_\+allocator.\+hpp}}.
+Takes ownership of the buffer and uses it for allocations. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::bad\+\_\+alloc} & If the internal control structure does not fit in the given buffer. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Note}
+The construction can throw even if {\ttfamily space} is not less than the size of the control structure depending on the alignment of {\ttfamily buf}. 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{stack__allocator_8hpp_source_l00068}{68}} of file \mbox{\hyperlink{stack__allocator_8hpp_source}{stack\+\_\+allocator.\+hpp}}.
 
 
 
@@ -167,5 +164,5 @@ S\& other \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator}{utils\+::pmr\+
 
 
 
-Definition at line \mbox{\hyperlink{stack__allocator_8hpp_source_l00090}{90}} of file \mbox{\hyperlink{stack__allocator_8hpp_source}{stack\+\_\+allocator.\+hpp}}.
+Definition at line \mbox{\hyperlink{stack__allocator_8hpp_source_l00091}{91}} of file \mbox{\hyperlink{stack__allocator_8hpp_source}{stack\+\_\+allocator.\+hpp}}.
 

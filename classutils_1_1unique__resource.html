@@ -279,7 +279,7 @@ template&lt;typename T , bool Sync = false, typename Semaphore  = std::counting_
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="concurrency_8hpp_source.html#l00106">106</a> of file <a class="el" href="concurrency_8hpp_source.html">concurrency.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="concurrency_8hpp_source.html#l00107">107</a> of file <a class="el" href="concurrency_8hpp_source.html">concurrency.hpp</a>.</p>
 
 </div>
 </div>
@@ -331,7 +331,7 @@ requires (std::is_constructible_v&lt;T, Args...&gt;) explicit(sizeof...(Args) ==
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="concurrency_8hpp_source.html#l00116">116</a> of file <a class="el" href="concurrency_8hpp_source.html">concurrency.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="concurrency_8hpp_source.html#l00117">117</a> of file <a class="el" href="concurrency_8hpp_source.html">concurrency.hpp</a>.</p>
 
 </div>
 </div>
@@ -363,7 +363,7 @@ template&lt;typename T , bool Sync = false, typename Semaphore  = std::counting_
 
 <p>Blocks until a permit is issued. </p>
 
-<p class="definition">Definition at line <a class="el" href="concurrency_8hpp_source.html#l00132">132</a> of file <a class="el" href="concurrency_8hpp_source.html">concurrency.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="concurrency_8hpp_source.html#l00133">133</a> of file <a class="el" href="concurrency_8hpp_source.html">concurrency.hpp</a>.</p>
 
 </div>
 </div>
@@ -395,7 +395,7 @@ template&lt;typename T , bool Sync = false, typename Semaphore  = std::counting_
 <p>Get read access to the resource. </p>
 <p >Only available if <code>sync</code> is false. </p>
 
-<p class="definition">Definition at line <a class="el" href="concurrency_8hpp_source.html#l00122">122</a> of file <a class="el" href="concurrency_8hpp_source.html">concurrency.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="concurrency_8hpp_source.html#l00123">123</a> of file <a class="el" href="concurrency_8hpp_source.html">concurrency.hpp</a>.</p>
 
 </div>
 </div>
@@ -424,7 +424,7 @@ template&lt;typename T , bool Sync = false, typename Semaphore  = std::counting_
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="concurrency_8hpp_source.html#l00123">123</a> of file <a class="el" href="concurrency_8hpp_source.html">concurrency.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="concurrency_8hpp_source.html#l00124">124</a> of file <a class="el" href="concurrency_8hpp_source.html">concurrency.hpp</a>.</p>
 
 </div>
 </div>
@@ -456,7 +456,7 @@ template&lt;typename T , bool Sync = false, typename Semaphore  = std::counting_
 <p>Get read access to the resource, bypassing mutex. </p>
 <dl class="section warning"><dt>Warning</dt><dd>Dangerous operation if <code>sync</code> is true. <code>operator*</code> and <code>operator-&gt;</code> are better choices even when <code>sync</code> is false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="concurrency_8hpp_source.html#l00130">130</a> of file <a class="el" href="concurrency_8hpp_source.html">concurrency.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="concurrency_8hpp_source.html#l00131">131</a> of file <a class="el" href="concurrency_8hpp_source.html">concurrency.hpp</a>.</p>
 
 </div>
 </div>
@@ -488,7 +488,7 @@ template&lt;typename T , bool Sync = false, typename Semaphore  = std::counting_
 <p>Get read/write access to the resource, bypassing semaphore and mutex. </p>
 <dl class="section warning"><dt>Warning</dt><dd>Dangerous operation. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="concurrency_8hpp_source.html#l00126">126</a> of file <a class="el" href="concurrency_8hpp_source.html">concurrency.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="concurrency_8hpp_source.html#l00127">127</a> of file <a class="el" href="concurrency_8hpp_source.html">concurrency.hpp</a>.</p>
 
 </div>
 </div>
@@ -520,7 +520,7 @@ template&lt;typename T , bool Sync = false, typename Semaphore  = std::counting_
 <p>Try to acquire permit once. </p>
 <p >This method first checks if a permit is instantly available. If yes, returns the issued permit, otherwise returns a <code>std::nullopt</code> . No blocking occurs nevertheless. </p>
 
-<p class="definition">Definition at line <a class="el" href="concurrency_8hpp_source.html#l00141">141</a> of file <a class="el" href="concurrency_8hpp_source.html">concurrency.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="concurrency_8hpp_source.html#l00142">142</a> of file <a class="el" href="concurrency_8hpp_source.html">concurrency.hpp</a>.</p>
 
 </div>
 </div>
@@ -555,7 +555,7 @@ template&lt;typename Rep , typename Period &gt; </div>
 <p>Try to acquire permit with timeout. </p>
 <p >Wait for <code>timeout</code> for a permit, returns a permit once it is issued. If a permit is still not available, returns a <code>std::nullopt</code> . </p>
 
-<p class="definition">Definition at line <a class="el" href="concurrency_8hpp_source.html#l00149">149</a> of file <a class="el" href="concurrency_8hpp_source.html">concurrency.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="concurrency_8hpp_source.html#l00150">150</a> of file <a class="el" href="concurrency_8hpp_source.html">concurrency.hpp</a>.</p>
 
 </div>
 </div>
@@ -590,7 +590,7 @@ template&lt;typename Clock , typename Duration &gt; </div>
 <p>Try to acquire permit until specified time. </p>
 <p >Wait until <code>ddl</code> for a permit, returns a permit once it is issued. If a permit is still not available, returns a <code>std::nullopt</code> . </p>
 
-<p class="definition">Definition at line <a class="el" href="concurrency_8hpp_source.html#l00157">157</a> of file <a class="el" href="concurrency_8hpp_source.html">concurrency.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="concurrency_8hpp_source.html#l00158">158</a> of file <a class="el" href="concurrency_8hpp_source.html">concurrency.hpp</a>.</p>
 
 </div>
 </div>

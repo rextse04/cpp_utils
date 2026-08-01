@@ -98,15 +98,13 @@ $(document).ready(function(){initNavTree('group__utilsintervalendpointcomparison
   <div class="headertitle"><div class="title">utils::interval_endpoint::operator&lt;=&gt;, utils::interval_endpoint::compare</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Three-way comparison operator.  
-<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga7531876b5ec7ffc958b3020f32b14a60"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; <br />
 requires (detail::strict_weak_order&lt;std::less&lt;&gt;, const T&amp;, const U&amp;&gt;)</td></tr>
 <tr class="memitem:ga7531876b5ec7ffc958b3020f32b14a60"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::weak_ordering&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utilsintervalendpointcomparison.html#ga7531876b5ec7ffc958b3020f32b14a60">utils::interval_endpoint&lt; T &gt;::operator&lt;=&gt;</a> (const <a class="el" href="structutils_1_1interval__endpoint.html">interval_endpoint</a>&lt; U &gt; &amp;other) const</td></tr>
+<tr class="memdesc:ga7531876b5ec7ffc958b3020f32b14a60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Three-way comparison operator.  <a href="group__utilsintervalendpointcomparison.html#ga7531876b5ec7ffc958b3020f32b14a60">More...</a><br /></td></tr>
 <tr class="separator:ga7531876b5ec7ffc958b3020f32b14a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabfe97454fff1e35e7177d9b24cf69801"><td class="memTemplParams" colspan="2">template&lt;typename U , detail::strict_weak_order&lt; const T &amp;, const U &amp; &gt; Compare = std::less&lt;&gt;&gt; </td></tr>
 <tr class="memitem:gabfe97454fff1e35e7177d9b24cf69801"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::weak_ordering&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utilsintervalendpointcomparison.html#gabfe97454fff1e35e7177d9b24cf69801">utils::interval_endpoint&lt; T &gt;::compare</a> (const <a class="el" href="structutils_1_1interval__endpoint.html">interval_endpoint</a>&lt; U &gt; &amp;other, bool right, const Compare &amp;comp={}) const</td></tr>
@@ -114,10 +112,8 @@ requires (detail::strict_weak_order&lt;std::less&lt;&gt;, const T&amp;, const U&
 <tr class="separator:gabfe97454fff1e35e7177d9b24cf69801"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p >Three-way comparison operator. </p>
 <p >Given endpoints \(E1\) and \(E2\), \(E1&lt;E2\) if and only if the set represented by \(E1\) is a proper subset of the set represented by \(E2\). This defines a strict weak ordering on endpoints.</p>
-<p >Let \(v\) be <code>this-&gt;value</code> and \(ov\) be <code>other.value</code>. The program is ill-formed if there is not a restriction of <code>std::less&lt;&gt;</code> such that \(v\) and \(ov\) are in the domain. It is UB if such a restriction does not satisfy <em>Compare</em>.</p>
-<p >All endpoints are assumed to be right endpoints. The comparator is taken to be <code>std::less&lt;&gt;</code>. </p>
+<p >Let \(v\) be <code>this-&gt;value</code> and \(ov\) be <code>other.value</code>. The program is ill-formed if there is not a restriction of <code>std::less&lt;&gt;</code> such that \(v\) and \(ov\) are in the domain. It is UB if such a restriction does not satisfy <em>Compare</em>. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gabfe97454fff1e35e7177d9b24cf69801" name="gabfe97454fff1e35e7177d9b24cf69801"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gabfe97454fff1e35e7177d9b24cf69801">&#9670;&nbsp;</a></span>compare()</h2>
@@ -165,7 +161,7 @@ template&lt;typename U , detail::strict_weak_order&lt; const T &amp;, const U &a
 
 <p>\(E1\) is taken to be <code>*this</code>, \(E2\) is taken to be <code>other</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="interval_8hpp_source.html#l00078">78</a> of file <a class="el" href="interval_8hpp_source.html">interval.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="interval_8hpp_source.html#l00079">79</a> of file <a class="el" href="interval_8hpp_source.html">interval.hpp</a>.</p>
 
 </div>
 </div>
@@ -198,7 +194,10 @@ requires (detail::strict_weak_order&lt;std::less&lt;&gt;, const T&amp;, const U&
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="interval_8hpp_source.html#l00072">72</a> of file <a class="el" href="interval_8hpp_source.html">interval.hpp</a>.</p>
+<p>Three-way comparison operator. </p>
+<p >All endpoints are assumed to be right endpoints. The comparator is taken to be <code>std::less&lt;&gt;</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="interval_8hpp_source.html#l00073">73</a> of file <a class="el" href="interval_8hpp_source.html">interval.hpp</a>.</p>
 
 </div>
 </div>

@@ -98,15 +98,13 @@ $(document).ready(function(){initNavTree('group__utilsintervalcomparison.html','
   <div class="headertitle"><div class="title">utils::interval::operator&lt;=&gt;, utils::interval::compare</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Three-way comparison operator.  
-<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga25e12e71ad43636f184197a1329500df"><td class="memTemplParams" colspan="2">template&lt;typename L2 , typename R2 &gt; <br />
 requires (detail::strict_weak_order&lt;std::less&lt;&gt;, const L&amp;, const R&amp;, const L2&amp;, const R2&amp;&gt;)</td></tr>
 <tr class="memitem:ga25e12e71ad43636f184197a1329500df"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::partial_ordering&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utilsintervalcomparison.html#ga25e12e71ad43636f184197a1329500df">utils::interval&lt; L, R &gt;::operator&lt;=&gt;</a> (const <a class="el" href="structutils_1_1interval.html">interval</a>&lt; L2, R2 &gt; &amp;other) const</td></tr>
+<tr class="memdesc:ga25e12e71ad43636f184197a1329500df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Three-way comparison operator.  <a href="group__utilsintervalcomparison.html#ga25e12e71ad43636f184197a1329500df">More...</a><br /></td></tr>
 <tr class="separator:ga25e12e71ad43636f184197a1329500df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab25eb88158269045c97d7649d0222dd5"><td class="memTemplParams" colspan="2">template&lt;typename L2 , typename R2 , detail::strict_weak_order&lt; const L &amp;, const R &amp;, const L2 &amp;, const R2 &amp; &gt; Compare = std::less&lt;&gt;&gt; </td></tr>
 <tr class="memitem:gab25eb88158269045c97d7649d0222dd5"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::partial_ordering&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utilsintervalcomparison.html#gab25eb88158269045c97d7649d0222dd5">utils::interval&lt; L, R &gt;::compare</a> (const <a class="el" href="structutils_1_1interval.html">interval</a>&lt; L2, R2 &gt; &amp;other, const Compare &amp;comp={}) const</td></tr>
@@ -114,9 +112,7 @@ requires (detail::strict_weak_order&lt;std::less&lt;&gt;, const L&amp;, const R&
 <tr class="separator:gab25eb88158269045c97d7649d0222dd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p >Three-way comparison operator. </p>
-<p >Given intervals \(I1\) and \(I2\), \(I1&lt;I2\) if and only if \(I1\) is a proper subset of \(I2\). This defines a strict partial ordering on intervals.</p>
-<p >The comparator is taken to be <code>std::less&lt;&gt;</code>. </p>
+<p >Given intervals \(I1\) and \(I2\), \(I1&lt;I2\) if and only if \(I1\) is a proper subset of \(I2\). This defines a strict partial ordering on intervals. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gab25eb88158269045c97d7649d0222dd5" name="gab25eb88158269045c97d7649d0222dd5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gab25eb88158269045c97d7649d0222dd5">&#9670;&nbsp;</a></span>compare()</h2>
@@ -158,7 +154,7 @@ template&lt;typename L2 , typename R2 , detail::strict_weak_order&lt; const L &a
 
 <p>\(I1\) is taken to be <code>*this</code>, \(I2\) is taken to be <code>other</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="interval_8hpp_source.html#l00202">202</a> of file <a class="el" href="interval_8hpp_source.html">interval.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="interval_8hpp_source.html#l00205">205</a> of file <a class="el" href="interval_8hpp_source.html">interval.hpp</a>.</p>
 
 </div>
 </div>
@@ -191,7 +187,10 @@ requires (detail::strict_weak_order&lt;std::less&lt;&gt;, const L&amp;, const R&
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="interval_8hpp_source.html#l00195">195</a> of file <a class="el" href="interval_8hpp_source.html">interval.hpp</a>.</p>
+<p>Three-way comparison operator. </p>
+<p >The comparator is taken to be <code>std::less&lt;&gt;</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="interval_8hpp_source.html#l00198">198</a> of file <a class="el" href="interval_8hpp_source.html">interval.hpp</a>.</p>
 
 </div>
 </div>

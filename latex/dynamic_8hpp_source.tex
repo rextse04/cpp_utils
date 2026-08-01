@@ -359,454 +359,459 @@
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00497}00497         \textcolor{keyword}{template} <detail::dptr\_first V, interface... Vs>}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00498}00498         \textcolor{keyword}{friend} \textcolor{keyword}{class }dptr;}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00499}00499     \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00507}00507         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Args>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00508}00508         \textcolor{keyword}{requires} (std::is\_constructible\_v<deleter\_type, \textcolor{keyword}{const} dptr\&, Args...>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00509}00509         \textcolor{keyword}{constexpr} dptr(Args\&\&... args)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00510}00510         \textcolor{keyword}{noexcept}(std::is\_nothrow\_constructible\_v<deleter\_type, \textcolor{keyword}{const} dptr\&, Args...>) :}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00511}00511             deleter\_(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::forward<Args>(args)...) \{\}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00515}00515         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Args>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00516}00516         \textcolor{keyword}{requires} (std::is\_constructible\_v<deleter\_type, \textcolor{keyword}{const} dptr\&, Args...>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00517}00517         \textcolor{keyword}{constexpr} dptr(std::nullptr\_t, Args\&\&... args)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00518}00518         \textcolor{keyword}{noexcept}(std::is\_nothrow\_constructible\_v<deleter\_type, \textcolor{keyword}{const} dptr\&, Args...>) :}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00519}00519             deleter\_(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::forward<Args>(args)...) \{\}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00524}00524         \textcolor{keyword}{template} <detail::dptr\_compatible<dptr> T, \textcolor{keyword}{typename}... Args>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00525}00525         \textcolor{keyword}{requires} (std::is\_constructible\_v<deleter\_type, \textcolor{keyword}{const} dptr\&, Args...>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00526}00526         \textcolor{keyword}{explicit} \textcolor{keyword}{constexpr} dptr(T* ptr, Args\&\&... args)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00527}00527         \textcolor{keyword}{noexcept}(std::is\_nothrow\_constructible\_v<deleter\_type, \textcolor{keyword}{const} dptr\&, Args...>) :}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00528}00528             ptr\_(ptr), ivtables\_(extract\_ivtables(std::addressof(ptr-\/>vtable()))),}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00529}00529             deleter\_(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::forward<Args>(args)...) \{\}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00531}00531         \textcolor{keyword}{constexpr} dptr(\textcolor{keyword}{const} dptr\& other)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00532}00532         \textcolor{keyword}{noexcept}(std::is\_nothrow\_constructible\_v<deleter\_type, const dptr\&, const deleter\_type\&>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00533}00533         \textcolor{keyword}{requires}(ownership != unique \&\& std::is\_constructible\_v<deleter\_type, const dptr\&, const deleter\_type\&>) :}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00534}00534             ptr\_(other.ptr\_), ivtables\_(other.ivtables\_), deleter\_(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), other.deleter\_) \{\}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00538}00538         \textcolor{keyword}{constexpr} dptr(dptr\&\& other)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00539}00539         \textcolor{keyword}{noexcept}(std::is\_nothrow\_constructible\_v<deleter\_type, const dptr\&, deleter\_type\&\&>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00540}00540         \textcolor{keyword}{requires} (std::is\_constructible\_v<deleter\_type, const dptr\&, deleter\_type\&\&>) :}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00541}00541             ptr\_(other.ptr\_), ivtables\_(other.ivtables\_), deleter\_(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::move(other.deleter\_)) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00542}00542             other.quick\_reset();}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00543}00543         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00549}00549         \textcolor{keyword}{template} <}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00550}00550             tagged<dptr\_tag> T, \textcolor{keyword}{typename} DT = std::remove\_cvref\_t<T>,}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00551}00551             \textcolor{keyword}{typename} D = follow\_t<T, typename DT::deleter\_type>>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00552}00552         \textcolor{keyword}{requires} (}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00553}00553             (DT::ownership != unique || !std::is\_lvalue\_reference\_v<T>) \&\&}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00554}00554             (DT::ownership == borrowed || !std::is\_const\_v<T>) \&\&}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00555}00555             meta::subset\_of\_v<interfaces, typename DT::interfaces> \&\&}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00556}00556             std::is\_convertible\_v<typename DT::base\_type, base\_type> \&\&}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00557}00557             std::is\_constructible\_v<deleter\_type, const dptr\&, D>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00558}00558         \textcolor{keyword}{constexpr} dptr(T\&\& other)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00559}00559         \textcolor{keyword}{noexcept}(std::is\_nothrow\_constructible\_v<deleter\_type, const dptr\&, D>) :}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00560}00560             ptr\_(other.ptr\_), ivtables\_(copy\_ivtables(other.ivtables\_)),}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00561}00561             deleter\_(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::forward<D>(other.deleter\_)) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00562}00562             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (DT::ownership != borrowed \&\& !std::is\_lvalue\_reference\_v<T>) other.quick\_reset();}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00563}00563         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00568}00568         \textcolor{keyword}{template} <tagged<dptr\_tag> T, \textcolor{keyword}{typename} DT = std::remove\_cvref\_t<T>, \textcolor{keyword}{typename}... Args>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00569}00569         \textcolor{keyword}{requires} (}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00570}00570             (DT::ownership != unique || !std::is\_lvalue\_reference\_v<T>) \&\&}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00571}00571             (DT::ownership == borrowed || !std::is\_const\_v<T>) \&\&}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00572}00572             meta::subset\_of\_v<interfaces, typename DT::interfaces> \&\&}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00573}00573             std::is\_convertible\_v<typename DT::base\_type, base\_type> \&\&}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00574}00574             std::is\_constructible\_v<deleter\_type, \textcolor{keyword}{const} dptr\&, Args...>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00575}00575         \textcolor{keyword}{constexpr} dptr(detach\_deleter\_t, T\&\& other, Args\&\&... args)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00576}00576         \textcolor{keyword}{noexcept}(std::is\_nothrow\_constructible\_v<deleter\_type, \textcolor{keyword}{const} dptr\&, Args...>) :}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00577}00577             ptr\_(other.ptr\_), ivtables\_(copy\_ivtables(other.ivtables\_)),}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00578}00578             deleter\_(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::forward<Args>(args)...) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00579}00579             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (DT::ownership != borrowed \&\& !std::is\_lvalue\_reference\_v<T>) other.quick\_reset();}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00580}00580         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00582}00582 }
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00586}00586         \textcolor{keyword}{constexpr} \string~dptr() noexcept requires (ownership == borrowed) = default;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00587}00587         constexpr \string~dptr() noexcept requires (ownership != borrowed) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00588}00588             \textcolor{keywordflow}{if} (ptr\_) destroy\_and\_delete();}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00589}00589         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00591}00591 }
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00599}00599         \textcolor{keyword}{constexpr} dptr\& operator=(\textcolor{keyword}{const} dptr\& other)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00600}00600         \textcolor{keyword}{noexcept}(\textcolor{keyword}{noexcept}(deleter\_.assign(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), other.deleter\_)))}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00601}00601         \textcolor{keyword}{requires} \textcolor{keyword}{requires} \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00602}00602             \textcolor{keyword}{requires} ownership != unique;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00603}00603             \{ deleter\_.assign(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), other.deleter\_) \};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00604}00604         \} \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00605}00605             \textcolor{keywordflow}{if} (ownership != borrowed \&\& ptr\_ != \textcolor{keyword}{nullptr}) destroy\_and\_delete();}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00606}00606             ptr\_ = other.ptr\_;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00607}00607             ivtables\_ = other.ivtables\_;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00608}00608             deleter\_.assign(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), other.deleter\_);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00609}00609             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00610}00610         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00615}00615         \textcolor{keyword}{constexpr} dptr\& operator=(dptr\&\& other)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00616}00616         \textcolor{keyword}{noexcept}(\textcolor{keyword}{noexcept}(deleter\_.assign(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::move(other.deleter\_))))}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00617}00617         \textcolor{keyword}{requires} \textcolor{keyword}{requires} \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00618}00618             \{ deleter\_.assign(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::move(other.deleter\_)) \};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00619}00619         \} \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00620}00620             \textcolor{keywordflow}{if} (ownership != borrowed \&\& ptr\_ != \textcolor{keyword}{nullptr}) destroy\_and\_delete();}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00621}00621             ptr\_ = other.ptr\_;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00622}00622             ivtables\_ = other.ivtables\_;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00623}00623             deleter\_.assign(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::move(other.deleter\_));}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00624}00624             other.quick\_reset();}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00625}00625             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00626}00626         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00632}00632         \textcolor{keyword}{constexpr} dptr\& operator=(detail::dptr\_compatible<dptr> \textcolor{keyword}{auto}* ptr) \textcolor{keyword}{noexcept} \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00633}00633             \textcolor{keywordflow}{if} (ownership != borrowed \&\& ptr\_ != \textcolor{keyword}{nullptr}) destroy\_and\_delete();}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00634}00634             ptr\_ = ptr;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00635}00635             fill\_ivtables(ivtables\_, std::addressof(ptr-\/>vtable()));}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00636}00636             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00637}00637         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00644}00644         \textcolor{keyword}{template} <tagged<dptr\_tag> T, \textcolor{keyword}{typename} DT = std::remove\_cvref\_t<T>>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00645}00645         \textcolor{keyword}{constexpr} dptr\& operator=(T\&\& other)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00646}00646         \textcolor{keyword}{noexcept}(\textcolor{keyword}{noexcept}(deleter\_.assign(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::forward\_like<T>(other.deleter\_))))}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00647}00647         \textcolor{keyword}{requires} \textcolor{keyword}{requires} \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00648}00648             \textcolor{keyword}{requires} DT::ownership != unique || !std::is\_lvalue\_reference\_v<T>;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00649}00649             \textcolor{keyword}{requires} DT::ownership == borrowed || !std::is\_const\_v<T>;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00650}00650             \textcolor{keyword}{requires} meta::subset\_of\_v<interfaces, typename DT::interfaces>;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00651}00651             \textcolor{keyword}{requires} std::is\_convertible\_v<typename DT::base\_type, base\_type>;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00652}00652             \textcolor{keyword}{requires} std::is\_same\_v<deleter\_type, typename DT::deleter\_type>;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00653}00653             \{ deleter\_.assign(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::forward\_like<T>(other.deleter\_)) \};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00654}00654         \} \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00655}00655             \textcolor{keywordflow}{if} (ownership != borrowed \&\& ptr\_ != \textcolor{keyword}{nullptr}) destroy\_and\_delete();}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00656}00656             ptr\_ = other.ptr\_;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00657}00657             copy\_ivtables\_to(ivtables\_, other.ivtables\_);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00658}00658             deleter\_.assign(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::forward\_like<T>(other.deleter\_));}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00659}00659             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (DT::ownership != borrowed \&\& !std::is\_lvalue\_reference\_v<T>) other.quick\_reset();}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00660}00660             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00661}00661         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00663}00663 }
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00665}00665         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} dptr\& other) \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \{ \textcolor{keywordflow}{return} ptr\_ == other.ptr\_; \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00667}00667         \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} operator<=>(\textcolor{keyword}{const} dptr\& other) \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \{ \textcolor{keywordflow}{return} ptr\_ <=> other.ptr\_; \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00669}00669         \textcolor{keyword}{constexpr} \textcolor{keyword}{explicit} \textcolor{keyword}{operator} bool() const noexcept \{ \textcolor{keywordflow}{return} ptr\_ != \textcolor{keyword}{nullptr}; \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00671}00671         \textcolor{keyword}{constexpr} base\_type get() const noexcept \{ \textcolor{keywordflow}{return} ptr\_; \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00673}00673         \textcolor{keyword}{constexpr} ivtable\_pointer\_types get\_ivtables() const noexcept \{ \textcolor{keywordflow}{return} ivtables\_; \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00676}00676         \textcolor{keyword}{constexpr} deleter\_type\& get\_deleter() noexcept \{ \textcolor{keywordflow}{return} deleter\_; \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00677}00677         \textcolor{keyword}{constexpr} \textcolor{keyword}{const} deleter\_type\& get\_deleter() const noexcept \{ \textcolor{keywordflow}{return} deleter\_; \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00680}00680         \textcolor{keyword}{template} <\textcolor{keywordtype}{int}erface V, \textcolor{keyword}{typename} T>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00681}00681         \textcolor{keyword}{requires} (meta::contained\_in\_v<interfaces, V>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00682}00682         \textcolor{keyword}{constexpr} \textcolor{keyword}{decltype}(\textcolor{keyword}{auto}) operator[](T V::* mptr) \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00683}00683             \textcolor{keywordflow}{return} detail::bind\_dyn(ptr\_, std::get<\textcolor{keyword}{const} ivtable<V>*>(ivtables\_)-\/>*mptr);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00684}00684         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00690}00690         \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} operator+(\mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{integer\_alias::size\_t}} idx) \textcolor{keyword}{const} \textcolor{keyword}{noexcept}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00691}00691         \textcolor{keyword}{requires} (is\_array) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00692}00692 \textcolor{preprocessor}{\#ifdef UTILS\_DYN\_NO\_ARR}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00693}00693             \textcolor{keyword}{static\_assert}(\textcolor{keyword}{false}, UTILS\_DYN\_NO\_ARR\_ERR\_MSG);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00694}00694 \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00695}00695             \textcolor{keyword}{using} result = rebind\_deleter\_type<disabled\_deleter>::template change\_ownership\_type<borrowed>;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00696}00696             \textcolor{keyword}{using} byte\_t = follow\_t<base\_type, std::byte*>;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00697}00697             \textcolor{keyword}{const} \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{integer\_alias::size\_t}} offset = std::get<0>(ivtables\_)-\/>size * idx;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00698}00698             \textcolor{keywordflow}{return} result\{\textcolor{keyword}{static\_cast<}byte\_t\textcolor{keyword}{>}(ptr\_) + offset, ivtables\_\};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00699}00699 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00700}00700         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00701}00701         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{swap}}(dptr\& other)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00702}00702         \textcolor{keyword}{noexcept} (std::is\_nothrow\_swappable\_v<deleter\_type>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00703}00703         \textcolor{keyword}{requires} (std::is\_swappable\_v<deleter\_type>) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00704}00704             \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{std::swap}}(ptr\_, other.ptr\_);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00705}00705             \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{std::swap}}(ivtables\_, other.ivtables\_);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00706}00706             \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{std::swap}}(deleter\_, other.deleter\_);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00707}00707         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00718}00718         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} destroy() const noexcept requires (!is\_array) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00719}00719             std::get<0>(ivtables\_)-\/>dtor(\textcolor{keyword}{const\_cast<}\textcolor{keywordtype}{void}*\textcolor{keyword}{>}(ptr\_));}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00720}00720         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00728}00728         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} destroy\_and\_delete() noexcept}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00729}00729         requires (!is\_array \&\& !std::is\_same\_v<deleter\_type, disabled\_deleter> \&\& !deleter\_type::destroying\_delete) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00730}00730             destroy();}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00731}00731             deleter\_(*\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00732}00732             ptr\_ = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00733}00733         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00734}00734         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} destroy\_and\_delete() noexcept}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00735}00735         requires (deleter\_type::destroying\_delete) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00504}00504 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00508}00508         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00509}00509         \textcolor{keyword}{requires} (std::is\_constructible\_v<deleter\_type, \textcolor{keyword}{const} dptr\&, Args...>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00510}00510         \textcolor{keyword}{constexpr} dptr(Args\&\&... args)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00511}00511         \textcolor{keyword}{noexcept}(std::is\_nothrow\_constructible\_v<deleter\_type, \textcolor{keyword}{const} dptr\&, Args...>) :}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00512}00512             deleter\_(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::forward<Args>(args)...) \{\}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00516}00516         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00517}00517         \textcolor{keyword}{requires} (std::is\_constructible\_v<deleter\_type, \textcolor{keyword}{const} dptr\&, Args...>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00518}00518         \textcolor{keyword}{constexpr} dptr(std::nullptr\_t, Args\&\&... args)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00519}00519         \textcolor{keyword}{noexcept}(std::is\_nothrow\_constructible\_v<deleter\_type, \textcolor{keyword}{const} dptr\&, Args...>) :}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00520}00520             deleter\_(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::forward<Args>(args)...) \{\}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00525}00525         \textcolor{keyword}{template} <detail::dptr\_compatible<dptr> T, \textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00526}00526         \textcolor{keyword}{requires} (std::is\_constructible\_v<deleter\_type, \textcolor{keyword}{const} dptr\&, Args...>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00527}00527         \textcolor{keyword}{explicit} \textcolor{keyword}{constexpr} dptr(T* ptr, Args\&\&... args)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00528}00528         \textcolor{keyword}{noexcept}(std::is\_nothrow\_constructible\_v<deleter\_type, \textcolor{keyword}{const} dptr\&, Args...>) :}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00529}00529             ptr\_(ptr), ivtables\_(extract\_ivtables(std::addressof(ptr-\/>vtable()))),}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00530}00530             deleter\_(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::forward<Args>(args)...) \{\}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00532}00532         \textcolor{keyword}{constexpr} dptr(\textcolor{keyword}{const} dptr\& other)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00533}00533         \textcolor{keyword}{noexcept}(std::is\_nothrow\_constructible\_v<deleter\_type, const dptr\&, const deleter\_type\&>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00534}00534         \textcolor{keyword}{requires}(ownership != unique \&\& std::is\_constructible\_v<deleter\_type, const dptr\&, const deleter\_type\&>) :}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00535}00535             ptr\_(other.ptr\_), ivtables\_(other.ivtables\_), deleter\_(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), other.deleter\_) \{\}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00539}00539         \textcolor{keyword}{constexpr} dptr(dptr\&\& other)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00540}00540         \textcolor{keyword}{noexcept}(std::is\_nothrow\_constructible\_v<deleter\_type, const dptr\&, deleter\_type\&\&>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00541}00541         \textcolor{keyword}{requires} (std::is\_constructible\_v<deleter\_type, const dptr\&, deleter\_type\&\&>) :}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00542}00542             ptr\_(other.ptr\_), ivtables\_(other.ivtables\_), deleter\_(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::move(other.deleter\_)) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00543}00543             other.quick\_reset();}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00544}00544         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00550}00550         \textcolor{keyword}{template} <}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00551}00551             tagged<dptr\_tag> T, \textcolor{keyword}{typename} DT = std::remove\_cvref\_t<T>,}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00552}00552             \textcolor{keyword}{typename} D = follow\_t<T, typename DT::deleter\_type>>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00553}00553         \textcolor{keyword}{requires} (}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00554}00554             (DT::ownership != unique || !std::is\_lvalue\_reference\_v<T>) \&\&}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00555}00555             (DT::ownership == borrowed || !std::is\_const\_v<T>) \&\&}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00556}00556             meta::subset\_of\_v<interfaces, typename DT::interfaces> \&\&}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00557}00557             std::is\_convertible\_v<typename DT::base\_type, base\_type> \&\&}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00558}00558             std::is\_constructible\_v<deleter\_type, const dptr\&, D>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00559}00559         \textcolor{keyword}{constexpr} dptr(T\&\& other)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00560}00560         \textcolor{keyword}{noexcept}(std::is\_nothrow\_constructible\_v<deleter\_type, const dptr\&, D>) :}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00561}00561             ptr\_(other.ptr\_), ivtables\_(copy\_ivtables(other.ivtables\_)),}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00562}00562             deleter\_(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::forward<D>(other.deleter\_)) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00563}00563             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (DT::ownership != borrowed \&\& !std::is\_lvalue\_reference\_v<T>) other.quick\_reset();}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00564}00564         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00569}00569         \textcolor{keyword}{template} <tagged<dptr\_tag> T, \textcolor{keyword}{typename} DT = std::remove\_cvref\_t<T>, \textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00570}00570         \textcolor{keyword}{requires} (}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00571}00571             (DT::ownership != unique || !std::is\_lvalue\_reference\_v<T>) \&\&}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00572}00572             (DT::ownership == borrowed || !std::is\_const\_v<T>) \&\&}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00573}00573             meta::subset\_of\_v<interfaces, typename DT::interfaces> \&\&}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00574}00574             std::is\_convertible\_v<typename DT::base\_type, base\_type> \&\&}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00575}00575             std::is\_constructible\_v<deleter\_type, \textcolor{keyword}{const} dptr\&, Args...>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00576}00576         \textcolor{keyword}{constexpr} dptr(detach\_deleter\_t, T\&\& other, Args\&\&... args)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00577}00577         \textcolor{keyword}{noexcept}(std::is\_nothrow\_constructible\_v<deleter\_type, \textcolor{keyword}{const} dptr\&, Args...>) :}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00578}00578             ptr\_(other.ptr\_), ivtables\_(copy\_ivtables(other.ivtables\_)),}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00579}00579             deleter\_(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::forward<Args>(args)...) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00580}00580             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (DT::ownership != borrowed \&\& !std::is\_lvalue\_reference\_v<T>) other.quick\_reset();}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00581}00581         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00583}00583 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00587}00587 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00588}00588         \textcolor{keyword}{constexpr} \string~dptr() noexcept requires (ownership == borrowed) = default;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00589}00589         constexpr \string~dptr() noexcept requires (ownership != borrowed) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00590}00590             \textcolor{keywordflow}{if} (ptr\_) destroy\_and\_delete();}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00591}00591         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00593}00593 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00596}00596 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00602}00602         \textcolor{keyword}{constexpr} dptr\& operator=(\textcolor{keyword}{const} dptr\& other)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00603}00603         \textcolor{keyword}{noexcept}(\textcolor{keyword}{noexcept}(deleter\_.assign(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), other.deleter\_)))}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00604}00604         \textcolor{keyword}{requires} \textcolor{keyword}{requires} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00605}00605             \textcolor{keyword}{requires} ownership != unique;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00606}00606             \{ deleter\_.assign(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), other.deleter\_) \};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00607}00607         \} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00608}00608             \textcolor{keywordflow}{if} (ownership != borrowed \&\& ptr\_ != \textcolor{keyword}{nullptr}) destroy\_and\_delete();}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00609}00609             ptr\_ = other.ptr\_;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00610}00610             ivtables\_ = other.ivtables\_;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00611}00611             deleter\_.assign(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), other.deleter\_);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00612}00612             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00613}00613         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00618}00618         \textcolor{keyword}{constexpr} dptr\& operator=(dptr\&\& other)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00619}00619         \textcolor{keyword}{noexcept}(\textcolor{keyword}{noexcept}(deleter\_.assign(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::move(other.deleter\_))))}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00620}00620         \textcolor{keyword}{requires} \textcolor{keyword}{requires} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00621}00621             \{ deleter\_.assign(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::move(other.deleter\_)) \};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00622}00622         \} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00623}00623             \textcolor{keywordflow}{if} (ownership != borrowed \&\& ptr\_ != \textcolor{keyword}{nullptr}) destroy\_and\_delete();}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00624}00624             ptr\_ = other.ptr\_;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00625}00625             ivtables\_ = other.ivtables\_;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00626}00626             deleter\_.assign(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::move(other.deleter\_));}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00627}00627             other.quick\_reset();}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00628}00628             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00629}00629         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00635}00635         \textcolor{keyword}{constexpr} dptr\& operator=(detail::dptr\_compatible<dptr> \textcolor{keyword}{auto}* ptr) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00636}00636             \textcolor{keywordflow}{if} (ownership != borrowed \&\& ptr\_ != \textcolor{keyword}{nullptr}) destroy\_and\_delete();}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00637}00637             ptr\_ = ptr;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00638}00638             fill\_ivtables(ivtables\_, std::addressof(ptr-\/>vtable()));}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00639}00639             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00640}00640         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00647}00647         \textcolor{keyword}{template} <tagged<dptr\_tag> T, \textcolor{keyword}{typename} DT = std::remove\_cvref\_t<T>>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00648}00648         \textcolor{keyword}{constexpr} dptr\& operator=(T\&\& other)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00649}00649         \textcolor{keyword}{noexcept}(\textcolor{keyword}{noexcept}(deleter\_.assign(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::forward\_like<T>(other.deleter\_))))}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00650}00650         \textcolor{keyword}{requires} \textcolor{keyword}{requires} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00651}00651             \textcolor{keyword}{requires} DT::ownership != unique || !std::is\_lvalue\_reference\_v<T>;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00652}00652             \textcolor{keyword}{requires} DT::ownership == borrowed || !std::is\_const\_v<T>;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00653}00653             \textcolor{keyword}{requires} meta::subset\_of\_v<interfaces, typename DT::interfaces>;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00654}00654             \textcolor{keyword}{requires} std::is\_convertible\_v<typename DT::base\_type, base\_type>;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00655}00655             \textcolor{keyword}{requires} std::is\_same\_v<deleter\_type, typename DT::deleter\_type>;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00656}00656             \{ deleter\_.assign(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::forward\_like<T>(other.deleter\_)) \};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00657}00657         \} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00658}00658             \textcolor{keywordflow}{if} (ownership != borrowed \&\& ptr\_ != \textcolor{keyword}{nullptr}) destroy\_and\_delete();}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00659}00659             ptr\_ = other.ptr\_;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00660}00660             copy\_ivtables\_to(ivtables\_, other.ivtables\_);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00661}00661             deleter\_.assign(\mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{std::as\_const}}(*\textcolor{keyword}{this}), std::forward\_like<T>(other.deleter\_));}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00662}00662             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (DT::ownership != borrowed \&\& !std::is\_lvalue\_reference\_v<T>) other.quick\_reset();}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00663}00663             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00664}00664         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00666}00666 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00668}00668         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} dptr\& other) \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \{ \textcolor{keywordflow}{return} ptr\_ == other.ptr\_; \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00670}00670         \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} operator<=>(\textcolor{keyword}{const} dptr\& other) \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \{ \textcolor{keywordflow}{return} ptr\_ <=> other.ptr\_; \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00672}00672         \textcolor{keyword}{constexpr} \textcolor{keyword}{explicit} \textcolor{keyword}{operator} bool() const noexcept \{ \textcolor{keywordflow}{return} ptr\_ != \textcolor{keyword}{nullptr}; \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00674}00674         \textcolor{keyword}{constexpr} base\_type get() const noexcept \{ \textcolor{keywordflow}{return} ptr\_; \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00676}00676         \textcolor{keyword}{constexpr} ivtable\_pointer\_types get\_ivtables() const noexcept \{ \textcolor{keywordflow}{return} ivtables\_; \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00678}00678 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00680}00680         \textcolor{keyword}{constexpr} deleter\_type\& get\_deleter() noexcept \{ \textcolor{keywordflow}{return} deleter\_; \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00681}00681         \textcolor{keyword}{constexpr} \textcolor{keyword}{const} deleter\_type\& get\_deleter() const noexcept \{ \textcolor{keywordflow}{return} deleter\_; \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00684}00684         \textcolor{keyword}{template} <\textcolor{keywordtype}{int}erface V, \textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00685}00685         \textcolor{keyword}{requires} (meta::contained\_in\_v<interfaces, V>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00686}00686         \textcolor{keyword}{constexpr} \textcolor{keyword}{decltype}(\textcolor{keyword}{auto}) operator[](T V::* mptr) \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00687}00687             \textcolor{keywordflow}{return} detail::bind\_dyn(ptr\_, std::get<\textcolor{keyword}{const} ivtable<V>*>(ivtables\_)-\/>*mptr);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00688}00688         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00694}00694         \textcolor{keyword}{constexpr} \textcolor{keyword}{auto} operator+(\mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{integer\_alias::size\_t}} idx) \textcolor{keyword}{const} \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00695}00695         \textcolor{keyword}{requires} (is\_array) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00696}00696 \textcolor{preprocessor}{\#ifdef UTILS\_DYN\_NO\_ARR}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00697}00697             \textcolor{keyword}{static\_assert}(\textcolor{keyword}{false}, UTILS\_DYN\_NO\_ARR\_ERR\_MSG);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00698}00698 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00699}00699             \textcolor{keyword}{using} result = rebind\_deleter\_type<disabled\_deleter>::template change\_ownership\_type<borrowed>;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00700}00700             \textcolor{keyword}{using} byte\_t = follow\_t<base\_type, std::byte*>;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00701}00701             \textcolor{keyword}{const} \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{integer\_alias::size\_t}} offset = std::get<0>(ivtables\_)-\/>size * idx;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00702}00702             \textcolor{keywordflow}{return} result\{\textcolor{keyword}{static\_cast<}byte\_t\textcolor{keyword}{>}(ptr\_) + offset, ivtables\_\};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00703}00703 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00704}00704         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00705}00705         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{swap}}(dptr\& other)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00706}00706         \textcolor{keyword}{noexcept} (std::is\_nothrow\_swappable\_v<deleter\_type>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00707}00707         \textcolor{keyword}{requires} (std::is\_swappable\_v<deleter\_type>) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00708}00708             \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{std::swap}}(ptr\_, other.ptr\_);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00709}00709             \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{std::swap}}(ivtables\_, other.ivtables\_);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00710}00710             \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{std::swap}}(deleter\_, other.deleter\_);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00711}00711         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00722}00722         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} destroy() const noexcept requires (!is\_array) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00723}00723             std::get<0>(ivtables\_)-\/>dtor(\textcolor{keyword}{const\_cast<}\textcolor{keywordtype}{void}*\textcolor{keyword}{>}(ptr\_));}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00724}00724         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00732}00732 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00733}00733         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} destroy\_and\_delete() noexcept}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00734}00734         requires (!is\_array \&\& !std::is\_same\_v<deleter\_type, disabled\_deleter> \&\& !deleter\_type::destroying\_delete) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00735}00735             destroy();}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00736}00736             deleter\_(*\textcolor{keyword}{this});}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00737}00737             ptr\_ = \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00738}00738         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00743}00743         \textcolor{keyword}{constexpr} base\_type release() noexcept \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00744}00744             base\_type ptr = ptr\_;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00745}00745             ptr\_ = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00746}00746             \textcolor{keywordflow}{return} ptr;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00747}00747         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00749}00749         \textcolor{keyword}{template} <detail::dptr\_compatible<dptr> T>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00750}00750         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} reset(T* ptr) \textcolor{keyword}{noexcept} \{ operator=(ptr); \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00752}00752         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} reset(std::nullptr\_t = \textcolor{keyword}{nullptr}) noexcept \{ operator=(\textcolor{keyword}{nullptr}); \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00754}00754         \textcolor{keyword}{template} <deleter Deleter>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00755}00755         \textcolor{keyword}{constexpr} rebind\_deleter\_type<Deleter> rebind\_deleter(\textcolor{keyword}{auto}\&\&... args) \textcolor{keyword}{const}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00756}00756         \textcolor{keyword}{noexcept}(std::is\_nothrow\_constructible\_v<Deleter, const rebind\_deleter\_type<Deleter>\&, \textcolor{keyword}{decltype}(args)...>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00757}00757         \textcolor{keyword}{requires} (std::is\_constructible\_v<Deleter, const rebind\_deleter\_type<Deleter>\&, \textcolor{keyword}{decltype}(args)...>) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00758}00758             \textcolor{keywordflow}{return} \{ptr\_, ivtables\_, std::forward<decltype(args)>(args)...\};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00759}00759         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00761}00761         \textcolor{keyword}{constexpr} remove\_deleter\_type remove\_deleter() const noexcept \{ \textcolor{keywordflow}{return} \{ptr\_, ivtables\_\}; \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00762}00762     \};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00763}00763 }
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00765}00765     \textcolor{keyword}{template} <detail::dptr\_first I, interface... Is>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00766}00766     \textcolor{keyword}{requires} (!std::is\_reference\_v<I>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00767}00767     \textcolor{keyword}{class} unique\_dptr : \textcolor{keyword}{public} dptr<I\&, Is...> \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00768}00768     \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00769}00769         \textcolor{keyword}{using} parent = dptr<I\&, Is...>;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00770}00770     \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00771}00771         \textcolor{keyword}{using} parent::parent;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00772}00772         \textcolor{keyword}{constexpr} unique\_dptr(unique\_dptr\&\& other) = \textcolor{keywordflow}{default};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00773}00773         \textcolor{keyword}{constexpr} unique\_dptr\& operator=(unique\_dptr\&\& other) = \textcolor{keywordflow}{default};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00774}00774     \};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00775}00775 }
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00776}00776     \textcolor{keyword}{inline} \textcolor{keyword}{constexpr} \textcolor{keyword}{struct }alias\_with\_t\{\} alias\_with\{\};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00777}00777     \textcolor{keyword}{namespace }detail \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00778}00778         \textcolor{keyword}{class }shared\_dptr\_control\_base \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00779}00779         \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00780}00780             std::atomic<long> shared\_count = 1,}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00781}00781             weak\_count = 1; \textcolor{comment}{// +1 for when there is an active shared\_ptr}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00782}00782             \textcolor{keyword}{virtual} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} destroy\_and\_delete() noexcept = 0;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00783}00783             virtual constexpr \textcolor{keywordtype}{void} deallocate() noexcept = 0;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00784}00784         \};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00785}00785 }
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00786}00786         template <typename DPtr, typename Alloc>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00787}00787         struct shared\_dptr\_control final : shared\_dptr\_control\_base \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00788}00788             \textcolor{keyword}{using} allocator\_type = std::allocator\_traits<Alloc>::template rebind\_alloc<shared\_dptr\_control>;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00789}00789             \textcolor{keyword}{using} allocator\_traits = std::allocator\_traits<allocator\_type>;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00790}00790             \textcolor{keyword}{using} allocator\_pointer = allocator\_traits::pointer;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00791}00791             DPtr dptr;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00792}00792             [[no\_unique\_address]] Alloc alloc;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00793}00793             [[no\_unique\_address]] std::conditional\_t<std::is\_pointer\_v<allocator\_pointer>,}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00794}00794                 sink, allocator\_pointer> self\_ptr;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00795}00795 }
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00796}00796             \textcolor{keyword}{template} <\textcolor{keyword}{typename} DPtrT, \textcolor{keyword}{typename} AllocT>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00797}00797             \textcolor{keyword}{constexpr} shared\_dptr\_control(DPtrT\&\& dptr, AllocT\&\& alloc, allocator\_pointer self\_ptr) :}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00798}00798                 dptr(std::forward<DPtrT>(dptr)), alloc(std::forward<AllocT>(alloc)), self\_ptr(self\_ptr) \{\}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00799}00799 }
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00800}00800             \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} destroy\_and\_delete() noexcept\textcolor{keyword}{ override }\{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00801}00801                 dptr.destroy\_and\_delete();}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00802}00802             \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00803}00803             \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} deallocate() noexcept\textcolor{keyword}{ override }\{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00804}00804                 allocator\_type alloc\_ = std::move(alloc);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00805}00805                 allocator\_traits::destroy(alloc\_, \textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00806}00806                 \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (std::is\_pointer\_v<allocator\_pointer>) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00807}00807                     allocator\_traits::deallocate(alloc\_, \textcolor{keyword}{this}, 1);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00808}00808                 \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00809}00809                     allocator\_traits::deallocate(alloc\_, self\_ptr, 1);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00810}00810                 \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00811}00811             \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00812}00812         \};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00813}00813 }
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00814}00814         \textcolor{keyword}{struct }shared\_dptr\_deleter \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00815}00815             \textcolor{keyword}{using} tag = deleter\_tag;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00816}00816             \textcolor{keyword}{using} default\_allocator = std::allocator<std::byte>;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00817}00817             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} destroying\_delete = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00739}00739         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} destroy\_and\_delete() noexcept}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00740}00740         requires (deleter\_type::destroying\_delete) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00741}00741             deleter\_(*\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00742}00742             ptr\_ = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00743}00743         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00748}00748         \textcolor{keyword}{constexpr} base\_type release() noexcept \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00749}00749             base\_type ptr = ptr\_;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00750}00750             ptr\_ = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00751}00751             \textcolor{keywordflow}{return} ptr;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00752}00752         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00754}00754         \textcolor{keyword}{template} <detail::dptr\_compatible<dptr> T>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00755}00755         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} reset(T* ptr) \textcolor{keyword}{noexcept} \{ operator=(ptr); \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00757}00757         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} reset(std::nullptr\_t = \textcolor{keyword}{nullptr}) noexcept \{ operator=(\textcolor{keyword}{nullptr}); \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00759}00759         \textcolor{keyword}{template} <deleter Deleter>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00760}00760         \textcolor{keyword}{constexpr} rebind\_deleter\_type<Deleter> rebind\_deleter(\textcolor{keyword}{auto}\&\&... args) \textcolor{keyword}{const}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00761}00761         \textcolor{keyword}{noexcept}(std::is\_nothrow\_constructible\_v<Deleter, const rebind\_deleter\_type<Deleter>\&, \textcolor{keyword}{decltype}(args)...>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00762}00762         \textcolor{keyword}{requires} (std::is\_constructible\_v<Deleter, const rebind\_deleter\_type<Deleter>\&, \textcolor{keyword}{decltype}(args)...>) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00763}00763             \textcolor{keywordflow}{return} \{ptr\_, ivtables\_, std::forward<decltype(args)>(args)...\};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00764}00764         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00766}00766         \textcolor{keyword}{constexpr} remove\_deleter\_type remove\_deleter() const noexcept \{ \textcolor{keywordflow}{return} \{ptr\_, ivtables\_\}; \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00767}00767     \};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00768}00768 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00770}00770     \textcolor{keyword}{template} <detail::dptr\_first I, interface... Is>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00771}00771     \textcolor{keyword}{requires} (!std::is\_reference\_v<I>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00772}00772     \textcolor{keyword}{class} unique\_dptr : \textcolor{keyword}{public} dptr<I\&, Is...> \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00773}00773     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00774}00774         \textcolor{keyword}{using} parent = dptr<I\&, Is...>;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00775}00775     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00776}00776         \textcolor{keyword}{using} parent::parent;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00777}00777         \textcolor{keyword}{constexpr} unique\_dptr(unique\_dptr\&\& other) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00778}00778         \textcolor{keyword}{constexpr} unique\_dptr\& operator=(unique\_dptr\&\& other) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00779}00779     \};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00780}00780 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00781}00781     \textcolor{keyword}{inline} \textcolor{keyword}{constexpr} \textcolor{keyword}{struct }alias\_with\_t\{\} alias\_with\{\};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00782}00782     \textcolor{keyword}{namespace }detail \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00783}00783         \textcolor{keyword}{class }shared\_dptr\_control\_base \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00784}00784         \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00785}00785             std::atomic<long> shared\_count = 1,}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00786}00786             weak\_count = 1; \textcolor{comment}{// +1 for when there is an active shared\_ptr}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00787}00787             \textcolor{keyword}{virtual} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} destroy\_and\_delete() noexcept = 0;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00788}00788             virtual constexpr \textcolor{keywordtype}{void} deallocate() noexcept = 0;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00789}00789         \};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00790}00790 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00791}00791         template <typename DPtr, typename Alloc>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00792}00792         struct shared\_dptr\_control final : shared\_dptr\_control\_base \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00793}00793             \textcolor{keyword}{using} allocator\_type = std::allocator\_traits<Alloc>::template rebind\_alloc<shared\_dptr\_control>;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00794}00794             \textcolor{keyword}{using} allocator\_traits = std::allocator\_traits<allocator\_type>;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00795}00795             \textcolor{keyword}{using} allocator\_pointer = allocator\_traits::pointer;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00796}00796             DPtr dptr;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00797}00797             [[no\_unique\_address]] Alloc alloc;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00798}00798             [[no\_unique\_address]] std::conditional\_t<std::is\_pointer\_v<allocator\_pointer>,}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00799}00799                 sink, allocator\_pointer> self\_ptr;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00800}00800 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00801}00801             \textcolor{keyword}{template} <\textcolor{keyword}{typename} DPtrT, \textcolor{keyword}{typename} AllocT>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00802}00802             \textcolor{keyword}{constexpr} shared\_dptr\_control(DPtrT\&\& dptr, AllocT\&\& alloc, allocator\_pointer self\_ptr) :}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00803}00803                 dptr(std::forward<DPtrT>(dptr)), alloc(std::forward<AllocT>(alloc)), self\_ptr(self\_ptr) \{\}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00804}00804 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00805}00805             \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} destroy\_and\_delete() noexcept\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00806}00806                 dptr.destroy\_and\_delete();}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00807}00807             \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00808}00808             \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} deallocate() noexcept\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00809}00809                 allocator\_type alloc\_ = std::move(alloc);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00810}00810                 allocator\_traits::destroy(alloc\_, \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00811}00811                 \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (std::is\_pointer\_v<allocator\_pointer>) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00812}00812                     allocator\_traits::deallocate(alloc\_, \textcolor{keyword}{this}, 1);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00813}00813                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00814}00814                     allocator\_traits::deallocate(alloc\_, self\_ptr, 1);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00815}00815                 \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00816}00816             \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00817}00817         \};}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00818}00818 }
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00819}00819             shared\_dptr\_control\_base* control;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00820}00820 }
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00821}00821             \textcolor{keyword}{template} <}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00822}00822                 tagged<dptr\_tag> DPtr, \textcolor{keyword}{typename} D, simple\_allocator Alloc = default\_allocator,}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00823}00823                 deleter BaseDeleter = std::remove\_cvref\_t<D>,}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00824}00824                 \textcolor{keyword}{typename} Control = shared\_dptr\_control<typename DPtr::template rebind\_deleter\_type<BaseDeleter>, Alloc>,}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00825}00825                 \textcolor{keyword}{typename} ReAlloc = std::allocator\_traits<Alloc>::template rebind\_alloc<Control>,}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00826}00826                 \textcolor{keyword}{typename} ReAllocTraits = std::allocator\_traits<ReAlloc>>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00827}00827             \textcolor{keyword}{requires} (std::is\_constructible\_v<BaseDeleter, D>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00828}00828             \textcolor{keyword}{constexpr} shared\_dptr\_deleter(\textcolor{keyword}{const} DPtr\& dptr, D\&\& deleter, \textcolor{keyword}{const} Alloc\& alloc = Alloc()) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00829}00829                 \textcolor{keywordflow}{if} (!dptr) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00830}00830                     control = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00831}00831                     \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00832}00832                 \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00833}00833                 ReAlloc alloc\_ = alloc;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00834}00834                 \textcolor{keyword}{auto} control\_ptr = ReAllocTraits::allocate(alloc\_, 1);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00835}00835                 control = std::to\_address(control\_ptr);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00836}00836                 ReAllocTraits::construct(alloc\_, std::to\_address(control\_ptr),}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00837}00837                     dptr.template rebind\_deleter<BaseDeleter>(std::forward<D>(deleter)), std::move(alloc\_), control\_ptr);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00838}00838             \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00839}00839             \textcolor{keyword}{template} <tagged<dptr\_tag> DPtr, \textcolor{keyword}{typename} DefaultDeleter = DPtr::remove\_deleter\_type::deleter\_type>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00840}00840             \textcolor{keyword}{constexpr} shared\_dptr\_deleter(\textcolor{keyword}{const} DPtr\& dptr) :}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00841}00841                 shared\_dptr\_deleter(dptr, DefaultDeleter(dptr), default\_allocator()) \{\}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00842}00842             \textcolor{keyword}{constexpr} shared\_dptr\_deleter(shared\_dptr\_control\_base* control, \textcolor{keyword}{const} \textcolor{keyword}{auto}\& expired\_handler) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00843}00843                 \textcolor{keywordflow}{if} (control) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00844}00844                     \textcolor{keywordtype}{long} shared\_count = control-\/>shared\_count.load(std::memory\_order::acquire);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00845}00845                     \textcolor{keywordflow}{while} (shared\_count) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00846}00846                         \textcolor{keywordflow}{if} (control-\/>shared\_count.compare\_exchange\_weak(shared\_count, shared\_count + 1,}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00847}00847                             std::memory\_order::acq\_rel, std::memory\_order::acquire)) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00848}00848                             this-\/>control = control;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00849}00849                             \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00850}00850                         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00851}00851                     \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00852}00852                 \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00853}00853                 expired\_handler();}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00854}00854             \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00855}00855             \textcolor{keyword}{constexpr} shared\_dptr\_deleter(\textcolor{keyword}{const} tagged<dptr\_tag> \textcolor{keyword}{auto}\&, shared\_dptr\_control\_base* control) :}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00856}00856                 shared\_dptr\_deleter(control, []() \{ \textcolor{keywordflow}{throw} std::bad\_weak\_ptr(); \}) \{\}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00857}00857             \textcolor{keyword}{constexpr} shared\_dptr\_deleter(\textcolor{keyword}{const} tagged<dptr\_tag> \textcolor{keyword}{auto}\&,}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00858}00858                 alias\_with\_t, shared\_dptr\_control\_base* control) noexcept :}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00859}00859                 shared\_dptr\_deleter(control, [\textcolor{keyword}{this}]() \{ this-\/>control = \textcolor{keyword}{nullptr}; \}) \{\}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00860}00860             \textcolor{keyword}{constexpr} shared\_dptr\_deleter(\textcolor{keyword}{const} tagged<dptr\_tag> \textcolor{keyword}{auto}\& dptr, \textcolor{keyword}{const} shared\_dptr\_deleter\& other) noexcept :}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00861}00861                 shared\_dptr\_deleter(dptr, other.control) \{\}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00862}00862             \textcolor{keyword}{constexpr} shared\_dptr\_deleter(\textcolor{keyword}{const} tagged<dptr\_tag> \textcolor{keyword}{auto}\&, shared\_dptr\_deleter\&\& other) noexcept :}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00863}00863                 control(other.control) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00864}00864                 other.control = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00865}00865             \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00866}00866             \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} assign(\textcolor{keyword}{const} tagged<dptr\_tag> \textcolor{keyword}{auto}\&, \textcolor{keyword}{const} shared\_dptr\_deleter\& other) \textcolor{keyword}{noexcept} \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00867}00867                 \textcolor{keywordflow}{if} (other.control) other.control-\/>shared\_count.fetch\_add(1, std::memory\_order::relaxed);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00868}00868                 control = other.control;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00869}00869             \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00870}00870             \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} assign(\textcolor{keyword}{const} tagged<dptr\_tag> \textcolor{keyword}{auto}\&, shared\_dptr\_deleter\&\& other) \textcolor{keyword}{noexcept} \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00871}00871                 control = other.control;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00872}00872                 other.control = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00873}00873             \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00874}00874             \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} operator()(\textcolor{keyword}{const} tagged<dptr\_tag> \textcolor{keyword}{auto}\&) \textcolor{keyword}{noexcept} \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00875}00875                 \textcolor{keywordflow}{if} (control \&\& control-\/>shared\_count.fetch\_sub(1, std::memory\_order::acq\_rel) == 1) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00876}00876                     control-\/>destroy\_and\_delete();}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00877}00877                     \textcolor{keywordflow}{if} (control-\/>weak\_count.fetch\_sub(1, std::memory\_order::acq\_rel) == 1) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00878}00878                         control-\/>deallocate();}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00879}00879                     \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00880}00880                 \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00881}00881             \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00882}00882         \};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00883}00883 }
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00884}00884         \textcolor{keyword}{struct }ext\_control\_dptr \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00885}00885             \textcolor{keyword}{constexpr} \textcolor{keywordtype}{long} use\_count(\textcolor{keyword}{this} \textcolor{keyword}{const} \textcolor{keyword}{auto}\& \textcolor{keyword}{self}) noexcept \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00886}00886                 \textcolor{keywordflow}{return} \textcolor{keyword}{self}.get\_control() ? \textcolor{keyword}{self}.get\_control()-\/>shared\_count.load(std::memory\_order::relaxed) : 0;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00887}00887             \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00888}00888             \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} owner\_before(\textcolor{keyword}{this} \textcolor{keyword}{const} \textcolor{keyword}{auto}\& \textcolor{keyword}{self},}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00889}00889                 \textcolor{keyword}{const} std::derived\_from<ext\_control\_dptr> \textcolor{keyword}{auto}\& other) \textcolor{keyword}{noexcept} \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00890}00890                 \textcolor{comment}{// note that this is well-\/defined even if the two pointers are unrelated}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00891}00891                 \textcolor{comment}{// see "{}pointer total order"{} in [defns.order.ptr] and [comparison.general]}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00892}00892                 \textcolor{keywordflow}{return} std::less\{\}(\textcolor{keyword}{self}.get\_control(), other.get\_control());}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00893}00893             \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00894}00894             \textcolor{keyword}{constexpr} \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{integer\_alias::size\_t}} owner\_hash(\textcolor{keyword}{this} \textcolor{keyword}{const} \textcolor{keyword}{auto}\& \textcolor{keyword}{self}) noexcept \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00895}00895                 \textcolor{keywordflow}{return} std::hash<shared\_dptr\_control\_base*>\{\}(\textcolor{keyword}{self}.get\_control());}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00896}00896             \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00897}00897             \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} owner\_equal(\textcolor{keyword}{this} \textcolor{keyword}{const} \textcolor{keyword}{auto}\& \textcolor{keyword}{self},}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00898}00898                 \textcolor{keyword}{const} std::derived\_from<ext\_control\_dptr> \textcolor{keyword}{auto}\& other) \textcolor{keyword}{noexcept} \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00899}00899                 \textcolor{keywordflow}{return} \textcolor{keyword}{self}.get\_control() == other.get\_control();}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00900}00900             \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00901}00901         \};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00902}00902     \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00903}00903 }
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00904}00904     \textcolor{keyword}{template} <detail::dptr\_first I, interface... Is>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00905}00905     \textcolor{keyword}{requires} (!std::is\_reference\_v<I>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00906}00906     \textcolor{keyword}{class} shared\_dptr;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00907}00907 }
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00909}00909     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Is>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00910}00910     \textcolor{keyword}{requires} \textcolor{keyword}{requires} \{ \textcolor{keyword}{typename} shared\_dptr<Is...>; \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00911}00911     \textcolor{keyword}{class }weak\_dptr : \textcolor{keyword}{public} detail::ext\_control\_dptr \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00912}00912     \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00913}00913         \textcolor{keyword}{using} tag = \textcolor{keyword}{struct }weak\_dptr\_tag;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00914}00914         \textcolor{keyword}{using} element\_type = void;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00915}00915     \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00916}00916         dptr<Is...> dptr\_ = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00917}00917         detail::shared\_dptr\_control\_base* control\_ = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00918}00918 }
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00919}00919         \textcolor{keyword}{template} <detail::dptr\_first V, interface... Vs>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00920}00920         \textcolor{keyword}{requires} (!std::is\_reference\_v<V>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00921}00921         \textcolor{keyword}{friend} \textcolor{keyword}{class} shared\_dptr;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00922}00922 }
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00923}00923         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} record\_control(detail::shared\_dptr\_control\_base* control) \textcolor{keyword}{noexcept} \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00924}00924             \textcolor{keywordflow}{if} (control) control-\/>weak\_count.fetch\_add(1, std::memory\_order::relaxed);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00925}00925         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00926}00926         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} release\_control(detail::shared\_dptr\_control\_base* control) \textcolor{keyword}{noexcept} \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00927}00927             \textcolor{keywordflow}{if} (control) control-\/>weak\_count.fetch\_sub(1, std::memory\_order::acq\_rel);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00928}00928         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00929}00929         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keyword}{struct }internal\_copy\_t \{\} internal\_copy\{\};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00930}00930         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keyword}{struct }internal\_move\_t \{\} internal\_move\{\};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00931}00931         \textcolor{keyword}{constexpr} weak\_dptr(internal\_copy\_t, \textcolor{keyword}{const} \textcolor{keyword}{auto}\& other) noexcept :}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00932}00932             dptr\_(other.dptr\_), control\_(other.control\_) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00933}00933             record\_control(control\_);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00934}00934         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00935}00935         \textcolor{keyword}{constexpr} weak\_dptr(internal\_move\_t, \textcolor{keyword}{auto}\&\& other) noexcept :}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00936}00936             dptr\_(std::move(other.dptr\_)), control\_(other.control\_) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00937}00937             other.dptr\_ = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00938}00938             other.control\_ = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00819}00819         \textcolor{keyword}{struct }shared\_dptr\_deleter \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00820}00820             \textcolor{keyword}{using} tag = deleter\_tag;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00821}00821             \textcolor{keyword}{using} default\_allocator = std::allocator<std::byte>;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00822}00822             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} destroying\_delete = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00823}00823 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00824}00824             shared\_dptr\_control\_base* control;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00825}00825 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00826}00826             \textcolor{keyword}{template} <}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00827}00827                 tagged<dptr\_tag> DPtr, \textcolor{keyword}{typename} D, simple\_allocator Alloc = default\_allocator,}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00828}00828                 deleter BaseDeleter = std::remove\_cvref\_t<D>,}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00829}00829                 \textcolor{keyword}{typename} Control = shared\_dptr\_control<typename DPtr::template rebind\_deleter\_type<BaseDeleter>, Alloc>,}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00830}00830                 \textcolor{keyword}{typename} ReAlloc = std::allocator\_traits<Alloc>::template rebind\_alloc<Control>,}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00831}00831                 \textcolor{keyword}{typename} ReAllocTraits = std::allocator\_traits<ReAlloc>>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00832}00832             \textcolor{keyword}{requires} (std::is\_constructible\_v<BaseDeleter, D>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00833}00833             \textcolor{keyword}{constexpr} shared\_dptr\_deleter(\textcolor{keyword}{const} DPtr\& dptr, D\&\& deleter, \textcolor{keyword}{const} Alloc\& alloc = Alloc()) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00834}00834                 \textcolor{keywordflow}{if} (!dptr) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00835}00835                     control = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00836}00836                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00837}00837                 \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00838}00838                 ReAlloc alloc\_ = alloc;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00839}00839                 \textcolor{keyword}{auto} control\_ptr = ReAllocTraits::allocate(alloc\_, 1);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00840}00840                 control = std::to\_address(control\_ptr);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00841}00841                 ReAllocTraits::construct(alloc\_, std::to\_address(control\_ptr),}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00842}00842                     dptr.template rebind\_deleter<BaseDeleter>(std::forward<D>(deleter)), std::move(alloc\_), control\_ptr);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00843}00843             \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00844}00844             \textcolor{keyword}{template} <tagged<dptr\_tag> DPtr, \textcolor{keyword}{typename} DefaultDeleter = DPtr::remove\_deleter\_type::deleter\_type>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00845}00845             \textcolor{keyword}{constexpr} shared\_dptr\_deleter(\textcolor{keyword}{const} DPtr\& dptr) :}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00846}00846                 shared\_dptr\_deleter(dptr, DefaultDeleter(dptr), default\_allocator()) \{\}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00847}00847             \textcolor{keyword}{constexpr} shared\_dptr\_deleter(shared\_dptr\_control\_base* control, \textcolor{keyword}{const} \textcolor{keyword}{auto}\& expired\_handler) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00848}00848                 \textcolor{keywordflow}{if} (control) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00849}00849                     \textcolor{keywordtype}{long} shared\_count = control-\/>shared\_count.load(std::memory\_order::acquire);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00850}00850                     \textcolor{keywordflow}{while} (shared\_count) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00851}00851                         \textcolor{keywordflow}{if} (control-\/>shared\_count.compare\_exchange\_weak(shared\_count, shared\_count + 1,}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00852}00852                             std::memory\_order::acq\_rel, std::memory\_order::acquire)) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00853}00853                             this-\/>control = control;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00854}00854                             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00855}00855                         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00856}00856                     \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00857}00857                 \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00858}00858                 expired\_handler();}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00859}00859             \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00860}00860             \textcolor{keyword}{constexpr} shared\_dptr\_deleter(\textcolor{keyword}{const} tagged<dptr\_tag> \textcolor{keyword}{auto}\&, shared\_dptr\_control\_base* control) :}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00861}00861                 shared\_dptr\_deleter(control, []() \{ \textcolor{keywordflow}{throw} std::bad\_weak\_ptr(); \}) \{\}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00862}00862             \textcolor{keyword}{constexpr} shared\_dptr\_deleter(\textcolor{keyword}{const} tagged<dptr\_tag> \textcolor{keyword}{auto}\&,}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00863}00863                 alias\_with\_t, shared\_dptr\_control\_base* control) noexcept :}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00864}00864                 shared\_dptr\_deleter(control, [\textcolor{keyword}{this}]() \{ this-\/>control = \textcolor{keyword}{nullptr}; \}) \{\}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00865}00865             \textcolor{keyword}{constexpr} shared\_dptr\_deleter(\textcolor{keyword}{const} tagged<dptr\_tag> \textcolor{keyword}{auto}\& dptr, \textcolor{keyword}{const} shared\_dptr\_deleter\& other) noexcept :}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00866}00866                 shared\_dptr\_deleter(dptr, other.control) \{\}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00867}00867             \textcolor{keyword}{constexpr} shared\_dptr\_deleter(\textcolor{keyword}{const} tagged<dptr\_tag> \textcolor{keyword}{auto}\&, shared\_dptr\_deleter\&\& other) noexcept :}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00868}00868                 control(other.control) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00869}00869                 other.control = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00870}00870             \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00871}00871             \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} assign(\textcolor{keyword}{const} tagged<dptr\_tag> \textcolor{keyword}{auto}\&, \textcolor{keyword}{const} shared\_dptr\_deleter\& other) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00872}00872                 \textcolor{keywordflow}{if} (other.control) other.control-\/>shared\_count.fetch\_add(1, std::memory\_order::relaxed);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00873}00873                 control = other.control;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00874}00874             \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00875}00875             \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} assign(\textcolor{keyword}{const} tagged<dptr\_tag> \textcolor{keyword}{auto}\&, shared\_dptr\_deleter\&\& other) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00876}00876                 control = other.control;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00877}00877                 other.control = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00878}00878             \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00879}00879             \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} operator()(\textcolor{keyword}{const} tagged<dptr\_tag> \textcolor{keyword}{auto}\&) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00880}00880                 \textcolor{keywordflow}{if} (control \&\& control-\/>shared\_count.fetch\_sub(1, std::memory\_order::acq\_rel) == 1) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00881}00881                     control-\/>destroy\_and\_delete();}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00882}00882                     \textcolor{keywordflow}{if} (control-\/>weak\_count.fetch\_sub(1, std::memory\_order::acq\_rel) == 1) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00883}00883                         control-\/>deallocate();}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00884}00884                     \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00885}00885                 \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00886}00886             \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00887}00887         \};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00888}00888 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00889}00889         \textcolor{keyword}{struct }ext\_control\_dptr \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00890}00890             \textcolor{keyword}{constexpr} \textcolor{keywordtype}{long} use\_count(\textcolor{keyword}{this} \textcolor{keyword}{const} \textcolor{keyword}{auto}\& \textcolor{keyword}{self}) noexcept \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00891}00891                 \textcolor{keywordflow}{return} \textcolor{keyword}{self}.get\_control() ? \textcolor{keyword}{self}.get\_control()-\/>shared\_count.load(std::memory\_order::relaxed) : 0;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00892}00892             \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00893}00893             \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} owner\_before(\textcolor{keyword}{this} \textcolor{keyword}{const} \textcolor{keyword}{auto}\& \textcolor{keyword}{self},}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00894}00894                 \textcolor{keyword}{const} std::derived\_from<ext\_control\_dptr> \textcolor{keyword}{auto}\& other) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00895}00895                 \textcolor{comment}{// note that this is well-\/defined even if the two pointers are unrelated}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00896}00896                 \textcolor{comment}{// see "{}pointer total order"{} in [defns.order.ptr] and [comparison.general]}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00897}00897                 \textcolor{keywordflow}{return} std::less\{\}(\textcolor{keyword}{self}.get\_control(), other.get\_control());}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00898}00898             \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00899}00899             \textcolor{keyword}{constexpr} \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{integer\_alias::size\_t}} owner\_hash(\textcolor{keyword}{this} \textcolor{keyword}{const} \textcolor{keyword}{auto}\& \textcolor{keyword}{self}) noexcept \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00900}00900                 \textcolor{keywordflow}{return} std::hash<shared\_dptr\_control\_base*>\{\}(\textcolor{keyword}{self}.get\_control());}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00901}00901             \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00902}00902             \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} owner\_equal(\textcolor{keyword}{this} \textcolor{keyword}{const} \textcolor{keyword}{auto}\& \textcolor{keyword}{self},}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00903}00903                 \textcolor{keyword}{const} std::derived\_from<ext\_control\_dptr> \textcolor{keyword}{auto}\& other) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00904}00904                 \textcolor{keywordflow}{return} \textcolor{keyword}{self}.get\_control() == other.get\_control();}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00905}00905             \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00906}00906         \};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00907}00907     \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00908}00908 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00909}00909     \textcolor{keyword}{template} <detail::dptr\_first I, interface... Is>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00910}00910     \textcolor{keyword}{requires} (!std::is\_reference\_v<I>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00911}00911     \textcolor{keyword}{class} shared\_dptr;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00912}00912 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00914}00914     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Is>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00915}00915     \textcolor{keyword}{requires} \textcolor{keyword}{requires} \{ \textcolor{keyword}{typename} shared\_dptr<Is...>; \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00916}00916     \textcolor{keyword}{class }weak\_dptr : \textcolor{keyword}{public} detail::ext\_control\_dptr \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00917}00917     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00918}00918         \textcolor{keyword}{using} tag = \textcolor{keyword}{struct }weak\_dptr\_tag;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00919}00919         \textcolor{keyword}{using} element\_type = void;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00920}00920     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00921}00921         dptr<Is...> dptr\_ = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00922}00922         detail::shared\_dptr\_control\_base* control\_ = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00923}00923 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00924}00924         \textcolor{keyword}{template} <detail::dptr\_first V, interface... Vs>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00925}00925         \textcolor{keyword}{requires} (!std::is\_reference\_v<V>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00926}00926         \textcolor{keyword}{friend} \textcolor{keyword}{class} shared\_dptr;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00927}00927 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00928}00928         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} record\_control(detail::shared\_dptr\_control\_base* control) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00929}00929             \textcolor{keywordflow}{if} (control) control-\/>weak\_count.fetch\_add(1, std::memory\_order::relaxed);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00930}00930         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00931}00931         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} release\_control(detail::shared\_dptr\_control\_base* control) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00932}00932             \textcolor{keywordflow}{if} (control) control-\/>weak\_count.fetch\_sub(1, std::memory\_order::acq\_rel);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00933}00933         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00934}00934         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keyword}{struct }internal\_copy\_t \{\} internal\_copy\{\};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00935}00935         \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keyword}{struct }internal\_move\_t \{\} internal\_move\{\};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00936}00936         \textcolor{keyword}{constexpr} weak\_dptr(internal\_copy\_t, \textcolor{keyword}{const} \textcolor{keyword}{auto}\& other) noexcept :}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00937}00937             dptr\_(other.dptr\_), control\_(other.control\_) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00938}00938             record\_control(control\_);}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00939}00939         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00940}00940         \textcolor{keyword}{constexpr} weak\_dptr\& assign(internal\_copy\_t, \textcolor{keyword}{const} \textcolor{keyword}{auto}\& other) \textcolor{keyword}{noexcept} \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00941}00941             dptr\_ = other.dptr\_;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00942}00942             record\_control(other.control\_);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00943}00943             release\_control(control\_);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00944}00944             control\_ = other.control\_;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00945}00945             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00946}00946         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00947}00947         \textcolor{keyword}{constexpr} weak\_dptr\& assign(internal\_move\_t, \textcolor{keyword}{auto}\&\& other) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00940}00940         \textcolor{keyword}{constexpr} weak\_dptr(internal\_move\_t, \textcolor{keyword}{auto}\&\& other) noexcept :}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00941}00941             dptr\_(std::move(other.dptr\_)), control\_(other.control\_) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00942}00942             other.dptr\_ = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00943}00943             other.control\_ = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00944}00944         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00945}00945         \textcolor{keyword}{constexpr} weak\_dptr\& assign(internal\_copy\_t, \textcolor{keyword}{const} \textcolor{keyword}{auto}\& other) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00946}00946             dptr\_ = other.dptr\_;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00947}00947             record\_control(other.control\_);}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00948}00948             release\_control(control\_);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00949}00949             dptr\_ = std::move(other.dptr\_);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00950}00950             control\_ = other.control\_;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00951}00951             other.control\_ = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00952}00952             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00953}00953         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00954}00954     \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00955}00955         \textcolor{keyword}{constexpr} weak\_dptr() noexcept = default;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00956}00956         constexpr weak\_dptr(const weak\_dptr\& other) noexcept : weak\_dptr(internal\_copy, other) \{\}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00957}00957         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Vs>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00958}00958         \textcolor{keyword}{requires} (std::is\_constructible\_v<dptr<Is...>, \textcolor{keyword}{const} dptr<Vs...>\&>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00959}00959         \textcolor{keyword}{constexpr} weak\_dptr(\textcolor{keyword}{const} weak\_dptr<Vs...>\& other) noexcept : weak\_dptr(internal\_copy, other) \{\}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00960}00960         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Vs>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00961}00961         \textcolor{keyword}{requires} (std::is\_constructible\_v<dptr<Is...>, \textcolor{keyword}{const} dptr<Vs...>\&>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00962}00962         \textcolor{keyword}{constexpr} weak\_dptr(\textcolor{keyword}{const} shared\_dptr<Vs...>\& other) noexcept :}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00963}00963             dptr\_(detach\_deleter, other), control\_(other.get\_control()) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00964}00964             record\_control(control\_);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00965}00965         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00966}00966         \textcolor{keyword}{constexpr} weak\_dptr(weak\_dptr\&\& other) noexcept : weak\_dptr(internal\_move, std::move(other)) \{\}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00967}00967         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Vs>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00968}00968         \textcolor{keyword}{requires} (std::is\_constructible\_v<dptr<Is...>, dptr<Vs...>\&\&>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00969}00969         \textcolor{keyword}{constexpr} weak\_dptr(weak\_dptr<Vs...>\&\& other) noexcept : weak\_dptr(internal\_move, std::move(other)) \{\}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00970}00970         \textcolor{keyword}{constexpr} weak\_dptr\& operator=(\textcolor{keyword}{const} weak\_dptr\& other) \textcolor{keyword}{noexcept} \{ \textcolor{keywordflow}{return} assign(internal\_copy, other); \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00971}00971         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Vs>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00972}00972         \textcolor{keyword}{requires} (std::is\_assignable\_v<dptr<Is...>, \textcolor{keyword}{const} dptr<Vs...>\&>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00973}00973         \textcolor{keyword}{constexpr} weak\_dptr\& \textcolor{keyword}{operator}=(\textcolor{keyword}{const} weak\_dptr<Vs...>\& other) \textcolor{keyword}{noexcept} \{ \textcolor{keywordflow}{return} assign(internal\_copy, other); \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00974}00974         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Vs>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00975}00975         \textcolor{keyword}{requires} (std::is\_assignable\_v<dptr<Is...>, \textcolor{keyword}{const} dptr<Vs...>\&>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00976}00976         \textcolor{keyword}{constexpr} weak\_dptr\& \textcolor{keyword}{operator}=(\textcolor{keyword}{const} shared\_dptr<Vs...>\& other) \textcolor{keyword}{noexcept} \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00977}00977             dptr\_ = other.dptr\_.remove\_deleter();}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00978}00978             record\_control(other.get\_control());}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00979}00979             release\_control(control\_);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00980}00980             control\_ = other.control\_;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00981}00981             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00982}00982         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00983}00983         \textcolor{keyword}{constexpr} weak\_dptr\& operator=(weak\_dptr\&\& other) \textcolor{keyword}{noexcept} \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00984}00984             \textcolor{keywordflow}{return} assign(internal\_move, std::move(other));}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00985}00985         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00986}00986         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Vs>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00987}00987         \textcolor{keyword}{requires} (std::is\_assignable\_v<dptr<Is...>, dptr<Vs...>\&\&>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00988}00988         \textcolor{keyword}{constexpr} weak\_dptr\& \textcolor{keyword}{operator}=(weak\_dptr<Vs...>\&\& other) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00949}00949             control\_ = other.control\_;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00950}00950             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00951}00951         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00952}00952         \textcolor{keyword}{constexpr} weak\_dptr\& assign(internal\_move\_t, \textcolor{keyword}{auto}\&\& other) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00953}00953             release\_control(control\_);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00954}00954             dptr\_ = std::move(other.dptr\_);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00955}00955             control\_ = other.control\_;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00956}00956             other.control\_ = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00957}00957             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00958}00958         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00959}00959     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00960}00960         \textcolor{keyword}{constexpr} weak\_dptr() noexcept = default;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00961}00961         constexpr weak\_dptr(const weak\_dptr\& other) noexcept : weak\_dptr(internal\_copy, other) \{\}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00962}00962         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Vs>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00963}00963         \textcolor{keyword}{requires} (std::is\_constructible\_v<dptr<Is...>, \textcolor{keyword}{const} dptr<Vs...>\&>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00964}00964         \textcolor{keyword}{constexpr} weak\_dptr(\textcolor{keyword}{const} weak\_dptr<Vs...>\& other) noexcept : weak\_dptr(internal\_copy, other) \{\}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00965}00965         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Vs>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00966}00966         \textcolor{keyword}{requires} (std::is\_constructible\_v<dptr<Is...>, \textcolor{keyword}{const} dptr<Vs...>\&>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00967}00967         \textcolor{keyword}{constexpr} weak\_dptr(\textcolor{keyword}{const} shared\_dptr<Vs...>\& other) noexcept :}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00968}00968             dptr\_(detach\_deleter, other), control\_(other.get\_control()) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00969}00969             record\_control(control\_);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00970}00970         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00971}00971         \textcolor{keyword}{constexpr} weak\_dptr(weak\_dptr\&\& other) noexcept : weak\_dptr(internal\_move, std::move(other)) \{\}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00972}00972         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Vs>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00973}00973         \textcolor{keyword}{requires} (std::is\_constructible\_v<dptr<Is...>, dptr<Vs...>\&\&>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00974}00974         \textcolor{keyword}{constexpr} weak\_dptr(weak\_dptr<Vs...>\&\& other) noexcept : weak\_dptr(internal\_move, std::move(other)) \{\}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00975}00975         \textcolor{keyword}{constexpr} weak\_dptr\& operator=(\textcolor{keyword}{const} weak\_dptr\& other) \textcolor{keyword}{noexcept} \{ \textcolor{keywordflow}{return} assign(internal\_copy, other); \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00976}00976         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Vs>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00977}00977         \textcolor{keyword}{requires} (std::is\_assignable\_v<dptr<Is...>, \textcolor{keyword}{const} dptr<Vs...>\&>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00978}00978         \textcolor{keyword}{constexpr} weak\_dptr\& \textcolor{keyword}{operator}=(\textcolor{keyword}{const} weak\_dptr<Vs...>\& other) \textcolor{keyword}{noexcept} \{ \textcolor{keywordflow}{return} assign(internal\_copy, other); \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00979}00979         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Vs>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00980}00980         \textcolor{keyword}{requires} (std::is\_assignable\_v<dptr<Is...>, \textcolor{keyword}{const} dptr<Vs...>\&>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00981}00981         \textcolor{keyword}{constexpr} weak\_dptr\& \textcolor{keyword}{operator}=(\textcolor{keyword}{const} shared\_dptr<Vs...>\& other) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00982}00982             dptr\_ = other.dptr\_.remove\_deleter();}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00983}00983             record\_control(other.get\_control());}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00984}00984             release\_control(control\_);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00985}00985             control\_ = other.control\_;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00986}00986             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00987}00987         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00988}00988         \textcolor{keyword}{constexpr} weak\_dptr\& operator=(weak\_dptr\&\& other) \textcolor{keyword}{noexcept} \{}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00989}00989             \textcolor{keywordflow}{return} assign(internal\_move, std::move(other));}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00990}00990         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00991}00991         \textcolor{keyword}{constexpr} \string~weak\_dptr() noexcept \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00992}00992             \textcolor{keywordflow}{if} (control\_ \&\& control\_-\/>weak\_count.fetch\_sub(1, std::memory\_order::acq\_rel) == 1) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00993}00993                 control\_-\/>deallocate();}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00994}00994             \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00991}00991         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Vs>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00992}00992         \textcolor{keyword}{requires} (std::is\_assignable\_v<dptr<Is...>, dptr<Vs...>\&\&>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00993}00993         \textcolor{keyword}{constexpr} weak\_dptr\& \textcolor{keyword}{operator}=(weak\_dptr<Vs...>\&\& other) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00994}00994             \textcolor{keywordflow}{return} assign(internal\_move, std::move(other));}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00995}00995         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00996}00996 }
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00997}00997         \textcolor{keyword}{constexpr} detail::shared\_dptr\_control\_base* get\_control() const noexcept \{ \textcolor{keywordflow}{return} control\_; \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00998}00998         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} expired(\textcolor{keyword}{this} \textcolor{keyword}{const} \textcolor{keyword}{auto}\& \textcolor{keyword}{self}) noexcept \{ \textcolor{keywordflow}{return} \textcolor{keyword}{self}.use\_count() == 0; \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00999}00999         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} reset() noexcept \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01000}01000             release\_control(control\_);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01001}01001             control\_ = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01002}01002         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01003}01003         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{swap}}(weak\_dptr\& other) \textcolor{keyword}{noexcept} \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01004}01004             \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{std::swap}}(dptr\_, other.dptr\_);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01005}01005             \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{std::swap}}(control\_, other.control\_);}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01006}01006         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01007}01007         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Vs>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01008}01008         \textcolor{keyword}{requires} (std::is\_constructible\_v<dptr<Vs...>, dptr<Is...>>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01009}01009         \textcolor{keyword}{constexpr} shared\_dptr<Vs...> lock() \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01010}01010             \textcolor{keywordflow}{return} expired() ? shared\_dptr<Vs...>() : shared\_dptr<Vs...>(dptr\_);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00996}00996         \textcolor{keyword}{constexpr} \string~weak\_dptr() noexcept \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00997}00997             \textcolor{keywordflow}{if} (control\_ \&\& control\_-\/>weak\_count.fetch\_sub(1, std::memory\_order::acq\_rel) == 1) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00998}00998                 control\_-\/>deallocate();}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00999}00999             \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01000}01000         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01001}01001 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01002}01002         \textcolor{keyword}{constexpr} detail::shared\_dptr\_control\_base* get\_control() const noexcept \{ \textcolor{keywordflow}{return} control\_; \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01003}01003         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} expired(\textcolor{keyword}{this} \textcolor{keyword}{const} \textcolor{keyword}{auto}\& \textcolor{keyword}{self}) noexcept \{ \textcolor{keywordflow}{return} \textcolor{keyword}{self}.use\_count() == 0; \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01004}01004         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} reset() noexcept \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01005}01005             release\_control(control\_);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01006}01006             control\_ = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01007}01007         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01008}01008         \textcolor{keyword}{constexpr} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{swap}}(weak\_dptr\& other) \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01009}01009             \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{std::swap}}(dptr\_, other.dptr\_);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01010}01010             \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{std::swap}}(control\_, other.control\_);}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01011}01011         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01012}01012         \textcolor{keyword}{constexpr} shared\_dptr<Is...> lock() const noexcept \{ \textcolor{keywordflow}{return} lock<Is...>(); \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01013}01013     \};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01014}01014 }
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01018}01018     \textcolor{keyword}{template} <detail::dptr\_first I, interface... Is>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01019}01019     \textcolor{keyword}{requires} (!std::is\_reference\_v<I>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01020}01020     \textcolor{keyword}{class} shared\_dptr : \textcolor{keyword}{public} dptr<I\&\&, Is..., detail::shared\_dptr\_deleter>, \textcolor{keyword}{public} detail::ext\_control\_dptr \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01021}01021     \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01022}01022         \textcolor{keyword}{using} parent = dptr<I\&\&, Is..., detail::shared\_dptr\_deleter>;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01023}01023     \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01024}01024         \textcolor{keyword}{using} tag = std::tuple<dptr\_tag, struct shared\_dptr\_tag>;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01025}01025         \textcolor{keyword}{using} parent::parent;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01026}01026         \textcolor{keyword}{constexpr} shared\_dptr(\textcolor{keyword}{const} shared\_dptr\&) \textcolor{keyword}{noexcept} = \textcolor{keywordflow}{default};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01027}01027         \textcolor{keyword}{constexpr} shared\_dptr(shared\_dptr\&\&) noexcept = default;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01028}01028         template <typename Other, typename... Args>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01029}01029         requires (}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01030}01030             tagged<Other, shared\_dptr\_tag> \&\& !std::is\_const\_v<Other> \&\&}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01031}01031             std::is\_constructible\_v<dptr<I, Is...>, Args...>)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01032}01032         constexpr shared\_dptr(alias\_with\_t, Other\&\& other, Args\&\&... args) noexcept :}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01033}01033             parent(std::forward<Args>(args)..., alias\_with, other.get\_control()) \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01034}01034             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (!std::is\_lvalue\_reference\_v<Other>) other.quick\_reset();}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01035}01035         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01036}01036         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Vs>}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01037}01037         \textcolor{keyword}{constexpr} shared\_dptr(\textcolor{keyword}{const} weak\_dptr<Vs...>\& other)}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01038}01038         \textcolor{keyword}{requires} (std::is\_constructible\_v<dptr<I, Is...>, dptr<Vs...>>) :}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01039}01039             parent(detach\_deleter, other.dptr\_, other.control\_) \{\}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01040}01040         \textcolor{keyword}{constexpr} shared\_dptr\& operator=(\textcolor{keyword}{const} shared\_dptr\&) \textcolor{keyword}{noexcept} = \textcolor{keywordflow}{default};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01041}01041         \textcolor{keyword}{constexpr} shared\_dptr\& operator=(shared\_dptr\&\&) noexcept = default;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01042}01042 }
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01043}01043         constexpr detail::shared\_dptr\_control\_base* get\_control() const noexcept \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01044}01044             \textcolor{keywordflow}{return} parent::get\_deleter().control;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01045}01045         \}}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01046}01046     \};}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01047}01047 \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01012}01012         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Vs>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01013}01013         \textcolor{keyword}{requires} (std::is\_constructible\_v<dptr<Vs...>, dptr<Is...>>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01014}01014         \textcolor{keyword}{constexpr} shared\_dptr<Vs...> lock() \textcolor{keyword}{const} \textcolor{keyword}{noexcept} \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01015}01015             \textcolor{keywordflow}{return} expired() ? shared\_dptr<Vs...>() : shared\_dptr<Vs...>(dptr\_);}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01016}01016         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01017}01017         \textcolor{keyword}{constexpr} shared\_dptr<Is...> lock() const noexcept \{ \textcolor{keywordflow}{return} lock<Is...>(); \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01018}01018     \};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01019}01019 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01023}01023     \textcolor{keyword}{template} <detail::dptr\_first I, interface... Is>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01024}01024     \textcolor{keyword}{requires} (!std::is\_reference\_v<I>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01025}01025     \textcolor{keyword}{class} shared\_dptr : \textcolor{keyword}{public} dptr<I\&\&, Is..., detail::shared\_dptr\_deleter>, \textcolor{keyword}{public} detail::ext\_control\_dptr \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01026}01026     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01027}01027         \textcolor{keyword}{using} parent = dptr<I\&\&, Is..., detail::shared\_dptr\_deleter>;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01028}01028     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01029}01029         \textcolor{keyword}{using} tag = std::tuple<dptr\_tag, struct shared\_dptr\_tag>;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01030}01030         \textcolor{keyword}{using} parent::parent;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01031}01031         \textcolor{keyword}{constexpr} shared\_dptr(\textcolor{keyword}{const} shared\_dptr\&) \textcolor{keyword}{noexcept} = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01032}01032         \textcolor{keyword}{constexpr} shared\_dptr(shared\_dptr\&\&) noexcept = default;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01033}01033         template <typename Other, typename... Args>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01034}01034         requires (}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01035}01035             tagged<Other, shared\_dptr\_tag> \&\& !std::is\_const\_v<Other> \&\&}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01036}01036             std::is\_constructible\_v<dptr<I, Is...>, Args...>)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01037}01037         constexpr shared\_dptr(alias\_with\_t, Other\&\& other, Args\&\&... args) noexcept :}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01038}01038             parent(std::forward<Args>(args)..., alias\_with, other.get\_control()) \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01039}01039             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (!std::is\_lvalue\_reference\_v<Other>) other.quick\_reset();}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01040}01040         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01041}01041         \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Vs>}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01042}01042         \textcolor{keyword}{constexpr} shared\_dptr(\textcolor{keyword}{const} weak\_dptr<Vs...>\& other)}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01043}01043         \textcolor{keyword}{requires} (std::is\_constructible\_v<dptr<I, Is...>, dptr<Vs...>>) :}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01044}01044             parent(detach\_deleter, other.dptr\_, other.control\_) \{\}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01045}01045         \textcolor{keyword}{constexpr} shared\_dptr\& operator=(\textcolor{keyword}{const} shared\_dptr\&) \textcolor{keyword}{noexcept} = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01046}01046         \textcolor{keyword}{constexpr} shared\_dptr\& operator=(shared\_dptr\&\&) noexcept = default;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01047}01047 }
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01048}01048         constexpr detail::shared\_dptr\_control\_base* get\_control() const noexcept \{}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01049}01049             \textcolor{keywordflow}{return} parent::get\_deleter().control;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01050}01050         \}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01051}01051     \};}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l01052}01052 \}}
 
 \end{DoxyCode}

@@ -100,9 +100,6 @@ $(document).ready(function(){initNavTree('group__utilspmrstack__allocatorconstru
   <div class="headertitle"><div class="title">utils::pmr::stack_allocator::stack_allocator</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Takes ownership of the buffer and uses it for allocations.  
-<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -112,6 +109,7 @@ Typedefs</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga746f7cd5478f9442fc3808375aeae3e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilspmrstack__allocatorconstructors.html#ga746f7cd5478f9442fc3808375aeae3e3">utils::pmr::stack_allocator&lt; T, Sync &gt;::stack_allocator</a> (<a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#a3fc5600dc9a5d1a01dc09a45d452f4ed">void_pointer</a> buf, <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> space)</td></tr>
+<tr class="memdesc:ga746f7cd5478f9442fc3808375aeae3e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes ownership of the buffer and uses it for allocations.  <a href="group__utilspmrstack__allocatorconstructors.html#ga746f7cd5478f9442fc3808375aeae3e3">More...</a><br /></td></tr>
 <tr class="separator:ga746f7cd5478f9442fc3808375aeae3e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa1ac4dbee6bdd25ed6d882a027b53dae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilspmrstack__allocatorconstructors.html#gaa1ac4dbee6bdd25ed6d882a027b53dae">utils::pmr::stack_allocator&lt; T, Sync &gt;::stack_allocator</a> (std::pmr::memory_resource &amp;mr, <a class="el" href="classutils_1_1pmr_1_1stack__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> space)</td></tr>
 <tr class="memdesc:gaa1ac4dbee6bdd25ed6d882a027b53dae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a buffer of size <code>space</code> through <code>mr</code> and uses it for allocations.  <a href="group__utilspmrstack__allocatorconstructors.html#gaa1ac4dbee6bdd25ed6d882a027b53dae">More...</a><br /></td></tr>
@@ -136,14 +134,6 @@ Variables</h2></td></tr>
 <tr class="separator:ga9112aed083ab4d8d31d5cd3b16ac2eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p >Takes ownership of the buffer and uses it for allocations. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::bad_alloc</td><td>If the internal control structure does not fit in the given buffer. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>The construction can throw even if <code>space</code> is not less than the size of the control structure depending on the alignment of <code>buf</code>. </dd></dl>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga2be1957b3930cfaf19b421d8c1690153" name="ga2be1957b3930cfaf19b421d8c1690153"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga2be1957b3930cfaf19b421d8c1690153">&#9670;&nbsp;</a></span>other</h2>
@@ -205,7 +195,7 @@ template&lt;typename T , bool Sync = false&gt; </div>
 <p>Allocates storage for <code>T[n]</code> with specified alignment from the underlying buffer. </p>
 <p >The behavior is undefined if <code>alignment</code> is less than that of <code>T</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00103">103</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00104">104</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -254,7 +244,7 @@ template&lt;typename T , bool Sync = false&gt; </div>
 <p>Deallocates previously allocated memory and recycles it in a LIFO manner. </p>
 <p >Formally, let \((M_1,M_2,...,M_k)\) be the memory chunks previously allocated by any allocator equal to <code>*this</code> which have not been <em>recycled</em>, in the order of allocation. A memory chunk is <em>recycled</em> if <code>allocate</code> can use its storage. As noted in the documentation of the class, deallocation in <code><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html" title="An allocator which allocates memory from a pre-allocated buffer in a lazy-stack-like manner.">stack_allocator</a></code> does not always recycle memory but may simply mark it as <em>removed</em>. Let $D_i$ indicate if $M_i$ has been removed for \(i\in[k]\). A call to <code>deallocate</code> first finds \(t\) such that <code>p</code> points to \(M_t\), marks the chunk as removed, then recycles all chunks in the set \(\{M_i\mid D_i,...,D_k\}\). </p><dl class="section remark"><dt>Remarks</dt><dd>The alignment argument is unused. It is defined to deallocate a pointer obtained through aligned allocation without passing the required alignment. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00142">142</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00143">143</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -321,7 +311,7 @@ template&lt;typename T , bool Sync = false&gt; </div>
 
 <p>Deallocates the underlying buffer previously allocated through a memory resource. </p>
 
-<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00097">97</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00098">98</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -369,7 +359,7 @@ template&lt;typename T , bool Sync = false&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00077">77</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00078">78</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -409,7 +399,16 @@ template&lt;typename T , bool Sync = false&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00067">67</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
+<p>Takes ownership of the buffer and uses it for allocations. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>If the internal control structure does not fit in the given buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>The construction can throw even if <code>space</code> is not less than the size of the control structure depending on the alignment of <code>buf</code>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00068">68</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -428,7 +427,7 @@ template&lt;typename T , bool Sync = false&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00090">90</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00091">91</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
 
 </div>
 </div>

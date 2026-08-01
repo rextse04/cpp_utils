@@ -100,9 +100,6 @@ $(document).ready(function(){initNavTree('group__utilspmrarena__allocatorconstru
   <div class="headertitle"><div class="title">utils::pmr::arena_allocator::arena_allocator</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Takes ownership of the buffer and uses it for allocations.  
-<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -112,6 +109,7 @@ Typedefs</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:gae5dfff367930d9f2e6ad7380ba4c7a70"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilspmrarena__allocatorconstructors.html#gae5dfff367930d9f2e6ad7380ba4c7a70">utils::pmr::arena_allocator&lt; T, Sync &gt;::arena_allocator</a> (<a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#a3fc5600dc9a5d1a01dc09a45d452f4ed">void_pointer</a> buf, <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> space)</td></tr>
+<tr class="memdesc:gae5dfff367930d9f2e6ad7380ba4c7a70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes ownership of the buffer and uses it for allocations.  <a href="group__utilspmrarena__allocatorconstructors.html#gae5dfff367930d9f2e6ad7380ba4c7a70">More...</a><br /></td></tr>
 <tr class="separator:gae5dfff367930d9f2e6ad7380ba4c7a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga182c9597d8e46eee55ccbd3d5714eaa6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utilspmrarena__allocatorconstructors.html#ga182c9597d8e46eee55ccbd3d5714eaa6">utils::pmr::arena_allocator&lt; T, Sync &gt;::arena_allocator</a> (std::pmr::memory_resource &amp;mr, <a class="el" href="classutils_1_1pmr_1_1arena__allocator.html#acec1005620dc77b29dc4844dc009d4c3">size_type</a> space)</td></tr>
 <tr class="memdesc:ga182c9597d8e46eee55ccbd3d5714eaa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a buffer of size <code>space</code> through <code>mr</code> and uses it for allocations.  <a href="group__utilspmrarena__allocatorconstructors.html#ga182c9597d8e46eee55ccbd3d5714eaa6">More...</a><br /></td></tr>
@@ -136,14 +134,6 @@ Variables</h2></td></tr>
 <tr class="separator:gaecabf6002d8eda53bb01b8e3103d1701"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p >Takes ownership of the buffer and uses it for allocations. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::bad_alloc</td><td>If the internal control structure does not fit in the given buffer. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>The construction can throw even if <code>space</code> is not less than the size of the control structure depending on the alignment of <code>buf</code>. </dd></dl>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="gac89d1022d898a47eb7f9f259b77747a6" name="gac89d1022d898a47eb7f9f259b77747a6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac89d1022d898a47eb7f9f259b77747a6">&#9670;&nbsp;</a></span>other</h2>
@@ -205,7 +195,7 @@ template&lt;typename T , bool Sync = false&gt; </div>
 <p>Allocates storage for <code>T[n]</code> with specified alignment from the underlying buffer. </p>
 <p >The behavior is undefined if <code>alignment</code> is less than that of <code>T</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="arena__allocator_8hpp_source.html#l00104">104</a> of file <a class="el" href="arena__allocator_8hpp_source.html">arena_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="arena__allocator_8hpp_source.html#l00105">105</a> of file <a class="el" href="arena__allocator_8hpp_source.html">arena_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -253,7 +243,7 @@ template&lt;typename T , bool Sync = false&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="arena__allocator_8hpp_source.html#l00078">78</a> of file <a class="el" href="arena__allocator_8hpp_source.html">arena_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="arena__allocator_8hpp_source.html#l00079">79</a> of file <a class="el" href="arena__allocator_8hpp_source.html">arena_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -293,7 +283,16 @@ template&lt;typename T , bool Sync = false&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="arena__allocator_8hpp_source.html#l00069">69</a> of file <a class="el" href="arena__allocator_8hpp_source.html">arena_allocator.hpp</a>.</p>
+<p>Takes ownership of the buffer and uses it for allocations. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>If the internal control structure does not fit in the given buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>The construction can throw even if <code>space</code> is not less than the size of the control structure depending on the alignment of <code>buf</code>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="arena__allocator_8hpp_source.html#l00070">70</a> of file <a class="el" href="arena__allocator_8hpp_source.html">arena_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -341,7 +340,7 @@ template&lt;typename T , bool Sync = false&gt; </div>
 
 <p>Deallocation is a no-op. </p>
 
-<p class="definition">Definition at line <a class="el" href="arena__allocator_8hpp_source.html#l00124">124</a> of file <a class="el" href="arena__allocator_8hpp_source.html">arena_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="arena__allocator_8hpp_source.html#l00125">125</a> of file <a class="el" href="arena__allocator_8hpp_source.html">arena_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -408,7 +407,7 @@ template&lt;typename T , bool Sync = false&gt; </div>
 
 <p>Deallocates the underlying buffer previously allocated through a memory resource. </p>
 
-<p class="definition">Definition at line <a class="el" href="arena__allocator_8hpp_source.html#l00098">98</a> of file <a class="el" href="arena__allocator_8hpp_source.html">arena_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="arena__allocator_8hpp_source.html#l00099">99</a> of file <a class="el" href="arena__allocator_8hpp_source.html">arena_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -427,7 +426,7 @@ template&lt;typename T , bool Sync = false&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="arena__allocator_8hpp_source.html#l00091">91</a> of file <a class="el" href="arena__allocator_8hpp_source.html">arena_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="arena__allocator_8hpp_source.html#l00092">92</a> of file <a class="el" href="arena__allocator_8hpp_source.html">arena_allocator.hpp</a>.</p>
 
 </div>
 </div>

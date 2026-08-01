@@ -1,10 +1,5 @@
 \hypertarget{group__utilspmrarena__allocatorconstructors}{}\doxysection{utils\+::pmr\+::arena\+\_\+allocator\+::arena\+\_\+allocator}
 \label{group__utilspmrarena__allocatorconstructors}\index{utils::pmr::arena\_allocator::arena\_allocator@{utils::pmr::arena\_allocator::arena\_allocator}}
-
-
-Takes ownership of the buffer and uses it for allocations.  
-
-
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
@@ -14,7 +9,7 @@ using \mbox{\hyperlink{group__utilspmrarena__allocatorconstructors_gac89d1022d89
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{group__utilspmrarena__allocatorconstructors_gae5dfff367930d9f2e6ad7380ba4c7a70}{utils\+::pmr\+::arena\+\_\+allocator$<$ T, Sync $>$\+::arena\+\_\+allocator}} (\mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}} buf, \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} space)
-\item 
+\begin{DoxyCompactList}\small\item\em Takes ownership of the buffer and uses it for allocations. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group__utilspmrarena__allocatorconstructors_ga182c9597d8e46eee55ccbd3d5714eaa6}{utils\+::pmr\+::arena\+\_\+allocator$<$ T, Sync $>$\+::arena\+\_\+allocator}} (std\+::pmr\+::memory\+\_\+resource \&mr, \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} space)
 \begin{DoxyCompactList}\small\item\em Allocates a buffer of size {\ttfamily space} through {\ttfamily mr} and uses it for allocations. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename U , bool S$>$ }\\\mbox{\hyperlink{group__utilspmrarena__allocatorconstructors_ga557d2109484928e15525a1083b0b8e26}{utils\+::pmr\+::arena\+\_\+allocator$<$ T, Sync $>$\+::explicit}} (S !=Sync) \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator}{arena\+\_\+allocator}}(const \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator}{arena\+\_\+allocator}}$<$ U
@@ -33,16 +28,6 @@ S \&other \mbox{\hyperlink{group__utilspmrarena__allocatorconstructors_gaecabf60
 
 
 \doxysubsection{Detailed Description}
-Takes ownership of the buffer and uses it for allocations. 
-
-
-\begin{DoxyExceptions}{Exceptions}
-{\em std\+::bad\+\_\+alloc} & If the internal control structure does not fit in the given buffer. \\
-\hline
-\end{DoxyExceptions}
-\begin{DoxyNote}{Note}
-The construction can throw even if {\ttfamily space} is not less than the size of the control structure depending on the alignment of {\ttfamily buf}. 
-\end{DoxyNote}
 
 
 \doxysubsection{Typedef Documentation}
@@ -74,7 +59,7 @@ Allocates storage for {\ttfamily T\mbox{[}n\mbox{]}} with specified alignment fr
 
 The behavior is undefined if {\ttfamily alignment} is less than that of {\ttfamily T}. 
 
-Definition at line \mbox{\hyperlink{arena__allocator_8hpp_source_l00104}{104}} of file \mbox{\hyperlink{arena__allocator_8hpp_source}{arena\+\_\+allocator.\+hpp}}.
+Definition at line \mbox{\hyperlink{arena__allocator_8hpp_source_l00105}{105}} of file \mbox{\hyperlink{arena__allocator_8hpp_source}{arena\+\_\+allocator.\+hpp}}.
 
 \mbox{\Hypertarget{group__utilspmrarena__allocatorconstructors_ga182c9597d8e46eee55ccbd3d5714eaa6}\label{group__utilspmrarena__allocatorconstructors_ga182c9597d8e46eee55ccbd3d5714eaa6}} 
 \index{utils::pmr::arena\_allocator::arena\_allocator@{utils::pmr::arena\_allocator::arena\_allocator}!arena\_allocator@{arena\_allocator}}
@@ -94,7 +79,7 @@ Allocates a buffer of size {\ttfamily space} through {\ttfamily mr} and uses it 
 \end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{arena__allocator_8hpp_source_l00078}{78}} of file \mbox{\hyperlink{arena__allocator_8hpp_source}{arena\+\_\+allocator.\+hpp}}.
+Definition at line \mbox{\hyperlink{arena__allocator_8hpp_source_l00079}{79}} of file \mbox{\hyperlink{arena__allocator_8hpp_source}{arena\+\_\+allocator.\+hpp}}.
 
 \mbox{\Hypertarget{group__utilspmrarena__allocatorconstructors_gae5dfff367930d9f2e6ad7380ba4c7a70}\label{group__utilspmrarena__allocatorconstructors_gae5dfff367930d9f2e6ad7380ba4c7a70}} 
 \index{utils::pmr::arena\_allocator::arena\_allocator@{utils::pmr::arena\_allocator::arena\_allocator}!arena\_allocator@{arena\_allocator}}
@@ -105,7 +90,19 @@ Definition at line \mbox{\hyperlink{arena__allocator_8hpp_source_l00078}{78}} of
 
 
 
-Definition at line \mbox{\hyperlink{arena__allocator_8hpp_source_l00069}{69}} of file \mbox{\hyperlink{arena__allocator_8hpp_source}{arena\+\_\+allocator.\+hpp}}.
+Takes ownership of the buffer and uses it for allocations. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::bad\+\_\+alloc} & If the internal control structure does not fit in the given buffer. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Note}
+The construction can throw even if {\ttfamily space} is not less than the size of the control structure depending on the alignment of {\ttfamily buf}. 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{arena__allocator_8hpp_source_l00070}{70}} of file \mbox{\hyperlink{arena__allocator_8hpp_source}{arena\+\_\+allocator.\+hpp}}.
 
 \mbox{\Hypertarget{group__utilspmrarena__allocatorconstructors_ga6deae5a28ef57aebac240cd3de5faef1}\label{group__utilspmrarena__allocatorconstructors_ga6deae5a28ef57aebac240cd3de5faef1}} 
 \index{utils::pmr::arena\_allocator::arena\_allocator@{utils::pmr::arena\_allocator::arena\_allocator}!deallocate@{deallocate}}
@@ -120,7 +117,7 @@ Deallocation is a no-\/op.
 
 
 
-Definition at line \mbox{\hyperlink{arena__allocator_8hpp_source_l00124}{124}} of file \mbox{\hyperlink{arena__allocator_8hpp_source}{arena\+\_\+allocator.\+hpp}}.
+Definition at line \mbox{\hyperlink{arena__allocator_8hpp_source_l00125}{125}} of file \mbox{\hyperlink{arena__allocator_8hpp_source}{arena\+\_\+allocator.\+hpp}}.
 
 \mbox{\Hypertarget{group__utilspmrarena__allocatorconstructors_ga557d2109484928e15525a1083b0b8e26}\label{group__utilspmrarena__allocatorconstructors_ga557d2109484928e15525a1083b0b8e26}} 
 \index{utils::pmr::arena\_allocator::arena\_allocator@{utils::pmr::arena\_allocator::arena\_allocator}!explicit@{explicit}}
@@ -150,7 +147,7 @@ Deallocates the underlying buffer previously allocated through a memory resource
 
 
 
-Definition at line \mbox{\hyperlink{arena__allocator_8hpp_source_l00098}{98}} of file \mbox{\hyperlink{arena__allocator_8hpp_source}{arena\+\_\+allocator.\+hpp}}.
+Definition at line \mbox{\hyperlink{arena__allocator_8hpp_source_l00099}{99}} of file \mbox{\hyperlink{arena__allocator_8hpp_source}{arena\+\_\+allocator.\+hpp}}.
 
 
 
@@ -164,5 +161,5 @@ S\& other \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator}{utils\+::pmr\+
 
 
 
-Definition at line \mbox{\hyperlink{arena__allocator_8hpp_source_l00091}{91}} of file \mbox{\hyperlink{arena__allocator_8hpp_source}{arena\+\_\+allocator.\+hpp}}.
+Definition at line \mbox{\hyperlink{arena__allocator_8hpp_source_l00092}{92}} of file \mbox{\hyperlink{arena__allocator_8hpp_source}{arena\+\_\+allocator.\+hpp}}.
 
