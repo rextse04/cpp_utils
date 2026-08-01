@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"structutils_1_1lambda__decay.html":[3,0,1,68],
 "structutils_1_1lambda__decay_3_01R_07_6_08_07Args_8_8_8_08_01noexcept_01_4.html":[5,0,1,67],
 "structutils_1_1lambda__decay_3_01R_07_6_08_07Args_8_8_8_08_01noexcept_01_4.html":[3,0,1,69],
 "structutils_1_1lambda__decay_3_01R_07_6_08_07Args_8_8_8_08_01noexcept_01_4.html#a66df1a0b228317a4fd0b06f60f3d2a59":[5,0,1,67,0],

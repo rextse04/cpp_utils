@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"segment__tree_8hpp.html#aa52b5daba05b396d43967f83d7b2daddaf6cb3e816496528d4187db53bc66567f":[6,0,1,1,8,3],
 "segment__tree_8hpp.html#aa813e9045621ce0bc1f86b83334852e3":[6,0,1,1,19],
 "segment__tree_8hpp.html#ab34d7c058da716ef963b80de4e6af749":[6,0,1,1,22],
 "segment__tree_8hpp.html#acdcea13af380f403900bea1e667330fd":[6,0,1,1,23],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "structutils_1_1basic__static__string__view.html#a1ddaadfefcad3b4610cc2fc3577fb752":[5,0,1,18,4],
 "structutils_1_1basic__static__string__view.html#a28a0e5b397590f97a66816ad56db26ae":[3,0,1,20,10],
 "structutils_1_1basic__static__string__view.html#a28a0e5b397590f97a66816ad56db26ae":[5,0,1,18,10],
-"structutils_1_1basic__static__string__view.html#a3e8d4f8bf2d58f046385500ea9931f33":[3,0,1,20,7],
-"structutils_1_1basic__static__string__view.html#a3e8d4f8bf2d58f046385500ea9931f33":[5,0,1,18,7]
+"structutils_1_1basic__static__string__view.html#a3e8d4f8bf2d58f046385500ea9931f33":[3,0,1,20,7]
 };
