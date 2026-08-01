@@ -25,7 +25,7 @@ as specified below:
 | 4    | Prefix operator     | `PrefixTraits`       | -                                   |
 
 An instance of such a template is an <i>OperatorFunctorSet</i> for a class type `T`
-if it satisfies all requirements below, for each @$I\in[N]@$.
+if it satisfies all requirements below, for each @f$I\in[N]@f$.
 ### Notations
 | Expression | Definition                                                                            |
 |------------|---------------------------------------------------------------------------------------|

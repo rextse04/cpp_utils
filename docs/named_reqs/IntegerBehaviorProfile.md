@@ -32,4 +32,4 @@ where `v` is the underlying object of `w`.
 6. `std::numeric_limits` is meaningfully specialized for `IT<Int>`.
 
 Then, an instance of an <i>IntegerBehaviorProfileTemplate</i> is an <i>IntegerBehaviorProfile</i>
-if `FuncsI` is an [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for every type in `IT`, for every @$I\in[N]@$.
+if `FuncsI` is an [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for every type in `IT`, for every @f$I\in[N]@f$.
