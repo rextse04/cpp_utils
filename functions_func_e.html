@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@4/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -98,7 +101,7 @@ $(document).ready(function(){initNavTree('functions_func_e.html',''); initResiza
 <li>epsilon()&#160;:&#160;<a class="el" href="structstd_1_1numeric__limits_3_01T_01_4.html#ad67f8f13fb9f7f7114727a1bb582f657">std::numeric_limits&lt; T &gt;</a></li>
 <li>equal_range()&#160;:&#160;<a class="el" href="classutils_1_1segment__tree.html#a2f828632829b1c948fa036ff5b58fbba">utils::segment_tree&lt; Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer &gt;</a></li>
 <li>erase()&#160;:&#160;<a class="el" href="structutils_1_1basic__static__string.html#a1a3136256055a3d016fcf546b4fb6311">utils::basic_static_string&lt; CharT, N, Traits &gt;</a></li>
-<li>explicit()&#160;:&#160;<a class="el" href="group__integerinteger.html#gaf70aa92e30b685f150ed14eedb1474b6">utils::integer&lt; T, IB, BB, SB &gt;</a>, <a class="el" href="group__utilspmrarena__allocatorconstructors.html#ga557d2109484928e15525a1083b0b8e26">utils::pmr::arena_allocator&lt; T, Sync &gt;</a>, <a class="el" href="group__utilspmrstack__allocatorconstructors.html#ga3fc5d53309c8c22900137af934c5107f">utils::pmr::stack_allocator&lt; T, Sync &gt;</a></li>
+<li>explicit()&#160;:&#160;<a class="el" href="group__integerconstructors.html#gaf70aa92e30b685f150ed14eedb1474b6">utils::integer&lt; T, IB, BB, SB &gt;</a>, <a class="el" href="group__utilspmrarena__allocatorconstructors.html#ga557d2109484928e15525a1083b0b8e26">utils::pmr::arena_allocator&lt; T, Sync &gt;</a>, <a class="el" href="group__utilspmrstack__allocatorconstructors.html#ga3fc5d53309c8c22900137af934c5107f">utils::pmr::stack_allocator&lt; T, Sync &gt;</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

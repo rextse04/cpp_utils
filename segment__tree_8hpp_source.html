@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@4/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -1178,8 +1181,8 @@ $(document).ready(function(){initNavTree('segment__tree_8hpp_source.html',''); i
 <div class="ttc" id="ainterval_8hpp_html"><div class="ttname"><a href="interval_8hpp.html">interval.hpp</a></div></div>
 <div class="ttc" id="aiterator_8hpp_html"><div class="ttname"><a href="iterator_8hpp.html">iterator.hpp</a></div><div class="ttdoc">Additional iterator utilities and adaptors not provided by the standard library. The purpose of this ...</div></div>
 <div class="ttc" id="amemory_8hpp_html"><div class="ttname"><a href="memory_8hpp.html">memory.hpp</a></div></div>
-<div class="ttc" id="anamespaceutils_1_1integer__alias_html_aa8967fdcbd912fcd5a66fdeb551691cf"><div class="ttname"><a href="namespaceutils_1_1integer__alias.html#aa8967fdcbd912fcd5a66fdeb551691cf">utils::integer_alias::size_t</a></div><div class="ttdeci">integer&lt; std::size_t &gt; size_t</div><div class="ttdef"><b>Definition:</b> <a href="integer_8hpp_source.html#l00775">integer.hpp:775</a></div></div>
-<div class="ttc" id="anamespaceutils_1_1integer__alias_html_aca05a61d14a516c6dd53450e823075b7"><div class="ttname"><a href="namespaceutils_1_1integer__alias.html#aca05a61d14a516c6dd53450e823075b7">utils::integer_alias::ptrdiff_t</a></div><div class="ttdeci">integer&lt; std::ptrdiff_t &gt; ptrdiff_t</div><div class="ttdef"><b>Definition:</b> <a href="integer_8hpp_source.html#l00776">integer.hpp:776</a></div></div>
+<div class="ttc" id="anamespaceutils_1_1integer__alias_html_aa8967fdcbd912fcd5a66fdeb551691cf"><div class="ttname"><a href="namespaceutils_1_1integer__alias.html#aa8967fdcbd912fcd5a66fdeb551691cf">utils::integer_alias::size_t</a></div><div class="ttdeci">integer&lt; std::size_t &gt; size_t</div><div class="ttdef"><b>Definition:</b> <a href="integer_8hpp_source.html#l00776">integer.hpp:776</a></div></div>
+<div class="ttc" id="anamespaceutils_1_1integer__alias_html_aca05a61d14a516c6dd53450e823075b7"><div class="ttname"><a href="namespaceutils_1_1integer__alias.html#aca05a61d14a516c6dd53450e823075b7">utils::integer_alias::ptrdiff_t</a></div><div class="ttdeci">integer&lt; std::ptrdiff_t &gt; ptrdiff_t</div><div class="ttdef"><b>Definition:</b> <a href="integer_8hpp_source.html#l00777">integer.hpp:777</a></div></div>
 <div class="ttc" id="anamespaceutils_html"><div class="ttname"><a href="namespaceutils.html">utils</a></div><div class="ttdef"><b>Definition:</b> <a href="allocator__base_8hpp_source.html#l00004">allocator_base.hpp:4</a></div></div>
 <div class="ttc" id="anamespaceutils_html_a048efb80d8c76325f02a7d20f9396570"><div class="ttname"><a href="namespaceutils.html#a048efb80d8c76325f02a7d20f9396570">utils::segment_tree</a></div><div class="ttdeci">segment_tree(std::sorted_equivalent_t, std::initializer_list&lt; std::pair&lt; Key, T &gt; &gt;, Allocator) -&gt; segment_tree&lt; typename STT::Key, typename STT::T, typename STT::Compare, typename STT::Sum, typename STT::Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</div></div>
 <div class="ttc" id="anamespaceutils_html_a15c903199c2c3166038cf06caa747a2c"><div class="ttname"><a href="namespaceutils.html#a15c903199c2c3166038cf06caa747a2c">utils::swap</a></div><div class="ttdeci">constexpr decltype(auto) swap(T &amp;t, U &amp;u) noexcept(noexcept(t.swap(u)))</div><div class="ttdoc">Make classes that provide a swap method swappable.</div><div class="ttdef"><b>Definition:</b> <a href="swap_8hpp_source.html#l00016">swap.hpp:16</a></div></div>

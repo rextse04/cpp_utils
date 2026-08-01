@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@4/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -134,7 +137,7 @@ $(document).ready(function(){initNavTree('memory_8hpp_source.html',''); initResi
 <div class="ttc" id="agroup__utilsmax__align_html_af3111cee7b25a4f295a8c9fe8512e687"><div class="ttname"><a href="group__utilsmax__align.html#af3111cee7b25a4f295a8c9fe8512e687">utils::max_align::value</a></div><div class="ttdeci">static constexpr auto value</div><div class="ttdef"><b>Definition:</b> <a href="memory_8hpp_source.html#l00014">memory.hpp:14</a></div></div>
 <div class="ttc" id="agroup__utilsmax__align_html_ga261afe138d5120bb7ae53bac474fc8a7"><div class="ttname"><a href="group__utilsmax__align.html#ga261afe138d5120bb7ae53bac474fc8a7">utils::max_align_v</a></div><div class="ttdeci">constexpr std::align_val_t max_align_v</div><div class="ttdef"><b>Definition:</b> <a href="memory_8hpp_source.html#l00017">memory.hpp:17</a></div></div>
 <div class="ttc" id="agroup__utilsmax__align_html_structutils_1_1max__align"><div class="ttname"><a href="group__utilsmax__align.html#structutils_1_1max__align">utils::max_align</a></div><div class="ttdef"><b>Definition:</b> <a href="memory_8hpp_source.html#l00013">memory.hpp:13</a></div></div>
-<div class="ttc" id="anamespaceutils_1_1integer__alias_html_aa8967fdcbd912fcd5a66fdeb551691cf"><div class="ttname"><a href="namespaceutils_1_1integer__alias.html#aa8967fdcbd912fcd5a66fdeb551691cf">utils::integer_alias::size_t</a></div><div class="ttdeci">integer&lt; std::size_t &gt; size_t</div><div class="ttdef"><b>Definition:</b> <a href="integer_8hpp_source.html#l00775">integer.hpp:775</a></div></div>
+<div class="ttc" id="anamespaceutils_1_1integer__alias_html_aa8967fdcbd912fcd5a66fdeb551691cf"><div class="ttname"><a href="namespaceutils_1_1integer__alias.html#aa8967fdcbd912fcd5a66fdeb551691cf">utils::integer_alias::size_t</a></div><div class="ttdeci">integer&lt; std::size_t &gt; size_t</div><div class="ttdef"><b>Definition:</b> <a href="integer_8hpp_source.html#l00776">integer.hpp:776</a></div></div>
 <div class="ttc" id="anamespaceutils_html"><div class="ttname"><a href="namespaceutils.html">utils</a></div><div class="ttdef"><b>Definition:</b> <a href="allocator__base_8hpp_source.html#l00004">allocator_base.hpp:4</a></div></div>
 <div class="ttc" id="anamespaceutils_html_a412fc76b0efe03804baebd2a13f6e790"><div class="ttname"><a href="namespaceutils.html#a412fc76b0efe03804baebd2a13f6e790">utils::rcast</a></div><div class="ttdeci">constexpr To rcast(auto *from) noexcept</div><div class="ttdoc">constexpr-friendly pointer punning</div><div class="ttdef"><b>Definition:</b> <a href="memory_8hpp_source.html#l00042">memory.hpp:42</a></div></div>
 <div class="ttc" id="anamespaceutils_html_a8d2503c40d18bf18ecc897b57dd968ab"><div class="ttname"><a href="namespaceutils.html#a8d2503c40d18bf18ecc897b57dd968ab">utils::align</a></div><div class="ttdeci">void * align(std::size_t alignment, std::size_t size, void *ptr, void *end)</div><div class="ttdoc">Align a pointer to the specified alignment.</div><div class="ttdef"><b>Definition:</b> <a href="memory_8hpp_source.html#l00027">memory.hpp:27</a></div></div>

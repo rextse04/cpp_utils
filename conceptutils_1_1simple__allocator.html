@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@4/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -105,7 +108,7 @@ $(document).ready(function(){initNavTree('conceptutils_1_1simple__allocator.html
 <div class="line">        { alloc.deallocate(alloc.allocate(n), n) };</div>
 <div class="line">    } &amp;&amp; std::copy_constructible&lt;T&gt; &amp;&amp; std::equality_comparable&lt;T&gt;</div>
 <div class="ttc" id="aconceptutils_1_1simple__allocator_html"><div class="ttname"><a href="conceptutils_1_1simple__allocator.html">utils::simple_allocator</a></div><div class="ttdoc">C++ named requirements: Allocator</div><div class="ttdef"><b>Definition:</b> <a href="memory_8hpp_source.html#l00049">memory.hpp:49</a></div></div>
-<div class="ttc" id="anamespaceutils_1_1integer__alias_html_aa8967fdcbd912fcd5a66fdeb551691cf"><div class="ttname"><a href="namespaceutils_1_1integer__alias.html#aa8967fdcbd912fcd5a66fdeb551691cf">utils::integer_alias::size_t</a></div><div class="ttdeci">integer&lt; std::size_t &gt; size_t</div><div class="ttdef"><b>Definition:</b> <a href="integer_8hpp_source.html#l00775">integer.hpp:775</a></div></div>
+<div class="ttc" id="anamespaceutils_1_1integer__alias_html_aa8967fdcbd912fcd5a66fdeb551691cf"><div class="ttname"><a href="namespaceutils_1_1integer__alias.html#aa8967fdcbd912fcd5a66fdeb551691cf">utils::integer_alias::size_t</a></div><div class="ttdeci">integer&lt; std::size_t &gt; size_t</div><div class="ttdef"><b>Definition:</b> <a href="integer_8hpp_source.html#l00776">integer.hpp:776</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >C++ named requirements: <em>Allocator</em> </p>
 

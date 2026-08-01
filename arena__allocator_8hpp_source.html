@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@4/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -192,7 +195,7 @@ $(document).ready(function(){initNavTree('arena__allocator_8hpp_source.html','')
 <div class="ttc" id="agroup__utilspmrarena__allocatorconstructors_html_gae5dfff367930d9f2e6ad7380ba4c7a70"><div class="ttname"><a href="group__utilspmrarena__allocatorconstructors.html#gae5dfff367930d9f2e6ad7380ba4c7a70">utils::pmr::arena_allocator::arena_allocator</a></div><div class="ttdeci">arena_allocator(void_pointer buf, size_type space)</div><div class="ttdef"><b>Definition:</b> <a href="arena__allocator_8hpp_source.html#l00069">arena_allocator.hpp:69</a></div></div>
 <div class="ttc" id="agroup__utilspmrarena__allocatorconstructors_html_gaecabf6002d8eda53bb01b8e3103d1701"><div class="ttname"><a href="group__utilspmrarena__allocatorconstructors.html#gaecabf6002d8eda53bb01b8e3103d1701">utils::pmr::arena_allocator::noexcept</a></div><div class="ttdeci">S &amp;other noexcept</div><div class="ttdef"><b>Definition:</b> <a href="arena__allocator_8hpp_source.html#l00091">arena_allocator.hpp:96</a></div></div>
 <div class="ttc" id="amemory_8hpp_html"><div class="ttname"><a href="memory_8hpp.html">memory.hpp</a></div></div>
-<div class="ttc" id="anamespaceutils_1_1integer__alias_html_aa8967fdcbd912fcd5a66fdeb551691cf"><div class="ttname"><a href="namespaceutils_1_1integer__alias.html#aa8967fdcbd912fcd5a66fdeb551691cf">utils::integer_alias::size_t</a></div><div class="ttdeci">integer&lt; std::size_t &gt; size_t</div><div class="ttdef"><b>Definition:</b> <a href="integer_8hpp_source.html#l00775">integer.hpp:775</a></div></div>
+<div class="ttc" id="anamespaceutils_1_1integer__alias_html_aa8967fdcbd912fcd5a66fdeb551691cf"><div class="ttname"><a href="namespaceutils_1_1integer__alias.html#aa8967fdcbd912fcd5a66fdeb551691cf">utils::integer_alias::size_t</a></div><div class="ttdeci">integer&lt; std::size_t &gt; size_t</div><div class="ttdef"><b>Definition:</b> <a href="integer_8hpp_source.html#l00776">integer.hpp:776</a></div></div>
 <div class="ttc" id="anamespaceutils_1_1pmr_html"><div class="ttname"><a href="namespaceutils_1_1pmr.html">utils::pmr</a></div><div class="ttdef"><b>Definition:</b> <a href="allocator__base_8hpp_source.html#l00004">allocator_base.hpp:4</a></div></div>
 <div class="ttc" id="anamespaceutils_html_a8d2503c40d18bf18ecc897b57dd968ab"><div class="ttname"><a href="namespaceutils.html#a8d2503c40d18bf18ecc897b57dd968ab">utils::align</a></div><div class="ttdeci">void * align(std::size_t alignment, std::size_t size, void *ptr, void *end)</div><div class="ttdoc">Align a pointer to the specified alignment.</div><div class="ttdef"><b>Definition:</b> <a href="memory_8hpp_source.html#l00027">memory.hpp:27</a></div></div>
 <div class="ttc" id="astructutils_1_1pmr_1_1allocator__base_html"><div class="ttname"><a href="structutils_1_1pmr_1_1allocator__base.html">utils::pmr::allocator_base</a></div><div class="ttdoc">A convenience base class providing typedefs for custom allocators.</div><div class="ttdef"><b>Definition:</b> <a href="allocator__base_8hpp_source.html#l00013">allocator_base.hpp:13</a></div></div>

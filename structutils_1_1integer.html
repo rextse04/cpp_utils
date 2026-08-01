@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@4/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -152,21 +155,21 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:gaa02e1252b219efc689eeb9e0db2eb689"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__integerinteger.html#gaa02e1252b219efc689eeb9e0db2eb689">integer</a> ()=default</td></tr>
+<tr class="memitem:gaa02e1252b219efc689eeb9e0db2eb689"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__integerconstructors.html#gaa02e1252b219efc689eeb9e0db2eb689">integer</a> ()=default</td></tr>
 <tr class="separator:gaa02e1252b219efc689eeb9e0db2eb689"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf70aa92e30b685f150ed14eedb1474b6"><td class="memTemplParams" colspan="2">template&lt;typename Other , typename U  = decltype(to_underlying(std::declval&lt;Other&amp;&amp;&gt;()))&gt; </td></tr>
-<tr class="memitem:gaf70aa92e30b685f150ed14eedb1474b6"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__integerinteger.html#gaf70aa92e30b685f150ed14eedb1474b6">explicit</a> (!lossless_convertible_to&lt; U, T &gt;) const expr <a class="el" href="structutils_1_1integer.html">integer</a>(Other &amp;&amp;other) noexcept(std::is_nothrow_constructible_v&lt; T, U &gt;)</td></tr>
-<tr class="memdesc:gaf70aa92e30b685f150ed14eedb1474b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion from a (possibly wrapped) integer-like value <code>other</code>.  <a href="group__integerinteger.html#gaf70aa92e30b685f150ed14eedb1474b6">More...</a><br /></td></tr>
+<tr class="memitem:gaf70aa92e30b685f150ed14eedb1474b6"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__integerconstructors.html#gaf70aa92e30b685f150ed14eedb1474b6">explicit</a> (!lossless_convertible_to&lt; U, T &gt;) const expr <a class="el" href="structutils_1_1integer.html">integer</a>(Other &amp;&amp;other) noexcept(std::is_nothrow_constructible_v&lt; T, U &gt;)</td></tr>
+<tr class="memdesc:gaf70aa92e30b685f150ed14eedb1474b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion from a (possibly wrapped) integer-like value <code>other</code>.  <a href="group__integerconstructors.html#gaf70aa92e30b685f150ed14eedb1474b6">More...</a><br /></td></tr>
 <tr class="separator:gaf70aa92e30b685f150ed14eedb1474b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga91c823090d72a537bd3c956431720387"><td class="memTemplParams" colspan="2">template&lt;typename Other &gt; <br />
 requires (std::is_floating_point_v&lt;std::remove_cvref_t&lt;Other&gt;&gt;)</td></tr>
-<tr class="memitem:ga91c823090d72a537bd3c956431720387"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__integerinteger.html#ga91c823090d72a537bd3c956431720387">integer</a> (Other &amp;&amp;other) noexcept(std::is_nothrow_constructible_v&lt; T, Other &amp;&amp; &gt;)</td></tr>
-<tr class="memdesc:ga91c823090d72a537bd3c956431720387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion from a floating point value <code>other</code>. The constructor is explicit as there is potential precision loss.  <a href="group__integerinteger.html#ga91c823090d72a537bd3c956431720387">More...</a><br /></td></tr>
+<tr class="memitem:ga91c823090d72a537bd3c956431720387"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__integerconstructors.html#ga91c823090d72a537bd3c956431720387">integer</a> (Other &amp;&amp;other) noexcept(std::is_nothrow_constructible_v&lt; T, Other &amp;&amp; &gt;)</td></tr>
+<tr class="memdesc:ga91c823090d72a537bd3c956431720387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion from a floating point value <code>other</code>. The constructor is explicit as there is potential precision loss.  <a href="group__integerconstructors.html#ga91c823090d72a537bd3c956431720387">More...</a><br /></td></tr>
 <tr class="separator:ga91c823090d72a537bd3c956431720387"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga55a3f0ae8dc08e5697d2cf1233302463"><td class="memTemplParams" colspan="2">template&lt;typename Other , typename... Ts, typename OtherD  = std::remove_cvref_t&lt;Other&gt;&gt; <br />
 requires ((std::is_arithmetic_v&lt;OtherD&gt; || <a class="el" href="group__is__integer__like.html#ga3e785f8bbe5579cdb6684c29d19d4fe7">is_integer_like_v</a>&lt;OtherD&gt;) &amp;&amp; sizeof...(Ts) == 0)</td></tr>
-<tr class="memitem:ga55a3f0ae8dc08e5697d2cf1233302463"><td class="memTemplItemLeft" align="right" valign="top">consteval&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__integerinteger.html#ga55a3f0ae8dc08e5697d2cf1233302463">integer</a> (Other &amp;&amp;other, Ts...)</td></tr>
-<tr class="memdesc:ga55a3f0ae8dc08e5697d2cf1233302463"><td class="mdescLeft">&#160;</td><td class="mdescRight">This allows implicit conversions from numbers known at compile time.  <a href="group__integerinteger.html#ga55a3f0ae8dc08e5697d2cf1233302463">More...</a><br /></td></tr>
+<tr class="memitem:ga55a3f0ae8dc08e5697d2cf1233302463"><td class="memTemplItemLeft" align="right" valign="top">consteval&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__integerconstructors.html#ga55a3f0ae8dc08e5697d2cf1233302463">integer</a> (Other &amp;&amp;other, Ts...)</td></tr>
+<tr class="memdesc:ga55a3f0ae8dc08e5697d2cf1233302463"><td class="mdescLeft">&#160;</td><td class="mdescRight">This allows implicit conversions from numbers known at compile time.  <a href="group__integerconstructors.html#ga55a3f0ae8dc08e5697d2cf1233302463">More...</a><br /></td></tr>
 <tr class="separator:ga55a3f0ae8dc08e5697d2cf1233302463"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf85e7fb0e0b45e09342748f906eace2f"><td class="memTemplParams" colspan="2">template&lt;typename Self , typename Other , typename SelfD  = std::remove_cvref_t&lt;Self&gt;, typename OtherD  = std::remove_cvref_t&lt;Other&gt;&gt; <br />
 requires (<a class="el" href="group__is__same__sign.html#gae1ba453ed44bcb43cd6d1b42e5ee9b82">is_same_sign_v</a>&lt;SelfD, OtherD&gt;)</td></tr>
@@ -189,7 +192,7 @@ requires (<a class="el" href="group__is__same__sign.html#gae1ba453ed44bcb43cd6d1
 <tr class="memitem:gae93bf5d9fe4d50c5143053abab45416e"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__integeroperatorconversion.html#gae93bf5d9fe4d50c5143053abab45416e">operator const U &amp;&amp;</a> () const &amp;&amp;noexcept</td></tr>
 <tr class="separator:gae93bf5d9fe4d50c5143053abab45416e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d5d4d51a43291632ad582c69624a4e0"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; <br />
-requires (!std::is_same_v&lt;U, T&gt; &amp;&amp; <a class="el" href="group__utilsexplicitly__convertible__to.html#gaeeeecd5e5e48d738f1f779d9b8f46dcc">is_explicitly_convertible_v</a>&lt;T, U&gt;) <a class="el" href="group__integerinteger.html#gaf70aa92e30b685f150ed14eedb1474b6">explicit</a>(!lossless_convertible_to&lt;T, U&gt;)</td></tr>
+requires (!std::is_same_v&lt;U, T&gt; &amp;&amp; <a class="el" href="group__utilsexplicitly__convertible__to.html#gaeeeecd5e5e48d738f1f779d9b8f46dcc">is_explicitly_convertible_v</a>&lt;T, U&gt;) <a class="el" href="group__integerconstructors.html#gaf70aa92e30b685f150ed14eedb1474b6">explicit</a>(!lossless_convertible_to&lt;T, U&gt;)</td></tr>
 <tr class="memitem:a4d5d4d51a43291632ad582c69624a4e0"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structutils_1_1integer.html#a4d5d4d51a43291632ad582c69624a4e0">operator U</a> () const noexcept</td></tr>
 <tr class="memdesc:a4d5d4d51a43291632ad582c69624a4e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion to integer-like type <code>U</code>.  <a href="structutils_1_1integer.html#a4d5d4d51a43291632ad582c69624a4e0">More...</a><br /></td></tr>
 <tr class="separator:a4d5d4d51a43291632ad582c69624a4e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -373,7 +376,7 @@ template&lt;integer_like T, <a class="el" href="structutils_1_1integral__behavio
 template&lt;integer_like T, <a class="el" href="structutils_1_1integral__behavior_1_1profile.html">integral_behavior::profile</a> IB = integral_behavior::sane, <a class="el" href="structutils_1_1bit__behavior_1_1profile.html">bit_behavior::profile</a> BB = bit_behavior::sane, <a class="el" href="structutils_1_1shift__behavior_1_1profile.html">shift_behavior::profile</a> SB = shift_behavior::standard&gt; </div>
 <div class="memtemplate">
 template&lt;typename U &gt; <br />
-requires (!std::is_same_v&lt;U, T&gt; &amp;&amp; <a class="el" href="group__utilsexplicitly__convertible__to.html#gaeeeecd5e5e48d738f1f779d9b8f46dcc">is_explicitly_convertible_v</a>&lt;T, U&gt;) <a class="el" href="group__integerinteger.html#gaf70aa92e30b685f150ed14eedb1474b6">explicit</a>(!lossless_convertible_to&lt;T, U&gt;)</div>
+requires (!std::is_same_v&lt;U, T&gt; &amp;&amp; <a class="el" href="group__utilsexplicitly__convertible__to.html#gaeeeecd5e5e48d738f1f779d9b8f46dcc">is_explicitly_convertible_v</a>&lt;T, U&gt;) <a class="el" href="group__integerconstructors.html#gaf70aa92e30b685f150ed14eedb1474b6">explicit</a>(!lossless_convertible_to&lt;T, U&gt;)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -395,7 +398,7 @@ requires (!std::is_same_v&lt;U, T&gt; &amp;&amp; <a class="el" href="group__util
 <p>Conversion to integer-like type <code>U</code>. </p>
 <p >Explicit if <code><a class="el" href="conceptutils_1_1lossless__convertible__to.html">utils::lossless_convertible_to</a>&lt;T, U&gt;</code> is false. </p>
 
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00709">709</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00710">710</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 
 </div>
 </div>
@@ -426,7 +429,7 @@ template&lt;integer_like T, <a class="el" href="structutils_1_1integral__behavio
 
 <p>Returns the underlying object. </p>
 
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00712">712</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00713">713</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 
 </div>
 </div>
@@ -505,7 +508,7 @@ requires requires</div>
 
 <p><code>operator&lt;&lt;</code> overload for output streams. </p>
 
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00716">716</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00717">717</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 
 </div>
 </div>

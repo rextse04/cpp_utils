@@ -20,7 +20,7 @@ var modules =
     [ "utils::epsilon_of", "group__epsilon__of.html", "group__epsilon__of" ],
     [ "utils::is_lossless_convertible", "group__is__lossless__convertible.html", "group__is__lossless__convertible" ],
     [ "utils::integer::to_underlying", "group__integerto__underlying.html", "group__integerto__underlying" ],
-    [ "utils::integer::integer", "group__integerinteger.html", "group__integerinteger" ],
+    [ "utils::integer::integer", "group__integerconstructors.html", "group__integerconstructors" ],
     [ "utils::integer::operator==, utils::integer::operator<=>", "group__integeroperatorcomparison.html", "group__integeroperatorcomparison" ],
     [ "utils::integer::operator U&, utils::integer::operator const U&, utils::integer::operator U&&, utils::integer::operator const U&&", "group__integeroperatorconversion.html", "group__integeroperatorconversion" ],
     [ "utils::max_align", "group__utilsmax__align.html", "group__utilsmax__align" ],

@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@4/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -644,8 +647,8 @@ $(document).ready(function(){initNavTree('static__string_8hpp_source.html',''); 
 <div class="ttc" id="aconceptutils_1_1container__compatible__range_html"><div class="ttname"><a href="conceptutils_1_1container__compatible__range.html">utils::container_compatible_range</a></div><div class="ttdef"><b>Definition:</b> <a href="ranges_8hpp_source.html#l00054">ranges.hpp:54</a></div></div>
 <div class="ttc" id="aconceptutils_1_1tagged_html"><div class="ttname"><a href="conceptutils_1_1tagged.html">utils::tagged</a></div><div class="ttdef"><b>Definition:</b> <a href="type_8hpp_source.html#l00148">type.hpp:148</a></div></div>
 <div class="ttc" id="ainteger_8hpp_html"><div class="ttname"><a href="integer_8hpp.html">integer.hpp</a></div></div>
-<div class="ttc" id="anamespaceutils_1_1integer__alias_html_aa8967fdcbd912fcd5a66fdeb551691cf"><div class="ttname"><a href="namespaceutils_1_1integer__alias.html#aa8967fdcbd912fcd5a66fdeb551691cf">utils::integer_alias::size_t</a></div><div class="ttdeci">integer&lt; std::size_t &gt; size_t</div><div class="ttdef"><b>Definition:</b> <a href="integer_8hpp_source.html#l00775">integer.hpp:775</a></div></div>
-<div class="ttc" id="anamespaceutils_1_1integer__alias_html_aca05a61d14a516c6dd53450e823075b7"><div class="ttname"><a href="namespaceutils_1_1integer__alias.html#aca05a61d14a516c6dd53450e823075b7">utils::integer_alias::ptrdiff_t</a></div><div class="ttdeci">integer&lt; std::ptrdiff_t &gt; ptrdiff_t</div><div class="ttdef"><b>Definition:</b> <a href="integer_8hpp_source.html#l00776">integer.hpp:776</a></div></div>
+<div class="ttc" id="anamespaceutils_1_1integer__alias_html_aa8967fdcbd912fcd5a66fdeb551691cf"><div class="ttname"><a href="namespaceutils_1_1integer__alias.html#aa8967fdcbd912fcd5a66fdeb551691cf">utils::integer_alias::size_t</a></div><div class="ttdeci">integer&lt; std::size_t &gt; size_t</div><div class="ttdef"><b>Definition:</b> <a href="integer_8hpp_source.html#l00776">integer.hpp:776</a></div></div>
+<div class="ttc" id="anamespaceutils_1_1integer__alias_html_aca05a61d14a516c6dd53450e823075b7"><div class="ttname"><a href="namespaceutils_1_1integer__alias.html#aca05a61d14a516c6dd53450e823075b7">utils::integer_alias::ptrdiff_t</a></div><div class="ttdeci">integer&lt; std::ptrdiff_t &gt; ptrdiff_t</div><div class="ttdef"><b>Definition:</b> <a href="integer_8hpp_source.html#l00777">integer.hpp:777</a></div></div>
 <div class="ttc" id="anamespaceutils_html"><div class="ttname"><a href="namespaceutils.html">utils</a></div><div class="ttdef"><b>Definition:</b> <a href="allocator__base_8hpp_source.html#l00004">allocator_base.hpp:4</a></div></div>
 <div class="ttc" id="anamespaceutils_html_a026f0efc276a6d7eba427c611cd569ff"><div class="ttname"><a href="namespaceutils.html#a026f0efc276a6d7eba427c611cd569ff">utils::trim_v</a></div><div class="ttdeci">constexpr auto trim_v</div><div class="ttdef"><b>Definition:</b> <a href="static__string_8hpp_source.html#l00519">static_string.hpp:519</a></div></div>
 <div class="ttc" id="anamespaceutils_html_a610c726ab1f1a35f461b1d64c34e9f11"><div class="ttname"><a href="namespaceutils.html#a610c726ab1f1a35f461b1d64c34e9f11">utils::operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const tagged&lt; static_string_tag &gt; auto &amp;str)</div><div class="ttdef"><b>Definition:</b> <a href="static__string_8hpp_source.html#l00542">static_string.hpp:542</a></div></div>

@@ -74,7 +74,7 @@ var searchData=
   ['utils_3a_3aepsilon_5fof_71',['utils::epsilon_of',['../group__epsilon__of.html',1,'']]],
   ['utils_3a_3aexplicitly_5fconvertible_5fto_72',['utils::explicitly_convertible_to',['../group__utilsexplicitly__convertible__to.html',1,'']]],
   ['utils_3a_3afollow_73',['utils::follow',['../group__utilsfollow.html',1,'']]],
-  ['utils_3a_3ainteger_3a_3ainteger_74',['utils::integer::integer',['../group__integerinteger.html',1,'']]],
+  ['utils_3a_3ainteger_3a_3ainteger_74',['utils::integer::integer',['../group__integerconstructors.html',1,'']]],
   ['utils_3a_3ainteger_3a_3aoperator_20u_26_2c_20utils_3a_3ainteger_3a_3aoperator_20const_20u_26_2c_20utils_3a_3ainteger_3a_3aoperator_20u_26_26_2c_20utils_3a_3ainteger_3a_3aoperator_20const_20u_26_26_75',['utils::integer::operator U&amp;, utils::integer::operator const U&amp;, utils::integer::operator U&amp;&amp;, utils::integer::operator const U&amp;&amp;',['../group__integeroperatorconversion.html',1,'']]],
   ['utils_3a_3ainteger_3a_3aoperator_3d_3d_2c_20utils_3a_3ainteger_3a_3aoperator_3c_3d_3e_76',['utils::integer::operator==, utils::integer::operator&lt;=&gt;',['../group__integeroperatorcomparison.html',1,'']]],
   ['utils_3a_3ainteger_3a_3ato_5funderlying_77',['utils::integer::to_underlying',['../group__integerto__underlying.html',1,'']]],

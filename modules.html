@@ -16,13 +16,16 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
 </script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@4/MathJax.js"></script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -101,7 +104,7 @@ $(document).ready(function(){initNavTree('modules.html',''); initResizable(); })
 <tr id="row_3_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__utilsintervalcomparison.html" target="_self">utils::interval::operator&lt;=&gt;, utils::interval::compare</a></td><td class="desc">Three-way comparison operator </td></tr>
 <tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__segment__treeconstructors.html" target="_self">utils::segment_tree::segment_tree</a></td><td class="desc"></td></tr>
 <tr id="row_5_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__segment__treedestructors.html" target="_self">utils::segment_tree::~segment_tree</a></td><td class="desc"></td></tr>
-<tr id="row_6_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__segment__treeoperatorasg.html" target="_self">utils::segment_tree::operator=</a></td><td class="desc"></td></tr>
+<tr id="row_6_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__segment__treeoperatorasg.html" target="_self">utils::segment_tree::operator=</a></td><td class="desc">Assignment operators.Copy-assigns all underlying containers and functors </td></tr>
 <tr id="row_7_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__segment__treeoperatorsubscript.html" target="_self">utils::segment_tree::operator[]</a></td><td class="desc"></td></tr>
 <tr id="row_8_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__segment__treeat.html" target="_self">utils::segment_tree::at</a></td><td class="desc"></td></tr>
 <tr id="row_9_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__segment__treeiterators.html" target="_self">utils::segment_tree::begin, utils::segment_tree::cbegin, utils::segment_tree::end, utils::segment_tree::cend, utils::segment_tree::rbegin, utils::segment_tree::crbegin, utils::segment_tree::rend, utils::segment_tree::crend</a></td><td class="desc"></td></tr>
@@ -115,7 +118,7 @@ $(document).ready(function(){initNavTree('modules.html',''); initResizable(); })
 <tr id="row_17_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__epsilon__of.html" target="_self">utils::epsilon_of</a></td><td class="desc">Extends the definition of <code>epsilon</code> in <code>std::numeric_limits</code> to integral types </td></tr>
 <tr id="row_18_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__is__lossless__convertible.html" target="_self">utils::is_lossless_convertible</a></td><td class="desc">Determines if <code>From</code> can be converted to <code>To</code> without loss of information </td></tr>
 <tr id="row_19_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__integerto__underlying.html" target="_self">utils::integer::to_underlying</a></td><td class="desc">Get a reference to the underlying object of <code>x</code> </td></tr>
-<tr id="row_20_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__integerinteger.html" target="_self">utils::integer::integer</a></td><td class="desc">Default-initializes <code>under_</code> </td></tr>
+<tr id="row_20_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__integerconstructors.html" target="_self">utils::integer::integer</a></td><td class="desc">Constructors </td></tr>
 <tr id="row_21_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__integeroperatorcomparison.html" target="_self">utils::integer::operator==, utils::integer::operator&lt;=&gt;</a></td><td class="desc"></td></tr>
 <tr id="row_22_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__integeroperatorconversion.html" target="_self">utils::integer::operator U&amp;, utils::integer::operator const U&amp;, utils::integer::operator U&amp;&amp;, utils::integer::operator const U&amp;&amp;</a></td><td class="desc">Conversion to references to underlying type </td></tr>
 <tr id="row_23_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group__utilsmax__align.html" target="_self">utils::max_align</a></td><td class="desc">Calculates the maximum alignment requirement among the types in <code>Ts</code> </td></tr>
