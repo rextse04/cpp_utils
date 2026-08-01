@@ -36,7 +36,7 @@ Collaboration diagram for utils\+::is\+\_\+integer\+\_\+like\texorpdfstring{$<$}
 struct utils\+::is\+\_\+integer\+\_\+like$<$ T $>$}
 Determines if a type is integer like. 
 
-\char`\"{}\textbackslash{}defgroup utils\+::is\+\_\+integer\+\_\+like utils\+::is\+\_\+integer\+\_\+like\char`\"{}
+\char`\"{}@defgroup utils\+::is\+\_\+integer\+\_\+like utils\+::is\+\_\+integer\+\_\+like\char`\"{}
 
 The construct is used by the library to determine if a type (ignoring cv-\/qualifiers) is integer like. The program is ill-\/formed, no diagnostics required, if the user specializes {\ttfamily \mbox{\hyperlink{structutils_1_1is__integer__like}{utils\+::is\+\_\+integer\+\_\+like}}} such that there exists a type {\ttfamily T} where {\ttfamily std\+::remove\+\_\+cvref\+\_\+t\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} is not a integer-\/like type (as specified by the standard library), but {\ttfamily \mbox{\hyperlink{structutils_1_1is__integer__like}{utils\+::is\+\_\+integer\+\_\+like}}\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}\+::value} is {\ttfamily true}. 
 
