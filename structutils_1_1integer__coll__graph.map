@@ -12,8 +12,8 @@
 <area shape="rect" id="node11" href="$structutils_1_1shift__asg__ops.html" title=" " alt="" coords="6,305,139,347"/>
 <area shape="rect" id="node12" href="$structutils_1_1sign__ops.html" title="Adds support for +t and &#45;t." alt="" coords="195,313,358,339"/>
 <area shape="rect" id="node13" href="$structutils_1_1fix__ops.html" title="Adds support for ++t, t++, &#45;&#45;t and t&#45;&#45;." alt="" coords="201,363,352,390"/>
-<area shape="rect" id="node14" href="$structutils_1_1integral__behavior_1_1profile.html" title="An &lt;i&gt;IntegerBehaviorProfileTemplate&lt;/i&gt; for integral arithmetics." alt="" coords="484,363,671,404"/>
-<area shape="rect" id="node15" href="$structutils_1_1bit__behavior_1_1profile.html" title="An &lt;i&gt;IntegerBehaviorProfileTemplate&lt;/i&gt; for bit operations." alt="" coords="484,428,671,469"/>
-<area shape="rect" id="node16" href="$structutils_1_1shift__behavior_1_1profile.html" title="An &lt;i&gt;IntegerBehaviorProfileTemplate&lt;/i&gt; for bit shifts." alt="" coords="484,493,671,535"/>
+<area shape="rect" id="node14" href="$structutils_1_1integral__behavior_1_1profile.html" title="An [IntegerBehaviorProfileTemplate](IntegerBehaviorProfile) for integral arithmetics." alt="" coords="484,363,671,404"/>
+<area shape="rect" id="node15" href="$structutils_1_1bit__behavior_1_1profile.html" title="An [IntegerBehaviorProfileTemplate](IntegerBehaviorProfile) for bit operations." alt="" coords="484,428,671,469"/>
+<area shape="rect" id="node16" href="$structutils_1_1shift__behavior_1_1profile.html" title="An [IntegerBehaviorProfileTemplate](IntegerBehaviorProfile) for bit shifts." alt="" coords="484,493,671,535"/>
 <area shape="rect" id="node17" title=" " alt="" coords="558,559,597,586"/>
 </map>

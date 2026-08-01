@@ -93,7 +93,7 @@ An arena allocator allocates memory from a pre-\/allocated buffer and does not r
 
 Internally, {\ttfamily \mbox{\hyperlink{classutils_1_1pmr_1_1arena__allocator}{arena\+\_\+allocator}}} only stores a pointer to an implementation-\/defined control structure living on the buffer, which stores the current allocation position and the end of the buffer. At construction, the control structure is constructed at the beginning of the (aligned) buffer, which is updated on every allocation request. If {\ttfamily Sync} is true, updates are performed atomically. Note that there may be gaps in between allocated objects on the buffer due to alignment. The following is a simple diagram illustrating the allocation strategy\+: 
 
-All instances of this class satisfy \mbox{\hyperlink{BufferAllocator_8md}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Buffer\+Allocator\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}} and {\ttfamily resource\+\_\+allocator}. Instances with {\ttfamily Sync} equal to {\ttfamily true} also satisfy \mbox{\hyperlink{BufferAllocator_8md}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Convertible\+Allocator\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}}. Consult their documentation for conditions and effects of member functions. 
+All instances of this class satisfy \mbox{[}{\itshape Buffer\+Allocator}\mbox{]}(Buffer\+Allocator) and {\ttfamily resource\+\_\+allocator}. Instances with {\ttfamily Sync} equal to {\ttfamily true} also satisfy \mbox{[}{\itshape Convertible\+Allocator}\mbox{]}(Buffer\+Allocator). Consult their documentation for conditions and effects of member functions. 
 \begin{DoxyTemplParams}{Template Parameters}
 {\em T} & {\ttfamily value\+\_\+type} \\
 \hline

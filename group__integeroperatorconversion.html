@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>cpp_utils: &lt;=&gt; utils::integer::operator==, utils::integer::operator&lt;=&gt;</title>
+<title>cpp_utils: utils::integer::operator U&amp;, utils::integer::operator const U&amp;, utils::integer::operator U&amp;&amp;, utils::integer::operator const U&amp;&amp;</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__integeroperator.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('group__integeroperatorconversion.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -85,7 +85,7 @@ $(document).ready(function(){initNavTree('group__integeroperator.html',''); init
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">&lt;=&gt; utils::integer::operator==, utils::integer::operator&lt;=&gt;</div></div>
+  <div class="headertitle"><div class="title">utils::integer::operator U&amp;, utils::integer::operator const U&amp;, utils::integer::operator U&amp;&amp;, utils::integer::operator const U&amp;&amp;</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -94,30 +94,21 @@ $(document).ready(function(){initNavTree('group__integeroperator.html',''); init
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaf85e7fb0e0b45e09342748f906eace2f"><td class="memTemplParams" colspan="2">template&lt;typename Self , typename Other , typename SelfD  = std::remove_cvref_t&lt;Self&gt;, typename OtherD  = std::remove_cvref_t&lt;Other&gt;&gt; <br />
-requires (<a class="el" href="group__is__same__sign.html#gae1ba453ed44bcb43cd6d1b42e5ee9b82">is_same_sign_v</a>&lt;SelfD, OtherD&gt;)</td></tr>
-<tr class="memitem:gaf85e7fb0e0b45e09342748f906eace2f"><td class="memTemplItemLeft" align="right" valign="top">constexpr decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__integeroperator.html#gaf85e7fb0e0b45e09342748f906eace2f">utils::integer&lt; T, IB, BB, SB &gt;::operator==</a> (this Self &amp;&amp;self, Other &amp;&amp;other) noexcept(noexcept(std::forward_like&lt; Self &gt;(self.under_)==<a class="el" href="group__integerto__underlying.html#gadf39f2ab541118c720d7371a01d8ec87">to_underlying</a>(std::forward&lt; Other &gt;(other))))</td></tr>
-<tr class="separator:gaf85e7fb0e0b45e09342748f906eace2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga917fdd63d11629b7a48f77bb20bbb08a"><td class="memTemplParams" colspan="2">template&lt;typename Self , typename Other , typename SelfD  = std::remove_cvref_t&lt;Self&gt;, typename OtherD  = std::remove_cvref_t&lt;Other&gt;&gt; <br />
-requires (<a class="el" href="group__is__same__sign.html#gae1ba453ed44bcb43cd6d1b42e5ee9b82">is_same_sign_v</a>&lt;SelfD, OtherD&gt;)</td></tr>
-<tr class="memitem:ga917fdd63d11629b7a48f77bb20bbb08a"><td class="memTemplItemLeft" align="right" valign="top">constexpr decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__integeroperator.html#ga917fdd63d11629b7a48f77bb20bbb08a">utils::integer&lt; T, IB, BB, SB &gt;::operator&lt;=&gt;</a> (this Self &amp;&amp;self, Other &amp;&amp;other) noexcept(noexcept(std::forward_like&lt; Self &gt;(self.under_)&lt;=&gt; <a class="el" href="group__integerto__underlying.html#gadf39f2ab541118c720d7371a01d8ec87">to_underlying</a>(std::forward&lt; Other &gt;(other))))</td></tr>
-<tr class="separator:ga917fdd63d11629b7a48f77bb20bbb08a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga527b405c4834bc14b214685992a408a6"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; T &gt; U&gt; </td></tr>
-<tr class="memitem:ga527b405c4834bc14b214685992a408a6"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__integeroperator.html#ga527b405c4834bc14b214685992a408a6">utils::integer&lt; T, IB, BB, SB &gt;::operator U&amp;</a> () &amp;noexcept</td></tr>
+<tr class="memitem:ga527b405c4834bc14b214685992a408a6"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__integeroperatorconversion.html#ga527b405c4834bc14b214685992a408a6">utils::integer&lt; T, IB, BB, SB &gt;::operator U&amp;</a> () &amp;noexcept</td></tr>
 <tr class="separator:ga527b405c4834bc14b214685992a408a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga44880db13000949ef632a1e7b5d8ea25"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; T &gt; U&gt; </td></tr>
-<tr class="memitem:ga44880db13000949ef632a1e7b5d8ea25"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__integeroperator.html#ga44880db13000949ef632a1e7b5d8ea25">utils::integer&lt; T, IB, BB, SB &gt;::operator const U &amp;</a> () const &amp;noexcept</td></tr>
+<tr class="memitem:ga44880db13000949ef632a1e7b5d8ea25"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__integeroperatorconversion.html#ga44880db13000949ef632a1e7b5d8ea25">utils::integer&lt; T, IB, BB, SB &gt;::operator const U &amp;</a> () const &amp;noexcept</td></tr>
 <tr class="separator:ga44880db13000949ef632a1e7b5d8ea25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa8e0febb0ee6e7363027b03f33e507d1"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; T &gt; U&gt; </td></tr>
-<tr class="memitem:gaa8e0febb0ee6e7363027b03f33e507d1"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__integeroperator.html#gaa8e0febb0ee6e7363027b03f33e507d1">utils::integer&lt; T, IB, BB, SB &gt;::operator U&amp;&amp;</a> () &amp;&amp;noexcept</td></tr>
+<tr class="memitem:gaa8e0febb0ee6e7363027b03f33e507d1"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__integeroperatorconversion.html#gaa8e0febb0ee6e7363027b03f33e507d1">utils::integer&lt; T, IB, BB, SB &gt;::operator U&amp;&amp;</a> () &amp;&amp;noexcept</td></tr>
 <tr class="separator:gaa8e0febb0ee6e7363027b03f33e507d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae93bf5d9fe4d50c5143053abab45416e"><td class="memTemplParams" colspan="2">template&lt;std::same_as&lt; T &gt; U&gt; </td></tr>
-<tr class="memitem:gae93bf5d9fe4d50c5143053abab45416e"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__integeroperator.html#gae93bf5d9fe4d50c5143053abab45416e">utils::integer&lt; T, IB, BB, SB &gt;::operator const U &amp;&amp;</a> () const &amp;&amp;noexcept</td></tr>
+<tr class="memitem:gae93bf5d9fe4d50c5143053abab45416e"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__integeroperatorconversion.html#gae93bf5d9fe4d50c5143053abab45416e">utils::integer&lt; T, IB, BB, SB &gt;::operator const U &amp;&amp;</a> () const &amp;&amp;noexcept</td></tr>
 <tr class="separator:gae93bf5d9fe4d50c5143053abab45416e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p >Conversion to references to underlying type. </p>
-<p ><code><a class="el" href="structutils_1_1integer.html" title="An integer wrapper with added type safety and customizable behavior in arithmetic operations.">utils::integer</a></code> can be compared with an <code><a class="el" href="conceptutils_1_1integer__like.html">utils::integer_like</a></code> type if and only if both have the same signedness (either both signed, or both unsigned). </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga44880db13000949ef632a1e7b5d8ea25" name="ga44880db13000949ef632a1e7b5d8ea25"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga44880db13000949ef632a1e7b5d8ea25">&#9670;&nbsp;</a></span>operator const U &amp;()</h2>
@@ -240,92 +231,6 @@ template&lt;std::same_as&lt; T &gt; U&gt; </div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00699">699</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ga917fdd63d11629b7a48f77bb20bbb08a" name="ga917fdd63d11629b7a48f77bb20bbb08a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga917fdd63d11629b7a48f77bb20bbb08a">&#9670;&nbsp;</a></span>operator&lt;=&gt;()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;integer_like T, <a class="el" href="structutils_1_1integral__behavior_1_1profile.html">integral_behavior::profile</a> IB = integral_behavior::sane, <a class="el" href="structutils_1_1bit__behavior_1_1profile.html">bit_behavior::profile</a> BB = bit_behavior::sane, <a class="el" href="structutils_1_1shift__behavior_1_1profile.html">shift_behavior::profile</a> SB = shift_behavior::standard&gt; </div>
-<div class="memtemplate">
-template&lt;typename Self , typename Other , typename SelfD  = std::remove_cvref_t&lt;Self&gt;, typename OtherD  = std::remove_cvref_t&lt;Other&gt;&gt; <br />
-requires (<a class="el" href="group__is__same__sign.html#gae1ba453ed44bcb43cd6d1b42e5ee9b82">is_same_sign_v</a>&lt;SelfD, OtherD&gt;)</div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr decltype(auto) <a class="el" href="structutils_1_1integer.html">utils::integer</a>&lt; T, IB, BB, SB &gt;::operator&lt;=&gt; </td>
-          <td>(</td>
-          <td class="paramtype">this Self &amp;&amp;&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Other &amp;&amp;&#160;</td>
-          <td class="paramname"><em>other</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00685">685</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
-
-</div>
-</div>
-<a id="gaf85e7fb0e0b45e09342748f906eace2f" name="gaf85e7fb0e0b45e09342748f906eace2f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf85e7fb0e0b45e09342748f906eace2f">&#9670;&nbsp;</a></span>operator==()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;integer_like T, <a class="el" href="structutils_1_1integral__behavior_1_1profile.html">integral_behavior::profile</a> IB = integral_behavior::sane, <a class="el" href="structutils_1_1bit__behavior_1_1profile.html">bit_behavior::profile</a> BB = bit_behavior::sane, <a class="el" href="structutils_1_1shift__behavior_1_1profile.html">shift_behavior::profile</a> SB = shift_behavior::standard&gt; </div>
-<div class="memtemplate">
-template&lt;typename Self , typename Other , typename SelfD  = std::remove_cvref_t&lt;Self&gt;, typename OtherD  = std::remove_cvref_t&lt;Other&gt;&gt; <br />
-requires (<a class="el" href="group__is__same__sign.html#gae1ba453ed44bcb43cd6d1b42e5ee9b82">is_same_sign_v</a>&lt;SelfD, OtherD&gt;)</div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr decltype(auto) <a class="el" href="structutils_1_1integer.html">utils::integer</a>&lt; T, IB, BB, SB &gt;::operator== </td>
-          <td>(</td>
-          <td class="paramtype">this Self &amp;&amp;&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Other &amp;&amp;&#160;</td>
-          <td class="paramname"><em>other</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00678">678</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 
 </div>
 </div>

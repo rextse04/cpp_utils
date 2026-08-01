@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"namespaceutils_1_1integer__alias.html#a6dd034c45325c78693eaf82e9f76cf17":[3,0,1,1,25],
 "namespaceutils_1_1integer__alias.html#a7cb22bcb91ea7ad61626eec3fa3e04e1":[3,0,1,1,12],
 "namespaceutils_1_1integer__alias.html#a7f1c37eeff0c65be762ac86ea0ecc965":[3,0,1,1,6],
 "namespaceutils_1_1integer__alias.html#a8175df01c4fcafb9cacd91dedde2be2d":[3,0,1,1,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "structutils_1_1basic__static__string.html#acaa78887931169885347ba3a3c635335":[3,0,1,19,6],
 "structutils_1_1basic__static__string.html#acb9c43b764b4ed68d05ab18ecfddddb3":[3,0,1,19,47],
 "structutils_1_1basic__static__string.html#acb9c43b764b4ed68d05ab18ecfddddb3":[5,0,1,17,47],
-"structutils_1_1basic__static__string.html#acd08e92cd333d927b5c47f555fbb3de0":[5,0,1,17,44],
-"structutils_1_1basic__static__string.html#acd08e92cd333d927b5c47f555fbb3de0":[3,0,1,19,44]
+"structutils_1_1basic__static__string.html#acd08e92cd333d927b5c47f555fbb3de0":[5,0,1,17,44]
 };

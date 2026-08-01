@@ -65,11 +65,11 @@ var NAVTREEINDEX =
 [
 "BufferAllocator.html",
 "classutils_1_1unique__resource.html#ac00009a69797ad51a0da55519acd6f77",
-"group__metasearch.html",
-"namespaceutils_1_1integer__alias.html#a7cb22bcb91ea7ad61626eec3fa3e04e1",
-"structutils_1_1basic__static__string.html#acf784cbe46b583c7acc7ec23477dc3bf",
-"structutils_1_1interval.html#a05ca68ae9a324763e17dc4dee7aad2b6",
-""
+"group__metareplace.html#structutils_1_1meta_1_1replace",
+"namespaceutils_1_1integer__alias.html#a6dd034c45325c78693eaf82e9f76cf17",
+"structutils_1_1basic__static__string.html#acd08e92cd333d927b5c47f555fbb3de0",
+"structutils_1_1interval.html",
+"utility_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

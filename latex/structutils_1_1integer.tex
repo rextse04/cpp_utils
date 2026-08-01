@@ -58,18 +58,18 @@ requires (std\+::is\+\_\+floating\+\_\+point\+\_\+v$<$std\+::remove\+\_\+cvref\+
 requires ((std\+::is\+\_\+arithmetic\+\_\+v$<$OtherD$>$ $\vert$$\vert$ \mbox{\hyperlink{group__is__integer__like_ga3e785f8bbe5579cdb6684c29d19d4fe7}{is\+\_\+integer\+\_\+like\+\_\+v}}$<$OtherD$>$) \&\& sizeof...(Ts) == 0)}\\consteval \mbox{\hyperlink{group__integerinteger_ga55a3f0ae8dc08e5697d2cf1233302463}{integer}} (Other \&\&other, Ts...)
 \begin{DoxyCompactList}\small\item\em This allows implicit conversions from numbers known at compile time. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Self , typename Other , typename SelfD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Self$>$, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
-requires (\mbox{\hyperlink{group__is__same__sign_gae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)}\\constexpr decltype(auto) \mbox{\hyperlink{group__integeroperator_gaf85e7fb0e0b45e09342748f906eace2f}{operator==}} (this Self \&\&self, Other \&\&other) noexcept(noexcept(std\+::forward\+\_\+like$<$ Self $>$(self.\+under\+\_\+)==\mbox{\hyperlink{group__integerto__underlying_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}}(std\+::forward$<$ Other $>$(other))))
+requires (\mbox{\hyperlink{group__is__same__sign_gae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)}\\constexpr decltype(auto) \mbox{\hyperlink{group__integeroperatorcomparison_gaf85e7fb0e0b45e09342748f906eace2f}{operator==}} (this Self \&\&self, Other \&\&other) noexcept(noexcept(std\+::forward\+\_\+like$<$ Self $>$(self.\+under\+\_\+)==\mbox{\hyperlink{group__integerto__underlying_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}}(std\+::forward$<$ Other $>$(other))))
 \item 
 {\footnotesize template$<$typename Self , typename Other , typename SelfD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Self$>$, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
-requires (\mbox{\hyperlink{group__is__same__sign_gae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)}\\constexpr decltype(auto) \mbox{\hyperlink{group__integeroperator_ga917fdd63d11629b7a48f77bb20bbb08a}{operator$<$=$>$}} (this Self \&\&self, Other \&\&other) noexcept(noexcept(std\+::forward\+\_\+like$<$ Self $>$(self.\+under\+\_\+)$<$=$>$ \mbox{\hyperlink{group__integerto__underlying_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}}(std\+::forward$<$ Other $>$(other))))
+requires (\mbox{\hyperlink{group__is__same__sign_gae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)}\\constexpr decltype(auto) \mbox{\hyperlink{group__integeroperatorcomparison_ga917fdd63d11629b7a48f77bb20bbb08a}{operator$<$=$>$}} (this Self \&\&self, Other \&\&other) noexcept(noexcept(std\+::forward\+\_\+like$<$ Self $>$(self.\+under\+\_\+)$<$=$>$ \mbox{\hyperlink{group__integerto__underlying_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}}(std\+::forward$<$ Other $>$(other))))
 \item 
-{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__integeroperator_ga527b405c4834bc14b214685992a408a6}{operator U\&}} () \&noexcept
+{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__integeroperatorconversion_ga527b405c4834bc14b214685992a408a6}{operator U\&}} () \&noexcept
 \item 
-{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__integeroperator_ga44880db13000949ef632a1e7b5d8ea25}{operator const U \&}} () const \&noexcept
+{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__integeroperatorconversion_ga44880db13000949ef632a1e7b5d8ea25}{operator const U \&}} () const \&noexcept
 \item 
-{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__integeroperator_gaa8e0febb0ee6e7363027b03f33e507d1}{operator U\&\&}} () \&\&noexcept
+{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__integeroperatorconversion_gaa8e0febb0ee6e7363027b03f33e507d1}{operator U\&\&}} () \&\&noexcept
 \item 
-{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__integeroperator_gae93bf5d9fe4d50c5143053abab45416e}{operator const U \&\&}} () const \&\&noexcept
+{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__integeroperatorconversion_gae93bf5d9fe4d50c5143053abab45416e}{operator const U \&\&}} () const \&\&noexcept
 \item 
 {\footnotesize template$<$typename U $>$ \newline
 requires (!std\+::is\+\_\+same\+\_\+v$<$U, T$>$ \&\& \mbox{\hyperlink{group__utilsexplicitly__convertible__to_gaeeeecd5e5e48d738f1f779d9b8f46dcc}{is\+\_\+explicitly\+\_\+convertible\+\_\+v}}$<$T, U$>$) \mbox{\hyperlink{group__integerinteger_gaf70aa92e30b685f150ed14eedb1474b6}{explicit}}(!lossless\+\_\+convertible\+\_\+to$<$T, U$>$)}\\constexpr \mbox{\hyperlink{structutils_1_1integer_a4d5d4d51a43291632ad582c69624a4e0}{operator U}} () const noexcept
@@ -118,11 +118,11 @@ The template is also flexible, in that the underlying type {\ttfamily T} can be 
 
 
 \begin{DoxyTemplParams}{Template Parameters}
-{\em IB} & \mbox{\hyperlink{IntegerBehaviorProfile_8md}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Integer\+Behavior\+Profile\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}} for integral operations. \\
+{\em IB} & \mbox{[}{\itshape Integer\+Behavior\+Profile}\mbox{]}(Integer\+Behavior\+Profile) for integral operations. \\
 \hline
-{\em BB} & \mbox{\hyperlink{IntegerBehaviorProfile_8md}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Integer\+Behavior\+Profile\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}} for bit operations. \\
+{\em BB} & \mbox{[}{\itshape Integer\+Behavior\+Profile}\mbox{]}(Integer\+Behavior\+Profile) for bit operations. \\
 \hline
-{\em SB} & \mbox{\hyperlink{IntegerBehaviorProfile_8md}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Integer\+Behavior\+Profile\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}} for bit shifts. \\
+{\em SB} & \mbox{[}{\itshape Integer\+Behavior\+Profile}\mbox{]}(Integer\+Behavior\+Profile) for bit shifts. \\
 \hline
 \end{DoxyTemplParams}
 

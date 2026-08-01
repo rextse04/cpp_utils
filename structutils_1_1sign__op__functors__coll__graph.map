@@ -1,4 +1,4 @@
 <map id="utils::sign_op_functors&lt; Neg, UnaryTraits &gt;" name="utils::sign_op_functors&lt; Neg, UnaryTraits &gt;">
-<area shape="rect" id="node1" title="&lt;i&gt;OperatorFunctorSetTemplate&lt;/i&gt; for utils::sign_ops." alt="" coords="5,109,156,151"/>
+<area shape="rect" id="node1" title="[OperatorFunctorSetTemplate](OperatorFunctorSet) for utils::sign_ops." alt="" coords="5,109,156,151"/>
 <area shape="rect" id="node2" href="$structutils_1_1default__unary__op__traits.html" title="The default trait set for unary operators, except postfix operators." alt="" coords="16,5,145,47"/>
 </map>

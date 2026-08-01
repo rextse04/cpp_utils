@@ -90,7 +90,7 @@ A stack allocator allocates memory from a pre-\/allocated buffer in a lazy-\/sta
 
 Internally, an implementation-\/defined control structure is constructed at the beginning of the (aligned) buffer, and one is attached to every allocated memory chunk. The control at the beginning stores a pointer to the control of most recent chunk and a pointer to the end of the buffer. For others, each one stores a pointer to the structure attached to the previous chunk, and a pointer to the object itself (or nullptr if the chunk is marked \char`\"{}removed\char`\"{}). Note that there may be gaps between a control structure and its associated object due to alignment. The following diagram is a simple diagram illustrating the allocation strategy\+: 
 
-All instances of this class satisfy \mbox{\hyperlink{BufferAllocator_8md}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Buffer\+Allocator\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}} and {\ttfamily resource\+\_\+allocator}. Instances with {\ttfamily Sync} equal to {\ttfamily true} also satisfy \mbox{\hyperlink{BufferAllocator_8md}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Convertible\+Allocator\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}}. Consult their documentation for conditions and effects of member functions. 
+All instances of this class satisfy \mbox{[}{\itshape Buffer\+Allocator}\mbox{]}(Buffer\+Allocator) and {\ttfamily resource\+\_\+allocator}. Instances with {\ttfamily Sync} equal to {\ttfamily true} also satisfy \mbox{[}{\itshape Convertible\+Allocator}\mbox{]}(Buffer\+Allocator). Consult their documentation for conditions and effects of member functions. 
 \begin{DoxyTemplParams}{Template Parameters}
 {\em T} & {\ttfamily value\+\_\+type} \\
 \hline

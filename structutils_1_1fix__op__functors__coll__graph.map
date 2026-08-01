@@ -1,5 +1,5 @@
 <map id="utils::fix_op_functors&lt; PreInc, PostInc, PreDec, PostDec, PrefixTraits, UnaryTraits &gt;" name="utils::fix_op_functors&lt; PreInc, PostInc, PreDec, PostDec, PrefixTraits, UnaryTraits &gt;">
-<area shape="rect" id="node1" title="&lt;i&gt;OperatorFunctorSetTemplate&lt;/i&gt; for utils::fix_ops." alt="" coords="312,71,544,127"/>
+<area shape="rect" id="node1" title="[OperatorFunctorSetTemplate](OperatorFunctorSet) for utils::fix_ops." alt="" coords="312,71,544,127"/>
 <area shape="rect" id="node2" href="$structutils_1_1post__increment_3_4.html" title=" " alt="" coords="7,5,165,32"/>
 <area shape="rect" id="node3" href="$structutils_1_1post__decrement_3_4.html" title=" " alt="" coords="5,56,167,83"/>
 <area shape="rect" id="node4" href="$structutils_1_1default__prefix__op__traits.html" title="The default trait set for prefix operators (i.e. ++t and &#45;&#45;t)." alt="" coords="22,107,150,149"/>

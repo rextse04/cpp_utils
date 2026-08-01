@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"structutils_1_1basic__static__string.html#acd08e92cd333d927b5c47f555fbb3de0":[3,0,1,19,44],
 "structutils_1_1basic__static__string.html#acf784cbe46b583c7acc7ec23477dc3bf":[5,0,1,17,23],
 "structutils_1_1basic__static__string.html#acf784cbe46b583c7acc7ec23477dc3bf":[3,0,1,19,23],
 "structutils_1_1basic__static__string.html#acf7eae27b7d6e520b44f5e3f804e0cf4":[5,0,1,17,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "structutils_1_1integral__op__functors.html#ac444a7d224ea8235347f278da4382d18":[3,0,1,54,0],
 "structutils_1_1integral__ops.html":[5,0,1,53],
 "structutils_1_1integral__ops.html":[3,0,1,55],
-"structutils_1_1interval.html":[5,0,1,54],
-"structutils_1_1interval.html":[3,0,1,56]
+"structutils_1_1interval.html":[5,0,1,54]
 };

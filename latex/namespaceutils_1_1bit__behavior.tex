@@ -13,12 +13,12 @@ struct \mbox{\hyperlink{structutils_1_1bit__behavior_1_1default__asg__op__traits
 struct \mbox{\hyperlink{structutils_1_1bit__behavior_1_1default__binary__op__traits}{default\+\_\+binary\+\_\+op\+\_\+traits}}
 \begin{DoxyCompactList}\small\item\em Default trait set for binary operations for {\ttfamily \mbox{\hyperlink{namespaceutils_1_1bit__behavior_a5a8f53fa0b20ac3bd53ca7b63e03439c}{utils\+::bit\+\_\+behavior\+::profile\+\_\+from}}}. ///. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{profile}}
-\begin{DoxyCompactList}\small\item\em An \mbox{\hyperlink{IntegerBehaviorProfile_8md}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Integer\+Behavior\+Profile\+Template\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}} for bit operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em An \mbox{[}{\itshape Integer\+Behavior\+Profile\+Template}\mbox{]}(Integer\+Behavior\+Profile) for bit operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$auto Bit\+And, auto Bit\+Or, auto Bit\+Xor, auto Bit\+Not, template$<$ typename, typename $>$ typename Common\+Type\+Trait = sane\+\_\+common\+\_\+type, template$<$ typename, typename $>$ typename Result\+Trait = Common\+Type\+Trait, typename Binary\+Traits  = default\+\_\+binary\+\_\+op\+\_\+traits$<$\+Result\+Trait$>$, typename Asg\+Traits  = default\+\_\+asg\+\_\+op\+\_\+traits$>$ }\\constexpr \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{profile}}$<$\{ .bit\+\_\+and=utils\+::detail\+::integer\+\_\+transform$<$ Bit\+And, Common\+Type\+Trait $>$\{\},.bit\+\_\+or=utils\+::detail\+::integer\+\_\+transform$<$ Bit\+Or, Common\+Type\+Trait $>$\{\},.bit\+\_\+xor=utils\+::detail\+::integer\+\_\+transform$<$ Bit\+Xor, Common\+Type\+Trait $>$\{\},.bit\+\_\+not=Bit\+Not,.binary\+\_\+traits=Binary\+Traits\{\} \}, \{ .bit\+\_\+and\+\_\+asg=utils\+::detail\+::integer\+\_\+asg\+\_\+wrap$<$ Bit\+And $>$\{\},.bit\+\_\+or\+\_\+asg=utils\+::detail\+::integer\+\_\+asg\+\_\+wrap$<$ Bit\+Or $>$\{\},.bit\+\_\+xor\+\_\+asg=utils\+::detail\+::integer\+\_\+asg\+\_\+wrap$<$ Bit\+Xor $>$\{\},.asg\+\_\+traits=Asg\+Traits\{\} \}$>$ \mbox{\hyperlink{namespaceutils_1_1bit__behavior_a5a8f53fa0b20ac3bd53ca7b63e03439c}{profile\+\_\+from}}
-\begin{DoxyCompactList}\small\item\em Convenience variable template to make an \mbox{\hyperlink{IntegerBehaviorProfile_8md}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Integer\+Behavior\+Profile\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}} for bit operations. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Convenience variable template to make an \mbox{[}{\itshape Integer\+Behavior\+Profile}\mbox{]}(Integer\+Behavior\+Profile) for bit operations. \end{DoxyCompactList}\item 
 constexpr auto \mbox{\hyperlink{namespaceutils_1_1bit__behavior_a7ecfb3e0498c15492edd93b9d750b6ca}{standard}}
 \begin{DoxyCompactList}\small\item\em Default C++ bit operation rules. \end{DoxyCompactList}\item 
 constexpr auto \mbox{\hyperlink{namespaceutils_1_1bit__behavior_afe4ae201007274cf3e7cfcf2a5b634d7}{sane}}
@@ -38,7 +38,7 @@ constexpr \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{profile}}$<$
 
 
 
-Convenience variable template to make an \mbox{\hyperlink{IntegerBehaviorProfile_8md}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Integer\+Behavior\+Profile\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}} for bit operations. 
+Convenience variable template to make an \mbox{[}{\itshape Integer\+Behavior\+Profile}\mbox{]}(Integer\+Behavior\+Profile) for bit operations. 
 
 For every relevant operator {\ttfamily @} and the corresponding functor {\ttfamily F} (supplied in template parameters), the synthesized functor {\ttfamily op} behaves as follows\+:
 \begin{DoxyEnumerate}
