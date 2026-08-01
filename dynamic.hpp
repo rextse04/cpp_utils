@@ -501,6 +501,7 @@ namespace utils {
         /// @param args: Arguments forwarded to `deleter_` succeeding a const reference to dptr
         /// (i.e. deleter_ is constructed with (const dptr&, std::forward(args)...)).
         /// @{
+
         /// @brief Default constructor.
         ///
         /// Initializes `ptr_` with `nullptr`.
@@ -583,6 +584,7 @@ namespace utils {
         /// @defgroup utilsdptrdestructors utils::dptr::~dptr
         /// Calls `destroy_and_delete()` if `ownership` is not `borrowed` and `ptr_` is not null.
         /// @{
+
         constexpr ~dptr() noexcept requires (ownership == borrowed) = default;
         constexpr ~dptr() noexcept requires (ownership != borrowed) {
             if (ptr_) destroy_and_delete();
@@ -591,6 +593,7 @@ namespace utils {
 
         /// @defgroup utilsdptroperator= utils::dptr::operator=
         /// @{
+
         /// @brief Copy assignment operator.
         ///
         /// Not available if `ownership` is `unique`.
@@ -672,6 +675,7 @@ namespace utils {
         /// @brief Returns a copy of `ivtables_`.
         constexpr ivtable_pointer_types get_ivtables() const noexcept { return ivtables_; }
         /// @{
+
         /// @brief Returns a reference to the deleter.
         constexpr deleter_type& get_deleter() noexcept { return deleter_; }
         constexpr const deleter_type& get_deleter() const noexcept { return deleter_; }
@@ -725,6 +729,7 @@ namespace utils {
         /// Usual rules for deleted pointers apply.
         /// In particular, all pointers pointing at the original `ptr_` become dangling.
         /// @{
+
         constexpr void destroy_and_delete() noexcept
         requires (!is_array && !std::is_same_v<deleter_type, disabled_deleter> && !deleter_type::destroying_delete) {
             destroy();

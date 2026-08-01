@@ -98,6 +98,7 @@ namespace utils {
         }
     public:
         /// @{
+
         /// @brief Convenience constructor for enabling synchronization.
         ///
         /// @param s: Unused parameter. For CTAD only.

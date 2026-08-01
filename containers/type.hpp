@@ -17,6 +17,7 @@ namespace utils {
 
     /// @brief C++ named requirements: <i>EmplaceConstructible</i>
     /// @{
+
     template <typename T, typename Allocator, typename... Args>
     concept emplace_constructible = requires(Allocator m, T* p, Args&&... args) {
         std::allocator_traits<Allocator>::construct(m, p, static_cast<Args&&>(args)...);
@@ -28,6 +29,7 @@ namespace utils {
 
     /// @brief C++ named requirements: <i>DefaultInsertable</i>
     /// @{
+
     template <typename T, typename Allocator>
     concept default_insertable = emplace_constructible<T, Allocator>;
     /// @tparam C: <i>AllocatorAwareContainer</i>
@@ -37,6 +39,7 @@ namespace utils {
 
     /// @brief C++ named requirements: <i>MoveInsertable</i>
     /// @{
+
     template <typename T, typename Allocator>
     concept move_insertable = emplace_constructible<T, Allocator, T&&>;
     /// @tparam C: <i>AllocatorAwareContainer</i>
@@ -46,6 +49,7 @@ namespace utils {
 
     /// @brief C++ named requirements: <i>CopyInsertable</i>
     /// @{
+
     template <typename T, typename Allocator>
     concept copy_insertable = move_insertable<T, Allocator> &&
         emplace_constructible<T, Allocator, T&> &&
@@ -58,6 +62,7 @@ namespace utils {
 
     /// @brief C++ named requirements: <i>Erasable</i>
     /// @{
+
     template <typename T, typename Allocator>
     concept erasable = requires(Allocator m, T* p) {
         std::allocator_traits<Allocator>::destroy(m, p);

@@ -36,6 +36,7 @@ namespace utils {
     /// such that there exists a type `T` where `std::remove_cvref_t<T>` is not a integer-like type
     /// (as specified by the standard library), but `utils::is_integer_like<T>::value` is `true`.
     /// @{
+
     template <typename T>
     struct is_integer_like : detail::is_integer_like<T> {};
     template <typename T>
@@ -51,6 +52,7 @@ namespace utils {
     /// in base-2 scientific notation.
     /// @tparam Info: A type which provides the interface of `std::numeric_limits` and gives information about `T`.
     /// @{
+
     template <typename T, typename Info = std::numeric_limits<T>>
     struct width_of : std::integral_constant<int, Info::digits + Info::is_signed> {};
     template <typename T>
@@ -88,6 +90,7 @@ namespace utils {
     ///
     /// In the above, the definition of `width` is identical to that in `utils::width_of`.
     /// @{
+
     template <typename T, typename U>
     struct sane_common_type : detail::sane_common_type<T, U> {};
     template <typename T, typename U>
@@ -99,6 +102,7 @@ namespace utils {
     /// Calculation is based on `TInfo` and `UInfo`, which default to respective instantiations of
     /// `std::numeric_limits`. They can be replaced by class types that provide the same interface as `std::numeric_limits`.
     /// @{
+
     template <typename T, typename U, typename TInfo = std::numeric_limits<T>, typename UInfo = std::numeric_limits<U>>
     struct is_same_sign : std::bool_constant<TInfo::is_signed == UInfo::is_signed> {};
     template <typename T, typename U>
@@ -114,6 +118,7 @@ namespace utils {
     /// The classification of `T` is based on `Info`, which can be replaced by a class type that provides the same interface
     /// as `std::numeric_limits`.
     /// @{
+
     template <typename T, typename Info = std::numeric_limits<T>>
     struct epsilon_of : std::integral_constant<T, Info::is_integer ? T(1) : Info::epsilon()> {};
     template <typename T>
@@ -127,6 +132,7 @@ namespace utils {
     /// `std::numeric_limits`. They can be replaced by class types that provide the same interface as `std::numeric_limits`.
     /// @remark This does not check if `From` is actually convertible to `To`.
     /// @{
+
     template <
         typename From, typename To,
         typename FromInfo = std::numeric_limits<std::remove_cvref_t<From>>,
@@ -628,6 +634,7 @@ namespace utils {
         /// 1. `utils::integer_like` types, and
         /// 2. `utils::integer` instances with identical behavior profiles.
         /// @{
+
         template <typename U>
         requires (is_integer_like_v<std::remove_cvref_t<U>>)
         static constexpr U&& to_underlying(U&& x) noexcept { return std::forward<U>(x); }
@@ -639,6 +646,7 @@ namespace utils {
         /// @defgroup integerconstructors utils::integer::integer
         /// @brief Constructors.
         /// @{
+
         /// @brief Default-initializes `under_`.
         constexpr integer() = default;
         /// @brief Conversion from a (possibly wrapped) integer-like value `other`.
@@ -673,6 +681,7 @@ namespace utils {
         /// `utils::integer` can be compared with an `utils::integer_like` type if and only if
         /// both have the same signedness (either both signed, or both unsigned).
         /// @{
+
         template <typename Self, typename Other,
             typename SelfD = std::remove_cvref_t<Self>, typename OtherD = std::remove_cvref_t<Other>>
         requires (is_same_sign_v<SelfD, OtherD>)
@@ -692,6 +701,7 @@ namespace utils {
         /// @defgroup integeroperatorconversion utils::integer::operator U&, utils::integer::operator const U&, utils::integer::operator U&&, utils::integer::operator const U&&
         /// @brief Conversion to references to underlying type.
         /// @{
+
         template <std::same_as<T> U>
         constexpr operator U&() & noexcept { return under_; }
         template <std::same_as<T> U>

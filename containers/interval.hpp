@@ -65,6 +65,7 @@ namespace utils {
         /// @f$v@f$ and @f$ov@f$ are in the domain.
         /// It is UB if such a restriction does not satisfy <i>Compare</i>.
         /// @{
+
         /// @brief Three-way comparison operator.
         ///
         /// All endpoints are assumed to be right endpoints. The comparator is taken to be `std::less<>`.
@@ -160,6 +161,7 @@ namespace utils {
         }
         /// @brief Constructs the intersection between the interval and `other`.
         /// @{
+
         template <typename CL, typename CR,
             typename L2, typename R2, detail::strict_weak_order<const L&, const R&, const L2&, const R2&> Compare = std::less<>>
         requires (
@@ -188,6 +190,7 @@ namespace utils {
         /// @f$I1<I2@f$ if and only if @f$I1@f$ is a proper subset of @f$I2@f$.
         /// This defines a strict partial ordering on intervals.
         /// @{
+
         /// @brief Three-way comparison operator.
         ///
         /// The comparator is taken to be `std::less<>`.

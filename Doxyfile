@@ -287,7 +287,8 @@ TAB_SIZE               = 4
 # of an alias to insert a newline as if a physical newline was in the original
 # file. When you need a literal { or } or , in the value part of an alias you
 # have to escape them by means of a backslash (\), this can lead to conflicts
-# with the commands \{ and \} for these it is advised to use the version @{ and
+# with the commands \{ and \} for these it is advised to use the version @{
+ and
 # @} or use a double escape (\\{ and \\})
 
 ALIASES                = "group{1}=@defgroup \1 utils::\1"

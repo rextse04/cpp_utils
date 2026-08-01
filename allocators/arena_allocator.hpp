@@ -62,6 +62,7 @@ namespace utils::pmr {
     public:
         /// @defgroup utilspmrarena_allocatorconstructors utils::pmr::arena_allocator::arena_allocator
         /// @{
+
         /// @brief Takes ownership of the buffer and uses it for allocations.
         /// @throws std::bad_alloc: If the internal control structure does not fit in the given buffer.
         /// @note The construction can throw even if `space` is not less than the size of the control structure

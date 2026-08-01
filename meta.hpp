@@ -14,6 +14,7 @@ namespace utils::meta {
     /// @defgroup metais_tuple utils::meta::is_tuple
     /// @brief Checks if `T` is a (real) tuple.
     /// @{
+
     template <typename T>
     struct is_tuple : std::false_type {};
     template <typename... Ts>
@@ -33,6 +34,7 @@ namespace utils::meta {
     /// @brief Wraps a parameter pack into a tuple type.
     /// @remark This is useful for converting variadic template parameters into a tuple type.
     /// @{
+
     template <typename... Ts>
     struct pack { using type = std::tuple<Ts...>; };
     template <typename... Ts>
@@ -42,6 +44,7 @@ namespace utils::meta {
     /// @defgroup metasmart_pack utils::meta::smart_pack
     /// @brief Wraps a parameter pack into a tuple type, unless exactly one tuple is given.
     /// @{
+
     template <typename... Ts>
     struct smart_pack { using type = std::tuple<Ts...>; };
     template <typename... Ts>
@@ -61,6 +64,7 @@ namespace utils::meta {
     /// @defgroup metamake_tuple utils::meta::make_tuple
     /// @brief Makes a tuple from a `tuple-like` type `T`.
     /// @{
+
     template <tuple_like T>
     struct make_tuple : detail::make_tuple<T, std::make_index_sequence<std::tuple_size_v<T>>> {};
     template <tuple_like T>
@@ -71,6 +75,7 @@ namespace utils::meta {
     /// @brief Calculates a normalized index (in @f$ [0, N)@f$) from a possibly negative index `Idx`
     /// and a tuple-like type `Tuple` of size `N`.
     /// @{
+
     template <tuple_like Tuple, std::ptrdiff_t Idx>
     struct actual_index : std::integral_constant<std::size_t, (Idx >= 0) ? Idx : (Idx + std::tuple_size_v<Tuple>)> {};
     template <tuple_like Tuple, std::ptrdiff_t Idx>
@@ -80,6 +85,7 @@ namespace utils::meta {
     /// @defgroup metaat utils::meta::at
     /// @brief Similar to `std::tuple_element` but also accepts negative `Idx`.
     /// @{
+
     template <tuple_like Tuple, std::ptrdiff_t Idx>
     struct at {
         using type = std::tuple_element_t<actual_index_v<Tuple, Idx>, Tuple>;
@@ -94,6 +100,7 @@ namespace utils::meta {
     ///
     /// If such an element does not exist, `End` is returned.
     /// @{
+
     template <tuple_like Tuple, typename T, template<typename, typename> typename PredTrait = std::is_same,
         std::ptrdiff_t Begin = 0, std::ptrdiff_t End = std::tuple_size_v<Tuple>>
     struct search : std::integral_constant<std::size_t, PredTrait<at_t<Tuple, Begin>, T>::value
@@ -111,6 +118,7 @@ namespace utils::meta {
     /// @brief Checks if there exists an index `Idx` in @f$ [\text{Begin},\text{End})@f$ such that
     /// `PredTrait<at_t<Tuple, Idx>, T>::value` is true.
     /// @{
+
     template <tuple_like Tuple, typename T, template<typename, typename> typename PredTrait = std::is_same,
         std::ptrdiff_t Begin = 0, std::ptrdiff_t End = std::tuple_size_v<Tuple>>
     struct contained_in :
@@ -124,6 +132,7 @@ namespace utils::meta {
     /// @defgroup metaconcat utils::meta::concat
     /// @brief Concatenate multiple tuple-like types into a single tuple type.
     /// @{
+
     template <tuple_like... Tuples>
     struct concat {
         using type = decltype(std::tuple_cat(std::declval<Tuples>()...));
@@ -146,6 +155,7 @@ namespace utils::meta {
     /// Both `Begin` and `End` can be negative indices, which are normalized relative to the tuple size.
     /// If `Begin >= End`, an empty tuple is returned.
     /// @{
+
     template <tuple_like Tuple, std::ptrdiff_t Begin = 0, std::ptrdiff_t End = std::tuple_size_v<Tuple>>
     struct slice {
     private:
@@ -165,6 +175,7 @@ namespace utils::meta {
     ///
     /// The index `Idx` can be negative, which is normalized relative to the tuple size.
     /// @{
+
     template <tuple_like Tuple, std::ptrdiff_t Idx, tuple_like Inserted>
     struct insert : concat<slice_t<Tuple, 0, Idx>, Inserted, slice_t<Tuple, Idx>> {};
     template <tuple_like Tuple, std::ptrdiff_t Idx, tuple_like Inserted>
@@ -176,6 +187,7 @@ namespace utils::meta {
     ///
     /// Both `Begin` and `End` can be negative indices, which are normalized relative to the tuple size.
     /// @{
+
     template <tuple_like Tuple, std::ptrdiff_t Begin, std::ptrdiff_t End>
     struct erase : concat<slice_t<Tuple, 0, Begin>, slice_t<Tuple, End>> {};
     template <tuple_like Tuple, std::ptrdiff_t Begin, std::ptrdiff_t End>
@@ -187,6 +199,7 @@ namespace utils::meta {
     ///
     /// The index `Idx` can be negative, which is normalized relative to the tuple size.
     /// @{
+
     template <tuple_like Tuple, std::ptrdiff_t Idx, typename T>
     struct replace : concat<slice_t<Tuple, 0, Idx>, std::tuple<T>, slice_t<Tuple, Idx + 1>> {};
     template <tuple_like Tuple, std::ptrdiff_t Idx, typename T>
@@ -198,6 +211,7 @@ namespace utils::meta {
     ///
     /// If `ErasedResult` has a `type` member, that is returned; otherwise, `ErasedResult` itself is returned.
     /// @{
+
     template <typename ErasedResult>
     struct infer {
         using type = std::conditional_t<requires { typename ErasedResult::type; },

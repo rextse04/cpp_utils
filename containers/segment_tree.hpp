@@ -345,6 +345,7 @@ namespace utils {
         /// sorts them if unsorted, then builds the segment tree.\n
         /// (21), (22), (23), (24): Inserts key-value pairs from `pairs`, sorts them if unsorted, then builds the segment tree.
         /// @{
+
         // (1)
         template <container_allocator<segment_tree> Allocator = detail::void_allocator_t>
         explicit constexpr segment_tree(
@@ -575,6 +576,7 @@ namespace utils {
         /// Use the default destructor if `KeyContainer` and `MappedContainer` are both trivially destructible.
         /// Otherwise, call their destructors.
         /// @{
+
         constexpr ~segment_tree()
         requires (
             std::is_trivially_destructible_v<key_container_type> &&
@@ -585,9 +587,8 @@ namespace utils {
         }
         /// @}
         /// @defgroup segment_treeoperatorasg utils::segment_tree::operator=
-        /// @brief Assignment operators.
-        ///
         /// @{
+
         /// Copy-assigns all underlying containers and functors.
         constexpr segment_tree& operator=(const segment_tree& other)
         noexcept(
@@ -658,6 +659,7 @@ namespace utils {
         /// The behavior is undefined if
         /// `key` does not have a `key_compare()`-equivalent in `keys()`.
         /// @{
+
         constexpr reference operator[](const searchable_in<segment_tree> auto& key) {
             return {*this, search<true>(key)};
         }
@@ -679,6 +681,7 @@ namespace utils {
         /// @throws std::out_of_range:
         /// If `key` does not have a `key_compare()`-equivalent in `keys()`
         /// @{
+
         constexpr reference at(const searchable_in<segment_tree> auto& key) {
             return {*this, exact_search<true>(key)};
         }
@@ -730,6 +733,7 @@ namespace utils {
         /// @defgroup segment_treeiterators utils::segment_tree::begin, utils::segment_tree::cbegin, utils::segment_tree::end, utils::segment_tree::cend, utils::segment_tree::rbegin, utils::segment_tree::crbegin, utils::segment_tree::rend, utils::segment_tree::crend
         /// Returns specified iterators to `value_type`.
         /// @{
+
         constexpr auto begin(this auto&& self) noexcept { return self.iter(0); }
         constexpr const_iterator cbegin() const noexcept { return iter(0); }
         constexpr auto end(this auto&& self) noexcept { return self.iter(self.size()); }
@@ -996,6 +1000,7 @@ namespace utils {
         /// 1. For @f$k\in K@f$, @f$U'[k]@f$ is equivalent to `sum()(U[k],diff)`.
         /// 2. For @f$k@f$ in `keys()` but not in @f$K@f$, @f$U'[k]@f$ is equivalent to @f$U[k]@f$.
         /// @{
+
         template <searchable_in<segment_tree> K1, searchable_in<segment_tree> K2,
             detail::multiplies_for<mapped_type, size_type> Mul = std::multiplies<>>
         constexpr void make_update(update_type& update,
@@ -1029,6 +1034,7 @@ namespace utils {
         /// @warning For overloads that accept an `update`,
         /// the returned value is unspecified (but still valid) if `sum()` is not commutative on `mapped_type`.
         /// @{
+
         template <searchable_in<segment_tree> K1, searchable_in<segment_tree> K2>
         constexpr T aggregate(const interval<K1, K2>& key_itv) const {
             const auto& k1 = make_search_key<segment_tree>(key_itv.left.value);
@@ -1058,6 +1064,7 @@ namespace utils {
         /// @brief Gives the sum of all stored mapped values.
         /// @returns A value equivalent to `aggregate(begin(), end())`.
         /// @{
+
         constexpr T total() const {
             return empty() ? identity_() : nodes().back();
         }

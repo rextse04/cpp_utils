@@ -22,6 +22,7 @@ namespace utils {
     /// @brief Extracts the const and volatile qualifiers from a type.
     /// @remark Ignores reference and pointer decorations, extracting qualifiers from the underlying type.
     /// @{
+
     template <typename T>
     struct qualifiers_of {
     private:
@@ -37,6 +38,7 @@ namespace utils {
     /// @defgroup utilsapply_qualifiers utils::apply_qualifiers
     /// @brief Applies specified const and volatile qualifiers to a type, while retaining reference category/pointer.
     /// @{
+
     template <typename T, type_qualifiers Q>
     struct apply_qualifiers {
     private:
@@ -56,6 +58,7 @@ namespace utils {
     /// @defgroup utilsfollow utils::follow
     /// @brief Copies the qualifiers and reference category from one type to another.
     /// @{
+
     template <typename RefT, typename T>
     struct follow {
         using type = apply_qualifiers_t<T, qualifiers_of_v<RefT>>;
@@ -69,6 +72,7 @@ namespace utils {
     ///
     /// Two types are equivalent if they are the same after removing all const, volatile, and reference qualifiers.
     /// @{
+
     template <typename T, typename U>
     struct is_equiv : std::is_same<std::remove_cvref_t<T>, std::remove_cvref_t<U>> {};
     template <typename T, typename U>
@@ -82,6 +86,7 @@ namespace utils {
     ///
     /// The check ignores cv qualifiers and reference categories on the type being checked.
     /// @{
+
     template <template<typename...> typename, typename>
     struct is_template_instance : std::false_type {};
     template <template<typename...> typename Tmpl, typename... Ts>
@@ -95,6 +100,7 @@ namespace utils {
     ///
     /// `From` is explicitly convertible to `To` if the expression `static_cast<To>(std::declval<From>())` is well-formed.
     /// @{
+
     template <typename From, typename To>
     concept explicitly_convertible_to = requires { static_cast<To>(std::declval<From>()); };
     template <typename From, typename To>
@@ -119,6 +125,7 @@ namespace utils {
     /// @tparam Step The step size between elements (default: 1).
     /// @remark Generates a sequence [ `Begin` , `Begin+Step` , `Begin+2*Step` , ...) up to `End`.
     /// @{
+
     template <typename T, T End, T Begin = 0, T Step = 1>
     requires (End >= Begin)
     using make_integer_range = detail::sequence_apply<T, [](T n) { return Begin + n * Step; },
@@ -144,6 +151,7 @@ namespace utils {
     /// @defgroup utilsis_tagged utils::is_tagged
     /// @brief Checks if `T` has a `tag` member alias matching or containing `Tag`.
     /// @{
+
     template <typename T, typename Tag>
     concept tagged = (std::is_same_v<typename std::remove_cvref_t<T>::tag, Tag> ||
         meta::contained_in_v<typename std::remove_cvref_t<T>::tag, Tag>);
