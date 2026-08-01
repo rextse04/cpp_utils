@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['sane_5fcommon_5ftype_5ft_0',['sane_common_type_t',['../namespaceutils.html#ab6b5848d6804531f450947c7fa15825c',1,'utils']]],
+  ['sane_5fcommon_5ftype_5ft_0',['sane_common_type_t',['../group__utils.html#gab6b5848d6804531f450947c7fa15825c',1,'utils']]],
   ['schar_1',['schar',['../namespaceutils_1_1integer__alias.html#a4ffaa4ed6fb6180ef1941de8c876161d',1,'utils::integer_alias']]],
   ['semaphore_5ftype_2',['semaphore_type',['../classutils_1_1unique__resource.html#ad17a543d5c5eda53d91e5d176b58596d',1,'utils::unique_resource']]],
   ['sfast16_3',['sfast16',['../namespaceutils_1_1integer__alias.html#aefd6c2da3868bb86722fb2c0c3b2bf68',1,'utils::integer_alias']]],

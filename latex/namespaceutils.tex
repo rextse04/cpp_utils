@@ -88,7 +88,7 @@ struct \mbox{\hyperlink{structutils_1_1default__unary__op__traits}{default\+\_\+
 \begin{DoxyCompactList}\small\item\em The default trait set for unary operators, except postfix operators. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1disable__op__t}{disable\+\_\+op\+\_\+t}}
 \begin{DoxyCompactList}\small\item\em Denotes an operator should be disabled. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structutils_1_1epsilon__of}{epsilon\+\_\+of}}
+struct \mbox{\hyperlink{group__utils_structutils_1_1epsilon__of}{epsilon\+\_\+of}}
 \item 
 class \mbox{\hyperlink{classutils_1_1filter__iterator}{filter\+\_\+iterator}}
 \item 
@@ -126,17 +126,9 @@ struct \mbox{\hyperlink{structutils_1_1is__equiv}{is\+\_\+equiv}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1is__explicitly__convertible}{is\+\_\+explicitly\+\_\+convertible}}
 \item 
-struct \mbox{\hyperlink{structutils_1_1is__integer__like}{is\+\_\+integer\+\_\+like}}
+struct \mbox{\hyperlink{group__utils_structutils_1_1is__integer__like}{is\+\_\+integer\+\_\+like}}
 \item 
-struct \mbox{\hyperlink{structutils_1_1is__integer__like_3_01const_01T_01_4}{is\+\_\+integer\+\_\+like$<$ const T $>$}}
-\item 
-struct \mbox{\hyperlink{structutils_1_1is__integer__like_3_01const_01volatile_01T_01_4}{is\+\_\+integer\+\_\+like$<$ const volatile T $>$}}
-\item 
-struct \mbox{\hyperlink{structutils_1_1is__integer__like_3_01T_01_4}{is\+\_\+integer\+\_\+like$<$ T $>$}}
-\item 
-struct \mbox{\hyperlink{structutils_1_1is__integer__like_3_01volatile_01T_01_4}{is\+\_\+integer\+\_\+like$<$ volatile T $>$}}
-\item 
-struct \mbox{\hyperlink{structutils_1_1is__same__sign}{is\+\_\+same\+\_\+sign}}
+struct \mbox{\hyperlink{group__utils_structutils_1_1is__same__sign}{is\+\_\+same\+\_\+sign}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1is__tagged}{is\+\_\+tagged}}
 \item 
@@ -198,9 +190,7 @@ struct \mbox{\hyperlink{structutils_1_1result__of}{result\+\_\+of}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1result__of_3_01R_07Args_8_8_8_08_4}{result\+\_\+of$<$ R(\+Args...)$>$}}
 \item 
-struct \mbox{\hyperlink{structutils_1_1sane__common__type}{sane\+\_\+common\+\_\+type}}
-\item 
-struct \mbox{\hyperlink{structutils_1_1sane__common__type_3_01T_00_01U_01_4}{sane\+\_\+common\+\_\+type$<$ T, U $>$}}
+struct \mbox{\hyperlink{group__utils_structutils_1_1sane__common__type}{sane\+\_\+common\+\_\+type}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1shift__asg__op__functors}{shift\+\_\+asg\+\_\+op\+\_\+functors}}
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{OperatorFunctorSet_8md}{\texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Operator\+Functor\+Set\+Template\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}} for {\ttfamily \mbox{\hyperlink{structutils_1_1shift__asg__ops}{utils\+::shift\+\_\+asg\+\_\+ops}}}. \end{DoxyCompactList}\item 
@@ -250,7 +240,7 @@ struct \mbox{\hyperlink{structutils_1_1unique__resource__sync__t}{unique\+\_\+re
 \begin{DoxyCompactList}\small\item\em Denotes a \mbox{\hyperlink{classutils_1_1unique__resource}{utils\+::unique\+\_\+resource}} should enable synchronization. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classutils_1_1visitor}{visitor}}
 \begin{DoxyCompactList}\small\item\em Owns a set of callables and dispatches calls to the first one that matches the arguments. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structutils_1_1width__of}{width\+\_\+of}}
+struct \mbox{\hyperlink{group__utils_structutils_1_1width__of}{width\+\_\+of}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1with}{with}}
 \end{DoxyCompactItemize}
@@ -324,6 +314,8 @@ concept \mbox{\hyperlink{conceptutils_1_1can__reference}{can\+\_\+reference}}
 \item 
 using \mbox{\hyperlink{namespaceutils_acdc92300a8a41d794e21ecfade137492}{variadic\+\_\+arity}} = \mbox{\hyperlink{structutils_1_1arity}{arity}}$<$ static\+\_\+cast$<$ std\+::size\+\_\+t $>$(-\/1)$>$
 \item 
+{\footnotesize template$<$typename T , typename U $>$ }\\using \mbox{\hyperlink{group__utils_gab6b5848d6804531f450947c7fa15825c}{sane\+\_\+common\+\_\+type\+\_\+t}} = \mbox{\hyperlink{group__utils_structutils_1_1sane__common__type}{sane\+\_\+common\+\_\+type}}$<$ T, U $>$\+::type
+\item 
 {\footnotesize template$<$typename Iter $>$ }\\using \mbox{\hyperlink{namespaceutils_aac452ad4319d1aa831bb904e6e5123bb}{iterator\+\_\+category\+\_\+t}} = \mbox{\hyperlink{structutils_1_1iterator__category}{iterator\+\_\+category}}$<$ Iter $>$\+::type
 \item 
 {\footnotesize template$<$typename Iter $>$ }\\using \mbox{\hyperlink{namespaceutils_a2a46c9140a386f42f42b6577cd48b1a6}{iterator\+\_\+wrapper}} = std\+::conditional\+\_\+t$<$ std\+::is\+\_\+pointer\+\_\+v$<$ Iter $>$, \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}}$<$ std\+::remove\+\_\+pointer\+\_\+t$<$ Iter $>$ $>$, Iter $>$
@@ -348,22 +340,6 @@ using \mbox{\hyperlink{namespaceutils_a607e1c30fad8199a766afa327008d13f}{u32stat
 \item 
 {\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\using \mbox{\hyperlink{namespaceutils_a8a879e6085361f9a698393a071df0e9b}{u32static\+\_\+string}} = \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$ char32\+\_\+t, N $>$
 \end{DoxyCompactItemize}
-\begin{Indent}\textbf{ sane\+\_\+common\+\_\+type}\par
-{\em Similar to usual arithmetic conversion, except that the promotion step is replaced by {\ttfamily utils\+::sane\+\_\+promotion}.
-
-Given any types {\ttfamily T} and {\ttfamily U}, let {\ttfamily TD} and {\ttfamily UD} be {\ttfamily std\+::decay\+\_\+t\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} and {\ttfamily std\+::decay\+\_\+t\texorpdfstring{$<$}{<}U\texorpdfstring{$>$}{>}} respectively. Their {\ttfamily \mbox{\hyperlink{structutils_1_1sane__common__type}{sane\+\_\+common\+\_\+type}}} {\ttfamily C} is determined through the following steps\+:
-\begin{DoxyEnumerate}
-\item If any of {\ttfamily TD} and {\ttfamily UD} is not specialized for {\ttfamily std\+::numeric\+\_\+limits}, {\ttfamily C} is {\ttfamily std\+::common\+\_\+type\+\_\+t\texorpdfstring{$<$}{<}T, U\texorpdfstring{$>$}{>}}.
-\item Otherwise, if {\ttfamily TD} and {\ttfamily UD} have different widths, {\ttfamily C} is the one with the greater width.
-\item Otherwise, if at least one of {\ttfamily TD} and {\ttfamily UD} is unsigned, {\ttfamily C} is the first unsigned type out of the two.
-\item Otherwise, {\ttfamily C} is {\ttfamily TD}.
-\end{DoxyEnumerate}
-
-In the above, the definition of {\ttfamily width} is identical to that in {\ttfamily \mbox{\hyperlink{structutils_1_1width__of}{utils\+::width\+\_\+of}}}. }\begin{DoxyCompactItemize}
-\item 
-{\footnotesize template$<$typename T , typename U $>$ }\\using \mbox{\hyperlink{namespaceutils_ab6b5848d6804531f450947c7fa15825c}{sane\+\_\+common\+\_\+type\+\_\+t}} = \mbox{\hyperlink{structutils_1_1sane__common__type}{sane\+\_\+common\+\_\+type}}$<$ T, U $>$\+::type
-\end{DoxyCompactItemize}
-\end{Indent}
 \begin{Indent}\textbf{ apply\+\_\+qualifiers}\par
 {\em Applies specified const and volatile qualifiers to a type, while retaining reference category/pointer. }\begin{DoxyCompactItemize}
 \item 
@@ -471,58 +447,20 @@ constexpr struct \mbox{\hyperlink{structutils_1_1unique__resource__sync__t}{util
 \item 
 {\footnotesize template$<$typename F $>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a5a720537626a2d6e7ae840a1212a67f2}{arity\+\_\+of\+\_\+v}} = \mbox{\hyperlink{structutils_1_1arity__of}{arity\+\_\+of}}$<$F$>$\+::value
 \item 
+{\footnotesize template$<$typename T $>$ }\\constexpr bool \mbox{\hyperlink{group__utils_ga3e785f8bbe5579cdb6684c29d19d4fe7}{is\+\_\+integer\+\_\+like\+\_\+v}} = \mbox{\hyperlink{group__utils_structutils_1_1is__integer__like}{is\+\_\+integer\+\_\+like}}$<$T$>$\+::value
+\item 
+{\footnotesize template$<$typename T $>$ }\\constexpr int \mbox{\hyperlink{group__utils_ga576ed06f843b2217161f37a06cc6da31}{width\+\_\+of\+\_\+v}} = \mbox{\hyperlink{group__utils_structutils_1_1width__of}{width\+\_\+of}}$<$T$>$\+::value
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\constexpr bool \mbox{\hyperlink{group__utils_gae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}} = \mbox{\hyperlink{group__utils_structutils_1_1is__same__sign}{is\+\_\+same\+\_\+sign}}$<$T, U$>$\+::value
+\item 
+{\footnotesize template$<$typename T $>$ }\\constexpr T \mbox{\hyperlink{group__utils_ga237a9d163e61fab7413f93616669f2c9}{epsilon\+\_\+of\+\_\+v}} = \mbox{\hyperlink{group__utils_structutils_1_1epsilon__of}{epsilon\+\_\+of}}$<$T$>$\+::value
+\item 
+{\footnotesize template$<$typename From , typename To $>$ }\\constexpr bool \mbox{\hyperlink{group__utils_ga0895531ec3b54ee68daa30b7fbd31996}{is\+\_\+lossless\+\_\+convertible\+\_\+v}} = is\+\_\+lossless\+\_\+convertible$<$From, To$>$\+::value
+\item 
 constexpr struct \mbox{\hyperlink{structutils_1_1disable__op__t}{utils\+::disable\+\_\+op\+\_\+t}} \mbox{\hyperlink{namespaceutils_a73660fa40d7555f9ec8f74c3fd244253}{disable\+\_\+op}}
 \item 
 {\footnotesize template$<$\mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} S$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a026f0efc276a6d7eba427c611cd569ff}{trim\+\_\+v}} = \mbox{\hyperlink{structutils_1_1trim}{trim}}$<$S$>$\+::value
 \end{DoxyCompactItemize}
-\begin{Indent}\textbf{ is\+\_\+integer\+\_\+like}\par
-{\em Determines if a type is integer like.
-
-The construct is used by the library to determine if a type (ignoring cv-\/qualifiers) is integer like. The program is ill-\/formed, no diagnostics required, if the user specializes {\ttfamily \mbox{\hyperlink{structutils_1_1is__integer__like}{utils\+::is\+\_\+integer\+\_\+like}}} such that there exists a type {\ttfamily T} where {\ttfamily std\+::remove\+\_\+cvref\+\_\+t\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} is not a integer-\/like type (as specified by the standard library), but {\ttfamily \mbox{\hyperlink{structutils_1_1is__integer__like}{utils\+::is\+\_\+integer\+\_\+like}}\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}\+::value} is {\ttfamily true}. }\begin{DoxyCompactItemize}
-\item 
-{\footnotesize template$<$typename T $>$ }\\constexpr bool \mbox{\hyperlink{namespaceutils_a3e785f8bbe5579cdb6684c29d19d4fe7}{is\+\_\+integer\+\_\+like\+\_\+v}} = \mbox{\hyperlink{structutils_1_1is__integer__like}{is\+\_\+integer\+\_\+like}}$<$T$>$\+::value
-\end{DoxyCompactItemize}
-\end{Indent}
-\begin{Indent}\textbf{ width\+\_\+of}\par
-{\em Determines the width of {\ttfamily T} based on {\ttfamily Info}.
-
-\char`\"{}width\char`\"{} here is defined as the number of bits that participate in the determination of the value of the significand (mantissa) in base-\/2 scientific notation. 
-\begin{DoxyTemplParams}{Template Parameters}
-{\em Info} & A type which provides the interface of {\ttfamily std\+::numeric\+\_\+limits} and gives information about {\ttfamily T}. \\
-\hline
-\end{DoxyTemplParams}
-}\begin{DoxyCompactItemize}
-\item 
-{\footnotesize template$<$typename T $>$ }\\constexpr int \mbox{\hyperlink{namespaceutils_a576ed06f843b2217161f37a06cc6da31}{width\+\_\+of\+\_\+v}} = \mbox{\hyperlink{structutils_1_1width__of}{width\+\_\+of}}$<$T$>$\+::value
-\end{DoxyCompactItemize}
-\end{Indent}
-\begin{Indent}\textbf{ is\+\_\+same\+\_\+sign}\par
-{\em Determines if {\ttfamily T} and {\ttfamily U} have the same sign.
-
-Calculation is based on {\ttfamily TInfo} and {\ttfamily UInfo}, which default to respective instantiations of {\ttfamily std\+::numeric\+\_\+limits}. They can be replaced by class types that provide the same interface as {\ttfamily std\+::numeric\+\_\+limits}. }\begin{DoxyCompactItemize}
-\item 
-{\footnotesize template$<$typename T , typename U $>$ }\\constexpr bool \mbox{\hyperlink{namespaceutils_ae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}} = \mbox{\hyperlink{structutils_1_1is__same__sign}{is\+\_\+same\+\_\+sign}}$<$T, U$>$\+::value
-\end{DoxyCompactItemize}
-\end{Indent}
-\begin{Indent}\textbf{ epsilon\+\_\+of}\par
-{\em Extends the definition of {\ttfamily epsilon} in {\ttfamily std\+::numeric\+\_\+limits} to integral types.
-
-The epsilon of a floating-\/point type is given by {\ttfamily Info\+::epsilon()}, while that of an integral type is {\ttfamily T(1)}. The classification of {\ttfamily T} is based on {\ttfamily Info}, which can be replaced by a class type that provides the same interface as {\ttfamily std\+::numeric\+\_\+limits}. }\begin{DoxyCompactItemize}
-\item 
-{\footnotesize template$<$typename T $>$ }\\constexpr T \mbox{\hyperlink{namespaceutils_a237a9d163e61fab7413f93616669f2c9}{epsilon\+\_\+of\+\_\+v}} = \mbox{\hyperlink{structutils_1_1epsilon__of}{epsilon\+\_\+of}}$<$T$>$\+::value
-\end{DoxyCompactItemize}
-\end{Indent}
-\begin{Indent}\textbf{ is\+\_\+lossless\+\_\+convertible}\par
-{\em Determines if {\ttfamily From} can be converted to {\ttfamily To} without loss of information.
-
-Calculation is based on {\ttfamily From\+Info} and {\ttfamily To\+Info}, which default to respective instantiations of {\ttfamily std\+::numeric\+\_\+limits}. They can be replaced by class types that provide the same interface as {\ttfamily std\+::numeric\+\_\+limits}. \begin{DoxyRemark}{Remarks}
-This does not check if {\ttfamily From} is actually convertible to {\ttfamily To}. 
-\end{DoxyRemark}
-}\begin{DoxyCompactItemize}
-\item 
-{\footnotesize template$<$typename From , typename To $>$ }\\constexpr bool \mbox{\hyperlink{namespaceutils_a0895531ec3b54ee68daa30b7fbd31996}{is\+\_\+lossless\+\_\+convertible\+\_\+v}} = is\+\_\+lossless\+\_\+convertible$<$From, To$>$\+::value
-\end{DoxyCompactItemize}
-\end{Indent}
 \begin{Indent}\textbf{ max\+\_\+align}\par
 {\em Calculates the maximum alignment requirement among the types in {\ttfamily Ts}. }\begin{DoxyCompactItemize}
 \item 
@@ -689,17 +627,6 @@ using \mbox{\hyperlink{namespaceutils_aec2f7d8a4a6a70e231ae13dd1a18606a}{utils\+
 
 
 Definition at line \mbox{\hyperlink{functional_8hpp_source_l00294}{294}} of file \mbox{\hyperlink{functional_8hpp_source}{functional.\+hpp}}.
-
-\mbox{\Hypertarget{namespaceutils_ab6b5848d6804531f450947c7fa15825c}\label{namespaceutils_ab6b5848d6804531f450947c7fa15825c}} 
-\index{utils@{utils}!sane\_common\_type\_t@{sane\_common\_type\_t}}
-\index{sane\_common\_type\_t@{sane\_common\_type\_t}!utils@{utils}}
-\doxysubsubsection{\texorpdfstring{sane\_common\_type\_t}{sane\_common\_type\_t}}
-{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
-using \mbox{\hyperlink{namespaceutils_ab6b5848d6804531f450947c7fa15825c}{utils\+::sane\+\_\+common\+\_\+type\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1sane__common__type}{sane\+\_\+common\+\_\+type}}$<$T, U$>$\+::type}
-
-
-
-Definition at line \mbox{\hyperlink{integer_8hpp_source_l00084}{84}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
 
 \mbox{\Hypertarget{namespaceutils_a74b48c2315cd329e92dc844eacbec5ae}\label{namespaceutils_a74b48c2315cd329e92dc844eacbec5ae}} 
 \index{utils@{utils}!static\_string@{static\_string}}
@@ -1257,17 +1184,6 @@ Definition at line \mbox{\hyperlink{functional_8hpp_source_l00308}{308}} of file
 \doxysubsubsection{\texorpdfstring{disable\_op}{disable\_op}}
 {\footnotesize\ttfamily constexpr struct \mbox{\hyperlink{structutils_1_1disable__op__t}{utils\+::disable\+\_\+op\+\_\+t}} utils\+::disable\+\_\+op}
 
-\mbox{\Hypertarget{namespaceutils_a237a9d163e61fab7413f93616669f2c9}\label{namespaceutils_a237a9d163e61fab7413f93616669f2c9}} 
-\index{utils@{utils}!epsilon\_of\_v@{epsilon\_of\_v}}
-\index{epsilon\_of\_v@{epsilon\_of\_v}!utils@{utils}}
-\doxysubsubsection{\texorpdfstring{epsilon\_of\_v}{epsilon\_of\_v}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-constexpr T utils\+::epsilon\+\_\+of\+\_\+v = \mbox{\hyperlink{structutils_1_1epsilon__of}{epsilon\+\_\+of}}$<$T$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
-
-
-
-Definition at line \mbox{\hyperlink{integer_8hpp_source_l00108}{108}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
-
 \mbox{\Hypertarget{namespaceutils_abc8a77dfb384195bd1be8468750888c0}\label{namespaceutils_abc8a77dfb384195bd1be8468750888c0}} 
 \index{utils@{utils}!is\_equiv\_v@{is\_equiv\_v}}
 \index{is\_equiv\_v@{is\_equiv\_v}!utils@{utils}}
@@ -1289,39 +1205,6 @@ constexpr bool utils\+::is\+\_\+explicitly\+\_\+convertible\+\_\+v = \mbox{\hype
 
 
 Definition at line \mbox{\hyperlink{type_8hpp_source_l00103}{103}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
-
-\mbox{\Hypertarget{namespaceutils_a3e785f8bbe5579cdb6684c29d19d4fe7}\label{namespaceutils_a3e785f8bbe5579cdb6684c29d19d4fe7}} 
-\index{utils@{utils}!is\_integer\_like\_v@{is\_integer\_like\_v}}
-\index{is\_integer\_like\_v@{is\_integer\_like\_v}!utils@{utils}}
-\doxysubsubsection{\texorpdfstring{is\_integer\_like\_v}{is\_integer\_like\_v}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-constexpr bool utils\+::is\+\_\+integer\+\_\+like\+\_\+v = \mbox{\hyperlink{structutils_1_1is__integer__like}{is\+\_\+integer\+\_\+like}}$<$T$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
-
-
-
-Definition at line \mbox{\hyperlink{integer_8hpp_source_l00038}{38}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
-
-\mbox{\Hypertarget{namespaceutils_a0895531ec3b54ee68daa30b7fbd31996}\label{namespaceutils_a0895531ec3b54ee68daa30b7fbd31996}} 
-\index{utils@{utils}!is\_lossless\_convertible\_v@{is\_lossless\_convertible\_v}}
-\index{is\_lossless\_convertible\_v@{is\_lossless\_convertible\_v}!utils@{utils}}
-\doxysubsubsection{\texorpdfstring{is\_lossless\_convertible\_v}{is\_lossless\_convertible\_v}}
-{\footnotesize\ttfamily template$<$typename From , typename To $>$ \\
-constexpr bool utils\+::is\+\_\+lossless\+\_\+convertible\+\_\+v = is\+\_\+lossless\+\_\+convertible$<$From, To$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
-
-
-
-Definition at line \mbox{\hyperlink{integer_8hpp_source_l00129}{129}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
-
-\mbox{\Hypertarget{namespaceutils_ae1ba453ed44bcb43cd6d1b42e5ee9b82}\label{namespaceutils_ae1ba453ed44bcb43cd6d1b42e5ee9b82}} 
-\index{utils@{utils}!is\_same\_sign\_v@{is\_same\_sign\_v}}
-\index{is\_same\_sign\_v@{is\_same\_sign\_v}!utils@{utils}}
-\doxysubsubsection{\texorpdfstring{is\_same\_sign\_v}{is\_same\_sign\_v}}
-{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
-constexpr bool utils\+::is\+\_\+same\+\_\+sign\+\_\+v = \mbox{\hyperlink{structutils_1_1is__same__sign}{is\+\_\+same\+\_\+sign}}$<$T, U$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
-
-
-
-Definition at line \mbox{\hyperlink{integer_8hpp_source_l00094}{94}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
 
 \mbox{\Hypertarget{namespaceutils_a4cf6ed8a5af20f379e7e15fcb183c2bc}\label{namespaceutils_a4cf6ed8a5af20f379e7e15fcb183c2bc}} 
 \index{utils@{utils}!is\_tagged\_v@{is\_tagged\_v}}
@@ -1416,15 +1299,4 @@ Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00519}{519}} of 
 \index{unique\_resource\_sync@{unique\_resource\_sync}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{unique\_resource\_sync}{unique\_resource\_sync}}
 {\footnotesize\ttfamily constexpr struct \mbox{\hyperlink{structutils_1_1unique__resource__sync__t}{utils\+::unique\+\_\+resource\+\_\+sync\+\_\+t}} utils\+::unique\+\_\+resource\+\_\+sync}
-
-\mbox{\Hypertarget{namespaceutils_a576ed06f843b2217161f37a06cc6da31}\label{namespaceutils_a576ed06f843b2217161f37a06cc6da31}} 
-\index{utils@{utils}!width\_of\_v@{width\_of\_v}}
-\index{width\_of\_v@{width\_of\_v}!utils@{utils}}
-\doxysubsubsection{\texorpdfstring{width\_of\_v}{width\_of\_v}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-constexpr int utils\+::width\+\_\+of\+\_\+v = \mbox{\hyperlink{structutils_1_1width__of}{width\+\_\+of}}$<$T$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
-
-
-
-Definition at line \mbox{\hyperlink{integer_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
 
