@@ -16,6 +16,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@4/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -119,8 +126,8 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename Key, typename T, std::copyable Compare = std::less&lt;Key&gt;, std::copyable Sum = std::plus&lt;T&gt;, std::copyable Identity = default_construct&lt;T&gt;, typename KeyContainer = std::vector&lt;Key&gt;, typename MappedContainer = std::vector&lt;T&gt;&gt;<br />
 struct utils::segment_tree&lt; Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer &gt;::node_info</div><p >Stores properties of the node the traverser is visiting. </p>
-<p >Let <img class="formulaInl" alt="$v$" src="form_5.png"/> be the subject of the struct, and <code>left</code> and <code>right</code> be its children. Then <code>level</code> is the height of <img class="formulaInl" alt="$v$" src="form_5.png"/> (distance of <img class="formulaInl" alt="$v$" src="form_5.png"/> to the nearest leaf), and <code>level_idx</code> is the number of nodes preceding <img class="formulaInl" alt="$v$" src="form_5.png"/> is its level. <code>*_level</code> and <code>*_idx</code> represent the level and index of <code>left</code> / <code>right</code>, respectively. Level <code>-1</code> indicates a non-existent node.</p>
-<p >[ <code>begin</code>, <code>end</code> ) gives the range of indices of mapped values the sub-tree rooted at <img class="formulaInl" alt="$v$" src="form_5.png"/> encompasses, and the sub-trees rooted at the left and right child of the current node encompass [ <code>begin</code>, <code>div_node</code> ) and [ <code>div_node</code>, <code>end</code> ), respectively. </p>
+<p >Let \(v\) be the subject of the struct, and <code>left</code> and <code>right</code> be its children. Then <code>level</code> is the height of \(v\) (distance of \(v\) to the nearest leaf), and <code>level_idx</code> is the number of nodes preceding \(v\) is its level. <code>*_level</code> and <code>*_idx</code> represent the level and index of <code>left</code> / <code>right</code>, respectively. Level <code>-1</code> indicates a non-existent node.</p>
+<p >[ <code>begin</code>, <code>end</code> ) gives the range of indices of mapped values the sub-tree rooted at \(v\) encompasses, and the sub-trees rooted at the left and right child of the current node encompass [ <code>begin</code>, <code>div_node</code> ) and [ <code>div_node</code>, <code>end</code> ), respectively. </p>
 
 <p class="definition">Definition at line <a class="el" href="segment__tree_8hpp_source.html#l00835">835</a> of file <a class="el" href="segment__tree_8hpp_source.html">segment_tree.hpp</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>

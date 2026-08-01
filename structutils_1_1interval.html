@@ -16,6 +16,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@4/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -139,7 +146,7 @@ requires (detail::strict_weak_order&lt;std::less&lt;&gt;, const L&amp;, const R&
 <tr class="separator:ga25e12e71ad43636f184197a1329500df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab25eb88158269045c97d7649d0222dd5"><td class="memTemplParams" colspan="2">template&lt;typename L2 , typename R2 , detail::strict_weak_order&lt; const L &amp;, const R &amp;, const L2 &amp;, const R2 &amp; &gt; Compare = std::less&lt;&gt;&gt; </td></tr>
 <tr class="memitem:gab25eb88158269045c97d7649d0222dd5"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::partial_ordering&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utilsintervalcomparison.html#gab25eb88158269045c97d7649d0222dd5">compare</a> (const <a class="el" href="structutils_1_1interval.html">interval</a>&lt; L2, R2 &gt; &amp;other, const Compare &amp;comp={}) const</td></tr>
-<tr class="memdesc:gab25eb88158269045c97d7649d0222dd5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><img class="formulaInl" alt="$I1$" src="form_17.png"/> is taken to be <code>*this</code>, <img class="formulaInl" alt="$I2$" src="form_18.png"/> is taken to be <code>other</code>.  <a href="group__utilsintervalcomparison.html#gab25eb88158269045c97d7649d0222dd5">More...</a><br /></td></tr>
+<tr class="memdesc:gab25eb88158269045c97d7649d0222dd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">\(I1\) is taken to be <code>*this</code>, \(I2\) is taken to be <code>other</code>.  <a href="group__utilsintervalcomparison.html#gab25eb88158269045c97d7649d0222dd5">More...</a><br /></td></tr>
 <tr class="separator:gab25eb88158269045c97d7649d0222dd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:a45eb22a52645446e31be3c52751fde9f"><td class="memTemplParams" colspan="2">template&lt;typename CL , typename CR , typename L2 , typename R2 , detail::strict_weak_order&lt; const L &amp;, const R &amp;, const L2 &amp;, const R2 &amp; &gt; Compare = std::less&lt;&gt;&gt; <br />

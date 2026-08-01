@@ -16,6 +16,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@4/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -242,7 +249,7 @@ template&lt;typename T , bool Sync = false&gt; </div>
 </div><div class="memdoc">
 
 <p>Deallocates previously allocated memory and recycles it in a LIFO manner. </p>
-<p >Formally, let <img class="formulaInl" alt="$(M_1,M_2,...,M_k)$" src="form_0.png"/> be the memory chunks previously allocated by any allocator equal to <code>*this</code> which have not been <em>recycled</em>, in the order of allocation. A memory chunk is <em>recycled</em> if <code>allocate</code> can use its storage. As noted in the documentation of the class, deallocation in <code><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html" title="An allocator which allocates memory from a pre-allocated buffer in a lazy-stack-like manner.">stack_allocator</a></code> does not always recycle memory but may simply mark it as <em>removed</em>. Let $D_i$ indicate if $M_i$ has been removed for <img class="formulaInl" alt="$i\in[k]$" src="form_1.png"/>. A call to <code>deallocate</code> first finds <img class="formulaInl" alt="$t$" src="form_2.png"/> such that <code>p</code> points to <img class="formulaInl" alt="$M_t$" src="form_3.png"/>, marks the chunk as removed, then recycles all chunks in the set <img class="formulaInl" alt="$\{M_i\mid D_i,...,D_k\}$" src="form_4.png"/>. </p><dl class="section remark"><dt>Remarks</dt><dd>The alignment argument is unused. It is defined to deallocate a pointer obtained through aligned allocation without passing the required alignment. </dd></dl>
+<p >Formally, let \((M_1,M_2,...,M_k)\) be the memory chunks previously allocated by any allocator equal to <code>*this</code> which have not been <em>recycled</em>, in the order of allocation. A memory chunk is <em>recycled</em> if <code>allocate</code> can use its storage. As noted in the documentation of the class, deallocation in <code><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html" title="An allocator which allocates memory from a pre-allocated buffer in a lazy-stack-like manner.">stack_allocator</a></code> does not always recycle memory but may simply mark it as <em>removed</em>. Let $D_i$ indicate if $M_i$ has been removed for \(i\in[k]\). A call to <code>deallocate</code> first finds \(t\) such that <code>p</code> points to \(M_t\), marks the chunk as removed, then recycles all chunks in the set \(\{M_i\mid D_i,...,D_k\}\). </p><dl class="section remark"><dt>Remarks</dt><dd>The alignment argument is unused. It is defined to deallocate a pointer obtained through aligned allocation without passing the required alignment. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00142">142</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
 

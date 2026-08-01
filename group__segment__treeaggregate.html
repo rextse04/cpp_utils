@@ -16,6 +16,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@4/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -109,8 +116,8 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p >Aggregate values in the given key or iterator interval. </p>
 <dl class="section return"><dt>Returns</dt><dd>A value equivalent to that produced by the following process:<ol type="1">
-<li>Gather all key-value pairs <img class="formulaInl" alt="$S$" src="form_25.png"/> contained in the given interval, in the order defined by <code><a class="el" href="classutils_1_1segment__tree.html#a651253130fe6d6fc8bfc3b88e2851a9a" title="Returns a const reference to the underlying container for keys.">keys()</a></code>.</li>
-<li>Compute <img class="formulaInl" alt="$\sum_{(k,v)\in S} v$" src="form_43.png"/> using <code><a class="el" href="classutils_1_1segment__tree.html#a6b2b4b28ed13bae3f4bacd169aec497b" title="Returns a copy of the monoid operation functor.">sum()</a></code>. </li>
+<li>Gather all key-value pairs \(S\) contained in the given interval, in the order defined by <code><a class="el" href="classutils_1_1segment__tree.html#a651253130fe6d6fc8bfc3b88e2851a9a" title="Returns a const reference to the underlying container for keys.">keys()</a></code>.</li>
+<li>Compute \(\sum_{(k,v)\in S} v\) using <code><a class="el" href="classutils_1_1segment__tree.html#a6b2b4b28ed13bae3f4bacd169aec497b" title="Returns a copy of the monoid operation functor.">sum()</a></code>. </li>
 </ol>
 </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>For overloads that accept an <code>update</code>, the returned value is unspecified (but still valid) if <code><a class="el" href="classutils_1_1segment__tree.html#a6b2b4b28ed13bae3f4bacd169aec497b" title="Returns a copy of the monoid operation functor.">sum()</a></code> is not commutative on <code>mapped_type</code>. </dd></dl>

@@ -16,6 +16,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@4/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -126,7 +133,7 @@ requires (detail::strict_weak_order&lt;std::less&lt;&gt;, const T&amp;, const U&
 <tr class="separator:ga7531876b5ec7ffc958b3020f32b14a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabfe97454fff1e35e7177d9b24cf69801"><td class="memTemplParams" colspan="2">template&lt;typename U , detail::strict_weak_order&lt; const T &amp;, const U &amp; &gt; Compare = std::less&lt;&gt;&gt; </td></tr>
 <tr class="memitem:gabfe97454fff1e35e7177d9b24cf69801"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::weak_ordering&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utilsintervalendpointcomparison.html#gabfe97454fff1e35e7177d9b24cf69801">compare</a> (const <a class="el" href="structutils_1_1interval__endpoint.html">interval_endpoint</a>&lt; U &gt; &amp;other, bool right, const Compare &amp;comp={}) const</td></tr>
-<tr class="memdesc:gabfe97454fff1e35e7177d9b24cf69801"><td class="mdescLeft">&#160;</td><td class="mdescRight"><img class="formulaInl" alt="$E1$" src="form_13.png"/> is taken to be <code>*this</code>, <img class="formulaInl" alt="$E2$" src="form_14.png"/> is taken to be <code>other</code>.  <a href="group__utilsintervalendpointcomparison.html#gabfe97454fff1e35e7177d9b24cf69801">More...</a><br /></td></tr>
+<tr class="memdesc:gabfe97454fff1e35e7177d9b24cf69801"><td class="mdescLeft">&#160;</td><td class="mdescRight">\(E1\) is taken to be <code>*this</code>, \(E2\) is taken to be <code>other</code>.  <a href="group__utilsintervalendpointcomparison.html#gabfe97454fff1e35e7177d9b24cf69801">More...</a><br /></td></tr>
 <tr class="separator:gabfe97454fff1e35e7177d9b24cf69801"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -139,19 +146,19 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
 struct utils::interval_endpoint&lt; T &gt;</div><p >Represents an endpoint of an interval, consisting of a value and its type (open or closed). </p>
-<p >Given a value <img class="formulaInl" alt="$v$" src="form_5.png"/> and a comparator <img class="formulaInl" alt="$C:D\times D\rightarrow\textit{boolean-testable}$" src="form_6.png"/> satisfying <em>Compare</em>, </p><table class="doxtable">
+<p >Given a value \(v\) and a comparator \(C:D\times D\rightarrow\textit{boolean-testable}\) satisfying <em>Compare</em>, </p><table class="doxtable">
 <tr>
 <th>Endpoint Type</th><th>Set Representation </th></tr>
 <tr>
-<td>Left Open</td><td><img class="formulaInl" alt="$\{x\in D\mid C(v,x)\}$" src="form_7.png"/> </td></tr>
+<td>Left Open</td><td>\(\{x\in D\mid C(v,x)\}\) </td></tr>
 <tr>
-<td>Left Closed</td><td><img class="formulaInl" alt="$\{x\in D\mid\neg C(x,v)\}$" src="form_8.png"/> </td></tr>
+<td>Left Closed</td><td>\(\{x\in D\mid\neg C(x,v)\}\) </td></tr>
 <tr>
-<td>Right Open</td><td><img class="formulaInl" alt="$\{x\in D\mid C(x,v)\}$" src="form_9.png"/> </td></tr>
+<td>Right Open</td><td>\(\{x\in D\mid C(x,v)\}\) </td></tr>
 <tr>
-<td>Right Closed</td><td><img class="formulaInl" alt="$\{x\in D\mid\neg C(v,x)\}$" src="form_10.png"/> </td></tr>
+<td>Right Closed</td><td>\(\{x\in D\mid\neg C(v,x)\}\) </td></tr>
 </table>
-<dl class="section remark"><dt>Remarks</dt><dd>Note that we do not assume the domain of <img class="formulaInl" alt="$C$" src="form_11.png"/> to be <img class="formulaInl" alt="$D$" src="form_12.png"/>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Note that we do not assume the domain of \(C\) to be \(D\). </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="interval_8hpp_source.html#l00039">39</a> of file <a class="el" href="interval_8hpp_source.html">interval.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>

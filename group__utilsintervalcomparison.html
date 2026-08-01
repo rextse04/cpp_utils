@@ -16,6 +16,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@4/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -100,12 +107,12 @@ requires (detail::strict_weak_order&lt;std::less&lt;&gt;, const L&amp;, const R&
 <tr class="separator:ga25e12e71ad43636f184197a1329500df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab25eb88158269045c97d7649d0222dd5"><td class="memTemplParams" colspan="2">template&lt;typename L2 , typename R2 , detail::strict_weak_order&lt; const L &amp;, const R &amp;, const L2 &amp;, const R2 &amp; &gt; Compare = std::less&lt;&gt;&gt; </td></tr>
 <tr class="memitem:gab25eb88158269045c97d7649d0222dd5"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::partial_ordering&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utilsintervalcomparison.html#gab25eb88158269045c97d7649d0222dd5">utils::interval&lt; L, R &gt;::compare</a> (const <a class="el" href="structutils_1_1interval.html">interval</a>&lt; L2, R2 &gt; &amp;other, const Compare &amp;comp={}) const</td></tr>
-<tr class="memdesc:gab25eb88158269045c97d7649d0222dd5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><img class="formulaInl" alt="$I1$" src="form_17.png"/> is taken to be <code>*this</code>, <img class="formulaInl" alt="$I2$" src="form_18.png"/> is taken to be <code>other</code>.  <a href="group__utilsintervalcomparison.html#gab25eb88158269045c97d7649d0222dd5">More...</a><br /></td></tr>
+<tr class="memdesc:gab25eb88158269045c97d7649d0222dd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">\(I1\) is taken to be <code>*this</code>, \(I2\) is taken to be <code>other</code>.  <a href="group__utilsintervalcomparison.html#gab25eb88158269045c97d7649d0222dd5">More...</a><br /></td></tr>
 <tr class="separator:gab25eb88158269045c97d7649d0222dd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p >Three-way comparison operator. </p>
-<p >Given intervals <img class="formulaInl" alt="$I1$" src="form_17.png"/> and <img class="formulaInl" alt="$I2$" src="form_18.png"/>, <img class="formulaInl" alt="$I1&lt;I2$" src="form_19.png"/> if and only if <img class="formulaInl" alt="$I1$" src="form_17.png"/> is a proper subset of <img class="formulaInl" alt="$I2$" src="form_18.png"/>. This defines a strict partial ordering on intervals.</p>
+<p >Given intervals \(I1\) and \(I2\), \(I1&lt;I2\) if and only if \(I1\) is a proper subset of \(I2\). This defines a strict partial ordering on intervals.</p>
 <p >The comparator is taken to be <code>std::less&lt;&gt;</code>. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gab25eb88158269045c97d7649d0222dd5" name="gab25eb88158269045c97d7649d0222dd5"></a>
@@ -146,7 +153,7 @@ template&lt;typename L2 , typename R2 , detail::strict_weak_order&lt; const L &a
 </table>
 </div><div class="memdoc">
 
-<p><img class="formulaInl" alt="$I1$" src="form_17.png"/> is taken to be <code>*this</code>, <img class="formulaInl" alt="$I2$" src="form_18.png"/> is taken to be <code>other</code>. </p>
+<p>\(I1\) is taken to be <code>*this</code>, \(I2\) is taken to be <code>other</code>. </p>
 
 <p class="definition">Definition at line <a class="el" href="interval_8hpp_source.html#l00202">202</a> of file <a class="el" href="interval_8hpp_source.html">interval.hpp</a>.</p>
 

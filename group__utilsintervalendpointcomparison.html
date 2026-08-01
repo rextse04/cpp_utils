@@ -16,6 +16,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@4/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -100,13 +107,13 @@ requires (detail::strict_weak_order&lt;std::less&lt;&gt;, const T&amp;, const U&
 <tr class="separator:ga7531876b5ec7ffc958b3020f32b14a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabfe97454fff1e35e7177d9b24cf69801"><td class="memTemplParams" colspan="2">template&lt;typename U , detail::strict_weak_order&lt; const T &amp;, const U &amp; &gt; Compare = std::less&lt;&gt;&gt; </td></tr>
 <tr class="memitem:gabfe97454fff1e35e7177d9b24cf69801"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::weak_ordering&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utilsintervalendpointcomparison.html#gabfe97454fff1e35e7177d9b24cf69801">utils::interval_endpoint&lt; T &gt;::compare</a> (const <a class="el" href="structutils_1_1interval__endpoint.html">interval_endpoint</a>&lt; U &gt; &amp;other, bool right, const Compare &amp;comp={}) const</td></tr>
-<tr class="memdesc:gabfe97454fff1e35e7177d9b24cf69801"><td class="mdescLeft">&#160;</td><td class="mdescRight"><img class="formulaInl" alt="$E1$" src="form_13.png"/> is taken to be <code>*this</code>, <img class="formulaInl" alt="$E2$" src="form_14.png"/> is taken to be <code>other</code>.  <a href="group__utilsintervalendpointcomparison.html#gabfe97454fff1e35e7177d9b24cf69801">More...</a><br /></td></tr>
+<tr class="memdesc:gabfe97454fff1e35e7177d9b24cf69801"><td class="mdescLeft">&#160;</td><td class="mdescRight">\(E1\) is taken to be <code>*this</code>, \(E2\) is taken to be <code>other</code>.  <a href="group__utilsintervalendpointcomparison.html#gabfe97454fff1e35e7177d9b24cf69801">More...</a><br /></td></tr>
 <tr class="separator:gabfe97454fff1e35e7177d9b24cf69801"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p >Three-way comparison operator. </p>
-<p >Given endpoints <img class="formulaInl" alt="$E1$" src="form_13.png"/> and <img class="formulaInl" alt="$E2$" src="form_14.png"/>, <img class="formulaInl" alt="$E1&lt;E2$" src="form_15.png"/> if and only if the set represented by <img class="formulaInl" alt="$E1$" src="form_13.png"/> is a proper subset of the set represented by <img class="formulaInl" alt="$E2$" src="form_14.png"/>. This defines a strict weak ordering on endpoints.</p>
-<p >Let <img class="formulaInl" alt="$v$" src="form_5.png"/> be <code>this-&gt;value</code> and <img class="formulaInl" alt="$ov$" src="form_16.png"/> be <code>other.value</code>. The program is ill-formed if there is not a restriction of <code>std::less&lt;&gt;</code> such that <img class="formulaInl" alt="$v$" src="form_5.png"/> and <img class="formulaInl" alt="$ov$" src="form_16.png"/> are in the domain. It is UB if such a restriction does not satisfy <em>Compare</em>.</p>
+<p >Given endpoints \(E1\) and \(E2\), \(E1&lt;E2\) if and only if the set represented by \(E1\) is a proper subset of the set represented by \(E2\). This defines a strict weak ordering on endpoints.</p>
+<p >Let \(v\) be <code>this-&gt;value</code> and \(ov\) be <code>other.value</code>. The program is ill-formed if there is not a restriction of <code>std::less&lt;&gt;</code> such that \(v\) and \(ov\) are in the domain. It is UB if such a restriction does not satisfy <em>Compare</em>.</p>
 <p >All endpoints are assumed to be right endpoints. The comparator is taken to be <code>std::less&lt;&gt;</code>. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gabfe97454fff1e35e7177d9b24cf69801" name="gabfe97454fff1e35e7177d9b24cf69801"></a>
@@ -153,7 +160,7 @@ template&lt;typename U , detail::strict_weak_order&lt; const T &amp;, const U &a
 </table>
 </div><div class="memdoc">
 
-<p><img class="formulaInl" alt="$E1$" src="form_13.png"/> is taken to be <code>*this</code>, <img class="formulaInl" alt="$E2$" src="form_14.png"/> is taken to be <code>other</code>. </p>
+<p>\(E1\) is taken to be <code>*this</code>, \(E2\) is taken to be <code>other</code>. </p>
 
 <p class="definition">Definition at line <a class="el" href="interval_8hpp_source.html#l00078">78</a> of file <a class="el" href="interval_8hpp_source.html">interval.hpp</a>.</p>
 

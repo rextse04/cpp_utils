@@ -16,6 +16,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@4/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -119,7 +126,7 @@ $(document).ready(function(){initNavTree('conceptutils_1_1segment__tree__strateg
 <p>The following operations are then executed in the order presented:</p><ol type="1">
 <li>If <code>strategy</code> does not stop at <code>v</code> and <code>strategy.prepare(st, *info)</code> is well-formed, it is invoked with return value discarded.</li>
 <li><code>L</code> and <code>R</code> are collected.</li>
-<li><code>strategy(st, info, L, R)</code> is produced at <img class="formulaInl" alt="$v$" src="form_5.png"/>. </li>
+<li><code>strategy(st, info, L, R)</code> is produced at \(v\). </li>
 </ol>
 
 <p class="definition">Definition at line <a class="el" href="segment__tree_8hpp_source.html#l00110">110</a> of file <a class="el" href="segment__tree_8hpp_source.html">segment_tree.hpp</a>.</p>
