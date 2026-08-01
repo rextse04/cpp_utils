@@ -28,7 +28,7 @@ namespace utils {
         template <std::integral T>
         struct is_integer_like<T> : std::true_type {};
     }
-    /// @group utils::is_integer_like
+    /// \group{utils::is_integer_like}
     /// @brief Determines if a type is integer like.
     ///
     /// The construct is used by the library to determine if a type (ignoring cv-qualifiers) is integer like.
@@ -44,7 +44,7 @@ namespace utils {
     concept integer_like = is_integer_like<T>::value;
     /// @}
 
-    /// @group utils::width_of
+    /// \group{utils::width_of}
     /// @brief Determines the width of `T` based on `Info`.
     ///
     /// "width" here is defined as the number of bits that participate in the determination of the value of the significand (mantissa)
@@ -76,7 +76,7 @@ namespace utils {
             >>>;
         };
     }
-    /// @group utils::sane_common_type
+    /// \group{utils::sane_common_type}
     /// @brief Similar to usual arithmetic conversion, except that the promotion step is replaced by `utils::sane_promotion`.
     ///
     /// Given any types `T` and `U`, let `TD` and `UD` be `std::decay_t<T>` and `std::decay_t<U>` respectively.
@@ -94,7 +94,7 @@ namespace utils {
     using sane_common_type_t = sane_common_type<T, U>::type;
     /// @}
 
-    /// @group utils::is_same_sign
+    /// \group{utils::is_same_sign}
     /// @brief Determines if `T` and `U` have the same sign.
     /// Calculation is based on `TInfo` and `UInfo`, which default to respective instantiations of
     /// `std::numeric_limits`. They can be replaced by class types that provide the same interface as `std::numeric_limits`.
@@ -107,7 +107,7 @@ namespace utils {
     concept same_sign_as = is_same_sign<T, U>::value;
     /// @}
 
-    /// @group utils::epsilon_of
+    /// \group{utils::epsilon_of}
     /// @brief Extends the definition of `epsilon` in `std::numeric_limits` to integral types.
     ///
     /// The epsilon of a floating-point type is given by `Info::epsilon()`, while that of an integral type is `T(1)`.
@@ -120,7 +120,7 @@ namespace utils {
     constexpr T epsilon_of_v = epsilon_of<T>::value;
     /// @}
 
-    /// @group utils::is_lossless_convertible
+    /// \group{utils::is_lossless_convertible}
     /// @brief Determines if `From` can be converted to `To` without loss of information.
     ///
     /// Calculation is based on `FromInfo` and `ToInfo`, which default to respective instantiations of
@@ -621,7 +621,7 @@ namespace utils {
         /// @remark The member is only made public to preserve structural type.
         T under_;
 
-        /// @group utils::integer::to_underlying
+        /// \group{utils::integer::to_underlying}
         /// @brief Get a reference to the underlying object of `x`.
         ///
         /// The static member function only has overloads for
@@ -636,7 +636,7 @@ namespace utils {
         static constexpr decltype(auto) to_underlying(U&& x) noexcept { return std::forward_like<U>(x.under_); }
         /// @}
 
-        /// @group utils::integer::integer
+        /// \group{utils::integer::integer}
         /// @{
         /// @brief Default-initializes `under_`.
         constexpr integer() = default;
@@ -668,7 +668,7 @@ namespace utils {
         }
         /// @}
 
-        /// @group utils::integer::operator==,utils::integer::operator<=>
+        /// \group{utils::integer::operator==,utils::integer::operator<=>}
         /// `utils::integer` can be compared with an `utils::integer_like` type if and only if
         /// both have the same signedness (either both signed, or both unsigned).
         /// @{
@@ -688,7 +688,7 @@ namespace utils {
         }
         /// @}
 
-        /// @group utils::integer::operator
+        /// \group{utils::integer::operator}
         /// @brief Conversion to references to underlying type.
         /// @{
         template <std::same_as<T> U>
