@@ -621,7 +621,7 @@ namespace utils {
         /// @remark The member is only made public to preserve structural type.
         T under_;
 
-        /// @defgroup integer$to_underlying utils::integer::to_underlying
+        /// @defgroup integerto_underlying utils::integer::to_underlying
         /// @brief Get a reference to the underlying object of `x`.
         ///
         /// The static member function only has overloads for

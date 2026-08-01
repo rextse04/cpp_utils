@@ -318,7 +318,7 @@ namespace utils {
             }
         }
     public:
-        /// @name Constructors
+        /// @defgroup segment_treeconstructors utils::segment_tree::segment_tree
         /// When the `std::sorted_equivalent` flag is passed to any constructor overload that accepts it,
         /// it indicates that the range of keys passed to the constructor is sorted in non-decreasing order
         /// with respect to `key_compare()`, and the range of mapped values passed corresponds to it.
@@ -571,7 +571,7 @@ namespace utils {
             segment_tree(std::sorted_equivalent, std::from_range, pairs,
                 key_compare(), mapped_sum(), mapped_identity(),alloc) {}
         /// @}
-        /// @name Destructors
+        /// @defgroup segment_treedestructors utils::segment_tree::~segment_tree
         /// Use the default destructor if `KeyContainer` and `MappedContainer` are both trivially destructible.
         /// Otherwise, call their destructors.
         /// @{
@@ -584,7 +584,7 @@ namespace utils {
             std::destroy_at(&m_nodes());
         }
         /// @}
-        /// @name operator=
+        /// @defgroup segment_treeoperator= utils::segment_tree::operator=
         /// @{
         /// Copy-assigns all underlying containers and functors.
         constexpr segment_tree& operator=(const segment_tree& other)
@@ -651,7 +651,7 @@ namespace utils {
             return found;
         }
     public:
-        /// @name operator[]
+        /// @defgroup segment_treeoperator[] utils::segment_tree::operator[]
         /// Returns a (potentially proxy) reference to the mapped value of `key`.
         /// The behavior is undefined if
         /// `key` does not have a `key_compare()`-equivalent in `keys()`.
@@ -670,7 +670,7 @@ namespace utils {
                 levels_ - 1, 0, 0, size());
         }
         /// @}
-        /// @name at
+        /// @defgroup segment_treeat utils::segment_tree::at
         /// Returns a (potentially proxy) reference to the mapped value of `key`.
         /// If `key` does not have a `key_compare()`-equivalent in `keys()`,
         /// an exception is thrown with strong exception guarantee.
@@ -725,7 +725,7 @@ namespace utils {
         constexpr iterator iter(size_type node) noexcept { return {iota_iterator(node), iterator_func(this)}; }
         constexpr const_iterator iter(size_type node) const noexcept { return {iota_iterator(node), const_iterator_func(this)}; }
     public:
-        /// @name Iterator utilities
+        /// @defgroup segment_treeiterators utils::segment_tree::begin, utils::segment_tree::cbegin, utils::segment_tree::end, utils::segment_tree::cend, utils::segment_tree::rbegin, utils::segment_tree::crbegin, utils::segment_tree::rend, utils::segment_tree::crend
         /// Returns specified iterators to `value_type`.
         /// @{
         constexpr auto begin(this auto&& self) noexcept { return self.iter(0); }
@@ -985,7 +985,7 @@ namespace utils {
         requires (copy_insertable_into<mapped_container_type>) {
             return update_type(nodes().size() * 2, identity_());
         }
-        /// @name make_update
+        /// @defgroup segment_treemake_update utils::segment_tree::make_update
         /// @brief Applies a ranged update to an update record.
         ///
         /// Suppose @f$K@f$ is the set of keys contained in the given interval.
@@ -1019,7 +1019,7 @@ namespace utils {
             if (levels_ <= 0) return strategy(*this, nullptr, nullptr, nullptr);
             else return do_traverse(traverser, strategy, levels_ - 1, 0, 0, size());
         }
-        /// @name aggregate
+        /// @defgroup segment_treeaggregate utils::segment_tree::aggregate
         /// @brief Aggregate values in the given key or iterator interval.
         /// @returns A value equivalent to that produced by the following process:
         /// 1. Gather all key-value pairs @f$S@f$ contained in the given interval, in the order defined by `keys()`.
@@ -1052,7 +1052,7 @@ namespace utils {
                 aggregate_with_update_strategy(update, multiplies));
         }
         /// @}
-        /// @name total
+        /// @defgroup segment_treetotal utils::segment_tree::total
         /// @brief Gives the sum of all stored mapped values.
         /// @returns A value equivalent to `aggregate(begin(), end())`.
         /// @{

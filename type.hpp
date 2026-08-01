@@ -18,7 +18,7 @@ namespace utils {
         v = 0b10  ///< Volatile qualifier
     };
     UTILS_BITMASK(type_qualifiers);
-    /// @name qualifiers_of
+    /// @defgroup utilsqualifiers_of utils::qualifiers_of
     /// @brief Extracts the const and volatile qualifiers from a type.
     /// @remark Ignores reference and pointer decorations, extracting qualifiers from the underlying type.
     /// @{
@@ -34,7 +34,7 @@ namespace utils {
     constexpr type_qualifiers qualifiers_of_v = qualifiers_of<T>::value;
     /// @}
 
-    /// @name apply_qualifiers
+    /// @defgroup utilsapply_qualifiers utils::apply_qualifiers
     /// @brief Applies specified const and volatile qualifiers to a type, while retaining reference category/pointer.
     /// @{
     template <typename T, type_qualifiers Q>
@@ -53,7 +53,7 @@ namespace utils {
     using apply_qualifiers_t = apply_qualifiers<T, Q>::type;
     /// @}
 
-    /// @name follow
+    /// @defgroup utilsfollow utils::follow
     /// @brief Copies the qualifiers and reference category from one type to another.
     /// @{
     template <typename RefT, typename T>
@@ -64,7 +64,7 @@ namespace utils {
     using follow_t = follow<RefT, T>::type;
     /// @}
 
-    /// @name is_equiv
+    /// @defgroup utilsis_equiv utils::is_equiv
     /// @brief Checks if two types are equivalent.
     ///
     /// Two types are equivalent if they are the same after removing all const, volatile, and reference qualifiers.
@@ -77,7 +77,7 @@ namespace utils {
     concept equiv_to = is_equiv_v<T, Ref>;
     /// @}
 
-    /// @name is_template_instance
+    /// @defgroup utilsis_template_instance utils::is_template_instance
     /// @brief Checks if a type is an instance of a given template.
     ///
     /// The check ignores cv qualifiers and reference categories on the type being checked.
@@ -90,7 +90,7 @@ namespace utils {
     constexpr bool is_template_instance_v = is_template_instance<Tmpl, std::remove_cvref_t<T>>::value;
     /// @}
 
-    /// @name explicitly_convertible_to
+    /// @defgroup utilsexplicitly_convertible_to utils::explicitly_convertible_to
     /// @brief Determines if `From` is explicitly convertible to `To`.
     ///
     /// `From` is explicitly convertible to `To` if the expression `static_cast<To>(std::declval<From>())` is well-formed.
@@ -111,7 +111,7 @@ namespace utils {
             using type = std::integer_sequence<T, F(Ns)...>;
         };
     }
-    /// @name make_integer_range
+    /// @defgroup utilsmake_integer_range utils::make_integer_range
     /// @brief Creates an integer sequence with custom Begin and Step values.
     /// @tparam T The underlying integer type for the sequence.
     /// @tparam End The exclusive end value of the range.
@@ -141,7 +141,7 @@ namespace utils {
     template <typename...>
     struct always_false : std::false_type {};
 
-    /// @name is_tagged
+    /// @defgroup utilsis_tagged utils::is_tagged
     /// @brief Checks if `T` has a `tag` member alias matching or containing `Tag`.
     /// @{
     template <typename T, typename Tag>

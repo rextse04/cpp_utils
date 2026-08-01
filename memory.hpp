@@ -6,7 +6,7 @@
 #include <concepts>
 
 namespace utils {
-    /// @name max_align
+    /// @defgroup utilsmax_align utils::max_align
     /// @brief Calculates the maximum alignment requirement among the types in `Ts`.
     /// @{
     template <typename... Ts>

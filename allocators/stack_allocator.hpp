@@ -58,7 +58,7 @@ namespace utils::pmr {
         template <typename, bool>
         friend class stack_allocator;
     public:
-        /// @name Constructors
+        /// @defgroup utilspmrstack_allocatorconstructors utils::pmr::stack_allocator::stack_allocator
         /// @{
         /// @brief Takes ownership of the buffer and uses it for allocations.
         /// @throws std::bad_alloc: If the internal control structure does not fit in the given buffer.

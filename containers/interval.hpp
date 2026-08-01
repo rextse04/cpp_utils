@@ -54,7 +54,7 @@ namespace utils {
         ///
         /// Two endpoints are equivalent if and only if their values and types are equivalent.
         constexpr bool operator==(const interval_endpoint& other) const = default;
-        /// @name Comparison functions.
+        /// @defgroup utilsintervalendpointcomparison utils::interval_endpoint::operator<=>, utils::interval_endpoint::compare
         ///
         /// Given endpoints @f$E1@f$ and @f$E2@f$,
         /// @f$E1<E2@f$ if and only if the set represented by @f$E1@f$ is a proper subset of the set represented by @f$E2@f$.
@@ -182,7 +182,7 @@ namespace utils {
             return intersection_with<L, R, L, R, Compare>(other, comp);
         }
         /// @}
-        /// @name Comparison functions.
+        /// @defgroup utilsintervalcomparison utils::interval::operator<=>, utils::interval::compare
         ///
         /// Given intervals @f$I1@f$ and @f$I2@f$,
         /// @f$I1<I2@f$ if and only if @f$I1@f$ is a proper subset of @f$I2@f$.

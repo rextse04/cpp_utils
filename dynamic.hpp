@@ -497,7 +497,7 @@ namespace utils {
         template <detail::dptr_first V, interface... Vs>
         friend class dptr;
     public:
-        /// @name Constructors
+        /// @defgroup utilsdptrconstructors utils::dptr::dptr
         /// @param args: Arguments forwarded to `deleter_` succeeding a const reference to dptr
         /// (i.e. deleter_ is constructed with (const dptr&, std::forward(args)...)).
         /// @{
@@ -580,7 +580,7 @@ namespace utils {
         }
         /// @}
 
-        /// @name Destructors
+        /// @defgroup utilsdptrdestructors utils::dptr::~dptr
         /// Calls `destroy_and_delete()` if `ownership` is not `borrowed` and `ptr_` is not null.
         /// @{
         constexpr ~dptr() noexcept requires (ownership == borrowed) = default;
@@ -589,7 +589,7 @@ namespace utils {
         }
         /// @}
 
-        /// @name operator=
+        /// @defgroup utilsdptroperator= utils::dptr::operator=
         /// @{
         /// @brief Copy assignment operator.
         ///
@@ -718,7 +718,7 @@ namespace utils {
         constexpr void destroy() const noexcept requires (!is_array) {
             std::get<0>(ivtables_)->dtor(const_cast<void*>(ptr_));
         }
-        /// @name destroy_and_delete
+        /// @defgroup utilsdptrdestroy_and_delete utils::dptr::destroy_and_delete
         /// @brief Destroy the underlying object and delete `ptr_` using `deleter_`, before setting it to `nullptr`.
         ///
         /// The behavior is undefined if `ptr_ == nullptr`.
