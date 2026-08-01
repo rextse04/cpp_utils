@@ -164,14 +164,14 @@ namespace utils {
     /// @namespace utils::integral_behavior
     /// @brief Common strategies for integral arithmetics.
     namespace integral_behavior {
-        /// @brief An [<i>IntegerBehaviorProfileTemplate</i>](IntegerBehaviorProfile.md) for integral arithmetics.
+        /// @brief An [<i>IntegerBehaviorProfileTemplate</i>](IntegerBehaviorProfile.html) for integral arithmetics.
         template <integral_op_functors Funcs, integral_asg_op_functors AsgFuncs>
         struct profile {
             static constexpr auto op_functors = Funcs;
             static constexpr auto asg_op_functors = AsgFuncs;
         };
         /// @brief Default trait set for binary operators for `utils::integral_behavior::profile_from`.
-        /// @tparam CommonTypeTrait, ResultTrait: [<i>TypeTraits</i>](Trait.md).
+        /// @tparam CommonTypeTrait, ResultTrait: [<i>TypeTraits</i>](Trait.html).
         template <template<typename, typename> typename CommonTypeTrait, template<typename, typename> typename ResultTrait>
         struct default_binary_op_traits {
             /// `a @ b` passes the constraint if and only if `A`, `B` both satisfy `utils::lossless_convertible_to<C>`,
@@ -192,7 +192,7 @@ namespace utils {
             template <typename Self, typename A, typename B>
             struct constraint : std::conjunction<std::is_lvalue_reference<Self>, is_lossless_convertible<B, A>> {};
         };
-        /// @brief Convenience variable template to make an [<i>IntegerBehaviorProfile</i>](IntegerBehaviorProfile.md)
+        /// @brief Convenience variable template to make an [<i>IntegerBehaviorProfile</i>](IntegerBehaviorProfile.html)
         /// for integral arithmetics.
         ///
         /// For every relevant operator `@` and the corresponding functor `F` (supplied in template parameters),
@@ -363,14 +363,14 @@ namespace utils {
     /// @namespace utils::bit_behavior
     /// @brief Common strategies for bit operations.
     namespace bit_behavior {
-        /// @brief An [<i>IntegerBehaviorProfileTemplate</i>](IntegerBehaviorProfile.md) for bit operations.
+        /// @brief An [<i>IntegerBehaviorProfileTemplate</i>](IntegerBehaviorProfile.html) for bit operations.
         template <bit_op_functors Funcs, bit_asg_op_functors AsgFuncs>
         struct profile {
             static constexpr auto op_functors = Funcs;
             static constexpr auto asg_op_functors = AsgFuncs;
         };
         /// @brief Default trait set for binary operations for `utils::bit_behavior::profile_from`.
-        /// /// @tparam ResultTrait: [<i>TypeTraits</i>](Trait.md).
+        /// /// @tparam ResultTrait: [<i>TypeTraits</i>](Trait.html).
         template <template<typename, typename> typename ResultTrait>
         struct default_binary_op_traits {
             /// `a @ b` passes the constraint if and only if `a` and `b` have the same width.
@@ -389,7 +389,7 @@ namespace utils {
                 std::is_lvalue_reference<Self>,
                 std::bool_constant<width_of_v<std::remove_cvref_t<A>> == width_of_v<std::remove_cvref_t<B>>>> {};
         };
-        /// @brief Convenience variable template to make an [<i>IntegerBehaviorProfile</i>](IntegerBehaviorProfile.md)
+        /// @brief Convenience variable template to make an [<i>IntegerBehaviorProfile</i>](IntegerBehaviorProfile.html)
         /// for bit operations.
         ///
         /// For every relevant operator `@` and the corresponding functor `F` (supplied in template parameters),
@@ -435,7 +435,7 @@ namespace utils {
     /// @namespace utils::shift_behavior
     /// @brief Common strategies for bit shifts.
     namespace shift_behavior {
-        /// @brief An [<i>IntegerBehaviorProfileTemplate</i>](IntegerBehaviorProfile.md) for bit shifts.
+        /// @brief An [<i>IntegerBehaviorProfileTemplate</i>](IntegerBehaviorProfile.html) for bit shifts.
         template <shift_op_functors Funcs, shift_asg_op_functors AsgFuncs>
         struct profile {
             static constexpr auto op_functors = Funcs;
@@ -449,7 +449,7 @@ namespace utils {
                 typename AU = decltype(SelfD::to_underlying(std::declval<A>()))>
             struct result { using type = std::remove_cvref_t<Self>::template rebind<std::remove_cvref_t<AU>>; };
         };
-        /// @brief Convenience variable template to make an [<i>IntegerBehaviorProfile</i>](IntegerBehaviorProfile.md)
+        /// @brief Convenience variable template to make an [<i>IntegerBehaviorProfile</i>](IntegerBehaviorProfile.html)
         /// for bit shifts.
         ///
         /// For every relevant operator `@` and the corresponding functor `F` (supplied in template parameters),
@@ -586,9 +586,9 @@ namespace utils {
     /// it meets all requirements specified in the standard for <i>integer-like</i> types.
     /// Specialize `utils::is_integer_like` to declare as a type as <i>integer-like</i>.
     ///
-    /// @tparam IB: [<i>IntegerBehaviorProfile</i>](IntegerBehaviorProfile.md) for integral operations.
-    /// @tparam BB: [<i>IntegerBehaviorProfile</i>](IntegerBehaviorProfile.md) for bit operations.
-    /// @tparam SB: [<i>IntegerBehaviorProfile</i>](IntegerBehaviorProfile.md) for bit shifts.
+    /// @tparam IB: [<i>IntegerBehaviorProfile</i>](IntegerBehaviorProfile.html) for integral operations.
+    /// @tparam BB: [<i>IntegerBehaviorProfile</i>](IntegerBehaviorProfile.html) for bit operations.
+    /// @tparam SB: [<i>IntegerBehaviorProfile</i>](IntegerBehaviorProfile.html) for bit shifts.
     template <
         integer_like T,
         integral_behavior::profile IB = integral_behavior::sane,
@@ -668,7 +668,7 @@ namespace utils {
         }
         /// @}
 
-        /// @defgroup integeroperator<=> utils::integer::operator==, utils::integer::operator<=>
+        /// @defgroup integeroperatorcomparison utils::integer::operator==, utils::integer::operator<=>
         /// `utils::integer` can be compared with an `utils::integer_like` type if and only if
         /// both have the same signedness (either both signed, or both unsigned).
         /// @{
@@ -688,7 +688,7 @@ namespace utils {
         }
         /// @}
 
-        /// @defgroup integeroperator utils::integer::operator U&, utils::integer::operator const U&, utils::integer::operator U&&, utils::integer::operator const U&&
+        /// @defgroup integeroperatorconversion utils::integer::operator U&, utils::integer::operator const U&, utils::integer::operator U&&, utils::integer::operator const U&&
         /// @brief Conversion to references to underlying type.
         /// @{
         template <std::same_as<T> U>

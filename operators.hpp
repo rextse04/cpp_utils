@@ -100,7 +100,7 @@ namespace utils {
         struct result : std::decay<Self> {};
     };
 
-    /// @brief [<i>OperatorFunctorSetTemplate</i>](OperatorFunctorSet.md) for `utils::integral_ops`.
+    /// @brief [<i>OperatorFunctorSetTemplate</i>](OperatorFunctorSet.html) for `utils::integral_ops`.
     template <
         typename Plus = std::plus<>,
         typename Minus = std::minus<>,
@@ -117,7 +117,7 @@ namespace utils {
         BinaryTraits binary_traits{};
     };
     /// @brief Adds support for `a + b`, `a - b`, `a * b`, `a / b` and `a % b`.
-    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::integral_ops`.
+    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::integral_ops`.
     template <integral_op_functors Funcs = {}>
     struct integral_ops {
         UTILS_BINARY_OP(+, plus, integral_ops)
@@ -127,7 +127,7 @@ namespace utils {
         UTILS_BINARY_OP(%, modulus, integral_ops)
     };
 
-    /// @brief [<i>OperatorFunctorSetTemplate</i>](OperatorFunctorSet.md) for `utils::integral_asg_ops`.
+    /// @brief [<i>OperatorFunctorSetTemplate</i>](OperatorFunctorSet.html) for `utils::integral_asg_ops`.
     template <
         typename PlusAsg = plus_asg<>,
         typename MinusAsg = minus_asg<>,
@@ -144,7 +144,7 @@ namespace utils {
         AsgTraits asg_traits{};
     };
     /// @brief Adds support for `a += b`, `a -= b`, `a *= b`, `a /= b`, `a %= b`.
-    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::integral_asg_ops`.
+    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::integral_asg_ops`.
     template <integral_asg_op_functors Funcs = {}>
     struct integral_asg_ops {
         UTILS_ASG_OP(+=, plus_asg)
@@ -154,12 +154,12 @@ namespace utils {
         UTILS_ASG_OP(%=, modulus_asg)
     };
     /// @brief A convenience template inheriting from `utils::integral_full_ops` and `utils::integral_asg_ops`.
-    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::integral_ops`.
-    /// @tparam AsgFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::integral_asg_ops`.
+    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::integral_ops`.
+    /// @tparam AsgFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::integral_asg_ops`.
     template <integral_op_functors Funcs = {}, integral_asg_op_functors AsgFuncs = {}>
     struct integral_full_ops : integral_ops<Funcs>, integral_asg_ops<AsgFuncs> {};
 
-    /// @brief [<i>OperatorFunctorSetTemplate</i>](OperatorFunctorSet.md) for `utils::bit_op`.
+    /// @brief [<i>OperatorFunctorSetTemplate</i>](OperatorFunctorSet.html) for `utils::bit_op`.
     template <
         typename BitAnd = std::bit_and<>,
         typename BitOr = std::bit_or<>,
@@ -176,7 +176,7 @@ namespace utils {
         UnaryTraits unary_traits{};
     };
     /// @brief Adds support for `a & b`, `a | b`, `a ^ b` and `~t`.
-    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::bit_ops`.
+    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::bit_ops`.
     template <bit_op_functors Funcs = {}>
     struct bit_ops {
         UTILS_BINARY_OP(&, bit_and, bit_ops)
@@ -185,7 +185,7 @@ namespace utils {
         UTILS_UNARY_OP(~, bit_not)
     };
 
-    /// @brief [<i>OperatorFunctorSetTemplate</i>](OperatorFunctorSet.md) for `utils::bit_asg_ops`.
+    /// @brief [<i>OperatorFunctorSetTemplate</i>](OperatorFunctorSet.html) for `utils::bit_asg_ops`.
     template <
         typename BitAndAsg = bit_and_asg<>,
         typename BitOrAsg = bit_or_asg<>,
@@ -198,7 +198,7 @@ namespace utils {
         AsgTraits asg_traits{};
     };
     /// @brief Adds support for `a &= b`, `a |= b` and `a ^= b`.
-    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::bit_asg_ops`.
+    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::bit_asg_ops`.
     template <bit_asg_op_functors Funcs = {}>
     struct bit_asg_ops {
         UTILS_ASG_OP(&=, bit_and_asg)
@@ -206,12 +206,12 @@ namespace utils {
         UTILS_ASG_OP(^=, bit_xor_asg)
     };
     /// @brief A convenience template inheriting from `utils::bit_ops` and `utils::bit_asg_ops`.
-    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::bit_ops`.
-    /// @tparam AsgFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::bit_asg_ops`.
+    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::bit_ops`.
+    /// @tparam AsgFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::bit_asg_ops`.
     template <bit_op_functors Funcs = {}, bit_asg_op_functors AsgFuncs = {}>
     struct bit_full_ops : bit_ops<Funcs>, bit_asg_ops<AsgFuncs> {};
 
-    /// @brief [<i>OperatorFunctorSetTemplate</i>](OperatorFunctorSet.md) for `utils::shift_ops`.
+    /// @brief [<i>OperatorFunctorSetTemplate</i>](OperatorFunctorSet.html) for `utils::shift_ops`.
     template <
         typename ShiftLeft = shift_left<>,
         typename ShiftRight = shift_right<>,
@@ -222,14 +222,14 @@ namespace utils {
         BinaryTraits binary_traits{};
     };
     /// @brief Adds support for `a << b` and `a >> b`.
-    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::shift_ops`.
+    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::shift_ops`.
     template <shift_op_functors Funcs = {}>
     struct shift_ops {
         UTILS_BINARY_OP(<<, shift_left, shift_ops)
         UTILS_BINARY_OP(>>, shift_right, shift_ops)
     };
 
-    /// @brief [<i>OperatorFunctorSetTemplate</i>](OperatorFunctorSet.md) for `utils::shift_asg_ops`.
+    /// @brief [<i>OperatorFunctorSetTemplate</i>](OperatorFunctorSet.html) for `utils::shift_asg_ops`.
     template <
         typename ShiftLeftAsg = shift_left_asg<>,
         typename ShiftRightAsg = shift_right_asg<>,
@@ -240,19 +240,19 @@ namespace utils {
         AsgTraits asg_traits{};
     };
     /// @brief Adds support for `a <<= b` and `a >>= b`.
-    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::shift_asg_ops`.
+    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::shift_asg_ops`.
     template <shift_asg_op_functors Funcs = {}>
     struct shift_asg_ops {
         UTILS_ASG_OP(<<=, shift_left_asg)
         UTILS_ASG_OP(>>=, shift_right_asg)
     };
     /// @brief A convenience template inheriting from `utils::shift_ops` and `utils::shift_asg_ops`.
-    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::shift_ops`.
-    /// @tparam AsgFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::shift_asg_ops`.
+    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::shift_ops`.
+    /// @tparam AsgFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::shift_asg_ops`.
     template <shift_op_functors Funcs = {}, shift_asg_op_functors AsgFuncs = {}>
     struct shift_full_ops : shift_ops<Funcs>, shift_asg_ops<AsgFuncs> {};
 
-    /// @brief [<i>OperatorFunctorSetTemplate</i>](OperatorFunctorSet.md) for `utils::sign_ops`.
+    /// @brief [<i>OperatorFunctorSetTemplate</i>](OperatorFunctorSet.html) for `utils::sign_ops`.
     template <
         typename Neg = std::negate<>,
         typename UnaryTraits = default_unary_op_traits>
@@ -261,13 +261,13 @@ namespace utils {
         UnaryTraits unary_traits{};
     };
     /// @brief Adds support for `+t` and `-t`.
-    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::sign_ops`.
+    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::sign_ops`.
     template <sign_op_functors Funcs = {}>
     struct sign_ops {
         UTILS_UNARY_OP(-, negate)
     };
 
-    /// @brief [<i>OperatorFunctorSetTemplate</i>](OperatorFunctorSet.md) for `utils::fix_ops`.
+    /// @brief [<i>OperatorFunctorSetTemplate</i>](OperatorFunctorSet.html) for `utils::fix_ops`.
     template <
         typename PreInc = pre_increment<>,
         typename PostInc = post_increment<>,
@@ -284,7 +284,7 @@ namespace utils {
         UnaryTraits unary_traits{};
     };
     /// @brief Adds support for `++t`, `t++`, `--t` and `t--`.
-    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::fix_ops`.
+    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::fix_ops`.
     template <fix_op_functors Funcs = {}>
     struct fix_ops {
         UTILS_FIX_OP(++, increment)
@@ -293,14 +293,14 @@ namespace utils {
 
     /// @brief A convenience template inheriting from
     /// `utils::integral_full_ops`, `utils::bit_full_ops`, `utils::shift_full_ops`, `utils::sign_ops` and `utils::fix_ops`.
-    /// @tparam IntFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::integral_ops`.
-    /// @tparam IntAsgFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::integral_asg_ops`.
-    /// @tparam BitFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::bit_ops`.
-    /// @tparam BitAsgFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::bit_asg_ops`.
-    /// @tparam ShiftFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::shift_ops`.
-    /// @tparam ShiftAsgFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::shift_asg_ops`.
-    /// @tparam SignFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::sign_ops`.
-    /// @tparam FixFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::fix_ops`.
+    /// @tparam IntFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::integral_ops`.
+    /// @tparam IntAsgFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::integral_asg_ops`.
+    /// @tparam BitFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::bit_ops`.
+    /// @tparam BitAsgFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::bit_asg_ops`.
+    /// @tparam ShiftFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::shift_ops`.
+    /// @tparam ShiftAsgFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::shift_asg_ops`.
+    /// @tparam SignFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::sign_ops`.
+    /// @tparam FixFuncs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::fix_ops`.
     template <
         integral_op_functors IntFuncs = {}, integral_asg_op_functors IntAsgFuncs = {},
         bit_op_functors BitFuncs = {}, bit_asg_op_functors BitAsgFuncs = {},
@@ -314,7 +314,7 @@ namespace utils {
         sign_ops<SignFuncs>,
         fix_ops<FixFuncs> {};
 
-    /// @brief [<i>OperatorFunctorSetTemplate</i>](OperatorFunctorSet.md) for `utils::logical_ops`.
+    /// @brief [<i>OperatorFunctorSetTemplate</i>](OperatorFunctorSet.html) for `utils::logical_ops`.
     template <
         typename And = std::logical_and<>,
         typename Or = std::logical_or<>,
@@ -329,7 +329,7 @@ namespace utils {
         UnaryTraits unary_traits{};
     };
     /// @brief Adds support for `a && b`, `a || b` and `!t`.
-    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.md) for `utils::logical_ops`.
+    /// @tparam Funcs: An [<i>OperatorFunctorSet</i>](OperatorFunctorSet.html) for `utils::logical_ops`.
     template <logical_op_functors Funcs = {}>
     struct logical_ops {
         UTILS_BINARY_OP(&&, logical_and, logical_ops)
