@@ -128,7 +128,7 @@ var annotated_dup =
         [ "result", "structutils_1_1default__unary__op__traits_1_1result.html", null ]
       ] ],
       [ "disable_op_t", "structutils_1_1disable__op__t.html", null ],
-      [ "epsilon_of", "structutils_1_1epsilon__of.html", null ],
+      [ "epsilon_of", "group__utils.html#structutils_1_1epsilon__of", null ],
       [ "filter_iterator", "classutils_1_1filter__iterator.html", "classutils_1_1filter__iterator" ],
       [ "fix_op_functors", "structutils_1_1fix__op__functors.html", "structutils_1_1fix__op__functors" ],
       [ "fix_ops", "structutils_1_1fix__ops.html", null ],
@@ -147,8 +147,8 @@ var annotated_dup =
       [ "interval_endpoint", "structutils_1_1interval__endpoint.html", "structutils_1_1interval__endpoint" ],
       [ "is_equiv", "structutils_1_1is__equiv.html", null ],
       [ "is_explicitly_convertible", "structutils_1_1is__explicitly__convertible.html", null ],
-      [ "is_integer_like", "structutils_1_1is__integer__like.html", null ],
-      [ "is_same_sign", "structutils_1_1is__same__sign.html", null ],
+      [ "is_integer_like", "group__utils.html#structutils_1_1is__integer__like", null ],
+      [ "is_same_sign", "group__utils.html#structutils_1_1is__same__sign", null ],
       [ "is_tagged", "structutils_1_1is__tagged.html", null ],
       [ "is_template_instance", "structutils_1_1is__template__instance.html", null ],
       [ "is_template_instance< Tmpl, Tmpl< Ts... > >", "structutils_1_1is__template__instance_3_01Tmpl_00_01Tmpl_3_01Ts_8_8_8_01_4_01_4.html", null ],
@@ -179,7 +179,7 @@ var annotated_dup =
       [ "qualifiers_of", "structutils_1_1qualifiers__of.html", null ],
       [ "result_of", "structutils_1_1result__of.html", null ],
       [ "result_of< R(Args...)>", "structutils_1_1result__of_3_01R_07Args_8_8_8_08_4.html", "structutils_1_1result__of_3_01R_07Args_8_8_8_08_4" ],
-      [ "sane_common_type", "structutils_1_1sane__common__type.html", null ],
+      [ "sane_common_type", "group__utils.html#structutils_1_1sane__common__type", null ],
       [ "shift_asg_op_functors", "structutils_1_1shift__asg__op__functors.html", "structutils_1_1shift__asg__op__functors" ],
       [ "shift_asg_ops", "structutils_1_1shift__asg__ops.html", null ],
       [ "shift_full_ops", "structutils_1_1shift__full__ops.html", null ],
@@ -204,7 +204,7 @@ var annotated_dup =
       [ "unique_resource", "classutils_1_1unique__resource.html", "classutils_1_1unique__resource" ],
       [ "unique_resource_sync_t", "structutils_1_1unique__resource__sync__t.html", null ],
       [ "visitor", "classutils_1_1visitor.html", "classutils_1_1visitor" ],
-      [ "width_of", "structutils_1_1width__of.html", null ],
+      [ "width_of", "group__utils.html#structutils_1_1width__of", null ],
       [ "with", "structutils_1_1with.html", "structutils_1_1with" ]
     ] ]
 ];

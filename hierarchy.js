@@ -42,7 +42,7 @@ var hierarchy =
     [ "std::bool_constant", null, [
       [ "utils::bit_behavior::default_binary_op_traits< ResultTrait >::constraint< typename, A, B >", "structutils_1_1bit__behavior_1_1default__binary__op__traits_1_1constraint.html", null ],
       [ "utils::is_explicitly_convertible< From, To >", "structutils_1_1is__explicitly__convertible.html", null ],
-      [ "utils::is_same_sign< T, U, TInfo, UInfo >", "structutils_1_1is__same__sign.html", null ],
+      [ "utils::is_same_sign< T, U, TInfo, UInfo >", "group__utils.html#structutils_1_1is__same__sign", null ],
       [ "utils::is_tagged< Tag, T >", "structutils_1_1is__tagged.html", null ],
       [ "utils::meta::contained_in< Tuple, T, PredTrait, Begin, End >", "structutils_1_1meta_1_1contained__in.html", [
         [ "utils::meta::contained_in_trait< Tuple, T >", "structutils_1_1meta_1_1contained__in__trait.html", null ]
@@ -136,14 +136,14 @@ var hierarchy =
     ] ],
     [ "std::integral_constant", null, [
       [ "utils::arity_of< R(Args...)>", "structutils_1_1arity__of_3_01R_07Args_8_8_8_08_4.html", null ],
-      [ "utils::epsilon_of< T, Info >", "structutils_1_1epsilon__of.html", null ],
+      [ "utils::epsilon_of< T, Info >", "group__utils.html#structutils_1_1epsilon__of", null ],
       [ "utils::meta::product< ValueResults >", "structutils_1_1meta_1_1product.html", null ],
       [ "utils::meta::search< Tuple, T, PredTrait, Begin, End >", "structutils_1_1meta_1_1search.html", [
         [ "utils::meta::search_trait< Tuple, T >", "structutils_1_1meta_1_1search__trait.html", null ]
       ] ],
       [ "utils::meta::search< Tuple, T, PredTrait, End, End >", "structutils_1_1meta_1_1search_3_01Tuple_00_01T_00_01PredTrait_00_01End_00_01End_01_4.html", null ],
       [ "utils::meta::sum< ValueResults >", "structutils_1_1meta_1_1sum.html", null ],
-      [ "utils::width_of< T, Info >", "structutils_1_1width__of.html", null ]
+      [ "utils::width_of< T, Info >", "group__utils.html#structutils_1_1width__of", null ]
     ] ],
     [ "std::integral_constant< std::size_t,(Idx >=0) ? Idx :(Idx+std::tuple_size_v< Tuple >)>", null, [
       [ "utils::meta::actual_index< Tuple, Idx >", "structutils_1_1meta_1_1actual__index.html", null ]
@@ -230,7 +230,7 @@ var hierarchy =
     [ "utils::result_of< F >", "structutils_1_1result__of.html", null ],
     [ "utils::result_of< R(Args...)>", "structutils_1_1result__of_3_01R_07Args_8_8_8_08_4.html", null ],
     [ "utils::detail::sane_common_type< T, U >", null, [
-      [ "utils::sane_common_type< T, U >", "structutils_1_1sane__common__type.html", null ]
+      [ "utils::sane_common_type< T, U >", "group__utils.html#structutils_1_1sane__common__type", null ]
     ] ],
     [ "utils::meta::set< Var, Value, Version >", "classutils_1_1meta_1_1set.html", null ],
     [ "utils::shift_asg_op_functors< ShiftLeftAsg, ShiftRightAsg, AsgTraits >", "structutils_1_1shift__asg__op__functors.html", null ],
@@ -292,7 +292,7 @@ var hierarchy =
       [ "utils::default_binary_op_traits::constraint< typename, typename, typename >", "structutils_1_1default__binary__op__traits_1_1constraint.html", null ],
       [ "utils::default_unary_op_traits::constraint< typename >", "structutils_1_1default__unary__op__traits_1_1constraint.html", null ],
       [ "utils::detail::is_integer_like< T >", null, [
-        [ "utils::is_integer_like< T >", "structutils_1_1is__integer__like.html", null ]
+        [ "utils::is_integer_like< T >", "group__utils.html#structutils_1_1is__integer__like", null ]
       ] ],
       [ "utils::is_template_instance< Tmpl, Tmpl< Ts... > >", "structutils_1_1is__template__instance_3_01Tmpl_00_01Tmpl_3_01Ts_8_8_8_01_4_01_4.html", null ],
       [ "utils::meta::is_tuple< std::tuple< Ts... > >", "structutils_1_1meta_1_1is__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4.html", null ]

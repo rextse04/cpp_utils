@@ -47,58 +47,44 @@ using \mbox{\hyperlink{structutils_1_1integer_a5076aacc7cd346837490c2e1e31043e0}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+constexpr \mbox{\hyperlink{group__utils_gaa02e1252b219efc689eeb9e0db2eb689}{integer}} ()=default
+\item 
+{\footnotesize template$<$typename Other , typename U  = decltype(to\+\_\+underlying(std\+::declval$<$\+Other\&\&$>$()))$>$ }\\\mbox{\hyperlink{group__utils_gaf70aa92e30b685f150ed14eedb1474b6}{explicit}} (!lossless\+\_\+convertible\+\_\+to$<$ U, T $>$) const expr \mbox{\hyperlink{structutils_1_1integer}{integer}}(Other \&\&other) noexcept(std\+::is\+\_\+nothrow\+\_\+constructible\+\_\+v$<$ T, U $>$)
+\begin{DoxyCompactList}\small\item\em Conversion from a (possibly wrapped) integer-\/like value {\ttfamily other}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Other $>$ \newline
+requires (std\+::is\+\_\+floating\+\_\+point\+\_\+v$<$std\+::remove\+\_\+cvref\+\_\+t$<$Other$>$$>$)}\\constexpr \mbox{\hyperlink{group__utils_ga91c823090d72a537bd3c956431720387}{integer}} (Other \&\&other) noexcept(std\+::is\+\_\+nothrow\+\_\+constructible\+\_\+v$<$ T, Other \&\& $>$)
+\begin{DoxyCompactList}\small\item\em Conversion from a floating point value {\ttfamily other}. The constructor is explicit as there is potential precision loss. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Other , typename... Ts, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
+requires ((std\+::is\+\_\+arithmetic\+\_\+v$<$OtherD$>$ $\vert$$\vert$ \mbox{\hyperlink{group__utils_ga3e785f8bbe5579cdb6684c29d19d4fe7}{is\+\_\+integer\+\_\+like\+\_\+v}}$<$OtherD$>$) \&\& sizeof...(Ts) == 0)}\\consteval \mbox{\hyperlink{group__utils_ga55a3f0ae8dc08e5697d2cf1233302463}{integer}} (Other \&\&other, Ts...)
+\begin{DoxyCompactList}\small\item\em This allows implicit conversions from numbers known at compile time. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Self , typename Other , typename SelfD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Self$>$, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
+requires (\mbox{\hyperlink{group__utils_gae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)}\\constexpr decltype(auto) \mbox{\hyperlink{group__utils_gaf85e7fb0e0b45e09342748f906eace2f}{operator==}} (this Self \&\&self, Other \&\&other) noexcept(noexcept(std\+::forward\+\_\+like$<$ Self $>$(self.\+under\+\_\+)==\mbox{\hyperlink{group__utils_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}}(std\+::forward$<$ Other $>$(other))))
+\item 
+{\footnotesize template$<$typename Self , typename Other , typename SelfD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Self$>$, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
+requires (\mbox{\hyperlink{group__utils_gae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)}\\constexpr decltype(auto) \mbox{\hyperlink{group__utils_ga917fdd63d11629b7a48f77bb20bbb08a}{operator$<$=$>$}} (this Self \&\&self, Other \&\&other) noexcept(noexcept(std\+::forward\+\_\+like$<$ Self $>$(self.\+under\+\_\+)$<$=$>$ \mbox{\hyperlink{group__utils_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}}(std\+::forward$<$ Other $>$(other))))
+\item 
+{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__utils_ga527b405c4834bc14b214685992a408a6}{operator U\&}} () \&noexcept
+\item 
+{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__utils_ga44880db13000949ef632a1e7b5d8ea25}{operator const U \&}} () const \&noexcept
+\item 
+{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__utils_gaa8e0febb0ee6e7363027b03f33e507d1}{operator U\&\&}} () \&\&noexcept
+\item 
+{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__utils_gae93bf5d9fe4d50c5143053abab45416e}{operator const U \&\&}} () const \&\&noexcept
+\item 
 {\footnotesize template$<$typename U $>$ \newline
-requires (!std\+::is\+\_\+same\+\_\+v$<$U, T$>$ \&\& \mbox{\hyperlink{namespaceutils_aeeeecd5e5e48d738f1f779d9b8f46dcc}{is\+\_\+explicitly\+\_\+convertible\+\_\+v}}$<$T, U$>$) \mbox{\hyperlink{structutils_1_1integer_af70aa92e30b685f150ed14eedb1474b6}{explicit}}(!lossless\+\_\+convertible\+\_\+to$<$T, U$>$)}\\constexpr \mbox{\hyperlink{structutils_1_1integer_a4d5d4d51a43291632ad582c69624a4e0}{operator U}} () const noexcept
+requires (!std\+::is\+\_\+same\+\_\+v$<$U, T$>$ \&\& \mbox{\hyperlink{namespaceutils_aeeeecd5e5e48d738f1f779d9b8f46dcc}{is\+\_\+explicitly\+\_\+convertible\+\_\+v}}$<$T, U$>$) \mbox{\hyperlink{group__utils_gaf70aa92e30b685f150ed14eedb1474b6}{explicit}}(!lossless\+\_\+convertible\+\_\+to$<$T, U$>$)}\\constexpr \mbox{\hyperlink{structutils_1_1integer_a4d5d4d51a43291632ad582c69624a4e0}{operator U}} () const noexcept
 \begin{DoxyCompactList}\small\item\em Conversion to integer-\/like type {\ttfamily U}. \end{DoxyCompactList}\item 
 constexpr T \mbox{\hyperlink{structutils_1_1integer_a53e0a6722b9d08f5ea0440c2d31959d3}{operator+}} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the underlying object. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\textbf{ }\par
-\begin{DoxyCompactItemize}
-\item 
-constexpr \mbox{\hyperlink{structutils_1_1integer_aa02e1252b219efc689eeb9e0db2eb689}{integer}} ()=default
-\begin{DoxyCompactList}\small\item\em Default-\/initializes {\ttfamily under\+\_\+}. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Other , typename U  = decltype(to\+\_\+underlying(std\+::declval$<$\+Other\&\&$>$()))$>$ }\\\mbox{\hyperlink{structutils_1_1integer_af70aa92e30b685f150ed14eedb1474b6}{explicit}} (!lossless\+\_\+convertible\+\_\+to$<$ U, T $>$) const expr \mbox{\hyperlink{structutils_1_1integer}{integer}}(Other \&\&other) noexcept(std\+::is\+\_\+nothrow\+\_\+constructible\+\_\+v$<$ T, U $>$)
-\begin{DoxyCompactList}\small\item\em Conversion from a (possibly wrapped) integer-\/like value {\ttfamily other}. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Other $>$ \newline
-requires (std\+::is\+\_\+floating\+\_\+point\+\_\+v$<$std\+::remove\+\_\+cvref\+\_\+t$<$Other$>$$>$)}\\constexpr \mbox{\hyperlink{structutils_1_1integer_a91c823090d72a537bd3c956431720387}{integer}} (Other \&\&other) noexcept(std\+::is\+\_\+nothrow\+\_\+constructible\+\_\+v$<$ T, Other \&\& $>$)
-\begin{DoxyCompactList}\small\item\em Conversion from a floating point value {\ttfamily other}. The constructor is explicit as there is potential precision loss. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Other , typename... Ts, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
-requires ((std\+::is\+\_\+arithmetic\+\_\+v$<$OtherD$>$ $\vert$$\vert$ \mbox{\hyperlink{namespaceutils_a3e785f8bbe5579cdb6684c29d19d4fe7}{is\+\_\+integer\+\_\+like\+\_\+v}}$<$OtherD$>$) \&\& sizeof...(Ts) == 0)}\\consteval \mbox{\hyperlink{structutils_1_1integer_a55a3f0ae8dc08e5697d2cf1233302463}{integer}} (Other \&\&other, Ts...)
-\begin{DoxyCompactList}\small\item\em This allows implicit conversions from numbers known at compile time. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-\textbf{ }\par
-\begin{DoxyCompactItemize}
-\item 
-{\footnotesize template$<$typename Self , typename Other , typename SelfD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Self$>$, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
-requires (\mbox{\hyperlink{namespaceutils_ae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)}\\constexpr decltype(auto) \mbox{\hyperlink{structutils_1_1integer_af85e7fb0e0b45e09342748f906eace2f}{operator==}} (this Self \&\&self, Other \&\&other) noexcept(noexcept(std\+::forward\+\_\+like$<$ Self $>$(self.\+under\+\_\+)==\mbox{\hyperlink{structutils_1_1integer_adf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}}(std\+::forward$<$ Other $>$(other))))
-\item 
-{\footnotesize template$<$typename Self , typename Other , typename SelfD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Self$>$, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
-requires (\mbox{\hyperlink{namespaceutils_ae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)}\\constexpr decltype(auto) \mbox{\hyperlink{structutils_1_1integer_a917fdd63d11629b7a48f77bb20bbb08a}{operator$<$=$>$}} (this Self \&\&self, Other \&\&other) noexcept(noexcept(std\+::forward\+\_\+like$<$ Self $>$(self.\+under\+\_\+)$<$=$>$ \mbox{\hyperlink{structutils_1_1integer_adf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}}(std\+::forward$<$ Other $>$(other))))
-\end{DoxyCompactItemize}
-
-\textbf{ }\par
-\begin{DoxyCompactItemize}
-\item 
-{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{structutils_1_1integer_a527b405c4834bc14b214685992a408a6}{operator U\&}} () \&noexcept
-\begin{DoxyCompactList}\small\item\em Conversion to references to underlying type. \end{DoxyCompactList}\item 
-{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{structutils_1_1integer_a44880db13000949ef632a1e7b5d8ea25}{operator const U \&}} () const \&noexcept
-\item 
-{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{structutils_1_1integer_aa8e0febb0ee6e7363027b03f33e507d1}{operator U\&\&}} () \&\&noexcept
-\item 
-{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{structutils_1_1integer_ae93bf5d9fe4d50c5143053abab45416e}{operator const U \&\&}} () const \&\&noexcept
-\end{DoxyCompactItemize}
-
 \doxysubsection*{Static Public Member Functions}
-\textbf{ }\par
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename U $>$ \newline
-requires (\mbox{\hyperlink{namespaceutils_a3e785f8bbe5579cdb6684c29d19d4fe7}{is\+\_\+integer\+\_\+like\+\_\+v}}$<$std\+::remove\+\_\+cvref\+\_\+t$<$U$>$$>$)}\\static constexpr U \&\& \mbox{\hyperlink{structutils_1_1integer_adf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}} (U \&\&x) noexcept
-\begin{DoxyCompactList}\small\item\em Get a reference to the underlying object of {\ttfamily x}. \end{DoxyCompactList}\item 
+requires (\mbox{\hyperlink{group__utils_ga3e785f8bbe5579cdb6684c29d19d4fe7}{is\+\_\+integer\+\_\+like\+\_\+v}}$<$std\+::remove\+\_\+cvref\+\_\+t$<$U$>$$>$)}\\static constexpr U \&\& \mbox{\hyperlink{group__utils_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}} (U \&\&x) noexcept
+\item 
 {\footnotesize template$<$tagged$<$ integer\+\_\+tag $>$ U$>$ \newline
-requires (std\+::is\+\_\+same\+\_\+v$<$typename std\+::remove\+\_\+cvref\+\_\+t$<$U$>$\+::template \mbox{\hyperlink{structutils_1_1integer_a2e883760061d1606910aa6ce29c694e5}{rebind}}$<$T$>$, \mbox{\hyperlink{structutils_1_1integer}{integer}}$>$)}\\static constexpr decltype(auto) \mbox{\hyperlink{structutils_1_1integer_a4f01cd9e4066ed5556d2c53d79e35d56}{to\+\_\+underlying}} (U \&\&x) noexcept
+requires (std\+::is\+\_\+same\+\_\+v$<$typename std\+::remove\+\_\+cvref\+\_\+t$<$U$>$\+::template \mbox{\hyperlink{structutils_1_1integer_a2e883760061d1606910aa6ce29c694e5}{rebind}}$<$T$>$, \mbox{\hyperlink{structutils_1_1integer}{integer}}$>$)}\\static constexpr decltype(auto) \mbox{\hyperlink{structutils_1_1integer_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}} (U \&\&x) noexcept
 \end{DoxyCompactItemize}
-
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -128,7 +114,7 @@ An integer wrapper with added type safety and customizable behavior in arithmeti
 
 This class template is meant as a near drop-\/in replacement of built-\/in integers in the language. It provides better type safety\+: an explicit conversion call is needed when there is potential value change; and fully customizable behavior in arithmetic operations, which is controlled by the behavior profiles in template parameters. One may, for example, define overflow and underflow for signed integers to provide better safety guarantees.
 
-The template is also flexible, in that the underlying type {\ttfamily T} can be any {\itshape integer-\/like} type. In other words, it is possible to use the class template on a non-\/standard big integer type as long as it meets all requirements specified in the standard for {\itshape integer-\/like} types. Specialize {\ttfamily \mbox{\hyperlink{structutils_1_1is__integer__like}{utils\+::is\+\_\+integer\+\_\+like}}} to declare as a type as {\itshape integer-\/like}.
+The template is also flexible, in that the underlying type {\ttfamily T} can be any {\itshape integer-\/like} type. In other words, it is possible to use the class template on a non-\/standard big integer type as long as it meets all requirements specified in the standard for {\itshape integer-\/like} types. Specialize {\ttfamily \mbox{\hyperlink{group__utils_structutils_1_1is__integer__like}{utils\+::is\+\_\+integer\+\_\+like}}} to declare as a type as {\itshape integer-\/like}.
 
 
 \begin{DoxyTemplParams}{Template Parameters}
@@ -218,110 +204,14 @@ Definition at line \mbox{\hyperlink{integer_8hpp_source_l00605}{605}} of file \m
 
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{structutils_1_1integer_aa02e1252b219efc689eeb9e0db2eb689}\label{structutils_1_1integer_aa02e1252b219efc689eeb9e0db2eb689}} 
-\index{utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}!integer@{integer}}
-\index{integer@{integer}!utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}}
-\doxysubsubsection{\texorpdfstring{integer()}{integer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
-constexpr \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::\mbox{\hyperlink{structutils_1_1integer}{integer}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [default]}}
-
-
-
-Default-\/initializes {\ttfamily under\+\_\+}. 
-
-\char`\"{}@defgroup utils\+::integer\+::integer utils\+::integer\+::integer\char`\"{} \mbox{\Hypertarget{structutils_1_1integer_a91c823090d72a537bd3c956431720387}\label{structutils_1_1integer_a91c823090d72a537bd3c956431720387}} 
-\index{utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}!integer@{integer}}
-\index{integer@{integer}!utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}}
-\doxysubsubsection{\texorpdfstring{integer()}{integer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
-template$<$typename Other $>$ \newline
-requires (std\+::is\+\_\+floating\+\_\+point\+\_\+v$<$std\+::remove\+\_\+cvref\+\_\+t$<$Other$>$$>$)\\
-constexpr \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::\mbox{\hyperlink{structutils_1_1integer}{integer}} (\begin{DoxyParamCaption}\item[{Other \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
-
-
-
-Conversion from a floating point value {\ttfamily other}. The constructor is explicit as there is potential precision loss. 
-
-
-
-Definition at line \mbox{\hyperlink{integer_8hpp_source_l00655}{655}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
-
-\mbox{\Hypertarget{structutils_1_1integer_a55a3f0ae8dc08e5697d2cf1233302463}\label{structutils_1_1integer_a55a3f0ae8dc08e5697d2cf1233302463}} 
-\index{utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}!integer@{integer}}
-\index{integer@{integer}!utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}}
-\doxysubsubsection{\texorpdfstring{integer()}{integer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
-template$<$typename Other , typename... Ts, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
-requires ((std\+::is\+\_\+arithmetic\+\_\+v$<$OtherD$>$ $\vert$$\vert$ \mbox{\hyperlink{namespaceutils_a3e785f8bbe5579cdb6684c29d19d4fe7}{is\+\_\+integer\+\_\+like\+\_\+v}}$<$OtherD$>$) \&\& sizeof...(Ts) == 0)\\
-consteval \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::\mbox{\hyperlink{structutils_1_1integer}{integer}} (\begin{DoxyParamCaption}\item[{Other \&\&}]{other,  }\item[{Ts...}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-This allows implicit conversions from numbers known at compile time. 
-
-
-\begin{DoxyExceptions}{Exceptions}
-{\em std\+::overflow\+\_\+error} & (at compile time) if {\ttfamily other} cannot be represented by {\ttfamily T}, after wrapping around {\ttfamily other} if {\ttfamily T} is unsigned. \\
-\hline
-\end{DoxyExceptions}
-\begin{DoxyRemark}{Remarks}
-{\ttfamily Ts} exists solely to lower the priority of this constructor in overload resolution. 
-\end{DoxyRemark}
-
-
-Definition at line \mbox{\hyperlink{integer_8hpp_source_l00663}{663}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
-
-
-
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{structutils_1_1integer_af70aa92e30b685f150ed14eedb1474b6}\label{structutils_1_1integer_af70aa92e30b685f150ed14eedb1474b6}} 
-\index{utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}!explicit@{explicit}}
-\index{explicit@{explicit}!utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}}
-\doxysubsubsection{\texorpdfstring{explicit()}{explicit()}}
-{\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
-template$<$typename Other , typename U  = decltype(to\+\_\+underlying(std\+::declval$<$\+Other\&\&$>$()))$>$ \\
-\mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::explicit (\begin{DoxyParamCaption}\item[{!lossless\+\_\+convertible\+\_\+to$<$ U, T $>$}]{ }\end{DoxyParamCaption}) const \&\&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
-
-
-
-Conversion from a (possibly wrapped) integer-\/like value {\ttfamily other}. 
-
-If {\ttfamily T} is unsigned and {\ttfamily other \texorpdfstring{$<$}{<} 0}, it wraps around. Explicit if {\ttfamily \mbox{\hyperlink{conceptutils_1_1lossless__convertible__to}{utils\+::lossless\+\_\+convertible\+\_\+to}}\texorpdfstring{$<$}{<}U, T\texorpdfstring{$>$}{>}} is false. 
-
-Definition at line \mbox{\hyperlink{integer_8hpp_source_l00648}{648}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
-
-\mbox{\Hypertarget{structutils_1_1integer_a44880db13000949ef632a1e7b5d8ea25}\label{structutils_1_1integer_a44880db13000949ef632a1e7b5d8ea25}} 
-\index{utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}!operator const U \&@{operator const U \&}}
-\index{operator const U \&@{operator const U \&}!utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}}
-\doxysubsubsection{\texorpdfstring{operator const U \&()}{operator const U \&()}}
-{\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
-template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ \\
-constexpr \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::operator const U \& (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const \&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
-
-
-
-Definition at line \mbox{\hyperlink{integer_8hpp_source_l00697}{697}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
-
-\mbox{\Hypertarget{structutils_1_1integer_ae93bf5d9fe4d50c5143053abab45416e}\label{structutils_1_1integer_ae93bf5d9fe4d50c5143053abab45416e}} 
-\index{utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}!operator const U \&\&@{operator const U \&\&}}
-\index{operator const U \&\&@{operator const U \&\&}!utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}}
-\doxysubsubsection{\texorpdfstring{operator const U \&\&()}{operator const U \&\&()}}
-{\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
-template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ \\
-constexpr \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::operator const U \&\& (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const \&\&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
-
-
-
-Definition at line \mbox{\hyperlink{integer_8hpp_source_l00701}{701}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
-
 \mbox{\Hypertarget{structutils_1_1integer_a4d5d4d51a43291632ad582c69624a4e0}\label{structutils_1_1integer_a4d5d4d51a43291632ad582c69624a4e0}} 
 \index{utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}!operator U@{operator U}}
 \index{operator U@{operator U}!utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}}
 \doxysubsubsection{\texorpdfstring{operator U()}{operator U()}}
 {\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
 template$<$typename U $>$ \newline
-requires (!std\+::is\+\_\+same\+\_\+v$<$U, T$>$ \&\& \mbox{\hyperlink{namespaceutils_aeeeecd5e5e48d738f1f779d9b8f46dcc}{is\+\_\+explicitly\+\_\+convertible\+\_\+v}}$<$T, U$>$) \mbox{\hyperlink{structutils_1_1integer_af70aa92e30b685f150ed14eedb1474b6}{explicit}}(!lossless\+\_\+convertible\+\_\+to$<$T, U$>$)\\
+requires (!std\+::is\+\_\+same\+\_\+v$<$U, T$>$ \&\& \mbox{\hyperlink{namespaceutils_aeeeecd5e5e48d738f1f779d9b8f46dcc}{is\+\_\+explicitly\+\_\+convertible\+\_\+v}}$<$T, U$>$) \mbox{\hyperlink{group__utils_gaf70aa92e30b685f150ed14eedb1474b6}{explicit}}(!lossless\+\_\+convertible\+\_\+to$<$T, U$>$)\\
 constexpr \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::operator U (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
 
@@ -331,34 +221,6 @@ Conversion to integer-\/like type {\ttfamily U}.
 Explicit if {\ttfamily \mbox{\hyperlink{conceptutils_1_1lossless__convertible__to}{utils\+::lossless\+\_\+convertible\+\_\+to}}\texorpdfstring{$<$}{<}T, U\texorpdfstring{$>$}{>}} is false. 
 
 Definition at line \mbox{\hyperlink{integer_8hpp_source_l00709}{709}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
-
-\mbox{\Hypertarget{structutils_1_1integer_a527b405c4834bc14b214685992a408a6}\label{structutils_1_1integer_a527b405c4834bc14b214685992a408a6}} 
-\index{utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}!operator U\&@{operator U\&}}
-\index{operator U\&@{operator U\&}!utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}}
-\doxysubsubsection{\texorpdfstring{operator U\&()}{operator U\&()}}
-{\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
-template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ \\
-constexpr \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::operator U\& (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) \&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
-
-
-
-Conversion to references to underlying type. 
-
-\char`\"{}@defgroup utils\+::integer\+::operator utils\+::integer\+::operator\char`\"{} 
-
-Definition at line \mbox{\hyperlink{integer_8hpp_source_l00695}{695}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
-
-\mbox{\Hypertarget{structutils_1_1integer_aa8e0febb0ee6e7363027b03f33e507d1}\label{structutils_1_1integer_aa8e0febb0ee6e7363027b03f33e507d1}} 
-\index{utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}!operator U\&\&@{operator U\&\&}}
-\index{operator U\&\&@{operator U\&\&}!utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}}
-\doxysubsubsection{\texorpdfstring{operator U\&\&()}{operator U\&\&()}}
-{\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
-template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ \\
-constexpr \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::operator U\&\& (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) \&\&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
-
-
-
-Definition at line \mbox{\hyperlink{integer_8hpp_source_l00699}{699}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
 
 \mbox{\Hypertarget{structutils_1_1integer_a53e0a6722b9d08f5ea0440c2d31959d3}\label{structutils_1_1integer_a53e0a6722b9d08f5ea0440c2d31959d3}} 
 \index{utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}!operator+@{operator+}}
@@ -375,59 +237,10 @@ Returns the underlying object.
 
 Definition at line \mbox{\hyperlink{integer_8hpp_source_l00712}{712}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
 
-\mbox{\Hypertarget{structutils_1_1integer_a917fdd63d11629b7a48f77bb20bbb08a}\label{structutils_1_1integer_a917fdd63d11629b7a48f77bb20bbb08a}} 
-\index{utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}!operator$<$=$>$@{operator$<$=$>$}}
-\index{operator$<$=$>$@{operator$<$=$>$}!utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}}
-\doxysubsubsection{\texorpdfstring{operator$<$=$>$()}{operator<=>()}}
-{\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
-template$<$typename Self , typename Other , typename SelfD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Self$>$, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
-requires (\mbox{\hyperlink{namespaceutils_ae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)\\
-constexpr decltype(auto) \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::operator$<$=$>$ (\begin{DoxyParamCaption}\item[{this Self \&\&}]{self,  }\item[{Other \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
-
-
-
-Definition at line \mbox{\hyperlink{integer_8hpp_source_l00685}{685}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
-
-\mbox{\Hypertarget{structutils_1_1integer_af85e7fb0e0b45e09342748f906eace2f}\label{structutils_1_1integer_af85e7fb0e0b45e09342748f906eace2f}} 
-\index{utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}!operator==@{operator==}}
-\index{operator==@{operator==}!utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}}
-\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
-{\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
-template$<$typename Self , typename Other , typename SelfD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Self$>$, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
-requires (\mbox{\hyperlink{namespaceutils_ae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)\\
-constexpr decltype(auto) \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::operator== (\begin{DoxyParamCaption}\item[{this Self \&\&}]{self,  }\item[{Other \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
-
-\char`\"{}@defgroup utils\+::integer\+::operator==,utils\+::integer\+::operator$<$=$>$ utils\+::integer\+::operator==,utils\+::integer\+::operator$<$=$>$\char`\"{} {\ttfamily \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}} can be compared with an {\ttfamily \mbox{\hyperlink{conceptutils_1_1integer__like}{utils\+::integer\+\_\+like}}} type if and only if both have the same signedness (either both signed, or both unsigned). 
-
-Definition at line \mbox{\hyperlink{integer_8hpp_source_l00678}{678}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
-
-\mbox{\Hypertarget{structutils_1_1integer_adf39f2ab541118c720d7371a01d8ec87}\label{structutils_1_1integer_adf39f2ab541118c720d7371a01d8ec87}} 
+\mbox{\Hypertarget{structutils_1_1integer_gadf39f2ab541118c720d7371a01d8ec87}\label{structutils_1_1integer_gadf39f2ab541118c720d7371a01d8ec87}} 
 \index{utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}!to\_underlying@{to\_underlying}}
 \index{to\_underlying@{to\_underlying}!utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}}
-\doxysubsubsection{\texorpdfstring{to\_underlying()}{to\_underlying()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
-template$<$typename U $>$ \newline
-requires (\mbox{\hyperlink{namespaceutils_a3e785f8bbe5579cdb6684c29d19d4fe7}{is\+\_\+integer\+\_\+like\+\_\+v}}$<$std\+::remove\+\_\+cvref\+\_\+t$<$U$>$$>$)\\
-static constexpr U \&\& \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::to\+\_\+underlying (\begin{DoxyParamCaption}\item[{U \&\&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
-
-
-
-Get a reference to the underlying object of {\ttfamily x}. 
-
-\char`\"{}@defgroup utils\+::integer\+::to\+\_\+underlying utils\+::integer\+::to\+\_\+underlying\char`\"{}
-
-The static member function only has overloads for
-\begin{DoxyEnumerate}
-\item {\ttfamily \mbox{\hyperlink{conceptutils_1_1integer__like}{utils\+::integer\+\_\+like}}} types, and
-\item {\ttfamily \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}} instances with identical behavior profiles. 
-\end{DoxyEnumerate}
-
-Definition at line \mbox{\hyperlink{integer_8hpp_source_l00633}{633}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
-
-\mbox{\Hypertarget{structutils_1_1integer_a4f01cd9e4066ed5556d2c53d79e35d56}\label{structutils_1_1integer_a4f01cd9e4066ed5556d2c53d79e35d56}} 
-\index{utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}!to\_underlying@{to\_underlying}}
-\index{to\_underlying@{to\_underlying}!utils::integer$<$ T, IB, BB, SB $>$@{utils::integer$<$ T, IB, BB, SB $>$}}
-\doxysubsubsection{\texorpdfstring{to\_underlying()}{to\_underlying()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{to\_underlying()}{to\_underlying()}}
 {\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
 template$<$tagged$<$ integer\+\_\+tag $>$ U$>$ \newline
 requires (std\+::is\+\_\+same\+\_\+v$<$typename std\+::remove\+\_\+cvref\+\_\+t$<$U$>$\+::template \mbox{\hyperlink{structutils_1_1integer_a2e883760061d1606910aa6ce29c694e5}{rebind}}$<$T$>$, \mbox{\hyperlink{structutils_1_1integer}{integer}}$>$)\\

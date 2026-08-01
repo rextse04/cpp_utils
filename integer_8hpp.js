@@ -1,10 +1,5 @@
 var integer_8hpp =
 [
-    [ "utils::is_integer_like< T >", "structutils_1_1is__integer__like.html", null ],
-    [ "utils::width_of< T, Info >", "structutils_1_1width__of.html", null ],
-    [ "utils::sane_common_type< T, U >", "structutils_1_1sane__common__type.html", null ],
-    [ "utils::is_same_sign< T, U, TInfo, UInfo >", "structutils_1_1is__same__sign.html", null ],
-    [ "utils::epsilon_of< T, Info >", "structutils_1_1epsilon__of.html", null ],
     [ "utils::integral_behavior::profile< Funcs, AsgFuncs >", "structutils_1_1integral__behavior_1_1profile.html", null ],
     [ "utils::integral_behavior::default_binary_op_traits< CommonTypeTrait, ResultTrait >", "structutils_1_1integral__behavior_1_1default__binary__op__traits.html", [
       [ "constraint", "structutils_1_1integral__behavior_1_1default__binary__op__traits_1_1constraint.html", null ],
@@ -35,13 +30,10 @@ var integer_8hpp =
     [ "utils::integer< T, IB, BB, SB >", "structutils_1_1integer.html", "structutils_1_1integer" ],
     [ "std::numeric_limits< T >", "structstd_1_1numeric__limits_3_01T_01_4.html", null ],
     [ "std::formatter< T, CharT >", "structstd_1_1formatter_3_01T_00_01CharT_01_4.html", "structstd_1_1formatter_3_01T_00_01CharT_01_4" ],
-    [ "utils::integer_like", "conceptutils_1_1integer__like.html", null ],
-    [ "utils::same_sign_as", "conceptutils_1_1same__sign__as.html", null ],
-    [ "utils::lossless_convertible_to", "conceptutils_1_1lossless__convertible__to.html", null ],
     [ "UTILS_INTEGER_CIRC_CLASS", "integer_8hpp.html#afdcc277538c7f2228affdefb91df1994", null ],
     [ "UTILS_INTEGER_CKD_CLASS", "integer_8hpp.html#a01f4f2af93e7e76d3377823db714832d", null ],
     [ "ptrdiff_t", "integer_8hpp.html#aca05a61d14a516c6dd53450e823075b7", null ],
-    [ "sane_common_type_t", "integer_8hpp.html#ab6b5848d6804531f450947c7fa15825c", null ],
+    [ "sane_common_type_t", "integer_8hpp.html#gab6b5848d6804531f450947c7fa15825c", null ],
     [ "schar", "integer_8hpp.html#a4ffaa4ed6fb6180ef1941de8c876161d", null ],
     [ "sfast16", "integer_8hpp.html#aefd6c2da3868bb86722fb2c0c3b2bf68", null ],
     [ "sfast32", "integer_8hpp.html#a01ff2dc3d8b1c58d1a8798d136555bd9", null ],
@@ -74,10 +66,10 @@ var integer_8hpp =
     [ "checked", "integer_8hpp.html#aa48365622907640e6ca37de0827a4e42", null ],
     [ "checked", "integer_8hpp.html#ac9db62511912a83ec50c416a1efbc72e", null ],
     [ "circular", "integer_8hpp.html#aaa3b65aca486508aee767a5e4091bc98", null ],
-    [ "epsilon_of_v", "integer_8hpp.html#a237a9d163e61fab7413f93616669f2c9", null ],
-    [ "is_integer_like_v", "integer_8hpp.html#a3e785f8bbe5579cdb6684c29d19d4fe7", null ],
-    [ "is_lossless_convertible_v", "integer_8hpp.html#a0895531ec3b54ee68daa30b7fbd31996", null ],
-    [ "is_same_sign_v", "integer_8hpp.html#ae1ba453ed44bcb43cd6d1b42e5ee9b82", null ],
+    [ "epsilon_of_v", "integer_8hpp.html#ga237a9d163e61fab7413f93616669f2c9", null ],
+    [ "is_integer_like_v", "integer_8hpp.html#ga3e785f8bbe5579cdb6684c29d19d4fe7", null ],
+    [ "is_lossless_convertible_v", "integer_8hpp.html#ga0895531ec3b54ee68daa30b7fbd31996", null ],
+    [ "is_same_sign_v", "integer_8hpp.html#gae1ba453ed44bcb43cd6d1b42e5ee9b82", null ],
     [ "profile_from", "integer_8hpp.html#a16c01446283f45b336955e3e2870dc98", null ],
     [ "profile_from", "integer_8hpp.html#a5a8f53fa0b20ac3bd53ca7b63e03439c", null ],
     [ "profile_from", "integer_8hpp.html#a661ce0fc9bfb0fb4f8c15cb656cf03ae", null ],
@@ -88,6 +80,6 @@ var integer_8hpp =
     [ "standard", "integer_8hpp.html#a7ecfb3e0498c15492edd93b9d750b6ca", null ],
     [ "standard", "integer_8hpp.html#ad19cce7bdb19977b0ddb72994867aefb", null ],
     [ "ub", "integer_8hpp.html#ada3d172e83fd8ae4072c6a7ae80cf8d2", null ],
-    [ "width_of_v", "integer_8hpp.html#a576ed06f843b2217161f37a06cc6da31", null ],
+    [ "width_of_v", "integer_8hpp.html#ga576ed06f843b2217161f37a06cc6da31", null ],
     [ "wrap", "integer_8hpp.html#afaf7f7b9f1340e2495d3690f306bf8a1", null ]
 ];
