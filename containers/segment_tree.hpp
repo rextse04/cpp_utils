@@ -586,6 +586,7 @@ namespace utils {
         /// @}
         /// @defgroup segment_treeoperatorasg utils::segment_tree::operator=
         /// @brief Assignment operators.
+        ///
         /// @{
         /// Copy-assigns all underlying containers and functors.
         constexpr segment_tree& operator=(const segment_tree& other)
