@@ -8,14 +8,14 @@ var hierarchy =
     [ "utils::pmr::allocator_base< T, detail::stack_allocator_control >", "structutils_1_1pmr_1_1allocator__base.html", [
       [ "utils::pmr::stack_allocator< T, Sync >", "classutils_1_1pmr_1_1stack__allocator.html", null ]
     ] ],
-    [ "utils::apply_qualifiers< T, Q >", "structutils_1_1apply__qualifiers.html", null ],
+    [ "utils::apply_qualifiers< T, Q >", "group__utilsapply__qualifiers.html#structutils_1_1apply__qualifiers", null ],
     [ "utils::arguments_of< F >", "structutils_1_1arguments__of.html", null ],
     [ "utils::arguments_of< R(Args...)>", "structutils_1_1arguments__of_3_01R_07Args_8_8_8_08_4.html", null ],
     [ "utils::arity< Arity >", "structutils_1_1arity.html", null ],
     [ "utils::arity_of< F >", "structutils_1_1arity__of.html", null ],
     [ "utils::asg_wrap< Op, T >", "structutils_1_1asg__wrap.html", null ],
     [ "utils::asg_wrap< Op, void >", "structutils_1_1asg__wrap_3_01Op_00_01void_01_4.html", null ],
-    [ "utils::meta::at< Tuple, Idx >", "structutils_1_1meta_1_1at.html", null ],
+    [ "utils::meta::at< Tuple, Idx >", "group__metaat.html#structutils_1_1meta_1_1at", null ],
     [ "utils::bind< T >", "structutils_1_1bind.html", null ],
     [ "utils::meta::bind_back< Trait, Args >", "structutils_1_1meta_1_1bind__back.html", null ],
     [ "utils::meta::bind_front< Trait, Args >", "structutils_1_1meta_1_1bind__front.html", null ],
@@ -41,11 +41,11 @@ var hierarchy =
     ] ],
     [ "std::bool_constant", null, [
       [ "utils::bit_behavior::default_binary_op_traits< ResultTrait >::constraint< typename, A, B >", "structutils_1_1bit__behavior_1_1default__binary__op__traits_1_1constraint.html", null ],
-      [ "utils::is_explicitly_convertible< From, To >", "structutils_1_1is__explicitly__convertible.html", null ],
+      [ "utils::is_explicitly_convertible< From, To >", "group__utilsexplicitly__convertible__to.html#structutils_1_1is__explicitly__convertible", null ],
       [ "utils::is_same_sign< T, U, TInfo, UInfo >", "group__is__same__sign.html#structutils_1_1is__same__sign", null ],
-      [ "utils::is_tagged< Tag, T >", "structutils_1_1is__tagged.html", null ],
-      [ "utils::meta::contained_in< Tuple, T, PredTrait, Begin, End >", "structutils_1_1meta_1_1contained__in.html", [
-        [ "utils::meta::contained_in_trait< Tuple, T >", "structutils_1_1meta_1_1contained__in__trait.html", null ]
+      [ "utils::is_tagged< Tag, T >", "group__utilsis__tagged.html#structutils_1_1is__tagged", null ],
+      [ "utils::meta::contained_in< Tuple, T, PredTrait, Begin, End >", "group__metacontained__in.html#structutils_1_1meta_1_1contained__in", [
+        [ "utils::meta::contained_in_trait< Tuple, T >", "group__metacontained__in.html#structutils_1_1meta_1_1contained__in__trait", null ]
       ] ]
     ] ],
     [ "utils::cast< To, From >", "structutils_1_1cast.html", null ],
@@ -53,15 +53,15 @@ var hierarchy =
     [ "utils::cast_transform< F, Trait >", "structutils_1_1cast__transform.html", null ],
     [ "utils::common_cast_transform< F, Trait >", "structutils_1_1common__cast__transform.html", null ],
     [ "utils::common_cast_transform< F, meta::composite< Trait, std::add_const, std::add_lvalue_reference >::template trait >", "structutils_1_1common__cast__transform.html", null ],
-    [ "utils::meta::concat< Tuples >", "structutils_1_1meta_1_1concat.html", null ],
-    [ "utils::meta::concat< slice_t< Tuple, 0, Begin >, slice_t< Tuple, End > >", "structutils_1_1meta_1_1concat.html", [
-      [ "utils::meta::erase< Tuple, Begin, End >", "structutils_1_1meta_1_1erase.html", null ]
+    [ "utils::meta::concat< Tuples >", "group__metaconcat.html#structutils_1_1meta_1_1concat", null ],
+    [ "utils::meta::concat< slice_t< Tuple, 0, Begin >, slice_t< Tuple, End > >", "group__metaconcat.html", [
+      [ "utils::meta::erase< Tuple, Begin, End >", "group__metaerase.html#structutils_1_1meta_1_1erase", null ]
     ] ],
-    [ "utils::meta::concat< slice_t< Tuple, 0, Idx >, Inserted, slice_t< Tuple, Idx > >", "structutils_1_1meta_1_1concat.html", [
-      [ "utils::meta::insert< Tuple, Idx, Inserted >", "structutils_1_1meta_1_1insert.html", null ]
+    [ "utils::meta::concat< slice_t< Tuple, 0, Idx >, Inserted, slice_t< Tuple, Idx > >", "group__metaconcat.html", [
+      [ "utils::meta::insert< Tuple, Idx, Inserted >", "group__metainsert.html#structutils_1_1meta_1_1insert", null ]
     ] ],
-    [ "utils::meta::concat< slice_t< Tuple, 0, Idx >, std::tuple< T >, slice_t< Tuple, Idx+1 > >", "structutils_1_1meta_1_1concat.html", [
-      [ "utils::meta::replace< Tuple, Idx, T >", "structutils_1_1meta_1_1replace.html", null ]
+    [ "utils::meta::concat< slice_t< Tuple, 0, Idx >, std::tuple< T >, slice_t< Tuple, Idx+1 > >", "group__metaconcat.html", [
+      [ "utils::meta::replace< Tuple, Idx, T >", "group__metareplace.html#structutils_1_1meta_1_1replace", null ]
     ] ],
     [ "std::conjunction", null, [
       [ "utils::bit_behavior::default_asg_op_traits::constraint< Self, A, B >", "structutils_1_1bit__behavior_1_1default__asg__op__traits_1_1constraint.html", null ],
@@ -92,12 +92,12 @@ var hierarchy =
     [ "std::exception", null, [
       [ "utils::compile_error", "classutils_1_1compile__error.html", null ]
     ] ],
-    [ "utils::meta::extract< T >", "structutils_1_1meta_1_1extract.html", null ],
-    [ "utils::meta::extract< Tmpl< Args... > >", "structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4.html", null ],
+    [ "utils::meta::extract< T >", "group__metaextract.html#structutils_1_1meta_1_1extract", null ],
+    [ "utils::meta::extract< Tmpl< Args... > >", "group__metaextract.html#structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4", null ],
     [ "std::false_type", null, [
       [ "utils::always_false<... >", "structutils_1_1always__false.html", null ],
-      [ "utils::is_template_instance< typename, typename >", "structutils_1_1is__template__instance.html", null ],
-      [ "utils::meta::is_tuple< T >", "structutils_1_1meta_1_1is__tuple.html", null ]
+      [ "utils::is_template_instance< typename, typename >", "group__utilsis__template__instance.html#structutils_1_1is__template__instance", null ],
+      [ "utils::meta::is_tuple< T >", "group__metais__tuple.html#structutils_1_1meta_1_1is__tuple", null ]
     ] ],
     [ "utils::fix_op_functors< PreInc, PostInc, PreDec, PostDec, PrefixTraits, UnaryTraits >", "structutils_1_1fix__op__functors.html", null ],
     [ "utils::fix_ops< Funcs >", "structutils_1_1fix__ops.html", [
@@ -106,7 +106,7 @@ var hierarchy =
     [ "utils::fix_ops< {} >", "structutils_1_1fix__ops.html", [
       [ "utils::arithmetic_ops< IntFuncs, IntAsgFuncs, BitFuncs, BitAsgFuncs, ShiftFuncs, ShiftAsgFuncs, SignFuncs, FixFuncs >", "structutils_1_1arithmetic__ops.html", null ]
     ] ],
-    [ "utils::follow< RefT, T >", "structutils_1_1follow.html", null ],
+    [ "utils::follow< RefT, T >", "group__utilsfollow.html#structutils_1_1follow", null ],
     [ "formatter", null, [
       [ "std::formatter< S, typename S::value_type >", "structstd_1_1formatter_3_01S_00_01typename_01S_1_1value__type_01_4.html", null ]
     ] ],
@@ -122,7 +122,7 @@ var hierarchy =
     [ "utils::function_decay< std::remove_pointer_t< std::remove_cvref_t< T > > >", "structutils_1_1function__decay.html", [
       [ "utils::function_decay< T >", "structutils_1_1function__decay_3_01T_01_4.html", null ]
     ] ],
-    [ "utils::meta::infer< ErasedResult >", "structutils_1_1meta_1_1infer.html", null ],
+    [ "utils::meta::infer< ErasedResult >", "group__metainfer.html#structutils_1_1meta_1_1infer", null ],
     [ "utils::integral_asg_op_functors< PlusAsg, MinusAsg, MulAsg, DivAsg, ModAsg, AsgTraits >", "structutils_1_1integral__asg__op__functors.html", null ],
     [ "utils::integral_asg_ops< Funcs >", "structutils_1_1integral__asg__ops.html", [
       [ "utils::integral_full_ops< {}, {} >", "structutils_1_1integral__full__ops.html", [
@@ -137,16 +137,16 @@ var hierarchy =
     [ "std::integral_constant", null, [
       [ "utils::arity_of< R(Args...)>", "structutils_1_1arity__of_3_01R_07Args_8_8_8_08_4.html", null ],
       [ "utils::epsilon_of< T, Info >", "group__epsilon__of.html#structutils_1_1epsilon__of", null ],
-      [ "utils::meta::product< ValueResults >", "structutils_1_1meta_1_1product.html", null ],
-      [ "utils::meta::search< Tuple, T, PredTrait, Begin, End >", "structutils_1_1meta_1_1search.html", [
-        [ "utils::meta::search_trait< Tuple, T >", "structutils_1_1meta_1_1search__trait.html", null ]
+      [ "utils::meta::product< ValueResults >", "group__metaproduct.html#structutils_1_1meta_1_1product", null ],
+      [ "utils::meta::search< Tuple, T, PredTrait, Begin, End >", "group__metasearch.html#structutils_1_1meta_1_1search", [
+        [ "utils::meta::search_trait< Tuple, T >", "group__metasearch.html#structutils_1_1meta_1_1search__trait", null ]
       ] ],
-      [ "utils::meta::search< Tuple, T, PredTrait, End, End >", "structutils_1_1meta_1_1search_3_01Tuple_00_01T_00_01PredTrait_00_01End_00_01End_01_4.html", null ],
-      [ "utils::meta::sum< ValueResults >", "structutils_1_1meta_1_1sum.html", null ],
+      [ "utils::meta::search< Tuple, T, PredTrait, End, End >", "group__metasearch.html#structutils_1_1meta_1_1search_3_01Tuple_00_01T_00_01PredTrait_00_01End_00_01End_01_4", null ],
+      [ "utils::meta::sum< ValueResults >", "group__metasum.html#structutils_1_1meta_1_1sum", null ],
       [ "utils::width_of< T, Info >", "group__width__of.html#structutils_1_1width__of", null ]
     ] ],
     [ "std::integral_constant< std::size_t,(Idx >=0) ? Idx :(Idx+std::tuple_size_v< Tuple >)>", null, [
-      [ "utils::meta::actual_index< Tuple, Idx >", "structutils_1_1meta_1_1actual__index.html", null ]
+      [ "utils::meta::actual_index< Tuple, Idx >", "group__metaactual__index.html#structutils_1_1meta_1_1actual__index", null ]
     ] ],
     [ "utils::integral_op_functors< Plus, Minus, Mul, Div, Mod, BinaryTraits >", "structutils_1_1integral__op__functors.html", null ],
     [ "utils::integral_ops< Funcs >", "structutils_1_1integral__ops.html", [
@@ -163,7 +163,7 @@ var hierarchy =
       [ "utils::default_prefix_op_traits::constraint< Self >", "structutils_1_1default__prefix__op__traits_1_1constraint.html", null ]
     ] ],
     [ "std::is_same", null, [
-      [ "utils::is_equiv< T, U >", "structutils_1_1is__equiv.html", null ]
+      [ "utils::is_equiv< T, U >", "group__utilsis__equiv.html#structutils_1_1is__equiv", null ]
     ] ],
     [ "utils::iterator_category< Iter >", "structutils_1_1iterator__category.html", null ],
     [ "iterator_wrapper", null, [
@@ -181,12 +181,12 @@ var hierarchy =
     [ "utils::logical_op_functors< And, Or, Not, BinaryTraits, UnaryTraits >", "structutils_1_1logical__op__functors.html", null ],
     [ "utils::logical_ops< Funcs >", "structutils_1_1logical__ops.html", null ],
     [ "utils::meta::detail::make_tuple< T, std::make_index_sequence< std::tuple_size_v< T > > >", null, [
-      [ "utils::meta::make_tuple< T >", "structutils_1_1meta_1_1make__tuple.html", null ]
+      [ "utils::meta::make_tuple< T >", "group__metamake__tuple.html#structutils_1_1meta_1_1make__tuple", null ]
     ] ],
     [ "utils::meta::detail::map< Trait, std::tuple< Tuple, Tuples... >, std::make_index_sequence< std::tuple_size_v< Tuple > > >", null, [
-      [ "utils::meta::map< Trait, Tuple, Tuples >", "structutils_1_1meta_1_1map.html", null ]
+      [ "utils::meta::map< Trait, Tuple, Tuples >", "group__metamap.html#structutils_1_1meta_1_1map", null ]
     ] ],
-    [ "utils::max_align< Ts >", "structutils_1_1max__align.html", null ],
+    [ "utils::max_align< Ts >", "group__utilsmax__align.html#structutils_1_1max__align", null ],
     [ "std::pmr::memory_resource", null, [
       [ "utils::pmr::allocator_resource< Allocator >", "classutils_1_1pmr_1_1allocator__resource.html", null ]
     ] ],
@@ -196,7 +196,7 @@ var hierarchy =
       [ "std::numeric_limits< T >", "structstd_1_1numeric__limits_3_01T_01_4.html", null ]
     ] ],
     [ "utils::owning", "structutils_1_1owning.html", null ],
-    [ "utils::meta::pack< Ts >", "structutils_1_1meta_1_1pack.html", null ],
+    [ "utils::meta::pack< Ts >", "group__metapack.html#structutils_1_1meta_1_1pack", null ],
     [ "utils::pointer_iterator< T >", "classutils_1_1pointer__iterator.html", null ],
     [ "utils::post_decrement< T >", "structutils_1_1post__decrement.html", null ],
     [ "utils::post_decrement<>", "structutils_1_1post__decrement_3_4.html", null ],
@@ -212,14 +212,14 @@ var hierarchy =
     [ "utils::shift_behavior::profile< Funcs, AsgFuncs >", "structutils_1_1shift__behavior_1_1profile.html", null ],
     [ "utils::promote< T >", "structutils_1_1promote.html", null ],
     [ "utils::promote< void >", "structutils_1_1promote_3_01void_01_4.html", null ],
-    [ "utils::qualifiers_of< T >", "structutils_1_1qualifiers__of.html", null ],
-    [ "utils::meta::rebind< T, Args >", "structutils_1_1meta_1_1rebind.html", null ],
+    [ "utils::qualifiers_of< T >", "group__utilsqualifiers__of.html#structutils_1_1qualifiers__of", null ],
+    [ "utils::meta::rebind< T, Args >", "group__metarebind.html#structutils_1_1meta_1_1rebind", null ],
     [ "utils::pmr::arena_allocator< T, Sync >::rebind< U >", "structutils_1_1pmr_1_1arena__allocator_1_1rebind.html", null ],
     [ "utils::pmr::stack_allocator< T, Sync >::rebind< U >", "structutils_1_1pmr_1_1stack__allocator_1_1rebind.html", null ],
-    [ "utils::meta::rebind< T, Args... >", "structutils_1_1meta_1_1rebind_3_01T_00_01Args_8_8_8_01_4.html", null ],
-    [ "utils::meta::reduce< Trait, T >", "structutils_1_1meta_1_1reduce.html", null ],
-    [ "utils::meta::reduce< std::conjunction, map_t< bind_front< contained_in_trait, BigTuple >::template trait, SmallTuple > >", "structutils_1_1meta_1_1reduce.html", [
-      [ "utils::meta::subset_of< SmallTuple, BigTuple >", "structutils_1_1meta_1_1subset__of.html", null ]
+    [ "utils::meta::rebind< T, Args... >", "group__metarebind.html#structutils_1_1meta_1_1rebind_3_01T_00_01Args_8_8_8_01_4", null ],
+    [ "utils::meta::reduce< Trait, T >", "group__metareduce.html#structutils_1_1meta_1_1reduce", null ],
+    [ "utils::meta::reduce< std::conjunction, map_t< bind_front< contained_in_trait, BigTuple >::template trait, SmallTuple > >", "group__metareduce.html", [
+      [ "utils::meta::subset_of< SmallTuple, BigTuple >", "group__metasubset__of.html#structutils_1_1meta_1_1subset__of", null ]
     ] ],
     [ "std::remove_cvref", null, [
       [ "utils::default_binary_op_traits::result< Self, typename, typename >", "structutils_1_1default__binary__op__traits_1_1result.html", null ]
@@ -267,9 +267,9 @@ var hierarchy =
       [ "utils::arithmetic_ops< IntFuncs, IntAsgFuncs, BitFuncs, BitAsgFuncs, ShiftFuncs, ShiftAsgFuncs, SignFuncs, FixFuncs >", "structutils_1_1arithmetic__ops.html", null ]
     ] ],
     [ "utils::sink", "structutils_1_1sink.html", null ],
-    [ "utils::meta::slice< Tuple, Begin, End >", "structutils_1_1meta_1_1slice.html", null ],
-    [ "utils::meta::smart_pack< Ts >", "structutils_1_1meta_1_1smart__pack.html", null ],
-    [ "utils::meta::smart_pack< std::tuple< Ts... > >", "structutils_1_1meta_1_1smart__pack_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4.html", null ],
+    [ "utils::meta::slice< Tuple, Begin, End >", "group__metaslice.html#structutils_1_1meta_1_1slice", null ],
+    [ "utils::meta::smart_pack< Ts >", "group__metasmart__pack.html#structutils_1_1meta_1_1smart__pack", null ],
+    [ "utils::meta::smart_pack< std::tuple< Ts... > >", "group__metasmart__pack.html#structutils_1_1meta_1_1smart__pack_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4", null ],
     [ "utils::stale_class", "structutils_1_1stale__class.html", [
       [ "utils::trivial_semaphore", "structutils_1_1trivial__semaphore.html", null ],
       [ "utils::unique_resource< T, Sync, Semaphore, SharedMutex >::permit", "classutils_1_1unique__resource_1_1permit.html", null ],
@@ -281,11 +281,11 @@ var hierarchy =
     ] ],
     [ "utils::synth_three_way_result< T, U >", "structutils_1_1synth__three__way__result.html", null ],
     [ "Trait", null, [
-      [ "utils::meta::bind_back< Trait, Args >::trait< Ts >", "structutils_1_1meta_1_1bind__back_1_1trait.html", null ],
-      [ "utils::meta::bind_front< Trait, Args >::trait< Ts >", "structutils_1_1meta_1_1bind__front_1_1trait.html", null ],
-      [ "utils::meta::reduce< Trait, std::tuple< Ts... > >", "structutils_1_1meta_1_1reduce_3_01Trait_00_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4.html", null ]
+      [ "utils::meta::bind_back< Trait, Args >::trait< Ts >", "group__metastrict__subset__of.html#structutils_1_1meta_1_1bind__back_1_1trait", null ],
+      [ "utils::meta::bind_front< Trait, Args >::trait< Ts >", "group__metastrict__subset__of.html#structutils_1_1meta_1_1bind__front_1_1trait", null ],
+      [ "utils::meta::reduce< Trait, std::tuple< Ts... > >", "group__metareduce.html#structutils_1_1meta_1_1reduce_3_01Trait_00_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4", null ]
     ] ],
-    [ "utils::meta::extract< Tmpl< Args... > >::trait< Ts >", "structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4_1_1trait.html", null ],
+    [ "utils::meta::extract< Tmpl< Args... > >::trait< Ts >", "group__metastrict__subset__of.html#structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4_1_1trait", null ],
     [ "utils::trim< S >", "structutils_1_1trim.html", null ],
     [ "std::true_type", null, [
       [ "utils::always_true<... >", "structutils_1_1always__true.html", null ],
@@ -294,8 +294,8 @@ var hierarchy =
       [ "utils::detail::is_integer_like< T >", null, [
         [ "utils::is_integer_like< T >", "group__is__integer__like.html#structutils_1_1is__integer__like", null ]
       ] ],
-      [ "utils::is_template_instance< Tmpl, Tmpl< Ts... > >", "structutils_1_1is__template__instance_3_01Tmpl_00_01Tmpl_3_01Ts_8_8_8_01_4_01_4.html", null ],
-      [ "utils::meta::is_tuple< std::tuple< Ts... > >", "structutils_1_1meta_1_1is__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4.html", null ]
+      [ "utils::is_template_instance< Tmpl, Tmpl< Ts... > >", "group__utilsis__template__instance.html#structutils_1_1is__template__instance_3_01Tmpl_00_01Tmpl_3_01Ts_8_8_8_01_4_01_4", null ],
+      [ "utils::meta::is_tuple< std::tuple< Ts... > >", "group__metais__tuple.html#structutils_1_1meta_1_1is__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4", null ]
     ] ],
     [ "std::type_identity", null, [
       [ "utils::default_prefix_op_traits::result< Self >", "structutils_1_1default__prefix__op__traits_1_1result.html", null ]

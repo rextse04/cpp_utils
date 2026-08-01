@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['infer_0',['infer',['../structutils_1_1meta_1_1infer.html',1,'utils::meta']]],
-  ['insert_1',['insert',['../structutils_1_1meta_1_1insert.html',1,'utils::meta']]],
+  ['infer_0',['infer',['../group__metainfer.html#structutils_1_1meta_1_1infer',1,'utils::meta']]],
+  ['insert_1',['insert',['../group__metainsert.html#structutils_1_1meta_1_1insert',1,'utils::meta']]],
   ['integer_2',['integer',['../structutils_1_1integer.html',1,'utils']]],
   ['integral_5fasg_5fop_5ffunctors_3',['integral_asg_op_functors',['../structutils_1_1integral__asg__op__functors.html',1,'utils']]],
   ['integral_5fasg_5fops_4',['integral_asg_ops',['../structutils_1_1integral__asg__ops.html',1,'utils']]],
@@ -13,14 +13,14 @@ var searchData=
   ['integral_5fops_3c_20_7b_7d_20_3e_10',['integral_ops&lt; {} &gt;',['../structutils_1_1integral__ops.html',1,'utils']]],
   ['interval_11',['interval',['../structutils_1_1interval.html',1,'utils']]],
   ['interval_5fendpoint_12',['interval_endpoint',['../structutils_1_1interval__endpoint.html',1,'utils']]],
-  ['is_5fequiv_13',['is_equiv',['../structutils_1_1is__equiv.html',1,'utils']]],
-  ['is_5fexplicitly_5fconvertible_14',['is_explicitly_convertible',['../structutils_1_1is__explicitly__convertible.html',1,'utils']]],
+  ['is_5fequiv_13',['is_equiv',['../group__utilsis__equiv.html#structutils_1_1is__equiv',1,'utils']]],
+  ['is_5fexplicitly_5fconvertible_14',['is_explicitly_convertible',['../group__utilsexplicitly__convertible__to.html#structutils_1_1is__explicitly__convertible',1,'utils']]],
   ['is_5finteger_5flike_15',['is_integer_like',['../group__is__integer__like.html#structutils_1_1is__integer__like',1,'utils']]],
   ['is_5fsame_5fsign_16',['is_same_sign',['../group__is__same__sign.html#structutils_1_1is__same__sign',1,'utils']]],
-  ['is_5ftagged_17',['is_tagged',['../structutils_1_1is__tagged.html',1,'utils']]],
-  ['is_5ftemplate_5finstance_18',['is_template_instance',['../structutils_1_1is__template__instance.html',1,'utils']]],
-  ['is_5ftemplate_5finstance_3c_20tmpl_2c_20tmpl_3c_20ts_2e_2e_2e_20_3e_20_3e_19',['is_template_instance&lt; Tmpl, Tmpl&lt; Ts... &gt; &gt;',['../structutils_1_1is__template__instance_3_01Tmpl_00_01Tmpl_3_01Ts_8_8_8_01_4_01_4.html',1,'utils']]],
-  ['is_5ftuple_20',['is_tuple',['../structutils_1_1meta_1_1is__tuple.html',1,'utils::meta']]],
-  ['is_5ftuple_3c_20std_3a_3atuple_3c_20ts_2e_2e_2e_20_3e_20_3e_21',['is_tuple&lt; std::tuple&lt; Ts... &gt; &gt;',['../structutils_1_1meta_1_1is__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4.html',1,'utils::meta']]],
+  ['is_5ftagged_17',['is_tagged',['../group__utilsis__tagged.html#structutils_1_1is__tagged',1,'utils']]],
+  ['is_5ftemplate_5finstance_18',['is_template_instance',['../group__utilsis__template__instance.html#structutils_1_1is__template__instance',1,'utils']]],
+  ['is_5ftemplate_5finstance_3c_20tmpl_2c_20tmpl_3c_20ts_2e_2e_2e_20_3e_20_3e_19',['is_template_instance&lt; Tmpl, Tmpl&lt; Ts... &gt; &gt;',['../group__utilsis__template__instance.html#structutils_1_1is__template__instance_3_01Tmpl_00_01Tmpl_3_01Ts_8_8_8_01_4_01_4',1,'utils']]],
+  ['is_5ftuple_20',['is_tuple',['../group__metais__tuple.html#structutils_1_1meta_1_1is__tuple',1,'utils::meta']]],
+  ['is_5ftuple_3c_20std_3a_3atuple_3c_20ts_2e_2e_2e_20_3e_20_3e_21',['is_tuple&lt; std::tuple&lt; Ts... &gt; &gt;',['../group__metais__tuple.html#structutils_1_1meta_1_1is__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4',1,'utils::meta']]],
   ['iterator_5fcategory_22',['iterator_category',['../structutils_1_1iterator__category.html',1,'utils']]]
 ];

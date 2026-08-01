@@ -58,10 +58,10 @@ requires (std\+::is\+\_\+floating\+\_\+point\+\_\+v$<$std\+::remove\+\_\+cvref\+
 requires ((std\+::is\+\_\+arithmetic\+\_\+v$<$OtherD$>$ $\vert$$\vert$ \mbox{\hyperlink{group__is__integer__like_ga3e785f8bbe5579cdb6684c29d19d4fe7}{is\+\_\+integer\+\_\+like\+\_\+v}}$<$OtherD$>$) \&\& sizeof...(Ts) == 0)}\\consteval \mbox{\hyperlink{group__integerinteger_ga55a3f0ae8dc08e5697d2cf1233302463}{integer}} (Other \&\&other, Ts...)
 \begin{DoxyCompactList}\small\item\em This allows implicit conversions from numbers known at compile time. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Self , typename Other , typename SelfD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Self$>$, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
-requires (\mbox{\hyperlink{group__is__same__sign_gae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)}\\constexpr decltype(auto) \mbox{\hyperlink{group__integeroperator_gaf85e7fb0e0b45e09342748f906eace2f}{operator==}} (this Self \&\&self, Other \&\&other) noexcept(noexcept(std\+::forward\+\_\+like$<$ Self $>$(self.\+under\+\_\+)==\mbox{\hyperlink{group__integer_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}}(std\+::forward$<$ Other $>$(other))))
+requires (\mbox{\hyperlink{group__is__same__sign_gae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)}\\constexpr decltype(auto) \mbox{\hyperlink{group__integeroperator_gaf85e7fb0e0b45e09342748f906eace2f}{operator==}} (this Self \&\&self, Other \&\&other) noexcept(noexcept(std\+::forward\+\_\+like$<$ Self $>$(self.\+under\+\_\+)==\mbox{\hyperlink{group__integerto__underlying_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}}(std\+::forward$<$ Other $>$(other))))
 \item 
 {\footnotesize template$<$typename Self , typename Other , typename SelfD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Self$>$, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
-requires (\mbox{\hyperlink{group__is__same__sign_gae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)}\\constexpr decltype(auto) \mbox{\hyperlink{group__integeroperator_ga917fdd63d11629b7a48f77bb20bbb08a}{operator$<$=$>$}} (this Self \&\&self, Other \&\&other) noexcept(noexcept(std\+::forward\+\_\+like$<$ Self $>$(self.\+under\+\_\+)$<$=$>$ \mbox{\hyperlink{group__integer_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}}(std\+::forward$<$ Other $>$(other))))
+requires (\mbox{\hyperlink{group__is__same__sign_gae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)}\\constexpr decltype(auto) \mbox{\hyperlink{group__integeroperator_ga917fdd63d11629b7a48f77bb20bbb08a}{operator$<$=$>$}} (this Self \&\&self, Other \&\&other) noexcept(noexcept(std\+::forward\+\_\+like$<$ Self $>$(self.\+under\+\_\+)$<$=$>$ \mbox{\hyperlink{group__integerto__underlying_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}}(std\+::forward$<$ Other $>$(other))))
 \item 
 {\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__integeroperator_ga527b405c4834bc14b214685992a408a6}{operator U\&}} () \&noexcept
 \item 
@@ -72,7 +72,7 @@ requires (\mbox{\hyperlink{group__is__same__sign_gae1ba453ed44bcb43cd6d1b42e5ee9
 {\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__integeroperator_gae93bf5d9fe4d50c5143053abab45416e}{operator const U \&\&}} () const \&\&noexcept
 \item 
 {\footnotesize template$<$typename U $>$ \newline
-requires (!std\+::is\+\_\+same\+\_\+v$<$U, T$>$ \&\& \mbox{\hyperlink{namespaceutils_aeeeecd5e5e48d738f1f779d9b8f46dcc}{is\+\_\+explicitly\+\_\+convertible\+\_\+v}}$<$T, U$>$) \mbox{\hyperlink{group__integerinteger_gaf70aa92e30b685f150ed14eedb1474b6}{explicit}}(!lossless\+\_\+convertible\+\_\+to$<$T, U$>$)}\\constexpr \mbox{\hyperlink{structutils_1_1integer_a4d5d4d51a43291632ad582c69624a4e0}{operator U}} () const noexcept
+requires (!std\+::is\+\_\+same\+\_\+v$<$U, T$>$ \&\& \mbox{\hyperlink{group__utilsexplicitly__convertible__to_gaeeeecd5e5e48d738f1f779d9b8f46dcc}{is\+\_\+explicitly\+\_\+convertible\+\_\+v}}$<$T, U$>$) \mbox{\hyperlink{group__integerinteger_gaf70aa92e30b685f150ed14eedb1474b6}{explicit}}(!lossless\+\_\+convertible\+\_\+to$<$T, U$>$)}\\constexpr \mbox{\hyperlink{structutils_1_1integer_a4d5d4d51a43291632ad582c69624a4e0}{operator U}} () const noexcept
 \begin{DoxyCompactList}\small\item\em Conversion to integer-\/like type {\ttfamily U}. \end{DoxyCompactList}\item 
 constexpr T \mbox{\hyperlink{structutils_1_1integer_a53e0a6722b9d08f5ea0440c2d31959d3}{operator+}} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the underlying object. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -80,7 +80,7 @@ constexpr T \mbox{\hyperlink{structutils_1_1integer_a53e0a6722b9d08f5ea0440c2d31
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename U $>$ \newline
-requires (\mbox{\hyperlink{group__is__integer__like_ga3e785f8bbe5579cdb6684c29d19d4fe7}{is\+\_\+integer\+\_\+like\+\_\+v}}$<$std\+::remove\+\_\+cvref\+\_\+t$<$U$>$$>$)}\\static constexpr U \&\& \mbox{\hyperlink{group__integer_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}} (U \&\&x) noexcept
+requires (\mbox{\hyperlink{group__is__integer__like_ga3e785f8bbe5579cdb6684c29d19d4fe7}{is\+\_\+integer\+\_\+like\+\_\+v}}$<$std\+::remove\+\_\+cvref\+\_\+t$<$U$>$$>$)}\\static constexpr U \&\& \mbox{\hyperlink{group__integerto__underlying_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}} (U \&\&x) noexcept
 \item 
 {\footnotesize template$<$tagged$<$ integer\+\_\+tag $>$ U$>$ \newline
 requires (std\+::is\+\_\+same\+\_\+v$<$typename std\+::remove\+\_\+cvref\+\_\+t$<$U$>$\+::template \mbox{\hyperlink{structutils_1_1integer_a2e883760061d1606910aa6ce29c694e5}{rebind}}$<$T$>$, \mbox{\hyperlink{structutils_1_1integer}{integer}}$>$)}\\static constexpr decltype(auto) \mbox{\hyperlink{structutils_1_1integer_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}} (U \&\&x) noexcept
@@ -211,7 +211,7 @@ Definition at line \mbox{\hyperlink{integer_8hpp_source_l00605}{605}} of file \m
 \doxysubsubsection{\texorpdfstring{operator U()}{operator U()}}
 {\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
 template$<$typename U $>$ \newline
-requires (!std\+::is\+\_\+same\+\_\+v$<$U, T$>$ \&\& \mbox{\hyperlink{namespaceutils_aeeeecd5e5e48d738f1f779d9b8f46dcc}{is\+\_\+explicitly\+\_\+convertible\+\_\+v}}$<$T, U$>$) \mbox{\hyperlink{group__integerinteger_gaf70aa92e30b685f150ed14eedb1474b6}{explicit}}(!lossless\+\_\+convertible\+\_\+to$<$T, U$>$)\\
+requires (!std\+::is\+\_\+same\+\_\+v$<$U, T$>$ \&\& \mbox{\hyperlink{group__utilsexplicitly__convertible__to_gaeeeecd5e5e48d738f1f779d9b8f46dcc}{is\+\_\+explicitly\+\_\+convertible\+\_\+v}}$<$T, U$>$) \mbox{\hyperlink{group__integerinteger_gaf70aa92e30b685f150ed14eedb1474b6}{explicit}}(!lossless\+\_\+convertible\+\_\+to$<$T, U$>$)\\
 constexpr \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::operator U (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
 

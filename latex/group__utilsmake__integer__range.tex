@@ -1,0 +1,65 @@
+\hypertarget{group__utilsmake__integer__range}{}\doxysection{utils\+::make\+\_\+integer\+\_\+range}
+\label{group__utilsmake__integer__range}\index{utils::make\_integer\_range@{utils::make\_integer\_range}}
+
+
+Creates an integer sequence with custom Begin and Step values.  
+
+
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , T End, T Begin = 0, T Step = 1$>$ }\\using \mbox{\hyperlink{group__utilsmake__integer__range_ga011249984f152afb7307c44c21667c79}{utils\+::make\+\_\+integer\+\_\+range}} = detail\+::sequence\+\_\+apply$<$ T,\mbox{[}$\,$\mbox{]}(T n) \{ return Begin+n $\ast$Step
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t End, std\+::size\+\_\+t Begin = 0, std\+::size\+\_\+t Step = 1$>$ }\\using \mbox{\hyperlink{group__utilsmake__integer__range_ga6593b60afa5929e922ecc032ce2db4d1}{utils\+::make\+\_\+index\+\_\+range}} = \mbox{\hyperlink{group__utilsmake__integer__range_ga011249984f152afb7307c44c21667c79}{make\+\_\+integer\+\_\+range}}$<$ std\+::size\+\_\+t, End, Begin, Step $>$
+\begin{DoxyCompactList}\small\item\em Creates a size\+\_\+t index sequence with custom Begin and Step values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Creates an integer sequence with custom Begin and Step values. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The underlying integer type for the sequence. \\
+\hline
+{\em End} & The exclusive end value of the range. \\
+\hline
+{\em Begin} & The starting value of the range (default\+: 0). \\
+\hline
+{\em Step} & The step size between elements (default\+: 1). \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyRemark}{Remarks}
+Generates a sequence \mbox{[} {\ttfamily Begin} , {\ttfamily Begin+\+Step} , {\ttfamily Begin+2$\ast$\+Step} , ...) up to {\ttfamily End}. 
+\end{DoxyRemark}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__utilsmake__integer__range_ga6593b60afa5929e922ecc032ce2db4d1}\label{group__utilsmake__integer__range_ga6593b60afa5929e922ecc032ce2db4d1}} 
+\index{utils::make\_integer\_range@{utils::make\_integer\_range}!make\_index\_range@{make\_index\_range}}
+\index{make\_index\_range@{make\_index\_range}!utils::make\_integer\_range@{utils::make\_integer\_range}}
+\doxysubsubsection{\texorpdfstring{make\_index\_range}{make\_index\_range}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t End, std\+::size\+\_\+t Begin = 0, std\+::size\+\_\+t Step = 1$>$ \\
+using \mbox{\hyperlink{group__utilsmake__integer__range_ga6593b60afa5929e922ecc032ce2db4d1}{utils\+::make\+\_\+index\+\_\+range}} = typedef \mbox{\hyperlink{group__utilsmake__integer__range_ga011249984f152afb7307c44c21667c79}{make\+\_\+integer\+\_\+range}}$<$std\+::size\+\_\+t, End, Begin, Step$>$}
+
+
+
+Creates a size\+\_\+t index sequence with custom Begin and Step values. 
+
+\begin{DoxyRemark}{Remarks}
+Convenience alias for {\ttfamily make\+\_\+integer\+\_\+range} with {\ttfamily std\+::size\+\_\+t} type. 
+\end{DoxyRemark}
+
+
+Definition at line \mbox{\hyperlink{type_8hpp_source_l00131}{131}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
+
+\mbox{\Hypertarget{group__utilsmake__integer__range_ga011249984f152afb7307c44c21667c79}\label{group__utilsmake__integer__range_ga011249984f152afb7307c44c21667c79}} 
+\index{utils::make\_integer\_range@{utils::make\_integer\_range}!make\_integer\_range@{make\_integer\_range}}
+\index{make\_integer\_range@{make\_integer\_range}!utils::make\_integer\_range@{utils::make\_integer\_range}}
+\doxysubsubsection{\texorpdfstring{make\_integer\_range}{make\_integer\_range}}
+{\footnotesize\ttfamily template$<$typename T , T End, T Begin = 0, T Step = 1$>$ \\
+using \mbox{\hyperlink{group__utilsmake__integer__range_ga011249984f152afb7307c44c21667c79}{utils\+::make\+\_\+integer\+\_\+range}} = typedef detail\+::sequence\+\_\+apply$<$T, \mbox{[}$\,$\mbox{]}(T n) \{ return Begin + n $\ast$ Step}
+
+
+
+Definition at line \mbox{\hyperlink{type_8hpp_source_l00124}{124}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
+

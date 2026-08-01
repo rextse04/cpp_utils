@@ -1,9 +1,9 @@
 var searchData=
 [
   ['sane_5fcommon_5ftype_0',['sane_common_type',['../group__sane__common__type.html#structutils_1_1sane__common__type',1,'utils']]],
-  ['search_1',['search',['../structutils_1_1meta_1_1search.html',1,'utils::meta']]],
-  ['search_3c_20tuple_2c_20t_2c_20predtrait_2c_20end_2c_20end_20_3e_2',['search&lt; Tuple, T, PredTrait, End, End &gt;',['../structutils_1_1meta_1_1search_3_01Tuple_00_01T_00_01PredTrait_00_01End_00_01End_01_4.html',1,'utils::meta']]],
-  ['search_5ftrait_3',['search_trait',['../structutils_1_1meta_1_1search__trait.html',1,'utils::meta']]],
+  ['search_1',['search',['../group__metasearch.html#structutils_1_1meta_1_1search',1,'utils::meta']]],
+  ['search_3c_20tuple_2c_20t_2c_20predtrait_2c_20end_2c_20end_20_3e_2',['search&lt; Tuple, T, PredTrait, End, End &gt;',['../group__metasearch.html#structutils_1_1meta_1_1search_3_01Tuple_00_01T_00_01PredTrait_00_01End_00_01End_01_4',1,'utils::meta']]],
+  ['search_5ftrait_3',['search_trait',['../group__metasearch.html#structutils_1_1meta_1_1search__trait',1,'utils::meta']]],
   ['set_4',['set',['../classutils_1_1meta_1_1set.html',1,'utils::meta']]],
   ['shift_5fasg_5fop_5ffunctors_5',['shift_asg_op_functors',['../structutils_1_1shift__asg__op__functors.html',1,'utils']]],
   ['shift_5fasg_5fops_6',['shift_asg_ops',['../structutils_1_1shift__asg__ops.html',1,'utils']]],
@@ -25,12 +25,12 @@ var searchData=
   ['sign_5fops_22',['sign_ops',['../structutils_1_1sign__ops.html',1,'utils']]],
   ['sign_5fops_3c_20_7b_7d_20_3e_23',['sign_ops&lt; {} &gt;',['../structutils_1_1sign__ops.html',1,'utils']]],
   ['sink_24',['sink',['../structutils_1_1sink.html',1,'utils']]],
-  ['slice_25',['slice',['../structutils_1_1meta_1_1slice.html',1,'utils::meta']]],
-  ['smart_5fpack_26',['smart_pack',['../structutils_1_1meta_1_1smart__pack.html',1,'utils::meta']]],
-  ['smart_5fpack_3c_20std_3a_3atuple_3c_20ts_2e_2e_2e_20_3e_20_3e_27',['smart_pack&lt; std::tuple&lt; Ts... &gt; &gt;',['../structutils_1_1meta_1_1smart__pack_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4.html',1,'utils::meta']]],
+  ['slice_25',['slice',['../group__metaslice.html#structutils_1_1meta_1_1slice',1,'utils::meta']]],
+  ['smart_5fpack_26',['smart_pack',['../group__metasmart__pack.html#structutils_1_1meta_1_1smart__pack',1,'utils::meta']]],
+  ['smart_5fpack_3c_20std_3a_3atuple_3c_20ts_2e_2e_2e_20_3e_20_3e_27',['smart_pack&lt; std::tuple&lt; Ts... &gt; &gt;',['../group__metasmart__pack.html#structutils_1_1meta_1_1smart__pack_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4',1,'utils::meta']]],
   ['stack_5fallocator_28',['stack_allocator',['../classutils_1_1pmr_1_1stack__allocator.html',1,'utils::pmr']]],
   ['stale_5fclass_29',['stale_class',['../structutils_1_1stale__class.html',1,'utils']]],
-  ['subset_5fof_30',['subset_of',['../structutils_1_1meta_1_1subset__of.html',1,'utils::meta']]],
-  ['sum_31',['sum',['../structutils_1_1meta_1_1sum.html',1,'utils::meta']]],
+  ['subset_5fof_30',['subset_of',['../group__metasubset__of.html#structutils_1_1meta_1_1subset__of',1,'utils::meta']]],
+  ['sum_31',['sum',['../group__metasum.html#structutils_1_1meta_1_1sum',1,'utils::meta']]],
   ['synth_5fthree_5fway_5fresult_32',['synth_three_way_result',['../structutils_1_1synth__three__way__result.html',1,'utils']]]
 ];

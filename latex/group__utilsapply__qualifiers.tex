@@ -1,0 +1,67 @@
+\hypertarget{group__utilsapply__qualifiers}{}\doxysection{utils\+::apply\+\_\+qualifiers}
+\label{group__utilsapply__qualifiers}\index{utils::apply\_qualifiers@{utils::apply\_qualifiers}}
+
+
+Applies specified const and volatile qualifiers to a type, while retaining reference category/pointer.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{group__utilsapply__qualifiers_structutils_1_1apply__qualifiers}{utils\+::apply\+\_\+qualifiers$<$ T, Q $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} Q$>$ }\\using \mbox{\hyperlink{group__utilsapply__qualifiers_ga0f1ae7032a6b8ec9503056a4ac3a0b46}{utils\+::apply\+\_\+qualifiers\+\_\+t}} = \mbox{\hyperlink{group__utilsapply__qualifiers_structutils_1_1apply__qualifiers}{apply\+\_\+qualifiers}}$<$ T, Q $>$\+::type
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Applies specified const and volatile qualifiers to a type, while retaining reference category/pointer. 
+
+
+
+\doxysubsection{Class Documentation}
+\index{utils::apply\_qualifiers@{utils::apply\_qualifiers}}\label{structutils_1_1apply__qualifiers}
+\Hypertarget{group__utilsapply__qualifiers_structutils_1_1apply__qualifiers}
+\doxysubsubsection{struct utils\+::apply\+\_\+qualifiers}
+\subsubsection*{template$<$typename T, \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} Q$>$\newline
+struct utils\+::apply\+\_\+qualifiers$<$ T, Q $>$}
+
+
+Definition at line \mbox{\hyperlink{type_8hpp_source_l00041}{41}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{group__utilsapply__qualifiers_ad9cf77b994760c3269b02afe2b850572}{type}} = std\+::conditional\+\_\+t$<$ std\+::is\+\_\+lvalue\+\_\+reference\+\_\+v$<$ T $>$, std\+::add\+\_\+lvalue\+\_\+reference\+\_\+t$<$ CVDT $>$, std\+::conditional\+\_\+t$<$ std\+::is\+\_\+rvalue\+\_\+reference\+\_\+v$<$ T $>$, std\+::add\+\_\+rvalue\+\_\+reference\+\_\+t$<$ CVDT $>$, std\+::conditional\+\_\+t$<$ std\+::is\+\_\+pointer\+\_\+v$<$ T $>$, CVDT $\ast$, CVDT $>$ $>$ $>$
+\end{DoxyCompactItemize}
+
+
+\doxyparagraph{Member Typedef Documentation}
+\mbox{\Hypertarget{group__utilsapply__qualifiers_ad9cf77b994760c3269b02afe2b850572}\label{group__utilsapply__qualifiers_ad9cf77b994760c3269b02afe2b850572}} 
+\index{utils::apply\_qualifiers$<$ T, Q $>$@{utils::apply\_qualifiers$<$ T, Q $>$}!type@{type}}
+\index{type@{type}!utils::apply\_qualifiers$<$ T, Q $>$@{utils::apply\_qualifiers$<$ T, Q $>$}}
+\doxysubparagraph{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} Q$>$ \\
+using \mbox{\hyperlink{group__utilsapply__qualifiers_structutils_1_1apply__qualifiers}{utils\+::apply\+\_\+qualifiers}}$<$ T, Q $>$\+::\mbox{\hyperlink{group__utilsapply__qualifiers_ad9cf77b994760c3269b02afe2b850572}{type}} =  std\+::conditional\+\_\+t$<$std\+::is\+\_\+lvalue\+\_\+reference\+\_\+v$<$T$>$, std\+::add\+\_\+lvalue\+\_\+reference\+\_\+t$<$CVDT$>$, std\+::conditional\+\_\+t$<$std\+::is\+\_\+rvalue\+\_\+reference\+\_\+v$<$T$>$, std\+::add\+\_\+rvalue\+\_\+reference\+\_\+t$<$CVDT$>$, std\+::conditional\+\_\+t$<$std\+::is\+\_\+pointer\+\_\+v$<$T$>$, CVDT$\ast$, CVDT$>$ $>$$>$}
+
+
+
+Definition at line \mbox{\hyperlink{type_8hpp_source_l00048}{48}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__utilsapply__qualifiers_ga0f1ae7032a6b8ec9503056a4ac3a0b46}\label{group__utilsapply__qualifiers_ga0f1ae7032a6b8ec9503056a4ac3a0b46}} 
+\index{utils::apply\_qualifiers@{utils::apply\_qualifiers}!apply\_qualifiers\_t@{apply\_qualifiers\_t}}
+\index{apply\_qualifiers\_t@{apply\_qualifiers\_t}!utils::apply\_qualifiers@{utils::apply\_qualifiers}}
+\doxysubsubsection{\texorpdfstring{apply\_qualifiers\_t}{apply\_qualifiers\_t}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} Q$>$ \\
+using \mbox{\hyperlink{group__utilsapply__qualifiers_ga0f1ae7032a6b8ec9503056a4ac3a0b46}{utils\+::apply\+\_\+qualifiers\+\_\+t}} = typedef \mbox{\hyperlink{group__utilsapply__qualifiers_structutils_1_1apply__qualifiers}{apply\+\_\+qualifiers}}$<$T, Q$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{type_8hpp_source_l00053}{53}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
+

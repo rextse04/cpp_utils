@@ -338,7 +338,7 @@
 \DoxyCodeLine{\Hypertarget{functional_8hpp_source_l00335}00335             \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} End = \mbox{\hyperlink{structutils_1_1with_ab98f662c0666d9b8a1a47ef88c0a3a96}{is\_variadic}}}
 \DoxyCodeLine{\Hypertarget{functional_8hpp_source_l00336}00336                 ? std::tuple\_size\_v<std::remove\_cvref\_t<\textcolor{keyword}{decltype}(args)>>}
 \DoxyCodeLine{\Hypertarget{functional_8hpp_source_l00337}00337                 : Begin + \mbox{\hyperlink{structutils_1_1arity}{arity}};}
-\DoxyCodeLine{\Hypertarget{functional_8hpp_source_l00338}00338             \textcolor{keywordflow}{return} call(\mbox{\hyperlink{namespaceutils_a6593b60afa5929e922ecc032ce2db4d1}{make\_index\_range<End, Begin>}}\{\});}
+\DoxyCodeLine{\Hypertarget{functional_8hpp_source_l00338}00338             \textcolor{keywordflow}{return} call(\mbox{\hyperlink{group__utilsmake__integer__range_ga6593b60afa5929e922ecc032ce2db4d1}{make\_index\_range<End, Begin>}}\{\});}
 \DoxyCodeLine{\Hypertarget{functional_8hpp_source_l00339}00339         \}}
 \DoxyCodeLine{\Hypertarget{functional_8hpp_source_l00340}00340     \};}
 \DoxyCodeLine{\Hypertarget{functional_8hpp_source_l00341}00341     \textcolor{keyword}{template} <\textcolor{keyword}{typename} G, std::\textcolor{keywordtype}{size\_t} Arity>}
@@ -403,7 +403,7 @@
 \DoxyCodeLine{\Hypertarget{functional_8hpp_source_l00400}00400                 \textcolor{keywordflow}{return} f(std::get<Idxs>(wraps).\textcolor{keyword}{template} \textcolor{keyword}{operator}()}
 \DoxyCodeLine{\Hypertarget{functional_8hpp_source_l00401}00401                     <detail::arity\_psum<\textcolor{keyword}{decltype}(wraps), Idxs>::value>(std::move(args\_tuple))...);}
 \DoxyCodeLine{\Hypertarget{functional_8hpp_source_l00402}00402             \};}
-\DoxyCodeLine{\Hypertarget{functional_8hpp_source_l00403}00403             \textcolor{keywordflow}{return} call(\mbox{\hyperlink{namespaceutils_a6593b60afa5929e922ecc032ce2db4d1}{make\_index\_range}}<std::tuple\_size\_v<\textcolor{keyword}{decltype}(wraps)>>\{\});}
+\DoxyCodeLine{\Hypertarget{functional_8hpp_source_l00403}00403             \textcolor{keywordflow}{return} call(\mbox{\hyperlink{group__utilsmake__integer__range_ga6593b60afa5929e922ecc032ce2db4d1}{make\_index\_range}}<std::tuple\_size\_v<\textcolor{keyword}{decltype}(wraps)>>\{\});}
 \DoxyCodeLine{\Hypertarget{functional_8hpp_source_l00404}00404         \};}
 \DoxyCodeLine{\Hypertarget{functional_8hpp_source_l00405}00405     \}}
 \DoxyCodeLine{\Hypertarget{functional_8hpp_source_l00406}00406 \}}

@@ -1,0 +1,53 @@
+\hypertarget{group__metaconcat}{}\doxysection{utils\+::meta\+::concat}
+\label{group__metaconcat}\index{utils::meta::concat@{utils::meta::concat}}
+
+
+Concatenate multiple tuple-\/like types into a single tuple type.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{group__metaconcat_structutils_1_1meta_1_1concat}{utils\+::meta\+::concat$<$ Tuples $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$tuple\+\_\+like... Tuples$>$ }\\using \mbox{\hyperlink{group__metaconcat_gafed300336aba4802fc3481ef2944a880}{utils\+::meta\+::concat\+\_\+t}} = \mbox{\hyperlink{group__metaconcat_structutils_1_1meta_1_1concat}{concat}}$<$ Tuples... $>$\+::type
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concatenate multiple tuple-\/like types into a single tuple type. 
+
+
+
+\doxysubsection{Class Documentation}
+\index{utils::meta::concat@{utils::meta::concat}}\label{structutils_1_1meta_1_1concat}
+\Hypertarget{group__metaconcat_structutils_1_1meta_1_1concat}
+\doxysubsubsection{struct utils\+::meta\+::concat}
+\subsubsection*{template$<$tuple\+\_\+like... Tuples$>$\newline
+struct utils\+::meta\+::concat$<$ Tuples $>$}
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00128}{128}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{group__metastrict__subset__of_gae0cc6b1113cbcb8e99c20146520ab37f}{type}} = decltype(std\+::tuple\+\_\+cat(std\+::declval$<$ Tuples $>$()...))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__metaconcat_gafed300336aba4802fc3481ef2944a880}\label{group__metaconcat_gafed300336aba4802fc3481ef2944a880}} 
+\index{utils::meta::concat@{utils::meta::concat}!concat\_t@{concat\_t}}
+\index{concat\_t@{concat\_t}!utils::meta::concat@{utils::meta::concat}}
+\doxysubsubsection{\texorpdfstring{concat\_t}{concat\_t}}
+{\footnotesize\ttfamily template$<$tuple\+\_\+like... Tuples$>$ \\
+using \mbox{\hyperlink{group__metaconcat_gafed300336aba4802fc3481ef2944a880}{utils\+::meta\+::concat\+\_\+t}} = typedef \mbox{\hyperlink{group__metaconcat_structutils_1_1meta_1_1concat}{concat}}$<$Tuples...$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00132}{132}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+

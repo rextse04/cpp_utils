@@ -1,0 +1,70 @@
+\hypertarget{group__utilsqualifiers__of}{}\doxysection{utils\+::qualifiers\+\_\+of}
+\label{group__utilsqualifiers__of}\index{utils::qualifiers\_of@{utils::qualifiers\_of}}
+
+
+Extracts the const and volatile qualifiers from a type.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{group__utilsqualifiers__of_structutils_1_1qualifiers__of}{utils\+::qualifiers\+\_\+of$<$ T $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\constexpr \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} \mbox{\hyperlink{group__utilsqualifiers__of_gad6a8c3be8fd9c0f96263ed785cd8bff7}{utils\+::qualifiers\+\_\+of\+\_\+v}} = \mbox{\hyperlink{group__utilsqualifiers__of_structutils_1_1qualifiers__of}{qualifiers\+\_\+of}}$<$T$>$\+::value
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Extracts the const and volatile qualifiers from a type. 
+
+\begin{DoxyRemark}{Remarks}
+Ignores reference and pointer decorations, extracting qualifiers from the underlying type. 
+\end{DoxyRemark}
+
+
+\doxysubsection{Class Documentation}
+\index{utils::qualifiers\_of@{utils::qualifiers\_of}}\label{structutils_1_1qualifiers__of}
+\Hypertarget{group__utilsqualifiers__of_structutils_1_1qualifiers__of}
+\doxysubsubsection{struct utils\+::qualifiers\+\_\+of}
+\subsubsection*{template$<$typename T$>$\newline
+struct utils\+::qualifiers\+\_\+of$<$ T $>$}
+
+
+Definition at line \mbox{\hyperlink{type_8hpp_source_l00026}{26}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
+
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} \mbox{\hyperlink{group__utilsqualifiers__of_ab4110edae1047498a9f80371249a8533}{value}} \{+c $\ast$ std\+::is\+\_\+const\+\_\+v$<$DT$>$ + +v $\ast$ std\+::is\+\_\+volatile\+\_\+v$<$DT$>$\}
+\end{DoxyCompactItemize}
+
+
+\doxyparagraph{Member Data Documentation}
+\mbox{\Hypertarget{group__utilsqualifiers__of_ab4110edae1047498a9f80371249a8533}\label{group__utilsqualifiers__of_ab4110edae1047498a9f80371249a8533}} 
+\index{utils::qualifiers\_of$<$ T $>$@{utils::qualifiers\_of$<$ T $>$}!value@{value}}
+\index{value@{value}!utils::qualifiers\_of$<$ T $>$@{utils::qualifiers\_of$<$ T $>$}}
+\doxysubparagraph{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} \mbox{\hyperlink{group__utilsqualifiers__of_structutils_1_1qualifiers__of}{utils\+::qualifiers\+\_\+of}}$<$ T $>$\+::value \{+c $\ast$ std\+::is\+\_\+const\+\_\+v$<$DT$>$ + +v $\ast$ std\+::is\+\_\+volatile\+\_\+v$<$DT$>$\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{type_8hpp_source_l00031}{31}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{group__utilsqualifiers__of_gad6a8c3be8fd9c0f96263ed785cd8bff7}\label{group__utilsqualifiers__of_gad6a8c3be8fd9c0f96263ed785cd8bff7}} 
+\index{utils::qualifiers\_of@{utils::qualifiers\_of}!qualifiers\_of\_v@{qualifiers\_of\_v}}
+\index{qualifiers\_of\_v@{qualifiers\_of\_v}!utils::qualifiers\_of@{utils::qualifiers\_of}}
+\doxysubsubsection{\texorpdfstring{qualifiers\_of\_v}{qualifiers\_of\_v}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} utils\+::qualifiers\+\_\+of\+\_\+v = \mbox{\hyperlink{group__utilsqualifiers__of_structutils_1_1qualifiers__of}{qualifiers\+\_\+of}}$<$T$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{type_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
+

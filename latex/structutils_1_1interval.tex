@@ -32,7 +32,12 @@ constexpr bool \mbox{\hyperlink{structutils_1_1interval_afba4323d395fd4ab185cc9d
 {\footnotesize template$<$typename L2 , typename R2 , detail\+::strict\+\_\+weak\+\_\+order$<$ const L \&, const R \&, const L2 \&, const R2 \& $>$ Compare = std\+::less$<$$>$$>$ }\\constexpr bool \mbox{\hyperlink{structutils_1_1interval_a34785fa10bece378c9ad6a192099ca1a}{subset\+\_\+of}} (const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&other, const Compare \&comp=\{\}) const
 \begin{DoxyCompactList}\small\item\em Determines whether {\ttfamily $\ast$this} is a subset of {\ttfamily other}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename L2 , typename R2 , detail\+::strict\+\_\+weak\+\_\+order$<$ const L \&, const R \&, const L2 \&, const R2 \& $>$ Compare = std\+::less$<$$>$$>$ }\\constexpr bool \mbox{\hyperlink{structutils_1_1interval_a9164a14c5af6fad2f01f6d5e4fc28681}{strict\+\_\+subset\+\_\+of}} (const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&other, const Compare \&comp=\{\}) const
-\begin{DoxyCompactList}\small\item\em Determines whether {\ttfamily $\ast$this} is a strict subset of {\ttfamily other}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Determines whether {\ttfamily $\ast$this} is a strict subset of {\ttfamily other}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename L2 , typename R2 $>$ \newline
+requires (detail\+::strict\+\_\+weak\+\_\+order$<$std\+::less$<$$>$, const L\&, const R\&, const L2\&, const R2\&$>$)}\\constexpr std\+::partial\+\_\+ordering \mbox{\hyperlink{group__utilsintervalcomparison_ga25e12e71ad43636f184197a1329500df}{operator$<$=$>$}} (const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&other) const
+\item 
+{\footnotesize template$<$typename L2 , typename R2 , detail\+::strict\+\_\+weak\+\_\+order$<$ const L \&, const R \&, const L2 \&, const R2 \& $>$ Compare = std\+::less$<$$>$$>$ }\\constexpr std\+::partial\+\_\+ordering \mbox{\hyperlink{group__utilsintervalcomparison_gab25eb88158269045c97d7649d0222dd5}{compare}} (const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&other, const Compare \&comp=\{\}) const
+\begin{DoxyCompactList}\small\item\em $I1$ is taken to be {\ttfamily $\ast$this}, $I2$ is taken to be {\ttfamily other}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \textbf{ }\par
 \begin{DoxyCompactItemize}
 \item 
@@ -43,19 +48,6 @@ requires ( std\+::is\+\_\+constructible\+\_\+v$<$CL, const L\&$>$ \&\& std\+::is
 requires requires}\\constexpr \mbox{\hyperlink{structutils_1_1interval}{interval}} \mbox{\hyperlink{structutils_1_1interval_a0eac8db5d70e12c7cb5f4e161e3ec2f1}{intersection\+\_\+with}} (const \mbox{\hyperlink{structutils_1_1interval}{interval}} \&other, const Compare \&comp=\{\}) const
 \end{DoxyCompactItemize}
 
-\begin{Indent}\textbf{ Comparison functions.}\par
-{\em Three-\/way comparison operator.
-
-Given intervals $I1$ and $I2$, $I1<I2$ if and only if $I1$ is a proper subset of $I2$. This defines a strict partial ordering on intervals.
-
-The comparator is taken to be {\ttfamily std\+::less\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}}. }\begin{DoxyCompactItemize}
-\item 
-{\footnotesize template$<$typename L2 , typename R2 $>$ \newline
-requires (detail\+::strict\+\_\+weak\+\_\+order$<$std\+::less$<$$>$, const L\&, const R\&, const L2\&, const R2\&$>$)}\\constexpr std\+::partial\+\_\+ordering \mbox{\hyperlink{structutils_1_1interval_a25e12e71ad43636f184197a1329500df}{operator$<$=$>$}} (const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&other) const
-\item 
-{\footnotesize template$<$typename L2 , typename R2 , detail\+::strict\+\_\+weak\+\_\+order$<$ const L \&, const R \&, const L2 \&, const R2 \& $>$ Compare = std\+::less$<$$>$$>$ }\\constexpr std\+::partial\+\_\+ordering \mbox{\hyperlink{structutils_1_1interval_ab25eb88158269045c97d7649d0222dd5}{compare}} (const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&other, const Compare \&comp=\{\}) const
-\begin{DoxyCompactList}\small\item\em $I1$ is taken to be {\ttfamily $\ast$this}, $I2$ is taken to be {\ttfamily other}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\end{Indent}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -107,22 +99,6 @@ Definition at line \mbox{\hyperlink{interval_8hpp_source_l00102}{102}} of file \
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{structutils_1_1interval_ab25eb88158269045c97d7649d0222dd5}\label{structutils_1_1interval_ab25eb88158269045c97d7649d0222dd5}} 
-\index{utils::interval$<$ L, R $>$@{utils::interval$<$ L, R $>$}!compare@{compare}}
-\index{compare@{compare}!utils::interval$<$ L, R $>$@{utils::interval$<$ L, R $>$}}
-\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
-{\footnotesize\ttfamily template$<$typename L , typename R $>$ \\
-template$<$typename L2 , typename R2 , detail\+::strict\+\_\+weak\+\_\+order$<$ const L \&, const R \&, const L2 \&, const R2 \& $>$ Compare = std\+::less$<$$>$$>$ \\
-constexpr std\+::partial\+\_\+ordering \mbox{\hyperlink{structutils_1_1interval}{utils\+::interval}}$<$ L, R $>$\+::compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&}]{other,  }\item[{const Compare \&}]{comp = {\ttfamily \{\}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
-
-
-
-$I1$ is taken to be {\ttfamily $\ast$this}, $I2$ is taken to be {\ttfamily other}. 
-
-
-
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00202}{202}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
-
 \mbox{\Hypertarget{structutils_1_1interval_a2b616d8f95af510e2bd97ae77a4a4ca2}\label{structutils_1_1interval_a2b616d8f95af510e2bd97ae77a4a4ca2}} 
 \index{utils::interval$<$ L, R $>$@{utils::interval$<$ L, R $>$}!contains@{contains}}
 \index{contains@{contains}!utils::interval$<$ L, R $>$@{utils::interval$<$ L, R $>$}}
@@ -184,19 +160,6 @@ Constructs the intersection between the interval and {\ttfamily other}.
 
 
 Definition at line \mbox{\hyperlink{interval_8hpp_source_l00168}{168}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
-
-\mbox{\Hypertarget{structutils_1_1interval_a25e12e71ad43636f184197a1329500df}\label{structutils_1_1interval_a25e12e71ad43636f184197a1329500df}} 
-\index{utils::interval$<$ L, R $>$@{utils::interval$<$ L, R $>$}!operator$<$=$>$@{operator$<$=$>$}}
-\index{operator$<$=$>$@{operator$<$=$>$}!utils::interval$<$ L, R $>$@{utils::interval$<$ L, R $>$}}
-\doxysubsubsection{\texorpdfstring{operator$<$=$>$()}{operator<=>()}}
-{\footnotesize\ttfamily template$<$typename L , typename R $>$ \\
-template$<$typename L2 , typename R2 $>$ \newline
-requires (detail\+::strict\+\_\+weak\+\_\+order$<$std\+::less$<$$>$, const L\&, const R\&, const L2\&, const R2\&$>$)\\
-constexpr std\+::partial\+\_\+ordering \mbox{\hyperlink{structutils_1_1interval}{utils\+::interval}}$<$ L, R $>$\+::operator$<$=$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
-
-
-
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00195}{195}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
 \mbox{\Hypertarget{structutils_1_1interval_afba4323d395fd4ab185cc9df575c06ca}\label{structutils_1_1interval_afba4323d395fd4ab185cc9df575c06ca}} 
 \index{utils::interval$<$ L, R $>$@{utils::interval$<$ L, R $>$}!operator==@{operator==}}

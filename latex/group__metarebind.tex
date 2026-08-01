@@ -1,0 +1,70 @@
+\hypertarget{group__metarebind}{}\doxysection{utils\+::meta\+::rebind}
+\label{group__metarebind}\index{utils::meta::rebind@{utils::meta::rebind}}
+
+
+Rebinds a template instance {\ttfamily T} to {\ttfamily Args}.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{group__metarebind_structutils_1_1meta_1_1rebind}{utils\+::meta\+::rebind$<$ T, Args $>$}}
+\item 
+struct \mbox{\hyperlink{group__metarebind_structutils_1_1meta_1_1rebind_3_01T_00_01Args_8_8_8_01_4}{utils\+::meta\+::rebind$<$ T, Args... $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename... Args$>$ }\\using \mbox{\hyperlink{group__metarebind_gafe8efef1673daf4f8ce44537acf10a3b}{utils\+::meta\+::rebind\+\_\+t}} = \mbox{\hyperlink{group__metarebind_structutils_1_1meta_1_1rebind}{rebind}}$<$ T, Args... $>$\+::type
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Rebinds a template instance {\ttfamily T} to {\ttfamily Args}. 
+
+If {\ttfamily T} is in the form {\ttfamily Tmpl\texorpdfstring{$<$}{<}...\texorpdfstring{$>$}{>}}, {\ttfamily rebind\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}\+::type} is {\ttfamily Tmpl\texorpdfstring{$<$}{<}Args...\texorpdfstring{$>$}{>}}. Otherwise, {\ttfamily rebind\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}\+::type} is {\ttfamily T}. 
+
+\doxysubsection{Class Documentation}
+\index{utils::meta::rebind@{utils::meta::rebind}}\label{structutils_1_1meta_1_1rebind}
+\Hypertarget{group__metarebind_structutils_1_1meta_1_1rebind}
+\doxysubsubsection{struct utils\+::meta\+::rebind}
+\subsubsection*{template$<$typename T, typename... Args$>$\newline
+struct utils\+::meta\+::rebind$<$ T, Args $>$}
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00297}{297}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{group__metastrict__subset__of_ga69eca927314093ceb631ff560340a761}{type}} = T
+\end{DoxyCompactItemize}
+\index{utils::meta::rebind$<$ T, Args... $>$@{utils::meta::rebind$<$ T, Args... $>$}}\label{structutils_1_1meta_1_1rebind_3_01T_00_01Args_8_8_8_01_4}
+\Hypertarget{group__metarebind_structutils_1_1meta_1_1rebind_3_01T_00_01Args_8_8_8_01_4}
+\doxysubsubsection{struct utils\+::meta\+::rebind\texorpdfstring{$<$}{<} T, Args... \texorpdfstring{$>$}{>}}
+\subsubsection*{template$<$typename T, typename... Args$>$\newline
+requires requires\newline
+struct utils\+::meta\+::rebind$<$ T, Args... $>$}
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00302}{302}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{group__metastrict__subset__of_gadd1a1b646abb378b8987a68f60a634a0}{type}} = \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{extract}}$<$ T $>$\+::template trait$<$ Args... $>$\+::\mbox{\hyperlink{group__metastrict__subset__of_gadd1a1b646abb378b8987a68f60a634a0}{type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__metarebind_gafe8efef1673daf4f8ce44537acf10a3b}\label{group__metarebind_gafe8efef1673daf4f8ce44537acf10a3b}} 
+\index{utils::meta::rebind@{utils::meta::rebind}!rebind\_t@{rebind\_t}}
+\index{rebind\_t@{rebind\_t}!utils::meta::rebind@{utils::meta::rebind}}
+\doxysubsubsection{\texorpdfstring{rebind\_t}{rebind\_t}}
+{\footnotesize\ttfamily template$<$typename T , typename... Args$>$ \\
+using \mbox{\hyperlink{group__metarebind_gafe8efef1673daf4f8ce44537acf10a3b}{utils\+::meta\+::rebind\+\_\+t}} = typedef \mbox{\hyperlink{group__metarebind_structutils_1_1meta_1_1rebind}{rebind}}$<$T, Args...$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00306}{306}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+

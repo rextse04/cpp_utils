@@ -256,7 +256,7 @@
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00377}00377         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} U>}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00378}00378         \textcolor{keyword}{concept }dptr\_compatible = \textcolor{keyword}{requires} \{}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00379}00379             \textcolor{keyword}{requires} std::is\_convertible\_v<T*, typename U::base\_type>;}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00380}00380             \textcolor{keyword}{requires} \mbox{\hyperlink{namespaceutils_1_1meta_a89bb8d8a2a70515ade89987c00ae2ba8}{meta::reduce\_v}}<std::conjunction, \mbox{\hyperlink{namespaceutils_1_1meta_a3b38ac9e969ec6ebdba7cc79b96e7417}{meta::map\_t}}<}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00380}00380             \textcolor{keyword}{requires} \mbox{\hyperlink{group__metareduce_ga89bb8d8a2a70515ade89987c00ae2ba8}{meta::reduce\_v}}<std::conjunction, \mbox{\hyperlink{group__metamap_ga3b38ac9e969ec6ebdba7cc79b96e7417}{meta::map\_t}}<}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00381}00381                 meta::bind\_back<has\_implemented, std::remove\_cv\_t<T>>::template trait, \textcolor{keyword}{typename} U::interfaces>>;}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00382}00382         \};}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00383}00383     \}}
@@ -265,7 +265,7 @@
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00403}00403     \textcolor{keyword}{public}:}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00404}00404         \textcolor{keyword}{using} default\_interface = std::remove\_all\_extents\_t<std::remove\_cvref\_t<I>>;}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00405}00405     \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00406}00406         \textcolor{keyword}{using} LastI = \mbox{\hyperlink{namespaceutils_1_1meta_a61e11c441feed9dbfea860435a6745d6}{meta::at\_t}}<std::tuple<void, Is...>, -\/1>; \textcolor{comment}{// the void is for when `Is` is empty}}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00406}00406         \textcolor{keyword}{using} LastI = \mbox{\hyperlink{group__metaat_ga61e11c441feed9dbfea860435a6745d6}{meta::at\_t}}<std::tuple<void, Is...>, -\/1>; \textcolor{comment}{// the void is for when `Is` is empty}}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00407}00407         \textcolor{keyword}{using} AllIs = std::tuple<default\_interface, Is...>;}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00408}00408     \textcolor{keyword}{public}:}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00409}00409         \textcolor{keyword}{using} tag = dptr\_tag;}
@@ -287,7 +287,7 @@
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00425}00425         \textcolor{keyword}{struct }rebind\_deleter\_tmpl;}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00426}00426         \textcolor{keyword}{template} <\textcolor{keyword}{typename} Deleter, \textcolor{keyword}{typename} T>}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00427}00427         \textcolor{keyword}{struct }rebind\_deleter\_tmpl<Deleter, true, T> \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00428}00428             \textcolor{keyword}{using} type = meta::apply\_t<dptr, \mbox{\hyperlink{namespaceutils_1_1meta_afed300336aba4802fc3481ef2944a880}{meta::concat\_t}}<\mbox{\hyperlink{namespaceutils_1_1meta_a38abc3ef8e35eaf454eea88f36750bbc}{meta::slice\_t}}<Args, 0, -\/1>, std::tuple<Deleter>>>;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00428}00428             \textcolor{keyword}{using} type = meta::apply\_t<dptr, \mbox{\hyperlink{group__metaconcat_gafed300336aba4802fc3481ef2944a880}{meta::concat\_t}}<\mbox{\hyperlink{group__metaslice_ga38abc3ef8e35eaf454eea88f36750bbc}{meta::slice\_t}}<Args, 0, -\/1>, std::tuple<Deleter>>>;}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00429}00429         \};}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00430}00430         \textcolor{keyword}{template} <\textcolor{keyword}{typename} Deleter, \textcolor{keyword}{typename} T>}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00431}00431         \textcolor{keyword}{struct }rebind\_deleter\_tmpl<Deleter, false, T> \{}
@@ -295,7 +295,7 @@
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00433}00433         \};}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00434}00434         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00435}00435         \textcolor{keyword}{struct }rebind\_deleter\_tmpl<void, true, T> \{}
-\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00436}00436             \textcolor{keyword}{using} type = meta::apply\_t<dptr, \mbox{\hyperlink{namespaceutils_1_1meta_a38abc3ef8e35eaf454eea88f36750bbc}{meta::slice\_t}}<Args, 0, -\/1>>;}
+\DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00436}00436             \textcolor{keyword}{using} type = meta::apply\_t<dptr, \mbox{\hyperlink{group__metaslice_ga38abc3ef8e35eaf454eea88f36750bbc}{meta::slice\_t}}<Args, 0, -\/1>>;}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00437}00437         \};}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00438}00438         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
 \DoxyCodeLine{\Hypertarget{dynamic_8hpp_source_l00439}00439         \textcolor{keyword}{struct }rebind\_deleter\_tmpl<void, false, T> \{}

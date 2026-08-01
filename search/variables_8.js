@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['max_5falign_5fv_0',['max_align_v',['../namespaceutils.html#a261afe138d5120bb7ae53bac474fc8a7',1,'utils']]],
+  ['max_5falign_5fv_0',['max_align_v',['../group__utilsmax__align.html#ga261afe138d5120bb7ae53bac474fc8a7',1,'utils']]],
   ['minus_1',['minus',['../structutils_1_1integral__op__functors.html#a4da9e384f5fab9c40ea968591ea3cbd6',1,'utils::integral_op_functors']]],
   ['minus_5fasg_2',['minus_asg',['../structutils_1_1integral__asg__op__functors.html#a8f0d68446390f36ff0706aff24e7ea2e',1,'utils::integral_asg_op_functors']]],
   ['modulus_3',['modulus',['../structutils_1_1integral__op__functors.html#a55835d18aa697b3b61b63028391ffc36',1,'utils::integral_op_functors']]],

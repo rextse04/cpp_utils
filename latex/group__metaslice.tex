@@ -1,0 +1,53 @@
+\hypertarget{group__metaslice}{}\doxysection{utils\+::meta\+::slice}
+\label{group__metaslice}\index{utils::meta::slice@{utils::meta::slice}}
+
+
+Extracts a slice from a tuple type from index {\ttfamily Begin} to index {\ttfamily End} (exclusive).  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{group__metaslice_structutils_1_1meta_1_1slice}{utils\+::meta\+::slice$<$ Tuple, Begin, End $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Begin = 0, std\+::ptrdiff\+\_\+t End = std\+::tuple\+\_\+size\+\_\+v$<$\+Tuple$>$$>$ }\\using \mbox{\hyperlink{group__metaslice_ga38abc3ef8e35eaf454eea88f36750bbc}{utils\+::meta\+::slice\+\_\+t}} = \mbox{\hyperlink{group__metaslice_structutils_1_1meta_1_1slice}{slice}}$<$ Tuple, Begin, End $>$\+::type
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Extracts a slice from a tuple type from index {\ttfamily Begin} to index {\ttfamily End} (exclusive). 
+
+Both {\ttfamily Begin} and {\ttfamily End} can be negative indices, which are normalized relative to the tuple size. If {\ttfamily Begin \texorpdfstring{$>$}{>}= End}, an empty tuple is returned. 
+
+\doxysubsection{Class Documentation}
+\index{utils::meta::slice@{utils::meta::slice}}\label{structutils_1_1meta_1_1slice}
+\Hypertarget{group__metaslice_structutils_1_1meta_1_1slice}
+\doxysubsubsection{struct utils\+::meta\+::slice}
+\subsubsection*{template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Begin = 0, std\+::ptrdiff\+\_\+t End = std\+::tuple\+\_\+size\+\_\+v$<$\+Tuple$>$$>$\newline
+struct utils\+::meta\+::slice$<$ Tuple, Begin, End $>$}
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00150}{150}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{group__metastrict__subset__of_gad9768f6f6120d03d55fce41b53c335a8}{type}} = decltype(\mbox{[}$\,$\mbox{]}() \{ if constexpr(begin$<$ end) return detail\+::slice$<$ Tuple, begin, std\+::make\+\_\+index\+\_\+sequence$<$ end -\/ begin $>$ $>$\{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__metaslice_ga38abc3ef8e35eaf454eea88f36750bbc}\label{group__metaslice_ga38abc3ef8e35eaf454eea88f36750bbc}} 
+\index{utils::meta::slice@{utils::meta::slice}!slice\_t@{slice\_t}}
+\index{slice\_t@{slice\_t}!utils::meta::slice@{utils::meta::slice}}
+\doxysubsubsection{\texorpdfstring{slice\_t}{slice\_t}}
+{\footnotesize\ttfamily template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Begin = 0, std\+::ptrdiff\+\_\+t End = std\+::tuple\+\_\+size\+\_\+v$<$\+Tuple$>$$>$ \\
+using \mbox{\hyperlink{group__metaslice_ga38abc3ef8e35eaf454eea88f36750bbc}{utils\+::meta\+::slice\+\_\+t}} = typedef \mbox{\hyperlink{group__metaslice_structutils_1_1meta_1_1slice}{slice}}$<$Tuple, Begin, End$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00160}{160}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+

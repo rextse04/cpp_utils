@@ -1,0 +1,58 @@
+\hypertarget{group__metainfer}{}\doxysection{utils\+::meta\+::infer}
+\label{group__metainfer}\index{utils::meta::infer@{utils::meta::infer}}
+
+
+Converts an {\ttfamily Erased\+Result} to a {\ttfamily Result}.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{group__metainfer_structutils_1_1meta_1_1infer}{utils\+::meta\+::infer$<$ Erased\+Result $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Erased\+Result $>$ }\\using \mbox{\hyperlink{group__metainfer_ga589006341bea1c7475635f68058edb53}{utils\+::meta\+::infer\+\_\+t}} = \mbox{\hyperlink{group__metainfer_structutils_1_1meta_1_1infer}{infer}}$<$ Erased\+Result $>$\+::type
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Converts an {\ttfamily Erased\+Result} to a {\ttfamily Result}. 
+
+If {\ttfamily Erased\+Result} has a {\ttfamily type} member, that is returned; otherwise, {\ttfamily Erased\+Result} itself is returned. 
+
+\doxysubsection{Class Documentation}
+\index{utils::meta::infer@{utils::meta::infer}}\label{structutils_1_1meta_1_1infer}
+\Hypertarget{group__metainfer_structutils_1_1meta_1_1infer}
+\doxysubsubsection{struct utils\+::meta\+::infer}
+\subsubsection*{template$<$typename \mbox{\hyperlink{group__metastrict__subset__of_ga1cf91fddec6a7f669b55820814674e71}{Erased\+Result}}$>$\newline
+struct utils\+::meta\+::infer$<$ Erased\+Result $>$}
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00202}{202}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{group__metastrict__subset__of_ga43c3aa2423e04165a63b232a97ec2d92}{type}} = std\+::conditional\+\_\+t$<$ requires \{ typename Erased\+Result\+::type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__metastrict__subset__of_ga1cf91fddec6a7f669b55820814674e71}{Erased\+Result}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__metainfer_ga589006341bea1c7475635f68058edb53}\label{group__metainfer_ga589006341bea1c7475635f68058edb53}} 
+\index{utils::meta::infer@{utils::meta::infer}!infer\_t@{infer\_t}}
+\index{infer\_t@{infer\_t}!utils::meta::infer@{utils::meta::infer}}
+\doxysubsubsection{\texorpdfstring{infer\_t}{infer\_t}}
+{\footnotesize\ttfamily template$<$typename Erased\+Result $>$ \\
+using \mbox{\hyperlink{group__metainfer_ga589006341bea1c7475635f68058edb53}{utils\+::meta\+::infer\+\_\+t}} = typedef \mbox{\hyperlink{group__metainfer_structutils_1_1meta_1_1infer}{infer}}$<$Erased\+Result$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00207}{207}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+

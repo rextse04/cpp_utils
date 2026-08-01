@@ -120,20 +120,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a03d7067835085714a7915d8c8988f42d"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1interval__endpoint.html#a03d7067835085714a7915d8c8988f42d">operator==</a> (const <a class="el" href="structutils_1_1interval__endpoint.html">interval_endpoint</a> &amp;other) const =default</td></tr>
 <tr class="memdesc:a03d7067835085714a7915d8c8988f42d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality operator.  <a href="structutils_1_1interval__endpoint.html#a03d7067835085714a7915d8c8988f42d">More...</a><br /></td></tr>
 <tr class="separator:a03d7067835085714a7915d8c8988f42d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">Comparison functions.</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p >Three-way comparison operator.</p>
-<p >Given endpoints <img class="formulaInl" alt="$E1$" src="form_13.png"/> and <img class="formulaInl" alt="$E2$" src="form_14.png"/>, <img class="formulaInl" alt="$E1&lt;E2$" src="form_15.png"/> if and only if the set represented by <img class="formulaInl" alt="$E1$" src="form_13.png"/> is a proper subset of the set represented by <img class="formulaInl" alt="$E2$" src="form_14.png"/>. This defines a strict weak ordering on endpoints.</p>
-<p >Let <img class="formulaInl" alt="$v$" src="form_5.png"/> be <code>this-&gt;value</code> and <img class="formulaInl" alt="$ov$" src="form_16.png"/> be <code>other.value</code>. The program is ill-formed if there is not a restriction of <code>std::less&lt;&gt;</code> such that <img class="formulaInl" alt="$v$" src="form_5.png"/> and <img class="formulaInl" alt="$ov$" src="form_16.png"/> are in the domain. It is UB if such a restriction does not satisfy <em>Compare</em>.</p>
-<p >All endpoints are assumed to be right endpoints. The comparator is taken to be <code>std::less&lt;&gt;</code>. </p>
-</div></td></tr>
-<tr class="memitem:a7531876b5ec7ffc958b3020f32b14a60"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; <br />
+<tr class="memitem:ga7531876b5ec7ffc958b3020f32b14a60"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; <br />
 requires (detail::strict_weak_order&lt;std::less&lt;&gt;, const T&amp;, const U&amp;&gt;)</td></tr>
-<tr class="memitem:a7531876b5ec7ffc958b3020f32b14a60"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::weak_ordering&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structutils_1_1interval__endpoint.html#a7531876b5ec7ffc958b3020f32b14a60">operator&lt;=&gt;</a> (const <a class="el" href="structutils_1_1interval__endpoint.html">interval_endpoint</a>&lt; U &gt; &amp;other) const</td></tr>
-<tr class="separator:a7531876b5ec7ffc958b3020f32b14a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfe97454fff1e35e7177d9b24cf69801"><td class="memTemplParams" colspan="2">template&lt;typename U , detail::strict_weak_order&lt; const T &amp;, const U &amp; &gt; Compare = std::less&lt;&gt;&gt; </td></tr>
-<tr class="memitem:abfe97454fff1e35e7177d9b24cf69801"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::weak_ordering&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structutils_1_1interval__endpoint.html#abfe97454fff1e35e7177d9b24cf69801">compare</a> (const <a class="el" href="structutils_1_1interval__endpoint.html">interval_endpoint</a>&lt; U &gt; &amp;other, bool right, const Compare &amp;comp={}) const</td></tr>
-<tr class="memdesc:abfe97454fff1e35e7177d9b24cf69801"><td class="mdescLeft">&#160;</td><td class="mdescRight"><img class="formulaInl" alt="$E1$" src="form_13.png"/> is taken to be <code>*this</code>, <img class="formulaInl" alt="$E2$" src="form_14.png"/> is taken to be <code>other</code>.  <a href="structutils_1_1interval__endpoint.html#abfe97454fff1e35e7177d9b24cf69801">More...</a><br /></td></tr>
-<tr class="separator:abfe97454fff1e35e7177d9b24cf69801"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7531876b5ec7ffc958b3020f32b14a60"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::weak_ordering&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utilsintervalendpointcomparison.html#ga7531876b5ec7ffc958b3020f32b14a60">operator&lt;=&gt;</a> (const <a class="el" href="structutils_1_1interval__endpoint.html">interval_endpoint</a>&lt; U &gt; &amp;other) const</td></tr>
+<tr class="separator:ga7531876b5ec7ffc958b3020f32b14a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabfe97454fff1e35e7177d9b24cf69801"><td class="memTemplParams" colspan="2">template&lt;typename U , detail::strict_weak_order&lt; const T &amp;, const U &amp; &gt; Compare = std::less&lt;&gt;&gt; </td></tr>
+<tr class="memitem:gabfe97454fff1e35e7177d9b24cf69801"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::weak_ordering&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__utilsintervalendpointcomparison.html#gabfe97454fff1e35e7177d9b24cf69801">compare</a> (const <a class="el" href="structutils_1_1interval__endpoint.html">interval_endpoint</a>&lt; U &gt; &amp;other, bool right, const Compare &amp;comp={}) const</td></tr>
+<tr class="memdesc:gabfe97454fff1e35e7177d9b24cf69801"><td class="mdescLeft">&#160;</td><td class="mdescRight"><img class="formulaInl" alt="$E1$" src="form_13.png"/> is taken to be <code>*this</code>, <img class="formulaInl" alt="$E2$" src="form_14.png"/> is taken to be <code>other</code>.  <a href="group__utilsintervalendpointcomparison.html#gabfe97454fff1e35e7177d9b24cf69801">More...</a><br /></td></tr>
+<tr class="separator:gabfe97454fff1e35e7177d9b24cf69801"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -180,56 +174,6 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="abfe97454fff1e35e7177d9b24cf69801" name="abfe97454fff1e35e7177d9b24cf69801"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfe97454fff1e35e7177d9b24cf69801">&#9670;&nbsp;</a></span>compare()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<div class="memtemplate">
-template&lt;typename U , detail::strict_weak_order&lt; const T &amp;, const U &amp; &gt; Compare = std::less&lt;&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr std::weak_ordering <a class="el" href="structutils_1_1interval__endpoint.html">utils::interval_endpoint</a>&lt; T &gt;::compare </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structutils_1_1interval__endpoint.html">interval_endpoint</a>&lt; U &gt; &amp;&#160;</td>
-          <td class="paramname"><em>other</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>right</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Compare &amp;&#160;</td>
-          <td class="paramname"><em>comp</em> = <code>{}</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><img class="formulaInl" alt="$E1$" src="form_13.png"/> is taken to be <code>*this</code>, <img class="formulaInl" alt="$E2$" src="form_14.png"/> is taken to be <code>other</code>. </p>
-
-<p class="definition">Definition at line <a class="el" href="interval_8hpp_source.html#l00078">78</a> of file <a class="el" href="interval_8hpp_source.html">interval.hpp</a>.</p>
-
-</div>
-</div>
 <a id="a028d3823fbc68dc72353ab3e52d1223b" name="a028d3823fbc68dc72353ab3e52d1223b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a028d3823fbc68dc72353ab3e52d1223b">&#9670;&nbsp;</a></span>operator interval_endpoint&lt; U &gt;()</h2>
 
@@ -261,39 +205,6 @@ template&lt;std::constructible_from&lt; const T &amp; &gt; U&gt; </div>
 <p >Allows conversion to an endpoint with a compatible value type. </p><dl class="section note"><dt>Note</dt><dd>A conversion operator is chosen over a constructor to keep this class an aggregate. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="interval_8hpp_source.html#l00050">50</a> of file <a class="el" href="interval_8hpp_source.html">interval.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a7531876b5ec7ffc958b3020f32b14a60" name="a7531876b5ec7ffc958b3020f32b14a60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7531876b5ec7ffc958b3020f32b14a60">&#9670;&nbsp;</a></span>operator&lt;=&gt;()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<div class="memtemplate">
-template&lt;typename U &gt; <br />
-requires (detail::strict_weak_order&lt;std::less&lt;&gt;, const T&amp;, const U&amp;&gt;)</div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr std::weak_ordering <a class="el" href="structutils_1_1interval__endpoint.html">utils::interval_endpoint</a>&lt; T &gt;::operator&lt;=&gt; </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structutils_1_1interval__endpoint.html">interval_endpoint</a>&lt; U &gt; &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="interval_8hpp_source.html#l00072">72</a> of file <a class="el" href="interval_8hpp_source.html">interval.hpp</a>.</p>
 
 </div>
 </div>

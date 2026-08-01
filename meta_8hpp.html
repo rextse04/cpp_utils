@@ -86,7 +86,9 @@ $(document).ready(function(){initNavTree('meta_8hpp.html',''); initResizable(); 
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#concepts">Concepts</a>  </div>
+<a href="#concepts">Concepts</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">meta.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -130,79 +132,76 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1is__tuple.html">utils::meta::is_tuple&lt; T &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1is__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4.html">utils::meta::is_tuple&lt; std::tuple&lt; Ts... &gt; &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1pack.html">utils::meta::pack&lt; Ts &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1smart__pack.html">utils::meta::smart_pack&lt; Ts &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1smart__pack_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4.html">utils::meta::smart_pack&lt; std::tuple&lt; Ts... &gt; &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1make__tuple.html">utils::meta::make_tuple&lt; T &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1actual__index.html">utils::meta::actual_index&lt; Tuple, Idx &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1at.html">utils::meta::at&lt; Tuple, Idx &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1search.html">utils::meta::search&lt; Tuple, T, PredTrait, Begin, End &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1search_3_01Tuple_00_01T_00_01PredTrait_00_01End_00_01End_01_4.html">utils::meta::search&lt; Tuple, T, PredTrait, End, End &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1search__trait.html">utils::meta::search_trait&lt; Tuple, T &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1contained__in.html">utils::meta::contained_in&lt; Tuple, T, PredTrait, Begin, End &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1contained__in__trait.html">utils::meta::contained_in_trait&lt; Tuple, T &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1concat.html">utils::meta::concat&lt; Tuples &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1slice.html">utils::meta::slice&lt; Tuple, Begin, End &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1insert.html">utils::meta::insert&lt; Tuple, Idx, Inserted &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1erase.html">utils::meta::erase&lt; Tuple, Begin, End &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1replace.html">utils::meta::replace&lt; Tuple, Idx, T &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1infer.html">utils::meta::infer&lt; ErasedResult &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1map.html">utils::meta::map&lt; Trait, Tuple, Tuples &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1reduce.html">utils::meta::reduce&lt; Trait, T &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1reduce_3_01Trait_00_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4.html">utils::meta::reduce&lt; Trait, std::tuple&lt; Ts... &gt; &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1sum.html">utils::meta::sum&lt; ValueResults &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1product.html">utils::meta::product&lt; ValueResults &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1extract.html">utils::meta::extract&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the template arguments from a template instantiation.  <a href="structutils_1_1meta_1_1extract.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4.html">utils::meta::extract&lt; Tmpl&lt; Args... &gt; &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4_1_1trait.html">utils::meta::extract&lt; Tmpl&lt; Args... &gt; &gt;::trait&lt; Ts &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1rebind.html">utils::meta::rebind&lt; T, Args &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebinds a template instance <code>T</code> to <code>Args</code>.  <a href="structutils_1_1meta_1_1rebind.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1rebind_3_01T_00_01Args_8_8_8_01_4.html">utils::meta::rebind&lt; T, Args... &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1is__tuple"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metais__tuple.html#structutils_1_1meta_1_1is__tuple">utils::meta::is_tuple&lt; T &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1is__tuple"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1is__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metais__tuple.html#structutils_1_1meta_1_1is__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4">utils::meta::is_tuple&lt; std::tuple&lt; Ts... &gt; &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1is__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1pack"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metapack.html#structutils_1_1meta_1_1pack">utils::meta::pack&lt; Ts &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1pack"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1smart__pack"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metasmart__pack.html#structutils_1_1meta_1_1smart__pack">utils::meta::smart_pack&lt; Ts &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1smart__pack"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1smart__pack_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metasmart__pack.html#structutils_1_1meta_1_1smart__pack_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4">utils::meta::smart_pack&lt; std::tuple&lt; Ts... &gt; &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1smart__pack_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1make__tuple"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metamake__tuple.html#structutils_1_1meta_1_1make__tuple">utils::meta::make_tuple&lt; T &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1make__tuple"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1actual__index"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metaactual__index.html#structutils_1_1meta_1_1actual__index">utils::meta::actual_index&lt; Tuple, Idx &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1actual__index"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1at"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metaat.html#structutils_1_1meta_1_1at">utils::meta::at&lt; Tuple, Idx &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1at"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1search"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metasearch.html#structutils_1_1meta_1_1search">utils::meta::search&lt; Tuple, T, PredTrait, Begin, End &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1search"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1search_3_01Tuple_00_01T_00_01PredTrait_00_01End_00_01End_01_4"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metasearch.html#structutils_1_1meta_1_1search_3_01Tuple_00_01T_00_01PredTrait_00_01End_00_01End_01_4">utils::meta::search&lt; Tuple, T, PredTrait, End, End &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1search_3_01Tuple_00_01T_00_01PredTrait_00_01End_00_01End_01_4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1search__trait"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metasearch.html#structutils_1_1meta_1_1search__trait">utils::meta::search_trait&lt; Tuple, T &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1search__trait"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1contained__in"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metacontained__in.html#structutils_1_1meta_1_1contained__in">utils::meta::contained_in&lt; Tuple, T, PredTrait, Begin, End &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1contained__in"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1contained__in__trait"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metacontained__in.html#structutils_1_1meta_1_1contained__in__trait">utils::meta::contained_in_trait&lt; Tuple, T &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1contained__in__trait"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1concat"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metaconcat.html#structutils_1_1meta_1_1concat">utils::meta::concat&lt; Tuples &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1concat"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1slice"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metaslice.html#structutils_1_1meta_1_1slice">utils::meta::slice&lt; Tuple, Begin, End &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1slice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1insert"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metainsert.html#structutils_1_1meta_1_1insert">utils::meta::insert&lt; Tuple, Idx, Inserted &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1insert"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1erase"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metaerase.html#structutils_1_1meta_1_1erase">utils::meta::erase&lt; Tuple, Begin, End &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1erase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1replace"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metareplace.html#structutils_1_1meta_1_1replace">utils::meta::replace&lt; Tuple, Idx, T &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1replace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1infer"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metainfer.html#structutils_1_1meta_1_1infer">utils::meta::infer&lt; ErasedResult &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1infer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1map"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metamap.html#structutils_1_1meta_1_1map">utils::meta::map&lt; Trait, Tuple, Tuples &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1map"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1reduce"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metareduce.html#structutils_1_1meta_1_1reduce">utils::meta::reduce&lt; Trait, T &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1reduce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1reduce_3_01Trait_00_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metareduce.html#structutils_1_1meta_1_1reduce_3_01Trait_00_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4">utils::meta::reduce&lt; Trait, std::tuple&lt; Ts... &gt; &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1reduce_3_01Trait_00_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1sum"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metasum.html#structutils_1_1meta_1_1sum">utils::meta::sum&lt; ValueResults &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1sum"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1product"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metaproduct.html#structutils_1_1meta_1_1product">utils::meta::product&lt; ValueResults &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1product"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1extract"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metaextract.html#structutils_1_1meta_1_1extract">utils::meta::extract&lt; T &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1extract"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metaextract.html#structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4">utils::meta::extract&lt; Tmpl&lt; Args... &gt; &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4_1_1trait"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metastrict__subset__of.html#structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4_1_1trait">utils::meta::extract&lt; Tmpl&lt; Args... &gt; &gt;::trait&lt; Ts &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4_1_1trait"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1rebind"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metarebind.html#structutils_1_1meta_1_1rebind">utils::meta::rebind&lt; T, Args &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1rebind"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1rebind_3_01T_00_01Args_8_8_8_01_4"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metarebind.html#structutils_1_1meta_1_1rebind_3_01T_00_01Args_8_8_8_01_4">utils::meta::rebind&lt; T, Args... &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1rebind_3_01T_00_01Args_8_8_8_01_4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1bind__front.html">utils::meta::bind_front&lt; Trait, Args &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds template arguments to the front of a <code>Trait</code> template.  <a href="structutils_1_1meta_1_1bind__front.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1bind__front_1_1trait.html">utils::meta::bind_front&lt; Trait, Args &gt;::trait&lt; Ts &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1bind__front_1_1trait"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metastrict__subset__of.html#structutils_1_1meta_1_1bind__front_1_1trait">utils::meta::bind_front&lt; Trait, Args &gt;::trait&lt; Ts &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1bind__front_1_1trait"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1bind__back.html">utils::meta::bind_back&lt; Trait, Args &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds template arguments to the back of a <code>Trait</code> template.  <a href="structutils_1_1meta_1_1bind__back.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1bind__back_1_1trait.html">utils::meta::bind_back&lt; Trait, Args &gt;::trait&lt; Ts &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1meta_1_1subset__of.html">utils::meta::subset_of&lt; SmallTuple, BigTuple &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if every type in <code>SmallTuple</code> is contained in <code>BigTuple</code>.  <a href="structutils_1_1meta_1_1subset__of.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1bind__back_1_1trait"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metastrict__subset__of.html#structutils_1_1meta_1_1bind__back_1_1trait">utils::meta::bind_back&lt; Trait, Args &gt;::trait&lt; Ts &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1bind__back_1_1trait"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structutils_1_1meta_1_1subset__of"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__metasubset__of.html#structutils_1_1meta_1_1subset__of">utils::meta::subset_of&lt; SmallTuple, BigTuple &gt;</a></td></tr>
+<tr class="separator:structutils_1_1meta_1_1subset__of"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -222,142 +221,75 @@ Concepts</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr><td colspan="2"><div class="groupHeader">pack</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p >Wraps a parameter pack into a tuple type.</p>
-<dl class="section remark"><dt>Remarks</dt><dd>This is useful for converting variadic template parameters into a tuple type. </dd></dl>
-</div></td></tr>
-<tr class="memitem:a9522a2e8902edd0be2270e5d9f505fa9"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
-<tr class="memitem:a9522a2e8902edd0be2270e5d9f505fa9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#a9522a2e8902edd0be2270e5d9f505fa9">utils::meta::pack_t</a> = pack&lt; Ts... &gt;::type</td></tr>
-<tr class="separator:a9522a2e8902edd0be2270e5d9f505fa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">smart_pack</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p >Wraps a parameter pack into a tuple type, unless exactly one tuple is given. </p>
-</div></td></tr>
-<tr class="memitem:a2c8c5ffdfd2792da0ed5c03737d910e8"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
-<tr class="memitem:a2c8c5ffdfd2792da0ed5c03737d910e8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#a2c8c5ffdfd2792da0ed5c03737d910e8">utils::meta::smart_pack_t</a> = smart_pack&lt; Ts... &gt;::type</td></tr>
-<tr class="separator:a2c8c5ffdfd2792da0ed5c03737d910e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">make_tuple</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p >Makes a tuple from a <code>tuple-like</code> type <code>T</code>. </p>
-</div></td></tr>
-<tr class="memitem:a7f3e3f258ae180aaf3a6cf1a9b9d45e6"><td class="memTemplParams" colspan="2">template&lt;tuple_like T&gt; </td></tr>
-<tr class="memitem:a7f3e3f258ae180aaf3a6cf1a9b9d45e6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#a7f3e3f258ae180aaf3a6cf1a9b9d45e6">utils::meta::make_tuple_t</a> = make_tuple&lt; T &gt;::type</td></tr>
-<tr class="separator:a7f3e3f258ae180aaf3a6cf1a9b9d45e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">at</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p >Similar to <code>std::tuple_element</code> but also accepts negative <code>Idx</code>. </p>
-</div></td></tr>
-<tr class="memitem:a61e11c441feed9dbfea860435a6745d6"><td class="memTemplParams" colspan="2">template&lt;tuple_like Tuple, std::ptrdiff_t Idx&gt; </td></tr>
-<tr class="memitem:a61e11c441feed9dbfea860435a6745d6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#a61e11c441feed9dbfea860435a6745d6">utils::meta::at_t</a> = at&lt; Tuple, Idx &gt;::type</td></tr>
-<tr class="separator:a61e11c441feed9dbfea860435a6745d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">concat</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p >Concatenate multiple tuple-like types into a single tuple type. </p>
-</div></td></tr>
-<tr class="memitem:afed300336aba4802fc3481ef2944a880"><td class="memTemplParams" colspan="2">template&lt;tuple_like... Tuples&gt; </td></tr>
-<tr class="memitem:afed300336aba4802fc3481ef2944a880"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#afed300336aba4802fc3481ef2944a880">utils::meta::concat_t</a> = concat&lt; Tuples... &gt;::type</td></tr>
-<tr class="separator:afed300336aba4802fc3481ef2944a880"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">slice</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p >Extracts a slice from a tuple type from index <code>Begin</code> to index <code>End</code> (exclusive).</p>
-<p >Both <code>Begin</code> and <code>End</code> can be negative indices, which are normalized relative to the tuple size. If <code>Begin &gt;= End</code>, an empty tuple is returned. </p>
-</div></td></tr>
-<tr class="memitem:a38abc3ef8e35eaf454eea88f36750bbc"><td class="memTemplParams" colspan="2">template&lt;tuple_like Tuple, std::ptrdiff_t Begin = 0, std::ptrdiff_t End = std::tuple_size_v&lt;Tuple&gt;&gt; </td></tr>
-<tr class="memitem:a38abc3ef8e35eaf454eea88f36750bbc"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#a38abc3ef8e35eaf454eea88f36750bbc">utils::meta::slice_t</a> = slice&lt; Tuple, Begin, End &gt;::type</td></tr>
-<tr class="separator:a38abc3ef8e35eaf454eea88f36750bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">insert</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p >Inserts a tuple-like type <code>Inserted</code> into a tuple type <code>Tuple</code> at index <code>Idx</code>.</p>
-<p >The index <code>Idx</code> can be negative, which is normalized relative to the tuple size. </p>
-</div></td></tr>
-<tr class="memitem:a74db5bbf8f178b4db63af53a7f59a002"><td class="memTemplParams" colspan="2">template&lt;tuple_like Tuple, std::ptrdiff_t Idx, tuple_like Inserted&gt; </td></tr>
-<tr class="memitem:a74db5bbf8f178b4db63af53a7f59a002"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#a74db5bbf8f178b4db63af53a7f59a002">utils::meta::insert_t</a> = insert&lt; Tuple, Idx, Inserted &gt;::type</td></tr>
-<tr class="separator:a74db5bbf8f178b4db63af53a7f59a002"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">erase</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p >Erases elements from a tuple type <code>Tuple</code> in the range [<code>Begin</code>, <code>End</code>).</p>
-<p >Both <code>Begin</code> and <code>End</code> can be negative indices, which are normalized relative to the tuple size. </p>
-</div></td></tr>
-<tr class="memitem:a57e2e26a9ed32b0384df07a98f53b377"><td class="memTemplParams" colspan="2">template&lt;tuple_like Tuple, std::ptrdiff_t Begin, std::ptrdiff_t End&gt; </td></tr>
-<tr class="memitem:a57e2e26a9ed32b0384df07a98f53b377"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#a57e2e26a9ed32b0384df07a98f53b377">utils::meta::erase_t</a> = erase&lt; Tuple, Begin, End &gt;::type</td></tr>
-<tr class="separator:a57e2e26a9ed32b0384df07a98f53b377"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">replace</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p >Replaces the element at index <code>Idx</code> in a tuple type <code>Tuple</code> with type <code>T</code>.</p>
-<p >The index <code>Idx</code> can be negative, which is normalized relative to the tuple size. </p>
-</div></td></tr>
-<tr class="memitem:a44e3856c9561e053226ad2c473572a43"><td class="memTemplParams" colspan="2">template&lt;tuple_like Tuple, std::ptrdiff_t Idx, typename T &gt; </td></tr>
-<tr class="memitem:a44e3856c9561e053226ad2c473572a43"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#a44e3856c9561e053226ad2c473572a43">utils::meta::replace_t</a> = replace&lt; Tuple, Idx, T &gt;::type</td></tr>
-<tr class="separator:a44e3856c9561e053226ad2c473572a43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">infer</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p >Converts an <code>ErasedResult</code> to a <code>Result</code>.</p>
-<p >If <code>ErasedResult</code> has a <code>type</code> member, that is returned; otherwise, <code>ErasedResult</code> itself is returned. </p>
-</div></td></tr>
-<tr class="memitem:a589006341bea1c7475635f68058edb53"><td class="memTemplParams" colspan="2">template&lt;typename ErasedResult &gt; </td></tr>
-<tr class="memitem:a589006341bea1c7475635f68058edb53"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#a589006341bea1c7475635f68058edb53">utils::meta::infer_t</a> = infer&lt; ErasedResult &gt;::type</td></tr>
-<tr class="separator:a589006341bea1c7475635f68058edb53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">map</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p >Applies a <code>Trait</code> template to corresponding elements across one or more tuple types.</p>
-<p >This creates a new tuple type where each element is the result of applying <code>Trait</code> to the corresponding elements from the input tuples. </p>
-</div></td></tr>
-<tr class="memitem:a3b38ac9e969ec6ebdba7cc79b96e7417"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename... &gt; typename Trait, tuple_like Tuple, tuple_like... Tuples&gt; </td></tr>
-<tr class="memitem:a3b38ac9e969ec6ebdba7cc79b96e7417"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#a3b38ac9e969ec6ebdba7cc79b96e7417">utils::meta::map_t</a> = map&lt; Trait, Tuple, Tuples... &gt;::type</td></tr>
-<tr class="separator:a3b38ac9e969ec6ebdba7cc79b96e7417"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:acd07985a63eb37381aaa77c70f6ea190"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:acd07985a63eb37381aaa77c70f6ea190"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#acd07985a63eb37381aaa77c70f6ea190">utils::meta::extract_t</a> = extract&lt; T &gt;::type</td></tr>
-<tr class="separator:acd07985a63eb37381aaa77c70f6ea190"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:afe8efef1673daf4f8ce44537acf10a3b"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
-<tr class="memitem:afe8efef1673daf4f8ce44537acf10a3b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#afe8efef1673daf4f8ce44537acf10a3b">utils::meta::rebind_t</a> = rebind&lt; T, Args... &gt;::type</td></tr>
-<tr class="separator:afe8efef1673daf4f8ce44537acf10a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9522a2e8902edd0be2270e5d9f505fa9"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
+<tr class="memitem:ga9522a2e8902edd0be2270e5d9f505fa9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metapack.html#ga9522a2e8902edd0be2270e5d9f505fa9">utils::meta::pack_t</a> = pack&lt; Ts... &gt;::type</td></tr>
+<tr class="separator:ga9522a2e8902edd0be2270e5d9f505fa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c8c5ffdfd2792da0ed5c03737d910e8"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
+<tr class="memitem:ga2c8c5ffdfd2792da0ed5c03737d910e8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metasmart__pack.html#ga2c8c5ffdfd2792da0ed5c03737d910e8">utils::meta::smart_pack_t</a> = smart_pack&lt; Ts... &gt;::type</td></tr>
+<tr class="separator:ga2c8c5ffdfd2792da0ed5c03737d910e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7f3e3f258ae180aaf3a6cf1a9b9d45e6"><td class="memTemplParams" colspan="2">template&lt;tuple_like T&gt; </td></tr>
+<tr class="memitem:ga7f3e3f258ae180aaf3a6cf1a9b9d45e6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metamake__tuple.html#ga7f3e3f258ae180aaf3a6cf1a9b9d45e6">utils::meta::make_tuple_t</a> = make_tuple&lt; T &gt;::type</td></tr>
+<tr class="separator:ga7f3e3f258ae180aaf3a6cf1a9b9d45e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga61e11c441feed9dbfea860435a6745d6"><td class="memTemplParams" colspan="2">template&lt;tuple_like Tuple, std::ptrdiff_t Idx&gt; </td></tr>
+<tr class="memitem:ga61e11c441feed9dbfea860435a6745d6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metaat.html#ga61e11c441feed9dbfea860435a6745d6">utils::meta::at_t</a> = at&lt; Tuple, Idx &gt;::type</td></tr>
+<tr class="separator:ga61e11c441feed9dbfea860435a6745d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafed300336aba4802fc3481ef2944a880"><td class="memTemplParams" colspan="2">template&lt;tuple_like... Tuples&gt; </td></tr>
+<tr class="memitem:gafed300336aba4802fc3481ef2944a880"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metaconcat.html#gafed300336aba4802fc3481ef2944a880">utils::meta::concat_t</a> = concat&lt; Tuples... &gt;::type</td></tr>
+<tr class="separator:gafed300336aba4802fc3481ef2944a880"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga38abc3ef8e35eaf454eea88f36750bbc"><td class="memTemplParams" colspan="2">template&lt;tuple_like Tuple, std::ptrdiff_t Begin = 0, std::ptrdiff_t End = std::tuple_size_v&lt;Tuple&gt;&gt; </td></tr>
+<tr class="memitem:ga38abc3ef8e35eaf454eea88f36750bbc"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metaslice.html#ga38abc3ef8e35eaf454eea88f36750bbc">utils::meta::slice_t</a> = slice&lt; Tuple, Begin, End &gt;::type</td></tr>
+<tr class="separator:ga38abc3ef8e35eaf454eea88f36750bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga74db5bbf8f178b4db63af53a7f59a002"><td class="memTemplParams" colspan="2">template&lt;tuple_like Tuple, std::ptrdiff_t Idx, tuple_like Inserted&gt; </td></tr>
+<tr class="memitem:ga74db5bbf8f178b4db63af53a7f59a002"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metainsert.html#ga74db5bbf8f178b4db63af53a7f59a002">utils::meta::insert_t</a> = insert&lt; Tuple, Idx, Inserted &gt;::type</td></tr>
+<tr class="separator:ga74db5bbf8f178b4db63af53a7f59a002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga57e2e26a9ed32b0384df07a98f53b377"><td class="memTemplParams" colspan="2">template&lt;tuple_like Tuple, std::ptrdiff_t Begin, std::ptrdiff_t End&gt; </td></tr>
+<tr class="memitem:ga57e2e26a9ed32b0384df07a98f53b377"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metaerase.html#ga57e2e26a9ed32b0384df07a98f53b377">utils::meta::erase_t</a> = erase&lt; Tuple, Begin, End &gt;::type</td></tr>
+<tr class="separator:ga57e2e26a9ed32b0384df07a98f53b377"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga44e3856c9561e053226ad2c473572a43"><td class="memTemplParams" colspan="2">template&lt;tuple_like Tuple, std::ptrdiff_t Idx, typename T &gt; </td></tr>
+<tr class="memitem:ga44e3856c9561e053226ad2c473572a43"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metareplace.html#ga44e3856c9561e053226ad2c473572a43">utils::meta::replace_t</a> = replace&lt; Tuple, Idx, T &gt;::type</td></tr>
+<tr class="separator:ga44e3856c9561e053226ad2c473572a43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga589006341bea1c7475635f68058edb53"><td class="memTemplParams" colspan="2">template&lt;typename ErasedResult &gt; </td></tr>
+<tr class="memitem:ga589006341bea1c7475635f68058edb53"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metainfer.html#ga589006341bea1c7475635f68058edb53">utils::meta::infer_t</a> = infer&lt; ErasedResult &gt;::type</td></tr>
+<tr class="separator:ga589006341bea1c7475635f68058edb53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3b38ac9e969ec6ebdba7cc79b96e7417"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename... &gt; typename Trait, tuple_like Tuple, tuple_like... Tuples&gt; </td></tr>
+<tr class="memitem:ga3b38ac9e969ec6ebdba7cc79b96e7417"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metamap.html#ga3b38ac9e969ec6ebdba7cc79b96e7417">utils::meta::map_t</a> = map&lt; Trait, Tuple, Tuples... &gt;::type</td></tr>
+<tr class="separator:ga3b38ac9e969ec6ebdba7cc79b96e7417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac678341b60759542f0fc5edb1c4f20f1"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename... &gt; typename Trait, tuple_like T&gt; </td></tr>
+<tr class="memitem:gac678341b60759542f0fc5edb1c4f20f1"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metareduce.html#gac678341b60759542f0fc5edb1c4f20f1">utils::meta::reduce_t</a> = reduce&lt; Trait, T &gt;::type</td></tr>
+<tr class="separator:gac678341b60759542f0fc5edb1c4f20f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacd07985a63eb37381aaa77c70f6ea190"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gacd07985a63eb37381aaa77c70f6ea190"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metaextract.html#gacd07985a63eb37381aaa77c70f6ea190">utils::meta::extract_t</a> = extract&lt; T &gt;::type</td></tr>
+<tr class="separator:gacd07985a63eb37381aaa77c70f6ea190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafe8efef1673daf4f8ce44537acf10a3b"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
+<tr class="memitem:gafe8efef1673daf4f8ce44537acf10a3b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metarebind.html#gafe8efef1673daf4f8ce44537acf10a3b">utils::meta::rebind_t</a> = rebind&lt; T, Args... &gt;::type</td></tr>
+<tr class="separator:gafe8efef1673daf4f8ce44537acf10a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr><td colspan="2"><div class="groupHeader">is_tuple</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p >Checks if <code>T</code> is a (real) tuple. </p>
-</div></td></tr>
-<tr class="memitem:ad2354777e112932691eea7de4623cbf0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ad2354777e112932691eea7de4623cbf0"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#ad2354777e112932691eea7de4623cbf0">utils::meta::is_tuple_v</a> = is_tuple&lt;T&gt;::value</td></tr>
-<tr class="separator:ad2354777e112932691eea7de4623cbf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">actual_index</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p >Calculates a normalized index (in <img class="formulaInl" alt="$ [0, N)$" src="form_20.png"/>) from a possibly negative index <code>Idx</code> and a tuple-like type <code>Tuple</code> of size <code>N</code>. </p>
-</div></td></tr>
-<tr class="memitem:a4d133c7490f073188fc7eb130261cbd2"><td class="memTemplParams" colspan="2">template&lt;tuple_like Tuple, std::ptrdiff_t Idx&gt; </td></tr>
-<tr class="memitem:a4d133c7490f073188fc7eb130261cbd2"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#a4d133c7490f073188fc7eb130261cbd2">utils::meta::actual_index_v</a> = actual_index&lt;Tuple, Idx&gt;::value</td></tr>
-<tr class="separator:a4d133c7490f073188fc7eb130261cbd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">search</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p >Finds the first index <code>Idx</code> in [ <code>Begin</code> , <code>End</code> ) such that <code>PredTrait&lt;at_t&lt;Tuple, Idx&gt;, T&gt;::value</code> is true.</p>
-<p >If such an element does not exist, <code>End</code> is returned. </p>
-</div></td></tr>
-<tr class="memitem:aeb4f807ff8f6a11b97c26fb852d91b16"><td class="memTemplParams" colspan="2">template&lt;tuple_like Tuple, typename T , template&lt; typename, typename &gt; typename PredTrait = std::is_same&gt; </td></tr>
-<tr class="memitem:aeb4f807ff8f6a11b97c26fb852d91b16"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#aeb4f807ff8f6a11b97c26fb852d91b16">utils::meta::search_v</a> = search&lt;Tuple, T, PredTrait&gt;::value</td></tr>
-<tr class="separator:aeb4f807ff8f6a11b97c26fb852d91b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">contained_in</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p >Checks if there exists an index <code>Idx</code> in <img class="formulaInl" alt="$ [\text{Begin},\text{End})$" src="form_21.png"/> such that <code>PredTrait&lt;at_t&lt;Tuple, Idx&gt;, T&gt;::value</code> is true. </p>
-</div></td></tr>
-<tr class="memitem:a1047a3fe70ce04f9726a0e5d3fb74acd"><td class="memTemplParams" colspan="2">template&lt;tuple_like Tuple, typename T , template&lt; typename, typename &gt; typename PredTrait = std::is_same&gt; </td></tr>
-<tr class="memitem:a1047a3fe70ce04f9726a0e5d3fb74acd"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#a1047a3fe70ce04f9726a0e5d3fb74acd">utils::meta::contained_in_v</a> = contained_in&lt;Tuple, T, PredTrait&gt;::value</td></tr>
-<tr class="separator:a1047a3fe70ce04f9726a0e5d3fb74acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">sum</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p >Computes the sum of <code>value</code> members from <code>ValueResult</code> types. </p>
-</div></td></tr>
-<tr class="memitem:aa6f94b0098e74cddc4241037e2a90844"><td class="memTemplParams" colspan="2">template&lt;typename... ValueResults&gt; </td></tr>
-<tr class="memitem:aa6f94b0098e74cddc4241037e2a90844"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#aa6f94b0098e74cddc4241037e2a90844">utils::meta::sum_v</a> = sum&lt;ValueResults...&gt;::value</td></tr>
-<tr class="separator:aa6f94b0098e74cddc4241037e2a90844"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">product</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p >Computes the product of <code>value</code> members from <code>ValueResult</code> types. </p>
-</div></td></tr>
-<tr class="memitem:a9a93c684aeb7e2311a64f82184e818e0"><td class="memTemplParams" colspan="2">template&lt;typename... ValueResults&gt; </td></tr>
-<tr class="memitem:a9a93c684aeb7e2311a64f82184e818e0"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#a9a93c684aeb7e2311a64f82184e818e0">utils::meta::product_v</a> = product&lt;ValueResults...&gt;::value</td></tr>
-<tr class="separator:a9a93c684aeb7e2311a64f82184e818e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:ae9e1e125419fe26992d7565a1c7f2045"><td class="memTemplParams" colspan="2">template&lt;tuple_like SmallTuple, tuple_like BigTuple&gt; </td></tr>
-<tr class="memitem:ae9e1e125419fe26992d7565a1c7f2045"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#ae9e1e125419fe26992d7565a1c7f2045">utils::meta::subset_of_v</a> = subset_of&lt;SmallTuple, BigTuple&gt;::value</td></tr>
-<tr class="separator:ae9e1e125419fe26992d7565a1c7f2045"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">reduce</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p ><a class="anchor" id="amgrpa6d0c789b244a68fef0d947638b280b1"></a>Applies a <code>Trait</code> template to all elements of a tuple, producing a single result.</p>
-<p >The result is either a <code>TypeResult</code> or a <code>ValueResult</code> depending on the trait. </p>
-</td></tr>
-<tr class="memitem:ac678341b60759542f0fc5edb1c4f20f1"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename... &gt; typename Trait, tuple_like T&gt; </td></tr>
-<tr class="memitem:ac678341b60759542f0fc5edb1c4f20f1"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#ac678341b60759542f0fc5edb1c4f20f1">utils::meta::reduce_t</a> = reduce&lt; Trait, T &gt;::type</td></tr>
-<tr class="separator:ac678341b60759542f0fc5edb1c4f20f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89bb8d8a2a70515ade89987c00ae2ba8"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename... &gt; typename Trait, tuple_like T&gt; </td></tr>
-<tr class="memitem:a89bb8d8a2a70515ade89987c00ae2ba8"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1meta.html#a89bb8d8a2a70515ade89987c00ae2ba8">utils::meta::reduce_v</a> = reduce&lt;Trait, T&gt;::value</td></tr>
-<tr class="separator:a89bb8d8a2a70515ade89987c00ae2ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad2354777e112932691eea7de4623cbf0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gad2354777e112932691eea7de4623cbf0"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metais__tuple.html#gad2354777e112932691eea7de4623cbf0">utils::meta::is_tuple_v</a> = is_tuple&lt;T&gt;::value</td></tr>
+<tr class="separator:gad2354777e112932691eea7de4623cbf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d133c7490f073188fc7eb130261cbd2"><td class="memTemplParams" colspan="2">template&lt;tuple_like Tuple, std::ptrdiff_t Idx&gt; </td></tr>
+<tr class="memitem:ga4d133c7490f073188fc7eb130261cbd2"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metaactual__index.html#ga4d133c7490f073188fc7eb130261cbd2">utils::meta::actual_index_v</a> = actual_index&lt;Tuple, Idx&gt;::value</td></tr>
+<tr class="separator:ga4d133c7490f073188fc7eb130261cbd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeb4f807ff8f6a11b97c26fb852d91b16"><td class="memTemplParams" colspan="2">template&lt;tuple_like Tuple, typename T , template&lt; typename, typename &gt; typename PredTrait = std::is_same&gt; </td></tr>
+<tr class="memitem:gaeb4f807ff8f6a11b97c26fb852d91b16"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metasearch.html#gaeb4f807ff8f6a11b97c26fb852d91b16">utils::meta::search_v</a> = search&lt;Tuple, T, PredTrait&gt;::value</td></tr>
+<tr class="separator:gaeb4f807ff8f6a11b97c26fb852d91b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1047a3fe70ce04f9726a0e5d3fb74acd"><td class="memTemplParams" colspan="2">template&lt;tuple_like Tuple, typename T , template&lt; typename, typename &gt; typename PredTrait = std::is_same&gt; </td></tr>
+<tr class="memitem:ga1047a3fe70ce04f9726a0e5d3fb74acd"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metacontained__in.html#ga1047a3fe70ce04f9726a0e5d3fb74acd">utils::meta::contained_in_v</a> = contained_in&lt;Tuple, T, PredTrait&gt;::value</td></tr>
+<tr class="separator:ga1047a3fe70ce04f9726a0e5d3fb74acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga89bb8d8a2a70515ade89987c00ae2ba8"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename... &gt; typename Trait, tuple_like T&gt; </td></tr>
+<tr class="memitem:ga89bb8d8a2a70515ade89987c00ae2ba8"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metareduce.html#ga89bb8d8a2a70515ade89987c00ae2ba8">utils::meta::reduce_v</a> = reduce&lt;Trait, T&gt;::value</td></tr>
+<tr class="separator:ga89bb8d8a2a70515ade89987c00ae2ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa6f94b0098e74cddc4241037e2a90844"><td class="memTemplParams" colspan="2">template&lt;typename... ValueResults&gt; </td></tr>
+<tr class="memitem:gaa6f94b0098e74cddc4241037e2a90844"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metasum.html#gaa6f94b0098e74cddc4241037e2a90844">utils::meta::sum_v</a> = sum&lt;ValueResults...&gt;::value</td></tr>
+<tr class="separator:gaa6f94b0098e74cddc4241037e2a90844"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9a93c684aeb7e2311a64f82184e818e0"><td class="memTemplParams" colspan="2">template&lt;typename... ValueResults&gt; </td></tr>
+<tr class="memitem:ga9a93c684aeb7e2311a64f82184e818e0"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metaproduct.html#ga9a93c684aeb7e2311a64f82184e818e0">utils::meta::product_v</a> = product&lt;ValueResults...&gt;::value</td></tr>
+<tr class="separator:ga9a93c684aeb7e2311a64f82184e818e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae9e1e125419fe26992d7565a1c7f2045"><td class="memTemplParams" colspan="2">template&lt;tuple_like SmallTuple, tuple_like BigTuple&gt; </td></tr>
+<tr class="memitem:gae9e1e125419fe26992d7565a1c7f2045"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__metasubset__of.html#gae9e1e125419fe26992d7565a1c7f2045">utils::meta::subset_of_v</a> = subset_of&lt;SmallTuple, BigTuple&gt;::value</td></tr>
+<tr class="separator:gae9e1e125419fe26992d7565a1c7f2045"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

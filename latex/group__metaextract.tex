@@ -1,0 +1,64 @@
+\hypertarget{group__metaextract}{}\doxysection{utils\+::meta\+::extract}
+\label{group__metaextract}\index{utils::meta::extract@{utils::meta::extract}}
+
+
+Extracts the template arguments from a template instantiation.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{utils\+::meta\+::extract$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4}{utils\+::meta\+::extract$<$ Tmpl$<$ Args... $>$ $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{group__metaextract_gacd07985a63eb37381aaa77c70f6ea190}{utils\+::meta\+::extract\+\_\+t}} = \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{extract}}$<$ T $>$\+::type
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Extracts the template arguments from a template instantiation. 
+
+{\ttfamily extract} is both a {\itshape Type\+Trait} and a {\itshape Meta\+Trait}. If {\ttfamily T} is a template instantiation, {\ttfamily extract\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}\+::type} is a tuple of its template arguments, and {\ttfamily extract\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}\+::trait} is a {\itshape Trait} which rebinds {\ttfamily T} to template arguments. Otherwise, {\ttfamily extract} is empty. 
+
+\doxysubsection{Class Documentation}
+\index{utils::meta::extract@{utils::meta::extract}}\label{structutils_1_1meta_1_1extract}
+\Hypertarget{group__metaextract_structutils_1_1meta_1_1extract}
+\doxysubsubsection{struct utils\+::meta\+::extract}
+\subsubsection*{template$<$typename T$>$\newline
+struct utils\+::meta\+::extract$<$ T $>$}
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00278}{278}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\index{utils::meta::extract$<$ Tmpl$<$ Args... $>$ $>$@{utils::meta::extract$<$ Tmpl$<$ Args... $>$ $>$}}\label{structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4}
+\Hypertarget{group__metaextract_structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4}
+\doxysubsubsection{struct utils\+::meta\+::extract\texorpdfstring{$<$}{<} Tmpl\texorpdfstring{$<$}{<} Args... \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>}}
+\subsubsection*{template$<$template$<$ typename... $>$ typename Tmpl, typename... Args$>$\newline
+struct utils\+::meta\+::extract$<$ Tmpl$<$ Args... $>$ $>$}
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00280}{280}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{group__metastrict__subset__of_ga0cabd8a79cff290bf18ede1db0ad70b8}{type}} = std\+::tuple$<$ Args... $>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__metaextract_gacd07985a63eb37381aaa77c70f6ea190}\label{group__metaextract_gacd07985a63eb37381aaa77c70f6ea190}} 
+\index{utils::meta::extract@{utils::meta::extract}!extract\_t@{extract\_t}}
+\index{extract\_t@{extract\_t}!utils::meta::extract@{utils::meta::extract}}
+\doxysubsubsection{\texorpdfstring{extract\_t}{extract\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{group__metaextract_gacd07985a63eb37381aaa77c70f6ea190}{utils\+::meta\+::extract\+\_\+t}} = typedef \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{extract}}$<$T$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00288}{288}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+

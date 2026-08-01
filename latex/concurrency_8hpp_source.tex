@@ -34,7 +34,7 @@
 \DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00042}00042         \textcolor{keyword}{template} <\textcolor{keyword}{typename} Lock, type\_qualifiers Q = type\_qualifiers::none>}
 \DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00043}\mbox{\hyperlink{classutils_1_1unique__resource_1_1permit__ptr}{00043}}         \textcolor{keyword}{class }\mbox{\hyperlink{classutils_1_1unique__resource_1_1permit__ptr}{permit\_ptr}} : \textcolor{keyword}{public} \mbox{\hyperlink{structutils_1_1stale__class}{stale\_class}} \{}
 \DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00044}00044         \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00045}00045             \mbox{\hyperlink{namespaceutils_a0f1ae7032a6b8ec9503056a4ac3a0b46}{apply\_qualifiers\_t<value\_type\&, Q>}} base\_;}
+\DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00045}00045             \mbox{\hyperlink{group__utilsapply__qualifiers_ga0f1ae7032a6b8ec9503056a4ac3a0b46}{apply\_qualifiers\_t<value\_type\&, Q>}} base\_;}
 \DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00046}00046             Lock lock\_;}
 \DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00047}00047             \textcolor{keyword}{explicit} \textcolor{keyword}{constexpr} \mbox{\hyperlink{classutils_1_1unique__resource_1_1permit__ptr}{permit\_ptr}}(\mbox{\hyperlink{classutils_1_1unique__resource}{unique\_resource}}\& owner) : base\_(owner.base\_), lock\_(owner.mutex\_) \{\}}
 \DoxyCodeLine{\Hypertarget{concurrency_8hpp_source_l00048}00048             \textcolor{keyword}{friend} \mbox{\hyperlink{classutils_1_1unique__resource_1_1permit}{permit}};}

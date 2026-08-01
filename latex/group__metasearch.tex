@@ -1,0 +1,130 @@
+\hypertarget{group__metasearch}{}\doxysection{utils\+::meta\+::search}
+\label{group__metasearch}\index{utils::meta::search@{utils::meta::search}}
+
+
+Finds the first index {\ttfamily Idx} in \mbox{[} {\ttfamily Begin} , {\ttfamily End} ) such that {\ttfamily Pred\+Trait\texorpdfstring{$<$}{<}at\+\_\+t\texorpdfstring{$<$}{<}Tuple, Idx\texorpdfstring{$>$}{>}, T\texorpdfstring{$>$}{>}\+::value} is true.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{group__metasearch_structutils_1_1meta_1_1search}{utils\+::meta\+::search$<$ Tuple, T, Pred\+Trait, Begin, End $>$}}
+\item 
+struct \mbox{\hyperlink{group__metasearch_structutils_1_1meta_1_1search_3_01Tuple_00_01T_00_01PredTrait_00_01End_00_01End_01_4}{utils\+::meta\+::search$<$ Tuple, T, Pred\+Trait, End, End $>$}}
+\item 
+struct \mbox{\hyperlink{group__metasearch_structutils_1_1meta_1_1search__trait}{utils\+::meta\+::search\+\_\+trait$<$ Tuple, T $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$tuple\+\_\+like Tuple, typename T , template$<$ typename, typename $>$ typename Pred\+Trait = std\+::is\+\_\+same$>$ }\\constexpr std\+::size\+\_\+t \mbox{\hyperlink{group__metasearch_gaeb4f807ff8f6a11b97c26fb852d91b16}{utils\+::meta\+::search\+\_\+v}} = \mbox{\hyperlink{group__metasearch_structutils_1_1meta_1_1search}{search}}$<$Tuple, T, Pred\+Trait$>$\+::value
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Finds the first index {\ttfamily Idx} in \mbox{[} {\ttfamily Begin} , {\ttfamily End} ) such that {\ttfamily Pred\+Trait\texorpdfstring{$<$}{<}at\+\_\+t\texorpdfstring{$<$}{<}Tuple, Idx\texorpdfstring{$>$}{>}, T\texorpdfstring{$>$}{>}\+::value} is true. 
+
+If such an element does not exist, {\ttfamily End} is returned. 
+
+\doxysubsection{Class Documentation}
+\index{utils::meta::search@{utils::meta::search}}\label{structutils_1_1meta_1_1search}
+\Hypertarget{group__metasearch_structutils_1_1meta_1_1search}
+\doxysubsubsection{struct utils\+::meta\+::search}
+\subsubsection*{template$<$tuple\+\_\+like Tuple, typename T, template$<$ typename, typename $>$ typename Pred\+Trait = std\+::is\+\_\+same, std\+::ptrdiff\+\_\+t Begin = 0, std\+::ptrdiff\+\_\+t End = std\+::tuple\+\_\+size\+\_\+v$<$\+Tuple$>$$>$\newline
+struct utils\+::meta\+::search$<$ Tuple, T, Pred\+Trait, Begin, End $>$}
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00099}{99}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+
+
+Inheritance diagram for utils\+::meta\+::search\texorpdfstring{$<$}{<} Tuple, T, Pred\+Trait, Begin, End \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structutils_1_1meta_1_1search__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for utils\+::meta\+::search\texorpdfstring{$<$}{<} Tuple, T, Pred\+Trait, Begin, End \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structutils_1_1meta_1_1search__coll__graph}
+\end{center}
+\end{figure}
+\index{utils::meta::search$<$ Tuple, T, PredTrait, End, End $>$@{utils::meta::search$<$ Tuple, T, PredTrait, End, End $>$}}\label{structutils_1_1meta_1_1search_3_01Tuple_00_01T_00_01PredTrait_00_01End_00_01End_01_4}
+\Hypertarget{group__metasearch_structutils_1_1meta_1_1search_3_01Tuple_00_01T_00_01PredTrait_00_01End_00_01End_01_4}
+\doxysubsubsection{struct utils\+::meta\+::search\texorpdfstring{$<$}{<} Tuple, T, Pred\+Trait, End, End \texorpdfstring{$>$}{>}}
+\subsubsection*{template$<$tuple\+\_\+like Tuple, typename T, template$<$ typename, typename $>$ typename Pred\+Trait, std\+::ptrdiff\+\_\+t End$>$\newline
+struct utils\+::meta\+::search$<$ Tuple, T, Pred\+Trait, End, End $>$}
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00103}{103}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+
+
+Inheritance diagram for utils\+::meta\+::search\texorpdfstring{$<$}{<} Tuple, T, Pred\+Trait, End, End \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{structutils_1_1meta_1_1search_3_01Tuple_00_01T_00_01PredTrait_00_01End_00_01End_01_4__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for utils\+::meta\+::search\texorpdfstring{$<$}{<} Tuple, T, Pred\+Trait, End, End \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{structutils_1_1meta_1_1search_3_01Tuple_00_01T_00_01PredTrait_00_01End_00_01End_01_4__coll__graph}
+\end{center}
+\end{figure}
+\index{utils::meta::search\_trait@{utils::meta::search\_trait}}\label{structutils_1_1meta_1_1search__trait}
+\Hypertarget{group__metasearch_structutils_1_1meta_1_1search__trait}
+\doxysubsubsection{struct utils\+::meta\+::search\+\_\+trait}
+\subsubsection*{template$<$tuple\+\_\+like Tuple, typename T$>$\newline
+struct utils\+::meta\+::search\+\_\+trait$<$ Tuple, T $>$}
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00107}{107}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+
+
+Inheritance diagram for utils\+::meta\+::search\+\_\+trait\texorpdfstring{$<$}{<} Tuple, T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structutils_1_1meta_1_1search__trait__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for utils\+::meta\+::search\+\_\+trait\texorpdfstring{$<$}{<} Tuple, T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structutils_1_1meta_1_1search__trait__coll__graph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{group__metasearch_gaeb4f807ff8f6a11b97c26fb852d91b16}\label{group__metasearch_gaeb4f807ff8f6a11b97c26fb852d91b16}} 
+\index{utils::meta::search@{utils::meta::search}!search\_v@{search\_v}}
+\index{search\_v@{search\_v}!utils::meta::search@{utils::meta::search}}
+\doxysubsubsection{\texorpdfstring{search\_v}{search\_v}}
+{\footnotesize\ttfamily template$<$tuple\+\_\+like Tuple, typename T , template$<$ typename, typename $>$ typename Pred\+Trait = std\+::is\+\_\+same$>$ \\
+constexpr std\+::size\+\_\+t utils\+::meta\+::search\+\_\+v = \mbox{\hyperlink{group__metasearch_structutils_1_1meta_1_1search}{search}}$<$Tuple, T, Pred\+Trait$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00105}{105}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+

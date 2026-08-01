@@ -4,7 +4,7 @@ var searchData=
   ['fix_5fop_5ffunctors_1',['fix_op_functors',['../structutils_1_1fix__op__functors.html',1,'utils']]],
   ['fix_5fops_2',['fix_ops',['../structutils_1_1fix__ops.html',1,'utils']]],
   ['fix_5fops_3c_20_7b_7d_20_3e_3',['fix_ops&lt; {} &gt;',['../structutils_1_1fix__ops.html',1,'utils']]],
-  ['follow_4',['follow',['../structutils_1_1follow.html',1,'utils']]],
+  ['follow_4',['follow',['../group__utilsfollow.html#structutils_1_1follow',1,'utils']]],
   ['formatter_3c_20s_2c_20typename_20s_3a_3avalue_5ftype_20_3e_5',['formatter&lt; S, typename S::value_type &gt;',['../structstd_1_1formatter_3_01S_00_01typename_01S_1_1value__type_01_4.html',1,'std']]],
   ['formatter_3c_20t_2c_20chart_20_3e_6',['formatter&lt; T, CharT &gt;',['../structstd_1_1formatter_3_01T_00_01CharT_01_4.html',1,'std']]],
   ['function_5fdecay_7',['function_decay',['../structutils_1_1function__decay.html',1,'utils']]],
