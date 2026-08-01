@@ -584,7 +584,8 @@ namespace utils {
             std::destroy_at(&m_nodes());
         }
         /// @}
-        /// @defgroup segment_treeoperator= utils::segment_tree::operator=
+        /// @defgroup segment_treeoperatorasg utils::segment_tree::operator=
+        ///
         /// @{
         /// Copy-assigns all underlying containers and functors.
         constexpr segment_tree& operator=(const segment_tree& other)
@@ -651,7 +652,7 @@ namespace utils {
             return found;
         }
     public:
-        /// @defgroup segment_treeoperator[] utils::segment_tree::operator[]
+        /// @defgroup segment_treeoperatorsubscript utils::segment_tree::operator[]
         /// Returns a (potentially proxy) reference to the mapped value of `key`.
         /// The behavior is undefined if
         /// `key` does not have a `key_compare()`-equivalent in `keys()`.
