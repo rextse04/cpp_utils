@@ -621,7 +621,7 @@ namespace utils {
         /// @remark The member is only made public to preserve structural type.
         T under_;
 
-        /// @defgroup integer$to_underlying <sub>utils::integer::</sub>to_underlying
+        /// @defgroup integer$to_underlying utils::integer::to_underlying
         /// @brief Get a reference to the underlying object of `x`.
         ///
         /// The static member function only has overloads for
@@ -636,7 +636,7 @@ namespace utils {
         static constexpr decltype(auto) to_underlying(U&& x) noexcept { return std::forward_like<U>(x.under_); }
         /// @}
 
-        /// @defgroup integer$integer <sub>utils::integer::</sub>integer
+        /// @defgroup integerinteger utils::integer::integer
         /// @{
         /// @brief Default-initializes `under_`.
         constexpr integer() = default;
@@ -668,7 +668,7 @@ namespace utils {
         }
         /// @}
 
-        /// @defgroup integer$operator<=> <sub>utils::integer::</sub>operator==, <sub>utils::integer::</sub>operator<=>
+        /// @defgroup integeroperator<=> utils::integer::operator==, utils::integer::operator<=>
         /// `utils::integer` can be compared with an `utils::integer_like` type if and only if
         /// both have the same signedness (either both signed, or both unsigned).
         /// @{
@@ -688,7 +688,7 @@ namespace utils {
         }
         /// @}
 
-        /// @defgroup integer$operator <sub>utils::integer::</sub>operator U&, <sub>utils::integer::</sub>operator const U&, <sub>utils::integer::</sub>operator U&&, <sub>utils::integer::</sub>operator const U&&
+        /// @defgroup integeroperator utils::integer::operator U&, utils::integer::operator const U&, utils::integer::operator U&&, utils::integer::operator const U&&
         /// @brief Conversion to references to underlying type.
         /// @{
         template <std::same_as<T> U>
