@@ -1,6 +1,25 @@
 var searchData=
 [
-  ['value_5ftype_0',['value_type',['../structutils_1_1pmr_1_1allocator__base.html#a4edc136e6071d4afdd622696c3f20a34',1,'utils::pmr::allocator_base::value_type()'],['../classutils_1_1unique__resource.html#add226441a6c8860e16acf90bf7d98b52',1,'utils::unique_resource::value_type()'],['../structutils_1_1interval__endpoint.html#a31d0cc19c5168cc40f64264a71537ad6',1,'utils::interval_endpoint::value_type()'],['../classutils_1_1pointer__iterator.html#a7850e0c5043cb047a01890e23bdbd4c8',1,'utils::pointer_iterator::value_type()']]],
-  ['variadic_5farity_1',['variadic_arity',['../namespaceutils.html#acdc92300a8a41d794e21ecfade137492',1,'utils']]],
-  ['void_5fpointer_2',['void_pointer',['../structutils_1_1pmr_1_1allocator__base.html#a3fc5600dc9a5d1a01dc09a45d452f4ed',1,'utils::pmr::allocator_base::void_pointer()'],['../classutils_1_1pmr_1_1arena__allocator.html#a3fc5600dc9a5d1a01dc09a45d452f4ed',1,'utils::pmr::arena_allocator::void_pointer()'],['../classutils_1_1pmr_1_1stack__allocator.html#a3fc5600dc9a5d1a01dc09a45d452f4ed',1,'utils::pmr::stack_allocator::void_pointer()']]]
+  ['u16static_5fstring_0',['u16static_string',['../namespaceutils.html#aaf9bbe5b2bd0925138bff5c0b7a9c16c',1,'utils']]],
+  ['u16static_5fstring_5fview_1',['u16static_string_view',['../namespaceutils.html#a52a16a9740cf3b0b2e963198ebcd7ca9',1,'utils']]],
+  ['u32static_5fstring_2',['u32static_string',['../namespaceutils.html#a8a879e6085361f9a698393a071df0e9b',1,'utils']]],
+  ['u32static_5fstring_5fview_3',['u32static_string_view',['../namespaceutils.html#a607e1c30fad8199a766afa327008d13f',1,'utils']]],
+  ['u8static_5fstring_4',['u8static_string',['../namespaceutils.html#ab905b8e2c36d6ed84b4653a2551f6001',1,'utils']]],
+  ['u8static_5fstring_5fview_5',['u8static_string_view',['../namespaceutils.html#a6d9158916669d9f93599022e9201c016',1,'utils']]],
+  ['uchar_6',['uchar',['../namespaceutils_1_1integer__alias.html#a290bdb757a36baeacade33ecde81a7db',1,'utils::integer_alias']]],
+  ['ufast16_7',['ufast16',['../namespaceutils_1_1integer__alias.html#a21986700167286b99d74c6ce048a3f2a',1,'utils::integer_alias']]],
+  ['ufast32_8',['ufast32',['../namespaceutils_1_1integer__alias.html#a3ad01f704d800666864d5dab7a96b9ff',1,'utils::integer_alias']]],
+  ['ufast64_9',['ufast64',['../namespaceutils_1_1integer__alias.html#a0be5dab8d9d2c3bfdd0e8bf7e293faa9',1,'utils::integer_alias']]],
+  ['ufast8_10',['ufast8',['../namespaceutils_1_1integer__alias.html#a96f82fd76043c10000f9c8b710749c18',1,'utils::integer_alias']]],
+  ['uint_11',['uint',['../namespaceutils_1_1integer__alias.html#ac8b750710cd46c757266d5861fe72214',1,'utils::integer_alias']]],
+  ['uleast16_12',['uleast16',['../namespaceutils_1_1integer__alias.html#a9a2f4abdab5433c012a874139992cb5e',1,'utils::integer_alias']]],
+  ['uleast32_13',['uleast32',['../namespaceutils_1_1integer__alias.html#a8d1b2283eea460303a53b1e454bb7851',1,'utils::integer_alias']]],
+  ['uleast64_14',['uleast64',['../namespaceutils_1_1integer__alias.html#af474c6c2924f264ef9b05da4c6bae668',1,'utils::integer_alias']]],
+  ['uleast8_15',['uleast8',['../namespaceutils_1_1integer__alias.html#a6dd034c45325c78693eaf82e9f76cf17',1,'utils::integer_alias']]],
+  ['ullong_16',['ullong',['../namespaceutils_1_1integer__alias.html#a93f10558bd1657c558845c4ac616f668',1,'utils::integer_alias']]],
+  ['ulong_17',['ulong',['../namespaceutils_1_1integer__alias.html#a84b45dbbe2cdf7afb56cf31dfeeadcac',1,'utils::integer_alias']]],
+  ['umax_18',['umax',['../namespaceutils_1_1integer__alias.html#a448ddae3a0a3a752b47f70e40bbedb89',1,'utils::integer_alias']]],
+  ['underlying_5ftype_19',['underlying_type',['../structutils_1_1integer.html#a5076aacc7cd346837490c2e1e31043e0',1,'utils::integer']]],
+  ['update_5ftype_20',['update_type',['../classutils_1_1segment__tree.html#aa900e852fdb513dbf300ff7d71b6b585',1,'utils::segment_tree']]],
+  ['ushort_21',['ushort',['../namespaceutils_1_1integer__alias.html#a067f466b570f01eb597b8ea67701762b',1,'utils::integer_alias']]]
 ];

@@ -1,0 +1,54 @@
+\hypertarget{conceptutils_1_1segment__tree__strategy__for}{}\doxysection{utils\+::segment\+\_\+tree\+\_\+strategy\+\_\+for Concept Reference}
+\label{conceptutils_1_1segment__tree__strategy__for}\index{utils::segment\_tree\_strategy\_for@{utils::segment\_tree\_strategy\_for}}
+
+
+Specifies that {\ttfamily T} is a strategy for traversing {\ttfamily ST}.  
+
+
+
+
+{\ttfamily \#include $<$segment\+\_\+tree.\+hpp$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} ST>}
+\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1segment__tree__strategy__for}{utils::segment\_tree\_strategy\_for}} =  \textcolor{keyword}{requires} (}
+\DoxyCodeLine{        T strategy, \textcolor{keyword}{const} ST\& st, \textcolor{keyword}{const} \textcolor{keyword}{typename} ST::node\_info\& info,}
+\DoxyCodeLine{        \textcolor{keyword}{decltype}(strategy(st, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr})) V, \textcolor{keyword}{const} \textcolor{keyword}{decltype}(V)\& L, \textcolor{keyword}{const} \textcolor{keyword}{decltype}(V)\& R) \{}
+\DoxyCodeLine{        \{ strategy(st, \&info, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr}) \} -\/> std::same\_as<\textcolor{keyword}{decltype}(V)>;}
+\DoxyCodeLine{        \{ strategy(st, \&info, \&L, \textcolor{keyword}{nullptr}) \} -\/> std::same\_as<\textcolor{keyword}{decltype}(V)>;}
+\DoxyCodeLine{        \{ strategy(st, \&info, \textcolor{keyword}{nullptr}, \&R) \} -\/> std::same\_as<\textcolor{keyword}{decltype}(V)>;}
+\DoxyCodeLine{        \{ strategy(st, \&info, \&L, \&R) \} -\/> std::same\_as<\textcolor{keyword}{decltype}(V)>;}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Detailed Description}
+Specifies that {\ttfamily T} is a strategy for traversing {\ttfamily ST}. 
+
+A traverser strategy produces a value at every node (in {\ttfamily st}) the traverser visits, which is \char`\"{}joined\char`\"{} in a bottom-\/up manner to produce a final output from the traversal. Suppose a traverser following {\ttfamily strategy} is currently at a node {\ttfamily v}. Define the following values\+: \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Definition    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Definition    }\\\cline{1-2}
+\endhead
+{\ttfamily st}   &A const reference to the segment tree (of type {\ttfamily ST}) the traverser is traversing.    \\\cline{1-2}
+{\ttfamily info}   &A pointer to a {\ttfamily segment\+\_\+tree\+\_\+node\+\_\+info} describing the node {\ttfamily v}, or {\ttfamily nullptr} if {\ttfamily v} does not exist.    \\\cline{1-2}
+{\ttfamily L}   &The value produced by the left child of {\ttfamily v}, or {\ttfamily nullptr} if not visited by {\ttfamily st}.    \\\cline{1-2}
+{\ttfamily R}   &The value produced by the right child of {\ttfamily v}, or {\ttfamily nullptr} if not visited by {\ttfamily st}.   \\\cline{1-2}
+\end{longtabu}
+The following operations are then executed in the order presented\+:
+\begin{DoxyEnumerate}
+\item If {\ttfamily strategy} does not stop at {\ttfamily v} and {\ttfamily strategy.\+prepare(st, $\ast$info)} is well-\/formed, it is invoked with return value discarded.
+\item {\ttfamily L} and {\ttfamily R} are collected.
+\item {\ttfamily strategy(st, info, L, R)} is produced at $v$. 
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00110}{110}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+

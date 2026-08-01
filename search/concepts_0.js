@@ -26,7 +26,9 @@ var searchData=
   ['resource_5fallocator_23',['resource_allocator',['../conceptutils_1_1pmr_1_1resource__allocator.html',1,'utils::pmr']]],
   ['same_5fsign_5fas_24',['same_sign_as',['../conceptutils_1_1same__sign__as.html',1,'utils']]],
   ['searchable_5fin_25',['searchable_in',['../conceptutils_1_1searchable__in.html',1,'utils']]],
-  ['simple_5fallocator_26',['simple_allocator',['../conceptutils_1_1simple__allocator.html',1,'utils']]],
-  ['tagged_27',['tagged',['../conceptutils_1_1tagged.html',1,'utils']]],
-  ['tuple_5flike_28',['tuple_like',['../conceptutils_1_1meta_1_1tuple__like.html',1,'utils::meta']]]
+  ['segment_5ftree_5fstrategy_5ffor_26',['segment_tree_strategy_for',['../conceptutils_1_1segment__tree__strategy__for.html',1,'utils']]],
+  ['segment_5ftree_5ftraverser_5ffor_27',['segment_tree_traverser_for',['../conceptutils_1_1segment__tree__traverser__for.html',1,'utils']]],
+  ['simple_5fallocator_28',['simple_allocator',['../conceptutils_1_1simple__allocator.html',1,'utils']]],
+  ['tagged_29',['tagged',['../conceptutils_1_1tagged.html',1,'utils']]],
+  ['tuple_5flike_30',['tuple_like',['../conceptutils_1_1meta_1_1tuple__like.html',1,'utils::meta']]]
 ];

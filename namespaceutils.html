@@ -320,6 +320,12 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structutils_1_1sane__common__type"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sane__common__type.html#structutils_1_1sane__common__type">sane_common_type</a></td></tr>
 <tr class="separator:structutils_1_1sane__common__type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1segment__tree.html">segment_tree</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A key-immutable (multi-)associative container adaptor that supports linear-time construction and logarithmic-time search and aggregation.  <a href="classutils_1_1segment__tree.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1segment__tree__nodes__t.html">segment_tree_nodes_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A disambiguation flag to declare that keys and mapped values given to the constructor conform to the internal layout of <code><a class="el" href="classutils_1_1segment__tree.html" title="A key-immutable (multi-)associative container adaptor that supports linear-time construction and loga...">segment_tree</a></code>.  <a href="structutils_1_1segment__tree__nodes__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1shift__asg__op__functors.html">shift_asg_op_functors</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a href="OperatorFunctorSet.html"><em>OperatorFunctorSetTemplate</em></a> for <code><a class="el" href="structutils_1_1shift__asg__ops.html" title="Adds support for a &lt;&lt;= b and a &gt;&gt;= b.">utils::shift_asg_ops</a></code>.  <a href="structutils_1_1shift__asg__op__functors.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -377,7 +383,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A user-provided resource that is capable of limiting and synchronizing access to it.  <a href="classutils_1_1unique__resource.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1unique__resource__sync__t.html">unique_resource_sync_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes a <a class="el" href="classutils_1_1unique__resource.html">utils::unique_resource</a> should enable synchronization.  <a href="structutils_1_1unique__resource__sync__t.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes a <code><a class="el" href="classutils_1_1unique__resource.html" title="A user-provided resource that is capable of limiting and synchronizing access to it.">utils::unique_resource</a></code> should enable synchronization.  <a href="structutils_1_1unique__resource__sync__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1visitor.html">visitor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Owns a set of callables and dispatches calls to the first one that matches the arguments.  <a href="classutils_1_1visitor.html#details">More...</a><br /></td></tr>
@@ -389,6 +395,12 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
 Concepts</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptutils_1_1segment__tree__traverser__for.html">segment_tree_traverser_for</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that <code>T</code> is a traverser for <code>segment_tree</code> <code>ST</code>. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptutils_1_1segment__tree__strategy__for.html">segment_tree_strategy_for</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies that <code>T</code> is a strategy for traversing <code>ST</code>. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptutils_1_1container__allocator.html">container_allocator</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies if <code>T</code> is an allocator which can be used in a constructor of <code>C</code>. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -528,6 +540,13 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a7b8bfbc22ae832dddfa89d9214454c2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration representing the type of an interval endpoint (open or closed).  <a href="namespaceutils.html#a7b8bfbc22ae832dddfa89d9214454c2e">More...</a><br /></td></tr>
 <tr class="separator:a7b8bfbc22ae832dddfa89d9214454c2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa52b5daba05b396d43967f83d7b2dadd"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aa52b5daba05b396d43967f83d7b2dadd">segment_tree_traverse_direction</a> { <a class="el" href="namespaceutils.html#aa52b5daba05b396d43967f83d7b2daddaef399b2d446bb37b7c32ad2cc1b6045b">stop</a>
+, <a class="el" href="namespaceutils.html#aa52b5daba05b396d43967f83d7b2dadda811882fecd5c7618d7099ebbd39ea254">left</a>
+, <a class="el" href="namespaceutils.html#aa52b5daba05b396d43967f83d7b2dadda7c4f29407893c334a6cb7a87bf045c0d">right</a>
+, <a class="el" href="namespaceutils.html#aa52b5daba05b396d43967f83d7b2daddaf6cb3e816496528d4187db53bc66567f">both</a>
+ }</td></tr>
+<tr class="memdesc:aa52b5daba05b396d43967f83d7b2dadd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration type representing the direction a <code>segment_tree_traverser_for</code> chooses to go, from root to leaves.  <a href="namespaceutils.html#aa52b5daba05b396d43967f83d7b2dadd">More...</a><br /></td></tr>
+<tr class="separator:aa52b5daba05b396d43967f83d7b2dadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab347f7fd31e7ee14b2e4e14686a2c21e"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#ab347f7fd31e7ee14b2e4e14686a2c21e">type_qualifiers</a> { <a class="el" href="namespaceutils.html#ab347f7fd31e7ee14b2e4e14686a2c21ea334c4a4c42fdb79d7ebc3e73b517e6f8">none</a> = 0
 , <a class="el" href="namespaceutils.html#ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33">c</a> = 0b1
 , <a class="el" href="namespaceutils.html#ab347f7fd31e7ee14b2e4e14686a2c21ea9e3669d19b675bd57058fd4664205d2a">v</a> = 0b10
@@ -549,6 +568,60 @@ requires requires</td></tr>
 <tr class="memitem:aaa53feca4f8d1aaf5de3f3b32b8f233f"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aaa53feca4f8d1aaf5de3f3b32b8f233f">operator,</a> (LE &amp;&amp;left, RE &amp;&amp;right)</td></tr>
 <tr class="memdesc:aaa53feca4f8d1aaf5de3f3b32b8f233f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience operator overload to construct an interval.  <a href="namespaceutils.html#aaa53feca4f8d1aaf5de3f3b32b8f233f">More...</a><br /></td></tr>
 <tr class="separator:aaa53feca4f8d1aaf5de3f3b32b8f233f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e7eeb7aeb526748af406563871d8902"><td class="memTemplParams" colspan="2">template&lt;typename KeyContainer , typename MappedContainer , typename Key  = KeyContainer::value_type, typename T  = MappedContainer::value_type, typename Compare  = std::less&lt;Key&gt;, typename Sum  = std::plus&lt;T&gt;, typename Identity  = default_construct&lt;T&gt;, typename Allocator  = detail::void_allocator_t&gt; </td></tr>
+<tr class="memitem:a6e7eeb7aeb526748af406563871d8902"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a6e7eeb7aeb526748af406563871d8902">segment_tree</a> (<a class="el" href="structutils_1_1segment__tree__nodes__t.html">segment_tree_nodes_t</a>, KeyContainer, MappedContainer, Compare=Compare(), Sum=Sum(), Identity=Identity(), Allocator=Allocator()) -&gt; <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer &gt;</td></tr>
+<tr class="separator:a6e7eeb7aeb526748af406563871d8902"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a77c6e8d1d094c7adce75365d2ec023"><td class="memTemplParams" colspan="2">template&lt;typename KeyContainer , typename MappedContainer , simple_allocator Allocator, typename Key  = KeyContainer::value_type, typename T  = MappedContainer::value_type&gt; </td></tr>
+<tr class="memitem:a6a77c6e8d1d094c7adce75365d2ec023"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a6a77c6e8d1d094c7adce75365d2ec023">segment_tree</a> (<a class="el" href="structutils_1_1segment__tree__nodes__t.html">segment_tree_nodes_t</a>, KeyContainer, MappedContainer, Allocator) -&gt; <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; Key, T, std::less&lt; Key &gt;, std::plus&lt; T &gt;, <a class="el" href="structutils_1_1default__construct.html">default_construct</a>&lt; T &gt;, KeyContainer, MappedContainer &gt;</td></tr>
+<tr class="separator:a6a77c6e8d1d094c7adce75365d2ec023"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8129c38c4f3daf945460bc7b4b5a5a79"><td class="memTemplParams" colspan="2">template&lt;typename KeyContainer , typename MappedContainer , typename Key  = KeyContainer::value_type, typename T  = MappedContainer::value_type, typename Compare  = std::less&lt;Key&gt;, typename Sum  = std::plus&lt;T&gt;, typename Identity  = default_construct&lt;T&gt;, typename Allocator  = detail::void_allocator_t&gt; </td></tr>
+<tr class="memitem:a8129c38c4f3daf945460bc7b4b5a5a79"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a8129c38c4f3daf945460bc7b4b5a5a79">segment_tree</a> (KeyContainer, MappedContainer, Compare=Compare(), Sum=Sum(), Identity=Identity(), Allocator=Allocator()) -&gt; <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer &gt;</td></tr>
+<tr class="separator:a8129c38c4f3daf945460bc7b4b5a5a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb611abcc25122b499fdd1fd2c55419f"><td class="memTemplParams" colspan="2">template&lt;typename KeyContainer , typename MappedContainer , simple_allocator Allocator, typename Key  = KeyContainer::value_type, typename T  = MappedContainer::value_type&gt; </td></tr>
+<tr class="memitem:adb611abcc25122b499fdd1fd2c55419f"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#adb611abcc25122b499fdd1fd2c55419f">segment_tree</a> (KeyContainer, MappedContainer, Allocator) -&gt; <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; Key, T, std::less&lt; Key &gt;, std::plus&lt; T &gt;, <a class="el" href="structutils_1_1default__construct.html">default_construct</a>&lt; T &gt;, KeyContainer, MappedContainer &gt;</td></tr>
+<tr class="separator:adb611abcc25122b499fdd1fd2c55419f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a529b6fb988f9d203c7def5f1253c46af"><td class="memTemplParams" colspan="2">template&lt;typename KeyContainer , typename MappedContainer , typename Key  = KeyContainer::value_type, typename T  = MappedContainer::value_type, typename Compare  = std::less&lt;Key&gt;, typename Sum  = std::plus&lt;T&gt;, typename Identity  = default_construct&lt;T&gt;, typename Allocator  = detail::void_allocator_t&gt; </td></tr>
+<tr class="memitem:a529b6fb988f9d203c7def5f1253c46af"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a529b6fb988f9d203c7def5f1253c46af">segment_tree</a> (std::sorted_equivalent_t, KeyContainer, MappedContainer, Compare=Compare(), Sum=Sum(), Identity=Identity(), Allocator=Allocator()) -&gt; <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer &gt;</td></tr>
+<tr class="separator:a529b6fb988f9d203c7def5f1253c46af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa813e9045621ce0bc1f86b83334852e3"><td class="memTemplParams" colspan="2">template&lt;typename KeyContainer , typename MappedContainer , simple_allocator Allocator, typename Key  = KeyContainer::value_type, typename T  = MappedContainer::value_type&gt; </td></tr>
+<tr class="memitem:aa813e9045621ce0bc1f86b83334852e3"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aa813e9045621ce0bc1f86b83334852e3">segment_tree</a> (std::sorted_equivalent_t, KeyContainer, MappedContainer, Allocator) -&gt; <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; Key, T, std::less&lt; Key &gt;, std::plus&lt; T &gt;, <a class="el" href="structutils_1_1default__construct.html">default_construct</a>&lt; T &gt;, KeyContainer, MappedContainer &gt;</td></tr>
+<tr class="separator:aa813e9045621ce0bc1f86b83334852e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39cc5af4cee6e71a8109f82d4301d6f9"><td class="memTemplParams" colspan="2">template&lt;typename Pairs , typename Allocator  = std::allocator&lt;int&gt;, typename STT  = detail::segment_tree_traits&lt;ranges::iterator_t&lt;Pairs&gt;, Allocator&gt;, typename Compare  = STT::Compare, typename Sum  = STT::Sum, typename Identity  = STT::Identity&gt; </td></tr>
+<tr class="memitem:a39cc5af4cee6e71a8109f82d4301d6f9"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a39cc5af4cee6e71a8109f82d4301d6f9">segment_tree</a> (std::from_range_t, Pairs &amp;&amp;, Compare=Compare(), Sum=Sum(), Identity=Identity(), Allocator=Allocator()) -&gt; <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, Compare, Sum, Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td></tr>
+<tr class="separator:a39cc5af4cee6e71a8109f82d4301d6f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a6a09ae254b5d235206c80872ff196d"><td class="memTemplParams" colspan="2">template&lt;typename Pairs , simple_allocator Allocator, typename STT  = detail::segment_tree_traits&lt;ranges::iterator_t&lt;Pairs&gt;, Allocator&gt;&gt; </td></tr>
+<tr class="memitem:a5a6a09ae254b5d235206c80872ff196d"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a5a6a09ae254b5d235206c80872ff196d">segment_tree</a> (std::from_range_t, Pairs &amp;&amp;, Allocator) -&gt; <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, typename STT::Compare, typename STT::Sum, typename STT::Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td></tr>
+<tr class="separator:a5a6a09ae254b5d235206c80872ff196d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15c5648d54f45bae380b6ed233a87770"><td class="memTemplParams" colspan="2">template&lt;typename Pairs , typename Allocator  = std::allocator&lt;int&gt;, typename STT  = detail::segment_tree_traits&lt;ranges::iterator_t&lt;Pairs&gt;, Allocator&gt;, typename Compare  = STT::Compare, typename Sum  = STT::Sum, typename Identity  = STT::Identity&gt; </td></tr>
+<tr class="memitem:a15c5648d54f45bae380b6ed233a87770"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a15c5648d54f45bae380b6ed233a87770">segment_tree</a> (std::sorted_equivalent_t, std::from_range_t, Pairs &amp;&amp;, Compare=Compare(), Sum=Sum(), Identity=Identity(), Allocator=Allocator()) -&gt; <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, Compare, Sum, Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td></tr>
+<tr class="separator:a15c5648d54f45bae380b6ed233a87770"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdcea13af380f403900bea1e667330fd"><td class="memTemplParams" colspan="2">template&lt;typename Pairs , simple_allocator Allocator, typename STT  = detail::segment_tree_traits&lt;ranges::iterator_t&lt;Pairs&gt;, Allocator&gt;&gt; </td></tr>
+<tr class="memitem:acdcea13af380f403900bea1e667330fd"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#acdcea13af380f403900bea1e667330fd">segment_tree</a> (std::sorted_equivalent_t, std::from_range_t, Pairs &amp;&amp;, Allocator) -&gt; <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, typename STT::Compare, typename STT::Sum, typename STT::Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td></tr>
+<tr class="separator:acdcea13af380f403900bea1e667330fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2f5835a9c7e242f2c66e87717a79569"><td class="memTemplParams" colspan="2">template&lt;typename PairsIt , typename PairsSent , typename Allocator  = std::allocator&lt;int&gt;, typename STT  = detail::segment_tree_traits&lt;PairsIt, Allocator&gt;, typename Compare  = STT::Compare, typename Sum  = STT::Sum, typename Identity  = STT::Identity&gt; </td></tr>
+<tr class="memitem:af2f5835a9c7e242f2c66e87717a79569"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#af2f5835a9c7e242f2c66e87717a79569">segment_tree</a> (PairsIt, PairsSent, Compare=Compare(), Sum=Sum(), Identity=Identity(), Allocator=Allocator()) -&gt; <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, Compare, Sum, Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td></tr>
+<tr class="separator:af2f5835a9c7e242f2c66e87717a79569"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4a7ef62887a1a97db65b8a9e8cbd9bd"><td class="memTemplParams" colspan="2">template&lt;typename PairsIt , typename PairsSent , simple_allocator Allocator, typename STT  = detail::segment_tree_traits&lt;PairsIt, Allocator&gt;&gt; </td></tr>
+<tr class="memitem:aa4a7ef62887a1a97db65b8a9e8cbd9bd"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aa4a7ef62887a1a97db65b8a9e8cbd9bd">segment_tree</a> (PairsIt, PairsSent, Allocator) -&gt; <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, typename STT::Compare, typename STT::Sum, typename STT::Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td></tr>
+<tr class="separator:aa4a7ef62887a1a97db65b8a9e8cbd9bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab34d7c058da716ef963b80de4e6af749"><td class="memTemplParams" colspan="2">template&lt;typename PairsIt , typename PairsSent , typename Allocator  = std::allocator&lt;int&gt;, typename STT  = detail::segment_tree_traits&lt;PairsIt, Allocator&gt;, typename Compare  = STT::Compare, typename Sum  = STT::Sum, typename Identity  = STT::Identity&gt; </td></tr>
+<tr class="memitem:ab34d7c058da716ef963b80de4e6af749"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#ab34d7c058da716ef963b80de4e6af749">segment_tree</a> (std::sorted_equivalent_t, PairsIt, PairsSent, Compare=Compare(), Sum=Sum(), Allocator=Allocator()) -&gt; <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, Compare, Sum, Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td></tr>
+<tr class="separator:ab34d7c058da716ef963b80de4e6af749"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fb37b34e2c9e0e274718240606493f0"><td class="memTemplParams" colspan="2">template&lt;typename PairsIt , typename PairsSent , simple_allocator Allocator, typename STT  = detail::segment_tree_traits&lt;PairsIt, Allocator&gt;&gt; </td></tr>
+<tr class="memitem:a9fb37b34e2c9e0e274718240606493f0"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a9fb37b34e2c9e0e274718240606493f0">segment_tree</a> (std::sorted_equivalent_t, PairsIt, PairsSent, Allocator) -&gt; <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, typename STT::Compare, typename STT::Sum, typename STT::Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td></tr>
+<tr class="separator:a9fb37b34e2c9e0e274718240606493f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b7cf4b16a602895ec2b00d5a6553745"><td class="memTemplParams" colspan="2">template&lt;typename Key , typename T , typename Allocator  = std::allocator&lt;int&gt;, typename STT  = detail::segment_tree_traits&lt;const std::pair&lt;Key, T&gt;*, Allocator&gt;, typename Compare  = STT::Compare, typename Sum  = STT::Sum, typename Identity  = STT::Identity&gt; </td></tr>
+<tr class="memitem:a7b7cf4b16a602895ec2b00d5a6553745"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a7b7cf4b16a602895ec2b00d5a6553745">segment_tree</a> (std::initializer_list&lt; std::pair&lt; Key, T &gt; &gt;, Compare=Compare(), Sum=Sum(), Allocator=Allocator()) -&gt; <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, Compare, Sum, Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td></tr>
+<tr class="separator:a7b7cf4b16a602895ec2b00d5a6553745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b7a317d3912b759e5dabe1c8e79d820"><td class="memTemplParams" colspan="2">template&lt;typename Key , typename T , simple_allocator Allocator, typename STT  = detail::segment_tree_traits&lt;const std::pair&lt;Key, T&gt;*, Allocator&gt;&gt; </td></tr>
+<tr class="memitem:a3b7a317d3912b759e5dabe1c8e79d820"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a3b7a317d3912b759e5dabe1c8e79d820">segment_tree</a> (std::initializer_list&lt; std::pair&lt; Key, T &gt; &gt;, Allocator) -&gt; <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, typename STT::Compare, typename STT::Sum, typename STT::Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td></tr>
+<tr class="separator:a3b7a317d3912b759e5dabe1c8e79d820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d7538388dde8d989997a8b6030ea9fb"><td class="memTemplParams" colspan="2">template&lt;typename Key , typename T , typename Allocator  = std::allocator&lt;int&gt;, typename STT  = detail::segment_tree_traits&lt;const std::pair&lt;Key, T&gt;*, Allocator&gt;, typename Compare  = STT::Compare, typename Sum  = STT::Sum, typename Identity  = STT::Identity&gt; </td></tr>
+<tr class="memitem:a6d7538388dde8d989997a8b6030ea9fb"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a6d7538388dde8d989997a8b6030ea9fb">segment_tree</a> (std::sorted_equivalent_t, std::initializer_list&lt; std::pair&lt; Key, T &gt; &gt;, Compare=Compare(), Sum=Sum(), Identity=Identity(), Allocator=Allocator()) -&gt; <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, Compare, Sum, Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td></tr>
+<tr class="separator:a6d7538388dde8d989997a8b6030ea9fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a048efb80d8c76325f02a7d20f9396570"><td class="memTemplParams" colspan="2">template&lt;typename Key , typename T , simple_allocator Allocator, typename STT  = detail::segment_tree_traits&lt;const std::pair&lt;Key, T&gt;*, Allocator&gt;&gt; </td></tr>
+<tr class="memitem:a048efb80d8c76325f02a7d20f9396570"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a048efb80d8c76325f02a7d20f9396570">segment_tree</a> (std::sorted_equivalent_t, std::initializer_list&lt; std::pair&lt; Key, T &gt; &gt;, Allocator) -&gt; <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, typename STT::Compare, typename STT::Sum, typename STT::Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td></tr>
+<tr class="separator:a048efb80d8c76325f02a7d20f9396570"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb8127674294a339f6ccc7bbcd1640da"><td class="memTemplParams" colspan="2">template&lt;typename C , searchable_in&lt; C &gt; Key&gt; </td></tr>
 <tr class="memitem:afb8127674294a339f6ccc7bbcd1640da"><td class="memTemplItemLeft" align="right" valign="top">constexpr decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#afb8127674294a339f6ccc7bbcd1640da">make_search_key</a> (const Key &amp;<a class="el" href="classutils_1_1key.html">key</a>)</td></tr>
 <tr class="memdesc:afb8127674294a339f6ccc7bbcd1640da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a search key for container <code>C</code> from <code>Key</code>, converting if necessary.  <a href="namespaceutils.html#afb8127674294a339f6ccc7bbcd1640da">More...</a><br /></td></tr>
@@ -625,6 +698,8 @@ Variables</h2></td></tr>
 <tr class="separator:a66e65835c8cea64e6a28ccf70f71ea28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab7eb6fe43329d41b46fcfe6ba001dc8"><td class="memItemLeft" align="right" valign="top">constexpr struct <a class="el" href="structutils_1_1unique__resource__sync__t.html">utils::unique_resource_sync_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aab7eb6fe43329d41b46fcfe6ba001dc8">unique_resource_sync</a></td></tr>
 <tr class="separator:aab7eb6fe43329d41b46fcfe6ba001dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a801d8a7b8045aa578086613e00216580"><td class="memItemLeft" align="right" valign="top">constexpr struct <a class="el" href="structutils_1_1segment__tree__nodes__t.html">utils::segment_tree_nodes_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a801d8a7b8045aa578086613e00216580">segment_tree_nodes</a></td></tr>
+<tr class="separator:a801d8a7b8045aa578086613e00216580"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a720537626a2d6e7ae840a1212a67f2"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
 <tr class="memitem:a5a720537626a2d6e7ae840a1212a67f2"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a5a720537626a2d6e7ae840a1212a67f2">arity_of_v</a> = <a class="el" href="structutils_1_1arity__of.html">arity_of</a>&lt;F&gt;::value</td></tr>
 <tr class="separator:a5a720537626a2d6e7ae840a1212a67f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1010,6 +1085,38 @@ template&lt;std::size_t N&gt; </div>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="interval_8hpp_source.html#l00025">25</a> of file <a class="el" href="interval_8hpp_source.html">interval.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa52b5daba05b396d43967f83d7b2dadd" name="aa52b5daba05b396d43967f83d7b2dadd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa52b5daba05b396d43967f83d7b2dadd">&#9670;&nbsp;</a></span>segment_tree_traverse_direction</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespaceutils.html#aa52b5daba05b396d43967f83d7b2dadd">utils::segment_tree_traverse_direction</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enumeration type representing the direction a <code>segment_tree_traverser_for</code> chooses to go, from root to leaves. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa52b5daba05b396d43967f83d7b2daddaef399b2d446bb37b7c32ad2cc1b6045b" name="aa52b5daba05b396d43967f83d7b2daddaef399b2d446bb37b7c32ad2cc1b6045b"></a>stop&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa52b5daba05b396d43967f83d7b2dadda811882fecd5c7618d7099ebbd39ea254" name="aa52b5daba05b396d43967f83d7b2dadda811882fecd5c7618d7099ebbd39ea254"></a>left&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa52b5daba05b396d43967f83d7b2dadda7c4f29407893c334a6cb7a87bf045c0d" name="aa52b5daba05b396d43967f83d7b2dadda7c4f29407893c334a6cb7a87bf045c0d"></a>right&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa52b5daba05b396d43967f83d7b2daddaf6cb3e816496528d4187db53bc66567f" name="aa52b5daba05b396d43967f83d7b2daddaf6cb3e816496528d4187db53bc66567f"></a>both&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="segment__tree_8hpp_source.html#l00076">76</a> of file <a class="el" href="segment__tree_8hpp_source.html">segment_tree.hpp</a>.</p>
 
 </div>
 </div>
@@ -1686,6 +1793,840 @@ requires requires</div>
 
 </div>
 </div>
+<a id="adb611abcc25122b499fdd1fd2c55419f" name="adb611abcc25122b499fdd1fd2c55419f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb611abcc25122b499fdd1fd2c55419f">&#9670;&nbsp;</a></span>segment_tree() <span class="overload">[1/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyContainer , typename MappedContainer , simple_allocator Allocator, typename Key  = KeyContainer::value_type, typename T  = MappedContainer::value_type&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1segment__tree.html">utils::segment_tree</a> </td>
+          <td>(</td>
+          <td class="paramtype">KeyContainer&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MappedContainer&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Allocator&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; Key, T, std::less&lt; Key &gt;, std::plus&lt; T &gt;, <a class="el" href="structutils_1_1default__construct.html">default_construct</a>&lt; T &gt;, KeyContainer, MappedContainer &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8129c38c4f3daf945460bc7b4b5a5a79" name="a8129c38c4f3daf945460bc7b4b5a5a79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8129c38c4f3daf945460bc7b4b5a5a79">&#9670;&nbsp;</a></span>segment_tree() <span class="overload">[2/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyContainer , typename MappedContainer , typename Key  = KeyContainer::value_type, typename T  = MappedContainer::value_type, typename Compare  = std::less&lt;Key&gt;, typename Sum  = std::plus&lt;T&gt;, typename Identity  = default_construct&lt;T&gt;, typename Allocator  = detail::void_allocator_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1segment__tree.html">utils::segment_tree</a> </td>
+          <td>(</td>
+          <td class="paramtype">KeyContainer&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MappedContainer&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"> = <code>Compare()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Sum&#160;</td>
+          <td class="paramname"> = <code>Sum()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Identity&#160;</td>
+          <td class="paramname"> = <code>Identity()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Allocator&#160;</td>
+          <td class="paramname"> = <code>Allocator()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa4a7ef62887a1a97db65b8a9e8cbd9bd" name="aa4a7ef62887a1a97db65b8a9e8cbd9bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4a7ef62887a1a97db65b8a9e8cbd9bd">&#9670;&nbsp;</a></span>segment_tree() <span class="overload">[3/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename PairsIt , typename PairsSent , simple_allocator Allocator, typename STT  = detail::segment_tree_traits&lt;PairsIt, Allocator&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1segment__tree.html">utils::segment_tree</a> </td>
+          <td>(</td>
+          <td class="paramtype">PairsIt&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PairsSent&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Allocator&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, typename STT::Compare, typename STT::Sum, typename STT::Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af2f5835a9c7e242f2c66e87717a79569" name="af2f5835a9c7e242f2c66e87717a79569"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2f5835a9c7e242f2c66e87717a79569">&#9670;&nbsp;</a></span>segment_tree() <span class="overload">[4/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename PairsIt , typename PairsSent , typename Allocator  = std::allocator&lt;int&gt;, typename STT  = detail::segment_tree_traits&lt;PairsIt, Allocator&gt;, typename Compare  = STT::Compare, typename Sum  = STT::Sum, typename Identity  = STT::Identity&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1segment__tree.html">utils::segment_tree</a> </td>
+          <td>(</td>
+          <td class="paramtype">PairsIt&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PairsSent&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"> = <code>Compare()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Sum&#160;</td>
+          <td class="paramname"> = <code>Sum()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Identity&#160;</td>
+          <td class="paramname"> = <code>Identity()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Allocator&#160;</td>
+          <td class="paramname"> = <code>Allocator()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, Compare, Sum, Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6a77c6e8d1d094c7adce75365d2ec023" name="a6a77c6e8d1d094c7adce75365d2ec023"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a77c6e8d1d094c7adce75365d2ec023">&#9670;&nbsp;</a></span>segment_tree() <span class="overload">[5/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyContainer , typename MappedContainer , simple_allocator Allocator, typename Key  = KeyContainer::value_type, typename T  = MappedContainer::value_type&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1segment__tree.html">utils::segment_tree</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structutils_1_1segment__tree__nodes__t.html">segment_tree_nodes_t</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">KeyContainer&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MappedContainer&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Allocator&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; Key, T, std::less&lt; Key &gt;, std::plus&lt; T &gt;, <a class="el" href="structutils_1_1default__construct.html">default_construct</a>&lt; T &gt;, KeyContainer, MappedContainer &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6e7eeb7aeb526748af406563871d8902" name="a6e7eeb7aeb526748af406563871d8902"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e7eeb7aeb526748af406563871d8902">&#9670;&nbsp;</a></span>segment_tree() <span class="overload">[6/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyContainer , typename MappedContainer , typename Key  = KeyContainer::value_type, typename T  = MappedContainer::value_type, typename Compare  = std::less&lt;Key&gt;, typename Sum  = std::plus&lt;T&gt;, typename Identity  = default_construct&lt;T&gt;, typename Allocator  = detail::void_allocator_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1segment__tree.html">utils::segment_tree</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structutils_1_1segment__tree__nodes__t.html">segment_tree_nodes_t</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">KeyContainer&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MappedContainer&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"> = <code>Compare()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Sum&#160;</td>
+          <td class="paramname"> = <code>Sum()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Identity&#160;</td>
+          <td class="paramname"> = <code>Identity()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Allocator&#160;</td>
+          <td class="paramname"> = <code>Allocator()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5a6a09ae254b5d235206c80872ff196d" name="a5a6a09ae254b5d235206c80872ff196d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a6a09ae254b5d235206c80872ff196d">&#9670;&nbsp;</a></span>segment_tree() <span class="overload">[7/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Pairs , simple_allocator Allocator, typename STT  = detail::segment_tree_traits&lt;ranges::iterator_t&lt;Pairs&gt;, Allocator&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1segment__tree.html">utils::segment_tree</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::from_range_t&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Pairs &amp;&amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Allocator&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, typename STT::Compare, typename STT::Sum, typename STT::Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a39cc5af4cee6e71a8109f82d4301d6f9" name="a39cc5af4cee6e71a8109f82d4301d6f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39cc5af4cee6e71a8109f82d4301d6f9">&#9670;&nbsp;</a></span>segment_tree() <span class="overload">[8/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Pairs , typename Allocator  = std::allocator&lt;int&gt;, typename STT  = detail::segment_tree_traits&lt;ranges::iterator_t&lt;Pairs&gt;, Allocator&gt;, typename Compare  = STT::Compare, typename Sum  = STT::Sum, typename Identity  = STT::Identity&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1segment__tree.html">utils::segment_tree</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::from_range_t&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Pairs &amp;&amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"> = <code>Compare()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Sum&#160;</td>
+          <td class="paramname"> = <code>Sum()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Identity&#160;</td>
+          <td class="paramname"> = <code>Identity()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Allocator&#160;</td>
+          <td class="paramname"> = <code>Allocator()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, Compare, Sum, Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3b7a317d3912b759e5dabe1c8e79d820" name="a3b7a317d3912b759e5dabe1c8e79d820"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b7a317d3912b759e5dabe1c8e79d820">&#9670;&nbsp;</a></span>segment_tree() <span class="overload">[9/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename T , simple_allocator Allocator, typename STT  = detail::segment_tree_traits&lt;const std::pair&lt;Key, T&gt;*, Allocator&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1segment__tree.html">utils::segment_tree</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; std::pair&lt; Key, T &gt; &gt;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Allocator&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, typename STT::Compare, typename STT::Sum, typename STT::Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7b7cf4b16a602895ec2b00d5a6553745" name="a7b7cf4b16a602895ec2b00d5a6553745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b7cf4b16a602895ec2b00d5a6553745">&#9670;&nbsp;</a></span>segment_tree() <span class="overload">[10/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename T , typename Allocator  = std::allocator&lt;int&gt;, typename STT  = detail::segment_tree_traits&lt;const std::pair&lt;Key, T&gt;*, Allocator&gt;, typename Compare  = STT::Compare, typename Sum  = STT::Sum, typename Identity  = STT::Identity&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1segment__tree.html">utils::segment_tree</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; std::pair&lt; Key, T &gt; &gt;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"> = <code>Compare()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Sum&#160;</td>
+          <td class="paramname"> = <code>Sum()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Allocator&#160;</td>
+          <td class="paramname"> = <code>Allocator()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, Compare, Sum, Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa813e9045621ce0bc1f86b83334852e3" name="aa813e9045621ce0bc1f86b83334852e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa813e9045621ce0bc1f86b83334852e3">&#9670;&nbsp;</a></span>segment_tree() <span class="overload">[11/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyContainer , typename MappedContainer , simple_allocator Allocator, typename Key  = KeyContainer::value_type, typename T  = MappedContainer::value_type&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1segment__tree.html">utils::segment_tree</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::sorted_equivalent_t&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">KeyContainer&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MappedContainer&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Allocator&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; Key, T, std::less&lt; Key &gt;, std::plus&lt; T &gt;, <a class="el" href="structutils_1_1default__construct.html">default_construct</a>&lt; T &gt;, KeyContainer, MappedContainer &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a529b6fb988f9d203c7def5f1253c46af" name="a529b6fb988f9d203c7def5f1253c46af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a529b6fb988f9d203c7def5f1253c46af">&#9670;&nbsp;</a></span>segment_tree() <span class="overload">[12/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyContainer , typename MappedContainer , typename Key  = KeyContainer::value_type, typename T  = MappedContainer::value_type, typename Compare  = std::less&lt;Key&gt;, typename Sum  = std::plus&lt;T&gt;, typename Identity  = default_construct&lt;T&gt;, typename Allocator  = detail::void_allocator_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1segment__tree.html">utils::segment_tree</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::sorted_equivalent_t&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">KeyContainer&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MappedContainer&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"> = <code>Compare()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Sum&#160;</td>
+          <td class="paramname"> = <code>Sum()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Identity&#160;</td>
+          <td class="paramname"> = <code>Identity()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Allocator&#160;</td>
+          <td class="paramname"> = <code>Allocator()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9fb37b34e2c9e0e274718240606493f0" name="a9fb37b34e2c9e0e274718240606493f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fb37b34e2c9e0e274718240606493f0">&#9670;&nbsp;</a></span>segment_tree() <span class="overload">[13/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename PairsIt , typename PairsSent , simple_allocator Allocator, typename STT  = detail::segment_tree_traits&lt;PairsIt, Allocator&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1segment__tree.html">utils::segment_tree</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::sorted_equivalent_t&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PairsIt&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PairsSent&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Allocator&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, typename STT::Compare, typename STT::Sum, typename STT::Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab34d7c058da716ef963b80de4e6af749" name="ab34d7c058da716ef963b80de4e6af749"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab34d7c058da716ef963b80de4e6af749">&#9670;&nbsp;</a></span>segment_tree() <span class="overload">[14/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename PairsIt , typename PairsSent , typename Allocator  = std::allocator&lt;int&gt;, typename STT  = detail::segment_tree_traits&lt;PairsIt, Allocator&gt;, typename Compare  = STT::Compare, typename Sum  = STT::Sum, typename Identity  = STT::Identity&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1segment__tree.html">utils::segment_tree</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::sorted_equivalent_t&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PairsIt&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PairsSent&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"> = <code>Compare()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Sum&#160;</td>
+          <td class="paramname"> = <code>Sum()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Allocator&#160;</td>
+          <td class="paramname"> = <code>Allocator()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, Compare, Sum, Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acdcea13af380f403900bea1e667330fd" name="acdcea13af380f403900bea1e667330fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdcea13af380f403900bea1e667330fd">&#9670;&nbsp;</a></span>segment_tree() <span class="overload">[15/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Pairs , simple_allocator Allocator, typename STT  = detail::segment_tree_traits&lt;ranges::iterator_t&lt;Pairs&gt;, Allocator&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1segment__tree.html">utils::segment_tree</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::sorted_equivalent_t&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::from_range_t&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Pairs &amp;&amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Allocator&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, typename STT::Compare, typename STT::Sum, typename STT::Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a15c5648d54f45bae380b6ed233a87770" name="a15c5648d54f45bae380b6ed233a87770"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15c5648d54f45bae380b6ed233a87770">&#9670;&nbsp;</a></span>segment_tree() <span class="overload">[16/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Pairs , typename Allocator  = std::allocator&lt;int&gt;, typename STT  = detail::segment_tree_traits&lt;ranges::iterator_t&lt;Pairs&gt;, Allocator&gt;, typename Compare  = STT::Compare, typename Sum  = STT::Sum, typename Identity  = STT::Identity&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1segment__tree.html">utils::segment_tree</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::sorted_equivalent_t&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::from_range_t&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Pairs &amp;&amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"> = <code>Compare()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Sum&#160;</td>
+          <td class="paramname"> = <code>Sum()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Identity&#160;</td>
+          <td class="paramname"> = <code>Identity()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Allocator&#160;</td>
+          <td class="paramname"> = <code>Allocator()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, Compare, Sum, Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a048efb80d8c76325f02a7d20f9396570" name="a048efb80d8c76325f02a7d20f9396570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a048efb80d8c76325f02a7d20f9396570">&#9670;&nbsp;</a></span>segment_tree() <span class="overload">[17/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename T , simple_allocator Allocator, typename STT  = detail::segment_tree_traits&lt;const std::pair&lt;Key, T&gt;*, Allocator&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1segment__tree.html">utils::segment_tree</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::sorted_equivalent_t&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::initializer_list&lt; std::pair&lt; Key, T &gt; &gt;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Allocator&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, typename STT::Compare, typename STT::Sum, typename STT::Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6d7538388dde8d989997a8b6030ea9fb" name="a6d7538388dde8d989997a8b6030ea9fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d7538388dde8d989997a8b6030ea9fb">&#9670;&nbsp;</a></span>segment_tree() <span class="overload">[18/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename T , typename Allocator  = std::allocator&lt;int&gt;, typename STT  = detail::segment_tree_traits&lt;const std::pair&lt;Key, T&gt;*, Allocator&gt;, typename Compare  = STT::Compare, typename Sum  = STT::Sum, typename Identity  = STT::Identity&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classutils_1_1segment__tree.html">utils::segment_tree</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::sorted_equivalent_t&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::initializer_list&lt; std::pair&lt; Key, T &gt; &gt;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"> = <code>Compare()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Sum&#160;</td>
+          <td class="paramname"> = <code>Sum()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Identity&#160;</td>
+          <td class="paramname"> = <code>Identity()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Allocator&#160;</td>
+          <td class="paramname"> = <code>Allocator()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  <a class="el" href="classutils_1_1segment__tree.html">segment_tree</a>&lt; typename STT::Key, typename STT::T, Compare, Sum, Identity, typename STT::KeyContainer, typename STT::MappedContainer &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a15c903199c2c3166038cf06caa747a2c" name="a15c903199c2c3166038cf06caa747a2c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a15c903199c2c3166038cf06caa747a2c">&#9670;&nbsp;</a></span>swap()</h2>
 
@@ -1869,6 +2810,20 @@ template&lt;typename F &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">constexpr struct <a class="el" href="structutils_1_1disable__op__t.html">utils::disable_op_t</a> utils::disable_op</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a801d8a7b8045aa578086613e00216580" name="a801d8a7b8045aa578086613e00216580"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a801d8a7b8045aa578086613e00216580">&#9670;&nbsp;</a></span>segment_tree_nodes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr struct <a class="el" href="structutils_1_1segment__tree__nodes__t.html">utils::segment_tree_nodes_t</a> utils::segment_tree_nodes</td>
         </tr>
       </table>
 </div><div class="memdoc">

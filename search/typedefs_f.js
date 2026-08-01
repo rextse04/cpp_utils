@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['wstatic_5fstring_0',['wstatic_string',['../namespaceutils.html#af0ea072dbe2b847ec65a37641f0352fc',1,'utils']]],
-  ['wstatic_5fstring_5fview_1',['wstatic_string_view',['../namespaceutils.html#a024354295af32aee7ed2220d3a52d8f5',1,'utils']]]
+  ['value_5ftype_0',['value_type',['../structutils_1_1pmr_1_1allocator__base.html#a4edc136e6071d4afdd622696c3f20a34',1,'utils::pmr::allocator_base::value_type()'],['../classutils_1_1unique__resource.html#add226441a6c8860e16acf90bf7d98b52',1,'utils::unique_resource::value_type()'],['../structutils_1_1interval__endpoint.html#a31d0cc19c5168cc40f64264a71537ad6',1,'utils::interval_endpoint::value_type()'],['../classutils_1_1segment__tree.html#a11c4e978099ad752c10a870fc3597e16',1,'utils::segment_tree::value_type()'],['../classutils_1_1pointer__iterator.html#a7850e0c5043cb047a01890e23bdbd4c8',1,'utils::pointer_iterator::value_type()']]],
+  ['variadic_5farity_1',['variadic_arity',['../namespaceutils.html#acdc92300a8a41d794e21ecfade137492',1,'utils']]],
+  ['void_5fpointer_2',['void_pointer',['../structutils_1_1pmr_1_1allocator__base.html#a3fc5600dc9a5d1a01dc09a45d452f4ed',1,'utils::pmr::allocator_base::void_pointer()'],['../classutils_1_1pmr_1_1arena__allocator.html#a3fc5600dc9a5d1a01dc09a45d452f4ed',1,'utils::pmr::arena_allocator::void_pointer()'],['../classutils_1_1pmr_1_1stack__allocator.html#a3fc5600dc9a5d1a01dc09a45d452f4ed',1,'utils::pmr::stack_allocator::void_pointer()']]]
 ];

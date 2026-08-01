@@ -3,7 +3,8 @@ var annotated_dup =
     [ "std", null, [
       [ "formatter< S, typename S::value_type >", "structstd_1_1formatter_3_01S_00_01typename_01S_1_1value__type_01_4.html", "structstd_1_1formatter_3_01S_00_01typename_01S_1_1value__type_01_4" ],
       [ "formatter< T, CharT >", "structstd_1_1formatter_3_01T_00_01CharT_01_4.html", "structstd_1_1formatter_3_01T_00_01CharT_01_4" ],
-      [ "numeric_limits< T >", "structstd_1_1numeric__limits_3_01T_01_4.html", null ]
+      [ "numeric_limits< T >", "structstd_1_1numeric__limits_3_01T_01_4.html", null ],
+      [ "uses_allocator< utils::segment_tree< Args... >, Alloc >", "structstd_1_1uses__allocator_3_01utils_1_1segment__tree_3_01Args_8_8_8_01_4_00_01Alloc_01_4.html", null ]
     ] ],
     [ "utils", "namespaceutils.html", [
       [ "bit_behavior", "namespaceutils_1_1bit__behavior.html", [
@@ -176,6 +177,8 @@ var annotated_dup =
       [ "result_of", "structutils_1_1result__of.html", null ],
       [ "result_of< R(Args...)>", "structutils_1_1result__of_3_01R_07Args_8_8_8_08_4.html", "structutils_1_1result__of_3_01R_07Args_8_8_8_08_4" ],
       [ "sane_common_type", "group__sane__common__type.html#structutils_1_1sane__common__type", null ],
+      [ "segment_tree", "classutils_1_1segment__tree.html", "classutils_1_1segment__tree" ],
+      [ "segment_tree_nodes_t", "structutils_1_1segment__tree__nodes__t.html", null ],
       [ "shift_asg_op_functors", "structutils_1_1shift__asg__op__functors.html", "structutils_1_1shift__asg__op__functors" ],
       [ "shift_asg_ops", "structutils_1_1shift__asg__ops.html", null ],
       [ "shift_full_ops", "structutils_1_1shift__full__ops.html", null ],

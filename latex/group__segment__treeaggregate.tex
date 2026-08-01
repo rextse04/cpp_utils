@@ -1,0 +1,83 @@
+\hypertarget{group__segment__treeaggregate}{}\doxysection{utils\+::segment\+\_\+tree\+::aggregate}
+\label{group__segment__treeaggregate}\index{utils::segment\_tree::aggregate@{utils::segment\_tree::aggregate}}
+
+
+Aggregate values in the given key or iterator interval.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$searchable\+\_\+in$<$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}} $>$ K1, searchable\+\_\+in$<$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}} $>$ K2$>$ }\\constexpr T \mbox{\hyperlink{group__segment__treeaggregate_ga29438927e000536902c401334f0cb3e2}{utils\+::segment\+\_\+tree$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::aggregate}} (const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ K1, K2 $>$ \&key\+\_\+itv) const
+\item 
+{\footnotesize template$<$searchable\+\_\+in$<$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}} $>$ K1, searchable\+\_\+in$<$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}} $>$ K2, detail\+::multiplies\+\_\+for$<$ \mbox{\hyperlink{classutils_1_1segment__tree_aed9cba5a57e30841d2ac815549a2d0a9}{mapped\+\_\+type}}, \mbox{\hyperlink{classutils_1_1segment__tree_ac17e61eed4d4ebcf7aee166fd7fe549f}{size\+\_\+type}} $>$ Mul = std\+::multiplies$<$$>$$>$ }\\constexpr T \mbox{\hyperlink{group__segment__treeaggregate_gace6a1e2a2e806a0d8760a81e385746b2}{utils\+::segment\+\_\+tree$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::aggregate}} (const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ K1, K2 $>$ \&key\+\_\+itv, \mbox{\hyperlink{classutils_1_1segment__tree_aa900e852fdb513dbf300ff7d71b6b585}{update\+\_\+type}} \&update, const Mul \&multiplies=\{\}) const
+\item 
+constexpr T \mbox{\hyperlink{group__segment__treeaggregate_ga200960116664bb9281b599bfc438b832}{utils\+::segment\+\_\+tree$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::aggregate}} (\mbox{\hyperlink{classutils_1_1segment__tree_a93e38c920a40722b5f08fe120158713c}{const\+\_\+iterator}} \mbox{\hyperlink{group__segment__treeiterators_ga322e3e2653c6442b7aae8e2863711a60}{begin}}, \mbox{\hyperlink{classutils_1_1segment__tree_a93e38c920a40722b5f08fe120158713c}{const\+\_\+iterator}} \mbox{\hyperlink{group__segment__treeiterators_ga4ad27a5ee702e23e6ad8b63e2558a842}{end}}) const
+\item 
+{\footnotesize template$<$detail\+::multiplies\+\_\+for$<$ \mbox{\hyperlink{classutils_1_1segment__tree_aed9cba5a57e30841d2ac815549a2d0a9}{mapped\+\_\+type}}, \mbox{\hyperlink{classutils_1_1segment__tree_ac17e61eed4d4ebcf7aee166fd7fe549f}{size\+\_\+type}} $>$ Mul = std\+::multiplies$<$$>$$>$ }\\constexpr T \mbox{\hyperlink{group__segment__treeaggregate_gae4ba7da467466369c70087a536502489}{utils\+::segment\+\_\+tree$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::aggregate}} (\mbox{\hyperlink{classutils_1_1segment__tree_a93e38c920a40722b5f08fe120158713c}{const\+\_\+iterator}} \mbox{\hyperlink{group__segment__treeiterators_ga322e3e2653c6442b7aae8e2863711a60}{begin}}, \mbox{\hyperlink{classutils_1_1segment__tree_a93e38c920a40722b5f08fe120158713c}{const\+\_\+iterator}} \mbox{\hyperlink{group__segment__treeiterators_ga4ad27a5ee702e23e6ad8b63e2558a842}{end}}, \mbox{\hyperlink{classutils_1_1segment__tree_aa900e852fdb513dbf300ff7d71b6b585}{update\+\_\+type}} \&update, const Mul \&multiplies=\{\}) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Aggregate values in the given key or iterator interval. 
+
+\begin{DoxyReturn}{Returns}
+A value equivalent to that produced by the following process\+:
+\begin{DoxyEnumerate}
+\item Gather all key-\/value pairs $S$ contained in the given interval, in the order defined by {\ttfamily \mbox{\hyperlink{classutils_1_1segment__tree_a651253130fe6d6fc8bfc3b88e2851a9a}{keys()}}}.
+\item Compute $\sum_{(k,v)\in S} v$ using {\ttfamily \mbox{\hyperlink{classutils_1_1segment__tree_a6b2b4b28ed13bae3f4bacd169aec497b}{sum()}}}. 
+\end{DoxyEnumerate}
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+For overloads that accept an {\ttfamily update}, the returned value is unspecified (but still valid) if {\ttfamily \mbox{\hyperlink{classutils_1_1segment__tree_a6b2b4b28ed13bae3f4bacd169aec497b}{sum()}}} is not commutative on {\ttfamily mapped\+\_\+type}. 
+\end{DoxyWarning}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__segment__treeaggregate_ga29438927e000536902c401334f0cb3e2}\label{group__segment__treeaggregate_ga29438927e000536902c401334f0cb3e2}} 
+\index{utils::segment\_tree::aggregate@{utils::segment\_tree::aggregate}!aggregate@{aggregate}}
+\index{aggregate@{aggregate}!utils::segment\_tree::aggregate@{utils::segment\_tree::aggregate}}
+\doxysubsubsection{\texorpdfstring{aggregate()}{aggregate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Key , typename T , std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container  = std\+::vector$<$\+Key$>$, typename Mapped\+Container  = std\+::vector$<$\+T$>$$>$ \\
+template$<$searchable\+\_\+in$<$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}} $>$ K1, searchable\+\_\+in$<$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}} $>$ K2$>$ \\
+constexpr T \mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::aggregate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ K1, K2 $>$ \&}]{key\+\_\+itv }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l01031}{1031}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+
+\mbox{\Hypertarget{group__segment__treeaggregate_gace6a1e2a2e806a0d8760a81e385746b2}\label{group__segment__treeaggregate_gace6a1e2a2e806a0d8760a81e385746b2}} 
+\index{utils::segment\_tree::aggregate@{utils::segment\_tree::aggregate}!aggregate@{aggregate}}
+\index{aggregate@{aggregate}!utils::segment\_tree::aggregate@{utils::segment\_tree::aggregate}}
+\doxysubsubsection{\texorpdfstring{aggregate()}{aggregate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Key , typename T , std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container  = std\+::vector$<$\+Key$>$, typename Mapped\+Container  = std\+::vector$<$\+T$>$$>$ \\
+template$<$searchable\+\_\+in$<$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}} $>$ K1, searchable\+\_\+in$<$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}} $>$ K2, detail\+::multiplies\+\_\+for$<$ \mbox{\hyperlink{classutils_1_1segment__tree_aed9cba5a57e30841d2ac815549a2d0a9}{mapped\+\_\+type}}, \mbox{\hyperlink{classutils_1_1segment__tree_ac17e61eed4d4ebcf7aee166fd7fe549f}{size\+\_\+type}} $>$ Mul = std\+::multiplies$<$$>$$>$ \\
+constexpr T \mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::aggregate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ K1, K2 $>$ \&}]{key\+\_\+itv,  }\item[{\mbox{\hyperlink{classutils_1_1segment__tree_aa900e852fdb513dbf300ff7d71b6b585}{update\+\_\+type}} \&}]{update,  }\item[{const Mul \&}]{multiplies = {\ttfamily \{\}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l01039}{1039}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+
+\mbox{\Hypertarget{group__segment__treeaggregate_ga200960116664bb9281b599bfc438b832}\label{group__segment__treeaggregate_ga200960116664bb9281b599bfc438b832}} 
+\index{utils::segment\_tree::aggregate@{utils::segment\_tree::aggregate}!aggregate@{aggregate}}
+\index{aggregate@{aggregate}!utils::segment\_tree::aggregate@{utils::segment\_tree::aggregate}}
+\doxysubsubsection{\texorpdfstring{aggregate()}{aggregate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Key , typename T , std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container  = std\+::vector$<$\+Key$>$, typename Mapped\+Container  = std\+::vector$<$\+T$>$$>$ \\
+constexpr T \mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::aggregate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1segment__tree_a93e38c920a40722b5f08fe120158713c}{const\+\_\+iterator}}}]{begin,  }\item[{\mbox{\hyperlink{classutils_1_1segment__tree_a93e38c920a40722b5f08fe120158713c}{const\+\_\+iterator}}}]{end }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l01045}{1045}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+
+\mbox{\Hypertarget{group__segment__treeaggregate_gae4ba7da467466369c70087a536502489}\label{group__segment__treeaggregate_gae4ba7da467466369c70087a536502489}} 
+\index{utils::segment\_tree::aggregate@{utils::segment\_tree::aggregate}!aggregate@{aggregate}}
+\index{aggregate@{aggregate}!utils::segment\_tree::aggregate@{utils::segment\_tree::aggregate}}
+\doxysubsubsection{\texorpdfstring{aggregate()}{aggregate()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Key , typename T , std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container  = std\+::vector$<$\+Key$>$, typename Mapped\+Container  = std\+::vector$<$\+T$>$$>$ \\
+template$<$detail\+::multiplies\+\_\+for$<$ \mbox{\hyperlink{classutils_1_1segment__tree_aed9cba5a57e30841d2ac815549a2d0a9}{mapped\+\_\+type}}, \mbox{\hyperlink{classutils_1_1segment__tree_ac17e61eed4d4ebcf7aee166fd7fe549f}{size\+\_\+type}} $>$ Mul = std\+::multiplies$<$$>$$>$ \\
+constexpr T \mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::aggregate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1segment__tree_a93e38c920a40722b5f08fe120158713c}{const\+\_\+iterator}}}]{begin,  }\item[{\mbox{\hyperlink{classutils_1_1segment__tree_a93e38c920a40722b5f08fe120158713c}{const\+\_\+iterator}}}]{end,  }\item[{\mbox{\hyperlink{classutils_1_1segment__tree_aa900e852fdb513dbf300ff7d71b6b585}{update\+\_\+type}} \&}]{update,  }\item[{const Mul \&}]{multiplies = {\ttfamily \{\}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l01049}{1049}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+

@@ -1,10 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,201,104,227"/>
-<area shape="rect" id="node2" href="$structutils_1_1always__true.html" title="A trait that is always true_type, regardless of template arguments." alt="" coords="205,5,326,47"/>
-<area shape="rect" id="node3" href="$structutils_1_1default__binary__op__traits_1_1constraint.html" title=" " alt="" coords="152,70,379,126"/>
-<area shape="rect" id="node4" href="$structutils_1_1default__unary__op__traits_1_1constraint.html" title=" " alt="" coords="194,150,337,206"/>
-<area shape="rect" id="node5" title=" " alt="" coords="193,229,338,271"/>
-<area shape="rect" id="node7" href="$group__utilsis__template__instance.html#structutils_1_1is__template__instance_3_01Tmpl_00_01Tmpl_3_01Ts_8_8_8_01_4_01_4" title=" " alt="" coords="188,294,343,350"/>
-<area shape="rect" id="node8" href="$group__metais__tuple.html#structutils_1_1meta_1_1is__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4" title=" " alt="" coords="194,373,337,415"/>
-<area shape="rect" id="node6" href="$group__is__integer__like.html#structutils_1_1is__integer__like" title=" " alt="" coords="427,237,592,263"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,85,111,111"/>
+<area shape="rect" id="node2" href="$structutils_1_1always__false.html" title="A trait that is always false_type, regardless of template arguments." alt="" coords="177,5,303,47"/>
+<area shape="rect" id="node3" href="$group__utilsis__template__instance.html#structutils_1_1is__template__instance" title=" " alt="" coords="165,70,315,126"/>
+<area shape="rect" id="node4" href="$group__metais__tuple.html#structutils_1_1meta_1_1is__tuple" title=" " alt="" coords="159,150,321,177"/>
 </map>

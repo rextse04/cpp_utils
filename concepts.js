@@ -8,6 +8,8 @@ var concepts =
       [ "pmr", "namespaceutils_1_1pmr.html", [
         [ "resource_allocator", "conceptutils_1_1pmr_1_1resource__allocator.html", null ]
       ] ],
+      [ "segment_tree_traverser_for", "conceptutils_1_1segment__tree__traverser__for.html", null ],
+      [ "segment_tree_strategy_for", "conceptutils_1_1segment__tree__strategy__for.html", null ],
       [ "container_allocator", "conceptutils_1_1container__allocator.html", null ],
       [ "emplace_constructible", "conceptutils_1_1emplace__constructible.html", null ],
       [ "emplace_constructible_into", "conceptutils_1_1emplace__constructible__into.html", null ],

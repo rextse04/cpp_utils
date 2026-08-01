@@ -1,0 +1,50 @@
+\hypertarget{group__segment__treemake__update}{}\doxysection{utils\+::segment\+\_\+tree\+::make\+\_\+update}
+\label{group__segment__treemake__update}\index{utils::segment\_tree::make\_update@{utils::segment\_tree::make\_update}}
+
+
+Applies a ranged update to an update record.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$searchable\+\_\+in$<$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}} $>$ K1, searchable\+\_\+in$<$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}} $>$ K2, detail\+::multiplies\+\_\+for$<$ \mbox{\hyperlink{classutils_1_1segment__tree_aed9cba5a57e30841d2ac815549a2d0a9}{mapped\+\_\+type}}, \mbox{\hyperlink{classutils_1_1segment__tree_ac17e61eed4d4ebcf7aee166fd7fe549f}{size\+\_\+type}} $>$ Mul = std\+::multiplies$<$$>$$>$ }\\constexpr void \mbox{\hyperlink{group__segment__treemake__update_gae5baccebae50e60efcb460d32b3a1fc7}{utils\+::segment\+\_\+tree$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::make\+\_\+update}} (\mbox{\hyperlink{classutils_1_1segment__tree_aa900e852fdb513dbf300ff7d71b6b585}{update\+\_\+type}} \&update, const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ K1, K2 $>$ \&key\+\_\+itv, const \mbox{\hyperlink{classutils_1_1segment__tree_aed9cba5a57e30841d2ac815549a2d0a9}{mapped\+\_\+type}} \&diff, const Mul \&multiplies=\{\}) const
+\item 
+{\footnotesize template$<$detail\+::multiplies\+\_\+for$<$ \mbox{\hyperlink{classutils_1_1segment__tree_aed9cba5a57e30841d2ac815549a2d0a9}{mapped\+\_\+type}}, \mbox{\hyperlink{classutils_1_1segment__tree_ac17e61eed4d4ebcf7aee166fd7fe549f}{size\+\_\+type}} $>$ Mul = std\+::multiplies$<$$>$$>$ }\\constexpr void \mbox{\hyperlink{group__segment__treemake__update_gad28263feb95deb53629f7f983b6eb7bd}{utils\+::segment\+\_\+tree$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::make\+\_\+update}} (\mbox{\hyperlink{classutils_1_1segment__tree_aa900e852fdb513dbf300ff7d71b6b585}{update\+\_\+type}} \&update, \mbox{\hyperlink{classutils_1_1segment__tree_a93e38c920a40722b5f08fe120158713c}{const\+\_\+iterator}} \mbox{\hyperlink{group__segment__treeiterators_ga322e3e2653c6442b7aae8e2863711a60}{begin}}, \mbox{\hyperlink{classutils_1_1segment__tree_a93e38c920a40722b5f08fe120158713c}{const\+\_\+iterator}} \mbox{\hyperlink{group__segment__treeiterators_ga4ad27a5ee702e23e6ad8b63e2558a842}{end}}, const \mbox{\hyperlink{classutils_1_1segment__tree_aed9cba5a57e30841d2ac815549a2d0a9}{mapped\+\_\+type}} \&diff, const Mul \&multiplies=\{\}) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Applies a ranged update to an update record. 
+
+Suppose $K$ is the set of keys contained in the given interval. Let $U$ be the map that identifies {\ttfamily update} before the call. {\ttfamily update} is modified such that the new map $U\textnormal{\textquotesingle}$ satisfies the following\+:
+\begin{DoxyEnumerate}
+\item For $k\in K$, $U\textnormal{\textquotesingle}[k]$ is equivalent to {\ttfamily \mbox{\hyperlink{classutils_1_1segment__tree_a6b2b4b28ed13bae3f4bacd169aec497b}{sum()}}(U\mbox{[}k\mbox{]},diff)}.
+\item For $k$ in {\ttfamily \mbox{\hyperlink{classutils_1_1segment__tree_a651253130fe6d6fc8bfc3b88e2851a9a}{keys()}}} but not in $K$, $U\textnormal{\textquotesingle}[k]$ is equivalent to $U[k]$. 
+\end{DoxyEnumerate}
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__segment__treemake__update_gae5baccebae50e60efcb460d32b3a1fc7}\label{group__segment__treemake__update_gae5baccebae50e60efcb460d32b3a1fc7}} 
+\index{utils::segment\_tree::make\_update@{utils::segment\_tree::make\_update}!make\_update@{make\_update}}
+\index{make\_update@{make\_update}!utils::segment\_tree::make\_update@{utils::segment\_tree::make\_update}}
+\doxysubsubsection{\texorpdfstring{make\_update()}{make\_update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Key , typename T , std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container  = std\+::vector$<$\+Key$>$, typename Mapped\+Container  = std\+::vector$<$\+T$>$$>$ \\
+template$<$searchable\+\_\+in$<$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}} $>$ K1, searchable\+\_\+in$<$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}} $>$ K2, detail\+::multiplies\+\_\+for$<$ \mbox{\hyperlink{classutils_1_1segment__tree_aed9cba5a57e30841d2ac815549a2d0a9}{mapped\+\_\+type}}, \mbox{\hyperlink{classutils_1_1segment__tree_ac17e61eed4d4ebcf7aee166fd7fe549f}{size\+\_\+type}} $>$ Mul = std\+::multiplies$<$$>$$>$ \\
+constexpr void \mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::make\+\_\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1segment__tree_aa900e852fdb513dbf300ff7d71b6b585}{update\+\_\+type}} \&}]{update,  }\item[{const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ K1, K2 $>$ \&}]{key\+\_\+itv,  }\item[{const \mbox{\hyperlink{classutils_1_1segment__tree_aed9cba5a57e30841d2ac815549a2d0a9}{mapped\+\_\+type}} \&}]{diff,  }\item[{const Mul \&}]{multiplies = {\ttfamily \{\}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00999}{999}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+
+\mbox{\Hypertarget{group__segment__treemake__update_gad28263feb95deb53629f7f983b6eb7bd}\label{group__segment__treemake__update_gad28263feb95deb53629f7f983b6eb7bd}} 
+\index{utils::segment\_tree::make\_update@{utils::segment\_tree::make\_update}!make\_update@{make\_update}}
+\index{make\_update@{make\_update}!utils::segment\_tree::make\_update@{utils::segment\_tree::make\_update}}
+\doxysubsubsection{\texorpdfstring{make\_update()}{make\_update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Key , typename T , std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container  = std\+::vector$<$\+Key$>$, typename Mapped\+Container  = std\+::vector$<$\+T$>$$>$ \\
+template$<$detail\+::multiplies\+\_\+for$<$ \mbox{\hyperlink{classutils_1_1segment__tree_aed9cba5a57e30841d2ac815549a2d0a9}{mapped\+\_\+type}}, \mbox{\hyperlink{classutils_1_1segment__tree_ac17e61eed4d4ebcf7aee166fd7fe549f}{size\+\_\+type}} $>$ Mul = std\+::multiplies$<$$>$$>$ \\
+constexpr void \mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::make\+\_\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1segment__tree_aa900e852fdb513dbf300ff7d71b6b585}{update\+\_\+type}} \&}]{update,  }\item[{\mbox{\hyperlink{classutils_1_1segment__tree_a93e38c920a40722b5f08fe120158713c}{const\+\_\+iterator}}}]{begin,  }\item[{\mbox{\hyperlink{classutils_1_1segment__tree_a93e38c920a40722b5f08fe120158713c}{const\+\_\+iterator}}}]{end,  }\item[{const \mbox{\hyperlink{classutils_1_1segment__tree_aed9cba5a57e30841d2ac815549a2d0a9}{mapped\+\_\+type}} \&}]{diff,  }\item[{const Mul \&}]{multiplies = {\ttfamily \{\}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l01007}{1007}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+

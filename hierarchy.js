@@ -64,11 +64,13 @@ var hierarchy =
       [ "utils::meta::replace< Tuple, Idx, T >", "group__metareplace.html#structutils_1_1meta_1_1replace", null ]
     ] ],
     [ "std::conjunction", null, [
+      [ "std::uses_allocator< utils::segment_tree< Args... >, Alloc >", "structstd_1_1uses__allocator_3_01utils_1_1segment__tree_3_01Args_8_8_8_01_4_00_01Alloc_01_4.html", null ],
       [ "utils::bit_behavior::default_asg_op_traits::constraint< Self, A, B >", "structutils_1_1bit__behavior_1_1default__asg__op__traits_1_1constraint.html", null ],
       [ "utils::integral_behavior::default_asg_op_traits::constraint< Self, A, B >", "structutils_1_1integral__behavior_1_1default__asg__op__traits_1_1constraint.html", null ],
       [ "utils::integral_behavior::default_binary_op_traits< CommonTypeTrait, ResultTrait >::constraint< Self, A, B, C >", "structutils_1_1integral__behavior_1_1default__binary__op__traits_1_1constraint.html", null ]
     ] ],
     [ "utils::meta::const_var< Var >", "classutils_1_1meta_1_1const__var.html", null ],
+    [ "utils::segment_tree< Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer >::containers", "structutils_1_1segment__tree_1_1containers.html", null ],
     [ "utils::copy_construct< T >", "structutils_1_1copy__construct.html", null ],
     [ "utils::copy_construct<>", "structutils_1_1copy__construct_3_4.html", null ],
     [ "std::decay", null, [
@@ -192,6 +194,7 @@ var hierarchy =
     ] ],
     [ "utils::move_construct< T >", "structutils_1_1move__construct.html", null ],
     [ "utils::move_construct<>", "structutils_1_1move__construct_3_4.html", null ],
+    [ "utils::segment_tree< Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer >::node_info", "structutils_1_1segment__tree_1_1node__info.html", null ],
     [ "std::numeric_limits", null, [
       [ "std::numeric_limits< T >", "structstd_1_1numeric__limits_3_01T_01_4.html", null ]
     ] ],
@@ -232,6 +235,8 @@ var hierarchy =
     [ "utils::detail::sane_common_type< T, U >", null, [
       [ "utils::sane_common_type< T, U >", "group__sane__common__type.html#structutils_1_1sane__common__type", null ]
     ] ],
+    [ "utils::segment_tree< Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer >", "classutils_1_1segment__tree.html", null ],
+    [ "utils::segment_tree_nodes_t", "structutils_1_1segment__tree__nodes__t.html", null ],
     [ "utils::meta::set< Var, Value, Version >", "classutils_1_1meta_1_1set.html", null ],
     [ "utils::shift_asg_op_functors< ShiftLeftAsg, ShiftRightAsg, AsgTraits >", "structutils_1_1shift__asg__op__functors.html", null ],
     [ "utils::shift_asg_ops< Funcs >", "structutils_1_1shift__asg__ops.html", [
@@ -304,6 +309,7 @@ var hierarchy =
     [ "utils::detail::unique_resource_typedefs< false, std::shared_mutex >", null, [
       [ "utils::unique_resource< T, Sync, Semaphore, SharedMutex >", "classutils_1_1unique__resource.html", null ]
     ] ],
+    [ "utils::segment_tree< Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer >::value_compare", "classutils_1_1segment__tree_1_1value__compare.html", null ],
     [ "utils::meta::var< Var, Version >", "classutils_1_1meta_1_1var.html", null ],
     [ "utils::visitor< Fs >", "classutils_1_1visitor.html", null ],
     [ "utils::with< F, Arity, Owning >", "structutils_1_1with.html", null ],

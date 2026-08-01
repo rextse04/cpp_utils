@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['what_0',['what',['../classutils_1_1compile__error.html#adde3523ba64fb2258aea1a8465807f8f',1,'utils::compile_error']]],
-  ['with_1',['with',['../structutils_1_1with.html#a7bf42d208e5f8e3909f69e0e152cf817',1,'utils::with::with(F func) noexcept'],['../structutils_1_1with.html#a9073329b3290a5c94e3520f9db4b2cff',1,'utils::with::with(G &amp;&amp;func)'],['../structutils_1_1with.html#a3c0bc757fc628b8fbabcf33bc5a15425',1,'utils::with::with(utils::arity&lt; Arity &gt;, F func) noexcept'],['../structutils_1_1with.html#a2c23fbf5807b7286e27d4c3fb3095357',1,'utils::with::with(utils::arity&lt; Arity &gt;, owning, G &amp;&amp;func)'],['../namespaceutils.html#aed4f05af8c7f6713f035d46368507ca9',1,'utils::with()']]],
-  ['write_2',['write',['../classutils_1_1unique__resource_1_1permit.html#abca148f6491a2956de2dbe1c554c79b2',1,'utils::unique_resource::permit']]]
+  ['unique_5fresource_0',['unique_resource',['../classutils_1_1unique__resource.html#a63ccb7d4a576cf089e7813734d2d9642',1,'utils::unique_resource::unique_resource(unique_resource_sync_t s, integer_alias::ptrdiff_t quota, T &amp;&amp;base)'],['../classutils_1_1unique__resource.html#ac00009a69797ad51a0da55519acd6f77',1,'utils::unique_resource::unique_resource(integer_alias::ptrdiff_t quota=1, Args &amp;&amp;... args)'],['../namespaceutils.html#a197cc51bcfc6c07cffed9890ac0f92e9',1,'utils::unique_resource()']]],
+  ['upper_5fbound_1',['upper_bound',['../classutils_1_1segment__tree.html#ab345d43577f581fbb64dea0cc10820c9',1,'utils::segment_tree']]],
+  ['utils_5fbitmask_2',['UTILS_BITMASK',['../namespaceutils.html#aed7303c206edcaa7cba652c07ca49240',1,'utils']]]
 ];

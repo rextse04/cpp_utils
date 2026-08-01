@@ -1,0 +1,55 @@
+\hypertarget{conceptutils_1_1segment__tree__traverser__for}{}\doxysection{utils\+::segment\+\_\+tree\+\_\+traverser\+\_\+for Concept Reference}
+\label{conceptutils_1_1segment__tree__traverser__for}\index{utils::segment\_tree\_traverser\_for@{utils::segment\_tree\_traverser\_for}}
+
+
+Specifies that {\ttfamily T} is a traverser for {\ttfamily segment\+\_\+tree} {\ttfamily ST}.  
+
+
+
+
+{\ttfamily \#include $<$segment\+\_\+tree.\+hpp$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} ST>}
+\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1segment__tree__traverser__for}{utils::segment\_tree\_traverser\_for}} =  \textcolor{keyword}{requires} (T traverser, \textcolor{keyword}{const} ST\& st, \textcolor{keyword}{const} \textcolor{keyword}{typename} ST::node\_info\& info) \{}
+\DoxyCodeLine{        \{ traverser(st, info) \} -\/> std::convertible\_to<segment\_tree\_traverse\_direction>;}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Detailed Description}
+Specifies that {\ttfamily T} is a traverser for {\ttfamily segment\+\_\+tree} {\ttfamily ST}. 
+
+Given the following values\+: \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Definition    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Definition    }\\\cline{1-2}
+\endhead
+{\ttfamily traverser}   &A traverser of type {\ttfamily T}    \\\cline{1-2}
+{\ttfamily st}   &The segment tree (of type {\ttfamily ST}) {\ttfamily traverser} is traversing    \\\cline{1-2}
+{\ttfamily info}   &A {\ttfamily segment\+\_\+tree\+\_\+node\+\_\+info} describing the node {\ttfamily traverser} is at   \\\cline{1-2}
+\end{longtabu}
+The following operations should be supported\+: \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Statement   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Semantics    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Statement   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Semantics    }\\\cline{1-2}
+\endhead
+{\ttfamily traverser(st, info)}   &Returns which child(ren) of the current node {\ttfamily traverser} should visit next.   \\\cline{1-2}
+\end{longtabu}
+
+
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00090}{90}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+

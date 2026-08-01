@@ -1,11 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,215,151,242"/>
-<area shape="rect" id="node2" href="$structutils_1_1arity__of_3_01R_07Args_8_8_8_08_4.html" title=" " alt="" coords="247,5,361,47"/>
-<area shape="rect" id="node3" href="$group__epsilon__of.html#structutils_1_1epsilon__of" title=" " alt="" coords="245,71,363,112"/>
-<area shape="rect" id="node4" href="$group__metaproduct.html#structutils_1_1meta_1_1product" title=" " alt="" coords="239,136,369,177"/>
-<area shape="rect" id="node5" href="$group__metasearch.html#structutils_1_1meta_1_1search" title=" " alt="" coords="232,201,376,257"/>
-<area shape="rect" id="node7" href="$group__metasearch.html#structutils_1_1meta_1_1search_3_01Tuple_00_01T_00_01PredTrait_00_01End_00_01End_01_4" title=" " alt="" coords="232,281,376,337"/>
-<area shape="rect" id="node8" href="$group__metasum.html#structutils_1_1meta_1_1sum" title=" " alt="" coords="199,361,409,387"/>
-<area shape="rect" id="node9" href="$group__width__of.html#structutils_1_1width__of" title=" " alt="" coords="242,412,366,453"/>
-<area shape="rect" id="node6" href="$group__metasearch.html#structutils_1_1meta_1_1search__trait" title=" " alt="" coords="457,208,584,249"/>
+<area shape="rect" id="node1" href="$structutils_1_1arity__of.html" title=" " alt="" coords="5,5,129,32"/>
 </map>
