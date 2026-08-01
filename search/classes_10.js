@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['sane_5fcommon_5ftype_0',['sane_common_type',['../group__utils.html#structutils_1_1sane__common__type',1,'utils']]],
+  ['sane_5fcommon_5ftype_0',['sane_common_type',['../structutils_1_1sane__common__type.html',1,'utils']]],
   ['search_1',['search',['../structutils_1_1meta_1_1search.html',1,'utils::meta']]],
   ['search_3c_20tuple_2c_20t_2c_20predtrait_2c_20end_2c_20end_20_3e_2',['search&lt; Tuple, T, PredTrait, End, End &gt;',['../structutils_1_1meta_1_1search_3_01Tuple_00_01T_00_01PredTrait_00_01End_00_01End_01_4.html',1,'utils::meta']]],
   ['search_5ftrait_3',['search_trait',['../structutils_1_1meta_1_1search__trait.html',1,'utils::meta']]],

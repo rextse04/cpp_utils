@@ -22,7 +22,7 @@ struct \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{profile}}
 constexpr auto \mbox{\hyperlink{namespaceutils_1_1integral__behavior_a5a3d58f1086283b7dcae9045592988fb}{standard}}
 \begin{DoxyCompactList}\small\item\em Default C++ integral arithmetic rules. \end{DoxyCompactList}\item 
 constexpr auto \mbox{\hyperlink{namespaceutils_1_1integral__behavior_a7a044520a743b7f7e24fde855fad4563}{sane}}
-\begin{DoxyCompactList}\small\item\em Default C++ integral arithmetic rules, but the result type is determined by {\ttfamily \mbox{\hyperlink{group__utils_structutils_1_1sane__common__type}{utils\+::sane\+\_\+common\+\_\+type}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Default C++ integral arithmetic rules, but the result type is determined by {\ttfamily \mbox{\hyperlink{structutils_1_1sane__common__type}{utils\+::sane\+\_\+common\+\_\+type}}}. \end{DoxyCompactList}\item 
 constexpr auto \mbox{\hyperlink{namespaceutils_1_1integral__behavior_ada3d172e83fd8ae4072c6a7ae80cf8d2}{ub}}
 \begin{DoxyCompactList}\small\item\em Invokes undefined behavior for any overflow (even for unsigned types), in addition to standard C++ arithmetic rules. \end{DoxyCompactList}\item 
 constexpr auto \mbox{\hyperlink{namespaceutils_1_1integral__behavior_afaf7f7b9f1340e2495d3690f306bf8a1}{wrap}}
@@ -100,7 +100,7 @@ Definition at line \mbox{\hyperlink{integer_8hpp_source_l00230}{230}} of file \m
 \end{DoxyCode}
 
 
-Default C++ integral arithmetic rules, but the result type is determined by {\ttfamily \mbox{\hyperlink{group__utils_structutils_1_1sane__common__type}{utils\+::sane\+\_\+common\+\_\+type}}}. 
+Default C++ integral arithmetic rules, but the result type is determined by {\ttfamily \mbox{\hyperlink{structutils_1_1sane__common__type}{utils\+::sane\+\_\+common\+\_\+type}}}. 
 
 This prevents {\ttfamily (unsigned short)-\/1 $\ast$ 2} from being undefined on a machine where {\ttfamily sizeof(int) == sizeof(short)}. It instead wraps around as expected. 
 
