@@ -65,11 +65,11 @@ var NAVTREEINDEX =
 [
 "BufferAllocator.html",
 "classutils_1_1transform__iterator.html#abb1c17b2c30973c29aba9208aed4a7f2",
-"integer_8hpp.html#a7f1c37eeff0c65be762ac86ea0ecc965",
-"static__string_8hpp.html",
-"structutils_1_1bit__asg__op__functors.html",
-"structutils_1_1iterator__category.html#a449eeeb173139e95420b41a320a7f487",
-"structutils_1_1stale__class.html#a66e01a8efd4a009822d76f547c326ddd"
+"integer_8hpp.html#a661ce0fc9bfb0fb4f8c15cb656cf03ae",
+"stateful__meta_8hpp.html",
+"structutils_1_1bind.html#a0398a170fa8d7957732051bf60136c1f",
+"structutils_1_1is__template__instance.html",
+"structutils_1_1stale__class.html#a396c97f05898599c0c6f03f9fc91cfcc"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

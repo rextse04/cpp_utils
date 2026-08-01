@@ -1,5 +1,11 @@
 var NAVTREEINDEX2 =
 {
+"integer_8hpp.html#a661ce0fc9bfb0fb4f8c15cb656cf03ae":[6,0,10,60],
+"integer_8hpp.html#a6dd034c45325c78693eaf82e9f76cf17":[6,0,10,46],
+"integer_8hpp.html#a77008e298b1f980039cf05e51ac23515":[6,0,10,63],
+"integer_8hpp.html#a7a044520a743b7f7e24fde855fad4563":[6,0,10,61],
+"integer_8hpp.html#a7cb22bcb91ea7ad61626eec3fa3e04e1":[6,0,10,33],
+"integer_8hpp.html#a7ecfb3e0498c15492edd93b9d750b6ca":[6,0,10,65],
 "integer_8hpp.html#a7f1c37eeff0c65be762ac86ea0ecc965":[6,0,10,27],
 "integer_8hpp.html#a8175df01c4fcafb9cacd91dedde2be2d":[6,0,10,29],
 "integer_8hpp.html#a822e46fe4571493f6ea0627b3dc84a4b":[6,0,10,25],
@@ -243,11 +249,5 @@ var NAVTREEINDEX2 =
 "self_8hpp.html#a379c3395d69445241a0099fdaf0e68de":[6,0,17,1],
 "self_8hpp_source.html":[6,0,17],
 "stack__allocator_8hpp.html":[6,0,0,3],
-"stack__allocator_8hpp_source.html":[6,0,0,3],
-"stateful__meta_8hpp.html":[6,0,18],
-"stateful__meta_8hpp.html#a663523ca9759fbbba5c59040d339416c":[6,0,18,5],
-"stateful__meta_8hpp.html#a7ecd2bb074afc4484c62aa40fb97ac97":[6,0,18,4],
-"stateful__meta_8hpp.html#ad02c270667465805004b1f692dfb6cf0":[6,0,18,7],
-"stateful__meta_8hpp.html#ad2935ed0730cf850927f58cdf5fa8fdf":[6,0,18,6],
-"stateful__meta_8hpp_source.html":[6,0,18]
+"stack__allocator_8hpp_source.html":[6,0,0,3]
 };

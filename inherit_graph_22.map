@@ -2,7 +2,7 @@
 <area shape="rect" id="node1" title=" " alt="" coords="5,188,132,215"/>
 <area shape="rect" id="node2" href="$structutils_1_1bit__behavior_1_1default__binary__op__traits_1_1constraint.html" title="a @ b passes the constraint if and only if a and b have the same width." alt="" coords="180,5,347,91"/>
 <area shape="rect" id="node3" href="$structutils_1_1is__explicitly__convertible.html" title=" " alt="" coords="180,115,347,157"/>
-<area shape="rect" id="node4" href="$group__utils.html#structutils_1_1is__same__sign" title=" " alt="" coords="191,181,336,222"/>
+<area shape="rect" id="node4" href="$group__is__same__sign.html#structutils_1_1is__same__sign" title=" " alt="" coords="191,181,336,222"/>
 <area shape="rect" id="node5" href="$structutils_1_1is__tagged.html" title=" " alt="" coords="180,247,347,273"/>
 <area shape="rect" id="node6" href="$structutils_1_1meta_1_1contained__in.html" title=" " alt="" coords="183,297,344,353"/>
 <area shape="rect" id="node7" href="$structutils_1_1meta_1_1contained__in__trait.html" title=" " alt="" coords="395,305,537,346"/>

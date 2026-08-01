@@ -47,32 +47,32 @@ using \mbox{\hyperlink{structutils_1_1integer_a5076aacc7cd346837490c2e1e31043e0}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-constexpr \mbox{\hyperlink{group__utils_gaa02e1252b219efc689eeb9e0db2eb689}{integer}} ()=default
+constexpr \mbox{\hyperlink{group__integer_gaa02e1252b219efc689eeb9e0db2eb689}{integer}} ()=default
 \item 
-{\footnotesize template$<$typename Other , typename U  = decltype(to\+\_\+underlying(std\+::declval$<$\+Other\&\&$>$()))$>$ }\\\mbox{\hyperlink{group__utils_gaf70aa92e30b685f150ed14eedb1474b6}{explicit}} (!lossless\+\_\+convertible\+\_\+to$<$ U, T $>$) const expr \mbox{\hyperlink{structutils_1_1integer}{integer}}(Other \&\&other) noexcept(std\+::is\+\_\+nothrow\+\_\+constructible\+\_\+v$<$ T, U $>$)
+{\footnotesize template$<$typename Other , typename U  = decltype(to\+\_\+underlying(std\+::declval$<$\+Other\&\&$>$()))$>$ }\\\mbox{\hyperlink{group__integer_gaf70aa92e30b685f150ed14eedb1474b6}{explicit}} (!lossless\+\_\+convertible\+\_\+to$<$ U, T $>$) const expr \mbox{\hyperlink{structutils_1_1integer}{integer}}(Other \&\&other) noexcept(std\+::is\+\_\+nothrow\+\_\+constructible\+\_\+v$<$ T, U $>$)
 \begin{DoxyCompactList}\small\item\em Conversion from a (possibly wrapped) integer-\/like value {\ttfamily other}. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Other $>$ \newline
-requires (std\+::is\+\_\+floating\+\_\+point\+\_\+v$<$std\+::remove\+\_\+cvref\+\_\+t$<$Other$>$$>$)}\\constexpr \mbox{\hyperlink{group__utils_ga91c823090d72a537bd3c956431720387}{integer}} (Other \&\&other) noexcept(std\+::is\+\_\+nothrow\+\_\+constructible\+\_\+v$<$ T, Other \&\& $>$)
+requires (std\+::is\+\_\+floating\+\_\+point\+\_\+v$<$std\+::remove\+\_\+cvref\+\_\+t$<$Other$>$$>$)}\\constexpr \mbox{\hyperlink{group__integer_ga91c823090d72a537bd3c956431720387}{integer}} (Other \&\&other) noexcept(std\+::is\+\_\+nothrow\+\_\+constructible\+\_\+v$<$ T, Other \&\& $>$)
 \begin{DoxyCompactList}\small\item\em Conversion from a floating point value {\ttfamily other}. The constructor is explicit as there is potential precision loss. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Other , typename... Ts, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
-requires ((std\+::is\+\_\+arithmetic\+\_\+v$<$OtherD$>$ $\vert$$\vert$ \mbox{\hyperlink{group__utils_ga3e785f8bbe5579cdb6684c29d19d4fe7}{is\+\_\+integer\+\_\+like\+\_\+v}}$<$OtherD$>$) \&\& sizeof...(Ts) == 0)}\\consteval \mbox{\hyperlink{group__utils_ga55a3f0ae8dc08e5697d2cf1233302463}{integer}} (Other \&\&other, Ts...)
+requires ((std\+::is\+\_\+arithmetic\+\_\+v$<$OtherD$>$ $\vert$$\vert$ \mbox{\hyperlink{group__is__integer__like_ga3e785f8bbe5579cdb6684c29d19d4fe7}{is\+\_\+integer\+\_\+like\+\_\+v}}$<$OtherD$>$) \&\& sizeof...(Ts) == 0)}\\consteval \mbox{\hyperlink{group__integer_ga55a3f0ae8dc08e5697d2cf1233302463}{integer}} (Other \&\&other, Ts...)
 \begin{DoxyCompactList}\small\item\em This allows implicit conversions from numbers known at compile time. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Self , typename Other , typename SelfD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Self$>$, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
-requires (\mbox{\hyperlink{group__utils_gae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)}\\constexpr decltype(auto) \mbox{\hyperlink{group__utils_gaf85e7fb0e0b45e09342748f906eace2f}{operator==}} (this Self \&\&self, Other \&\&other) noexcept(noexcept(std\+::forward\+\_\+like$<$ Self $>$(self.\+under\+\_\+)==\mbox{\hyperlink{group__utils_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}}(std\+::forward$<$ Other $>$(other))))
+requires (\mbox{\hyperlink{group__is__same__sign_gae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)}\\constexpr decltype(auto) \mbox{\hyperlink{group__integer_gaf85e7fb0e0b45e09342748f906eace2f}{operator==}} (this Self \&\&self, Other \&\&other) noexcept(noexcept(std\+::forward\+\_\+like$<$ Self $>$(self.\+under\+\_\+)==\mbox{\hyperlink{group__integer_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}}(std\+::forward$<$ Other $>$(other))))
 \item 
 {\footnotesize template$<$typename Self , typename Other , typename SelfD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Self$>$, typename OtherD  = std\+::remove\+\_\+cvref\+\_\+t$<$\+Other$>$$>$ \newline
-requires (\mbox{\hyperlink{group__utils_gae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)}\\constexpr decltype(auto) \mbox{\hyperlink{group__utils_ga917fdd63d11629b7a48f77bb20bbb08a}{operator$<$=$>$}} (this Self \&\&self, Other \&\&other) noexcept(noexcept(std\+::forward\+\_\+like$<$ Self $>$(self.\+under\+\_\+)$<$=$>$ \mbox{\hyperlink{group__utils_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}}(std\+::forward$<$ Other $>$(other))))
+requires (\mbox{\hyperlink{group__is__same__sign_gae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}}$<$SelfD, OtherD$>$)}\\constexpr decltype(auto) \mbox{\hyperlink{group__integer_ga917fdd63d11629b7a48f77bb20bbb08a}{operator$<$=$>$}} (this Self \&\&self, Other \&\&other) noexcept(noexcept(std\+::forward\+\_\+like$<$ Self $>$(self.\+under\+\_\+)$<$=$>$ \mbox{\hyperlink{group__integer_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}}(std\+::forward$<$ Other $>$(other))))
 \item 
-{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__utils_ga527b405c4834bc14b214685992a408a6}{operator U\&}} () \&noexcept
+{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__integer_ga527b405c4834bc14b214685992a408a6}{operator U\&}} () \&noexcept
 \item 
-{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__utils_ga44880db13000949ef632a1e7b5d8ea25}{operator const U \&}} () const \&noexcept
+{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__integer_ga44880db13000949ef632a1e7b5d8ea25}{operator const U \&}} () const \&noexcept
 \item 
-{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__utils_gaa8e0febb0ee6e7363027b03f33e507d1}{operator U\&\&}} () \&\&noexcept
+{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__integer_gaa8e0febb0ee6e7363027b03f33e507d1}{operator U\&\&}} () \&\&noexcept
 \item 
-{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__utils_gae93bf5d9fe4d50c5143053abab45416e}{operator const U \&\&}} () const \&\&noexcept
+{\footnotesize template$<$std\+::same\+\_\+as$<$ T $>$ U$>$ }\\constexpr \mbox{\hyperlink{group__integer_gae93bf5d9fe4d50c5143053abab45416e}{operator const U \&\&}} () const \&\&noexcept
 \item 
 {\footnotesize template$<$typename U $>$ \newline
-requires (!std\+::is\+\_\+same\+\_\+v$<$U, T$>$ \&\& \mbox{\hyperlink{namespaceutils_aeeeecd5e5e48d738f1f779d9b8f46dcc}{is\+\_\+explicitly\+\_\+convertible\+\_\+v}}$<$T, U$>$) \mbox{\hyperlink{group__utils_gaf70aa92e30b685f150ed14eedb1474b6}{explicit}}(!lossless\+\_\+convertible\+\_\+to$<$T, U$>$)}\\constexpr \mbox{\hyperlink{structutils_1_1integer_a4d5d4d51a43291632ad582c69624a4e0}{operator U}} () const noexcept
+requires (!std\+::is\+\_\+same\+\_\+v$<$U, T$>$ \&\& \mbox{\hyperlink{namespaceutils_aeeeecd5e5e48d738f1f779d9b8f46dcc}{is\+\_\+explicitly\+\_\+convertible\+\_\+v}}$<$T, U$>$) \mbox{\hyperlink{group__integer_gaf70aa92e30b685f150ed14eedb1474b6}{explicit}}(!lossless\+\_\+convertible\+\_\+to$<$T, U$>$)}\\constexpr \mbox{\hyperlink{structutils_1_1integer_a4d5d4d51a43291632ad582c69624a4e0}{operator U}} () const noexcept
 \begin{DoxyCompactList}\small\item\em Conversion to integer-\/like type {\ttfamily U}. \end{DoxyCompactList}\item 
 constexpr T \mbox{\hyperlink{structutils_1_1integer_a53e0a6722b9d08f5ea0440c2d31959d3}{operator+}} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the underlying object. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -80,7 +80,7 @@ constexpr T \mbox{\hyperlink{structutils_1_1integer_a53e0a6722b9d08f5ea0440c2d31
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename U $>$ \newline
-requires (\mbox{\hyperlink{group__utils_ga3e785f8bbe5579cdb6684c29d19d4fe7}{is\+\_\+integer\+\_\+like\+\_\+v}}$<$std\+::remove\+\_\+cvref\+\_\+t$<$U$>$$>$)}\\static constexpr U \&\& \mbox{\hyperlink{group__utils_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}} (U \&\&x) noexcept
+requires (\mbox{\hyperlink{group__is__integer__like_ga3e785f8bbe5579cdb6684c29d19d4fe7}{is\+\_\+integer\+\_\+like\+\_\+v}}$<$std\+::remove\+\_\+cvref\+\_\+t$<$U$>$$>$)}\\static constexpr U \&\& \mbox{\hyperlink{group__integer_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}} (U \&\&x) noexcept
 \item 
 {\footnotesize template$<$tagged$<$ integer\+\_\+tag $>$ U$>$ \newline
 requires (std\+::is\+\_\+same\+\_\+v$<$typename std\+::remove\+\_\+cvref\+\_\+t$<$U$>$\+::template \mbox{\hyperlink{structutils_1_1integer_a2e883760061d1606910aa6ce29c694e5}{rebind}}$<$T$>$, \mbox{\hyperlink{structutils_1_1integer}{integer}}$>$)}\\static constexpr decltype(auto) \mbox{\hyperlink{structutils_1_1integer_gadf39f2ab541118c720d7371a01d8ec87}{to\+\_\+underlying}} (U \&\&x) noexcept
@@ -114,7 +114,7 @@ An integer wrapper with added type safety and customizable behavior in arithmeti
 
 This class template is meant as a near drop-\/in replacement of built-\/in integers in the language. It provides better type safety\+: an explicit conversion call is needed when there is potential value change; and fully customizable behavior in arithmetic operations, which is controlled by the behavior profiles in template parameters. One may, for example, define overflow and underflow for signed integers to provide better safety guarantees.
 
-The template is also flexible, in that the underlying type {\ttfamily T} can be any {\itshape integer-\/like} type. In other words, it is possible to use the class template on a non-\/standard big integer type as long as it meets all requirements specified in the standard for {\itshape integer-\/like} types. Specialize {\ttfamily \mbox{\hyperlink{group__utils_structutils_1_1is__integer__like}{utils\+::is\+\_\+integer\+\_\+like}}} to declare as a type as {\itshape integer-\/like}.
+The template is also flexible, in that the underlying type {\ttfamily T} can be any {\itshape integer-\/like} type. In other words, it is possible to use the class template on a non-\/standard big integer type as long as it meets all requirements specified in the standard for {\itshape integer-\/like} types. Specialize {\ttfamily \mbox{\hyperlink{group__is__integer__like_structutils_1_1is__integer__like}{utils\+::is\+\_\+integer\+\_\+like}}} to declare as a type as {\itshape integer-\/like}.
 
 
 \begin{DoxyTemplParams}{Template Parameters}
@@ -211,7 +211,7 @@ Definition at line \mbox{\hyperlink{integer_8hpp_source_l00605}{605}} of file \m
 \doxysubsubsection{\texorpdfstring{operator U()}{operator U()}}
 {\footnotesize\ttfamily template$<$integer\+\_\+like T, \mbox{\hyperlink{structutils_1_1integral__behavior_1_1profile}{integral\+\_\+behavior\+::profile}} IB = integral\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{bit\+\_\+behavior\+::profile}} BB = bit\+\_\+behavior\+::sane, \mbox{\hyperlink{structutils_1_1shift__behavior_1_1profile}{shift\+\_\+behavior\+::profile}} SB = shift\+\_\+behavior\+::standard$>$ \\
 template$<$typename U $>$ \newline
-requires (!std\+::is\+\_\+same\+\_\+v$<$U, T$>$ \&\& \mbox{\hyperlink{namespaceutils_aeeeecd5e5e48d738f1f779d9b8f46dcc}{is\+\_\+explicitly\+\_\+convertible\+\_\+v}}$<$T, U$>$) \mbox{\hyperlink{group__utils_gaf70aa92e30b685f150ed14eedb1474b6}{explicit}}(!lossless\+\_\+convertible\+\_\+to$<$T, U$>$)\\
+requires (!std\+::is\+\_\+same\+\_\+v$<$U, T$>$ \&\& \mbox{\hyperlink{namespaceutils_aeeeecd5e5e48d738f1f779d9b8f46dcc}{is\+\_\+explicitly\+\_\+convertible\+\_\+v}}$<$T, U$>$) \mbox{\hyperlink{group__integer_gaf70aa92e30b685f150ed14eedb1474b6}{explicit}}(!lossless\+\_\+convertible\+\_\+to$<$T, U$>$)\\
 constexpr \mbox{\hyperlink{structutils_1_1integer}{utils\+::integer}}$<$ T, IB, BB, SB $>$\+::operator U (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
 

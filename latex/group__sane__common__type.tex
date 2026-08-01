@@ -1,0 +1,76 @@
+\hypertarget{group__sane__common__type}{}\doxysection{sane\+\_\+common\+\_\+type}
+\label{group__sane__common__type}\index{sane\_common\_type@{sane\_common\_type}}
+
+
+Similar to usual arithmetic conversion, except that the promotion step is replaced by {\ttfamily utils\+::sane\+\_\+promotion}.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{group__sane__common__type_structutils_1_1sane__common__type}{utils\+::sane\+\_\+common\+\_\+type$<$ T, U $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\using \mbox{\hyperlink{group__sane__common__type_gab6b5848d6804531f450947c7fa15825c}{utils\+::sane\+\_\+common\+\_\+type\+\_\+t}} = \mbox{\hyperlink{group__sane__common__type_structutils_1_1sane__common__type}{sane\+\_\+common\+\_\+type}}$<$ T, U $>$\+::type
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Similar to usual arithmetic conversion, except that the promotion step is replaced by {\ttfamily utils\+::sane\+\_\+promotion}. 
+
+Given any types {\ttfamily T} and {\ttfamily U}, let {\ttfamily TD} and {\ttfamily UD} be {\ttfamily std\+::decay\+\_\+t\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} and {\ttfamily std\+::decay\+\_\+t\texorpdfstring{$<$}{<}U\texorpdfstring{$>$}{>}} respectively. Their {\ttfamily \mbox{\hyperlink{group__sane__common__type_structutils_1_1sane__common__type}{sane\+\_\+common\+\_\+type}}} {\ttfamily C} is determined through the following steps\+:
+\begin{DoxyEnumerate}
+\item If any of {\ttfamily TD} and {\ttfamily UD} is not specialized for {\ttfamily std\+::numeric\+\_\+limits}, {\ttfamily C} is {\ttfamily std\+::common\+\_\+type\+\_\+t\texorpdfstring{$<$}{<}T, U\texorpdfstring{$>$}{>}}.
+\item Otherwise, if {\ttfamily TD} and {\ttfamily UD} have different widths, {\ttfamily C} is the one with the greater width.
+\item Otherwise, if at least one of {\ttfamily TD} and {\ttfamily UD} is unsigned, {\ttfamily C} is the first unsigned type out of the two.
+\item Otherwise, {\ttfamily C} is {\ttfamily TD}.
+\end{DoxyEnumerate}
+
+In the above, the definition of {\ttfamily width} is identical to that in {\ttfamily \mbox{\hyperlink{group__width__of_structutils_1_1width__of}{utils\+::width\+\_\+of}}}. 
+
+\doxysubsection{Class Documentation}
+\index{utils::sane\_common\_type@{utils::sane\_common\_type}}\label{structutils_1_1sane__common__type}
+\Hypertarget{group__sane__common__type_structutils_1_1sane__common__type}
+\doxysubsubsection{struct utils\+::sane\+\_\+common\+\_\+type}
+\subsubsection*{template$<$typename T, typename U$>$\newline
+struct utils\+::sane\+\_\+common\+\_\+type$<$ T, U $>$}
+
+
+Definition at line \mbox{\hyperlink{integer_8hpp_source_l00092}{92}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
+
+
+
+Inheritance diagram for utils\+::sane\+\_\+common\+\_\+type\texorpdfstring{$<$}{<} T, U \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{structutils_1_1sane__common__type__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for utils\+::sane\+\_\+common\+\_\+type\texorpdfstring{$<$}{<} T, U \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{structutils_1_1sane__common__type__coll__graph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__sane__common__type_gab6b5848d6804531f450947c7fa15825c}\label{group__sane__common__type_gab6b5848d6804531f450947c7fa15825c}} 
+\index{sane\_common\_type@{sane\_common\_type}!sane\_common\_type\_t@{sane\_common\_type\_t}}
+\index{sane\_common\_type\_t@{sane\_common\_type\_t}!sane\_common\_type@{sane\_common\_type}}
+\doxysubsubsection{\texorpdfstring{sane\_common\_type\_t}{sane\_common\_type\_t}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+using \mbox{\hyperlink{group__sane__common__type_gab6b5848d6804531f450947c7fa15825c}{utils\+::sane\+\_\+common\+\_\+type\+\_\+t}} = typedef \mbox{\hyperlink{group__sane__common__type_structutils_1_1sane__common__type}{sane\+\_\+common\+\_\+type}}$<$T, U$>$\+::type}
+
+
+
+Definition at line \mbox{\hyperlink{integer_8hpp_source_l00094}{94}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
+

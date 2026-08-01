@@ -115,7 +115,7 @@ Variables</h2></td></tr>
 <tr class="memdesc:a5a3d58f1086283b7dcae9045592988fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default C++ integral arithmetic rules.  <a href="namespaceutils_1_1integral__behavior.html#a5a3d58f1086283b7dcae9045592988fb">More...</a><br /></td></tr>
 <tr class="separator:a5a3d58f1086283b7dcae9045592988fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a044520a743b7f7e24fde855fad4563"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1integral__behavior.html#a7a044520a743b7f7e24fde855fad4563">sane</a></td></tr>
-<tr class="memdesc:a7a044520a743b7f7e24fde855fad4563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default C++ integral arithmetic rules, but the result type is determined by <code><a class="el" href="group__utils.html#structutils_1_1sane__common__type">utils::sane_common_type</a></code>.  <a href="namespaceutils_1_1integral__behavior.html#a7a044520a743b7f7e24fde855fad4563">More...</a><br /></td></tr>
+<tr class="memdesc:a7a044520a743b7f7e24fde855fad4563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default C++ integral arithmetic rules, but the result type is determined by <code><a class="el" href="group__sane__common__type.html#structutils_1_1sane__common__type">utils::sane_common_type</a></code>.  <a href="namespaceutils_1_1integral__behavior.html#a7a044520a743b7f7e24fde855fad4563">More...</a><br /></td></tr>
 <tr class="separator:a7a044520a743b7f7e24fde855fad4563"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada3d172e83fd8ae4072c6a7ae80cf8d2"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutils_1_1integral__behavior.html#ada3d172e83fd8ae4072c6a7ae80cf8d2">ub</a></td></tr>
 <tr class="memdesc:ada3d172e83fd8ae4072c6a7ae80cf8d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invokes undefined behavior for any overflow (even for unsigned types), in addition to standard C++ arithmetic rules.  <a href="namespaceutils_1_1integral__behavior.html#ada3d172e83fd8ae4072c6a7ae80cf8d2">More...</a><br /></td></tr>
@@ -222,7 +222,7 @@ template&lt;auto Plus, auto Minus, auto Mul, auto Div, auto Mod, template&lt; ty
 <b>Initial value:</b><div class="fragment"><div class="line">= <a class="code hl_variable" href="namespaceutils_1_1shift__behavior.html#a661ce0fc9bfb0fb4f8c15cb656cf03ae">profile_from</a>&lt;</div>
 <div class="line">            std::plus{}, std::minus{}, std::multiplies{}, std::divides{}, std::modulus{}&gt;</div>
 </div><!-- fragment -->
-<p>Default C++ integral arithmetic rules, but the result type is determined by <code><a class="el" href="group__utils.html#structutils_1_1sane__common__type">utils::sane_common_type</a></code>. </p>
+<p>Default C++ integral arithmetic rules, but the result type is determined by <code><a class="el" href="group__sane__common__type.html#structutils_1_1sane__common__type">utils::sane_common_type</a></code>. </p>
 <p >This prevents <code>(unsigned short)-1 * 2</code> from being undefined on a machine where <code>sizeof(int) == sizeof(short)</code>. It instead wraps around as expected. </p>
 
 <p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00240">240</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
