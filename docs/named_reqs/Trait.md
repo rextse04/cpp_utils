@@ -3,8 +3,8 @@
 
 ## Requirements
 A class template or alias template `Tmpl` satisfies <i>Trait</i> if every well-formed instantiation of `Tmpl` produces a
-1. [<i>TypeResult</i>](Result), in which case it is a <i>TypeTrait</i>; or
-2. [<i>ValueResult</i>](Result), in which case it is a <i>ValueTrait</i>; or
-3. [<i>TraitResult</i>](Result), in which case it is a <i>MetaTrait</i>.
+1. [<i>TypeResult</i>](Result.md), in which case it is a <i>TypeTrait</i>; or
+2. [<i>ValueResult</i>](Result.md), in which case it is a <i>ValueTrait</i>; or
+3. [<i>TraitResult</i>](Result.md), in which case it is a <i>MetaTrait</i>.
 
 A <i>Trait</i> can belong to one or more of the above categories.

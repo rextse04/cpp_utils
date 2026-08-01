@@ -7,7 +7,7 @@
 #include "memory.hpp"
 
 namespace utils::pmr {
-    /// @brief Named requirement: [<i>ResourceAllocator</i>](ResourceAllocator)
+    /// @brief Named requirement: [<i>ResourceAllocator</i>](ResourceAllocator.md)
     template <typename A>
     concept resource_allocator = (
         simple_allocator<A> && std::is_same_v<typename A::value_type, std::byte> &&

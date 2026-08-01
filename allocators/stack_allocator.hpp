@@ -33,8 +33,8 @@ namespace utils::pmr {
     /// The following diagram is a simple diagram illustrating the allocation strategy:
     /// @image html stack_allocator_internal.svg
     ///
-    /// All instances of this class satisfy [<i>BufferAllocator</i>](BufferAllocator) and `resource_allocator`.
-    /// Instances with `Sync` equal to `true` also satisfy [<i>ConvertibleAllocator</i>](BufferAllocator).
+    /// All instances of this class satisfy [<i>BufferAllocator</i>](BufferAllocator.md) and `resource_allocator`.
+    /// Instances with `Sync` equal to `true` also satisfy [<i>ConvertibleAllocator</i>](BufferAllocator.md).
     /// Consult their documentation for conditions and effects of member functions.
     /// @tparam T: `value_type`
     /// @tparam Sync: Whether allocator operations should be synchronized.
