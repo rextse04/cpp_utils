@@ -4,7 +4,7 @@
 #include <cstddef>
 #include <atomic>
 #include <functional>
-#include <meta>
+#include "self.hpp"
 #include "functional.hpp"
 #include "type.hpp"
 #include "meta.hpp"
