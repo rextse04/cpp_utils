@@ -11,14 +11,18 @@
  * Useful utilities for template metaprogramming.
  */
 namespace utils::meta {
+    namespace detail {
+        template <typename>
+        struct is_tuple : std::false_type {};
+        template <typename... Ts>
+        struct is_tuple<std::tuple<Ts...>> : std::true_type {};
+    }
     /// @defgroup metais_tuple utils::meta::is_tuple
     /// @brief A [<i>ValueTrait</i>](Trait.html) that checks if `T` is a (real) tuple.
     /// @{
 
     template <typename T>
-    struct is_tuple : std::false_type {};
-    template <typename... Ts>
-    struct is_tuple<std::tuple<Ts...>> : std::true_type {};
+    struct is_tuple : detail::is_tuple<T> {};
     template <typename T>
     constexpr bool is_tuple_v = is_tuple<T>::value;
     /// @}
@@ -410,7 +414,7 @@ namespace utils::meta {
 
     /// @brief A [<i>MetaTrait</i>](Trait.html) that composes type traits.
     ///
-    /// Given <i>TypeTrait</i>s `Trait1`, ..., `TraitN`, for any list of types `T1`, ..., `TM`,
+    /// Given [<i>TypeTrait</i>](Trait.html)s `Trait1`, ..., `TraitN`, for any list of types `T1`, ..., `TM`,
     /// `utils::composite<Trait1, ..., TraitN>::template trait<T1, ..., TM>` gives
     /// `TraitN<...Trait1<T1, ..., TM>::type>::type`, if the expression is well-formed.
     /// @{
