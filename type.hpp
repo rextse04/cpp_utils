@@ -19,7 +19,7 @@ namespace utils {
     };
     UTILS_BITMASK(type_qualifiers);
     /// @defgroup utilsqualifiers_of utils::qualifiers_of
-    /// @brief Extracts the const and volatile qualifiers from a type.
+    /// @brief A [<i>ValueTrait</i>](Trait.html) that extracts the const and volatile qualifiers from a type.
     /// @remark Ignores reference and pointer decorations, extracting qualifiers from the underlying type.
     /// @{
 
@@ -36,7 +36,7 @@ namespace utils {
     /// @}
 
     /// @defgroup utilsapply_qualifiers utils::apply_qualifiers
-    /// @brief Applies specified const and volatile qualifiers to a type, while retaining reference category/pointer.
+    /// @brief A [<i>TypeTrait</i>](Trait.html) that applies specified const and volatile qualifiers to a type, while retaining reference category/pointer.
     /// @{
 
     template <typename T, type_qualifiers Q>
@@ -56,7 +56,7 @@ namespace utils {
     /// @}
 
     /// @defgroup utilsfollow utils::follow
-    /// @brief Copies the qualifiers and reference category from one type to another.
+    /// @brief A [<i>TypeTrait</i>](Trait.html) that copies the qualifiers and reference category from one type to another.
     /// @{
 
     template <typename RefT, typename T>
@@ -68,7 +68,7 @@ namespace utils {
     /// @}
 
     /// @defgroup utilsis_equiv utils::is_equiv
-    /// @brief Checks if two types are equivalent.
+    /// @brief A [<i>ValueTrait</i>](Trait.html) that checks if two types are equivalent.
     ///
     /// Two types are equivalent if they are the same after removing all const, volatile, and reference qualifiers.
     /// @{
@@ -82,7 +82,7 @@ namespace utils {
     /// @}
 
     /// @defgroup utilsis_template_instance utils::is_template_instance
-    /// @brief Checks if a type is an instance of a given template.
+    /// @brief A [<i>ValueTrait</i>](Trait.html) that checks if a type is an instance of a given template.
     ///
     /// The check ignores cv qualifiers and reference categories on the type being checked.
     /// @{
@@ -96,17 +96,17 @@ namespace utils {
     /// @}
 
     /// @defgroup utilsexplicitly_convertible_to utils::explicitly_convertible_to
-    /// @brief Determines if `From` is explicitly convertible to `To`.
+    /// @brief A [<i>ValueTrait</i>] that determines if `From` is explicitly convertible to `To`.
     ///
     /// `From` is explicitly convertible to `To` if the expression `static_cast<To>(std::declval<From>())` is well-formed.
     /// @{
 
     template <typename From, typename To>
-    concept explicitly_convertible_to = requires { static_cast<To>(std::declval<From>()); };
-    template <typename From, typename To>
-    struct is_explicitly_convertible : std::bool_constant<explicitly_convertible_to<From, To>> {};
+    struct is_explicitly_convertible : std::bool_constant<requires { static_cast<To>(std::declval<From>()); }> {};
     template <typename From, typename To>
     constexpr bool is_explicitly_convertible_v = is_explicitly_convertible<From, To>::value;
+    template <typename From, typename To>
+    concept explicitly_convertible_to = is_explicitly_convertible<From, To>::value;
     /// @}
 
     namespace detail {
@@ -138,18 +138,18 @@ namespace utils {
     using make_index_range = make_integer_range<std::size_t, End, Begin, Step>;
     /// @}
 
-    /// @brief A trait that is always `true_type`, regardless of template arguments.
+    /// @brief A [<i>ValueTrait</i>](Trait.html) that is always `true_type`, regardless of template arguments.
     /// @remark Useful as a template argument or specialization fallback.
     template <typename...>
     struct always_true : std::true_type {};
 
-    /// @brief A trait that is always `false_type`, regardless of template arguments.
+    /// @brief A [<i>ValueTrait</i>](Trait.html) that is always `false_type`, regardless of template arguments.
     /// @remark Useful as a template argument or specialization fallback.
     template <typename...>
     struct always_false : std::false_type {};
 
     /// @defgroup utilsis_tagged utils::is_tagged
-    /// @brief Checks if `T` has a `tag` member alias matching or containing `Tag`.
+    /// @brief A [<i>ValueTrait</i>](Trait.html) that checks if `T` has a `tag` member alias matching or containing `Tag`.
     /// @{
 
     template <typename T, typename Tag>

@@ -319,6 +319,8 @@ namespace utils {
         }
     public:
         /// @defgroup segment_treeconstructors utils::segment_tree::segment_tree
+        /// @brief Constructors.
+        ///
         /// When the `std::sorted_equivalent` flag is passed to any constructor overload that accepts it,
         /// it indicates that the range of keys passed to the constructor is sorted in non-decreasing order
         /// with respect to `key_compare()`, and the range of mapped values passed corresponds to it.
@@ -573,6 +575,8 @@ namespace utils {
                 key_compare(), mapped_sum(), mapped_identity(),alloc) {}
         /// @}
         /// @defgroup segment_treedestructors utils::segment_tree::~segment_tree
+        /// @brief Destructors.
+        ///
         /// Use the default destructor if `KeyContainer` and `MappedContainer` are both trivially destructible.
         /// Otherwise, call their destructors.
         /// @{
@@ -587,6 +591,7 @@ namespace utils {
         }
         /// @}
         /// @defgroup segment_treeoperatorasg utils::segment_tree::operator=
+        /// @brief Assignment operators.
         /// @{
 
         /// Copy-assigns all underlying containers and functors.
@@ -655,6 +660,8 @@ namespace utils {
         }
     public:
         /// @defgroup segment_treeoperatorsubscript utils::segment_tree::operator[]
+        /// @brief Query by key.
+        ///
         /// Returns a (potentially proxy) reference to the mapped value of `key`.
         /// The behavior is undefined if
         /// `key` does not have a `key_compare()`-equivalent in `keys()`.
@@ -675,6 +682,8 @@ namespace utils {
         }
         /// @}
         /// @defgroup segment_treeat utils::segment_tree::at
+        /// @brief Checked query by key.
+        ///
         /// Returns a (potentially proxy) reference to the mapped value of `key`.
         /// If `key` does not have a `key_compare()`-equivalent in `keys()`,
         /// an exception is thrown with strong exception guarantee.
@@ -730,16 +739,38 @@ namespace utils {
         constexpr iterator iter(size_type node) noexcept { return {iota_iterator(node), iterator_func(this)}; }
         constexpr const_iterator iter(size_type node) const noexcept { return {iota_iterator(node), const_iterator_func(this)}; }
     public:
-        /// @defgroup segment_treeiterators utils::segment_tree::begin, utils::segment_tree::cbegin, utils::segment_tree::end, utils::segment_tree::cend, utils::segment_tree::rbegin, utils::segment_tree::crbegin, utils::segment_tree::rend, utils::segment_tree::crend
-        /// Returns specified iterators to `value_type`.
+        /// @defgroup segment_treebegin utils::segment_tree::begin, utils::segment_tree::cbegin
+        /// @brief Return an iterator to the first key-value pair.
         /// @{
 
         constexpr auto begin(this auto&& self) noexcept { return self.iter(0); }
         constexpr const_iterator cbegin() const noexcept { return iter(0); }
+        /// @}
+        /// @defgroup segment_treeend utils::segment_tree::end, utils::segment_tree:cend
+        /// @brief Return an iterator to one past the last key-value pair.
+        ///
+        /// The behavior is undefined if the iterator is dereferenced.
+        /// @{
+
         constexpr auto end(this auto&& self) noexcept { return self.iter(self.size()); }
         constexpr const_iterator cend() const noexcept { return iter(size()); }
+        /// @}
+        /// @defgroup segment_treerbegin utils::segment_tree::rbegin, utils::segment_tree::crbegin
+        /// @brief Return an iterator to the first element in the reverse range of key-value pairs in `*this`.
+        ///
+        /// The iterator points to the last key-value pair (in normal order).
+        /// @{
+
         constexpr auto rbegin(this auto&& self) noexcept { return std::reverse_iterator(self.end()); }
         constexpr const_reverse_iterator crbegin() const noexcept { return std::reverse_iterator(end()); }
+        /// @}
+        /// @defgroup segment_treerend utils::segment_tree::rend, utils::segment_tree::crend
+        /// @brief Return an iterator to one past the last element in the reverse range of key-value pairs in `*this`.
+        ///
+        /// The iterator points to the element preceding the first key-value pair (in normal order).
+        /// The behavior is undefined if the iterator is dereferenced.
+        /// @{
+
         constexpr auto rend(this auto&& self) noexcept { return std::reverse_iterator(self.begin()); }
         constexpr const_reverse_iterator crend() const noexcept { return std::reverse_iterator(end()); }
         /// @}

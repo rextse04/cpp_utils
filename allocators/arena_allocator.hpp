@@ -61,6 +61,7 @@ namespace utils::pmr {
         friend class arena_allocator;
     public:
         /// @defgroup utilspmrarena_allocatorconstructors utils::pmr::arena_allocator::arena_allocator
+        /// @brief Constructors.
         /// @{
 
         /// @brief Takes ownership of the buffer and uses it for allocations.

@@ -50,9 +50,10 @@ namespace utils {
         constexpr operator interval_endpoint<U>() const noexcept(std::is_nothrow_constructible_v<U, const T&>){
             return {.value{value}, .type{type}};
         }
-        /// @brief Equality operator.
+        /// @brief Equality comparison operator.
         ///
-        /// Two endpoints are equivalent if and only if their values and types are equivalent.
+        /// Two endpoints are equivalent if and only if their values and types are equal
+        /// based on the equality comparison operators of `value` and `type`.
         constexpr bool operator==(const interval_endpoint& other) const = default;
         /// @defgroup utilsintervalendpointcomparison utils::interval_endpoint::operator<=>, utils::interval_endpoint::compare
         ///
@@ -105,9 +106,10 @@ namespace utils {
         interval_endpoint<L> left;
         interval_endpoint<R> right;
 
-        /// @brief Equality operator.
+        /// @brief Equality comparison operator.
         ///
-        /// Two intervals are equivalent if and only if both left and right endpoints are equivalent.
+        /// Two intervals are equivalent if and only if both left and right endpoints are equal
+        /// based their respective equality comparison operators.
         constexpr bool operator==(const interval& other) const = default;
         using enum interval_endpoint_type;
         /// @brief Determines whether the interval represents an empty set.
@@ -185,6 +187,7 @@ namespace utils {
         }
         /// @}
         /// @defgroup utilsintervalcomparison utils::interval::operator<=>, utils::interval::compare
+        /// @brief Comparison functions.
         ///
         /// Given intervals @f$I1@f$ and @f$I2@f$,
         /// @f$I1<I2@f$ if and only if @f$I1@f$ is a proper subset of @f$I2@f$.

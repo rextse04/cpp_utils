@@ -29,7 +29,7 @@ namespace utils {
         struct is_integer_like<T> : std::true_type {};
     }
     /// @group{is_integer_like}
-    /// @brief Determines if a type is integer like.
+    /// @brief A [<i>ValueTrait</i>](Trait.html) that determines if a type is integer like.
     ///
     /// The construct is used by the library to determine if a type (ignoring cv-qualifiers) is integer like.
     /// The program is ill-formed, no diagnostics required, if the user specializes `utils::is_integer_like`
@@ -46,7 +46,7 @@ namespace utils {
     /// @}
 
     /// @group{width_of}
-    /// @brief Determines the width of `T` based on `Info`.
+    /// @brief A [<i>ValueTrait</i>](Trait.html) that determines the width of `T` based on `Info`.
     ///
     /// "width" here is defined as the number of bits that participate in the determination of the value of the significand (mantissa)
     /// in base-2 scientific notation.
@@ -79,7 +79,7 @@ namespace utils {
         };
     }
     /// @group{sane_common_type}
-    /// @brief Similar to usual arithmetic conversion, except that the promotion step is replaced by `utils::sane_promotion`.
+    /// @brief A [<i>TypeTrait</i>](Trait.html) that is similar to usual arithmetic conversion, except that the promotion step is replaced by `utils::sane_promotion`.
     ///
     /// Given any types `T` and `U`, let `TD` and `UD` be `std::decay_t<T>` and `std::decay_t<U>` respectively.
     /// Their `sane_common_type` `C` is determined through the following steps:
@@ -98,7 +98,7 @@ namespace utils {
     /// @}
 
     /// @group{is_same_sign}
-    /// @brief Determines if `T` and `U` have the same sign.
+    /// @brief A [<i>ValueTrait</i>](Trait.html) that determines if `T` and `U` have the same sign.
     /// Calculation is based on `TInfo` and `UInfo`, which default to respective instantiations of
     /// `std::numeric_limits`. They can be replaced by class types that provide the same interface as `std::numeric_limits`.
     /// @{
@@ -112,7 +112,7 @@ namespace utils {
     /// @}
 
     /// @group{epsilon_of}
-    /// @brief Extends the definition of `epsilon` in `std::numeric_limits` to integral types.
+    /// @brief A [<i>ValueTrait</i>](Trait.html) that extends the definition of `epsilon` in `std::numeric_limits` to integral types.
     ///
     /// The epsilon of a floating-point type is given by `Info::epsilon()`, while that of an integral type is `T(1)`.
     /// The classification of `T` is based on `Info`, which can be replaced by a class type that provides the same interface
@@ -126,7 +126,7 @@ namespace utils {
     /// @}
 
     /// @group{is_lossless_convertible}
-    /// @brief Determines if `From` can be converted to `To` without loss of information.
+    /// @brief A [<i>ValueTrait</i>](Trait.html) that determines if `From` can be converted to `To` without loss of information.
     ///
     /// Calculation is based on `FromInfo` and `ToInfo`, which default to respective instantiations of
     /// `std::numeric_limits`. They can be replaced by class types that provide the same interface as `std::numeric_limits`.

@@ -59,6 +59,7 @@ namespace utils::pmr {
         friend class stack_allocator;
     public:
         /// @defgroup utilspmrstack_allocatorconstructors utils::pmr::stack_allocator::stack_allocator
+        /// @brief Constructors.
         /// @{
 
         /// @brief Takes ownership of the buffer and uses it for allocations.

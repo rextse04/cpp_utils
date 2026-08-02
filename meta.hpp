@@ -12,7 +12,7 @@
  */
 namespace utils::meta {
     /// @defgroup metais_tuple utils::meta::is_tuple
-    /// @brief Checks if `T` is a (real) tuple.
+    /// @brief A [<i>ValueTrait</i>](Trait.html) that checks if `T` is a (real) tuple.
     /// @{
 
     template <typename T>
@@ -31,7 +31,7 @@ namespace utils::meta {
     concept pair_like = std::tuple_size<std::remove_cvref_t<T>>::value == 2;
 
     /// @defgroup metapack utils::meta::pack
-    /// @brief Wraps a parameter pack into a tuple type.
+    /// @brief A [<i>TypeTrait</i>](Trait.html) that wraps a parameter pack into a tuple type.
     /// @remark This is useful for converting variadic template parameters into a tuple type.
     /// @{
 
@@ -42,7 +42,7 @@ namespace utils::meta {
     /// @}
 
     /// @defgroup metasmart_pack utils::meta::smart_pack
-    /// @brief Wraps a parameter pack into a tuple type, unless exactly one tuple is given.
+    /// @brief A [<i>TypeTrait</i>](Trait.html) that wraps a parameter pack into a tuple type, unless exactly one tuple is given.
     /// @{
 
     template <typename... Ts>
@@ -62,7 +62,7 @@ namespace utils::meta {
         };
     }
     /// @defgroup metamake_tuple utils::meta::make_tuple
-    /// @brief Makes a tuple from a `tuple-like` type `T`.
+    /// @brief A [<i>TypeTrait</i>](Trait.html) that makes a tuple from a `tuple-like` type `T`.
     /// @{
 
     template <tuple_like T>
@@ -72,7 +72,7 @@ namespace utils::meta {
     /// @}
 
     /// @defgroup metaactual_index utils::meta::actual_index
-    /// @brief Calculates a normalized index (in @f$ [0, N)@f$) from a possibly negative index `Idx`
+    /// @brief A [<i>ValueTrait</i>](Trait.html) that calculates a normalized index (in @f$ [0, N)@f$) from a possibly negative index `Idx`
     /// and a tuple-like type `Tuple` of size `N`.
     /// @{
 
@@ -83,7 +83,7 @@ namespace utils::meta {
     /// @}
 
     /// @defgroup metaat utils::meta::at
-    /// @brief Similar to `std::tuple_element` but also accepts negative `Idx`.
+    /// @brief A [<i>TypeTrait</i>](Trait.html) that is similar to `std::tuple_element` but also accepts negative `Idx`.
     /// @{
 
     template <tuple_like Tuple, std::ptrdiff_t Idx>
@@ -95,7 +95,7 @@ namespace utils::meta {
     /// @}
 
     /// @defgroup metasearch utils::meta::search
-    /// @brief Finds the first index `Idx` in [ `Begin` , `End` ) such that
+    /// @brief A [<i>ValueTrait</i>](Trait.html) that finds the first index `Idx` in [ `Begin` , `End` ) such that
     /// `PredTrait<at_t<Tuple, Idx>, T>::value` is true.
     ///
     /// If such an element does not exist, `End` is returned.
@@ -115,7 +115,7 @@ namespace utils::meta {
     /// @}
 
     /// @defgroup metacontained_in utils::meta::contained_in
-    /// @brief Checks if there exists an index `Idx` in @f$ [\text{Begin},\text{End})@f$ such that
+    /// @brief A [<i>ValueTrait</i>](Trait.html) that checks if there exists an index `Idx` in @f$ [\text{Begin},\text{End})@f$ such that
     /// `PredTrait<at_t<Tuple, Idx>, T>::value` is true.
     /// @{
 
@@ -130,7 +130,7 @@ namespace utils::meta {
     /// @}
 
     /// @defgroup metaconcat utils::meta::concat
-    /// @brief Concatenate multiple tuple-like types into a single tuple type.
+    /// @brief A [<i>TypeTrait</i>](Trait.html) that concatenates multiple tuple-like types into a single tuple type.
     /// @{
 
     template <tuple_like... Tuples>
@@ -150,7 +150,7 @@ namespace utils::meta {
         };
     }
     /// @defgroup metaslice utils::meta::slice
-    /// @brief Extracts a slice from a tuple type from index `Begin` to index `End` (exclusive).
+    /// @brief A [<i>TypeTrait</i>](Trait.html) that extracts a slice from a tuple type from index `Begin` to index `End` (exclusive).
     ///
     /// Both `Begin` and `End` can be negative indices, which are normalized relative to the tuple size.
     /// If `Begin >= End`, an empty tuple is returned.
@@ -171,7 +171,7 @@ namespace utils::meta {
     /// @}
 
     /// @defgroup metainsert utils::meta::insert
-    /// @brief Inserts a tuple-like type `Inserted` into a tuple type `Tuple` at index `Idx`.
+    /// @brief A [<i>TypeTrait</i>](Trait.html) that inserts a tuple-like type `Inserted` into a tuple type `Tuple` at index `Idx`.
     ///
     /// The index `Idx` can be negative, which is normalized relative to the tuple size.
     /// @{
@@ -183,7 +183,7 @@ namespace utils::meta {
     /// @}
 
     /// @defgroup metaerase utils::meta::erase
-    /// @brief Erases elements from a tuple type `Tuple` in the range [`Begin`, `End`).
+    /// @brief A [<i>TypeTrait</i>](Trait.html) that erases elements from a tuple type `Tuple` in the range [`Begin`, `End`).
     ///
     /// Both `Begin` and `End` can be negative indices, which are normalized relative to the tuple size.
     /// @{
@@ -195,7 +195,7 @@ namespace utils::meta {
     /// @}
 
     /// @defgroup metareplace utils::meta::replace
-    /// @brief Replaces the element at index `Idx` in a tuple type `Tuple` with type `T`.
+    /// @brief A [<i>TypeTrait</i>](Trait.html) that replaces the element at index `Idx` in a tuple type `Tuple` with type `T`.
     ///
     /// The index `Idx` can be negative, which is normalized relative to the tuple size.
     /// @{
@@ -207,7 +207,7 @@ namespace utils::meta {
     /// @}
 
     /// @defgroup metainfer utils::meta::infer
-    /// @brief Converts an `ErasedResult` to a `Result`.
+    /// @brief A [<i>TypeTrait</i>](Trait.html) that converts an `ErasedResult` to a `Result`.
     ///
     /// If `ErasedResult` has a `type` member, that is returned; otherwise, `ErasedResult` itself is returned.
     /// @{
@@ -236,7 +236,7 @@ namespace utils::meta {
         };
     }
     /// @defgroup metamap utils::meta::map
-    /// @brief Applies a `Trait` template to corresponding elements across one or more tuple types.
+    /// @brief A [<i>TypeTrait</i>](Trait.html) that applies a `Trait` template to corresponding elements across one or more tuple types.
     ///
     /// This creates a new tuple type where each element is the result of applying `Trait`
     /// to the corresponding elements from the input tuples.
@@ -248,7 +248,7 @@ namespace utils::meta {
     /// @}
 
     /// @defgroup metareduce utils::meta::reduce
-    /// @brief Applies a `Trait` template to all elements of a tuple, producing a single result.
+    /// @brief A [<i>MetaTrait</i>](Trait.html) that applies a `Trait` template to all elements of a tuple, producing a single result.
     ///
     /// The result is either a `TypeResult` or a `ValueResult` depending on the trait.
     /// @{
@@ -263,7 +263,7 @@ namespace utils::meta {
     /// @}
 
     /// @defgroup metasum utils::meta::sum
-    /// @brief Computes the sum of `value` members from `ValueResult` types.
+    /// @brief A [<i>ValueTrait</i>](Trait.html) that computes the sum of `value` members from `ValueResult` types.
     /// @{
     template <typename... ValueResults>
     struct sum : std::integral_constant<std::uintmax_t, (static_cast<std::uintmax_t>(ValueResults::value) + ...)> {};
@@ -272,7 +272,7 @@ namespace utils::meta {
     /// @}
 
     /// @defgroup metaproduct utils::meta::product
-    /// @brief Computes the product of `value` members from `ValueResult` types.
+    /// @brief A [<i>ValueTrait</i>](Trait.html) that computes the product of `value` members from `ValueResult` types.
     /// @{
     template <typename... ValueResults>
     struct product : std::integral_constant<std::uintmax_t, (static_cast<std::uintmax_t>(ValueResults::value) * ...)> {};
@@ -281,11 +281,11 @@ namespace utils::meta {
     /// @}
 
     /// @defgroup metaextract utils::meta::extract
-    /// @brief Extracts the template arguments from a template instantiation.
+    /// @brief A [<i>TypeTrait</i>](Trait.html) and [<i>MetaTrait</i>](Trait.html) that extracts the template arguments from a template instantiation.
     ///
-    /// `extract` is both a <i>TypeTrait</i> and a <i>MetaTrait</i>.
+    /// `extract` is both a [<i>TypeTrait</i>](Trait.html) and a [<i>MetaTrait</i>](Trait.html).
     /// If `T` is a template instantiation, `extract<T>::type` is a tuple of its template arguments,
-    /// and `extract<T>::trait` is a <i>Trait</i> which rebinds `T` to template arguments.
+    /// and `extract<T>::trait` is a [<i>Trait</i>](Trait.html) which rebinds `T` to template arguments.
     /// Otherwise, `extract` is empty.
     /// @{
     template <typename T>
@@ -303,7 +303,7 @@ namespace utils::meta {
     /// @}
 
     /// @defgroup metarebind utils::meta::rebind
-    /// @brief Rebinds a template instance `T` to `Args`.
+    /// @brief A [<i>TypeTrait</i>](Trait.html) that rebinds a template instance `T` to `Args`.
     ///
     /// If `T` is in the form `Tmpl<...>`, `rebind<T>::type` is `Tmpl<Args...>`. Otherwise, `rebind<T>::type` is `T`.
     /// @{
@@ -320,7 +320,7 @@ namespace utils::meta {
     using rebind_t = rebind<T, Args...>::type;
     /// @}
 
-    /// @brief Binds template arguments to the front of a `Trait` template.
+    /// @brief A [<i>MetaTrait</i>](Trait.html) that binds template arguments to the front of a `Trait` template.
     ///
     /// This creates a new template that accepts fewer arguments by pre-filling the first arguments.
     template <template<typename...> typename Trait, typename... Args>
@@ -329,7 +329,7 @@ namespace utils::meta {
         struct trait : Trait<Args..., Ts...> {};
     };
 
-    /// @brief Binds template arguments to the back of a `Trait` template.
+    /// @brief A [<i>MetaTrait</i>](Trait.html) that binds template arguments to the back of a `Trait` template.
     ///
     /// This creates a new template that accepts fewer arguments by pre-filling the last arguments.
     template <template<typename...> typename Trait, typename... Args>
@@ -339,7 +339,7 @@ namespace utils::meta {
     };
 
     /// @defgroup metasubset_of utils::meta::subset_of
-    /// @brief Checks if every type in `SmallTuple` is contained in `BigTuple`.
+    /// @brief A [<i>ValueTrait</i>](Trait.html) that checks if every type in `SmallTuple` is contained in `BigTuple`.
     /// @{
     template <tuple_like SmallTuple, tuple_like BigTuple>
     struct subset_of :
@@ -349,7 +349,7 @@ namespace utils::meta {
     /// @}
 
     /// @defgroup metastrict_subset_of utils::meta::strict_subset_of
-    /// @brief Checks if `SmallTuple` is a strict subset of `BigTuple`.
+    /// @brief A [<i>ValueTrait</i>](Trait.html) that checks if `SmallTuple` is a strict subset of `BigTuple`.
     /// @{
     template <tuple_like SmallTuple, tuple_like BigTuple>
     struct strict_subset_of : std::bool_constant<
@@ -359,7 +359,7 @@ namespace utils::meta {
     /// @}
 
     /// @defgroup metato_value_results utils::meta::to_value_results
-    /// @brief Converts a pack of constexpr values into a tuple of `ValueResult` types.
+    /// @brief A [<i>TypeTrait</i>](Trait.html) that converts a pack of constexpr values into a tuple of `ValueResult` types.
     ///
     /// Each value is wrapped in a type with a `value` member.
     /// @{
@@ -383,7 +383,7 @@ namespace utils::meta {
                 pack<to_value_results_t<Begin + Idxs * Step>...> {};
     }
     /// @defgroup metarange utils::meta::range
-    /// @brief Generates a tuple of `ValueResult` types representing an arithmetic sequence.
+    /// @brief A [<i>TypeTrait</i>](Trait.html) that generates a tuple of `ValueResult` types representing an arithmetic sequence.
     ///
     /// This generates a sequence starting at `Begin`, incrementing by `Step`,
     /// until reaching `End` (exclusive). Returns a tuple of value results.
@@ -396,7 +396,7 @@ namespace utils::meta {
     /// @}
 
     /// @defgroup metaapply utils::meta::apply
-    /// @brief Applies a template to a list of types or unpacks a tuple into a template.
+    /// @brief A [<i>TypeTrait</i>](Trait.html) that applies a template to a list of types or unpacks a tuple into a template.
     ///
     /// If `Ts` contains a single `std::tuple`, it is unpacked automatically.
     /// @{
@@ -408,7 +408,7 @@ namespace utils::meta {
     using apply_t = apply<Tmpl, Ts...>::type;
     /// @}
 
-    /// @brief Composite type traits.
+    /// @brief A [<i>MetaTrait</i>](Trait.html) that composes type traits.
     ///
     /// Given <i>TypeTrait</i>s `Trait1`, ..., `TraitN`, for any list of types `T1`, ..., `TM`,
     /// `utils::composite<Trait1, ..., TraitN>::template trait<T1, ..., TM>` gives
