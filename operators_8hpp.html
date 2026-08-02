@@ -114,6 +114,9 @@ $(function(){initNavTree('operators_8hpp.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">operators.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Bulk operator overloads.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
 <code>#include &lt;concepts&gt;</code><br />
@@ -125,41 +128,40 @@ Include dependency graph for operators.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="operators_8hpp__incl.png" border="0" usemap="#aoperators_8hpp" alt=""/></div>
 <map name="aoperators_8hpp" id="aoperators_8hpp">
-<area shape="rect" title=" " alt="" coords="372,5,471,31"/>
+<area shape="rect" title="Bulk operator overloads." alt="" coords="424,5,523,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,83,105"/>
-<area shape="poly" title=" " alt="" coords="372,31,102,82,98,82,97,77,101,76,371,26"/>
-<area shape="rect" title=" " alt="" coords="131,300,213,326"/>
-<area shape="poly" title=" " alt="" coords="385,34,344,53,304,81,261,132,226,189,200,243,183,287,178,285,195,241,222,186,257,129,301,77,341,48,383,29"/>
-<area shape="rect" title=" " alt="" coords="752,79,826,105"/>
-<area shape="poly" title=" " alt="" coords="472,26,734,76,738,77,737,82,733,82,471,31"/>
-<area shape="rect" title=" " alt="" coords="556,300,607,326"/>
-<area shape="poly" title=" " alt="" coords="447,29,496,57,557,100,617,156,642,189,663,225,665,246,656,265,641,281,622,294,619,290,637,277,652,262,660,245,657,227,638,192,613,160,554,104,493,62,445,34"/>
-<area shape="rect" href="functional_8hpp.html" title=" " alt="" coords="315,79,416,105"/>
-<area shape="poly" title=" " alt="" coords="414,33,386,68,382,65,410,30"/>
-<area shape="rect" href="type_8hpp.html" title="Type manipulation and qualification utilities for compile&#45;time type introspection and transformation." alt="" coords="455,153,524,178"/>
-<area shape="poly" title=" " alt="" coords="429,30,480,137,475,140,424,32"/>
-<area shape="poly" title=" " alt="" coords="357,107,195,290,191,286,353,103"/>
-<area shape="poly" title=" " alt="" coords="371,104,396,172,419,213,449,250,470,267,494,280,541,299,539,304,491,285,467,271,445,254,414,216,391,174,366,106"/>
-<area shape="rect" title=" " alt="" coords="238,300,287,326"/>
-<area shape="poly" title=" " alt="" coords="361,106,300,227,275,287,270,284,295,225,356,104"/>
-<area shape="poly" title=" " alt="" coords="388,103,457,142,454,147,385,108"/>
-<area shape="rect" href="meta_8hpp.html" title=" " alt="" coords="310,226,384,252"/>
-<area shape="poly" title=" " alt="" coords="366,105,353,211,347,211,361,105"/>
-<area shape="poly" title=" " alt="" coords="455,177,381,197,298,229,245,260,200,292,197,288,242,256,296,224,380,192,453,172"/>
-<area shape="poly" title=" " alt="" coords="525,167,554,173,586,183,617,200,641,225,646,243,641,261,629,278,613,292,610,288,625,274,636,259,641,243,636,228,613,204,584,188,553,178,524,172"/>
-<area shape="rect" title=" " alt="" coords="459,226,512,252"/>
-<area shape="poly" title=" " alt="" coords="491,179,490,211,484,211,486,178"/>
-<area shape="rect" href="bitmask_8hpp.html" title=" " alt="" coords="536,226,627,252"/>
-<area shape="poly" title=" " alt="" coords="507,177,556,215,552,219,503,181"/>
-<area shape="poly" title=" " alt="" coords="466,181,386,221,383,217,464,176"/>
-<area shape="poly" title=" " alt="" coords="584,252,584,284,579,284,579,252"/>
-<area shape="poly" title=" " alt="" coords="318,255,217,296,215,291,316,250"/>
-<area shape="poly" title=" " alt="" coords="385,249,541,297,540,302,384,254"/>
-<area shape="poly" title=" " alt="" coords="334,255,290,292,287,288,331,251"/>
-<area shape="rect" title=" " alt="" coords="312,300,376,326"/>
-<area shape="poly" title=" " alt="" coords="349,252,348,285,342,284,344,252"/>
-<area shape="rect" title=" " alt="" coords="400,300,461,326"/>
-<area shape="poly" title=" " alt="" coords="363,251,407,288,403,292,359,255"/>
+<area shape="poly" title=" " alt="" coords="424,29,102,82,98,82,97,77,101,76,423,24"/>
+<area shape="rect" title=" " alt="" coords="155,300,237,326"/>
+<area shape="poly" title=" " alt="" coords="442,34,385,60,316,101,282,127,250,157,223,190,202,227,195,256,195,285,190,285,190,256,198,225,219,187,247,153,279,123,313,97,382,55,440,29"/>
+<area shape="rect" title=" " alt="" coords="672,79,746,105"/>
+<area shape="poly" title=" " alt="" coords="514,29,658,72,657,77,513,34"/>
+<area shape="rect" title=" " alt="" coords="468,300,519,326"/>
+<area shape="poly" title=" " alt="" coords="478,31,492,152,496,284,491,285,487,153,473,32"/>
+<area shape="rect" href="functional_8hpp.html" title=" " alt="" coords="547,79,648,105"/>
+<area shape="poly" title=" " alt="" coords="496,29,565,69,562,73,493,34"/>
+<area shape="rect" href="type_8hpp.html" title="Type manipulation and qualification utilities for compile&#45;time type introspection and transformation." alt="" coords="408,153,477,178"/>
+<area shape="poly" title=" " alt="" coords="473,32,451,138,446,137,468,31"/>
+<area shape="poly" title=" " alt="" coords="546,99,473,109,385,130,340,147,297,169,257,195,222,228,207,256,200,285,195,284,202,254,218,225,253,191,294,164,338,142,384,125,472,103,546,93"/>
+<area shape="poly" title=" " alt="" coords="596,106,573,170,536,253,514,289,509,286,531,251,568,168,591,104"/>
+<area shape="rect" title=" " alt="" coords="717,300,766,326"/>
+<area shape="poly" title=" " alt="" coords="608,104,692,225,729,286,725,288,687,228,604,107"/>
+<area shape="poly" title=" " alt="" coords="572,108,484,148,482,143,570,103"/>
+<area shape="rect" href="meta_8hpp.html" title="Useful utilities for template metaprogramming." alt="" coords="603,226,677,252"/>
+<area shape="poly" title=" " alt="" coords="603,104,635,211,630,212,598,106"/>
+<area shape="poly" title=" " alt="" coords="408,172,372,178,330,189,287,205,248,228,224,256,208,287,203,284,220,253,245,224,285,200,328,183,371,173,407,167"/>
+<area shape="poly" title=" " alt="" coords="449,178,487,284,482,286,444,180"/>
+<area shape="rect" title=" " alt="" coords="259,226,312,252"/>
+<area shape="poly" title=" " alt="" coords="417,181,327,222,325,217,415,176"/>
+<area shape="rect" href="bitmask_8hpp.html" title="Utility to enable bitmask operations on an enumeration type." alt="" coords="336,226,427,252"/>
+<area shape="poly" title=" " alt="" coords="435,180,404,216,400,213,431,177"/>
+<area shape="poly" title=" " alt="" coords="477,176,593,218,591,223,475,181"/>
+<area shape="poly" title=" " alt="" coords="603,249,253,305,252,300,602,244"/>
+<area shape="poly" title=" " alt="" coords="616,255,533,295,531,290,614,250"/>
+<area shape="poly" title=" " alt="" coords="659,250,713,288,710,293,656,255"/>
+<area shape="rect" title=" " alt="" coords="628,300,692,326"/>
+<area shape="poly" title=" " alt="" coords="646,252,655,284,650,286,641,253"/>
+<area shape="rect" title=" " alt="" coords="543,300,604,326"/>
+<area shape="poly" title=" " alt="" coords="631,254,597,290,593,287,627,250"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -167,10 +169,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="operators_8hpp__dep__incl.png" border="0" usemap="#aoperators_8hppdep" alt=""/></div>
 <map name="aoperators_8hppdep" id="aoperators_8hppdep">
-<area shape="rect" title=" " alt="" coords="141,5,241,31"/>
-<area shape="rect" href="integer_8hpp.html" title=" " alt="" coords="149,79,233,105"/>
+<area shape="rect" title="Bulk operator overloads." alt="" coords="141,5,241,31"/>
+<area shape="rect" href="integer_8hpp.html" title="A type&#45;safe wrapper for built&#45;in integer types and related utilities." alt="" coords="149,79,233,105"/>
 <area shape="poly" title=" " alt="" coords="194,46,194,79,188,79,188,46"/>
-<area shape="rect" href="concurrency_8hpp.html" title=" " alt="" coords="5,153,121,178"/>
+<area shape="rect" href="concurrency_8hpp.html" title="Utilities for concurrency." alt="" coords="5,153,121,178"/>
 <area shape="poly" title=" " alt="" coords="157,115,86,154,84,150,155,110"/>
 <area shape="rect" href="dynamic_8hpp.html" title=" " alt="" coords="144,153,238,178"/>
 <area shape="poly" title=" " alt="" coords="194,120,194,152,188,152,188,120"/>
@@ -180,7 +182,12 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 </div>
 <p><a href="operators_8hpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Bulk operator overloads. </p>
+<p>This file defines a simple framework for enabling operator overloads in semantically-related batches, using the mixin pattern. </p>
+
+<p class="definition">Definition in file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structutils_1_1disable__op__t.html">utils::disable_op_t</a></td></tr>
@@ -337,7 +344,7 @@ Variables</h2></td></tr>
 <div class="line">        <span class="keywordflow">return</span> self;\</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00028">28</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00036">36</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
 
 </div>
 </div>
@@ -382,7 +389,7 @@ Variables</h2></td></tr>
 <div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>R<span class="keyword">&gt;</span>(ret());\</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00010">10</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00018">18</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
 
 </div>
 </div>
@@ -416,7 +423,7 @@ Variables</h2></td></tr>
 <div class="line">    }\</div>
 <div class="line">    UTILS_UNARY_OP(op, post_##name, <span class="keywordtype">int</span>)</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00052">52</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00060">60</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
 
 </div>
 </div>
@@ -456,7 +463,7 @@ Variables</h2></td></tr>
 <div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>R<span class="keyword">&gt;</span>(ret());\</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00039">39</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="operators_8hpp_source.html#l00047">47</a> of file <a class="el" href="operators_8hpp_source.html">operators.hpp</a>.</p>
 
 </div>
 </div>

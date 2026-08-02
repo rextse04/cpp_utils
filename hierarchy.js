@@ -345,9 +345,7 @@ var hierarchy =
     [ "utils::meta::smart_pack< Ts >", "group__metasmart__pack.html#structutils_1_1meta_1_1smart__pack", null ],
     [ "utils::meta::smart_pack< std::tuple< Ts... > >", "group__metasmart__pack.html#structutils_1_1meta_1_1smart__pack_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4", null ],
     [ "utils::stale_class", "structutils_1_1stale__class.html", [
-      [ "utils::trivial_semaphore", "structutils_1_1trivial__semaphore.html", null ],
-      [ "utils::unique_resource< T, Sync, Semaphore, SharedMutex >::permit", "classutils_1_1unique__resource_1_1permit.html", null ],
-      [ "utils::unique_resource< T, Sync, Semaphore, SharedMutex >::permit_ptr< Lock, Q >", "classutils_1_1unique__resource_1_1permit__ptr.html", null ]
+      [ "utils::trivial_semaphore", "structutils_1_1trivial__semaphore.html", null ]
     ] ],
     [ "utils::detail::string_interface< CharT, Traits >", null, [
       [ "utils::basic_static_string< CharT, M, Traits >", "structutils_1_1basic__static__string.html", null ],

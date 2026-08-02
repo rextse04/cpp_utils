@@ -110,16 +110,21 @@ $(function(){initNavTree('conceptutils_1_1container__compatible__iterator.html',
 </div><!--header-->
 <div class="contents">
 
+<p>Determines if an iterator <code>I</code> is compatible with a container <code>T</code>.  
+<a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ranges_8hpp_source.html">ranges.hpp</a>&gt;</code></p>
 <h2 class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> I, <span class="keyword">typename</span> T&gt;</div>
 <div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptutils_1_1container__compatible__iterator.html">utils::container_compatible_iterator</a> = </div>
 <div class="line">        std::input_iterator&lt;I&gt; &amp;&amp;</div>
 <div class="line">        std::convertible_to&lt;std::iter_reference_t&lt;I&gt;, T&gt;</div>
-<div class="ttc" id="aconceptutils_1_1container__compatible__iterator_html"><div class="ttname"><a href="conceptutils_1_1container__compatible__iterator.html">utils::container_compatible_iterator</a></div><div class="ttdef"><b>Definition</b> <a href="ranges_8hpp_source.html#l00050">ranges.hpp:50</a></div></div>
+<div class="ttc" id="aconceptutils_1_1container__compatible__iterator_html"><div class="ttname"><a href="conceptutils_1_1container__compatible__iterator.html">utils::container_compatible_iterator</a></div><div class="ttdoc">Determines if an iterator I is compatible with a container T.</div><div class="ttdef"><b>Definition</b> <a href="ranges_8hpp_source.html#l00060">ranges.hpp:60</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="ranges_8hpp_source.html#l00050">50</a> of file <a class="el" href="ranges_8hpp_source.html">ranges.hpp</a>.</p>
+<div class="textblock"><p>Determines if an iterator <code>I</code> is compatible with a container <code>T</code>. </p>
+<p><code>I</code> is compatible with <code>T</code> if there exists a sentinel type <code>S</code> such that a range defined by <code>I</code> and <code>S</code> satisfies <code><a class="el" href="conceptutils_1_1container__compatible__range.html" title="C++ exposition-only concept: container-compatible-range.">utils::container_compatible_range</a>&lt;T&gt;</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="ranges_8hpp_source.html#l00060">60</a> of file <a class="el" href="ranges_8hpp_source.html">ranges.hpp</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

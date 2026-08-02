@@ -5,20 +5,20 @@
 \DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <ranges>}}
 \DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <iterator>}}
 \DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00004}00004\ }
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00011}00011\ }
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00012}00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceutils}{utils}}\ \{}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{namespace\ }ranges\ =\ std::ranges;}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{namespace\ }views\ =\ std::ranges::views;}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00015}00015\ }
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Container>}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00017}\mbox{\hyperlink{conceptutils_1_1reservable__container}{00017}}\ \ \ \ \ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptutils_1_1reservable__container}{reservable\_container}}\ =}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00018}00018\ \ \ \ \ \ \ \ \ std::ranges::sized\_range<Container>\ \&\&}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ (Container\&\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}},\ std::ranges::range\_size\_t<Container>\ n)\ \{}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.reserve(n);}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.capacity()\ \}\ -\/>\ std::same\_as<\textcolor{keyword}{decltype}(n)>;}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.max\_size()\ \}\ -\/>\ std::same\_as<\textcolor{keyword}{decltype}(n)>;}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00010}00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceutils}{utils}}\ \{}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{namespace\ }ranges\ =\ std::ranges;}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{namespace\ }views\ =\ std::ranges::views;}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Container>}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00016}\mbox{\hyperlink{conceptutils_1_1reservable__container}{00016}}\ \ \ \ \ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptutils_1_1reservable__container}{reservable\_container}}\ =}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00017}00017\ \ \ \ \ \ \ \ \ std::ranges::sized\_range<Container>\ \&\&}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ (Container\&\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}},\ std::ranges::range\_size\_t<Container>\ n)\ \{}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.reserve(n);}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.capacity()\ \}\ -\/>\ std::same\_as<\textcolor{keyword}{decltype}(n)>;}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.max\_size()\ \}\ -\/>\ std::same\_as<\textcolor{keyword}{decltype}(n)>;}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00023}00023\ }
 \DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Container,\ \textcolor{keyword}{typename}\ Reference>}
 \DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00026}\mbox{\hyperlink{conceptutils_1_1appendable__container}{00026}}\ \ \ \ \ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptutils_1_1appendable__container}{appendable\_container}}\ =\ \textcolor{keyword}{requires}\ (Container\&\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}},\ Reference\&\&\ ref)\ \{}
 \DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ (}
@@ -29,28 +29,28 @@
 \DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ );}
 \DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00033}00033\ \ \ \ \ \};}
 \DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00034}00034\ }
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ C>}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00036}\mbox{\hyperlink{namespaceutils_a838b0479484b30995e1d7e40f1cb529b}{00036}}\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{namespaceutils_a838b0479484b30995e1d7e40f1cb529b}{container\_appender}}(C\&\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}})\ \{}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\&\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}]<\textcolor{keyword}{class\ }Reference>(Reference\&\&\ ref)\ \{}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (\textcolor{keyword}{requires}\ \{\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.emplace\_back(std::declval<Reference>());\ \})}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.emplace\_back(std::forward<Reference>(ref));}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (\textcolor{keyword}{requires}\ \{\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.push\_back(std::declval<Reference>());\ \})}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.push\_back(std::forward<Reference>(ref));}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (\textcolor{keyword}{requires}\ \{\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.emplace(\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.end(),\ std::declval<Reference>());\ \})}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.emplace(\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.end(),\ std::forward<Reference>(ref));}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.insert(\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.end(),\ std::forward<Reference>(ref));}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00047}00047\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ I,\ \textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00050}\mbox{\hyperlink{conceptutils_1_1container__compatible__iterator}{00050}}\ \ \ \ \ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptutils_1_1container__compatible__iterator}{container\_compatible\_iterator}}\ =}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00051}00051\ \ \ \ \ \ \ \ \ std::input\_iterator<I>\ \&\&}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ std::convertible\_to<std::iter\_reference\_t<I>,\ T>;}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ R,\ \textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00054}\mbox{\hyperlink{conceptutils_1_1container__compatible__range}{00054}}\ \ \ \ \ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptutils_1_1container__compatible__range}{container\_compatible\_range}}\ =}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00055}00055\ \ \ \ \ \ \ \ \ ranges::input\_range<R>\ \&\&}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00056}00056\ \ \ \ \ \ \ \ \ std::convertible\_to<ranges::range\_reference\_t<R>,\ T>;}
-\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ C>}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00037}\mbox{\hyperlink{namespaceutils_a838b0479484b30995e1d7e40f1cb529b}{00037}}\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{namespaceutils_a838b0479484b30995e1d7e40f1cb529b}{container\_appender}}(C\&\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}})\ \{}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ [\&\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}]<\textcolor{keyword}{class\ }Reference>(Reference\&\&\ ref)\ \{}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (\textcolor{keyword}{requires}\ \{\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.emplace\_back(std::declval<Reference>());\ \})}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.emplace\_back(std::forward<Reference>(ref));}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (\textcolor{keyword}{requires}\ \{\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.push\_back(std::declval<Reference>());\ \})}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.push\_back(std::forward<Reference>(ref));}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (\textcolor{keyword}{requires}\ \{\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.emplace(\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.end(),\ std::declval<Reference>());\ \})}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.emplace(\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.end(),\ std::forward<Reference>(ref));}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.insert(\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.end(),\ std::forward<Reference>(ref));}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ R,\ \textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00052}\mbox{\hyperlink{conceptutils_1_1container__compatible__range}{00052}}\ \ \ \ \ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptutils_1_1container__compatible__range}{container\_compatible\_range}}\ =}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00053}00053\ \ \ \ \ \ \ \ \ ranges::input\_range<R>\ \&\&}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00054}00054\ \ \ \ \ \ \ \ \ std::convertible\_to<ranges::range\_reference\_t<R>,\ T>;}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ I,\ \textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00060}\mbox{\hyperlink{conceptutils_1_1container__compatible__iterator}{00060}}\ \ \ \ \ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptutils_1_1container__compatible__iterator}{container\_compatible\_iterator}}\ =}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00061}00061\ \ \ \ \ \ \ \ \ std::input\_iterator<I>\ \&\&}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00062}00062\ \ \ \ \ \ \ \ \ std::convertible\_to<std::iter\_reference\_t<I>,\ T>;}
+\DoxyCodeLine{\Hypertarget{ranges_8hpp_source_l00063}00063\ \}}
 
 \end{DoxyCode}

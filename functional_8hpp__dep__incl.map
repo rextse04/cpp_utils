@@ -1,15 +1,15 @@
 <map id="functional.hpp" name="functional.hpp">
 <area shape="rect" id="Node000001" title=" " alt="" coords="128,5,229,31"/>
-<area shape="rect" id="Node000002" href="$segment__tree_8hpp.html" title=" " alt="" coords="5,79,141,120"/>
+<area shape="rect" id="Node000002" href="$segment__tree_8hpp.html" title="Segment tree." alt="" coords="5,79,141,120"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,43,101,81,97,76,148,38"/>
 <area shape="rect" id="Node000003" href="$dynamic_8hpp.html" title=" " alt="" coords="112,241,205,267"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="179,46,162,241,157,240,173,46"/>
-<area shape="rect" id="Node000004" href="$operators_8hpp.html" title=" " alt="" coords="226,86,325,112"/>
+<area shape="rect" id="Node000004" href="$operators_8hpp.html" title="Bulk operator overloads." alt="" coords="226,86,325,112"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="206,39,262,84,259,88,203,43"/>
-<area shape="rect" id="Node000005" href="$integer_8hpp.html" title=" " alt="" coords="239,168,323,193"/>
+<area shape="rect" id="Node000005" href="$integer_8hpp.html" title="A type&#45;safe wrapper for built&#45;in integer types and related utilities." alt="" coords="239,168,323,193"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="280,128,283,167,278,167,275,128"/>
 <area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="249,204,181,243,178,238,246,199"/>
-<area shape="rect" id="Node000006" href="$concurrency_8hpp.html" title=" " alt="" coords="229,241,344,267"/>
+<area shape="rect" id="Node000006" href="$concurrency_8hpp.html" title="Utilities for concurrency." alt="" coords="229,241,344,267"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="286,209,288,241,283,241,280,209"/>
 <area shape="rect" id="Node000007" href="$static__string_8hpp.html" title=" " alt="" coords="368,241,484,267"/>
 <area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="320,198,403,238,400,243,318,203"/>

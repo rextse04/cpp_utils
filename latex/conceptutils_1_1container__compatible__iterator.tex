@@ -2,6 +2,11 @@
 \hypertarget{conceptutils_1_1container__compatible__iterator}{}\label{conceptutils_1_1container__compatible__iterator}\index{utils::container\_compatible\_iterator@{utils::container\_compatible\_iterator}}
 
 
+Determines if an iterator {\ttfamily I} is compatible with a container {\ttfamily T}.  
+
+
+
+
 {\ttfamily \#include $<$ranges.\+hpp$>$}
 
 \doxysubsection{Concept definition}
@@ -16,7 +21,9 @@
 
 
 \doxysubsection{Detailed Description}
+Determines if an iterator {\ttfamily I} is compatible with a container {\ttfamily T}. 
 
+{\ttfamily I} is compatible with {\ttfamily T} if there exists a sentinel type {\ttfamily S} such that a range defined by {\ttfamily I} and {\ttfamily S} satisfies {\ttfamily \doxylink{conceptutils_1_1container__compatible__range}{utils\+::container\+\_\+compatible\+\_\+range}\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}}. 
 
-Definition at line \mbox{\hyperlink{ranges_8hpp_source_l00050}{50}} of file \mbox{\hyperlink{ranges_8hpp_source}{ranges.\+hpp}}.
+Definition at line \mbox{\hyperlink{ranges_8hpp_source_l00060}{60}} of file \mbox{\hyperlink{ranges_8hpp_source}{ranges.\+hpp}}.
 

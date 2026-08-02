@@ -1,6 +1,6 @@
 <map id="integer.hpp" name="integer.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="149,5,233,31"/>
-<area shape="rect" id="Node000002" href="$concurrency_8hpp.html" title=" " alt="" coords="5,79,121,105"/>
+<area shape="rect" id="Node000001" title="A type&#45;safe wrapper for built&#45;in integer types and related utilities." alt="" coords="149,5,233,31"/>
+<area shape="rect" id="Node000002" href="$concurrency_8hpp.html" title="Utilities for concurrency." alt="" coords="5,79,121,105"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,41,86,81,84,76,155,37"/>
 <area shape="rect" id="Node000003" href="$dynamic_8hpp.html" title=" " alt="" coords="144,79,238,105"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="194,46,194,79,188,79,188,46"/>

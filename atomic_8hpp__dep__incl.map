@@ -1,7 +1,7 @@
 <map id="atomic.hpp" name="atomic.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="168,5,252,31"/>
-<area shape="rect" id="Node000002" href="$arena__allocator_8hpp.html" title=" " alt="" coords="5,79,199,105"/>
+<area shape="rect" id="Node000001" title="Utilities for atomics." alt="" coords="168,5,252,31"/>
+<area shape="rect" id="Node000002" href="$arena__allocator_8hpp.html" title="Arena allocator." alt="" coords="5,79,199,105"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,42,122,81,119,76,177,38"/>
-<area shape="rect" id="Node000003" href="$stack__allocator_8hpp.html" title=" " alt="" coords="223,79,416,105"/>
+<area shape="rect" id="Node000003" href="$stack__allocator_8hpp.html" title="Stack allocator." alt="" coords="223,79,416,105"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="242,37,302,76,299,81,239,42"/>
 </map>

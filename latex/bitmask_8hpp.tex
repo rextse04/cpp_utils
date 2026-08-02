@@ -1,14 +1,10 @@
 \doxysection{bitmask.\+hpp File Reference}
 \hypertarget{bitmask_8hpp}{}\label{bitmask_8hpp}\index{bitmask.hpp@{bitmask.hpp}}
-{\ttfamily \#include $<$utility$>$}\newline
-Include dependency graph for bitmask.\+hpp\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=149pt]{bitmask_8hpp__incl}
-\end{center}
-\end{figure}
+
+
+Utility to enable bitmask operations on an enumeration type.  
+
+
 This graph shows which files directly or indirectly include this file\+:
 \nopagebreak
 \begin{figure}[H]
@@ -17,6 +13,15 @@ This graph shows which files directly or indirectly include this file\+:
 \includegraphics[width=350pt]{bitmask_8hpp__dep__incl}
 \end{center}
 \end{figure}
+
+
+\doxysubsection{Detailed Description}
+Utility to enable bitmask operations on an enumeration type. 
+
+
+
+Definition in file \mbox{\hyperlink{bitmask_8hpp_source}{bitmask.\+hpp}}.
+
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -26,7 +31,7 @@ namespace \mbox{\hyperlink{namespaceutils}{utils}}
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{bitmask_8hpp_a764d2cb0d4a2da0c7d4d10eb67b89970}{UTILS\+\_\+\+BITMASK}}(T)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A convenience macro to enable bitmask operations on an enumeration {\ttfamily T}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -70,5 +75,9 @@ namespace \mbox{\hyperlink{namespaceutils}{utils}}
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{bitmask_8hpp_source_l00005}{5}} of file \mbox{\hyperlink{bitmask_8hpp_source}{bitmask.\+hpp}}.
+A convenience macro to enable bitmask operations on an enumeration {\ttfamily T}. 
+
+The macro must be applied in the same namespace as {\ttfamily T} to allow ADL lookup. The program is ill-\/formed if {\ttfamily T} is not an enumeration type. 
+
+Definition at line \mbox{\hyperlink{bitmask_8hpp_source_l00013}{13}} of file \mbox{\hyperlink{bitmask_8hpp_source}{bitmask.\+hpp}}.
 

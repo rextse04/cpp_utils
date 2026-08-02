@@ -1,20 +1,20 @@
 <map id="type.hpp" name="type.hpp">
 <area shape="rect" id="Node000001" title="Type manipulation and qualification utilities for compile&#45;time type introspection and transformation." alt="" coords="276,5,345,31"/>
-<area shape="rect" id="Node000002" href="$compare_8hpp.html" title=" " alt="" coords="52,79,147,105"/>
+<area shape="rect" id="Node000002" href="$compare_8hpp.html" title="Utilites for comparison operators and comparators." alt="" coords="52,79,147,105"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="262,39,137,81,135,76,260,34"/>
-<area shape="rect" id="Node000004" href="$concurrency_8hpp.html" title=" " alt="" coords="282,315,397,341"/>
+<area shape="rect" id="Node000004" href="$concurrency_8hpp.html" title="Utilities for concurrency." alt="" coords="282,315,397,341"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="335,41,359,78,378,121,387,157,397,241,399,254,397,268,379,296,358,316,354,313,375,292,392,266,394,254,392,242,382,158,373,123,355,80,331,44"/>
 <area shape="rect" id="Node000005" href="$dynamic_8hpp.html" title=" " alt="" coords="158,315,252,341"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="261,27,136,46,79,62,57,71,42,81,20,107,10,133,10,161,22,192,36,214,53,234,94,268,136,294,174,312,172,317,134,299,90,273,49,238,32,217,17,195,5,162,4,132,15,104,38,77,54,66,77,56,135,41,260,22"/>
 <area shape="rect" id="Node000006" href="$functional_8hpp.html" title=" " alt="" coords="172,79,273,105"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="285,43,239,81,236,77,282,39"/>
-<area shape="rect" id="Node000007" href="$operators_8hpp.html" title=" " alt="" coords="242,160,341,186"/>
+<area shape="rect" id="Node000007" href="$operators_8hpp.html" title="Bulk operator overloads." alt="" coords="242,160,341,186"/>
 <area shape="poly" id="edge14_Node000001_Node000007" title=" " alt="" coords="310,47,296,160,291,159,304,46"/>
-<area shape="rect" id="Node000008" href="$integer_8hpp.html" title=" " alt="" coords="298,241,382,267"/>
+<area shape="rect" id="Node000008" href="$integer_8hpp.html" title="A type&#45;safe wrapper for built&#45;in integer types and related utilities." alt="" coords="298,241,382,267"/>
 <area shape="poly" id="edge13_Node000001_Node000008" title=" " alt="" coords="324,44,341,94,356,152,358,173,356,194,346,242,341,241,351,193,352,173,351,153,336,95,319,46"/>
 <area shape="rect" id="Node000009" href="$static__string_8hpp.html" title=" " alt="" coords="422,315,538,341"/>
 <area shape="poly" id="edge15_Node000001_Node000009" title=" " alt="" coords="344,38,364,56,383,77,422,143,450,212,469,273,480,314,475,315,464,274,445,214,417,145,379,81,361,60,340,43"/>
-<area shape="rect" id="Node000003" href="$segment__tree_8hpp.html" title=" " alt="" coords="32,153,167,193"/>
+<area shape="rect" id="Node000003" href="$segment__tree_8hpp.html" title="Segment tree." alt="" coords="32,153,167,193"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="102,120,102,152,97,152,97,120"/>
 <area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="193,115,132,155,129,150,190,111"/>
 <area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="223,120,209,315,203,314,218,120"/>

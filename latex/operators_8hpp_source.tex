@@ -9,287 +9,288 @@
 \DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{functional_8hpp}{functional.hpp}}"{}}}
 \DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{type_8hpp}{type.hpp}}"{}}}
 \DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00008}00008\ }
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00009}00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceutils}{utils}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00010}\mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{00010}}\ \textcolor{preprocessor}{\#define\ UTILS\_BINARY\_OP(op,\ name,\ classname)\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\ \ \ \ template\ <typename\ A,\ typename\ B,\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ typename\ AD\ =\ std::remove\_cvref\_t<A>,\ typename\ BD\ =\ std::remove\_cvref\_t<B>,\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ typename\ Self\ =\ std::conditional\_t<std::derived\_from<AD,\ classname>,\ A\&\&,\ B\&\&>,\ typename\ SelfD\ =\ std::remove\_cvref\_t<Self>>\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\ \ \ \ friend\ constexpr\ decltype(auto)\ operator\ op(A\&\&\ a,\ B\&\&\ b)\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\ \ \ \ requires\ (\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ !std::is\_same\_v<decltype(Funcs.name),\ disable\_op\_t>\ \&\&\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ (std::derived\_from<AD,\ classname>\ ||\ std::derived\_from<BD,\ classname>)\ \&\&\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ decltype(Funcs.binary\_traits)::template\ constraint<Self,\ AD,\ BD>::value\ \&\&\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ requires\ \{\ Funcs.name(SelfD::to\_underlying(std::forward<A>(a)),\ SelfD::to\_underlying(std::forward<B>(b)));\ \}\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\ \ \ \ )\ \{\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ using\ R\ =\ decltype(Funcs.binary\_traits)::template\ result<Self,\ A\&\&,\ B\&\&>::type;\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ const\ auto\ ret\ =\ [\&a,\ \&b]\ \{\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ return\ Funcs.name(SelfD::to\_underlying(std::forward<A>(a)),\ SelfD::to\_underlying(std::forward<B>(b)));\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \};\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00025}00025\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if\ constexpr\ (std::is\_same\_v<R,\ deduce\_t>)\ return\ ret();\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00026}00026\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ else\ return\ static\_cast<R>(ret());\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00027}00027\ \textcolor{preprocessor}{\ \ \ \ \}}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00028}\mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{00028}}\ \textcolor{preprocessor}{\#define\ UTILS\_ASG\_OP(op,\ name)\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00029}00029\ \textcolor{preprocessor}{\ \ \ \ template\ <typename\ Self,\ typename\ Other,\ typename\ SelfD\ =\ std::remove\_cvref\_t<Self>>\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00030}00030\ \textcolor{preprocessor}{\ \ \ \ constexpr\ decltype(auto)\ operator\ op(this\ Self\&\&\ self,\ Other\&\&\ other)\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00031}00031\ \textcolor{preprocessor}{\ \ \ \ requires\ (\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00032}00032\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ !std::is\_same\_v<decltype(Funcs.name),\ disable\_op\_t>\ \&\&\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00033}00033\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ decltype(Funcs.asg\_traits)::template\ constraint<Self\&\&,\ Self\&\&,\ Other\&\&>::value\ \&\&\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00034}00034\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ requires\ \{\ Funcs.name(SelfD::to\_underlying(std::forward<Self>(self)),\ SelfD::to\_underlying(std::forward<Other>(other)));\ \}\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00035}00035\ \textcolor{preprocessor}{\ \ \ \ )\ \{\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00036}00036\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ Funcs.name(SelfD::to\_underlying(std::forward<Self>(self)),\ SelfD::to\_underlying(std::forward<Other>(other)));\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00037}00037\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ return\ self;\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00038}00038\ \textcolor{preprocessor}{\ \ \ \ \}}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00039}\mbox{\hyperlink{operators_8hpp_ad95c59b8c57152e760307eea47d8e095}{00039}}\ \textcolor{preprocessor}{\#define\ UTILS\_UNARY\_OP(op,\ name,\ ...)\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00040}00040\ \textcolor{preprocessor}{\ \ \ \ template\ <typename\ Self,\ typename\ SelfD\ =\ std::remove\_cvref\_t<Self>>\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00041}00041\ \textcolor{preprocessor}{\ \ \ \ constexpr\ decltype(auto)\ operator\ op(this\ Self\&\&\ self\ \_\_VA\_OPT\_\_(,)\ \_\_VA\_ARGS\_\_)\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00042}00042\ \textcolor{preprocessor}{\ \ \ \ requires\ (\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00043}00043\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ !std::is\_same\_v<decltype(Funcs.name),\ disable\_op\_t>\ \&\&\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00044}00044\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ decltype(Funcs.unary\_traits)::template\ constraint<Self\&\&>::value\ \&\&\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00045}00045\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ requires\ \{\ Funcs.name(SelfD::to\_underlying(std::forward<Self>(self)));\ \}\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00046}00046\ \textcolor{preprocessor}{\ \ \ \ )\ \{\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00047}00047\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ const\ auto\ ret\ =\ [\&self]\ \{\ return\ Funcs.name(SelfD::to\_underlying(std::forward<Self>(self)));\ \};\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00048}00048\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ using\ R\ =\ decltype(Funcs.unary\_traits)::template\ result<Self\&\&>::type;\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00049}00049\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if\ constexpr\ (std::is\_same\_v<R,\ deduce\_t>)\ return\ ret();\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00050}00050\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ else\ return\ static\_cast<R>(ret());\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00051}00051\ \textcolor{preprocessor}{\ \ \ \ \}}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00052}\mbox{\hyperlink{operators_8hpp_af9a66ab382ee5d9ec749b9ba778ed41c}{00052}}\ \textcolor{preprocessor}{\#define\ UTILS\_FIX\_OP(op,\ name)\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00053}00053\ \textcolor{preprocessor}{\ \ \ \ template\ <typename\ Self,\ typename\ SelfD\ =\ std::remove\_cvref\_t<Self>>\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00054}00054\ \textcolor{preprocessor}{\ \ \ \ constexpr\ decltype(auto)\ operator\ op(this\ Self\&\&\ self)\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00055}00055\ \textcolor{preprocessor}{\ \ \ \ requires\ (\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00056}00056\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ !std::is\_same\_v<decltype(Funcs.pre\_\#\#name),\ disable\_op\_t>\ \&\&\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00057}00057\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ decltype(Funcs.unary\_traits)::template\ constraint<Self\&\&>::value\ \&\&\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00058}00058\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ requires\ \{\ Funcs.pre\_\#\#name(SelfD::to\_underlying(std::forward<Self>(self)));\ \}\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00059}00059\ \textcolor{preprocessor}{\ \ \ \ )\ \{\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00060}00060\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ Funcs.pre\_\#\#name(SelfD::to\_underlying(std::forward<Self>(self)));\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00061}00061\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ return\ self;\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00062}00062\ \textcolor{preprocessor}{\ \ \ \ \}\(\backslash\)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00063}00063\ \textcolor{preprocessor}{\ \ \ \ UTILS\_UNARY\_OP(op,\ post\_\#\#name,\ int)}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00064}00064\ }
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00066}\mbox{\hyperlink{namespaceutils_a73660fa40d7555f9ec8f74c3fd244253}{00066}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1disable__op__t}{disable\_op\_t}}\ \{\}\ \mbox{\hyperlink{namespaceutils_a73660fa40d7555f9ec8f74c3fd244253}{disable\_op}};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00068}00068\ \ \ \ \ \textcolor{keyword}{struct\ }deduce\_t;}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00070}\mbox{\hyperlink{structutils_1_1default__binary__op__traits}{00070}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__binary__op__traits}{default\_binary\_op\_traits}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename},\ \textcolor{keyword}{typename},\ \textcolor{keyword}{typename}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00072}\mbox{\hyperlink{structutils_1_1default__binary__op__traits_1_1constraint}{00072}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__binary__op__traits_1_1constraint}{constraint}}\ :\ std::true\_type\ \{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Self,\ \textcolor{keyword}{typename},\ \textcolor{keyword}{typename}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00074}\mbox{\hyperlink{structutils_1_1default__binary__op__traits_1_1result}{00074}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__binary__op__traits_1_1result}{result}}\ :\ std::remove\_cvref<Self>\ \{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00075}00075\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00077}\mbox{\hyperlink{structutils_1_1default__asg__op__traits}{00077}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__asg__op__traits}{default\_asg\_op\_traits}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Self,\ \textcolor{keyword}{typename},\ \textcolor{keyword}{typename}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00079}\mbox{\hyperlink{structutils_1_1default__asg__op__traits_1_1constraint}{00079}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__asg__op__traits_1_1constraint}{constraint}}\ :\ std::is\_lvalue\_reference<Self>\ \{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00080}00080\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00082}\mbox{\hyperlink{structutils_1_1default__unary__op__traits}{00082}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__unary__op__traits}{default\_unary\_op\_traits}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00084}\mbox{\hyperlink{structutils_1_1default__unary__op__traits_1_1constraint}{00084}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__unary__op__traits_1_1constraint}{constraint}}\ :\ std::true\_type\ \{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Self>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00086}\mbox{\hyperlink{structutils_1_1default__unary__op__traits_1_1result}{00086}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__unary__op__traits_1_1result}{result}}\ :\ std::decay<Self>\ \{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00087}00087\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00089}\mbox{\hyperlink{structutils_1_1default__prefix__op__traits}{00089}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__prefix__op__traits}{default\_prefix\_op\_traits}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Self>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00091}\mbox{\hyperlink{structutils_1_1default__prefix__op__traits_1_1constraint}{00091}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__prefix__op__traits_1_1constraint}{constraint}}\ :\ std::is\_lvalue\_reference<Self>\ \{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Self>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00093}\mbox{\hyperlink{structutils_1_1default__prefix__op__traits_1_1result}{00093}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__prefix__op__traits_1_1result}{result}}\ :\ std::type\_identity<Self>\ \{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00094}00094\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00096}\mbox{\hyperlink{structutils_1_1default__postfix__op__traits}{00096}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__postfix__op__traits}{default\_postfix\_op\_traits}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Self>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00098}\mbox{\hyperlink{structutils_1_1default__postfix__op__traits_1_1constraint}{00098}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__postfix__op__traits_1_1constraint}{constraint}}\ :\ std::is\_lvalue\_reference<Self>\ \{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Self>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00100}\mbox{\hyperlink{structutils_1_1default__postfix__op__traits_1_1result}{00100}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__postfix__op__traits_1_1result}{result}}\ :\ std::decay<Self>\ \{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00101}00101\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00102}00102\ }
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00104}00104\ \ \ \ \ \textcolor{keyword}{template}\ <}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Plus\ =\ std::plus<>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Minus\ =\ std::minus<>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Mul\ =\ std::multiplies<>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Div\ =\ std::divides<>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Mod\ =\ std::modulus<>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BinaryTraits\ =\ \mbox{\hyperlink{structutils_1_1default__binary__op__traits}{default\_binary\_op\_traits}}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00111}\mbox{\hyperlink{structutils_1_1integral__op__functors}{00111}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1integral__op__functors}{integral\_op\_functors}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00112}\mbox{\hyperlink{structutils_1_1integral__op__functors_a1708ff07ec497739f9dd95e88ef2ebf9}{00112}}\ \ \ \ \ \ \ \ \ Plus\ \mbox{\hyperlink{structutils_1_1integral__op__functors_a1708ff07ec497739f9dd95e88ef2ebf9}{plus}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00113}\mbox{\hyperlink{structutils_1_1integral__op__functors_a4da9e384f5fab9c40ea968591ea3cbd6}{00113}}\ \ \ \ \ \ \ \ \ Minus\ \mbox{\hyperlink{structutils_1_1integral__op__functors_a4da9e384f5fab9c40ea968591ea3cbd6}{minus}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00114}\mbox{\hyperlink{structutils_1_1integral__op__functors_a2cb315e8c4359ccba7e9ec7861b47802}{00114}}\ \ \ \ \ \ \ \ \ Mul\ \mbox{\hyperlink{structutils_1_1integral__op__functors_a2cb315e8c4359ccba7e9ec7861b47802}{multiplies}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00115}\mbox{\hyperlink{structutils_1_1integral__op__functors_a17a6903a008bcc4bab44ea377cccc0d2}{00115}}\ \ \ \ \ \ \ \ \ Div\ \mbox{\hyperlink{structutils_1_1integral__op__functors_a17a6903a008bcc4bab44ea377cccc0d2}{divides}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00116}\mbox{\hyperlink{structutils_1_1integral__op__functors_a55835d18aa697b3b61b63028391ffc36}{00116}}\ \ \ \ \ \ \ \ \ Mod\ \mbox{\hyperlink{structutils_1_1integral__op__functors_a55835d18aa697b3b61b63028391ffc36}{modulus}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00117}\mbox{\hyperlink{structutils_1_1integral__op__functors_ac444a7d224ea8235347f278da4382d18}{00117}}\ \ \ \ \ \ \ \ \ BinaryTraits\ \mbox{\hyperlink{structutils_1_1integral__op__functors_ac444a7d224ea8235347f278da4382d18}{binary\_traits}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00118}00118\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00121}00121\ \ \ \ \ \textcolor{keyword}{template}\ <integral\_op\_functors\ Funcs\ =\ \{\}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00122}\mbox{\hyperlink{structutils_1_1integral__ops}{00122}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1integral__ops}{integral\_ops}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(+,\ plus,\ \mbox{\hyperlink{structutils_1_1integral__ops}{integral\_ops}})}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(-\/,\ minus,\ \mbox{\hyperlink{structutils_1_1integral__ops}{integral\_ops}})}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(*,\ multiplies,\ \mbox{\hyperlink{structutils_1_1integral__ops}{integral\_ops}})}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(/,\ divides,\ \mbox{\hyperlink{structutils_1_1integral__ops}{integral\_ops}})}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(\%,\ modulus,\ \mbox{\hyperlink{structutils_1_1integral__ops}{integral\_ops}})}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00128}00128\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00129}00129\ }
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00131}00131\ \ \ \ \ \textcolor{keyword}{template}\ <}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ PlusAsg\ =\ plus\_asg<>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ MinusAsg\ =\ minus\_asg<>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ MulAsg\ =\ multiplies\_asg<>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DivAsg\ =\ divides\_asg<>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ ModAsg\ =\ modulus\_asg<>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ AsgTraits\ =\ \mbox{\hyperlink{structutils_1_1default__asg__op__traits}{default\_asg\_op\_traits}}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00138}\mbox{\hyperlink{structutils_1_1integral__asg__op__functors}{00138}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1integral__asg__op__functors}{integral\_asg\_op\_functors}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00139}\mbox{\hyperlink{structutils_1_1integral__asg__op__functors_a4b77527ca426dd453c9c5dc0ae45cfed}{00139}}\ \ \ \ \ \ \ \ \ PlusAsg\ \mbox{\hyperlink{structutils_1_1integral__asg__op__functors_a4b77527ca426dd453c9c5dc0ae45cfed}{plus\_asg}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00140}\mbox{\hyperlink{structutils_1_1integral__asg__op__functors_a8f0d68446390f36ff0706aff24e7ea2e}{00140}}\ \ \ \ \ \ \ \ \ MinusAsg\ \mbox{\hyperlink{structutils_1_1integral__asg__op__functors_a8f0d68446390f36ff0706aff24e7ea2e}{minus\_asg}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00141}\mbox{\hyperlink{structutils_1_1integral__asg__op__functors_aa33238e6a093fb9b2cc7ae98d1ab38e5}{00141}}\ \ \ \ \ \ \ \ \ MulAsg\ \mbox{\hyperlink{structutils_1_1integral__asg__op__functors_aa33238e6a093fb9b2cc7ae98d1ab38e5}{multiplies\_asg}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00142}\mbox{\hyperlink{structutils_1_1integral__asg__op__functors_a155a9e8177f3c06a5bd7d9f0e10d83b7}{00142}}\ \ \ \ \ \ \ \ \ DivAsg\ \mbox{\hyperlink{structutils_1_1integral__asg__op__functors_a155a9e8177f3c06a5bd7d9f0e10d83b7}{divides\_asg}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00143}\mbox{\hyperlink{structutils_1_1integral__asg__op__functors_a76afa9e5cca863cf9b1200ae285b869b}{00143}}\ \ \ \ \ \ \ \ \ ModAsg\ \mbox{\hyperlink{structutils_1_1integral__asg__op__functors_a76afa9e5cca863cf9b1200ae285b869b}{modulus\_asg}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00144}\mbox{\hyperlink{structutils_1_1integral__asg__op__functors_a4e026b44acf79535f760084b2ab8a5fa}{00144}}\ \ \ \ \ \ \ \ \ AsgTraits\ \mbox{\hyperlink{structutils_1_1integral__asg__op__functors_a4e026b44acf79535f760084b2ab8a5fa}{asg\_traits}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00145}00145\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00148}00148\ \ \ \ \ \textcolor{keyword}{template}\ <integral\_asg\_op\_functors\ Funcs\ =\ \{\}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00149}\mbox{\hyperlink{structutils_1_1integral__asg__ops}{00149}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1integral__asg__ops}{integral\_asg\_ops}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{UTILS\_ASG\_OP}}(+=,\ plus\_asg)}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{UTILS\_ASG\_OP}}(-\/=,\ minus\_asg)}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{UTILS\_ASG\_OP}}(*=,\ multiplies\_asg)}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{UTILS\_ASG\_OP}}(/=,\ divides\_asg)}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{UTILS\_ASG\_OP}}(\%=,\ modulus\_asg)}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00155}00155\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00159}00159\ \ \ \ \ \textcolor{keyword}{template}\ <\mbox{\hyperlink{structutils_1_1integral__op__functors}{integral\_op\_functors}}\ Funcs\ =\ \{\},\ integral\_asg\_op\_functors\ AsgFuncs\ =\ \{\}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00160}\mbox{\hyperlink{structutils_1_1integral__full__ops}{00160}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1integral__full__ops}{integral\_full\_ops}}\ :\ \mbox{\hyperlink{structutils_1_1integral__ops}{integral\_ops}}<Funcs>,\ \mbox{\hyperlink{structutils_1_1integral__asg__ops}{integral\_asg\_ops}}<AsgFuncs>\ \{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00161}00161\ }
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00163}00163\ \ \ \ \ \textcolor{keyword}{template}\ <}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BitAnd\ =\ std::bit\_and<>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BitOr\ =\ std::bit\_or<>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BitXor\ =\ std::bit\_xor<>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BitNot\ =\ std::bit\_not<>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BinaryTraits\ =\ \mbox{\hyperlink{structutils_1_1default__binary__op__traits}{default\_binary\_op\_traits}},}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ UnaryTraits\ =\ \mbox{\hyperlink{structutils_1_1default__unary__op__traits}{default\_unary\_op\_traits}}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00170}\mbox{\hyperlink{structutils_1_1bit__op__functors}{00170}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1bit__op__functors}{bit\_op\_functors}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00171}\mbox{\hyperlink{structutils_1_1bit__op__functors_a6fb30e37deee2d5ffa4838b573d36642}{00171}}\ \ \ \ \ \ \ \ \ BitAnd\ \mbox{\hyperlink{structutils_1_1bit__op__functors_a6fb30e37deee2d5ffa4838b573d36642}{bit\_and}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00172}\mbox{\hyperlink{structutils_1_1bit__op__functors_a7a0bc086ca2fa68809e20b7ea9cf3532}{00172}}\ \ \ \ \ \ \ \ \ BitOr\ \mbox{\hyperlink{structutils_1_1bit__op__functors_a7a0bc086ca2fa68809e20b7ea9cf3532}{bit\_or}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00173}\mbox{\hyperlink{structutils_1_1bit__op__functors_ac5399c67717aa49284327b2f04b1e47d}{00173}}\ \ \ \ \ \ \ \ \ BitXor\ \mbox{\hyperlink{structutils_1_1bit__op__functors_ac5399c67717aa49284327b2f04b1e47d}{bit\_xor}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00174}\mbox{\hyperlink{structutils_1_1bit__op__functors_a6c09fd34a5ea07d3f70b08d191ba4ae7}{00174}}\ \ \ \ \ \ \ \ \ BitNot\ \mbox{\hyperlink{structutils_1_1bit__op__functors_a6c09fd34a5ea07d3f70b08d191ba4ae7}{bit\_not}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00175}\mbox{\hyperlink{structutils_1_1bit__op__functors_a660671d0a8db1670bd8cf7438d568a25}{00175}}\ \ \ \ \ \ \ \ \ BinaryTraits\ \mbox{\hyperlink{structutils_1_1bit__op__functors_a660671d0a8db1670bd8cf7438d568a25}{binary\_traits}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00176}\mbox{\hyperlink{structutils_1_1bit__op__functors_a5421a2994d4443906604a137fd8ddedf}{00176}}\ \ \ \ \ \ \ \ \ UnaryTraits\ \mbox{\hyperlink{structutils_1_1bit__op__functors_a5421a2994d4443906604a137fd8ddedf}{unary\_traits}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00177}00177\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00180}00180\ \ \ \ \ \textcolor{keyword}{template}\ <bit\_op\_functors\ Funcs\ =\ \{\}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00181}\mbox{\hyperlink{structutils_1_1bit__ops}{00181}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1bit__ops}{bit\_ops}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(\&,\ bit\_and,\ \mbox{\hyperlink{structutils_1_1bit__ops}{bit\_ops}})}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(|,\ bit\_or,\ \mbox{\hyperlink{structutils_1_1bit__ops}{bit\_ops}})}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(\string^,\ bit\_xor,\ \mbox{\hyperlink{structutils_1_1bit__ops}{bit\_ops}})}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ad95c59b8c57152e760307eea47d8e095}{UTILS\_UNARY\_OP}}(\string~,\ bit\_not)}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00186}00186\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00187}00187\ }
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00189}00189\ \ \ \ \ \textcolor{keyword}{template}\ <}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BitAndAsg\ =\ bit\_and\_asg<>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BitOrAsg\ =\ bit\_or\_asg<>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BitXorAsg\ =\ bit\_xor\_asg<>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ AsgTraits\ =\ \mbox{\hyperlink{structutils_1_1default__asg__op__traits}{default\_asg\_op\_traits}}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00194}\mbox{\hyperlink{structutils_1_1bit__asg__op__functors}{00194}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1bit__asg__op__functors}{bit\_asg\_op\_functors}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00195}\mbox{\hyperlink{structutils_1_1bit__asg__op__functors_a877ca63dbf534d97500739730c965be4}{00195}}\ \ \ \ \ \ \ \ \ BitAndAsg\ \mbox{\hyperlink{structutils_1_1bit__asg__op__functors_a877ca63dbf534d97500739730c965be4}{bit\_and\_asg}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00196}\mbox{\hyperlink{structutils_1_1bit__asg__op__functors_a3996d62bfc0dd3912b71d5cde8d096cb}{00196}}\ \ \ \ \ \ \ \ \ BitOrAsg\ \mbox{\hyperlink{structutils_1_1bit__asg__op__functors_a3996d62bfc0dd3912b71d5cde8d096cb}{bit\_or\_asg}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00197}\mbox{\hyperlink{structutils_1_1bit__asg__op__functors_ae5274e6ed7e6f6ed1b0975afa07cce5d}{00197}}\ \ \ \ \ \ \ \ \ BitXorAsg\ \mbox{\hyperlink{structutils_1_1bit__asg__op__functors_ae5274e6ed7e6f6ed1b0975afa07cce5d}{bit\_xor\_asg}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00198}\mbox{\hyperlink{structutils_1_1bit__asg__op__functors_a5cba5aeed80eef91ba06f6d5678a69c4}{00198}}\ \ \ \ \ \ \ \ \ AsgTraits\ \mbox{\hyperlink{structutils_1_1bit__asg__op__functors_a5cba5aeed80eef91ba06f6d5678a69c4}{asg\_traits}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00199}00199\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00202}00202\ \ \ \ \ \textcolor{keyword}{template}\ <bit\_asg\_op\_functors\ Funcs\ =\ \{\}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00203}\mbox{\hyperlink{structutils_1_1bit__asg__ops}{00203}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1bit__asg__ops}{bit\_asg\_ops}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{UTILS\_ASG\_OP}}(\&=,\ bit\_and\_asg)}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{UTILS\_ASG\_OP}}(|=,\ bit\_or\_asg)}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{UTILS\_ASG\_OP}}(\string^=,\ bit\_xor\_asg)}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00017}00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceutils}{utils}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00018}\mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{00018}}\ \textcolor{preprocessor}{\#define\ UTILS\_BINARY\_OP(op,\ name,\ classname)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\ \ \ \ template\ <typename\ A,\ typename\ B,\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ typename\ AD\ =\ std::remove\_cvref\_t<A>,\ typename\ BD\ =\ std::remove\_cvref\_t<B>,\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ typename\ Self\ =\ std::conditional\_t<std::derived\_from<AD,\ classname>,\ A\&\&,\ B\&\&>,\ typename\ SelfD\ =\ std::remove\_cvref\_t<Self>>\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\ \ \ \ friend\ constexpr\ decltype(auto)\ operator\ op(A\&\&\ a,\ B\&\&\ b)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\ \ \ \ requires\ (\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ !std::is\_same\_v<decltype(Funcs.name),\ disable\_op\_t>\ \&\&\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00025}00025\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ (std::derived\_from<AD,\ classname>\ ||\ std::derived\_from<BD,\ classname>)\ \&\&\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00026}00026\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ decltype(Funcs.binary\_traits)::template\ constraint<Self,\ AD,\ BD>::value\ \&\&\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00027}00027\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ requires\ \{\ Funcs.name(SelfD::to\_underlying(std::forward<A>(a)),\ SelfD::to\_underlying(std::forward<B>(b)));\ \}\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00028}00028\ \textcolor{preprocessor}{\ \ \ \ )\ \{\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00029}00029\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ using\ R\ =\ decltype(Funcs.binary\_traits)::template\ result<Self,\ A\&\&,\ B\&\&>::type;\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00030}00030\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ const\ auto\ ret\ =\ [\&a,\ \&b]\ \{\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00031}00031\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ return\ Funcs.name(SelfD::to\_underlying(std::forward<A>(a)),\ SelfD::to\_underlying(std::forward<B>(b)));\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00032}00032\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \};\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00033}00033\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if\ constexpr\ (std::is\_same\_v<R,\ deduce\_t>)\ return\ ret();\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00034}00034\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ else\ return\ static\_cast<R>(ret());\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00035}00035\ \textcolor{preprocessor}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00036}\mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{00036}}\ \textcolor{preprocessor}{\#define\ UTILS\_ASG\_OP(op,\ name)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00037}00037\ \textcolor{preprocessor}{\ \ \ \ template\ <typename\ Self,\ typename\ Other,\ typename\ SelfD\ =\ std::remove\_cvref\_t<Self>>\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00038}00038\ \textcolor{preprocessor}{\ \ \ \ constexpr\ decltype(auto)\ operator\ op(this\ Self\&\&\ self,\ Other\&\&\ other)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00039}00039\ \textcolor{preprocessor}{\ \ \ \ requires\ (\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00040}00040\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ !std::is\_same\_v<decltype(Funcs.name),\ disable\_op\_t>\ \&\&\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00041}00041\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ decltype(Funcs.asg\_traits)::template\ constraint<Self\&\&,\ Self\&\&,\ Other\&\&>::value\ \&\&\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00042}00042\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ requires\ \{\ Funcs.name(SelfD::to\_underlying(std::forward<Self>(self)),\ SelfD::to\_underlying(std::forward<Other>(other)));\ \}\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00043}00043\ \textcolor{preprocessor}{\ \ \ \ )\ \{\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00044}00044\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ Funcs.name(SelfD::to\_underlying(std::forward<Self>(self)),\ SelfD::to\_underlying(std::forward<Other>(other)));\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00045}00045\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ return\ self;\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00046}00046\ \textcolor{preprocessor}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00047}\mbox{\hyperlink{operators_8hpp_ad95c59b8c57152e760307eea47d8e095}{00047}}\ \textcolor{preprocessor}{\#define\ UTILS\_UNARY\_OP(op,\ name,\ ...)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00048}00048\ \textcolor{preprocessor}{\ \ \ \ template\ <typename\ Self,\ typename\ SelfD\ =\ std::remove\_cvref\_t<Self>>\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00049}00049\ \textcolor{preprocessor}{\ \ \ \ constexpr\ decltype(auto)\ operator\ op(this\ Self\&\&\ self\ \_\_VA\_OPT\_\_(,)\ \_\_VA\_ARGS\_\_)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00050}00050\ \textcolor{preprocessor}{\ \ \ \ requires\ (\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00051}00051\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ !std::is\_same\_v<decltype(Funcs.name),\ disable\_op\_t>\ \&\&\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00052}00052\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ decltype(Funcs.unary\_traits)::template\ constraint<Self\&\&>::value\ \&\&\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00053}00053\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ requires\ \{\ Funcs.name(SelfD::to\_underlying(std::forward<Self>(self)));\ \}\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00054}00054\ \textcolor{preprocessor}{\ \ \ \ )\ \{\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00055}00055\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ const\ auto\ ret\ =\ [\&self]\ \{\ return\ Funcs.name(SelfD::to\_underlying(std::forward<Self>(self)));\ \};\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00056}00056\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ using\ R\ =\ decltype(Funcs.unary\_traits)::template\ result<Self\&\&>::type;\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00057}00057\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if\ constexpr\ (std::is\_same\_v<R,\ deduce\_t>)\ return\ ret();\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00058}00058\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ else\ return\ static\_cast<R>(ret());\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00059}00059\ \textcolor{preprocessor}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00060}\mbox{\hyperlink{operators_8hpp_af9a66ab382ee5d9ec749b9ba778ed41c}{00060}}\ \textcolor{preprocessor}{\#define\ UTILS\_FIX\_OP(op,\ name)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00061}00061\ \textcolor{preprocessor}{\ \ \ \ template\ <typename\ Self,\ typename\ SelfD\ =\ std::remove\_cvref\_t<Self>>\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00062}00062\ \textcolor{preprocessor}{\ \ \ \ constexpr\ decltype(auto)\ operator\ op(this\ Self\&\&\ self)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00063}00063\ \textcolor{preprocessor}{\ \ \ \ requires\ (\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00064}00064\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ !std::is\_same\_v<decltype(Funcs.pre\_\#\#name),\ disable\_op\_t>\ \&\&\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00065}00065\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ decltype(Funcs.unary\_traits)::template\ constraint<Self\&\&>::value\ \&\&\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00066}00066\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ requires\ \{\ Funcs.pre\_\#\#name(SelfD::to\_underlying(std::forward<Self>(self)));\ \}\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00067}00067\ \textcolor{preprocessor}{\ \ \ \ )\ \{\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00068}00068\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ Funcs.pre\_\#\#name(SelfD::to\_underlying(std::forward<Self>(self)));\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00069}00069\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ return\ self;\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00070}00070\ \textcolor{preprocessor}{\ \ \ \ \}\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00071}00071\ \textcolor{preprocessor}{\ \ \ \ UTILS\_UNARY\_OP(op,\ post\_\#\#name,\ int)}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00074}\mbox{\hyperlink{namespaceutils_a73660fa40d7555f9ec8f74c3fd244253}{00074}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1disable__op__t}{disable\_op\_t}}\ \{\}\ \mbox{\hyperlink{namespaceutils_a73660fa40d7555f9ec8f74c3fd244253}{disable\_op}};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00076}00076\ \ \ \ \ \textcolor{keyword}{struct\ }deduce\_t;}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00078}\mbox{\hyperlink{structutils_1_1default__binary__op__traits}{00078}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__binary__op__traits}{default\_binary\_op\_traits}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename},\ \textcolor{keyword}{typename},\ \textcolor{keyword}{typename}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00080}\mbox{\hyperlink{structutils_1_1default__binary__op__traits_1_1constraint}{00080}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__binary__op__traits_1_1constraint}{constraint}}\ :\ std::true\_type\ \{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Self,\ \textcolor{keyword}{typename},\ \textcolor{keyword}{typename}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00082}\mbox{\hyperlink{structutils_1_1default__binary__op__traits_1_1result}{00082}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__binary__op__traits_1_1result}{result}}\ :\ std::remove\_cvref<Self>\ \{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00083}00083\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00085}\mbox{\hyperlink{structutils_1_1default__asg__op__traits}{00085}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__asg__op__traits}{default\_asg\_op\_traits}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Self,\ \textcolor{keyword}{typename},\ \textcolor{keyword}{typename}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00087}\mbox{\hyperlink{structutils_1_1default__asg__op__traits_1_1constraint}{00087}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__asg__op__traits_1_1constraint}{constraint}}\ :\ std::is\_lvalue\_reference<Self>\ \{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00088}00088\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00090}\mbox{\hyperlink{structutils_1_1default__unary__op__traits}{00090}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__unary__op__traits}{default\_unary\_op\_traits}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00092}\mbox{\hyperlink{structutils_1_1default__unary__op__traits_1_1constraint}{00092}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__unary__op__traits_1_1constraint}{constraint}}\ :\ std::true\_type\ \{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Self>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00094}\mbox{\hyperlink{structutils_1_1default__unary__op__traits_1_1result}{00094}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__unary__op__traits_1_1result}{result}}\ :\ std::decay<Self>\ \{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00095}00095\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00097}\mbox{\hyperlink{structutils_1_1default__prefix__op__traits}{00097}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__prefix__op__traits}{default\_prefix\_op\_traits}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Self>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00099}\mbox{\hyperlink{structutils_1_1default__prefix__op__traits_1_1constraint}{00099}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__prefix__op__traits_1_1constraint}{constraint}}\ :\ std::is\_lvalue\_reference<Self>\ \{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Self>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00101}\mbox{\hyperlink{structutils_1_1default__prefix__op__traits_1_1result}{00101}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__prefix__op__traits_1_1result}{result}}\ :\ std::type\_identity<Self>\ \{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00102}00102\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00104}\mbox{\hyperlink{structutils_1_1default__postfix__op__traits}{00104}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__postfix__op__traits}{default\_postfix\_op\_traits}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Self>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00106}\mbox{\hyperlink{structutils_1_1default__postfix__op__traits_1_1constraint}{00106}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__postfix__op__traits_1_1constraint}{constraint}}\ :\ std::is\_lvalue\_reference<Self>\ \{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Self>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00108}\mbox{\hyperlink{structutils_1_1default__postfix__op__traits_1_1result}{00108}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1default__postfix__op__traits_1_1result}{result}}\ :\ std::decay<Self>\ \{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00109}00109\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00112}00112\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Plus\ =\ std::plus<>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Minus\ =\ std::minus<>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Mul\ =\ std::multiplies<>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Div\ =\ std::divides<>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Mod\ =\ std::modulus<>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BinaryTraits\ =\ \mbox{\hyperlink{structutils_1_1default__binary__op__traits}{default\_binary\_op\_traits}}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00119}\mbox{\hyperlink{structutils_1_1integral__op__functors}{00119}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1integral__op__functors}{integral\_op\_functors}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00120}\mbox{\hyperlink{structutils_1_1integral__op__functors_a1708ff07ec497739f9dd95e88ef2ebf9}{00120}}\ \ \ \ \ \ \ \ \ Plus\ \mbox{\hyperlink{structutils_1_1integral__op__functors_a1708ff07ec497739f9dd95e88ef2ebf9}{plus}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00121}\mbox{\hyperlink{structutils_1_1integral__op__functors_a4da9e384f5fab9c40ea968591ea3cbd6}{00121}}\ \ \ \ \ \ \ \ \ Minus\ \mbox{\hyperlink{structutils_1_1integral__op__functors_a4da9e384f5fab9c40ea968591ea3cbd6}{minus}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00122}\mbox{\hyperlink{structutils_1_1integral__op__functors_a2cb315e8c4359ccba7e9ec7861b47802}{00122}}\ \ \ \ \ \ \ \ \ Mul\ \mbox{\hyperlink{structutils_1_1integral__op__functors_a2cb315e8c4359ccba7e9ec7861b47802}{multiplies}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00123}\mbox{\hyperlink{structutils_1_1integral__op__functors_a17a6903a008bcc4bab44ea377cccc0d2}{00123}}\ \ \ \ \ \ \ \ \ Div\ \mbox{\hyperlink{structutils_1_1integral__op__functors_a17a6903a008bcc4bab44ea377cccc0d2}{divides}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00124}\mbox{\hyperlink{structutils_1_1integral__op__functors_a55835d18aa697b3b61b63028391ffc36}{00124}}\ \ \ \ \ \ \ \ \ Mod\ \mbox{\hyperlink{structutils_1_1integral__op__functors_a55835d18aa697b3b61b63028391ffc36}{modulus}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00125}\mbox{\hyperlink{structutils_1_1integral__op__functors_ac444a7d224ea8235347f278da4382d18}{00125}}\ \ \ \ \ \ \ \ \ BinaryTraits\ \mbox{\hyperlink{structutils_1_1integral__op__functors_ac444a7d224ea8235347f278da4382d18}{binary\_traits}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00126}00126\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00129}00129\ \ \ \ \ \textcolor{keyword}{template}\ <integral\_op\_functors\ Funcs\ =\ \{\}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00130}\mbox{\hyperlink{structutils_1_1integral__ops}{00130}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1integral__ops}{integral\_ops}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(+,\ plus,\ \mbox{\hyperlink{structutils_1_1integral__ops}{integral\_ops}})}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(-\/,\ minus,\ \mbox{\hyperlink{structutils_1_1integral__ops}{integral\_ops}})}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(*,\ multiplies,\ \mbox{\hyperlink{structutils_1_1integral__ops}{integral\_ops}})}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(/,\ divides,\ \mbox{\hyperlink{structutils_1_1integral__ops}{integral\_ops}})}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(\%,\ modulus,\ \mbox{\hyperlink{structutils_1_1integral__ops}{integral\_ops}})}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00136}00136\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00139}00139\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ PlusAsg\ =\ plus\_asg<>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ MinusAsg\ =\ minus\_asg<>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ MulAsg\ =\ multiplies\_asg<>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ DivAsg\ =\ divides\_asg<>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ ModAsg\ =\ modulus\_asg<>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ AsgTraits\ =\ \mbox{\hyperlink{structutils_1_1default__asg__op__traits}{default\_asg\_op\_traits}}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00146}\mbox{\hyperlink{structutils_1_1integral__asg__op__functors}{00146}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1integral__asg__op__functors}{integral\_asg\_op\_functors}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00147}\mbox{\hyperlink{structutils_1_1integral__asg__op__functors_a4b77527ca426dd453c9c5dc0ae45cfed}{00147}}\ \ \ \ \ \ \ \ \ PlusAsg\ \mbox{\hyperlink{structutils_1_1integral__asg__op__functors_a4b77527ca426dd453c9c5dc0ae45cfed}{plus\_asg}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00148}\mbox{\hyperlink{structutils_1_1integral__asg__op__functors_a8f0d68446390f36ff0706aff24e7ea2e}{00148}}\ \ \ \ \ \ \ \ \ MinusAsg\ \mbox{\hyperlink{structutils_1_1integral__asg__op__functors_a8f0d68446390f36ff0706aff24e7ea2e}{minus\_asg}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00149}\mbox{\hyperlink{structutils_1_1integral__asg__op__functors_aa33238e6a093fb9b2cc7ae98d1ab38e5}{00149}}\ \ \ \ \ \ \ \ \ MulAsg\ \mbox{\hyperlink{structutils_1_1integral__asg__op__functors_aa33238e6a093fb9b2cc7ae98d1ab38e5}{multiplies\_asg}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00150}\mbox{\hyperlink{structutils_1_1integral__asg__op__functors_a155a9e8177f3c06a5bd7d9f0e10d83b7}{00150}}\ \ \ \ \ \ \ \ \ DivAsg\ \mbox{\hyperlink{structutils_1_1integral__asg__op__functors_a155a9e8177f3c06a5bd7d9f0e10d83b7}{divides\_asg}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00151}\mbox{\hyperlink{structutils_1_1integral__asg__op__functors_a76afa9e5cca863cf9b1200ae285b869b}{00151}}\ \ \ \ \ \ \ \ \ ModAsg\ \mbox{\hyperlink{structutils_1_1integral__asg__op__functors_a76afa9e5cca863cf9b1200ae285b869b}{modulus\_asg}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00152}\mbox{\hyperlink{structutils_1_1integral__asg__op__functors_a4e026b44acf79535f760084b2ab8a5fa}{00152}}\ \ \ \ \ \ \ \ \ AsgTraits\ \mbox{\hyperlink{structutils_1_1integral__asg__op__functors_a4e026b44acf79535f760084b2ab8a5fa}{asg\_traits}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00153}00153\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00156}00156\ \ \ \ \ \textcolor{keyword}{template}\ <integral\_asg\_op\_functors\ Funcs\ =\ \{\}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00157}\mbox{\hyperlink{structutils_1_1integral__asg__ops}{00157}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1integral__asg__ops}{integral\_asg\_ops}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{UTILS\_ASG\_OP}}(+=,\ plus\_asg)}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{UTILS\_ASG\_OP}}(-\/=,\ minus\_asg)}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{UTILS\_ASG\_OP}}(*=,\ multiplies\_asg)}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{UTILS\_ASG\_OP}}(/=,\ divides\_asg)}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{UTILS\_ASG\_OP}}(\%=,\ modulus\_asg)}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00163}00163\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00167}00167\ \ \ \ \ \textcolor{keyword}{template}\ <\mbox{\hyperlink{structutils_1_1integral__op__functors}{integral\_op\_functors}}\ Funcs\ =\ \{\},\ integral\_asg\_op\_functors\ AsgFuncs\ =\ \{\}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00168}\mbox{\hyperlink{structutils_1_1integral__full__ops}{00168}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1integral__full__ops}{integral\_full\_ops}}\ :\ \mbox{\hyperlink{structutils_1_1integral__ops}{integral\_ops}}<Funcs>,\ \mbox{\hyperlink{structutils_1_1integral__asg__ops}{integral\_asg\_ops}}<AsgFuncs>\ \{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00171}00171\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BitAnd\ =\ std::bit\_and<>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BitOr\ =\ std::bit\_or<>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BitXor\ =\ std::bit\_xor<>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BitNot\ =\ std::bit\_not<>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BinaryTraits\ =\ \mbox{\hyperlink{structutils_1_1default__binary__op__traits}{default\_binary\_op\_traits}},}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ UnaryTraits\ =\ \mbox{\hyperlink{structutils_1_1default__unary__op__traits}{default\_unary\_op\_traits}}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00178}\mbox{\hyperlink{structutils_1_1bit__op__functors}{00178}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1bit__op__functors}{bit\_op\_functors}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00179}\mbox{\hyperlink{structutils_1_1bit__op__functors_a6fb30e37deee2d5ffa4838b573d36642}{00179}}\ \ \ \ \ \ \ \ \ BitAnd\ \mbox{\hyperlink{structutils_1_1bit__op__functors_a6fb30e37deee2d5ffa4838b573d36642}{bit\_and}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00180}\mbox{\hyperlink{structutils_1_1bit__op__functors_a7a0bc086ca2fa68809e20b7ea9cf3532}{00180}}\ \ \ \ \ \ \ \ \ BitOr\ \mbox{\hyperlink{structutils_1_1bit__op__functors_a7a0bc086ca2fa68809e20b7ea9cf3532}{bit\_or}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00181}\mbox{\hyperlink{structutils_1_1bit__op__functors_ac5399c67717aa49284327b2f04b1e47d}{00181}}\ \ \ \ \ \ \ \ \ BitXor\ \mbox{\hyperlink{structutils_1_1bit__op__functors_ac5399c67717aa49284327b2f04b1e47d}{bit\_xor}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00182}\mbox{\hyperlink{structutils_1_1bit__op__functors_a6c09fd34a5ea07d3f70b08d191ba4ae7}{00182}}\ \ \ \ \ \ \ \ \ BitNot\ \mbox{\hyperlink{structutils_1_1bit__op__functors_a6c09fd34a5ea07d3f70b08d191ba4ae7}{bit\_not}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00183}\mbox{\hyperlink{structutils_1_1bit__op__functors_a660671d0a8db1670bd8cf7438d568a25}{00183}}\ \ \ \ \ \ \ \ \ BinaryTraits\ \mbox{\hyperlink{structutils_1_1bit__op__functors_a660671d0a8db1670bd8cf7438d568a25}{binary\_traits}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00184}\mbox{\hyperlink{structutils_1_1bit__op__functors_a5421a2994d4443906604a137fd8ddedf}{00184}}\ \ \ \ \ \ \ \ \ UnaryTraits\ \mbox{\hyperlink{structutils_1_1bit__op__functors_a5421a2994d4443906604a137fd8ddedf}{unary\_traits}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00185}00185\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00188}00188\ \ \ \ \ \textcolor{keyword}{template}\ <bit\_op\_functors\ Funcs\ =\ \{\}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00189}\mbox{\hyperlink{structutils_1_1bit__ops}{00189}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1bit__ops}{bit\_ops}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(\&,\ bit\_and,\ \mbox{\hyperlink{structutils_1_1bit__ops}{bit\_ops}})}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(|,\ bit\_or,\ \mbox{\hyperlink{structutils_1_1bit__ops}{bit\_ops}})}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(\string^,\ bit\_xor,\ \mbox{\hyperlink{structutils_1_1bit__ops}{bit\_ops}})}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ad95c59b8c57152e760307eea47d8e095}{UTILS\_UNARY\_OP}}(\string~,\ bit\_not)}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00194}00194\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00197}00197\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BitAndAsg\ =\ bit\_and\_asg<>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BitOrAsg\ =\ bit\_or\_asg<>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BitXorAsg\ =\ bit\_xor\_asg<>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ AsgTraits\ =\ \mbox{\hyperlink{structutils_1_1default__asg__op__traits}{default\_asg\_op\_traits}}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00202}\mbox{\hyperlink{structutils_1_1bit__asg__op__functors}{00202}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1bit__asg__op__functors}{bit\_asg\_op\_functors}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00203}\mbox{\hyperlink{structutils_1_1bit__asg__op__functors_a877ca63dbf534d97500739730c965be4}{00203}}\ \ \ \ \ \ \ \ \ BitAndAsg\ \mbox{\hyperlink{structutils_1_1bit__asg__op__functors_a877ca63dbf534d97500739730c965be4}{bit\_and\_asg}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00204}\mbox{\hyperlink{structutils_1_1bit__asg__op__functors_a3996d62bfc0dd3912b71d5cde8d096cb}{00204}}\ \ \ \ \ \ \ \ \ BitOrAsg\ \mbox{\hyperlink{structutils_1_1bit__asg__op__functors_a3996d62bfc0dd3912b71d5cde8d096cb}{bit\_or\_asg}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00205}\mbox{\hyperlink{structutils_1_1bit__asg__op__functors_ae5274e6ed7e6f6ed1b0975afa07cce5d}{00205}}\ \ \ \ \ \ \ \ \ BitXorAsg\ \mbox{\hyperlink{structutils_1_1bit__asg__op__functors_ae5274e6ed7e6f6ed1b0975afa07cce5d}{bit\_xor\_asg}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00206}\mbox{\hyperlink{structutils_1_1bit__asg__op__functors_a5cba5aeed80eef91ba06f6d5678a69c4}{00206}}\ \ \ \ \ \ \ \ \ AsgTraits\ \mbox{\hyperlink{structutils_1_1bit__asg__op__functors_a5cba5aeed80eef91ba06f6d5678a69c4}{asg\_traits}}\{\};}
 \DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00207}00207\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00211}00211\ \ \ \ \ \textcolor{keyword}{template}\ <\mbox{\hyperlink{structutils_1_1bit__op__functors}{bit\_op\_functors}}\ Funcs\ =\ \{\},\ bit\_asg\_op\_functors\ AsgFuncs\ =\ \{\}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00212}\mbox{\hyperlink{structutils_1_1bit__full__ops}{00212}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1bit__full__ops}{bit\_full\_ops}}\ :\ \mbox{\hyperlink{structutils_1_1bit__ops}{bit\_ops}}<Funcs>,\ \mbox{\hyperlink{structutils_1_1bit__asg__ops}{bit\_asg\_ops}}<AsgFuncs>\ \{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00213}00213\ }
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00215}00215\ \ \ \ \ \textcolor{keyword}{template}\ <}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ ShiftLeft\ =\ \mbox{\hyperlink{structutils_1_1shift__left}{shift\_left<>}},}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ ShiftRight\ =\ \mbox{\hyperlink{structutils_1_1shift__right}{shift\_right<>}},}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BinaryTraits\ =\ \mbox{\hyperlink{structutils_1_1default__binary__op__traits}{default\_binary\_op\_traits}}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00219}\mbox{\hyperlink{structutils_1_1shift__op__functors}{00219}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1shift__op__functors}{shift\_op\_functors}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00220}\mbox{\hyperlink{structutils_1_1shift__op__functors_a37ef1585b903a4287dc0980f4fd4bfc9}{00220}}\ \ \ \ \ \ \ \ \ ShiftLeft\ \mbox{\hyperlink{structutils_1_1shift__op__functors_a37ef1585b903a4287dc0980f4fd4bfc9}{shift\_left}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00221}\mbox{\hyperlink{structutils_1_1shift__op__functors_a4eccd3380e5dbaaca1290bab7edc82ba}{00221}}\ \ \ \ \ \ \ \ \ ShiftRight\ \mbox{\hyperlink{structutils_1_1shift__op__functors_a4eccd3380e5dbaaca1290bab7edc82ba}{shift\_right}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00222}\mbox{\hyperlink{structutils_1_1shift__op__functors_ab7988daf32d050fa3c631d7587adc2dd}{00222}}\ \ \ \ \ \ \ \ \ BinaryTraits\ \mbox{\hyperlink{structutils_1_1shift__op__functors_ab7988daf32d050fa3c631d7587adc2dd}{binary\_traits}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00223}00223\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00226}00226\ \ \ \ \ \textcolor{keyword}{template}\ <shift\_op\_functors\ Funcs\ =\ \{\}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00227}\mbox{\hyperlink{structutils_1_1shift__ops}{00227}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1shift__ops}{shift\_ops}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(<<,\ \mbox{\hyperlink{structutils_1_1shift__left}{shift\_left}},\ \mbox{\hyperlink{structutils_1_1shift__ops}{shift\_ops}})}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(>>,\ \mbox{\hyperlink{structutils_1_1shift__right}{shift\_right}},\ \mbox{\hyperlink{structutils_1_1shift__ops}{shift\_ops}})}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00230}00230\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00231}00231\ }
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00233}00233\ \ \ \ \ \textcolor{keyword}{template}\ <}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ ShiftLeftAsg\ =\ \mbox{\hyperlink{structutils_1_1shift__left__asg}{shift\_left\_asg<>}},}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ ShiftRightAsg\ =\ \mbox{\hyperlink{structutils_1_1shift__right__asg}{shift\_right\_asg<>}},}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ AsgTraits\ =\ \mbox{\hyperlink{structutils_1_1default__asg__op__traits}{default\_asg\_op\_traits}}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00237}\mbox{\hyperlink{structutils_1_1shift__asg__op__functors}{00237}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1shift__asg__op__functors}{shift\_asg\_op\_functors}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00238}\mbox{\hyperlink{structutils_1_1shift__asg__op__functors_aa2c78409a3f64b900c7a7fe0730ec2b8}{00238}}\ \ \ \ \ \ \ \ \ ShiftLeftAsg\ \mbox{\hyperlink{structutils_1_1shift__asg__op__functors_aa2c78409a3f64b900c7a7fe0730ec2b8}{shift\_left\_asg}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00239}\mbox{\hyperlink{structutils_1_1shift__asg__op__functors_aa44b7b8d5bfe727bcdbf59548f76dbe3}{00239}}\ \ \ \ \ \ \ \ \ ShiftRightAsg\ \mbox{\hyperlink{structutils_1_1shift__asg__op__functors_aa44b7b8d5bfe727bcdbf59548f76dbe3}{shift\_right\_asg}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00240}\mbox{\hyperlink{structutils_1_1shift__asg__op__functors_ae515736f622bae6b4551511396ebb93c}{00240}}\ \ \ \ \ \ \ \ \ AsgTraits\ \mbox{\hyperlink{structutils_1_1shift__asg__op__functors_ae515736f622bae6b4551511396ebb93c}{asg\_traits}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00241}00241\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00244}00244\ \ \ \ \ \textcolor{keyword}{template}\ <shift\_asg\_op\_functors\ Funcs\ =\ \{\}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00245}\mbox{\hyperlink{structutils_1_1shift__asg__ops}{00245}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1shift__asg__ops}{shift\_asg\_ops}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{UTILS\_ASG\_OP}}(<<=,\ \mbox{\hyperlink{structutils_1_1shift__left__asg}{shift\_left\_asg}})}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{UTILS\_ASG\_OP}}(>>=,\ \mbox{\hyperlink{structutils_1_1shift__right__asg}{shift\_right\_asg}})}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00248}00248\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00252}00252\ \ \ \ \ \textcolor{keyword}{template}\ <\mbox{\hyperlink{structutils_1_1shift__op__functors}{shift\_op\_functors}}\ Funcs\ =\ \{\},\ shift\_asg\_op\_functors\ AsgFuncs\ =\ \{\}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00253}\mbox{\hyperlink{structutils_1_1shift__full__ops}{00253}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1shift__full__ops}{shift\_full\_ops}}\ :\ \mbox{\hyperlink{structutils_1_1shift__ops}{shift\_ops}}<Funcs>,\ \mbox{\hyperlink{structutils_1_1shift__asg__ops}{shift\_asg\_ops}}<AsgFuncs>\ \{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00254}00254\ }
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00256}00256\ \ \ \ \ \textcolor{keyword}{template}\ <}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Neg\ =\ std::negate<>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ UnaryTraits\ =\ \mbox{\hyperlink{structutils_1_1default__unary__op__traits}{default\_unary\_op\_traits}}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00259}\mbox{\hyperlink{structutils_1_1sign__op__functors}{00259}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1sign__op__functors}{sign\_op\_functors}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00260}\mbox{\hyperlink{structutils_1_1sign__op__functors_a23b80421abc526261ddbd2b9789e44e1}{00260}}\ \ \ \ \ \ \ \ \ Neg\ \mbox{\hyperlink{structutils_1_1sign__op__functors_a23b80421abc526261ddbd2b9789e44e1}{negate}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00261}\mbox{\hyperlink{structutils_1_1sign__op__functors_a34cb760d2219d7bc9524ea0c4c8d1ac9}{00261}}\ \ \ \ \ \ \ \ \ UnaryTraits\ \mbox{\hyperlink{structutils_1_1sign__op__functors_a34cb760d2219d7bc9524ea0c4c8d1ac9}{unary\_traits}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00262}00262\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00265}00265\ \ \ \ \ \textcolor{keyword}{template}\ <sign\_op\_functors\ Funcs\ =\ \{\}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00266}\mbox{\hyperlink{structutils_1_1sign__ops}{00266}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1sign__ops}{sign\_ops}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ad95c59b8c57152e760307eea47d8e095}{UTILS\_UNARY\_OP}}(-\/,\ negate)}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00268}00268\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00269}00269\ }
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00271}00271\ \ \ \ \ \textcolor{keyword}{template}\ <}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ PreInc\ =\ \mbox{\hyperlink{structutils_1_1pre__increment}{pre\_increment<>}},}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ PostInc\ =\ \mbox{\hyperlink{structutils_1_1post__increment_3_4}{post\_increment<>}},}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ PreDec\ =\ \mbox{\hyperlink{structutils_1_1pre__decrement}{pre\_decrement<>}},}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ PostDec\ =\ \mbox{\hyperlink{structutils_1_1post__decrement_3_4}{post\_decrement<>}},}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ PrefixTraits\ =\ \mbox{\hyperlink{structutils_1_1default__prefix__op__traits}{default\_prefix\_op\_traits}},}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ UnaryTraits\ =\ \mbox{\hyperlink{structutils_1_1default__postfix__op__traits}{default\_postfix\_op\_traits}}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00278}\mbox{\hyperlink{structutils_1_1fix__op__functors}{00278}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1fix__op__functors}{fix\_op\_functors}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00279}\mbox{\hyperlink{structutils_1_1fix__op__functors_a6a649c36d8020335ee6d79abfbe61385}{00279}}\ \ \ \ \ \ \ \ \ PreInc\ \mbox{\hyperlink{structutils_1_1fix__op__functors_a6a649c36d8020335ee6d79abfbe61385}{pre\_increment}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00280}\mbox{\hyperlink{structutils_1_1fix__op__functors_add63d0bedfd41cbfc1127462ddf1e92e}{00280}}\ \ \ \ \ \ \ \ \ PostInc\ \mbox{\hyperlink{structutils_1_1fix__op__functors_add63d0bedfd41cbfc1127462ddf1e92e}{post\_increment}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00281}\mbox{\hyperlink{structutils_1_1fix__op__functors_afc1856cbf44d83273205f5a081d0d1c5}{00281}}\ \ \ \ \ \ \ \ \ PreDec\ \mbox{\hyperlink{structutils_1_1fix__op__functors_afc1856cbf44d83273205f5a081d0d1c5}{pre\_decrement}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00282}\mbox{\hyperlink{structutils_1_1fix__op__functors_a1844b578a85846ae1172515c4eb4d8d4}{00282}}\ \ \ \ \ \ \ \ \ PostDec\ \mbox{\hyperlink{structutils_1_1fix__op__functors_a1844b578a85846ae1172515c4eb4d8d4}{post\_decrement}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00283}\mbox{\hyperlink{structutils_1_1fix__op__functors_a3bccc1cf06b1d6b199e47506141d0d72}{00283}}\ \ \ \ \ \ \ \ \ PrefixTraits\ \mbox{\hyperlink{structutils_1_1fix__op__functors_a3bccc1cf06b1d6b199e47506141d0d72}{prefix\_traits}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00284}\mbox{\hyperlink{structutils_1_1fix__op__functors_a71a43a02e16697e022f9344738026f39}{00284}}\ \ \ \ \ \ \ \ \ UnaryTraits\ \mbox{\hyperlink{structutils_1_1fix__op__functors_a71a43a02e16697e022f9344738026f39}{unary\_traits}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00285}00285\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00288}00288\ \ \ \ \ \textcolor{keyword}{template}\ <fix\_op\_functors\ Funcs\ =\ \{\}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00289}\mbox{\hyperlink{structutils_1_1fix__ops}{00289}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1fix__ops}{fix\_ops}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00290}00290\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_af9a66ab382ee5d9ec749b9ba778ed41c}{UTILS\_FIX\_OP}}(++,\ increment)}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00291}00291\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_af9a66ab382ee5d9ec749b9ba778ed41c}{UTILS\_FIX\_OP}}(-\/-\/,\ decrement)}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00292}00292\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00293}00293\ }
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00304}00304\ \ \ \ \ \textcolor{keyword}{template}\ <}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00305}00305\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutils_1_1integral__op__functors}{integral\_op\_functors}}\ IntFuncs\ =\ \{\},\ integral\_asg\_op\_functors\ IntAsgFuncs\ =\ \{\},}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutils_1_1bit__op__functors}{bit\_op\_functors}}\ BitFuncs\ =\ \{\},\ \mbox{\hyperlink{structutils_1_1bit__asg__op__functors}{bit\_asg\_op\_functors}}\ BitAsgFuncs\ =\ \{\},}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutils_1_1shift__op__functors}{shift\_op\_functors}}\ ShiftFuncs\ =\ \{\},\ \mbox{\hyperlink{structutils_1_1shift__asg__op__functors}{shift\_asg\_op\_functors}}\ ShiftAsgFuncs\ =\ \{\},}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutils_1_1sign__op__functors}{sign\_op\_functors}}\ SignFuncs\ =\ \{\},}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutils_1_1fix__op__functors}{fix\_op\_functors}}\ FixFuncs\ =\ \{\}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00310}\mbox{\hyperlink{structutils_1_1arithmetic__ops}{00310}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1arithmetic__ops}{arithmetic\_ops}}\ :}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutils_1_1integral__full__ops}{integral\_full\_ops}}<IntFuncs,\ IntAsgFuncs>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00312}00312\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutils_1_1bit__full__ops}{bit\_full\_ops}}<BitFuncs,\ BitAsgFuncs>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutils_1_1shift__full__ops}{shift\_full\_ops}}<ShiftFuncs,\ ShiftAsgFuncs>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutils_1_1sign__ops}{sign\_ops}}<SignFuncs>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00315}00315\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutils_1_1fix__ops}{fix\_ops}}<FixFuncs>\ \{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00316}00316\ }
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00318}00318\ \ \ \ \ \textcolor{keyword}{template}\ <}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00319}00319\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ And\ =\ std::logical\_and<>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00320}00320\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Or\ =\ std::logical\_or<>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00321}00321\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Not\ =\ std::logical\_not<>,}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BinaryTraits\ =\ \mbox{\hyperlink{structutils_1_1default__binary__op__traits}{default\_binary\_op\_traits}},}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ UnaryTraits\ =\ \mbox{\hyperlink{structutils_1_1default__unary__op__traits}{default\_unary\_op\_traits}}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00324}\mbox{\hyperlink{structutils_1_1logical__op__functors}{00324}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1logical__op__functors}{logical\_op\_functors}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00325}\mbox{\hyperlink{structutils_1_1logical__op__functors_a427bb9762a11701327efff75d1fed7e8}{00325}}\ \ \ \ \ \ \ \ \ And\ \mbox{\hyperlink{structutils_1_1logical__op__functors_a427bb9762a11701327efff75d1fed7e8}{logical\_and}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00326}\mbox{\hyperlink{structutils_1_1logical__op__functors_abab18dd318db519f7b6e703d2f9bb97d}{00326}}\ \ \ \ \ \ \ \ \ Or\ \mbox{\hyperlink{structutils_1_1logical__op__functors_abab18dd318db519f7b6e703d2f9bb97d}{logical\_or}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00327}\mbox{\hyperlink{structutils_1_1logical__op__functors_abd75a43fb750be64d8d113fe4eb0a4f6}{00327}}\ \ \ \ \ \ \ \ \ Not\ \mbox{\hyperlink{structutils_1_1logical__op__functors_abd75a43fb750be64d8d113fe4eb0a4f6}{logical\_not}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00328}\mbox{\hyperlink{structutils_1_1logical__op__functors_a0bfe0d2ded0fadc964ca644f279a25e4}{00328}}\ \ \ \ \ \ \ \ \ BinaryTraits\ \mbox{\hyperlink{structutils_1_1logical__op__functors_a0bfe0d2ded0fadc964ca644f279a25e4}{binary\_traits}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00329}\mbox{\hyperlink{structutils_1_1logical__op__functors_a8c1d3b5b874bf8c483d29dc6b526acb4}{00329}}\ \ \ \ \ \ \ \ \ UnaryTraits\ \mbox{\hyperlink{structutils_1_1logical__op__functors_a8c1d3b5b874bf8c483d29dc6b526acb4}{unary\_traits}}\{\};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00330}00330\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00333}00333\ \ \ \ \ \textcolor{keyword}{template}\ <logical\_op\_functors\ Funcs\ =\ \{\}>}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00334}\mbox{\hyperlink{structutils_1_1logical__ops}{00334}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1logical__ops}{logical\_ops}}\ \{}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00335}00335\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(\&\&,\ logical\_and,\ \mbox{\hyperlink{structutils_1_1logical__ops}{logical\_ops}})}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00336}00336\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(||,\ logical\_or,\ \mbox{\hyperlink{structutils_1_1logical__ops}{logical\_ops}})}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00337}00337\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ad95c59b8c57152e760307eea47d8e095}{UTILS\_UNARY\_OP}}(!,\ logical\_not)}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00210}00210\ \ \ \ \ \textcolor{keyword}{template}\ <bit\_asg\_op\_functors\ Funcs\ =\ \{\}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00211}\mbox{\hyperlink{structutils_1_1bit__asg__ops}{00211}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1bit__asg__ops}{bit\_asg\_ops}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{UTILS\_ASG\_OP}}(\&=,\ bit\_and\_asg)}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{UTILS\_ASG\_OP}}(|=,\ bit\_or\_asg)}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{UTILS\_ASG\_OP}}(\string^=,\ bit\_xor\_asg)}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00215}00215\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00219}00219\ \ \ \ \ \textcolor{keyword}{template}\ <\mbox{\hyperlink{structutils_1_1bit__op__functors}{bit\_op\_functors}}\ Funcs\ =\ \{\},\ bit\_asg\_op\_functors\ AsgFuncs\ =\ \{\}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00220}\mbox{\hyperlink{structutils_1_1bit__full__ops}{00220}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1bit__full__ops}{bit\_full\_ops}}\ :\ \mbox{\hyperlink{structutils_1_1bit__ops}{bit\_ops}}<Funcs>,\ \mbox{\hyperlink{structutils_1_1bit__asg__ops}{bit\_asg\_ops}}<AsgFuncs>\ \{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00223}00223\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ ShiftLeft\ =\ \mbox{\hyperlink{structutils_1_1shift__left}{shift\_left<>}},}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ ShiftRight\ =\ \mbox{\hyperlink{structutils_1_1shift__right}{shift\_right<>}},}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BinaryTraits\ =\ \mbox{\hyperlink{structutils_1_1default__binary__op__traits}{default\_binary\_op\_traits}}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00227}\mbox{\hyperlink{structutils_1_1shift__op__functors}{00227}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1shift__op__functors}{shift\_op\_functors}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00228}\mbox{\hyperlink{structutils_1_1shift__op__functors_a37ef1585b903a4287dc0980f4fd4bfc9}{00228}}\ \ \ \ \ \ \ \ \ ShiftLeft\ \mbox{\hyperlink{structutils_1_1shift__op__functors_a37ef1585b903a4287dc0980f4fd4bfc9}{shift\_left}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00229}\mbox{\hyperlink{structutils_1_1shift__op__functors_a4eccd3380e5dbaaca1290bab7edc82ba}{00229}}\ \ \ \ \ \ \ \ \ ShiftRight\ \mbox{\hyperlink{structutils_1_1shift__op__functors_a4eccd3380e5dbaaca1290bab7edc82ba}{shift\_right}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00230}\mbox{\hyperlink{structutils_1_1shift__op__functors_ab7988daf32d050fa3c631d7587adc2dd}{00230}}\ \ \ \ \ \ \ \ \ BinaryTraits\ \mbox{\hyperlink{structutils_1_1shift__op__functors_ab7988daf32d050fa3c631d7587adc2dd}{binary\_traits}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00231}00231\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00234}00234\ \ \ \ \ \textcolor{keyword}{template}\ <shift\_op\_functors\ Funcs\ =\ \{\}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00235}\mbox{\hyperlink{structutils_1_1shift__ops}{00235}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1shift__ops}{shift\_ops}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(<<,\ \mbox{\hyperlink{structutils_1_1shift__left}{shift\_left}},\ \mbox{\hyperlink{structutils_1_1shift__ops}{shift\_ops}})}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(>>,\ \mbox{\hyperlink{structutils_1_1shift__right}{shift\_right}},\ \mbox{\hyperlink{structutils_1_1shift__ops}{shift\_ops}})}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00238}00238\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00241}00241\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ ShiftLeftAsg\ =\ \mbox{\hyperlink{structutils_1_1shift__left__asg}{shift\_left\_asg<>}},}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ ShiftRightAsg\ =\ \mbox{\hyperlink{structutils_1_1shift__right__asg}{shift\_right\_asg<>}},}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ AsgTraits\ =\ \mbox{\hyperlink{structutils_1_1default__asg__op__traits}{default\_asg\_op\_traits}}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00245}\mbox{\hyperlink{structutils_1_1shift__asg__op__functors}{00245}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1shift__asg__op__functors}{shift\_asg\_op\_functors}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00246}\mbox{\hyperlink{structutils_1_1shift__asg__op__functors_aa2c78409a3f64b900c7a7fe0730ec2b8}{00246}}\ \ \ \ \ \ \ \ \ ShiftLeftAsg\ \mbox{\hyperlink{structutils_1_1shift__asg__op__functors_aa2c78409a3f64b900c7a7fe0730ec2b8}{shift\_left\_asg}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00247}\mbox{\hyperlink{structutils_1_1shift__asg__op__functors_aa44b7b8d5bfe727bcdbf59548f76dbe3}{00247}}\ \ \ \ \ \ \ \ \ ShiftRightAsg\ \mbox{\hyperlink{structutils_1_1shift__asg__op__functors_aa44b7b8d5bfe727bcdbf59548f76dbe3}{shift\_right\_asg}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00248}\mbox{\hyperlink{structutils_1_1shift__asg__op__functors_ae515736f622bae6b4551511396ebb93c}{00248}}\ \ \ \ \ \ \ \ \ AsgTraits\ \mbox{\hyperlink{structutils_1_1shift__asg__op__functors_ae515736f622bae6b4551511396ebb93c}{asg\_traits}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00249}00249\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00252}00252\ \ \ \ \ \textcolor{keyword}{template}\ <shift\_asg\_op\_functors\ Funcs\ =\ \{\}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00253}\mbox{\hyperlink{structutils_1_1shift__asg__ops}{00253}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1shift__asg__ops}{shift\_asg\_ops}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{UTILS\_ASG\_OP}}(<<=,\ \mbox{\hyperlink{structutils_1_1shift__left__asg}{shift\_left\_asg}})}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}{UTILS\_ASG\_OP}}(>>=,\ \mbox{\hyperlink{structutils_1_1shift__right__asg}{shift\_right\_asg}})}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00256}00256\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00260}00260\ \ \ \ \ \textcolor{keyword}{template}\ <\mbox{\hyperlink{structutils_1_1shift__op__functors}{shift\_op\_functors}}\ Funcs\ =\ \{\},\ shift\_asg\_op\_functors\ AsgFuncs\ =\ \{\}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00261}\mbox{\hyperlink{structutils_1_1shift__full__ops}{00261}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1shift__full__ops}{shift\_full\_ops}}\ :\ \mbox{\hyperlink{structutils_1_1shift__ops}{shift\_ops}}<Funcs>,\ \mbox{\hyperlink{structutils_1_1shift__asg__ops}{shift\_asg\_ops}}<AsgFuncs>\ \{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00264}00264\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Neg\ =\ std::negate<>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ UnaryTraits\ =\ \mbox{\hyperlink{structutils_1_1default__unary__op__traits}{default\_unary\_op\_traits}}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00267}\mbox{\hyperlink{structutils_1_1sign__op__functors}{00267}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1sign__op__functors}{sign\_op\_functors}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00268}\mbox{\hyperlink{structutils_1_1sign__op__functors_a23b80421abc526261ddbd2b9789e44e1}{00268}}\ \ \ \ \ \ \ \ \ Neg\ \mbox{\hyperlink{structutils_1_1sign__op__functors_a23b80421abc526261ddbd2b9789e44e1}{negate}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00269}\mbox{\hyperlink{structutils_1_1sign__op__functors_a34cb760d2219d7bc9524ea0c4c8d1ac9}{00269}}\ \ \ \ \ \ \ \ \ UnaryTraits\ \mbox{\hyperlink{structutils_1_1sign__op__functors_a34cb760d2219d7bc9524ea0c4c8d1ac9}{unary\_traits}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00270}00270\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00273}00273\ \ \ \ \ \textcolor{keyword}{template}\ <sign\_op\_functors\ Funcs\ =\ \{\}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00274}\mbox{\hyperlink{structutils_1_1sign__ops}{00274}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1sign__ops}{sign\_ops}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ad95c59b8c57152e760307eea47d8e095}{UTILS\_UNARY\_OP}}(-\/,\ negate)}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00276}00276\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00277}00277\ }
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00279}00279\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00280}00280\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ PreInc\ =\ \mbox{\hyperlink{structutils_1_1pre__increment}{pre\_increment<>}},}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ PostInc\ =\ \mbox{\hyperlink{structutils_1_1post__increment_3_4}{post\_increment<>}},}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ PreDec\ =\ \mbox{\hyperlink{structutils_1_1pre__decrement}{pre\_decrement<>}},}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ PostDec\ =\ \mbox{\hyperlink{structutils_1_1post__decrement_3_4}{post\_decrement<>}},}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00284}00284\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ PrefixTraits\ =\ \mbox{\hyperlink{structutils_1_1default__prefix__op__traits}{default\_prefix\_op\_traits}},}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00285}00285\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ UnaryTraits\ =\ \mbox{\hyperlink{structutils_1_1default__postfix__op__traits}{default\_postfix\_op\_traits}}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00286}\mbox{\hyperlink{structutils_1_1fix__op__functors}{00286}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1fix__op__functors}{fix\_op\_functors}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00287}\mbox{\hyperlink{structutils_1_1fix__op__functors_a6a649c36d8020335ee6d79abfbe61385}{00287}}\ \ \ \ \ \ \ \ \ PreInc\ \mbox{\hyperlink{structutils_1_1fix__op__functors_a6a649c36d8020335ee6d79abfbe61385}{pre\_increment}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00288}\mbox{\hyperlink{structutils_1_1fix__op__functors_add63d0bedfd41cbfc1127462ddf1e92e}{00288}}\ \ \ \ \ \ \ \ \ PostInc\ \mbox{\hyperlink{structutils_1_1fix__op__functors_add63d0bedfd41cbfc1127462ddf1e92e}{post\_increment}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00289}\mbox{\hyperlink{structutils_1_1fix__op__functors_afc1856cbf44d83273205f5a081d0d1c5}{00289}}\ \ \ \ \ \ \ \ \ PreDec\ \mbox{\hyperlink{structutils_1_1fix__op__functors_afc1856cbf44d83273205f5a081d0d1c5}{pre\_decrement}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00290}\mbox{\hyperlink{structutils_1_1fix__op__functors_a1844b578a85846ae1172515c4eb4d8d4}{00290}}\ \ \ \ \ \ \ \ \ PostDec\ \mbox{\hyperlink{structutils_1_1fix__op__functors_a1844b578a85846ae1172515c4eb4d8d4}{post\_decrement}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00291}\mbox{\hyperlink{structutils_1_1fix__op__functors_a3bccc1cf06b1d6b199e47506141d0d72}{00291}}\ \ \ \ \ \ \ \ \ PrefixTraits\ \mbox{\hyperlink{structutils_1_1fix__op__functors_a3bccc1cf06b1d6b199e47506141d0d72}{prefix\_traits}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00292}\mbox{\hyperlink{structutils_1_1fix__op__functors_a71a43a02e16697e022f9344738026f39}{00292}}\ \ \ \ \ \ \ \ \ UnaryTraits\ \mbox{\hyperlink{structutils_1_1fix__op__functors_a71a43a02e16697e022f9344738026f39}{unary\_traits}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00293}00293\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00296}00296\ \ \ \ \ \textcolor{keyword}{template}\ <fix\_op\_functors\ Funcs\ =\ \{\}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00297}\mbox{\hyperlink{structutils_1_1fix__ops}{00297}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1fix__ops}{fix\_ops}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_af9a66ab382ee5d9ec749b9ba778ed41c}{UTILS\_FIX\_OP}}(++,\ increment)}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_af9a66ab382ee5d9ec749b9ba778ed41c}{UTILS\_FIX\_OP}}(-\/-\/,\ decrement)}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00300}00300\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00301}00301\ }
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00312}00312\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutils_1_1integral__op__functors}{integral\_op\_functors}}\ IntFuncs\ =\ \{\},\ integral\_asg\_op\_functors\ IntAsgFuncs\ =\ \{\},}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutils_1_1bit__op__functors}{bit\_op\_functors}}\ BitFuncs\ =\ \{\},\ \mbox{\hyperlink{structutils_1_1bit__asg__op__functors}{bit\_asg\_op\_functors}}\ BitAsgFuncs\ =\ \{\},}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00315}00315\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutils_1_1shift__op__functors}{shift\_op\_functors}}\ ShiftFuncs\ =\ \{\},\ \mbox{\hyperlink{structutils_1_1shift__asg__op__functors}{shift\_asg\_op\_functors}}\ ShiftAsgFuncs\ =\ \{\},}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00316}00316\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutils_1_1sign__op__functors}{sign\_op\_functors}}\ SignFuncs\ =\ \{\},}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00317}00317\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutils_1_1fix__op__functors}{fix\_op\_functors}}\ FixFuncs\ =\ \{\}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00318}\mbox{\hyperlink{structutils_1_1arithmetic__ops}{00318}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1arithmetic__ops}{arithmetic\_ops}}\ :}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00319}00319\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutils_1_1integral__full__ops}{integral\_full\_ops}}<IntFuncs,\ IntAsgFuncs>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00320}00320\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutils_1_1bit__full__ops}{bit\_full\_ops}}<BitFuncs,\ BitAsgFuncs>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00321}00321\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutils_1_1shift__full__ops}{shift\_full\_ops}}<ShiftFuncs,\ ShiftAsgFuncs>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutils_1_1sign__ops}{sign\_ops}}<SignFuncs>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structutils_1_1fix__ops}{fix\_ops}}<FixFuncs>\ \{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00324}00324\ }
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00326}00326\ \ \ \ \ \textcolor{keyword}{template}\ <}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ And\ =\ std::logical\_and<>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00328}00328\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Or\ =\ std::logical\_or<>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00329}00329\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Not\ =\ std::logical\_not<>,}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00330}00330\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ BinaryTraits\ =\ \mbox{\hyperlink{structutils_1_1default__binary__op__traits}{default\_binary\_op\_traits}},}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00331}00331\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ UnaryTraits\ =\ \mbox{\hyperlink{structutils_1_1default__unary__op__traits}{default\_unary\_op\_traits}}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00332}\mbox{\hyperlink{structutils_1_1logical__op__functors}{00332}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1logical__op__functors}{logical\_op\_functors}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00333}\mbox{\hyperlink{structutils_1_1logical__op__functors_a427bb9762a11701327efff75d1fed7e8}{00333}}\ \ \ \ \ \ \ \ \ And\ \mbox{\hyperlink{structutils_1_1logical__op__functors_a427bb9762a11701327efff75d1fed7e8}{logical\_and}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00334}\mbox{\hyperlink{structutils_1_1logical__op__functors_abab18dd318db519f7b6e703d2f9bb97d}{00334}}\ \ \ \ \ \ \ \ \ Or\ \mbox{\hyperlink{structutils_1_1logical__op__functors_abab18dd318db519f7b6e703d2f9bb97d}{logical\_or}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00335}\mbox{\hyperlink{structutils_1_1logical__op__functors_abd75a43fb750be64d8d113fe4eb0a4f6}{00335}}\ \ \ \ \ \ \ \ \ Not\ \mbox{\hyperlink{structutils_1_1logical__op__functors_abd75a43fb750be64d8d113fe4eb0a4f6}{logical\_not}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00336}\mbox{\hyperlink{structutils_1_1logical__op__functors_a0bfe0d2ded0fadc964ca644f279a25e4}{00336}}\ \ \ \ \ \ \ \ \ BinaryTraits\ \mbox{\hyperlink{structutils_1_1logical__op__functors_a0bfe0d2ded0fadc964ca644f279a25e4}{binary\_traits}}\{\};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00337}\mbox{\hyperlink{structutils_1_1logical__op__functors_a8c1d3b5b874bf8c483d29dc6b526acb4}{00337}}\ \ \ \ \ \ \ \ \ UnaryTraits\ \mbox{\hyperlink{structutils_1_1logical__op__functors_a8c1d3b5b874bf8c483d29dc6b526acb4}{unary\_traits}}\{\};}
 \DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00338}00338\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00339}00339\ \textcolor{preprocessor}{\#undef\ UTILS\_BINARY\_OP}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00340}00340\ \textcolor{preprocessor}{\#undef\ UTILS\_ASG\_OP}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00341}00341\ \textcolor{preprocessor}{\#undef\ UTILS\_UNARY\_OP}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00342}00342\ \textcolor{preprocessor}{\#undef\ UTILS\_FIX\_OP}}
-\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00343}00343\ \}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00341}00341\ \ \ \ \ \textcolor{keyword}{template}\ <logical\_op\_functors\ Funcs\ =\ \{\}>}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00342}\mbox{\hyperlink{structutils_1_1logical__ops}{00342}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1logical__ops}{logical\_ops}}\ \{}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00343}00343\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(\&\&,\ logical\_and,\ \mbox{\hyperlink{structutils_1_1logical__ops}{logical\_ops}})}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00344}00344\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\_BINARY\_OP}}(||,\ logical\_or,\ \mbox{\hyperlink{structutils_1_1logical__ops}{logical\_ops}})}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00345}00345\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{operators_8hpp_ad95c59b8c57152e760307eea47d8e095}{UTILS\_UNARY\_OP}}(!,\ logical\_not)}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00346}00346\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00347}00347\ \textcolor{preprocessor}{\#undef\ UTILS\_BINARY\_OP}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00348}00348\ \textcolor{preprocessor}{\#undef\ UTILS\_ASG\_OP}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00349}00349\ \textcolor{preprocessor}{\#undef\ UTILS\_UNARY\_OP}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00350}00350\ \textcolor{preprocessor}{\#undef\ UTILS\_FIX\_OP}}
+\DoxyCodeLine{\Hypertarget{operators_8hpp_source_l00351}00351\ \}}
 
 \end{DoxyCode}

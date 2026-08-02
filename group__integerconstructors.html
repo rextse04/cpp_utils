@@ -168,7 +168,7 @@ template&lt;typename Other, typename U = decltype(to_underlying(std::declval&lt;
 <p>Conversion from a (possibly wrapped) integer-like value <code>other</code>. </p>
 <p>If <code>T</code> is unsigned and <code>other &lt; 0</code>, it wraps around. Explicit if <code><a class="el" href="conceptutils_1_1lossless__convertible__to.html">utils::lossless_convertible_to</a>&lt;U, T&gt;</code> is false. </p>
 
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00657">657</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00662">662</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 
 </div>
 </div>
@@ -231,7 +231,7 @@ requires (std::is_floating_point_v&lt;std::remove_cvref_t&lt;Other&gt;&gt;)</div
 
 <p>Conversion from a floating point value <code>other</code>. The constructor is explicit as there is potential precision loss. </p>
 
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00664">664</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00669">669</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 
 </div>
 </div>
@@ -276,7 +276,7 @@ requires ((std::is_arithmetic_v&lt;OtherD&gt; || <a class="el" href="group__is__
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd><code>Ts</code> exists solely to lower the priority of this constructor in overload resolution. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00672">672</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00677">677</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 
 </div>
 </div>

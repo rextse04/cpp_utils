@@ -113,6 +113,9 @@ $(function(){initNavTree('ranges_8hpp.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">ranges.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Concepts and utilities for working with containers and ranges.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;ranges&gt;</code><br />
 <code>#include &lt;iterator&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -120,7 +123,7 @@ Include dependency graph for ranges.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ranges_8hpp__incl.png" border="0" usemap="#aranges_8hpp" alt=""/></div>
 <map name="aranges_8hpp" id="aranges_8hpp">
-<area shape="rect" title=" " alt="" coords="36,5,120,31"/>
+<area shape="rect" title="Concepts and utilities for working with containers and ranges." alt="" coords="36,5,120,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,66,105"/>
 <area shape="poly" title=" " alt="" coords="73,33,53,67,48,64,69,30"/>
 <area shape="rect" title=" " alt="" coords="90,79,152,105"/>
@@ -132,8 +135,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ranges_8hpp__dep__incl.png" border="0" usemap="#aranges_8hppdep" alt=""/></div>
 <map name="aranges_8hppdep" id="aranges_8hppdep">
-<area shape="rect" title=" " alt="" coords="106,5,190,31"/>
-<area shape="rect" href="segment__tree_8hpp.html" title=" " alt="" coords="5,79,141,120"/>
+<area shape="rect" title="Concepts and utilities for working with containers and ranges." alt="" coords="106,5,190,31"/>
+<area shape="rect" href="segment__tree_8hpp.html" title="Segment tree." alt="" coords="5,79,141,120"/>
 <area shape="poly" title=" " alt="" coords="128,44,93,80,89,77,124,41"/>
 <area shape="rect" href="static__string_8hpp.html" title=" " alt="" coords="164,86,280,112"/>
 <area shape="poly" title=" " alt="" coords="171,41,213,84,209,88,167,44"/>
@@ -142,7 +145,7 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 <p><a href="ranges_8hpp_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This files implements concepts and utilities for working with containers and ranges, most of them are defined in the C++ standard but not available as publicly accessible artifacts. </p>
+<div class="textblock"><p>Concepts and utilities for working with containers and ranges. </p>
 
 <p class="definition">Definition in file <a class="el" href="ranges_8hpp_source.html">ranges.hpp</a>.</p>
 </div><table class="memberdecls">
@@ -154,18 +157,23 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
 Concepts</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptutils_1_1reservable__container.html">utils::reservable_container</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++ exposition-only template: <em>reservable-container</em>. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptutils_1_1appendable__container.html">utils::appendable_container</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptutils_1_1container__compatible__iterator.html">utils::container_compatible_iterator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++ exposition-only template: <em>container-appendable</em>. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptutils_1_1container__compatible__range.html">utils::container_compatible_range</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++ exposition-only concept: <em>container-compatible-range</em>. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptutils_1_1container__compatible__iterator.html">utils::container_compatible_iterator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if an iterator <code>I</code> is compatible with a container <code>T</code>. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a838b0479484b30995e1d7e40f1cb529b" id="r_a838b0479484b30995e1d7e40f1cb529b"><td class="memTemplParams" colspan="2">template&lt;typename C&gt; </td></tr>
 <tr class="memitem:a838b0479484b30995e1d7e40f1cb529b"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a838b0479484b30995e1d7e40f1cb529b">utils::container_appender</a> (C &amp;<a class="el" href="namespaceutils.html#ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33">c</a>)</td></tr>
+<tr class="memdesc:a838b0479484b30995e1d7e40f1cb529b"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++ exposition-only template: <em>container-appender</em>.  <br /></td></tr>
 <tr class="separator:a838b0479484b30995e1d7e40f1cb529b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

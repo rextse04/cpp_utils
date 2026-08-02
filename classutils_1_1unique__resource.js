@@ -1,7 +1,5 @@
 var classutils_1_1unique__resource =
 [
-    [ "permit", "classutils_1_1unique__resource_1_1permit.html", "classutils_1_1unique__resource_1_1permit" ],
-    [ "permit_ptr", "classutils_1_1unique__resource_1_1permit__ptr.html", "classutils_1_1unique__resource_1_1permit__ptr" ],
     [ "semaphore_type", "classutils_1_1unique__resource.html#ad17a543d5c5eda53d91e5d176b58596d", null ],
     [ "value_type", "classutils_1_1unique__resource.html#add226441a6c8860e16acf90bf7d98b52", null ],
     [ "unique_resource", "classutils_1_1unique__resource.html#a63ccb7d4a576cf089e7813734d2d9642", null ],

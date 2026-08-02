@@ -174,12 +174,12 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= <a class="code hl_variable" href="#a16c01446283f45b336955e3e2870dc98">profile_from</a>&lt;</div>
 <div class="line">            detail::ckd_plus{}, detail::ckd_minus{}, detail::ckd_multiplies{}, detail::ckd_divides{}, detail::ckd_modulus{}&gt;</div>
-<div class="ttc" id="anamespaceutils_1_1integral__behavior_html_a16c01446283f45b336955e3e2870dc98"><div class="ttname"><a href="#a16c01446283f45b336955e3e2870dc98">utils::integral_behavior::profile_from</a></div><div class="ttdeci">constexpr profile&lt;{ .plus=detail::integer_transform&lt; Plus, CommonTypeTrait &gt;{},.minus=detail::integer_transform&lt; Minus, CommonTypeTrait &gt;{},.multiplies=detail::integer_transform&lt; Mul, CommonTypeTrait &gt;{},.divides=detail::integer_transform&lt; Div, CommonTypeTrait &gt;{},.modulus=detail::integer_transform&lt; Mod, CommonTypeTrait &gt;{},.binary_traits=BinaryTraits{} }, { .plus_asg=detail::integer_asg_wrap&lt; Plus &gt;{},.minus_asg=detail::integer_asg_wrap&lt; Minus &gt;{},.multiplies_asg=detail::integer_asg_wrap&lt; Mul &gt;{},.divides_asg=detail::integer_asg_wrap&lt; Div &gt;{},.modulus_asg=detail::integer_asg_wrap&lt; Mod &gt;{},.asg_traits=AsgTraits{} }&gt; profile_from</div><div class="ttdoc">Convenience variable template to make an IntegerBehaviorProfile for integral arithmetics.</div><div class="ttdef"><b>Definition</b> <a href="integer_8hpp_source.html#l00236">integer.hpp:236</a></div></div>
+<div class="ttc" id="anamespaceutils_1_1integral__behavior_html_a16c01446283f45b336955e3e2870dc98"><div class="ttname"><a href="#a16c01446283f45b336955e3e2870dc98">utils::integral_behavior::profile_from</a></div><div class="ttdeci">constexpr profile&lt;{ .plus=detail::integer_transform&lt; Plus, CommonTypeTrait &gt;{},.minus=detail::integer_transform&lt; Minus, CommonTypeTrait &gt;{},.multiplies=detail::integer_transform&lt; Mul, CommonTypeTrait &gt;{},.divides=detail::integer_transform&lt; Div, CommonTypeTrait &gt;{},.modulus=detail::integer_transform&lt; Mod, CommonTypeTrait &gt;{},.binary_traits=BinaryTraits{} }, { .plus_asg=detail::integer_asg_wrap&lt; Plus &gt;{},.minus_asg=detail::integer_asg_wrap&lt; Minus &gt;{},.multiplies_asg=detail::integer_asg_wrap&lt; Mul &gt;{},.divides_asg=detail::integer_asg_wrap&lt; Div &gt;{},.modulus_asg=detail::integer_asg_wrap&lt; Mod &gt;{},.asg_traits=AsgTraits{} }&gt; profile_from</div><div class="ttdoc">Convenience variable template to make an IntegerBehaviorProfile for integral arithmetics.</div><div class="ttdef"><b>Definition</b> <a href="integer_8hpp_source.html#l00241">integer.hpp:241</a></div></div>
 </div><!-- fragment -->
 <p>Throws an exception for any overflow (including division) and division by 0. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>Every arithmetic operation is defined under this trait. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00364">364</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00369">369</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 
 </div>
 </div>
@@ -219,7 +219,7 @@ template&lt;auto Plus, auto Minus, auto Mul, auto Div, auto Mod, template&lt; ty
 </li>
 </ol>
 
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00236">236</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00241">241</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 
 </div>
 </div>
@@ -244,12 +244,12 @@ template&lt;auto Plus, auto Minus, auto Mul, auto Div, auto Mod, template&lt; ty
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= <a class="code hl_variable" href="namespaceutils_1_1bit__behavior.html#a5a8f53fa0b20ac3bd53ca7b63e03439c">profile_from</a>&lt;</div>
 <div class="line">            std::plus{}, std::minus{}, std::multiplies{}, std::divides{}, std::modulus{}&gt;</div>
-<div class="ttc" id="anamespaceutils_1_1bit__behavior_html_a5a8f53fa0b20ac3bd53ca7b63e03439c"><div class="ttname"><a href="namespaceutils_1_1bit__behavior.html#a5a8f53fa0b20ac3bd53ca7b63e03439c">utils::bit_behavior::profile_from</a></div><div class="ttdeci">constexpr profile&lt;{ .bit_and=utils::detail::integer_transform&lt; BitAnd, CommonTypeTrait &gt;{},.bit_or=utils::detail::integer_transform&lt; BitOr, CommonTypeTrait &gt;{},.bit_xor=utils::detail::integer_transform&lt; BitXor, CommonTypeTrait &gt;{},.bit_not=BitNot,.binary_traits=BinaryTraits{} }, { .bit_and_asg=utils::detail::integer_asg_wrap&lt; BitAnd &gt;{},.bit_or_asg=utils::detail::integer_asg_wrap&lt; BitOr &gt;{},.bit_xor_asg=utils::detail::integer_asg_wrap&lt; BitXor &gt;{},.asg_traits=AsgTraits{} }&gt; profile_from</div><div class="ttdoc">Convenience variable template to make an IntegerBehaviorProfile for bit operations.</div><div class="ttdef"><b>Definition</b> <a href="integer_8hpp_source.html#l00430">integer.hpp:430</a></div></div>
+<div class="ttc" id="anamespaceutils_1_1bit__behavior_html_a5a8f53fa0b20ac3bd53ca7b63e03439c"><div class="ttname"><a href="namespaceutils_1_1bit__behavior.html#a5a8f53fa0b20ac3bd53ca7b63e03439c">utils::bit_behavior::profile_from</a></div><div class="ttdeci">constexpr profile&lt;{ .bit_and=utils::detail::integer_transform&lt; BitAnd, CommonTypeTrait &gt;{},.bit_or=utils::detail::integer_transform&lt; BitOr, CommonTypeTrait &gt;{},.bit_xor=utils::detail::integer_transform&lt; BitXor, CommonTypeTrait &gt;{},.bit_not=BitNot,.binary_traits=BinaryTraits{} }, { .bit_and_asg=utils::detail::integer_asg_wrap&lt; BitAnd &gt;{},.bit_or_asg=utils::detail::integer_asg_wrap&lt; BitOr &gt;{},.bit_xor_asg=utils::detail::integer_asg_wrap&lt; BitXor &gt;{},.asg_traits=AsgTraits{} }&gt; profile_from</div><div class="ttdoc">Convenience variable template to make an IntegerBehaviorProfile for bit operations.</div><div class="ttdef"><b>Definition</b> <a href="integer_8hpp_source.html#l00435">integer.hpp:435</a></div></div>
 </div><!-- fragment -->
 <p>Default C++ integral arithmetic rules, but the result type is determined by <code><a class="el" href="group__sane__common__type.html#structutils_1_1sane__common__type">utils::sane_common_type</a></code>. </p>
 <p>This prevents <code>(unsigned short)-1 * 2</code> from being undefined on a machine where <code>sizeof(int) == sizeof(short)</code>. It instead wraps around as expected. </p>
 
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00246">246</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00251">251</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 
 </div>
 </div>
@@ -277,7 +277,7 @@ template&lt;auto Plus, auto Minus, auto Mul, auto Div, auto Mod, template&lt; ty
 </div><!-- fragment -->
 <p>Default C++ integral arithmetic rules. </p>
 
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00239">239</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00244">244</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 
 </div>
 </div>
@@ -305,7 +305,7 @@ template&lt;auto Plus, auto Minus, auto Mul, auto Div, auto Mod, template&lt; ty
 </div><!-- fragment -->
 <p>Invokes undefined behavior for any overflow (even for unsigned types), in addition to standard C++ arithmetic rules. </p>
 
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00273">273</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00278">278</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 
 </div>
 </div>
@@ -332,11 +332,11 @@ template&lt;auto Plus, auto Minus, auto Mul, auto Div, auto Mod, template&lt; ty
 <div class="line">            std::plus{}, std::minus{}, std::multiplies{}, detail::wrap_divides{}, std::modulus{},</div>
 <div class="line">            meta::composite&lt;sane_common_type, std::make_unsigned&gt;::trait, sane_common_type,</div>
 <div class="line">            <a class="code hl_struct" href="structutils_1_1integral__behavior_1_1default__binary__op__traits.html">default_binary_op_traits&lt;sane_common_type, sane_common_type&gt;</a>&gt;</div>
-<div class="ttc" id="astructutils_1_1integral__behavior_1_1default__binary__op__traits_html"><div class="ttname"><a href="structutils_1_1integral__behavior_1_1default__binary__op__traits.html">utils::integral_behavior::default_binary_op_traits</a></div><div class="ttdoc">Default trait set for binary operators for utils::integral_behavior::profile_from.</div><div class="ttdef"><b>Definition</b> <a href="integer_8hpp_source.html#l00182">integer.hpp:182</a></div></div>
+<div class="ttc" id="astructutils_1_1integral__behavior_1_1default__binary__op__traits_html"><div class="ttname"><a href="structutils_1_1integral__behavior_1_1default__binary__op__traits.html">utils::integral_behavior::default_binary_op_traits</a></div><div class="ttdoc">Default trait set for binary operators for utils::integral_behavior::profile_from.</div><div class="ttdef"><b>Definition</b> <a href="integer_8hpp_source.html#l00187">integer.hpp:187</a></div></div>
 </div><!-- fragment -->
 <p>Wraps around for any overflow, even for signed types and division by -1. </p>
 
-<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00286">286</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="integer_8hpp_source.html#l00291">291</a> of file <a class="el" href="integer_8hpp_source.html">integer.hpp</a>.</p>
 
 </div>
 </div>

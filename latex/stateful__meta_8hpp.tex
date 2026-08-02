@@ -1,5 +1,10 @@
 \doxysection{stateful\+\_\+meta.\+hpp File Reference}
 \hypertarget{stateful__meta_8hpp}{}\label{stateful__meta_8hpp}\index{stateful\_meta.hpp@{stateful\_meta.hpp}}
+
+
+Stateful metaprogramming utilites.  
+
+
 {\ttfamily \#include $<$cstdint$>$}\newline
 Include dependency graph for stateful\+\_\+meta.\+hpp\+:
 \nopagebreak
@@ -20,6 +25,8 @@ This graph shows which files directly or indirectly include this file\+:
 
 
 \doxysubsection{Detailed Description}
+Stateful metaprogramming utilites. 
+
 This file contains utilities that enable stateful metaprogramming, which allows you to make compile-\/time {\bfseries{modifiable}} variables. This is done via a technique called "{}friend injection"{}.
 
 In this file, compile-\/time variables are named by types. That is, such variables are defined, accessed and modified via the types they are associated with. Note that you are allowed to use the same type to name variables of different categories. For example, you can define a {\ttfamily const\+\_\+var\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} and {\ttfamily \texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}counter\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} and they will be separate variables. There are three categories of variables\+: \tabulinesep=1mm

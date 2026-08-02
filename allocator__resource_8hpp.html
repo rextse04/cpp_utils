@@ -113,10 +113,13 @@ $(function(){initNavTree('allocator__resource_8hpp.html',''); initResizable(true
   <div class="headertitle"><div class="title">allocator_resource.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>std::pmr::memory_resource</code> wrapper for allocators.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;type_traits&gt;</code><br />
 <code>#include &lt;cstddef&gt;</code><br />
 <code>#include &lt;memory_resource&gt;</code><br />
-<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;new&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &quot;<a class="el" href="memory_8hpp_source.html">memory.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -124,32 +127,36 @@ Include dependency graph for allocator_resource.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="allocator__resource_8hpp__incl.png" border="0" usemap="#aallocators_2allocator__resource_8hpp" alt=""/></div>
 <map name="aallocators_2allocator__resource_8hpp" id="aallocators_2allocator__resource_8hpp">
-<area shape="rect" title=" " alt="" coords="152,5,282,46"/>
+<area shape="rect" title="std::pmr::memory_resource wrapper for allocators." alt="" coords="152,5,282,46"/>
 <area shape="rect" title=" " alt="" coords="5,94,87,120"/>
 <area shape="poly" title=" " alt="" coords="175,49,87,90,85,85,173,44"/>
-<area shape="rect" title=" " alt="" coords="56,168,121,193"/>
-<area shape="poly" title=" " alt="" coords="202,48,111,157,106,154,198,45"/>
+<area shape="rect" title=" " alt="" coords="67,168,132,193"/>
+<area shape="poly" title=" " alt="" coords="204,48,120,157,116,154,200,45"/>
 <area shape="rect" title=" " alt="" coords="328,94,452,120"/>
 <area shape="poly" title=" " alt="" coords="261,44,351,85,348,90,259,49"/>
-<area shape="rect" title=" " alt="" coords="144,168,212,193"/>
+<area shape="rect" title=" " alt="" coords="155,168,201,193"/>
 <area shape="poly" title=" " alt="" coords="214,47,187,153,182,152,209,46"/>
 <area shape="rect" title=" " alt="" coords="476,94,528,120"/>
 <area shape="poly" title=" " alt="" coords="283,41,462,91,461,96,281,47"/>
-<area shape="rect" href="memory_8hpp.html" title=" " alt="" coords="212,94,304,120"/>
+<area shape="rect" href="memory_8hpp.html" title="Utilities for managing raw memory storage." alt="" coords="212,94,304,120"/>
 <area shape="poly" title=" " alt="" coords="229,45,247,79,242,81,225,48"/>
-<area shape="poly" title=" " alt="" coords="230,123,133,164,131,159,228,118"/>
+<area shape="poly" title=" " alt="" coords="232,123,141,163,139,159,230,118"/>
 <area shape="poly" title=" " alt="" coords="246,122,204,159,201,155,243,118"/>
-<area shape="rect" title=" " alt="" coords="235,168,281,193"/>
+<area shape="rect" title=" " alt="" coords="224,168,292,193"/>
 <area shape="poly" title=" " alt="" coords="261,120,261,152,255,152,255,120"/>
-<area shape="rect" title=" " alt="" coords="305,168,379,193"/>
-<area shape="poly" title=" " alt="" coords="274,118,318,155,315,159,271,122"/>
-<area shape="rect" title=" " alt="" coords="404,168,478,193"/>
-<area shape="poly" title=" " alt="" coords="290,118,397,159,395,164,288,123"/>
+<area shape="rect" title=" " alt="" coords="316,168,390,193"/>
+<area shape="poly" title=" " alt="" coords="276,118,326,156,323,160,272,122"/>
+<area shape="rect" title=" " alt="" coords="414,168,488,193"/>
+<area shape="poly" title=" " alt="" coords="292,118,405,159,403,164,290,123"/>
 </map>
 </div>
 </div>
 <p><a href="allocator__resource_8hpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><code>std::pmr::memory_resource</code> wrapper for allocators. </p>
+
+<p class="definition">Definition in file <a class="el" href="allocator__resource_8hpp_source.html">allocator_resource.hpp</a>.</p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutils_1_1pmr_1_1allocator__resource.html">utils::pmr::allocator_resource&lt; Allocator &gt;</a></td></tr>

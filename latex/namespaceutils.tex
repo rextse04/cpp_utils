@@ -260,13 +260,13 @@ concept \mbox{\hyperlink{conceptutils_1_1lossless__convertible__to}{lossless\+\_
 concept \mbox{\hyperlink{conceptutils_1_1simple__allocator}{simple\+\_\+allocator}}
 \begin{DoxyCompactList}\small\item\em C++ named requirements\+: {\itshape Allocator} \end{DoxyCompactList}\item 
 concept \mbox{\hyperlink{conceptutils_1_1reservable__container}{reservable\+\_\+container}}
-\item 
+\begin{DoxyCompactList}\small\item\em C++ exposition-\/only template\+: {\itshape reservable-\/container}. \end{DoxyCompactList}\item 
 concept \mbox{\hyperlink{conceptutils_1_1appendable__container}{appendable\+\_\+container}}
-\item 
-concept \mbox{\hyperlink{conceptutils_1_1container__compatible__iterator}{container\+\_\+compatible\+\_\+iterator}}
-\item 
+\begin{DoxyCompactList}\small\item\em C++ exposition-\/only template\+: {\itshape container-\/appendable}. \end{DoxyCompactList}\item 
 concept \mbox{\hyperlink{conceptutils_1_1container__compatible__range}{container\+\_\+compatible\+\_\+range}}
-\item 
+\begin{DoxyCompactList}\small\item\em C++ exposition-\/only concept\+: {\itshape container-\/compatible-\/range}. \end{DoxyCompactList}\item 
+concept \mbox{\hyperlink{conceptutils_1_1container__compatible__iterator}{container\+\_\+compatible\+\_\+iterator}}
+\begin{DoxyCompactList}\small\item\em Determines if an iterator {\ttfamily I} is compatible with a container {\ttfamily T}. \end{DoxyCompactList}\item 
 concept \mbox{\hyperlink{conceptutils_1_1equiv__to}{equiv\+\_\+to}}
 \item 
 concept \mbox{\hyperlink{conceptutils_1_1explicitly__convertible__to}{explicitly\+\_\+convertible\+\_\+to}}
@@ -399,7 +399,7 @@ void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceutils_a8d2503c40d18bf1
 requires requires \{static\+\_\+cast$<$To$>$(static\+\_\+cast$<$void\texorpdfstring{$\ast$}{*}$>$(from));\}}\\constexpr To \mbox{\hyperlink{namespaceutils_a62531a4b1248dafd250d977cb1111ec4}{rcast}} (auto \texorpdfstring{$\ast$}{*}from) noexcept
 \begin{DoxyCompactList}\small\item\em {\ttfamily constexpr}-\/friendly pointer punning \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename C$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a838b0479484b30995e1d7e40f1cb529b}{container\+\_\+appender}} (C \&\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}})
-\item 
+\begin{DoxyCompactList}\small\item\em C++ exposition-\/only template\+: {\itshape container-\/appender}. \end{DoxyCompactList}\item 
 std\+::ostream \& \mbox{\hyperlink{namespaceutils_a610c726ab1f1a35f461b1d64c34e9f11}{operator$<$$<$}} (std\+::ostream \&os, const tagged$<$ static\+\_\+string\+\_\+tag $>$ auto \&str)
 \item 
 {\footnotesize template$<$typename T, typename U$>$ \newline
@@ -712,7 +712,7 @@ closed&\\
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00025}{25}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
 \Hypertarget{namespaceutils_aa52b5daba05b396d43967f83d7b2dadd}\index{utils@{utils}!segment\_tree\_traverse\_direction@{segment\_tree\_traverse\_direction}}
 \index{segment\_tree\_traverse\_direction@{segment\_tree\_traverse\_direction}!utils@{utils}}
@@ -744,7 +744,7 @@ both&\\
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00076}{76}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00081}{81}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
 
 \Hypertarget{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}\index{utils@{utils}!type\_qualifiers@{type\_qualifiers}}
 \index{type\_qualifiers@{type\_qualifiers}!utils@{utils}}
@@ -803,7 +803,7 @@ If it is possible to fit a storage of {\ttfamily size} in \mbox{[} {\ttfamily pt
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{memory_8hpp_source_l00028}{28}} of file \mbox{\hyperlink{memory_8hpp_source}{memory.\+hpp}}.
+Definition at line \mbox{\hyperlink{memory_8hpp_source_l00033}{33}} of file \mbox{\hyperlink{memory_8hpp_source}{memory.\+hpp}}.
 
 \Hypertarget{namespaceutils_aa0aaad636b78156361f43a4651536d56}\index{utils@{utils}!as\_const@{as\_const}}
 \index{as\_const@{as\_const}!utils@{utils}}
@@ -970,7 +970,11 @@ auto utils\+::container\+\_\+appender (\begin{DoxyParamCaption}\item[{C \&}]{c}{
 
 
 
-Definition at line \mbox{\hyperlink{ranges_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{ranges_8hpp_source}{ranges.\+hpp}}.
+C++ exposition-\/only template\+: {\itshape container-\/appender}. 
+
+
+
+Definition at line \mbox{\hyperlink{ranges_8hpp_source_l00037}{37}} of file \mbox{\hyperlink{ranges_8hpp_source}{ranges.\+hpp}}.
 
 \Hypertarget{namespaceutils_ac60b73bc9e229724ebdb31555e939edb}\index{utils@{utils}!forward\_stored@{forward\_stored}}
 \index{forward\_stored@{forward\_stored}!utils@{utils}}
@@ -1005,7 +1009,7 @@ Make a search key for container {\ttfamily C} from {\ttfamily Key}, converting i
 \end{DoxyTemplParams}
 
 
-Definition at line \mbox{\hyperlink{containers_2type_8hpp_source_l00097}{97}} of file \mbox{\hyperlink{containers_2type_8hpp_source}{type.\+hpp}}.
+Definition at line \mbox{\hyperlink{containers_2type_8hpp_source_l00102}{102}} of file \mbox{\hyperlink{containers_2type_8hpp_source}{type.\+hpp}}.
 
 \Hypertarget{namespaceutils_ad2a4f0996740774f3ec83af943648b15}\index{utils@{utils}!operator,@{operator,}}
 \index{operator,@{operator,}!utils@{utils}}
@@ -1021,7 +1025,7 @@ Convenience operator overload to construct an interval.
 
 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00220}{220}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00225}{225}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
 \Hypertarget{namespaceutils_a610c726ab1f1a35f461b1d64c34e9f11}\index{utils@{utils}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!utils@{utils}}
@@ -1046,7 +1050,7 @@ Convenience operator overload to construct an interval endpoint.
 
 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00089}{89}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00094}{94}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
 \Hypertarget{namespaceutils_a4515012627113facd242ccb5f3d59374}\index{utils@{utils}!pow@{pow}}
 \index{pow@{pow}!utils@{utils}}
@@ -1080,7 +1084,7 @@ This does not guard against UB.
 \end{DoxyRemark}
 
 
-Definition at line \mbox{\hyperlink{memory_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{memory_8hpp_source}{memory.\+hpp}}.
+Definition at line \mbox{\hyperlink{memory_8hpp_source_l00048}{48}} of file \mbox{\hyperlink{memory_8hpp_source}{memory.\+hpp}}.
 
 \Hypertarget{namespaceutils_adb611abcc25122b499fdd1fd2c55419f}\index{utils@{utils}!segment\_tree@{segment\_tree}}
 \index{segment\_tree@{segment\_tree}!utils@{utils}}
@@ -1222,7 +1226,7 @@ Make classes that provide a {\ttfamily swap} method swappable.
 
 Visible to any namespace by ADL. 
 
-Definition at line \mbox{\hyperlink{swap_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{swap_8hpp_source}{swap.\+hpp}}.
+Definition at line \mbox{\hyperlink{swap_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{swap_8hpp_source}{swap.\+hpp}}.
 
 \Hypertarget{namespaceutils_a197cc51bcfc6c07cffed9890ac0f92e9}\index{utils@{utils}!unique\_resource@{unique\_resource}}
 \index{unique\_resource@{unique\_resource}!utils@{utils}}
@@ -1324,7 +1328,7 @@ C++ standard exposition-\/only functor\+: {\itshape synth-\/three-\/way}.
 
 
 
-Definition at line \mbox{\hyperlink{compare_8hpp_source_l00007}{7}} of file \mbox{\hyperlink{compare_8hpp_source}{compare.\+hpp}}.
+Definition at line \mbox{\hyperlink{compare_8hpp_source_l00012}{12}} of file \mbox{\hyperlink{compare_8hpp_source}{compare.\+hpp}}.
 
 \Hypertarget{namespaceutils_a026f0efc276a6d7eba427c611cd569ff}\index{utils@{utils}!trim\_v@{trim\_v}}
 \index{trim\_v@{trim\_v}!utils@{utils}}

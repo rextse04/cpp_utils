@@ -1,5 +1,5 @@
 <map id="allocators/arena_allocator.hpp" name="allocators/arena_allocator.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="332,5,525,31"/>
+<area shape="rect" id="Node000001" title="Arena allocator." alt="" coords="332,5,525,31"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,153,70,178"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="331,25,280,31,224,41,168,58,116,81,81,109,55,141,51,138,77,106,113,77,166,53,223,36,279,25,331,19"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="494,153,562,178"/>
@@ -12,11 +12,11 @@
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="431,31,431,63,426,63,426,31"/>
 <area shape="rect" id="Node000007" title=" " alt="" coords="771,153,832,178"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="525,18,609,22,696,32,770,50,799,62,818,77,826,92,827,108,818,140,813,138,822,108,821,93,814,81,796,67,769,55,695,38,608,28,525,23"/>
-<area shape="rect" id="Node000008" href="$atomic_8hpp.html" title=" " alt="" coords="719,79,804,105"/>
+<area shape="rect" id="Node000008" href="$atomic_8hpp.html" title="Utilities for atomics." alt="" coords="719,79,804,105"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="486,29,705,76,704,81,485,34"/>
-<area shape="rect" id="Node000009" href="$allocator__base_8hpp.html" title=" " alt="" coords="566,79,696,105"/>
+<area shape="rect" id="Node000009" href="$allocator__base_8hpp.html" title="Common utilities for custom allocators." alt="" coords="566,79,696,105"/>
 <area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="463,29,583,71,581,76,462,34"/>
-<area shape="rect" id="Node000010" href="$memory_8hpp.html" title=" " alt="" coords="145,79,236,105"/>
+<area shape="rect" id="Node000010" href="$memory_8hpp.html" title="Utilities for managing raw memory storage." alt="" coords="145,79,236,105"/>
 <area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="389,34,247,77,245,71,387,29"/>
 <area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="770,104,790,138,785,140,766,106"/>
 <area shape="poly" id="edge10_Node000009_Node000003" title=" " alt="" coords="615,107,559,146,556,141,612,103"/>

@@ -30,15 +30,8 @@ In the context of this class, "{}read-\/only access"{} is synonymous with const 
 \end{DoxyRemark}
 
 
-Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00032}{32}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00037}{37}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
 
-\doxysubsubsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-class \mbox{\hyperlink{classutils_1_1unique__resource_1_1permit}{permit}}
-\begin{DoxyCompactList}\small\item\em A proxy through which the user uses the resource to enforce thread safety. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classutils_1_1unique__resource_1_1permit__ptr}{permit\+\_\+ptr}}
-\begin{DoxyCompactList}\small\item\em A fancy pointer that holds a lock throughout its lifetime. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -57,7 +50,7 @@ constexpr T \& \mbox{\hyperlink{classutils_1_1unique__resource_ad12e7287dab711e2
 \begin{DoxyCompactList}\small\item\em Get read/write access to the resource, bypassing semaphore and mutex. \end{DoxyCompactList}\item 
 constexpr const T \& \mbox{\hyperlink{classutils_1_1unique__resource_afbd4a94860875eecdfb224a4ce2b85da}{raw\+\_\+access}} () const noexcept
 \begin{DoxyCompactList}\small\item\em Get read access to the resource, bypassing mutex. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classutils_1_1unique__resource_1_1permit}{permit}} \mbox{\hyperlink{classutils_1_1unique__resource_a280eb9b07ccbcd88ebac5d3038847294}{acquire}} ()
+permit \mbox{\hyperlink{classutils_1_1unique__resource_a280eb9b07ccbcd88ebac5d3038847294}{acquire}} ()
 \begin{DoxyCompactList}\small\item\em Blocks until a permit is issued. \end{DoxyCompactList}\item 
 permit\+\_\+opt \mbox{\hyperlink{classutils_1_1unique__resource_a9512f9345a9ff5c0e81c1e0d2ad00316}{try\+\_\+acquire}} () noexcept
 \begin{DoxyCompactList}\small\item\em Try to acquire permit once. \end{DoxyCompactList}\item 
@@ -91,7 +84,7 @@ using \mbox{\hyperlink{classutils_1_1unique__resource}{utils\+::unique\+\_\+reso
 
 
 
-Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00040}{40}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
 
 \Hypertarget{classutils_1_1unique__resource_add226441a6c8860e16acf90bf7d98b52}\index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$}!value\_type@{value\_type}}
 \index{value\_type@{value\_type}!utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$}}
@@ -102,7 +95,7 @@ using \mbox{\hyperlink{classutils_1_1unique__resource}{utils\+::unique\+\_\+reso
 
 
 
-Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
 
 
 
@@ -129,7 +122,7 @@ Convenience constructor for enabling synchronization.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00107}{107}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00110}{110}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
 
 
 
@@ -139,7 +132,7 @@ Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00107}{107}} of fil
 \doxysubsubsection{\texorpdfstring{acquire()}{acquire()}}
 {\footnotesize\ttfamily \label{classutils_1_1unique__resource_a280eb9b07ccbcd88ebac5d3038847294} 
 template$<$typename T, bool Sync = false, typename Semaphore = std\+::counting\+\_\+semaphore$<$$>$, typename Shared\+Mutex = std\+::shared\+\_\+mutex$>$ \\
-\mbox{\hyperlink{classutils_1_1unique__resource_1_1permit}{permit}} \mbox{\hyperlink{classutils_1_1unique__resource}{utils\+::unique\+\_\+resource}}$<$ T, Sync, Semaphore, Shared\+Mutex $>$\+::acquire (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+permit \mbox{\hyperlink{classutils_1_1unique__resource}{utils\+::unique\+\_\+resource}}$<$ T, Sync, Semaphore, Shared\+Mutex $>$\+::acquire (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -147,7 +140,7 @@ Blocks until a permit is issued.
 
 
 
-Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00133}{133}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00136}{136}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
 
 \Hypertarget{classutils_1_1unique__resource_aaa6d5a535a66b7425c9d2195ab88612b}\index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$}!explicit@{explicit}}
 \index{explicit@{explicit}!utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$}}
@@ -171,7 +164,7 @@ Main constructor.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00116}{116}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00119}{119}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
 
 \Hypertarget{classutils_1_1unique__resource_a8a00de7ff5cd50b4fb33ef92879607eb}\index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
 \index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$}}
@@ -186,7 +179,7 @@ Get read access to the resource.
 
 Only available if {\ttfamily sync} is false. 
 
-Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00123}{123}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00126}{126}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
 
 \Hypertarget{classutils_1_1unique__resource_aadcf5564c7b2df5233d3a2705c53f91e}\index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$}!operator-\/$>$@{operator-\/$>$}}
 \index{operator-\/$>$@{operator-\/$>$}!utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$}}
@@ -197,7 +190,7 @@ std\+::add\+\_\+pointer\+\_\+t$<$ const T $>$ \mbox{\hyperlink{classutils_1_1uni
 
 
 
-Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00124}{124}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00127}{127}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
 
 \Hypertarget{classutils_1_1unique__resource_afbd4a94860875eecdfb224a4ce2b85da}\index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$}!raw\_access@{raw\_access}}
 \index{raw\_access@{raw\_access}!utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$}}
@@ -215,7 +208,7 @@ Dangerous operation if {\ttfamily sync} is true. {\ttfamily operator\texorpdfstr
 \end{DoxyWarning}
 
 
-Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00131}{131}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00134}{134}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
 
 \Hypertarget{classutils_1_1unique__resource_ad12e7287dab711e2b6a92d79933497a5}\index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$}!raw\_access@{raw\_access}}
 \index{raw\_access@{raw\_access}!utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$}}
@@ -233,7 +226,7 @@ Dangerous operation.
 \end{DoxyWarning}
 
 
-Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00127}{127}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00130}{130}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
 
 \Hypertarget{classutils_1_1unique__resource_a9512f9345a9ff5c0e81c1e0d2ad00316}\index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$}!try\_acquire@{try\_acquire}}
 \index{try\_acquire@{try\_acquire}!utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$}}
@@ -248,7 +241,7 @@ Try to acquire permit once.
 
 This method first checks if a permit is instantly available. If yes, returns the issued permit, otherwise returns a {\ttfamily std\+::nullopt} . No blocking occurs nevertheless. 
 
-Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00142}{142}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00145}{145}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
 
 \Hypertarget{classutils_1_1unique__resource_a5ef3b3a995c95f935fa180b07e37817e}\index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$}!try\_acquire\_for@{try\_acquire\_for}}
 \index{try\_acquire\_for@{try\_acquire\_for}!utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$}}
@@ -264,7 +257,7 @@ Try to acquire permit with timeout.
 
 Wait for {\ttfamily timeout} for a permit, returns a permit once it is issued. If a permit is still not available, returns a {\ttfamily std\+::nullopt} . 
 
-Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00150}{150}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00153}{153}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
 
 \Hypertarget{classutils_1_1unique__resource_aca78283c857ede0fa4d8c5fc136e11e8}\index{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$}!try\_acquire\_until@{try\_acquire\_until}}
 \index{try\_acquire\_until@{try\_acquire\_until}!utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$@{utils::unique\_resource$<$ T, Sync, Semaphore, SharedMutex $>$}}
@@ -280,7 +273,7 @@ Try to acquire permit until specified time.
 
 Wait until {\ttfamily ddl} for a permit, returns a permit once it is issued. If a permit is still not available, returns a {\ttfamily std\+::nullopt} . 
 
-Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00158}{158}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00161}{161}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
 
 
 
@@ -294,7 +287,7 @@ bool \mbox{\hyperlink{classutils_1_1unique__resource}{utils\+::unique\+\_\+resou
 
 
 
-Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
+Definition at line \mbox{\hyperlink{concurrency_8hpp_source_l00041}{41}} of file \mbox{\hyperlink{concurrency_8hpp_source}{concurrency.\+hpp}}.
 
 
 

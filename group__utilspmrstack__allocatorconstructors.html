@@ -168,7 +168,7 @@ template&lt;typename U&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00050">50</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00055">55</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -205,7 +205,7 @@ template&lt;typename T, bool Sync = false&gt; </div>
 <p>Allocates storage for <code>T[n]</code> with specified alignment from the underlying buffer. </p>
 <p>The behavior is undefined if <code>alignment</code> is less than that of <code>T</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00105">105</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00111">111</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -246,7 +246,7 @@ template&lt;typename T, bool Sync = false&gt; </div>
 <p>Deallocates previously allocated memory and recycles it in a LIFO manner. </p>
 <p>Formally, let \((M_1,M_2,...,M_k)\) be the memory chunks previously allocated by any allocator equal to <code>*this</code> which have not been <em>recycled</em>, in the order of allocation. A memory chunk is <em>recycled</em> if <code>allocate</code> can use its storage. As noted in the documentation of the class, deallocation in <code><a class="el" href="classutils_1_1pmr_1_1stack__allocator.html" title="An allocator which allocates memory from a pre-allocated buffer in a lazy-stack-like manner.">stack_allocator</a></code> does not always recycle memory but may simply mark it as <em>removed</em>. Let $D_i$ indicate if $M_i$ has been removed for \(i\in[k]\). A call to <code>deallocate</code> first finds \(t\) such that <code>p</code> points to \(M_t\), marks the chunk as removed, then recycles all chunks in the set \(\{M_i\mid D_i,...,D_k\}\). </p><dl class="section remark"><dt>Remarks</dt><dd>The alignment argument is unused. It is defined to deallocate a pointer obtained through aligned allocation without passing the required alignment. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00144">144</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00150">150</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -305,7 +305,7 @@ template&lt;typename T, bool Sync = false&gt; </div>
 
 <p>Deallocates the underlying buffer previously allocated through a memory resource. </p>
 
-<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00099">99</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00105">105</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -346,7 +346,7 @@ template&lt;typename T, bool Sync = false&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00079">79</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00085">85</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -388,7 +388,7 @@ template&lt;typename T, bool Sync = false&gt; </div>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>The construction can throw even if <code>space</code> is not less than the size of the control structure depending on the alignment of <code>buf</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00069">69</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00075">75</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -407,7 +407,7 @@ template&lt;typename T, bool Sync = false&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00092">92</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stack__allocator_8hpp_source.html#l00098">98</a> of file <a class="el" href="stack__allocator_8hpp_source.html">stack_allocator.hpp</a>.</p>
 
 </div>
 </div>
