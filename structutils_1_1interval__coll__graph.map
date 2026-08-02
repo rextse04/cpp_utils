@@ -1,7 +1,0 @@
-<map id="utils::interval&lt; L, R &gt;" name="utils::interval&lt; L, R &gt;">
-<area shape="rect" id="Node000001" title="An interval defined by a left endpoint and a right endpoint." alt="" coords="127,94,266,120"/>
-<area shape="rect" id="Node000002" href="$structutils_1_1interval__endpoint.html" title=" " alt="" coords="5,5,185,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,39,184,92,181,96,119,43"/>
-<area shape="rect" id="Node000003" href="$structutils_1_1interval__endpoint.html" title=" " alt="" coords="209,5,389,31"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="275,43,212,96,209,92,272,39"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="utils::bit_op_functors&lt; BitAnd, BitOr, BitXor, BitNot, BinaryTraits, UnaryTraits &gt;" name="utils::bit_op_functors&lt; BitAnd, BitOr, BitXor, BitNot, BinaryTraits, UnaryTraits &gt;">
-<area shape="rect" id="Node000001" title="OperatorFunctorSetTemplate for utils::bit_op." alt="" coords="36,109,258,165"/>
-<area shape="rect" id="Node000002" href="$structutils_1_1default__binary__op__traits.html" title="The default trait set for binary operators, except assignment and prefix operators." alt="" coords="5,5,137,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,57,130,107,126,110,91,60"/>
-<area shape="rect" id="Node000003" href="$structutils_1_1default__unary__op__traits.html" title="The default trait set for unary operators, except postfix operators." alt="" coords="160,5,288,46"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="209,61,192,87,173,110,169,107,187,83,204,58"/>
-</map>

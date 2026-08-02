@@ -152,10 +152,11 @@ var hierarchy =
         [ "utils::is_integer_like< T >", "group__is__integer__like.html#structutils_1_1is__integer__like", null ]
       ] ],
       [ "utils::is_template_instance< Tmpl, Tmpl< Ts... > >", "group__utilsis__template__instance.html#structutils_1_1is__template__instance_3_01Tmpl_00_01Tmpl_3_01Ts_8_8_8_01_4_01_4", null ],
-      [ "utils::meta::is_tuple< std::tuple< Ts... > >", "group__metais__tuple.html#structutils_1_1meta_1_1is__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4", null ],
+      [ "utils::meta::detail::is_tuple< T >", null, [
+        [ "utils::meta::is_tuple< T >", "group__metais__tuple.html#structutils_1_1meta_1_1is__tuple", null ]
+      ] ],
       [ "utils::always_false<... >", "structutils_1_1always__false.html", null ],
-      [ "utils::is_template_instance< typename, typename >", "group__utilsis__template__instance.html#structutils_1_1is__template__instance", null ],
-      [ "utils::meta::is_tuple< T >", "group__metais__tuple.html#structutils_1_1meta_1_1is__tuple", null ]
+      [ "utils::is_template_instance< typename, typename >", "group__utilsis__template__instance.html#structutils_1_1is__template__instance", null ]
     ] ],
     [ "utils::fix_op_functors< PreInc, PostInc, PreDec, PostDec, PrefixTraits, UnaryTraits >", "structutils_1_1fix__op__functors.html", null ],
     [ "utils::fix_ops< Funcs >", "structutils_1_1fix__ops.html", null ],
@@ -377,8 +378,7 @@ var hierarchy =
       [ "utils::default_binary_op_traits::constraint< typename, typename, typename >", "structutils_1_1default__binary__op__traits_1_1constraint.html", null ],
       [ "utils::default_unary_op_traits::constraint< typename >", "structutils_1_1default__unary__op__traits_1_1constraint.html", null ],
       [ "utils::detail::is_integer_like< T >", null, null ],
-      [ "utils::is_template_instance< Tmpl, Tmpl< Ts... > >", "group__utilsis__template__instance.html#structutils_1_1is__template__instance_3_01Tmpl_00_01Tmpl_3_01Ts_8_8_8_01_4_01_4", null ],
-      [ "utils::meta::is_tuple< std::tuple< Ts... > >", "group__metais__tuple.html#structutils_1_1meta_1_1is__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4", null ]
+      [ "utils::is_template_instance< Tmpl, Tmpl< Ts... > >", "group__utilsis__template__instance.html#structutils_1_1is__template__instance_3_01Tmpl_00_01Tmpl_3_01Ts_8_8_8_01_4_01_4", null ]
     ] ],
     [ "std::type_identity", null, [
       [ "utils::default_prefix_op_traits::result< Self >", "structutils_1_1default__prefix__op__traits_1_1result.html", null ]

@@ -1,7 +1,0 @@
-<map id="utils::pmr::allocator_resource&lt; Allocator &gt;" name="utils::pmr::allocator_resource&lt; Allocator &gt;">
-<area shape="rect" id="Node000001" title="A std::pmr::memory_resource which reserves specified amount of memory and allocates it using a given ..." alt="" coords="91,79,242,120"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,182,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,41,151,77,147,80,113,44"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="205,5,278,31"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="222,44,187,80,183,77,218,41"/>
-</map>

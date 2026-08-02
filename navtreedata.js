@@ -27,7 +27,6 @@ var NAVTREE =
   [ "cpp_utils", "index.html", [
     [ "Named Requirements", "named_reqs.html", "named_reqs" ],
     [ "Deprecated List", "deprecated.html", null ],
-    [ "Topics", "topics.html", "topics" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -65,11 +64,10 @@ var NAVTREEINDEX =
 [
 "BufferAllocator.html",
 "classutils_1_1segment__tree.html#ac6a11dfb3ec26ccbf5564ee8de6fb07c",
-"group__integeroperatorcomparison.html#gaf85e7fb0e0b45e09342748f906eace2f",
-"named_reqs.html#autotoc_md5",
-"structutils_1_1basic__static__string.html#a59e545991ba4792bc8c34f2176c9a60d",
-"structutils_1_1function__decay_3_01R_07Args_8_8_8_08_4.html",
-"structutils_1_1shift__behavior_1_1profile.html"
+"named_reqs.html",
+"structutils_1_1basic__static__string.html#a5785fccbaac58b24c5447812467c2bb3",
+"structutils_1_1function__decay_3_01R_07Args_8_8_8_08_01noexcept_01_4.html",
+"structutils_1_1shift__behavior_1_1default__binary__op__traits_1_1result.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

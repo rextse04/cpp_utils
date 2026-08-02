@@ -1,9 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="Node000000" title=" " alt="" coords="5,78,53,104"/>
 <area shape="rect" id="Node000001" href="$group__metastrict__subset__of.html#structutils_1_1meta_1_1bind__back_1_1trait" title=" " alt="" coords="101,5,269,46"/>
-<area shape="poly" id="edge54_Node000000_Node000001" title=" " alt="" coords="66,72,100,57,129,44,131,49,102,61,68,76"/>
+<area shape="poly" id="edge53_Node000000_Node000001" title=" " alt="" coords="66,72,100,57,129,44,131,49,102,61,68,76"/>
 <area shape="rect" id="Node000002" href="$group__metastrict__subset__of.html#structutils_1_1meta_1_1bind__front_1_1trait" title=" " alt="" coords="101,71,269,111"/>
-<area shape="poly" id="edge55_Node000000_Node000002" title=" " alt="" coords="68,88,100,88,100,94,68,94"/>
+<area shape="poly" id="edge54_Node000000_Node000002" title=" " alt="" coords="68,88,100,88,100,94,68,94"/>
 <area shape="rect" id="Node000003" href="$group__metareduce.html#structutils_1_1meta_1_1reduce_3_01Trait_00_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4" title=" " alt="" coords="122,135,248,191"/>
-<area shape="poly" id="edge56_Node000000_Node000003" title=" " alt="" coords="68,106,124,132,122,137,66,110"/>
+<area shape="poly" id="edge55_Node000000_Node000003" title=" " alt="" coords="68,106,124,132,122,137,66,110"/>
 </map>

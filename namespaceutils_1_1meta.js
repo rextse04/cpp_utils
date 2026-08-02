@@ -15,7 +15,6 @@ var namespaceutils_1_1meta =
     [ "infer", "group__metainfer.html#structutils_1_1meta_1_1infer", "group__metainfer_structutils_1_1meta_1_1infer" ],
     [ "insert", "group__metainsert.html#structutils_1_1meta_1_1insert", null ],
     [ "is_tuple", "group__metais__tuple.html#structutils_1_1meta_1_1is__tuple", null ],
-    [ "is_tuple< std::tuple< Ts... > >", "group__metais__tuple.html#structutils_1_1meta_1_1is__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4", null ],
     [ "make_tuple", "group__metamake__tuple.html#structutils_1_1meta_1_1make__tuple", null ],
     [ "map", "group__metamap.html#structutils_1_1meta_1_1map", null ],
     [ "pack", "group__metapack.html#structutils_1_1meta_1_1pack", "group__metapack_structutils_1_1meta_1_1pack" ],

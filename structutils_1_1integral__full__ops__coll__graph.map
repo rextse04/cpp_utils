@@ -1,7 +1,0 @@
-<map id="utils::integral_full_ops&lt; Funcs, AsgFuncs &gt;" name="utils::integral_full_ops&lt; Funcs, AsgFuncs &gt;">
-<area shape="rect" id="Node000001" title="A convenience template inheriting from utils::integral_full_ops and utils::integral_asg_ops." alt="" coords="51,94,225,135"/>
-<area shape="rect" id="Node000002" href="$structutils_1_1integral__ops.html" title=" " alt="" coords="5,5,127,46"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,56,124,92,120,95,90,60"/>
-<area shape="rect" id="Node000003" href="$structutils_1_1integral__asg__ops.html" title=" " alt="" coords="151,5,272,46"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="187,60,157,95,153,92,183,56"/>
-</map>

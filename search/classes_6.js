@@ -63,6 +63,5 @@ var searchData=
   ['is_5ftemplate_5finstance_60',['is_template_instance',['../group__utilsis__template__instance.html#structutils_1_1is__template__instance',1,'utils']]],
   ['is_5ftemplate_5finstance_3c_20tmpl_2c_20tmpl_3c_20ts_2e_2e_2e_20_3e_20_3e_61',['is_template_instance&lt; Tmpl, Tmpl&lt; Ts... &gt; &gt;',['../group__utilsis__template__instance.html#structutils_1_1is__template__instance_3_01Tmpl_00_01Tmpl_3_01Ts_8_8_8_01_4_01_4',1,'utils']]],
   ['is_5ftuple_62',['is_tuple',['../group__metais__tuple.html#structutils_1_1meta_1_1is__tuple',1,'utils::meta']]],
-  ['is_5ftuple_3c_20std_3a_3atuple_3c_20ts_2e_2e_2e_20_3e_20_3e_63',['is_tuple&lt; std::tuple&lt; Ts... &gt; &gt;',['../group__metais__tuple.html#structutils_1_1meta_1_1is__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4',1,'utils::meta']]],
-  ['iterator_5fcategory_64',['iterator_category',['../structutils_1_1iterator__category.html',1,'utils']]]
+  ['iterator_5fcategory_63',['iterator_category',['../structutils_1_1iterator__category.html',1,'utils']]]
 ];
