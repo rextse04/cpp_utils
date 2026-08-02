@@ -1,7 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,140,117,167"/>
-<area shape="rect" id="node2" href="$structstd_1_1uses__allocator_3_01utils_1_1segment__tree_3_01Args_8_8_8_01_4_00_01Alloc_01_4.html" title=" " alt="" coords="199,5,341,61"/>
-<area shape="rect" id="node3" href="$structutils_1_1bit__behavior_1_1default__asg__op__traits_1_1constraint.html" title="a @= b passes constraint if and only if a is an lvalue reference and a and b have the same width." alt="" coords="189,85,351,141"/>
-<area shape="rect" id="node4" href="$structutils_1_1integral__behavior_1_1default__asg__op__traits_1_1constraint.html" title=" " alt="" coords="189,165,351,221"/>
-<area shape="rect" id="node5" href="$structutils_1_1integral__behavior_1_1default__binary__op__traits_1_1constraint.html" title=" " alt="" coords="165,246,375,317"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,35,132,60"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="180,27,336,68"/>
+<area shape="poly" id="edge12_Node000000_Node000001" title=" " alt="" coords="147,45,179,45,179,50,147,50"/>
+<area shape="rect" id="Node000002" href="$group__sane__common__type.html" title=" " alt="" coords="391,5,513,31"/>
+<area shape="poly" id="edge13_Node000001_Node000002" title=" " alt="" coords="351,31,390,25,391,30,352,36"/>
+<area shape="rect" id="Node000003" href="$group__sane__common__type.html#structutils_1_1sane__common__type" title=" " alt="" coords="384,55,520,96"/>
+<area shape="poly" id="edge14_Node000001_Node000003" title=" " alt="" coords="352,58,384,63,383,68,351,64"/>
 </map>

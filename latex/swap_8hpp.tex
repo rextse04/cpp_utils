@@ -1,5 +1,5 @@
-\hypertarget{swap_8hpp}{}\doxysection{swap.\+hpp File Reference}
-\label{swap_8hpp}\index{swap.hpp@{swap.hpp}}
+\doxysection{swap.\+hpp File Reference}
+\hypertarget{swap_8hpp}{}\label{swap_8hpp}\index{swap.hpp@{swap.hpp}}
 This graph shows which files directly or indirectly include this file\+:
 \nopagebreak
 \begin{figure}[H]
@@ -8,17 +8,6 @@ This graph shows which files directly or indirectly include this file\+:
 \includegraphics[width=350pt]{swap_8hpp__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsection*{Namespaces}
-\begin{DoxyCompactItemize}
-\item 
-namespace \mbox{\hyperlink{namespaceutils}{utils}}
-\end{DoxyCompactItemize}
-\doxysubsection*{Functions}
-\begin{DoxyCompactItemize}
-\item 
-{\footnotesize template$<$typename T , typename U $>$ \newline
-requires requires(T\& t, U\& u) \{ t.\+swap(u); \}}\\constexpr decltype(auto) \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{utils\+::swap}} (T \&t, U \&u) noexcept(noexcept(t.\+swap(u)))
-\begin{DoxyCompactList}\small\item\em Make classes that provide a {\ttfamily swap} method swappable. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -26,3 +15,14 @@ This file is included by all headers that contain a class with a {\ttfamily swap
 
 Definition in file \mbox{\hyperlink{swap_8hpp_source}{swap.\+hpp}}.
 
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceutils}{utils}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T, typename U$>$ \newline
+requires requires(T\& t, U\& u) \{ t.\+swap(u); \}}\\constexpr decltype(auto) \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{utils\+::swap}} (T \&t, U \&u) noexcept(noexcept(t.\+swap(u)))
+\begin{DoxyCompactList}\small\item\em Make classes that provide a {\ttfamily swap} method swappable. \end{DoxyCompactList}\end{DoxyCompactItemize}

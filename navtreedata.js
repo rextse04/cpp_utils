@@ -27,7 +27,7 @@ var NAVTREE =
   [ "cpp_utils", "index.html", [
     [ "Named Requirements", "named_reqs.html", "named_reqs" ],
     [ "Deprecated List", "deprecated.html", null ],
-    [ "Modules", "modules.html", "modules" ],
+    [ "Topics", "topics.html", "topics" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -48,7 +48,7 @@ var NAVTREE =
         [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ],
-        [ "Related Functions", "functions_rela.html", null ]
+        [ "Related Symbols", "functions_rela.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -64,13 +64,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "BufferAllocator.html",
-"classutils_1_1segment__tree.html#ab86157c84f3a80751825dfee73dbe435",
-"functions_n.html",
-"index.html",
-"segment__tree_8hpp.html#aa52b5daba05b396d43967f83d7b2daddaf6cb3e816496528d4187db53bc66567f",
-"structutils_1_1basic__static__string__view.html#a3e8d4f8bf2d58f046385500ea9931f33",
-"structutils_1_1lambda__decay.html"
+"classutils_1_1segment__tree.html#ac6a11dfb3ec26ccbf5564ee8de6fb07c",
+"group__integeroperatorcomparison.html#gaf85e7fb0e0b45e09342748f906eace2f",
+"named_reqs.html#autotoc_md5",
+"structutils_1_1basic__static__string.html#a59e545991ba4792bc8c34f2176c9a60d",
+"structutils_1_1function__decay_3_01R_07Args_8_8_8_08_4.html",
+"structutils_1_1shift__behavior_1_1profile.html"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+var SYNCONMSG = 'click to disable panel synchronization';
+var SYNCOFFMSG = 'click to enable panel synchronization';

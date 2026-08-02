@@ -1,5 +1,5 @@
-\hypertarget{interval_8hpp}{}\doxysection{containers/interval.hpp File Reference}
-\label{interval_8hpp}\index{containers/interval.hpp@{containers/interval.hpp}}
+\doxysection{containers/interval.hpp File Reference}
+\hypertarget{interval_8hpp}{}\label{interval_8hpp}\index{containers/interval.hpp@{containers/interval.hpp}}
 {\ttfamily \#include $<$type\+\_\+traits$>$}\newline
 {\ttfamily \#include $<$concepts$>$}\newline
 {\ttfamily \#include $<$functional$>$}\newline
@@ -21,30 +21,30 @@ This graph shows which files directly or indirectly include this file\+:
 \includegraphics[width=194pt]{interval_8hpp__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsection*{Classes}
+\doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structutils_1_1interval__endpoint}{utils\+::interval\+\_\+endpoint$<$ T $>$}}
 \begin{DoxyCompactList}\small\item\em Represents an endpoint of an interval, consisting of a value and its type (open or closed). \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1interval}{utils\+::interval$<$ L, R $>$}}
 \begin{DoxyCompactList}\small\item\em An interval defined by a left endpoint and a right endpoint. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Namespaces}
+\doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespaceutils}{utils}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Enumerations}
+\doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
 enum class \mbox{\hyperlink{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2e}{utils\+::interval\+\_\+endpoint\+\_\+type}} \+: unsigned char \{ \mbox{\hyperlink{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2ea7cef8a734855777c2a9d0caf42666e69}{utils\+::open}}
 , \mbox{\hyperlink{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2ea349e686330723975502e9ef4f939a5ac}{utils\+::closed}}
  \}
 \begin{DoxyCompactList}\small\item\em Enumeration representing the type of an interval endpoint (open or closed). \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Functions}
+\doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T $>$ }\\constexpr interval\+\_\+endpoint$<$ std\+::decay\+\_\+t$<$ T $>$ $>$ \mbox{\hyperlink{namespaceutils_a22a7c7da6ae7e5d01adb976235886f2e}{utils\+::operator$\vert$}} (T \&\&value, interval\+\_\+endpoint\+\_\+type type)
+{\footnotesize template$<$typename T$>$ }\\constexpr \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ std\+::decay\+\_\+t$<$ T $>$ $>$ \mbox{\hyperlink{namespaceutils_a22a7c7da6ae7e5d01adb976235886f2e}{utils\+::operator\texorpdfstring{$\vert$}{|}}} (T \&\&value, \mbox{\hyperlink{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2e}{interval\+\_\+endpoint\+\_\+type}} \mbox{\hyperlink{group__synth__three__way__result}{type}})
 \begin{DoxyCompactList}\small\item\em Convenience operator overload to construct an interval endpoint. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename LE , typename RE $>$ \newline
-requires requires}\\constexpr auto \mbox{\hyperlink{namespaceutils_aaa53feca4f8d1aaf5de3f3b32b8f233f}{utils\+::operator,}} (LE \&\&left, RE \&\&right)
+{\footnotesize template$<$typename LE, typename RE$>$ \newline
+requires requires \{ \mbox{\hyperlink{structutils_1_1interval}{interval}}(std\+::forward$<$LE$>$(\mbox{\hyperlink{namespaceutils_aa52b5daba05b396d43967f83d7b2dadda811882fecd5c7618d7099ebbd39ea254}{left}}), std\+::forward$<$RE$>$(\mbox{\hyperlink{namespaceutils_aa52b5daba05b396d43967f83d7b2dadda7c4f29407893c334a6cb7a87bf045c0d}{right}})); \}}\\constexpr auto \mbox{\hyperlink{namespaceutils_ad2a4f0996740774f3ec83af943648b15}{utils\+::operator,}} (LE \&\&\mbox{\hyperlink{namespaceutils_aa52b5daba05b396d43967f83d7b2dadda811882fecd5c7618d7099ebbd39ea254}{left}}, RE \&\&\mbox{\hyperlink{namespaceutils_aa52b5daba05b396d43967f83d7b2dadda7c4f29407893c334a6cb7a87bf045c0d}{right}})
 \begin{DoxyCompactList}\small\item\em Convenience operator overload to construct an interval. \end{DoxyCompactList}\end{DoxyCompactItemize}

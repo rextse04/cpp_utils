@@ -1,32 +1,18 @@
 var operators_8hpp =
 [
     [ "utils::disable_op_t", "structutils_1_1disable__op__t.html", null ],
-    [ "utils::default_binary_op_traits", "structutils_1_1default__binary__op__traits.html", [
-      [ "constraint", "structutils_1_1default__binary__op__traits_1_1constraint.html", null ],
-      [ "result", "structutils_1_1default__binary__op__traits_1_1result.html", null ]
-    ] ],
+    [ "utils::default_binary_op_traits", "structutils_1_1default__binary__op__traits.html", "structutils_1_1default__binary__op__traits" ],
     [ "utils::default_binary_op_traits::constraint< typename, typename, typename >", "structutils_1_1default__binary__op__traits_1_1constraint.html", null ],
     [ "utils::default_binary_op_traits::result< Self, typename, typename >", "structutils_1_1default__binary__op__traits_1_1result.html", null ],
-    [ "utils::default_asg_op_traits", "structutils_1_1default__asg__op__traits.html", [
-      [ "constraint", "structutils_1_1default__asg__op__traits_1_1constraint.html", null ]
-    ] ],
+    [ "utils::default_asg_op_traits", "structutils_1_1default__asg__op__traits.html", "structutils_1_1default__asg__op__traits" ],
     [ "utils::default_asg_op_traits::constraint< Self, typename, typename >", "structutils_1_1default__asg__op__traits_1_1constraint.html", null ],
-    [ "utils::default_unary_op_traits", "structutils_1_1default__unary__op__traits.html", [
-      [ "constraint", "structutils_1_1default__unary__op__traits_1_1constraint.html", null ],
-      [ "result", "structutils_1_1default__unary__op__traits_1_1result.html", null ]
-    ] ],
+    [ "utils::default_unary_op_traits", "structutils_1_1default__unary__op__traits.html", "structutils_1_1default__unary__op__traits" ],
     [ "utils::default_unary_op_traits::constraint< typename >", "structutils_1_1default__unary__op__traits_1_1constraint.html", null ],
     [ "utils::default_unary_op_traits::result< Self >", "structutils_1_1default__unary__op__traits_1_1result.html", null ],
-    [ "utils::default_prefix_op_traits", "structutils_1_1default__prefix__op__traits.html", [
-      [ "constraint", "structutils_1_1default__prefix__op__traits_1_1constraint.html", null ],
-      [ "result", "structutils_1_1default__prefix__op__traits_1_1result.html", null ]
-    ] ],
+    [ "utils::default_prefix_op_traits", "structutils_1_1default__prefix__op__traits.html", "structutils_1_1default__prefix__op__traits" ],
     [ "utils::default_prefix_op_traits::constraint< Self >", "structutils_1_1default__prefix__op__traits_1_1constraint.html", null ],
     [ "utils::default_prefix_op_traits::result< Self >", "structutils_1_1default__prefix__op__traits_1_1result.html", null ],
-    [ "utils::default_postfix_op_traits", "structutils_1_1default__postfix__op__traits.html", [
-      [ "constraint", "structutils_1_1default__postfix__op__traits_1_1constraint.html", null ],
-      [ "result", "structutils_1_1default__postfix__op__traits_1_1result.html", null ]
-    ] ],
+    [ "utils::default_postfix_op_traits", "structutils_1_1default__postfix__op__traits.html", "structutils_1_1default__postfix__op__traits" ],
     [ "utils::default_postfix_op_traits::constraint< Self >", "structutils_1_1default__postfix__op__traits_1_1constraint.html", null ],
     [ "utils::default_postfix_op_traits::result< Self >", "structutils_1_1default__postfix__op__traits_1_1result.html", null ],
     [ "utils::integral_op_functors< Plus, Minus, Mul, Div, Mod, BinaryTraits >", "structutils_1_1integral__op__functors.html", "structutils_1_1integral__op__functors" ],
@@ -55,5 +41,5 @@ var operators_8hpp =
     [ "UTILS_BINARY_OP", "operators_8hpp.html#ac78f458fcc8229aafac8d067772e0cc6", null ],
     [ "UTILS_FIX_OP", "operators_8hpp.html#af9a66ab382ee5d9ec749b9ba778ed41c", null ],
     [ "UTILS_UNARY_OP", "operators_8hpp.html#ad95c59b8c57152e760307eea47d8e095", null ],
-    [ "disable_op", "operators_8hpp.html#a73660fa40d7555f9ec8f74c3fd244253", null ]
+    [ "utils::disable_op", "namespaceutils.html#a73660fa40d7555f9ec8f74c3fd244253", null ]
 ];

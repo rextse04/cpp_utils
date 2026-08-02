@@ -1,7 +1,11 @@
 <map id="operators.hpp" name="operators.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="143,5,243,32"/>
-<area shape="rect" id="node2" href="$integer_8hpp.html" title=" " alt="" coords="150,80,235,107"/>
-<area shape="rect" id="node3" href="$concurrency_8hpp.html" title=" " alt="" coords="5,155,121,181"/>
-<area shape="rect" id="node4" href="$dynamic_8hpp.html" title=" " alt="" coords="145,155,240,181"/>
-<area shape="rect" id="node5" href="$static__string_8hpp.html" title=" " alt="" coords="265,155,382,181"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="141,5,241,31"/>
+<area shape="rect" id="Node000002" href="$integer_8hpp.html" title=" " alt="" coords="149,79,233,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,46,194,79,188,79,188,46"/>
+<area shape="rect" id="Node000003" href="$concurrency_8hpp.html" title=" " alt="" coords="5,153,121,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="157,115,86,154,84,150,155,110"/>
+<area shape="rect" id="Node000004" href="$dynamic_8hpp.html" title=" " alt="" coords="144,153,238,178"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="194,120,194,152,188,152,188,120"/>
+<area shape="rect" id="Node000005" href="$static__string_8hpp.html" title=" " alt="" coords="262,153,378,178"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="228,110,300,150,297,154,225,115"/>
 </map>

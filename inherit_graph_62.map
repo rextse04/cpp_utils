@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structutils_1_1joint__cast__transform.html" title=" " alt="" coords="5,5,176,47"/>
+<area shape="rect" id="Node000000" href="$structutils_1_1integral__asg__ops.html" title=" " alt="" coords="5,5,127,46"/>
+<area shape="rect" id="Node000001" href="$structutils_1_1integral__full__ops.html" title="A convenience template inheriting from utils::integral_full_ops and utils::integral_asg_ops." alt="" coords="175,39,348,79"/>
+<area shape="poly" id="edge134_Node000000_Node000001" title=" " alt="" coords="143,36,175,42,174,47,142,41"/>
+<area shape="rect" id="Node000002" href="$structutils_1_1integral__ops.html" title=" " alt="" coords="5,71,127,111"/>
+<area shape="poly" id="edge135_Node000002_Node000001" title=" " alt="" coords="142,76,174,71,175,76,143,81"/>
 </map>

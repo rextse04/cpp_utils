@@ -1,5 +1,5 @@
-\hypertarget{structutils_1_1interval__endpoint}{}\doxysection{utils\+::interval\+\_\+endpoint\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
-\label{structutils_1_1interval__endpoint}\index{utils::interval\_endpoint$<$ T $>$@{utils::interval\_endpoint$<$ T $>$}}
+\doxysection{utils\+::interval\+\_\+endpoint\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{structutils_1_1interval__endpoint}{}\label{structutils_1_1interval__endpoint}\index{utils::interval\_endpoint$<$ T $>$@{utils::interval\_endpoint$<$ T $>$}}
 
 
 Represents an endpoint of an interval, consisting of a value and its type (open or closed).  
@@ -19,30 +19,6 @@ Collaboration diagram for utils\+::interval\+\_\+endpoint\texorpdfstring{$<$}{<}
 \includegraphics[width=215pt]{structutils_1_1interval__endpoint__coll__graph}
 \end{center}
 \end{figure}
-\doxysubsection*{Public Types}
-\begin{DoxyCompactItemize}
-\item 
-using \mbox{\hyperlink{structutils_1_1interval__endpoint_a31d0cc19c5168cc40f64264a71537ad6}{value\+\_\+type}} = T
-\end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-{\footnotesize template$<$std\+::constructible\+\_\+from$<$ const T \& $>$ U$>$ }\\constexpr \mbox{\hyperlink{structutils_1_1interval__endpoint_a028d3823fbc68dc72353ab3e52d1223b}{operator interval\+\_\+endpoint$<$ U $>$}} () const noexcept(std\+::is\+\_\+nothrow\+\_\+constructible\+\_\+v$<$ U, const T \& $>$)
-\begin{DoxyCompactList}\small\item\em Conversion operator. \end{DoxyCompactList}\item 
-constexpr bool \mbox{\hyperlink{structutils_1_1interval__endpoint_a03d7067835085714a7915d8c8988f42d}{operator==}} (const \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}} \&other) const =default
-\begin{DoxyCompactList}\small\item\em Equality operator. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename U $>$ \newline
-requires (detail\+::strict\+\_\+weak\+\_\+order$<$std\+::less$<$$>$, const T\&, const U\&$>$)}\\constexpr std\+::weak\+\_\+ordering \mbox{\hyperlink{group__utilsintervalendpointcomparison_ga7531876b5ec7ffc958b3020f32b14a60}{operator$<$=$>$}} (const \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ U $>$ \&other) const
-\begin{DoxyCompactList}\small\item\em Three-\/way comparison operator. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename U , detail\+::strict\+\_\+weak\+\_\+order$<$ const T \&, const U \& $>$ Compare = std\+::less$<$$>$$>$ }\\constexpr std\+::weak\+\_\+ordering \mbox{\hyperlink{group__utilsintervalendpointcomparison_gabfe97454fff1e35e7177d9b24cf69801}{compare}} (const \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ U $>$ \&other, bool right, const Compare \&comp=\{\}) const
-\begin{DoxyCompactList}\small\item\em $E1$ is taken to be {\ttfamily $\ast$this}, $E2$ is taken to be {\ttfamily other}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-T \mbox{\hyperlink{structutils_1_1interval__endpoint_a5b2596840474f9da3223f22888149df3}{value}}
-\item 
-\mbox{\hyperlink{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2e}{interval\+\_\+endpoint\+\_\+type}} \mbox{\hyperlink{structutils_1_1interval__endpoint_a9dcb8608e47b3293bb9a27fa7e827c33}{type}}
-\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -72,15 +48,39 @@ Note that we do not assume the domain of $C$ to be $D$.
 
 Definition at line \mbox{\hyperlink{interval_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{structutils_1_1interval__endpoint_a31d0cc19c5168cc40f64264a71537ad6}{value\+\_\+type}} = T
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$std\+::constructible\+\_\+from$<$ const T \& $>$ U$>$ }\\constexpr \mbox{\hyperlink{structutils_1_1interval__endpoint_a028d3823fbc68dc72353ab3e52d1223b}{operator interval\+\_\+endpoint$<$ U $>$}} () const noexcept(std\+::is\+\_\+nothrow\+\_\+constructible\+\_\+v$<$ U, const T \& $>$)
+\begin{DoxyCompactList}\small\item\em Conversion operator. \end{DoxyCompactList}\item 
+constexpr bool \mbox{\hyperlink{structutils_1_1interval__endpoint_a03d7067835085714a7915d8c8988f42d}{operator==}} (const \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}} \&other) const =default
+\begin{DoxyCompactList}\small\item\em Equality comparison operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename U$>$ \newline
+requires (detail\+::strict\+\_\+weak\+\_\+order$<$std\+::less$<$$>$, const T\&, const U\&$>$)}\\constexpr std\+::weak\+\_\+ordering \mbox{\hyperlink{group__utilsintervalendpointcomparison_ga7531876b5ec7ffc958b3020f32b14a60}{operator$<$=$>$}} (const \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ U $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Three-\/way comparison operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename U, detail\+::strict\+\_\+weak\+\_\+order$<$ const T \&, const U \& $>$ Compare = std\+::less$<$$>$$>$ }\\constexpr std\+::weak\+\_\+ordering \mbox{\hyperlink{group__utilsintervalendpointcomparison_gabfe97454fff1e35e7177d9b24cf69801}{compare}} (const \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ U $>$ \&other, bool \mbox{\hyperlink{namespaceutils_aa52b5daba05b396d43967f83d7b2dadda7c4f29407893c334a6cb7a87bf045c0d}{right}}, const Compare \&comp=\{\}) const
+\begin{DoxyCompactList}\small\item\em $E1$ is taken to be {\ttfamily \texorpdfstring{$\ast$}{*}this}, $E2$ is taken to be {\ttfamily other}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T \mbox{\hyperlink{structutils_1_1interval__endpoint_a5b2596840474f9da3223f22888149df3}{value}}
+\item 
+\mbox{\hyperlink{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2e}{interval\+\_\+endpoint\+\_\+type}} \mbox{\hyperlink{structutils_1_1interval__endpoint_a9dcb8608e47b3293bb9a27fa7e827c33}{type}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Typedef Documentation}
-\mbox{\Hypertarget{structutils_1_1interval__endpoint_a31d0cc19c5168cc40f64264a71537ad6}\label{structutils_1_1interval__endpoint_a31d0cc19c5168cc40f64264a71537ad6}} 
-\index{utils::interval\_endpoint$<$ T $>$@{utils::interval\_endpoint$<$ T $>$}!value\_type@{value\_type}}
+\Hypertarget{structutils_1_1interval__endpoint_a31d0cc19c5168cc40f64264a71537ad6}\index{utils::interval\_endpoint$<$ T $>$@{utils::interval\_endpoint$<$ T $>$}!value\_type@{value\_type}}
 \index{value\_type@{value\_type}!utils::interval\_endpoint$<$ T $>$@{utils::interval\_endpoint$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{value\_type}{value\_type}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-using \mbox{\hyperlink{structutils_1_1interval__endpoint}{utils\+::interval\+\_\+endpoint}}$<$ T $>$\+::\mbox{\hyperlink{structutils_1_1interval__endpoint_a31d0cc19c5168cc40f64264a71537ad6}{value\+\_\+type}} =  T}
+{\footnotesize\ttfamily \label{structutils_1_1interval__endpoint_a31d0cc19c5168cc40f64264a71537ad6} 
+template$<$typename T$>$ \\
+using \mbox{\hyperlink{structutils_1_1interval__endpoint}{utils\+::interval\+\_\+endpoint}}$<$ T $>$\+::value\+\_\+type = T}
 
 
 
@@ -89,13 +89,13 @@ Definition at line \mbox{\hyperlink{interval_8hpp_source_l00040}{40}} of file \m
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{structutils_1_1interval__endpoint_a028d3823fbc68dc72353ab3e52d1223b}\label{structutils_1_1interval__endpoint_a028d3823fbc68dc72353ab3e52d1223b}} 
-\index{utils::interval\_endpoint$<$ T $>$@{utils::interval\_endpoint$<$ T $>$}!operator interval\_endpoint$<$ U $>$@{operator interval\_endpoint$<$ U $>$}}
+\Hypertarget{structutils_1_1interval__endpoint_a028d3823fbc68dc72353ab3e52d1223b}\index{utils::interval\_endpoint$<$ T $>$@{utils::interval\_endpoint$<$ T $>$}!operator interval\_endpoint$<$ U $>$@{operator interval\_endpoint$<$ U $>$}}
 \index{operator interval\_endpoint$<$ U $>$@{operator interval\_endpoint$<$ U $>$}!utils::interval\_endpoint$<$ T $>$@{utils::interval\_endpoint$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{operator interval\_endpoint$<$ U $>$()}{operator interval\_endpoint< U >()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
+{\footnotesize\ttfamily \label{structutils_1_1interval__endpoint_a028d3823fbc68dc72353ab3e52d1223b} 
+template$<$typename T$>$ \\
 template$<$std\+::constructible\+\_\+from$<$ const T \& $>$ U$>$ \\
-constexpr \mbox{\hyperlink{structutils_1_1interval__endpoint}{utils\+::interval\+\_\+endpoint}}$<$ T $>$\+::operator \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ U $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+\mbox{\hyperlink{structutils_1_1interval__endpoint}{utils\+::interval\+\_\+endpoint}}$<$ T $>$\+::operator \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ U $>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
 
 
@@ -108,36 +108,36 @@ A conversion operator is chosen over a constructor to keep this class an aggrega
 
 Definition at line \mbox{\hyperlink{interval_8hpp_source_l00050}{50}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
-\mbox{\Hypertarget{structutils_1_1interval__endpoint_a03d7067835085714a7915d8c8988f42d}\label{structutils_1_1interval__endpoint_a03d7067835085714a7915d8c8988f42d}} 
-\index{utils::interval\_endpoint$<$ T $>$@{utils::interval\_endpoint$<$ T $>$}!operator==@{operator==}}
+\Hypertarget{structutils_1_1interval__endpoint_a03d7067835085714a7915d8c8988f42d}\index{utils::interval\_endpoint$<$ T $>$@{utils::interval\_endpoint$<$ T $>$}!operator==@{operator==}}
 \index{operator==@{operator==}!utils::interval\_endpoint$<$ T $>$@{utils::interval\_endpoint$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-constexpr bool \mbox{\hyperlink{structutils_1_1interval__endpoint}{utils\+::interval\+\_\+endpoint}}$<$ T $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [default]}}
+{\footnotesize\ttfamily \label{structutils_1_1interval__endpoint_a03d7067835085714a7915d8c8988f42d} 
+template$<$typename T$>$ \\
+bool \mbox{\hyperlink{structutils_1_1interval__endpoint}{utils\+::interval\+\_\+endpoint}}$<$ T $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [default]}}
 
 
 
-Equality operator. 
+Equality comparison operator. 
 
-Two endpoints are equivalent if and only if their values and types are equivalent. 
+Two endpoints are equivalent if and only if their values and types are equal based on the equality comparison operators of {\ttfamily value} and {\ttfamily type}. 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{structutils_1_1interval__endpoint_a9dcb8608e47b3293bb9a27fa7e827c33}\label{structutils_1_1interval__endpoint_a9dcb8608e47b3293bb9a27fa7e827c33}} 
-\index{utils::interval\_endpoint$<$ T $>$@{utils::interval\_endpoint$<$ T $>$}!type@{type}}
+\Hypertarget{structutils_1_1interval__endpoint_a9dcb8608e47b3293bb9a27fa7e827c33}\index{utils::interval\_endpoint$<$ T $>$@{utils::interval\_endpoint$<$ T $>$}!type@{type}}
 \index{type@{type}!utils::interval\_endpoint$<$ T $>$@{utils::interval\_endpoint$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{type}{type}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
+{\footnotesize\ttfamily \label{structutils_1_1interval__endpoint_a9dcb8608e47b3293bb9a27fa7e827c33} 
+template$<$typename T$>$ \\
 \mbox{\hyperlink{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2e}{interval\+\_\+endpoint\+\_\+type}} \mbox{\hyperlink{structutils_1_1interval__endpoint}{utils\+::interval\+\_\+endpoint}}$<$ T $>$\+::type}
 
 
 
 Definition at line \mbox{\hyperlink{interval_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
-\mbox{\Hypertarget{structutils_1_1interval__endpoint_a5b2596840474f9da3223f22888149df3}\label{structutils_1_1interval__endpoint_a5b2596840474f9da3223f22888149df3}} 
-\index{utils::interval\_endpoint$<$ T $>$@{utils::interval\_endpoint$<$ T $>$}!value@{value}}
+\Hypertarget{structutils_1_1interval__endpoint_a5b2596840474f9da3223f22888149df3}\index{utils::interval\_endpoint$<$ T $>$@{utils::interval\_endpoint$<$ T $>$}!value@{value}}
 \index{value@{value}!utils::interval\_endpoint$<$ T $>$@{utils::interval\_endpoint$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{value}{value}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
+{\footnotesize\ttfamily \label{structutils_1_1interval__endpoint_a5b2596840474f9da3223f22888149df3} 
+template$<$typename T$>$ \\
 T \mbox{\hyperlink{structutils_1_1interval__endpoint}{utils\+::interval\+\_\+endpoint}}$<$ T $>$\+::value}
 
 

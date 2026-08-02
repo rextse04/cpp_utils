@@ -1,24 +1,24 @@
-\hypertarget{group__is__lossless__convertible}{}\doxysection{utils\+::is\+\_\+lossless\+\_\+convertible}
-\label{group__is__lossless__convertible}\index{utils::is\_lossless\_convertible@{utils::is\_lossless\_convertible}}
+\doxysection{utils\+::is\+\_\+lossless\+\_\+convertible}
+\hypertarget{group__is__lossless__convertible}{}\label{group__is__lossless__convertible}\index{utils::is\_lossless\_convertible@{utils::is\_lossless\_convertible}}
 
 
-Determines if {\ttfamily From} can be converted to {\ttfamily To} without loss of information.  
+A \href{Trait.html}{\texttt{ {\itshape Value\+Trait}}} that determines if {\ttfamily From} can be converted to {\ttfamily To} without loss of information.  
 
 
-\doxysubsection*{Concepts}
+\doxysubsubsection*{Concepts}
 \begin{DoxyCompactItemize}
 \item 
 concept \mbox{\hyperlink{conceptutils_1_1lossless__convertible__to}{utils\+::lossless\+\_\+convertible\+\_\+to}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Variables}
+\doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename From , typename To $>$ }\\constexpr bool \mbox{\hyperlink{group__is__lossless__convertible_ga0895531ec3b54ee68daa30b7fbd31996}{utils\+::is\+\_\+lossless\+\_\+convertible\+\_\+v}} = is\+\_\+lossless\+\_\+convertible$<$From, To$>$\+::value
+{\footnotesize template$<$typename From, typename To$>$ }\\constexpr bool \mbox{\hyperlink{group__is__lossless__convertible_ga0895531ec3b54ee68daa30b7fbd31996}{utils\+::is\+\_\+lossless\+\_\+convertible\+\_\+v}} = is\+\_\+lossless\+\_\+convertible$<$From, To$>$\+::value
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Determines if {\ttfamily From} can be converted to {\ttfamily To} without loss of information. 
+A \href{Trait.html}{\texttt{ {\itshape Value\+Trait}}} that determines if {\ttfamily From} can be converted to {\ttfamily To} without loss of information. 
 
 Calculation is based on {\ttfamily From\+Info} and {\ttfamily To\+Info}, which default to respective instantiations of {\ttfamily std\+::numeric\+\_\+limits}. They can be replaced by class types that provide the same interface as {\ttfamily std\+::numeric\+\_\+limits}. \begin{DoxyRemark}{Remarks}
 This does not check if {\ttfamily From} is actually convertible to {\ttfamily To}. 
@@ -26,12 +26,12 @@ This does not check if {\ttfamily From} is actually convertible to {\ttfamily To
 
 
 \doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{group__is__lossless__convertible_ga0895531ec3b54ee68daa30b7fbd31996}\label{group__is__lossless__convertible_ga0895531ec3b54ee68daa30b7fbd31996}} 
-\index{utils::is\_lossless\_convertible@{utils::is\_lossless\_convertible}!is\_lossless\_convertible\_v@{is\_lossless\_convertible\_v}}
+\Hypertarget{group__is__lossless__convertible_ga0895531ec3b54ee68daa30b7fbd31996}\index{utils::is\_lossless\_convertible@{utils::is\_lossless\_convertible}!is\_lossless\_convertible\_v@{is\_lossless\_convertible\_v}}
 \index{is\_lossless\_convertible\_v@{is\_lossless\_convertible\_v}!utils::is\_lossless\_convertible@{utils::is\_lossless\_convertible}}
 \doxysubsubsection{\texorpdfstring{is\_lossless\_convertible\_v}{is\_lossless\_convertible\_v}}
-{\footnotesize\ttfamily template$<$typename From , typename To $>$ \\
-constexpr bool utils\+::is\+\_\+lossless\+\_\+convertible\+\_\+v = is\+\_\+lossless\+\_\+convertible$<$From, To$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily \label{group__is__lossless__convertible_ga0895531ec3b54ee68daa30b7fbd31996} 
+template$<$typename From, typename To$>$ \\
+bool utils\+::is\+\_\+lossless\+\_\+convertible\+\_\+v = is\+\_\+lossless\+\_\+convertible$<$From, To$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
 
 
 

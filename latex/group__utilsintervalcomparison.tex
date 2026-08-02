@@ -1,43 +1,50 @@
-\hypertarget{group__utilsintervalcomparison}{}\doxysection{utils\+::interval\+::operator\texorpdfstring{$<$}{<}=\texorpdfstring{$>$}{>}, utils\+::interval\+::compare}
-\label{group__utilsintervalcomparison}\index{utils::interval::operator$<$=$>$, utils::interval::compare@{utils::interval::operator$<$=$>$, utils::interval::compare}}
-\doxysubsection*{Functions}
+\doxysection{utils\+::interval\+::operator\texorpdfstring{$<$}{<}=\texorpdfstring{$>$}{>}, utils\+::interval\+::compare}
+\hypertarget{group__utilsintervalcomparison}{}\label{group__utilsintervalcomparison}\index{utils::interval::operator$<$=$>$, utils::interval::compare@{utils::interval::operator$<$=$>$, utils::interval::compare}}
+
+
+Comparison functions.  
+
+
+\doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename L2 , typename R2 $>$ \newline
+{\footnotesize template$<$typename L2, typename R2$>$ \newline
 requires (detail\+::strict\+\_\+weak\+\_\+order$<$std\+::less$<$$>$, const L\&, const R\&, const L2\&, const R2\&$>$)}\\constexpr std\+::partial\+\_\+ordering \mbox{\hyperlink{group__utilsintervalcomparison_ga25e12e71ad43636f184197a1329500df}{utils\+::interval$<$ L, R $>$\+::operator$<$=$>$}} (const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&other) const
 \begin{DoxyCompactList}\small\item\em Three-\/way comparison operator. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename L2 , typename R2 , detail\+::strict\+\_\+weak\+\_\+order$<$ const L \&, const R \&, const L2 \&, const R2 \& $>$ Compare = std\+::less$<$$>$$>$ }\\constexpr std\+::partial\+\_\+ordering \mbox{\hyperlink{group__utilsintervalcomparison_gab25eb88158269045c97d7649d0222dd5}{utils\+::interval$<$ L, R $>$\+::compare}} (const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&other, const Compare \&comp=\{\}) const
-\begin{DoxyCompactList}\small\item\em $I1$ is taken to be {\ttfamily $\ast$this}, $I2$ is taken to be {\ttfamily other}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\footnotesize template$<$typename L2, typename R2, detail\+::strict\+\_\+weak\+\_\+order$<$ const L \&, const R \&, const L2 \&, const R2 \& $>$ Compare = std\+::less$<$$>$$>$ }\\constexpr std\+::partial\+\_\+ordering \mbox{\hyperlink{group__utilsintervalcomparison_gab25eb88158269045c97d7649d0222dd5}{utils\+::interval$<$ L, R $>$\+::compare}} (const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&other, const Compare \&comp=\{\}) const
+\begin{DoxyCompactList}\small\item\em $I1$ is taken to be {\ttfamily \texorpdfstring{$\ast$}{*}this}, $I2$ is taken to be {\ttfamily other}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Comparison functions. 
+
 Given intervals $I1$ and $I2$, $I1<I2$ if and only if $I1$ is a proper subset of $I2$. This defines a strict partial ordering on intervals. 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{group__utilsintervalcomparison_gab25eb88158269045c97d7649d0222dd5}\label{group__utilsintervalcomparison_gab25eb88158269045c97d7649d0222dd5}} 
-\index{utils::interval::operator$<$=$>$, utils::interval::compare@{utils::interval::operator$<$=$>$, utils::interval::compare}!compare@{compare}}
+\Hypertarget{group__utilsintervalcomparison_gab25eb88158269045c97d7649d0222dd5}\index{utils::interval::operator$<$=$>$, utils::interval::compare@{utils::interval::operator$<$=$>$, utils::interval::compare}!compare@{compare}}
 \index{compare@{compare}!utils::interval::operator$<$=$>$, utils::interval::compare@{utils::interval::operator$<$=$>$, utils::interval::compare}}
 \doxysubsubsection{\texorpdfstring{compare()}{compare()}}
-{\footnotesize\ttfamily template$<$typename L , typename R $>$ \\
-template$<$typename L2 , typename R2 , detail\+::strict\+\_\+weak\+\_\+order$<$ const L \&, const R \&, const L2 \&, const R2 \& $>$ Compare = std\+::less$<$$>$$>$ \\
-constexpr std\+::partial\+\_\+ordering \mbox{\hyperlink{structutils_1_1interval}{utils\+::interval}}$<$ L, R $>$\+::compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&}]{other,  }\item[{const Compare \&}]{comp = {\ttfamily \{\}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily \label{group__utilsintervalcomparison_gab25eb88158269045c97d7649d0222dd5} 
+template$<$typename L, typename R$>$ \\
+template$<$typename L2, typename R2, detail\+::strict\+\_\+weak\+\_\+order$<$ const L \&, const R \&, const L2 \&, const R2 \& $>$ Compare = std\+::less$<$$>$$>$ \\
+std\+::partial\+\_\+ordering \mbox{\hyperlink{structutils_1_1interval}{utils\+::interval}}$<$ L, R $>$\+::compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&}]{other}{, }\item[{const Compare \&}]{comp}{ = {\ttfamily \{\}}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
-$I1$ is taken to be {\ttfamily $\ast$this}, $I2$ is taken to be {\ttfamily other}. 
+$I1$ is taken to be {\ttfamily \texorpdfstring{$\ast$}{*}this}, $I2$ is taken to be {\ttfamily other}. 
 
 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00205}{205}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00208}{208}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
-\mbox{\Hypertarget{group__utilsintervalcomparison_ga25e12e71ad43636f184197a1329500df}\label{group__utilsintervalcomparison_ga25e12e71ad43636f184197a1329500df}} 
-\index{utils::interval::operator$<$=$>$, utils::interval::compare@{utils::interval::operator$<$=$>$, utils::interval::compare}!operator$<$=$>$@{operator$<$=$>$}}
+\Hypertarget{group__utilsintervalcomparison_ga25e12e71ad43636f184197a1329500df}\index{utils::interval::operator$<$=$>$, utils::interval::compare@{utils::interval::operator$<$=$>$, utils::interval::compare}!operator$<$=$>$@{operator$<$=$>$}}
 \index{operator$<$=$>$@{operator$<$=$>$}!utils::interval::operator$<$=$>$, utils::interval::compare@{utils::interval::operator$<$=$>$, utils::interval::compare}}
 \doxysubsubsection{\texorpdfstring{operator$<$=$>$()}{operator<=>()}}
-{\footnotesize\ttfamily template$<$typename L , typename R $>$ \\
-template$<$typename L2 , typename R2 $>$ \newline
+{\footnotesize\ttfamily \label{group__utilsintervalcomparison_ga25e12e71ad43636f184197a1329500df} 
+template$<$typename L, typename R$>$ \\
+template$<$typename L2, typename R2$>$ \newline
 requires (detail\+::strict\+\_\+weak\+\_\+order$<$std\+::less$<$$>$, const L\&, const R\&, const L2\&, const R2\&$>$)\\
-constexpr std\+::partial\+\_\+ordering \mbox{\hyperlink{structutils_1_1interval}{utils\+::interval}}$<$ L, R $>$\+::operator$<$=$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+std\+::partial\+\_\+ordering \mbox{\hyperlink{structutils_1_1interval}{utils\+::interval}}$<$ L, R $>$\+::operator$<$=$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structutils_1_1interval}{interval}}$<$ L2, R2 $>$ \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
@@ -45,5 +52,5 @@ Three-\/way comparison operator.
 
 The comparator is taken to be {\ttfamily std\+::less\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}}. 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00198}{198}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00201}{201}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 

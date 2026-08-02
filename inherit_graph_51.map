@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structutils_1_1function__decay.html" title=" " alt="" coords="5,5,175,32"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,183,61"/>
+<area shape="rect" id="Node000001" href="$classutils_1_1unique__resource.html" title="A user&#45;provided resource that is capable of limiting and synchronizing access to it." alt="" coords="231,5,384,61"/>
+<area shape="poly" id="edge131_Node000000_Node000001" title=" " alt="" coords="198,30,230,30,230,36,198,36"/>
 </map>

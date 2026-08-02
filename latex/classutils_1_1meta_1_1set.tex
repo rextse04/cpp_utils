@@ -1,5 +1,5 @@
-\hypertarget{classutils_1_1meta_1_1set}{}\doxysection{utils\+::meta\+::set\texorpdfstring{$<$}{<} Var, Value, Version \texorpdfstring{$>$}{>} Class Template Reference}
-\label{classutils_1_1meta_1_1set}\index{utils::meta::set$<$ Var, Value, Version $>$@{utils::meta::set$<$ Var, Value, Version $>$}}
+\doxysection{utils\+::meta\+::set\texorpdfstring{$<$}{<} Var, Value, Version \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classutils_1_1meta_1_1set}{}\label{classutils_1_1meta_1_1set}\index{utils::meta::set$<$ Var, Value, Version $>$@{utils::meta::set$<$ Var, Value, Version $>$}}
 
 
 Sets {\ttfamily Var} to {\ttfamily Value}. {\ttfamily Version} is automatically incremented at every instantiation of this template.  
@@ -9,11 +9,6 @@ Sets {\ttfamily Var} to {\ttfamily Value}. {\ttfamily Version} is automatically 
 
 {\ttfamily \#include $<$stateful\+\_\+meta.\+hpp$>$}
 
-\doxysubsection*{Friends}
-\begin{DoxyCompactItemize}
-\item 
-consteval auto \mbox{\hyperlink{classutils_1_1meta_1_1set_a33f5a36f1982df794f19562affbbccd3}{get}} (\mbox{\hyperlink{classutils_1_1meta_1_1var}{var}}$<$ Var, Version $>$)
-\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -23,15 +18,20 @@ Sets {\ttfamily Var} to {\ttfamily Value}. {\ttfamily Version} is automatically 
 
 Definition at line \mbox{\hyperlink{stateful__meta_8hpp_source_l00075}{75}} of file \mbox{\hyperlink{stateful__meta_8hpp_source}{stateful\+\_\+meta.\+hpp}}.
 
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+consteval auto \mbox{\hyperlink{classutils_1_1meta_1_1set_a33f5a36f1982df794f19562affbbccd3}{get}} (\mbox{\hyperlink{classutils_1_1meta_1_1var}{var}}$<$ Var, Version $>$)
+\end{DoxyCompactItemize}
 
 
-\doxysubsection{Friends And Related Function Documentation}
-\mbox{\Hypertarget{classutils_1_1meta_1_1set_a33f5a36f1982df794f19562affbbccd3}\label{classutils_1_1meta_1_1set_a33f5a36f1982df794f19562affbbccd3}} 
-\index{utils::meta::set$<$ Var, Value, Version $>$@{utils::meta::set$<$ Var, Value, Version $>$}!get@{get}}
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classutils_1_1meta_1_1set_a33f5a36f1982df794f19562affbbccd3}\index{utils::meta::set$<$ Var, Value, Version $>$@{utils::meta::set$<$ Var, Value, Version $>$}!get@{get}}
 \index{get@{get}!utils::meta::set$<$ Var, Value, Version $>$@{utils::meta::set$<$ Var, Value, Version $>$}}
 \doxysubsubsection{\texorpdfstring{get}{get}}
-{\footnotesize\ttfamily template$<$typename Var , auto Value, std\+::uintmax\+\_\+t Version = get\+\_\+counter$<$\+Var, true$>$()$>$ \\
-consteval auto get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1meta_1_1var}{var}}$<$ Var, Version $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+{\footnotesize\ttfamily \label{classutils_1_1meta_1_1set_a33f5a36f1982df794f19562affbbccd3} 
+template$<$typename Var, auto Value, std\+::uintmax\+\_\+t Version = get\+\_\+counter$<$\+Var, true$>$()$>$ \\
+auto get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutils_1_1meta_1_1var}{var}}$<$ Var, Version $>$}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
 
 
 

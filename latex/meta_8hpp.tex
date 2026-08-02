@@ -1,5 +1,5 @@
-\hypertarget{meta_8hpp}{}\doxysection{meta.\+hpp File Reference}
-\label{meta_8hpp}\index{meta.hpp@{meta.hpp}}
+\doxysection{meta.\+hpp File Reference}
+\hypertarget{meta_8hpp}{}\label{meta_8hpp}\index{meta.hpp@{meta.hpp}}
 {\ttfamily \#include $<$tuple$>$}\newline
 {\ttfamily \#include $<$cstddef$>$}\newline
 {\ttfamily \#include $<$cstdint$>$}\newline
@@ -21,7 +21,7 @@ This graph shows which files directly or indirectly include this file\+:
 \includegraphics[width=350pt]{meta_8hpp__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsection*{Classes}
+\doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{group__metais__tuple_structutils_1_1meta_1_1is__tuple}{utils\+::meta\+::is\+\_\+tuple$<$ T $>$}}
@@ -83,76 +83,76 @@ struct \mbox{\hyperlink{group__metarebind_structutils_1_1meta_1_1rebind}{utils\+
 struct \mbox{\hyperlink{group__metarebind_structutils_1_1meta_1_1rebind_3_01T_00_01Args_8_8_8_01_4}{utils\+::meta\+::rebind$<$ T, Args... $>$}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1meta_1_1bind__front}{utils\+::meta\+::bind\+\_\+front$<$ Trait, Args $>$}}
-\begin{DoxyCompactList}\small\item\em Binds template arguments to the front of a {\ttfamily Trait} template. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A \href{Trait.html}{\texttt{ {\itshape Meta\+Trait}}} that binds template arguments to the front of a {\ttfamily Trait} template. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{group__metastrict__subset__of_structutils_1_1meta_1_1bind__front_1_1trait}{utils\+::meta\+::bind\+\_\+front$<$ Trait, Args $>$\+::trait$<$ Ts $>$}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1meta_1_1bind__back}{utils\+::meta\+::bind\+\_\+back$<$ Trait, Args $>$}}
-\begin{DoxyCompactList}\small\item\em Binds template arguments to the back of a {\ttfamily Trait} template. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A \href{Trait.html}{\texttt{ {\itshape Meta\+Trait}}} that binds template arguments to the back of a {\ttfamily Trait} template. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{group__metastrict__subset__of_structutils_1_1meta_1_1bind__back_1_1trait}{utils\+::meta\+::bind\+\_\+back$<$ Trait, Args $>$\+::trait$<$ Ts $>$}}
 \item 
 struct \mbox{\hyperlink{group__metasubset__of_structutils_1_1meta_1_1subset__of}{utils\+::meta\+::subset\+\_\+of$<$ Small\+Tuple, Big\+Tuple $>$}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Namespaces}
+\doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespaceutils_1_1meta}{utils\+::meta}}
 \item 
 namespace \mbox{\hyperlink{namespaceutils}{utils}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Concepts}
+\doxysubsubsection*{Concepts}
 \begin{DoxyCompactItemize}
 \item 
 concept \mbox{\hyperlink{conceptutils_1_1meta_1_1tuple__like}{utils\+::meta\+::tuple\+\_\+like}}
 \begin{DoxyCompactList}\small\item\em C++ exposition-\/only concept\+: {\ttfamily tuple-\/like}. \end{DoxyCompactList}\item 
 concept \mbox{\hyperlink{conceptutils_1_1meta_1_1pair__like}{utils\+::meta\+::pair\+\_\+like}}
 \begin{DoxyCompactList}\small\item\em C++ exposition-\/only concept\+: {\ttfamily pair-\/like}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Typedefs}
+\doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename... Ts$>$ }\\using \mbox{\hyperlink{group__metapack_ga9522a2e8902edd0be2270e5d9f505fa9}{utils\+::meta\+::pack\+\_\+t}} = pack$<$ Ts... $>$\+::type
+{\footnotesize template$<$typename... Ts$>$ }\\using \mbox{\hyperlink{group__metapack_gaad934adb3daf17db79b4cf3c434886c0}{utils\+::meta\+::pack\+\_\+t}} = \mbox{\hyperlink{group__metapack_structutils_1_1meta_1_1pack}{pack}}$<$Ts...$>$\+::type
 \item 
-{\footnotesize template$<$typename... Ts$>$ }\\using \mbox{\hyperlink{group__metasmart__pack_ga2c8c5ffdfd2792da0ed5c03737d910e8}{utils\+::meta\+::smart\+\_\+pack\+\_\+t}} = smart\+\_\+pack$<$ Ts... $>$\+::type
+{\footnotesize template$<$typename... Ts$>$ }\\using \mbox{\hyperlink{group__metasmart__pack_ga3e611e191fe6e7305d70eaa46825a0f6}{utils\+::meta\+::smart\+\_\+pack\+\_\+t}} = \mbox{\hyperlink{group__metasmart__pack_structutils_1_1meta_1_1smart__pack}{smart\+\_\+pack}}$<$Ts...$>$\+::type
 \item 
-{\footnotesize template$<$tuple\+\_\+like T$>$ }\\using \mbox{\hyperlink{group__metamake__tuple_ga7f3e3f258ae180aaf3a6cf1a9b9d45e6}{utils\+::meta\+::make\+\_\+tuple\+\_\+t}} = make\+\_\+tuple$<$ T $>$\+::type
+{\footnotesize template$<$tuple\+\_\+like T$>$ }\\using \mbox{\hyperlink{group__metamake__tuple_gaea462a3d816df38ea07c445cda61d421}{utils\+::meta\+::make\+\_\+tuple\+\_\+t}} = \mbox{\hyperlink{group__metamake__tuple_structutils_1_1meta_1_1make__tuple}{make\+\_\+tuple}}$<$T$>$\+::type
 \item 
-{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx$>$ }\\using \mbox{\hyperlink{group__metaat_ga61e11c441feed9dbfea860435a6745d6}{utils\+::meta\+::at\+\_\+t}} = at$<$ Tuple, Idx $>$\+::type
+{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx$>$ }\\using \mbox{\hyperlink{group__metaat_gaa0e911f3c2da603c4bf1ad9f3eee0933}{utils\+::meta\+::at\+\_\+t}} = \mbox{\hyperlink{group__metaat_structutils_1_1meta_1_1at}{at}}$<$Tuple, Idx$>$\+::type
 \item 
-{\footnotesize template$<$tuple\+\_\+like... Tuples$>$ }\\using \mbox{\hyperlink{group__metaconcat_gafed300336aba4802fc3481ef2944a880}{utils\+::meta\+::concat\+\_\+t}} = concat$<$ Tuples... $>$\+::type
+{\footnotesize template$<$tuple\+\_\+like... Tuples$>$ }\\using \mbox{\hyperlink{group__metaconcat_ga80a328d3c6b547fdb6778d69bdf4f436}{utils\+::meta\+::concat\+\_\+t}} = \mbox{\hyperlink{group__metaconcat_structutils_1_1meta_1_1concat}{concat}}$<$Tuples...$>$\+::type
 \item 
-{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Begin = 0, std\+::ptrdiff\+\_\+t End = std\+::tuple\+\_\+size\+\_\+v$<$\+Tuple$>$$>$ }\\using \mbox{\hyperlink{group__metaslice_ga38abc3ef8e35eaf454eea88f36750bbc}{utils\+::meta\+::slice\+\_\+t}} = slice$<$ Tuple, Begin, End $>$\+::type
+{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Begin = 0, std\+::ptrdiff\+\_\+t End = std\+::tuple\+\_\+size\+\_\+v$<$\+Tuple$>$$>$ }\\using \mbox{\hyperlink{group__metaslice_ga18badcb75c84a1f7d87a7b66952852f2}{utils\+::meta\+::slice\+\_\+t}} = \mbox{\hyperlink{group__metaslice_structutils_1_1meta_1_1slice}{slice}}$<$Tuple, Begin, End$>$\+::type
 \item 
-{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx, tuple\+\_\+like Inserted$>$ }\\using \mbox{\hyperlink{group__metainsert_ga74db5bbf8f178b4db63af53a7f59a002}{utils\+::meta\+::insert\+\_\+t}} = insert$<$ Tuple, Idx, Inserted $>$\+::type
+{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx, tuple\+\_\+like Inserted$>$ }\\using \mbox{\hyperlink{group__metainsert_gacd1326e66a35be3343675e77c1ecce73}{utils\+::meta\+::insert\+\_\+t}} = \mbox{\hyperlink{group__metainsert_structutils_1_1meta_1_1insert}{insert}}$<$Tuple, Idx, Inserted$>$\+::type
 \item 
-{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Begin, std\+::ptrdiff\+\_\+t End$>$ }\\using \mbox{\hyperlink{group__metaerase_ga57e2e26a9ed32b0384df07a98f53b377}{utils\+::meta\+::erase\+\_\+t}} = erase$<$ Tuple, Begin, End $>$\+::type
+{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Begin, std\+::ptrdiff\+\_\+t End$>$ }\\using \mbox{\hyperlink{group__metaerase_ga48bf47608e3b0de0f193ba4ed12dd12d}{utils\+::meta\+::erase\+\_\+t}} = \mbox{\hyperlink{group__metaerase_structutils_1_1meta_1_1erase}{erase}}$<$Tuple, Begin, End$>$\+::type
 \item 
-{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx, typename T $>$ }\\using \mbox{\hyperlink{group__metareplace_ga44e3856c9561e053226ad2c473572a43}{utils\+::meta\+::replace\+\_\+t}} = replace$<$ Tuple, Idx, T $>$\+::type
+{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx, typename T$>$ }\\using \mbox{\hyperlink{group__metareplace_ga5707ead199d6ae662fdfce27928d5a61}{utils\+::meta\+::replace\+\_\+t}} = \mbox{\hyperlink{group__metareplace_structutils_1_1meta_1_1replace}{replace}}$<$Tuple, Idx, T$>$\+::type
 \item 
-{\footnotesize template$<$typename Erased\+Result $>$ }\\using \mbox{\hyperlink{group__metainfer_ga589006341bea1c7475635f68058edb53}{utils\+::meta\+::infer\+\_\+t}} = infer$<$ Erased\+Result $>$\+::type
+{\footnotesize template$<$typename Erased\+Result$>$ }\\using \mbox{\hyperlink{group__metainfer_ga339d5b918f560d5afcc3ae2dba25a435}{utils\+::meta\+::infer\+\_\+t}} = \mbox{\hyperlink{group__metainfer_structutils_1_1meta_1_1infer}{infer}}$<$Erased\+Result$>$\+::type
 \item 
-{\footnotesize template$<$template$<$ typename... $>$ typename Trait, tuple\+\_\+like Tuple, tuple\+\_\+like... Tuples$>$ }\\using \mbox{\hyperlink{group__metamap_ga3b38ac9e969ec6ebdba7cc79b96e7417}{utils\+::meta\+::map\+\_\+t}} = map$<$ Trait, Tuple, Tuples... $>$\+::type
+{\footnotesize template$<$template$<$ typename... $>$ typename Trait, tuple\+\_\+like Tuple, tuple\+\_\+like... Tuples$>$ }\\using \mbox{\hyperlink{group__metamap_ga8fe41ec3065079bcfcd4bc2c896a49a1}{utils\+::meta\+::map\+\_\+t}} = \mbox{\hyperlink{group__metamap_structutils_1_1meta_1_1map}{map}}$<$Trait, Tuple, Tuples...$>$\+::type
 \item 
-{\footnotesize template$<$template$<$ typename... $>$ typename Trait, tuple\+\_\+like T$>$ }\\using \mbox{\hyperlink{group__metareduce_gac678341b60759542f0fc5edb1c4f20f1}{utils\+::meta\+::reduce\+\_\+t}} = reduce$<$ Trait, T $>$\+::type
+{\footnotesize template$<$template$<$ typename... $>$ typename Trait, tuple\+\_\+like T$>$ }\\using \mbox{\hyperlink{group__metareduce_gac06654e50e3774e96a8e371b60e9ded5}{utils\+::meta\+::reduce\+\_\+t}} = \mbox{\hyperlink{group__metareduce_structutils_1_1meta_1_1reduce}{reduce}}$<$Trait, T$>$\+::type
 \item 
-{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{group__metaextract_gacd07985a63eb37381aaa77c70f6ea190}{utils\+::meta\+::extract\+\_\+t}} = extract$<$ T $>$\+::type
+{\footnotesize template$<$typename T$>$ }\\using \mbox{\hyperlink{group__metaextract_ga95306abb601ad1c54c91d4eaf55cdd2d}{utils\+::meta\+::extract\+\_\+t}} = \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{extract}}$<$T$>$\+::type
 \item 
-{\footnotesize template$<$typename T , typename... Args$>$ }\\using \mbox{\hyperlink{group__metarebind_gafe8efef1673daf4f8ce44537acf10a3b}{utils\+::meta\+::rebind\+\_\+t}} = rebind$<$ T, Args... $>$\+::type
+{\footnotesize template$<$typename T, typename... Args$>$ }\\using \mbox{\hyperlink{group__metarebind_ga0e59b67f8900b52c51c5c658825d744f}{utils\+::meta\+::rebind\+\_\+t}} = \mbox{\hyperlink{group__metarebind_structutils_1_1meta_1_1rebind}{rebind}}$<$T, Args...$>$\+::type
 \end{DoxyCompactItemize}
-\doxysubsection*{Variables}
+\doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T $>$ }\\constexpr bool \mbox{\hyperlink{group__metais__tuple_gad2354777e112932691eea7de4623cbf0}{utils\+::meta\+::is\+\_\+tuple\+\_\+v}} = is\+\_\+tuple$<$T$>$\+::value
+{\footnotesize template$<$typename T$>$ }\\constexpr bool \mbox{\hyperlink{group__metais__tuple_gad2354777e112932691eea7de4623cbf0}{utils\+::meta\+::is\+\_\+tuple\+\_\+v}} = \mbox{\hyperlink{group__metais__tuple_structutils_1_1meta_1_1is__tuple}{is\+\_\+tuple}}$<$T$>$\+::value
 \item 
-{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx$>$ }\\constexpr std\+::size\+\_\+t \mbox{\hyperlink{group__metaactual__index_ga4d133c7490f073188fc7eb130261cbd2}{utils\+::meta\+::actual\+\_\+index\+\_\+v}} = actual\+\_\+index$<$Tuple, Idx$>$\+::value
+{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx$>$ }\\constexpr std\+::size\+\_\+t \mbox{\hyperlink{group__metaactual__index_ga4d133c7490f073188fc7eb130261cbd2}{utils\+::meta\+::actual\+\_\+index\+\_\+v}} = \mbox{\hyperlink{group__metaactual__index_structutils_1_1meta_1_1actual__index}{actual\+\_\+index}}$<$Tuple, Idx$>$\+::value
 \item 
-{\footnotesize template$<$tuple\+\_\+like Tuple, typename T , template$<$ typename, typename $>$ typename Pred\+Trait = std\+::is\+\_\+same$>$ }\\constexpr std\+::size\+\_\+t \mbox{\hyperlink{group__metasearch_gaeb4f807ff8f6a11b97c26fb852d91b16}{utils\+::meta\+::search\+\_\+v}} = search$<$Tuple, T, Pred\+Trait$>$\+::value
+{\footnotesize template$<$tuple\+\_\+like Tuple, typename T, template$<$ typename, typename $>$ typename Pred\+Trait = std\+::is\+\_\+same$>$ }\\constexpr std\+::size\+\_\+t \mbox{\hyperlink{group__metasearch_gaeb4f807ff8f6a11b97c26fb852d91b16}{utils\+::meta\+::search\+\_\+v}} = \mbox{\hyperlink{group__metasearch_structutils_1_1meta_1_1search}{search}}$<$Tuple, T, Pred\+Trait$>$\+::value
 \item 
-{\footnotesize template$<$tuple\+\_\+like Tuple, typename T , template$<$ typename, typename $>$ typename Pred\+Trait = std\+::is\+\_\+same$>$ }\\constexpr bool \mbox{\hyperlink{group__metacontained__in_ga1047a3fe70ce04f9726a0e5d3fb74acd}{utils\+::meta\+::contained\+\_\+in\+\_\+v}} = contained\+\_\+in$<$Tuple, T, Pred\+Trait$>$\+::value
+{\footnotesize template$<$tuple\+\_\+like Tuple, typename T, template$<$ typename, typename $>$ typename Pred\+Trait = std\+::is\+\_\+same$>$ }\\constexpr bool \mbox{\hyperlink{group__metacontained__in_ga1047a3fe70ce04f9726a0e5d3fb74acd}{utils\+::meta\+::contained\+\_\+in\+\_\+v}} = \mbox{\hyperlink{group__metacontained__in_structutils_1_1meta_1_1contained__in}{contained\+\_\+in}}$<$Tuple, T, Pred\+Trait$>$\+::value
 \item 
-{\footnotesize template$<$template$<$ typename... $>$ typename Trait, tuple\+\_\+like T$>$ }\\constexpr auto \mbox{\hyperlink{group__metareduce_ga89bb8d8a2a70515ade89987c00ae2ba8}{utils\+::meta\+::reduce\+\_\+v}} = reduce$<$Trait, T$>$\+::value
+{\footnotesize template$<$template$<$ typename... $>$ typename Trait, tuple\+\_\+like T$>$ }\\constexpr auto \mbox{\hyperlink{group__metareduce_ga89bb8d8a2a70515ade89987c00ae2ba8}{utils\+::meta\+::reduce\+\_\+v}} = \mbox{\hyperlink{group__metareduce_structutils_1_1meta_1_1reduce}{reduce}}$<$Trait, T$>$\+::value
 \item 
-{\footnotesize template$<$typename... Value\+Results$>$ }\\constexpr auto \mbox{\hyperlink{group__metasum_gaa6f94b0098e74cddc4241037e2a90844}{utils\+::meta\+::sum\+\_\+v}} = sum$<$Value\+Results...$>$\+::value
+{\footnotesize template$<$typename... Value\+Results$>$ }\\constexpr auto \mbox{\hyperlink{group__metasum_gaa6f94b0098e74cddc4241037e2a90844}{utils\+::meta\+::sum\+\_\+v}} = \mbox{\hyperlink{group__metasum_structutils_1_1meta_1_1sum}{sum}}$<$Value\+Results...$>$\+::value
 \item 
-{\footnotesize template$<$typename... Value\+Results$>$ }\\constexpr auto \mbox{\hyperlink{group__metaproduct_ga9a93c684aeb7e2311a64f82184e818e0}{utils\+::meta\+::product\+\_\+v}} = product$<$Value\+Results...$>$\+::value
+{\footnotesize template$<$typename... Value\+Results$>$ }\\constexpr auto \mbox{\hyperlink{group__metaproduct_ga9a93c684aeb7e2311a64f82184e818e0}{utils\+::meta\+::product\+\_\+v}} = \mbox{\hyperlink{group__metaproduct_structutils_1_1meta_1_1product}{product}}$<$Value\+Results...$>$\+::value
 \item 
-{\footnotesize template$<$tuple\+\_\+like Small\+Tuple, tuple\+\_\+like Big\+Tuple$>$ }\\constexpr bool \mbox{\hyperlink{group__metasubset__of_gae9e1e125419fe26992d7565a1c7f2045}{utils\+::meta\+::subset\+\_\+of\+\_\+v}} = subset\+\_\+of$<$Small\+Tuple, Big\+Tuple$>$\+::value
+{\footnotesize template$<$tuple\+\_\+like Small\+Tuple, tuple\+\_\+like Big\+Tuple$>$ }\\constexpr bool \mbox{\hyperlink{group__metasubset__of_gae9e1e125419fe26992d7565a1c7f2045}{utils\+::meta\+::subset\+\_\+of\+\_\+v}} = \mbox{\hyperlink{group__metasubset__of_structutils_1_1meta_1_1subset__of}{subset\+\_\+of}}$<$Small\+Tuple, Big\+Tuple$>$\+::value
 \end{DoxyCompactItemize}

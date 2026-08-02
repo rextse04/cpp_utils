@@ -1,5 +1,5 @@
-\hypertarget{conceptutils_1_1reservable__container}{}\doxysection{utils\+::reservable\+\_\+container Concept Reference}
-\label{conceptutils_1_1reservable__container}\index{utils::reservable\_container@{utils::reservable\_container}}
+\doxysection{utils\+::reservable\+\_\+container Concept Reference}
+\hypertarget{conceptutils_1_1reservable__container}{}\label{conceptutils_1_1reservable__container}\index{utils::reservable\_container@{utils::reservable\_container}}
 
 
 {\ttfamily \#include $<$ranges.\+hpp$>$}
@@ -7,14 +7,14 @@
 \doxysubsection{Concept definition}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} Container>}
-\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1reservable__container}{utils::reservable\_container}} = }
-\DoxyCodeLine{        std::ranges::sized\_range<Container> \&\&}
-\DoxyCodeLine{        \textcolor{keyword}{requires} (Container\& \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}, std::ranges::range\_size\_t<Container> n) \{}
-\DoxyCodeLine{            \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.reserve(n);}
-\DoxyCodeLine{            \{ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.capacity() \} -\/> std::same\_as<\textcolor{keyword}{decltype}(n)>;}
-\DoxyCodeLine{            \{ c.max\_size() \} -\/> std::same\_as<\textcolor{keyword}{decltype}(n)>;}
-\DoxyCodeLine{        \}}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Container>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptutils_1_1reservable__container}{utils::reservable\_container}}\ =\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::ranges::sized\_range<Container>\ \&\&}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ (Container\&\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}},\ std::ranges::range\_size\_t<Container>\ n)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.reserve(n);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.capacity()\ \}\ -\/>\ std::same\_as<\textcolor{keyword}{decltype}(n)>;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.max\_size()\ \}\ -\/>\ std::same\_as<\textcolor{keyword}{decltype}(n)>;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 

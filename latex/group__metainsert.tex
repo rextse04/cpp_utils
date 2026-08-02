@@ -1,24 +1,24 @@
-\hypertarget{group__metainsert}{}\doxysection{utils\+::meta\+::insert}
-\label{group__metainsert}\index{utils::meta::insert@{utils::meta::insert}}
+\doxysection{utils\+::meta\+::insert}
+\hypertarget{group__metainsert}{}\label{group__metainsert}\index{utils::meta::insert@{utils::meta::insert}}
 
 
-Inserts a tuple-\/like type {\ttfamily Inserted} into a tuple type {\ttfamily Tuple} at index {\ttfamily Idx}.  
+A \href{Trait.html}{\texttt{ {\itshape Type\+Trait}}} that inserts a tuple-\/like type {\ttfamily Inserted} into a tuple type {\ttfamily Tuple} at index {\ttfamily Idx}.  
 
 
-\doxysubsection*{Classes}
+\doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{group__metainsert_structutils_1_1meta_1_1insert}{utils\+::meta\+::insert$<$ Tuple, Idx, Inserted $>$}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Typedefs}
+\doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx, tuple\+\_\+like Inserted$>$ }\\using \mbox{\hyperlink{group__metainsert_ga74db5bbf8f178b4db63af53a7f59a002}{utils\+::meta\+::insert\+\_\+t}} = \mbox{\hyperlink{group__metainsert_structutils_1_1meta_1_1insert}{insert}}$<$ Tuple, Idx, Inserted $>$\+::type
+{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx, tuple\+\_\+like Inserted$>$ }\\using \mbox{\hyperlink{group__metainsert_gacd1326e66a35be3343675e77c1ecce73}{utils\+::meta\+::insert\+\_\+t}} = \mbox{\hyperlink{group__metainsert_structutils_1_1meta_1_1insert}{insert}}$<$Tuple, Idx, Inserted$>$\+::type
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Inserts a tuple-\/like type {\ttfamily Inserted} into a tuple type {\ttfamily Tuple} at index {\ttfamily Idx}. 
+A \href{Trait.html}{\texttt{ {\itshape Type\+Trait}}} that inserts a tuple-\/like type {\ttfamily Inserted} into a tuple type {\ttfamily Tuple} at index {\ttfamily Idx}. 
 
 The index {\ttfamily Idx} can be negative, which is normalized relative to the tuple size. 
 
@@ -39,19 +39,24 @@ Collaboration diagram for utils\+::meta\+::insert\texorpdfstring{$<$}{<} Tuple, 
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=196pt]{structutils_1_1meta_1_1insert__coll__graph}
+\includegraphics[width=195pt]{structutils_1_1meta_1_1insert__coll__graph}
 \end{center}
 \end{figure}
-\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{group__metaconcat}{utils\+::meta\+::concat$<$ slice\+\_\+t$<$ Tuple, 0, Idx $>$, Inserted, slice\+\_\+t$<$ Tuple, Idx $>$ $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{group__metastrict__subset__of_gae0cc6b1113cbcb8e99c20146520ab37f}{type}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
-\mbox{\Hypertarget{group__metainsert_ga74db5bbf8f178b4db63af53a7f59a002}\label{group__metainsert_ga74db5bbf8f178b4db63af53a7f59a002}} 
-\index{utils::meta::insert@{utils::meta::insert}!insert\_t@{insert\_t}}
+\Hypertarget{group__metainsert_gacd1326e66a35be3343675e77c1ecce73}\index{utils::meta::insert@{utils::meta::insert}!insert\_t@{insert\_t}}
 \index{insert\_t@{insert\_t}!utils::meta::insert@{utils::meta::insert}}
 \doxysubsubsection{\texorpdfstring{insert\_t}{insert\_t}}
-{\footnotesize\ttfamily template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx, tuple\+\_\+like Inserted$>$ \\
-using \mbox{\hyperlink{group__metainsert_ga74db5bbf8f178b4db63af53a7f59a002}{utils\+::meta\+::insert\+\_\+t}} = typedef \mbox{\hyperlink{group__metainsert_structutils_1_1meta_1_1insert}{insert}}$<$Tuple, Idx, Inserted$>$\+::type}
+{\footnotesize\ttfamily \label{group__metainsert_gacd1326e66a35be3343675e77c1ecce73} 
+template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx, tuple\+\_\+like Inserted$>$ \\
+using \mbox{\hyperlink{group__metainsert_gacd1326e66a35be3343675e77c1ecce73}{utils\+::meta\+::insert\+\_\+t}} = \mbox{\hyperlink{group__metainsert_structutils_1_1meta_1_1insert}{insert}}$<$Tuple, Idx, Inserted$>$\+::type}
 
 
 

@@ -1,5 +1,7 @@
 <map id="exception.hpp" name="exception.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,107,32"/>
-<area shape="rect" id="node2" href="$self_8hpp.html" title=" " alt="" coords="23,80,89,107"/>
-<area shape="rect" id="node3" href="$dynamic_8hpp.html" title=" " alt="" coords="9,155,103,181"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,106,31"/>
+<area shape="rect" id="Node000002" href="$self_8hpp.html" title=" " alt="" coords="22,79,89,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="58,46,58,79,53,79,53,46"/>
+<area shape="rect" id="Node000003" href="$dynamic_8hpp.html" title=" " alt="" coords="9,153,102,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="58,120,58,152,53,152,53,120"/>
 </map>

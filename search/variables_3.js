@@ -1,7 +1,7 @@
 var searchData=
 [
   ['data_0',['data',['../structutils_1_1aligned__t.html#aede3dd467efb54ac7dc8c765a45c7f90',1,'utils::aligned_t']]],
-  ['data_5f_1',['data_',['../structutils_1_1basic__static__string__view.html#a28a0e5b397590f97a66816ad56db26ae',1,'utils::basic_static_string_view::data_()'],['../structutils_1_1basic__static__string.html#a102ebad9f5da17c52ed03163a0d63cca',1,'utils::basic_static_string::data_()']]],
+  ['data_5f_1',['data_',['../structutils_1_1basic__static__string__view.html#a28a0e5b397590f97a66816ad56db26ae',1,'utils::basic_static_string_view::data_'],['../structutils_1_1basic__static__string.html#a102ebad9f5da17c52ed03163a0d63cca',1,'utils::basic_static_string::data_']]],
   ['disable_5fop_2',['disable_op',['../namespaceutils.html#a73660fa40d7555f9ec8f74c3fd244253',1,'utils']]],
   ['div_5fnode_3',['div_node',['../structutils_1_1segment__tree_1_1node__info.html#af5d9985421088bd9cc07f20bb3bcee1b',1,'utils::segment_tree::node_info']]],
   ['divides_4',['divides',['../structutils_1_1integral__op__functors.html#a17a6903a008bcc4bab44ea377cccc0d2',1,'utils::integral_op_functors']]],

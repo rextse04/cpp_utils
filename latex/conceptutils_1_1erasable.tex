@@ -1,5 +1,5 @@
-\hypertarget{conceptutils_1_1erasable}{}\doxysection{utils\+::erasable Concept Reference}
-\label{conceptutils_1_1erasable}\index{utils::erasable@{utils::erasable}}
+\doxysection{utils\+::erasable Concept Reference}
+\hypertarget{conceptutils_1_1erasable}{}\label{conceptutils_1_1erasable}\index{utils::erasable@{utils::erasable}}
 
 
 C++ named requirements\+: {\itshape Erasable}  
@@ -12,10 +12,10 @@ C++ named requirements\+: {\itshape Erasable}
 \doxysubsection{Concept definition}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} Allocator>}
-\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1erasable}{utils::erasable}} =  \textcolor{keyword}{requires}(Allocator m, T* p) \{}
-\DoxyCodeLine{        std::allocator\_traits<Allocator>::destroy(m, p);}
-\DoxyCodeLine{    \}}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Allocator>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptutils_1_1erasable}{utils::erasable}}\ =\ \ \textcolor{keyword}{requires}(Allocator\ m,\ T*\ p)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::allocator\_traits<Allocator>::destroy(m,\ p);}
+\DoxyCodeLine{\ \ \ \ \}}
 
 \end{DoxyCode}
 

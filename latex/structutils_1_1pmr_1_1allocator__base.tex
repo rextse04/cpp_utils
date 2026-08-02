@@ -1,5 +1,5 @@
-\hypertarget{structutils_1_1pmr_1_1allocator__base}{}\doxysection{utils\+::pmr\+::allocator\+\_\+base\texorpdfstring{$<$}{<} T, Traits \texorpdfstring{$>$}{>} Struct Template Reference}
-\label{structutils_1_1pmr_1_1allocator__base}\index{utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}}
+\doxysection{utils\+::pmr\+::allocator\+\_\+base\texorpdfstring{$<$}{<} T, Traits \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{structutils_1_1pmr_1_1allocator__base}{}\label{structutils_1_1pmr_1_1allocator__base}\index{utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}}
 
 
 A convenience base class providing typedefs for custom allocators.  
@@ -9,23 +9,6 @@ A convenience base class providing typedefs for custom allocators.
 
 {\ttfamily \#include $<$allocator\+\_\+base.\+hpp$>$}
 
-\doxysubsection*{Public Types}
-\begin{DoxyCompactItemize}
-\item 
-using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a4edc136e6071d4afdd622696c3f20a34}{value\+\_\+type}} = T
-\item 
-using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}} = Traits\+::void\+\_\+pointer
-\item 
-using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a97e19a3808b4446b28dd6df48249ce89}{const\+\_\+void\+\_\+pointer}} = std\+::pointer\+\_\+traits$<$ \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}} $>$\+::template rebind$<$ const void $>$
-\item 
-using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_abd9b603040f83e782f72afeb661d8892}{pointer}} = std\+::pointer\+\_\+traits$<$ \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}} $>$\+::template rebind$<$ T $>$
-\item 
-using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a34091e27e766de21153c3db3b29c6755}{const\+\_\+pointer}} = std\+::pointer\+\_\+traits$<$ \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}} $>$\+::template rebind$<$ const T $>$
-\item 
-using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_ad2cad1b394bb4f50a903c4bbbb322faa}{difference\+\_\+type}} = std\+::pointer\+\_\+traits$<$ \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}} $>$\+::\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_ad2cad1b394bb4f50a903c4bbbb322faa}{difference\+\_\+type}}
-\item 
-using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} = Traits\+::size\+\_\+type
-\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -34,94 +17,111 @@ struct utils\+::pmr\+::allocator\+\_\+base$<$ T, Traits $>$}
 A convenience base class providing typedefs for custom allocators. 
 
 \begin{DoxyRemark}{Remarks}
-Due to {\ttfamily std\+::allocator\+\_\+traits}, this is not needed most of the time. However, this can be useful when your allocator depends on a common \char`\"{}control type\char`\"{} and you would like to synchronize the typedefs across all your allocators. 
+Due to {\ttfamily std\+::allocator\+\_\+traits}, this is not needed most of the time. However, this can be useful when your allocator depends on a common "{}control type"{} and you would like to synchronize the typedefs across all your allocators. 
 \end{DoxyRemark}
 
 \begin{DoxyTemplParams}{Template Parameters}
-{\em T} & {\ttfamily value\+\_\+type} \\
+{\em T} & {\ttfamily \doxylink{structutils_1_1pmr_1_1allocator__base_a4edc136e6071d4afdd622696c3f20a34}{value\+\_\+type}} \\
 \hline
-{\em Traits} & A type which has member types {\ttfamily void\+\_\+pointer} and {\ttfamily size\+\_\+type}. All other member types are derived from {\ttfamily Traits}. \\
+{\em Traits} & A type which has member types {\ttfamily \doxylink{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}} and {\ttfamily \doxylink{structutils_1_1pmr_1_1allocator__base_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}}. All other member types are derived from {\ttfamily Traits}. \\
 \hline
 \end{DoxyTemplParams}
 
 
 Definition at line \mbox{\hyperlink{allocator__base_8hpp_source_l00013}{13}} of file \mbox{\hyperlink{allocator__base_8hpp_source}{allocator\+\_\+base.\+hpp}}.
 
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a4edc136e6071d4afdd622696c3f20a34}{value\+\_\+type}} = T
+\item 
+using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}} = Traits\+::void\+\_\+pointer
+\item 
+using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a97e19a3808b4446b28dd6df48249ce89}{const\+\_\+void\+\_\+pointer}} = std\+::pointer\+\_\+traits$<$\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}}$>$\+::template rebind$<$const void$>$
+\item 
+using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_abd9b603040f83e782f72afeb661d8892}{pointer}} = std\+::pointer\+\_\+traits$<$\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}}$>$\+::template rebind$<$T$>$
+\item 
+using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a34091e27e766de21153c3db3b29c6755}{const\+\_\+pointer}} = std\+::pointer\+\_\+traits$<$\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}}$>$\+::template rebind$<$const T$>$
+\item 
+using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_ad2cad1b394bb4f50a903c4bbbb322faa}{difference\+\_\+type}} = std\+::pointer\+\_\+traits$<$\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}}$>$\+::difference\+\_\+type
+\item 
+using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} = Traits\+::size\+\_\+type
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Typedef Documentation}
-\mbox{\Hypertarget{structutils_1_1pmr_1_1allocator__base_a34091e27e766de21153c3db3b29c6755}\label{structutils_1_1pmr_1_1allocator__base_a34091e27e766de21153c3db3b29c6755}} 
-\index{utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}!const\_pointer@{const\_pointer}}
+\Hypertarget{structutils_1_1pmr_1_1allocator__base_a34091e27e766de21153c3db3b29c6755}\index{utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}!const\_pointer@{const\_pointer}}
 \index{const\_pointer@{const\_pointer}!utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}}
 \doxysubsubsection{\texorpdfstring{const\_pointer}{const\_pointer}}
-{\footnotesize\ttfamily template$<$typename T , typename Traits $>$ \\
-using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base}{utils\+::pmr\+::allocator\+\_\+base}}$<$ T, Traits $>$\+::\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a34091e27e766de21153c3db3b29c6755}{const\+\_\+pointer}} =  std\+::pointer\+\_\+traits$<$\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}}$>$\+::template rebind$<$const T$>$}
+{\footnotesize\ttfamily \label{structutils_1_1pmr_1_1allocator__base_a34091e27e766de21153c3db3b29c6755} 
+template$<$typename T, typename Traits$>$ \\
+using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base}{utils\+::pmr\+::allocator\+\_\+base}}$<$ T, Traits $>$\+::const\+\_\+pointer = std\+::pointer\+\_\+traits$<$\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}}$>$\+::template rebind$<$const T$>$}
 
 
 
 Definition at line \mbox{\hyperlink{allocator__base_8hpp_source_l00018}{18}} of file \mbox{\hyperlink{allocator__base_8hpp_source}{allocator\+\_\+base.\+hpp}}.
 
-\mbox{\Hypertarget{structutils_1_1pmr_1_1allocator__base_a97e19a3808b4446b28dd6df48249ce89}\label{structutils_1_1pmr_1_1allocator__base_a97e19a3808b4446b28dd6df48249ce89}} 
-\index{utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}!const\_void\_pointer@{const\_void\_pointer}}
+\Hypertarget{structutils_1_1pmr_1_1allocator__base_a97e19a3808b4446b28dd6df48249ce89}\index{utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}!const\_void\_pointer@{const\_void\_pointer}}
 \index{const\_void\_pointer@{const\_void\_pointer}!utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}}
 \doxysubsubsection{\texorpdfstring{const\_void\_pointer}{const\_void\_pointer}}
-{\footnotesize\ttfamily template$<$typename T , typename Traits $>$ \\
-using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base}{utils\+::pmr\+::allocator\+\_\+base}}$<$ T, Traits $>$\+::\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a97e19a3808b4446b28dd6df48249ce89}{const\+\_\+void\+\_\+pointer}} =  std\+::pointer\+\_\+traits$<$\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}}$>$\+::template rebind$<$const void$>$}
+{\footnotesize\ttfamily \label{structutils_1_1pmr_1_1allocator__base_a97e19a3808b4446b28dd6df48249ce89} 
+template$<$typename T, typename Traits$>$ \\
+using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base}{utils\+::pmr\+::allocator\+\_\+base}}$<$ T, Traits $>$\+::const\+\_\+void\+\_\+pointer = std\+::pointer\+\_\+traits$<$\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}}$>$\+::template rebind$<$const void$>$}
 
 
 
 Definition at line \mbox{\hyperlink{allocator__base_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{allocator__base_8hpp_source}{allocator\+\_\+base.\+hpp}}.
 
-\mbox{\Hypertarget{structutils_1_1pmr_1_1allocator__base_ad2cad1b394bb4f50a903c4bbbb322faa}\label{structutils_1_1pmr_1_1allocator__base_ad2cad1b394bb4f50a903c4bbbb322faa}} 
-\index{utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}!difference\_type@{difference\_type}}
+\Hypertarget{structutils_1_1pmr_1_1allocator__base_ad2cad1b394bb4f50a903c4bbbb322faa}\index{utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}!difference\_type@{difference\_type}}
 \index{difference\_type@{difference\_type}!utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}}
 \doxysubsubsection{\texorpdfstring{difference\_type}{difference\_type}}
-{\footnotesize\ttfamily template$<$typename T , typename Traits $>$ \\
-using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base}{utils\+::pmr\+::allocator\+\_\+base}}$<$ T, Traits $>$\+::\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_ad2cad1b394bb4f50a903c4bbbb322faa}{difference\+\_\+type}} =  std\+::pointer\+\_\+traits$<$\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}}$>$\+::\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_ad2cad1b394bb4f50a903c4bbbb322faa}{difference\+\_\+type}}}
+{\footnotesize\ttfamily \label{structutils_1_1pmr_1_1allocator__base_ad2cad1b394bb4f50a903c4bbbb322faa} 
+template$<$typename T, typename Traits$>$ \\
+using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base}{utils\+::pmr\+::allocator\+\_\+base}}$<$ T, Traits $>$\+::difference\+\_\+type = std\+::pointer\+\_\+traits$<$\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}}$>$\+::difference\+\_\+type}
 
 
 
 Definition at line \mbox{\hyperlink{allocator__base_8hpp_source_l00019}{19}} of file \mbox{\hyperlink{allocator__base_8hpp_source}{allocator\+\_\+base.\+hpp}}.
 
-\mbox{\Hypertarget{structutils_1_1pmr_1_1allocator__base_abd9b603040f83e782f72afeb661d8892}\label{structutils_1_1pmr_1_1allocator__base_abd9b603040f83e782f72afeb661d8892}} 
-\index{utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}!pointer@{pointer}}
+\Hypertarget{structutils_1_1pmr_1_1allocator__base_abd9b603040f83e782f72afeb661d8892}\index{utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}!pointer@{pointer}}
 \index{pointer@{pointer}!utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}}
 \doxysubsubsection{\texorpdfstring{pointer}{pointer}}
-{\footnotesize\ttfamily template$<$typename T , typename Traits $>$ \\
-using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base}{utils\+::pmr\+::allocator\+\_\+base}}$<$ T, Traits $>$\+::\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_abd9b603040f83e782f72afeb661d8892}{pointer}} =  std\+::pointer\+\_\+traits$<$\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}}$>$\+::template rebind$<$T$>$}
+{\footnotesize\ttfamily \label{structutils_1_1pmr_1_1allocator__base_abd9b603040f83e782f72afeb661d8892} 
+template$<$typename T, typename Traits$>$ \\
+using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base}{utils\+::pmr\+::allocator\+\_\+base}}$<$ T, Traits $>$\+::pointer = std\+::pointer\+\_\+traits$<$\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}}$>$\+::template rebind$<$T$>$}
 
 
 
 Definition at line \mbox{\hyperlink{allocator__base_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{allocator__base_8hpp_source}{allocator\+\_\+base.\+hpp}}.
 
-\mbox{\Hypertarget{structutils_1_1pmr_1_1allocator__base_acec1005620dc77b29dc4844dc009d4c3}\label{structutils_1_1pmr_1_1allocator__base_acec1005620dc77b29dc4844dc009d4c3}} 
-\index{utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}!size\_type@{size\_type}}
+\Hypertarget{structutils_1_1pmr_1_1allocator__base_acec1005620dc77b29dc4844dc009d4c3}\index{utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}!size\_type@{size\_type}}
 \index{size\_type@{size\_type}!utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}}
 \doxysubsubsection{\texorpdfstring{size\_type}{size\_type}}
-{\footnotesize\ttfamily template$<$typename T , typename Traits $>$ \\
-using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base}{utils\+::pmr\+::allocator\+\_\+base}}$<$ T, Traits $>$\+::\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} =  Traits\+::size\+\_\+type}
+{\footnotesize\ttfamily \label{structutils_1_1pmr_1_1allocator__base_acec1005620dc77b29dc4844dc009d4c3} 
+template$<$typename T, typename Traits$>$ \\
+using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base}{utils\+::pmr\+::allocator\+\_\+base}}$<$ T, Traits $>$\+::size\+\_\+type = Traits\+::size\+\_\+type}
 
 
 
 Definition at line \mbox{\hyperlink{allocator__base_8hpp_source_l00020}{20}} of file \mbox{\hyperlink{allocator__base_8hpp_source}{allocator\+\_\+base.\+hpp}}.
 
-\mbox{\Hypertarget{structutils_1_1pmr_1_1allocator__base_a4edc136e6071d4afdd622696c3f20a34}\label{structutils_1_1pmr_1_1allocator__base_a4edc136e6071d4afdd622696c3f20a34}} 
-\index{utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}!value\_type@{value\_type}}
+\Hypertarget{structutils_1_1pmr_1_1allocator__base_a4edc136e6071d4afdd622696c3f20a34}\index{utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}!value\_type@{value\_type}}
 \index{value\_type@{value\_type}!utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}}
 \doxysubsubsection{\texorpdfstring{value\_type}{value\_type}}
-{\footnotesize\ttfamily template$<$typename T , typename Traits $>$ \\
-using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base}{utils\+::pmr\+::allocator\+\_\+base}}$<$ T, Traits $>$\+::\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a4edc136e6071d4afdd622696c3f20a34}{value\+\_\+type}} =  T}
+{\footnotesize\ttfamily \label{structutils_1_1pmr_1_1allocator__base_a4edc136e6071d4afdd622696c3f20a34} 
+template$<$typename T, typename Traits$>$ \\
+using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base}{utils\+::pmr\+::allocator\+\_\+base}}$<$ T, Traits $>$\+::value\+\_\+type = T}
 
 
 
 Definition at line \mbox{\hyperlink{allocator__base_8hpp_source_l00014}{14}} of file \mbox{\hyperlink{allocator__base_8hpp_source}{allocator\+\_\+base.\+hpp}}.
 
-\mbox{\Hypertarget{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}\label{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}} 
-\index{utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}!void\_pointer@{void\_pointer}}
+\Hypertarget{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}\index{utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}!void\_pointer@{void\_pointer}}
 \index{void\_pointer@{void\_pointer}!utils::pmr::allocator\_base$<$ T, Traits $>$@{utils::pmr::allocator\_base$<$ T, Traits $>$}}
 \doxysubsubsection{\texorpdfstring{void\_pointer}{void\_pointer}}
-{\footnotesize\ttfamily template$<$typename T , typename Traits $>$ \\
-using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base}{utils\+::pmr\+::allocator\+\_\+base}}$<$ T, Traits $>$\+::\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}} =  Traits\+::void\+\_\+pointer}
+{\footnotesize\ttfamily \label{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed} 
+template$<$typename T, typename Traits$>$ \\
+using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base}{utils\+::pmr\+::allocator\+\_\+base}}$<$ T, Traits $>$\+::void\+\_\+pointer = Traits\+::void\+\_\+pointer}
 
 
 

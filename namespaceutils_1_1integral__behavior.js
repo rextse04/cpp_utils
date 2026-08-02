@@ -1,12 +1,7 @@
 var namespaceutils_1_1integral__behavior =
 [
-    [ "default_asg_op_traits", "structutils_1_1integral__behavior_1_1default__asg__op__traits.html", [
-      [ "constraint", "structutils_1_1integral__behavior_1_1default__asg__op__traits_1_1constraint.html", null ]
-    ] ],
-    [ "default_binary_op_traits", "structutils_1_1integral__behavior_1_1default__binary__op__traits.html", [
-      [ "constraint", "structutils_1_1integral__behavior_1_1default__binary__op__traits_1_1constraint.html", null ],
-      [ "result", "structutils_1_1integral__behavior_1_1default__binary__op__traits_1_1result.html", "structutils_1_1integral__behavior_1_1default__binary__op__traits_1_1result" ]
-    ] ],
+    [ "default_asg_op_traits", "structutils_1_1integral__behavior_1_1default__asg__op__traits.html", "structutils_1_1integral__behavior_1_1default__asg__op__traits" ],
+    [ "default_binary_op_traits", "structutils_1_1integral__behavior_1_1default__binary__op__traits.html", "structutils_1_1integral__behavior_1_1default__binary__op__traits" ],
     [ "profile", "structutils_1_1integral__behavior_1_1profile.html", null ],
     [ "checked", "namespaceutils_1_1integral__behavior.html#aa48365622907640e6ca37de0827a4e42", null ],
     [ "profile_from", "namespaceutils_1_1integral__behavior.html#a16c01446283f45b336955e3e2870dc98", null ],

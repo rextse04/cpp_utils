@@ -1,0 +1,138 @@
+\doxysection{Named Requirements\+: \texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Operator\+Functor\+Set\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}
+\hypertarget{OperatorFunctorSet}{}\label{OperatorFunctorSet}\index{Named Requirements: $<$i$>$OperatorFunctorSet$<$/i$>$@{Named Requirements: $<$i$>$OperatorFunctorSet$<$/i$>$}}
+\label{OperatorFunctorSet_md_docs_2named__reqs_2OperatorFunctorSet}%
+\Hypertarget{OperatorFunctorSet_md_docs_2named__reqs_2OperatorFunctorSet}%
+
+
+An {\itshape Operator\+Functor\+Set} is a structural type that encapsulates and unifies type constraints and behavior for overloaded operators of a user-\/provided class type. {\ttfamily utils\+:\+:\texorpdfstring{$\ast$}{*}\+\_\+op} accepts {\itshape Operator\+Functor\+Set}(s) as template parameter and translates them into operator overloads, which is then expected to be inherited as part of the mixin pattern. Its use is most appropriate in a scenario where the child type is a wrapper around an underlying type for which such operations are well-\/defined.\hypertarget{OperatorFunctorSet_autotoc_md9}{}\doxysubsection{\texorpdfstring{Requirements}{Requirements}}\label{OperatorFunctorSet_autotoc_md9}
+An {\itshape Operator\+Functor\+Set\+Template} is a class template declared as such by the library in the following format\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Op1,\ ...,\ \textcolor{keyword}{typename}\ OpN,\ \textcolor{keyword}{typename}\ Traits1,\ ...,\ \textcolor{keyword}{typename}\ TraitsM>}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }OperatorFunctorSetTemplate;}
+
+\end{DoxyCode}
+ Each {\ttfamily OpI} corresponds to an operator supported by the template, denoted by {\ttfamily @\+\_\+I}; and a {\itshape trait set} (from {\ttfamily Traits1} to {\ttfamily TraitsM}), denoted by {\ttfamily Traits\+\_\+I}. All overloadable operators are classified into {\itshape types}, each corresponding to a trait set given by a fixed template parameter name, as specified below\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Case   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Trait Parameter Name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Remarks    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Case   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Trait Parameter Name   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Remarks    }\\\cline{1-4}
+\endhead
+1   &Binary operator   &{\ttfamily Binary\+Traits}   &This excludes assignment operators.    \\\cline{1-4}
+2   &Assignment operator   &{\ttfamily Asg\+Traits}   &-\/    \\\cline{1-4}
+3   &Unary operator   &{\ttfamily Unary\+Traits}   &This excludes prefix operators.    \\\cline{1-4}
+4   &Prefix operator   &{\ttfamily Prefix\+Traits}   &-\/   \\\cline{1-4}
+\end{longtabu}
+
+
+An instance of such a template is an {\itshape Operator\+Functor\+Set} for a class type {\ttfamily T} if it satisfies all requirements below, for each $I\in[N]$. \hypertarget{OperatorFunctorSet_autotoc_md10}{}\doxysubsubsection{\texorpdfstring{Notations}{Notations}}\label{OperatorFunctorSet_autotoc_md10}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Expression   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Definition    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Expression   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Definition    }\\\cline{1-2}
+\endhead
+{\ttfamily op\+\_\+i}   &A const-\/qualified object of {\ttfamily OpI}    \\\cline{1-2}
+{\ttfamily a}, {\ttfamily b}   &An expression of any value category and any (possibly cv-\/qualified) referencable type    \\\cline{1-2}
+{\ttfamily t}   &An expression of any value category and type {\ttfamily T} (possibly cv-\/qualified)   \\\cline{1-2}
+\end{longtabu}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Definition    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Definition    }\\\cline{1-2}
+\endhead
+{\ttfamily A}   &{\ttfamily decltype(a)\&\&}    \\\cline{1-2}
+{\ttfamily B}   &{\ttfamily decltype(b)\&\&}    \\\cline{1-2}
+{\ttfamily TR}   &{\ttfamily decltype(t)\&\&}   \\\cline{1-2}
+\end{longtabu}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Template   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Definition    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Template   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Definition    }\\\cline{1-2}
+\endhead
+{\ttfamily R}   &{\ttfamily Traits\+\_\+\+I\+::result}    \\\cline{1-2}
+{\ttfamily C}   &{\ttfamily Traits\+\_\+\+I\+::constraint}   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{OperatorFunctorSet_autotoc_md11}{}\doxysubsubsection{\texorpdfstring{Type Requirements}{Type Requirements}}\label{OperatorFunctorSet_autotoc_md11}
+
+\begin{DoxyItemize}
+\item {\ttfamily OpI} and {\ttfamily Traits} must be structural types. 
+\end{DoxyItemize}\hypertarget{OperatorFunctorSet_autotoc_md12}{}\doxysubsubsection{\texorpdfstring{Supported Operations}{Supported Operations}}\label{OperatorFunctorSet_autotoc_md12}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Expression ({\ttfamily exp}) }&\cellcolor{\tableheadbgcolor}\textbf{ Semantics  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Expression ({\ttfamily exp}) }&\cellcolor{\tableheadbgcolor}\textbf{ Semantics  }\\\cline{1-2}
+\endhead
+(for Case 1)~\newline
+ {\ttfamily op\+\_\+i(T\+::to\+\_\+underlying(a), T\+::to\+\_\+underlying(b))}  &{\bfseries{Conditions}} 
+\begin{DoxyItemize}
+\item {\ttfamily OpI} is not {\ttfamily \doxylink{namespaceutils_a73660fa40d7555f9ec8f74c3fd244253}{utils\+::disable\+\_\+op}}. 
+\item At least one of {\ttfamily a} and {\ttfamily b} is of type {\ttfamily T}, discarding cv-\/qualifiers. Let {\ttfamily t} be the first expression (in {\ttfamily a} and {\ttfamily b}) that meets this requirement.  
+\item {\ttfamily C\texorpdfstring{$<$}{<}TR, A, B\texorpdfstring{$>$}{>}\+::value} is {\ttfamily true}. 
+\item {\ttfamily exp} is well-\/formed. 
+\end{DoxyItemize}{\bfseries{Effects}} 
+\begin{DoxyItemize}
+\item If {\ttfamily R\texorpdfstring{$<$}{<}A, B\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}} is {\ttfamily utils\+::deduce\+\_\+t}, {\ttfamily a @\+\_\+I b} is equivalent to {\ttfamily exp}; otherwise, it is equivalent to {\ttfamily static\+\_\+cast\texorpdfstring{$<$}{<}R\texorpdfstring{$<$}{<}TR, A, B\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}(exp)}.  
+\end{DoxyItemize}\\\cline{1-2}
+(for Case 2)~\newline
+ {\ttfamily op\+\_\+i(T\+::to\+\_\+underlying(a), T\+::to\+\_\+underlying(b))}  &{\bfseries{Conditions}} 
+\begin{DoxyItemize}
+\item {\ttfamily OpI} is not {\ttfamily \doxylink{namespaceutils_a73660fa40d7555f9ec8f74c3fd244253}{utils\+::disable\+\_\+op}}. 
+\item {\ttfamily a} is or is a reference to an object of type {\ttfamily T}. 
+\item {\ttfamily C\texorpdfstring{$<$}{<}A, A, B\texorpdfstring{$>$}{>}\+::value} is {\ttfamily true}. 
+\item {\ttfamily exp} is well-\/formed. 
+\end{DoxyItemize}{\bfseries{Effects}} 
+\begin{DoxyItemize}
+\item {\ttfamily a @\+\_\+I b} is equivalent to {\ttfamily exp, a} (disregarding overloading of the comma operator). 
+\end{DoxyItemize}\\\cline{1-2}
+(for Case 3)~\newline
+ {\ttfamily op\+\_\+i(\+T\+::to\+\_\+underlying(t))}  &{\bfseries{Conditions}} 
+\begin{DoxyItemize}
+\item {\ttfamily OpI} is not {\ttfamily \doxylink{namespaceutils_a73660fa40d7555f9ec8f74c3fd244253}{utils\+::disable\+\_\+op}}. 
+\item {\ttfamily C\texorpdfstring{$<$}{<}TR\texorpdfstring{$>$}{>}\+::value} is {\ttfamily true}. 
+\item {\ttfamily exp} is well-\/formed. 
+\end{DoxyItemize}{\bfseries{Effects}} 
+\begin{DoxyItemize}
+\item {\ttfamily @\+\_\+I a} or {\ttfamily a @\+\_\+I}, whichever is applicable, is equivalent to {\ttfamily exp} if {\ttfamily R\texorpdfstring{$<$}{<}TR\texorpdfstring{$>$}{>}} is {\ttfamily utils\+::deduce\+\_\+t}, or {\ttfamily static\+\_\+cast\texorpdfstring{$<$}{<}R\texorpdfstring{$<$}{<}TR\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}(exp)} otherwise.  
+\end{DoxyItemize}\\\cline{1-2}
+(for Case 4)~\newline
+ {\ttfamily op\+\_\+i(\+T\+::to\+\_\+underlying(t))}  &{\bfseries{Conditions}} 
+\begin{DoxyItemize}
+\item {\ttfamily OpI} is not {\ttfamily \doxylink{namespaceutils_a73660fa40d7555f9ec8f74c3fd244253}{utils\+::disable\+\_\+op}}. 
+\item {\ttfamily C\texorpdfstring{$<$}{<}TR\texorpdfstring{$>$}{>}\+::value} is {\ttfamily true}. 
+\item {\ttfamily exp} is well-\/formed. 
+\end{DoxyItemize}{\bfseries{Effects}} 
+\begin{DoxyItemize}
+\item {\ttfamily @\+\_\+I a} is equivalent to {\ttfamily exp, a} (disregarding overloading for the comma operator).  
+\end{DoxyItemize}\\\cline{1-2}
+\end{longtabu}
+\hypertarget{OperatorFunctorSet_autotoc_md13}{}\doxysubsection{\texorpdfstring{Remarks}{Remarks}}\label{OperatorFunctorSet_autotoc_md13}
+For brevity, in library documentation, when a template parameter {\ttfamily Traits} is required to be an {\ttfamily Operator\+Functor\+Set} for {\ttfamily utils\+:\+:\texorpdfstring{$\ast$}{*}\+\_\+op}, the meaning changes slightly. In this case, {\ttfamily Traits} is required to be an {\ttfamily Operator\+Functor\+Set} for each descendant of {\ttfamily utils\+:\+:\texorpdfstring{$\ast$}{*}\+\_\+op} that the user uses any of its supported operators on. 

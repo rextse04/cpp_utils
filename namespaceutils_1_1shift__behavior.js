@@ -1,8 +1,6 @@
 var namespaceutils_1_1shift__behavior =
 [
-    [ "default_binary_op_traits", "structutils_1_1shift__behavior_1_1default__binary__op__traits.html", [
-      [ "result", "structutils_1_1shift__behavior_1_1default__binary__op__traits_1_1result.html", "structutils_1_1shift__behavior_1_1default__binary__op__traits_1_1result" ]
-    ] ],
+    [ "default_binary_op_traits", "structutils_1_1shift__behavior_1_1default__binary__op__traits.html", "structutils_1_1shift__behavior_1_1default__binary__op__traits" ],
     [ "profile", "structutils_1_1shift__behavior_1_1profile.html", null ],
     [ "checked", "namespaceutils_1_1shift__behavior.html#ac9db62511912a83ec50c416a1efbc72e", null ],
     [ "circular", "namespaceutils_1_1shift__behavior.html#aaa3b65aca486508aee767a5e4091bc98", null ],

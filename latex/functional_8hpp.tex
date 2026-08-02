@@ -1,10 +1,10 @@
-\hypertarget{functional_8hpp}{}\doxysection{functional.\+hpp File Reference}
-\label{functional_8hpp}\index{functional.hpp@{functional.hpp}}
+\doxysection{functional.\+hpp File Reference}
+\hypertarget{functional_8hpp}{}\label{functional_8hpp}\index{functional.hpp@{functional.hpp}}
 {\ttfamily \#include $<$utility$>$}\newline
 {\ttfamily \#include $<$tuple$>$}\newline
 {\ttfamily \#include $<$type\+\_\+traits$>$}\newline
-{\ttfamily \#include \char`\"{}type.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}meta.\+hpp\char`\"{}}\newline
+{\ttfamily \#include "{}type.\+hpp"{}}\newline
+{\ttfamily \#include "{}meta.\+hpp"{}}\newline
 Include dependency graph for functional.\+hpp\+:
 \nopagebreak
 \begin{figure}[H]
@@ -21,7 +21,7 @@ This graph shows which files directly or indirectly include this file\+:
 \includegraphics[width=350pt]{functional_8hpp__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsection*{Classes}
+\doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structutils_1_1cast}{utils\+::cast$<$ To, From $>$}}
@@ -110,94 +110,100 @@ struct \mbox{\hyperlink{structutils_1_1with}{utils\+::with$<$ F, Arity, Owning $
 \item 
 struct \mbox{\hyperlink{structutils_1_1bind}{utils\+::bind$<$ T $>$}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Namespaces}
+\doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespaceutils}{utils}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Macros}
+\doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{functional_8hpp_a69a73f8bd2d609ea3c21cf9e76ed788d}{UTILS\+\_\+\+ASG\+\_\+\+FUNCTOR}}(name,  op)
 \item 
 \#define \mbox{\hyperlink{functional_8hpp_adec1908d86ebbb39eaac70a616233791}{UTILS\+\_\+\+FUNCTION\+\_\+\+TYPE\+\_\+\+DECL}}(qualifiers)
 \end{DoxyCompactItemize}
-\doxysubsection*{Typedefs}
+\doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceutils_a4ff95410c7281fc810a9e8cfef9855e8}{utils\+::function\+\_\+decay\+\_\+t}} = function\+\_\+decay$<$ T $>$\+::type
+{\footnotesize template$<$typename T$>$ }\\using \mbox{\hyperlink{namespaceutils_ab216c55ca5eed8fa85dfa7d1ccb85eb5}{utils\+::function\+\_\+decay\+\_\+t}} = \mbox{\hyperlink{structutils_1_1function__decay}{function\+\_\+decay}}$<$T$>$\+::type
 \item 
-{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceutils_aa2a651da2caee87aff06087795119502}{utils\+::lambda\+\_\+decay\+\_\+t}} = lambda\+\_\+decay$<$ T $>$\+::type
+{\footnotesize template$<$typename T$>$ }\\using \mbox{\hyperlink{namespaceutils_a04fc2d011dfa57bb06527bc644533804}{utils\+::lambda\+\_\+decay\+\_\+t}} = \mbox{\hyperlink{structutils_1_1lambda__decay}{lambda\+\_\+decay}}$<$T$>$\+::type
 \item 
-{\footnotesize template$<$typename F $>$ }\\using \mbox{\hyperlink{namespaceutils_aec2f7d8a4a6a70e231ae13dd1a18606a}{utils\+::result\+\_\+of\+\_\+t}} = result\+\_\+of$<$ F $>$\+::type
+{\footnotesize template$<$typename F$>$ }\\using \mbox{\hyperlink{namespaceutils_ae4538b11ae419baa498ebfb430faab6d}{utils\+::result\+\_\+of\+\_\+t}} = \mbox{\hyperlink{structutils_1_1result__of}{result\+\_\+of}}$<$F$>$\+::type
 \item 
-{\footnotesize template$<$typename F $>$ }\\using \mbox{\hyperlink{namespaceutils_ac4674b772ff1c668b49f1867630f3d54}{utils\+::arguments\+\_\+of\+\_\+t}} = arguments\+\_\+of$<$ F $>$\+::type
+{\footnotesize template$<$typename F$>$ }\\using \mbox{\hyperlink{namespaceutils_a191a3b3465098ded89db3c91d162cdf4}{utils\+::arguments\+\_\+of\+\_\+t}} = \mbox{\hyperlink{structutils_1_1arguments__of}{arguments\+\_\+of}}$<$F$>$\+::type
 \item 
-using \mbox{\hyperlink{namespaceutils_acdc92300a8a41d794e21ecfade137492}{utils\+::variadic\+\_\+arity}} = arity$<$ static\+\_\+cast$<$ std\+::size\+\_\+t $>$(-\/1)$>$
+using \mbox{\hyperlink{namespaceutils_a3566da17ec35d45d98ab780d5b335238}{utils\+::variadic\+\_\+arity}} = \mbox{\hyperlink{structutils_1_1arity}{arity}}$<$static\+\_\+cast$<$std\+::size\+\_\+t$>$(-\/1)$>$
 \end{DoxyCompactItemize}
-\doxysubsection*{Functions}
+\doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename G , std\+::size\+\_\+t Arity$>$ }\\\mbox{\hyperlink{namespaceutils_aed4f05af8c7f6713f035d46368507ca9}{utils\+::with}} (arity$<$ Arity $>$, G \&\&) -\/$>$ with$<$ G \&\&, Arity $>$
+{\footnotesize template$<$typename G, std\+::size\+\_\+t Arity$>$ }\\\mbox{\hyperlink{namespaceutils_aed4f05af8c7f6713f035d46368507ca9}{utils\+::with}} (\mbox{\hyperlink{structutils_1_1arity}{arity}}$<$ Arity $>$, G \&\&) -\/$>$ with$<$ G \&\&, Arity $>$
 \item 
-{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{namespaceutils_aeae858e40387fdfac0f8629db4991dbb}{utils\+::bind}} (T \&\&) -\/$>$ bind$<$ T \&\& $>$
+{\footnotesize template$<$typename G, std\+::size\+\_\+t Arity$>$ \newline
+requires (!std\+::is\+\_\+function\+\_\+v$<$std\+::remove\+\_\+cvref\+\_\+t$<$G$>$$>$)}\\\mbox{\hyperlink{namespaceutils_abb3dc16e2977ca5391762a1836cc4cc9}{utils\+::with}} (\mbox{\hyperlink{structutils_1_1arity}{arity}}$<$ Arity $>$, \mbox{\hyperlink{structutils_1_1owning}{owning}}, G \&\&) -\/$>$ with$<$ std\+::remove\+\_\+cvref\+\_\+t$<$ G $>$, Arity, true $>$
 \item 
-{\footnotesize template$<$typename F , typename... Gs$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a75ce48a3fb2e45c2eb6917e6d32ceb84}{utils\+::composite}} (F \&\&f, Gs \&\&... gs)
+{\footnotesize template$<$typename G, std\+::size\+\_\+t Arity$>$ \newline
+requires (std\+::is\+\_\+function\+\_\+v$<$std\+::remove\+\_\+cvref\+\_\+t$<$G$>$$>$)}\\\mbox{\hyperlink{namespaceutils_a35cbe6fdbca6f6e48f10edf1f5ffb2e1}{utils\+::with}} (\mbox{\hyperlink{structutils_1_1arity}{arity}}$<$ Arity $>$, \mbox{\hyperlink{structutils_1_1owning}{owning}}, G \&\&) -\/$>$ with$<$ std\+::add\+\_\+pointer\+\_\+t$<$ std\+::remove\+\_\+cvref\+\_\+t$<$ G $>$ $>$, Arity, true $>$
+\item 
+{\footnotesize template$<$typename T$>$ }\\\mbox{\hyperlink{namespaceutils_aeae858e40387fdfac0f8629db4991dbb}{utils\+::bind}} (T \&\&) -\/$>$ bind$<$ T \&\& $>$
+\item 
+{\footnotesize template$<$typename F, typename... Gs$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a75ce48a3fb2e45c2eb6917e6d32ceb84}{utils\+::composite}} (F \&\&f, Gs \&\&... gs)
 \end{DoxyCompactItemize}
-\doxysubsection*{Variables}
+\doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename F $>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a5a720537626a2d6e7ae840a1212a67f2}{utils\+::arity\+\_\+of\+\_\+v}} = arity\+\_\+of$<$F$>$\+::value
+{\footnotesize template$<$typename F$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a5a720537626a2d6e7ae840a1212a67f2}{utils\+::arity\+\_\+of\+\_\+v}} = \mbox{\hyperlink{structutils_1_1arity__of}{arity\+\_\+of}}$<$F$>$\+::value
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{functional_8hpp_a69a73f8bd2d609ea3c21cf9e76ed788d}\label{functional_8hpp_a69a73f8bd2d609ea3c21cf9e76ed788d}} 
-\index{functional.hpp@{functional.hpp}!UTILS\_ASG\_FUNCTOR@{UTILS\_ASG\_FUNCTOR}}
+\Hypertarget{functional_8hpp_a69a73f8bd2d609ea3c21cf9e76ed788d}\index{functional.hpp@{functional.hpp}!UTILS\_ASG\_FUNCTOR@{UTILS\_ASG\_FUNCTOR}}
 \index{UTILS\_ASG\_FUNCTOR@{UTILS\_ASG\_FUNCTOR}!functional.hpp@{functional.hpp}}
 \doxysubsubsection{\texorpdfstring{UTILS\_ASG\_FUNCTOR}{UTILS\_ASG\_FUNCTOR}}
-{\footnotesize\ttfamily \#define UTILS\+\_\+\+ASG\+\_\+\+FUNCTOR(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{op }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{functional_8hpp_a69a73f8bd2d609ea3c21cf9e76ed788d} 
+\#define UTILS\+\_\+\+ASG\+\_\+\+FUNCTOR(\begin{DoxyParamCaption}\item[{}]{name}{, }\item[{}]{op}{}\end{DoxyParamCaption})}
 
 {\bfseries Value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{    \textcolor{keyword}{template} <\textcolor{keyword}{typename} T = \textcolor{keywordtype}{void}>\(\backslash\)}
-\DoxyCodeLine{    struct name \{\(\backslash\)}
-\DoxyCodeLine{        static \textcolor{keyword}{constexpr} T\& operator()(T\& lhs, \textcolor{keyword}{const} T\& rhs) \{\(\backslash\)}
-\DoxyCodeLine{            return lhs op rhs;\(\backslash\)}
-\DoxyCodeLine{        \}\(\backslash\)}
-\DoxyCodeLine{    \};\(\backslash\)}
-\DoxyCodeLine{    template <>\(\backslash\)}
-\DoxyCodeLine{    struct name<void> \{\(\backslash\)}
-\DoxyCodeLine{        static \textcolor{keyword}{constexpr} \textcolor{keyword}{decltype}(\textcolor{keyword}{auto}) \textcolor{keyword}{operator}()(\textcolor{keyword}{auto}\&\& lhs, \textcolor{keyword}{auto}\&\& rhs) \{\(\backslash\)}
-\DoxyCodeLine{            return std::forward<decltype(lhs)>(lhs) op std::forward<decltype(rhs)>(rhs);\(\backslash\)}
-\DoxyCodeLine{        \}\(\backslash\)}
-\DoxyCodeLine{    \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T\ =\ \textcolor{keywordtype}{void}>\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{struct\ }name\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ T\&\ operator()(T\&\ lhs,\ \textcolor{keyword}{const}\ T\&\ rhs)\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ lhs\ op\ rhs;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}\ <>\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{struct\ }name<void>\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{decltype}(\textcolor{keyword}{auto})\ \textcolor{keyword}{operator}()(\textcolor{keyword}{auto}\&\&\ lhs,\ \textcolor{keyword}{auto}\&\&\ rhs)\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::forward<decltype(lhs)>(lhs)\ op\ std::forward<decltype(rhs)>(rhs);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \};}
 
 \end{DoxyCode}
 
 
 Definition at line \mbox{\hyperlink{functional_8hpp_source_l00019}{19}} of file \mbox{\hyperlink{functional_8hpp_source}{functional.\+hpp}}.
 
-\mbox{\Hypertarget{functional_8hpp_adec1908d86ebbb39eaac70a616233791}\label{functional_8hpp_adec1908d86ebbb39eaac70a616233791}} 
-\index{functional.hpp@{functional.hpp}!UTILS\_FUNCTION\_TYPE\_DECL@{UTILS\_FUNCTION\_TYPE\_DECL}}
+\Hypertarget{functional_8hpp_adec1908d86ebbb39eaac70a616233791}\index{functional.hpp@{functional.hpp}!UTILS\_FUNCTION\_TYPE\_DECL@{UTILS\_FUNCTION\_TYPE\_DECL}}
 \index{UTILS\_FUNCTION\_TYPE\_DECL@{UTILS\_FUNCTION\_TYPE\_DECL}!functional.hpp@{functional.hpp}}
 \doxysubsubsection{\texorpdfstring{UTILS\_FUNCTION\_TYPE\_DECL}{UTILS\_FUNCTION\_TYPE\_DECL}}
-{\footnotesize\ttfamily \#define UTILS\+\_\+\+FUNCTION\+\_\+\+TYPE\+\_\+\+DECL(\begin{DoxyParamCaption}\item[{}]{qualifiers }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{functional_8hpp_adec1908d86ebbb39eaac70a616233791} 
+\#define UTILS\+\_\+\+FUNCTION\+\_\+\+TYPE\+\_\+\+DECL(\begin{DoxyParamCaption}\item[{}]{qualifiers}{}\end{DoxyParamCaption})}
 
 {\bfseries Value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{    \textcolor{keyword}{template} <\textcolor{keyword}{typename} C, \textcolor{keyword}{typename} R, \textcolor{keyword}{typename}... Args>\(\backslash\)}
-\DoxyCodeLine{    struct function\_decay<R(C::*)(Args...) qualifiers> \{ \textcolor{keyword}{using} type = R(Args...); \};\(\backslash\)}
-\DoxyCodeLine{    template <\textcolor{keyword}{typename} C, \textcolor{keyword}{typename} R, \textcolor{keyword}{typename}... Args>\(\backslash\)}
-\DoxyCodeLine{    struct function\_decay<R(C::*)(Args...) qualifiers \textcolor{keyword}{noexcept}> \{ \textcolor{keyword}{using} type = R(Args...); \};\(\backslash\)}
-\DoxyCodeLine{    template <\textcolor{keyword}{typename} C, \textcolor{keyword}{typename} R, \textcolor{keyword}{typename}... Args>\(\backslash\)}
-\DoxyCodeLine{    struct function\_decay<R(C::*)(Args...) qualifiers \&> \{ \textcolor{keyword}{using} type = R(Args...); \};\(\backslash\)}
-\DoxyCodeLine{    template <\textcolor{keyword}{typename} C, \textcolor{keyword}{typename} R, \textcolor{keyword}{typename}... Args>\(\backslash\)}
-\DoxyCodeLine{    struct function\_decay<R(C::*)(Args...) qualifiers \& \textcolor{keyword}{noexcept}> \{ \textcolor{keyword}{using} type = R(Args...); \};\(\backslash\)}
-\DoxyCodeLine{    template <\textcolor{keyword}{typename} C, \textcolor{keyword}{typename} R, \textcolor{keyword}{typename}... Args>\(\backslash\)}
-\DoxyCodeLine{    struct function\_decay<R(C::*)(Args...) qualifiers \&\&> \{ \textcolor{keyword}{using} type = R(Args...); \};\(\backslash\)}
-\DoxyCodeLine{    template <\textcolor{keyword}{typename} C, \textcolor{keyword}{typename} R, \textcolor{keyword}{typename}... Args>\(\backslash\)}
-\DoxyCodeLine{    struct function\_decay<R(C::*)(Args...) qualifiers \&\& \textcolor{keyword}{noexcept}> \{ \textcolor{keyword}{using} type = R(Args...); \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ C,\ \textcolor{keyword}{typename}\ R,\ \textcolor{keyword}{typename}...\ Args>\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{struct\ }function\_decay<R(C::*)(Args...)\ qualifiers>\ \{\ \textcolor{keyword}{using\ }type\ =\ R(Args...);\ \};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ C,\ \textcolor{keyword}{typename}\ R,\ \textcolor{keyword}{typename}...\ Args>\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{struct\ }function\_decay<R(C::*)(Args...)\ qualifiers\ noexcept>\ \{\ \textcolor{keyword}{using\ }type\ =\ R(Args...);\ \};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ C,\ \textcolor{keyword}{typename}\ R,\ \textcolor{keyword}{typename}...\ Args>\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{struct\ }function\_decay<R(C::*)(Args...)\ qualifiers\ \&>\ \{\ \textcolor{keyword}{using\ }type\ =\ R(Args...);\ \};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ C,\ \textcolor{keyword}{typename}\ R,\ \textcolor{keyword}{typename}...\ Args>\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{struct\ }function\_decay<R(C::*)(Args...)\ qualifiers\ \&\ noexcept>\ \{\ \textcolor{keyword}{using\ }type\ =\ R(Args...);\ \};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ C,\ \textcolor{keyword}{typename}\ R,\ \textcolor{keyword}{typename}...\ Args>\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{struct\ }function\_decay<R(C::*)(Args...)\ qualifiers\ \&\&>\ \{\ \textcolor{keyword}{using\ }type\ =\ R(Args...);\ \};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ C,\ \textcolor{keyword}{typename}\ R,\ \textcolor{keyword}{typename}...\ Args>\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{struct\ }function\_decay<R(C::*)(Args...)\ qualifiers\ \&\&\ noexcept>\ \{\ \textcolor{keyword}{using\ }type\ =\ R(Args...);\ \};}
 
 \end{DoxyCode}
 

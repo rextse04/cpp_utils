@@ -1,11 +1,11 @@
-\hypertarget{operators_8hpp}{}\doxysection{operators.\+hpp File Reference}
-\label{operators_8hpp}\index{operators.hpp@{operators.hpp}}
+\doxysection{operators.\+hpp File Reference}
+\hypertarget{operators_8hpp}{}\label{operators_8hpp}\index{operators.hpp@{operators.hpp}}
 {\ttfamily \#include $<$functional$>$}\newline
 {\ttfamily \#include $<$type\+\_\+traits$>$}\newline
 {\ttfamily \#include $<$concepts$>$}\newline
 {\ttfamily \#include $<$utility$>$}\newline
-{\ttfamily \#include \char`\"{}functional.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}type.\+hpp\char`\"{}}\newline
+{\ttfamily \#include "{}functional.\+hpp"{}}\newline
+{\ttfamily \#include "{}type.\+hpp"{}}\newline
 Include dependency graph for operators.\+hpp\+:
 \nopagebreak
 \begin{figure}[H]
@@ -22,7 +22,7 @@ This graph shows which files directly or indirectly include this file\+:
 \includegraphics[width=350pt]{operators_8hpp__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsection*{Classes}
+\doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structutils_1_1disable__op__t}{utils\+::disable\+\_\+op\+\_\+t}}
@@ -56,55 +56,55 @@ struct \mbox{\hyperlink{structutils_1_1default__postfix__op__traits_1_1constrain
 struct \mbox{\hyperlink{structutils_1_1default__postfix__op__traits_1_1result}{utils\+::default\+\_\+postfix\+\_\+op\+\_\+traits\+::result$<$ Self $>$}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1integral__op__functors}{utils\+::integral\+\_\+op\+\_\+functors$<$ Plus, Minus, Mul, Div, Mod, Binary\+Traits $>$}}
-\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \mbox{\hyperlink{structutils_1_1integral__ops}{utils\+::integral\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \doxylink{structutils_1_1integral__ops}{utils\+::integral\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1integral__ops}{utils\+::integral\+\_\+ops$<$ Funcs $>$}}
-\begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a + b}, {\ttfamily a -\/ b}, {\ttfamily a $\ast$ b}, {\ttfamily a / b} and {\ttfamily a \% b}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a + b}, {\ttfamily a -\/ b}, {\ttfamily a \texorpdfstring{$\ast$}{*} b}, {\ttfamily a / b} and {\ttfamily a \% b}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1integral__asg__op__functors}{utils\+::integral\+\_\+asg\+\_\+op\+\_\+functors$<$ Plus\+Asg, Minus\+Asg, Mul\+Asg, Div\+Asg, Mod\+Asg, Asg\+Traits $>$}}
-\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \mbox{\hyperlink{structutils_1_1integral__asg__ops}{utils\+::integral\+\_\+asg\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \doxylink{structutils_1_1integral__asg__ops}{utils\+::integral\+\_\+asg\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1integral__asg__ops}{utils\+::integral\+\_\+asg\+\_\+ops$<$ Funcs $>$}}
-\begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a += b}, {\ttfamily a -\/= b}, {\ttfamily a $\ast$= b}, {\ttfamily a /= b}, {\ttfamily a \%= b}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a += b}, {\ttfamily a -\/= b}, {\ttfamily a \texorpdfstring{$\ast$}{*}= b}, {\ttfamily a /= b}, {\ttfamily a \%= b}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1integral__full__ops}{utils\+::integral\+\_\+full\+\_\+ops$<$ Funcs, Asg\+Funcs $>$}}
-\begin{DoxyCompactList}\small\item\em A convenience template inheriting from {\ttfamily \mbox{\hyperlink{structutils_1_1integral__full__ops}{utils\+::integral\+\_\+full\+\_\+ops}}} and {\ttfamily \mbox{\hyperlink{structutils_1_1integral__asg__ops}{utils\+::integral\+\_\+asg\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A convenience template inheriting from {\ttfamily \doxylink{structutils_1_1integral__full__ops}{utils\+::integral\+\_\+full\+\_\+ops}} and {\ttfamily \doxylink{structutils_1_1integral__asg__ops}{utils\+::integral\+\_\+asg\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1bit__op__functors}{utils\+::bit\+\_\+op\+\_\+functors$<$ Bit\+And, Bit\+Or, Bit\+Xor, Bit\+Not, Binary\+Traits, Unary\+Traits $>$}}
 \begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily utils\+::bit\+\_\+op}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1bit__ops}{utils\+::bit\+\_\+ops$<$ Funcs $>$}}
-\begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a \& b}, {\ttfamily a $\vert$ b}, {\ttfamily a $^\wedge$ b} and {\ttfamily $\sim$t}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a \& b}, {\ttfamily a \texorpdfstring{$\vert$}{|} b}, {\ttfamily a \texorpdfstring{$^\wedge$}{\string^} b} and {\ttfamily \texorpdfstring{$\sim$}{\string~}t}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1bit__asg__op__functors}{utils\+::bit\+\_\+asg\+\_\+op\+\_\+functors$<$ Bit\+And\+Asg, Bit\+Or\+Asg, Bit\+Xor\+Asg, Asg\+Traits $>$}}
-\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \mbox{\hyperlink{structutils_1_1bit__asg__ops}{utils\+::bit\+\_\+asg\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \doxylink{structutils_1_1bit__asg__ops}{utils\+::bit\+\_\+asg\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1bit__asg__ops}{utils\+::bit\+\_\+asg\+\_\+ops$<$ Funcs $>$}}
-\begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a \&= b}, {\ttfamily a $\vert$= b} and {\ttfamily a $^\wedge$= b}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a \&= b}, {\ttfamily a \texorpdfstring{$\vert$}{|}= b} and {\ttfamily a \texorpdfstring{$^\wedge$}{\string^}= b}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1bit__full__ops}{utils\+::bit\+\_\+full\+\_\+ops$<$ Funcs, Asg\+Funcs $>$}}
-\begin{DoxyCompactList}\small\item\em A convenience template inheriting from {\ttfamily \mbox{\hyperlink{structutils_1_1bit__ops}{utils\+::bit\+\_\+ops}}} and {\ttfamily \mbox{\hyperlink{structutils_1_1bit__asg__ops}{utils\+::bit\+\_\+asg\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A convenience template inheriting from {\ttfamily \doxylink{structutils_1_1bit__ops}{utils\+::bit\+\_\+ops}} and {\ttfamily \doxylink{structutils_1_1bit__asg__ops}{utils\+::bit\+\_\+asg\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1shift__op__functors}{utils\+::shift\+\_\+op\+\_\+functors$<$ Shift\+Left, Shift\+Right, Binary\+Traits $>$}}
-\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \mbox{\hyperlink{structutils_1_1shift__ops}{utils\+::shift\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \doxylink{structutils_1_1shift__ops}{utils\+::shift\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1shift__ops}{utils\+::shift\+\_\+ops$<$ Funcs $>$}}
 \begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} b} and {\ttfamily a \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} b}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1shift__asg__op__functors}{utils\+::shift\+\_\+asg\+\_\+op\+\_\+functors$<$ Shift\+Left\+Asg, Shift\+Right\+Asg, Asg\+Traits $>$}}
-\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \mbox{\hyperlink{structutils_1_1shift__asg__ops}{utils\+::shift\+\_\+asg\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \doxylink{structutils_1_1shift__asg__ops}{utils\+::shift\+\_\+asg\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1shift__asg__ops}{utils\+::shift\+\_\+asg\+\_\+ops$<$ Funcs $>$}}
 \begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}= b} and {\ttfamily a \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}= b}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1shift__full__ops}{utils\+::shift\+\_\+full\+\_\+ops$<$ Funcs, Asg\+Funcs $>$}}
-\begin{DoxyCompactList}\small\item\em A convenience template inheriting from {\ttfamily \mbox{\hyperlink{structutils_1_1shift__ops}{utils\+::shift\+\_\+ops}}} and {\ttfamily \mbox{\hyperlink{structutils_1_1shift__asg__ops}{utils\+::shift\+\_\+asg\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A convenience template inheriting from {\ttfamily \doxylink{structutils_1_1shift__ops}{utils\+::shift\+\_\+ops}} and {\ttfamily \doxylink{structutils_1_1shift__asg__ops}{utils\+::shift\+\_\+asg\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1sign__op__functors}{utils\+::sign\+\_\+op\+\_\+functors$<$ Neg, Unary\+Traits $>$}}
-\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \mbox{\hyperlink{structutils_1_1sign__ops}{utils\+::sign\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \doxylink{structutils_1_1sign__ops}{utils\+::sign\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1sign__ops}{utils\+::sign\+\_\+ops$<$ Funcs $>$}}
 \begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily +t} and {\ttfamily -\/t}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1fix__op__functors}{utils\+::fix\+\_\+op\+\_\+functors$<$ Pre\+Inc, Post\+Inc, Pre\+Dec, Post\+Dec, Prefix\+Traits, Unary\+Traits $>$}}
-\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \mbox{\hyperlink{structutils_1_1fix__ops}{utils\+::fix\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \doxylink{structutils_1_1fix__ops}{utils\+::fix\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1fix__ops}{utils\+::fix\+\_\+ops$<$ Funcs $>$}}
 \begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily ++t}, {\ttfamily t++}, {\ttfamily -\/-\/t} and {\ttfamily t-\/-\/}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1arithmetic__ops}{utils\+::arithmetic\+\_\+ops$<$ Int\+Funcs, Int\+Asg\+Funcs, Bit\+Funcs, Bit\+Asg\+Funcs, Shift\+Funcs, Shift\+Asg\+Funcs, Sign\+Funcs, Fix\+Funcs $>$}}
-\begin{DoxyCompactList}\small\item\em A convenience template inheriting from {\ttfamily \mbox{\hyperlink{structutils_1_1integral__full__ops}{utils\+::integral\+\_\+full\+\_\+ops}}}, {\ttfamily \mbox{\hyperlink{structutils_1_1bit__full__ops}{utils\+::bit\+\_\+full\+\_\+ops}}}, {\ttfamily \mbox{\hyperlink{structutils_1_1shift__full__ops}{utils\+::shift\+\_\+full\+\_\+ops}}}, {\ttfamily \mbox{\hyperlink{structutils_1_1sign__ops}{utils\+::sign\+\_\+ops}}} and {\ttfamily \mbox{\hyperlink{structutils_1_1fix__ops}{utils\+::fix\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A convenience template inheriting from {\ttfamily \doxylink{structutils_1_1integral__full__ops}{utils\+::integral\+\_\+full\+\_\+ops}}, {\ttfamily \doxylink{structutils_1_1bit__full__ops}{utils\+::bit\+\_\+full\+\_\+ops}}, {\ttfamily \doxylink{structutils_1_1shift__full__ops}{utils\+::shift\+\_\+full\+\_\+ops}}, {\ttfamily \doxylink{structutils_1_1sign__ops}{utils\+::sign\+\_\+ops}} and {\ttfamily \doxylink{structutils_1_1fix__ops}{utils\+::fix\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1logical__op__functors}{utils\+::logical\+\_\+op\+\_\+functors$<$ And, Or, Not, Binary\+Traits, Unary\+Traits $>$}}
-\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \mbox{\hyperlink{structutils_1_1logical__ops}{utils\+::logical\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \doxylink{structutils_1_1logical__ops}{utils\+::logical\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1logical__ops}{utils\+::logical\+\_\+ops$<$ Funcs $>$}}
-\begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a \&\& b}, {\ttfamily a $\vert$$\vert$ b} and {\ttfamily !t}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Namespaces}
+\begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a \&\& b}, {\ttfamily a \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} b} and {\ttfamily !t}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespaceutils}{utils}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Macros}
+\doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}{UTILS\+\_\+\+BINARY\+\_\+\+OP}}(op,  name,  classname)
@@ -115,7 +115,7 @@ namespace \mbox{\hyperlink{namespaceutils}{utils}}
 \item 
 \#define \mbox{\hyperlink{operators_8hpp_af9a66ab382ee5d9ec749b9ba778ed41c}{UTILS\+\_\+\+FIX\+\_\+\+OP}}(op,  name)
 \end{DoxyCompactItemize}
-\doxysubsection*{Variables}
+\doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 constexpr struct \mbox{\hyperlink{structutils_1_1disable__op__t}{utils\+::disable\+\_\+op\+\_\+t}} \mbox{\hyperlink{namespaceutils_a73660fa40d7555f9ec8f74c3fd244253}{utils\+::disable\+\_\+op}}
@@ -123,106 +123,106 @@ constexpr struct \mbox{\hyperlink{structutils_1_1disable__op__t}{utils\+::disabl
 
 
 \doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}\label{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}} 
-\index{operators.hpp@{operators.hpp}!UTILS\_ASG\_OP@{UTILS\_ASG\_OP}}
+\Hypertarget{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c}\index{operators.hpp@{operators.hpp}!UTILS\_ASG\_OP@{UTILS\_ASG\_OP}}
 \index{UTILS\_ASG\_OP@{UTILS\_ASG\_OP}!operators.hpp@{operators.hpp}}
 \doxysubsubsection{\texorpdfstring{UTILS\_ASG\_OP}{UTILS\_ASG\_OP}}
-{\footnotesize\ttfamily \#define UTILS\+\_\+\+ASG\+\_\+\+OP(\begin{DoxyParamCaption}\item[{}]{op,  }\item[{}]{name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{operators_8hpp_a1cf629983c1d541c5e1badd9753ecb9c} 
+\#define UTILS\+\_\+\+ASG\+\_\+\+OP(\begin{DoxyParamCaption}\item[{}]{op}{, }\item[{}]{name}{}\end{DoxyParamCaption})}
 
 {\bfseries Value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{    \textcolor{keyword}{template} <\textcolor{keyword}{typename} Self, \textcolor{keyword}{typename} Other, \textcolor{keyword}{typename} SelfD = std::remove\_cvref\_t<Self>>\(\backslash\)}
-\DoxyCodeLine{    constexpr \textcolor{keyword}{decltype}(\textcolor{keyword}{auto}) \textcolor{keyword}{operator} op(\textcolor{keyword}{this} Self\&\& \textcolor{keyword}{self}, Other\&\& other)\(\backslash\)}
-\DoxyCodeLine{    requires (\(\backslash\)}
-\DoxyCodeLine{        !std::is\_same\_v<\textcolor{keyword}{decltype}(Funcs.name), disable\_op\_t> \&\&\(\backslash\)}
-\DoxyCodeLine{        \textcolor{keyword}{decltype}(Funcs.asg\_traits)::\textcolor{keyword}{template} constraint<Self\&\&, Self\&\&, Other\&\&>::value \&\&\(\backslash\)}
-\DoxyCodeLine{        \textcolor{keyword}{requires} \{ Funcs.name(SelfD::to\_underlying(std::forward<Self>(self)), SelfD::to\_underlying(std::forward<Other>(other))); \}\(\backslash\)}
-\DoxyCodeLine{    ) \{\(\backslash\)}
-\DoxyCodeLine{        Funcs.name(SelfD::to\_underlying(std::forward<Self>(\textcolor{keyword}{self})), SelfD::to\_underlying(std::forward<Other>(other)));\(\backslash\)}
-\DoxyCodeLine{        return \textcolor{keyword}{self};\(\backslash\)}
-\DoxyCodeLine{    \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Self,\ \textcolor{keyword}{typename}\ Other,\ \textcolor{keyword}{typename}\ SelfD\ =\ std::remove\_cvref\_t<Self>>\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{decltype}(\textcolor{keyword}{auto})\ \textcolor{keyword}{operator}\ op(\textcolor{keyword}{this}\ Self\&\&\ self,\ Other\&\&\ other)\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ requires\ (\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ !std::is\_same\_v<\textcolor{keyword}{decltype}(Funcs.name),\ disable\_op\_t>\ \&\&\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{decltype}(Funcs.asg\_traits)::template\ constraint<Self\&\&,\ Self\&\&,\ Other\&\&>::value\ \&\&\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ \{\ Funcs.name(SelfD::to\_underlying(std::forward<Self>(self)),\ SelfD::to\_underlying(std::forward<Other>(other)));\ \}\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ )\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Funcs.name(SelfD::to\_underlying(std::forward<Self>(self)),\ SelfD::to\_underlying(std::forward<Other>(other)));\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ self;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}}
 
 \end{DoxyCode}
 
 
 Definition at line \mbox{\hyperlink{operators_8hpp_source_l00028}{28}} of file \mbox{\hyperlink{operators_8hpp_source}{operators.\+hpp}}.
 
-\mbox{\Hypertarget{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}\label{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}} 
-\index{operators.hpp@{operators.hpp}!UTILS\_BINARY\_OP@{UTILS\_BINARY\_OP}}
+\Hypertarget{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6}\index{operators.hpp@{operators.hpp}!UTILS\_BINARY\_OP@{UTILS\_BINARY\_OP}}
 \index{UTILS\_BINARY\_OP@{UTILS\_BINARY\_OP}!operators.hpp@{operators.hpp}}
 \doxysubsubsection{\texorpdfstring{UTILS\_BINARY\_OP}{UTILS\_BINARY\_OP}}
-{\footnotesize\ttfamily \#define UTILS\+\_\+\+BINARY\+\_\+\+OP(\begin{DoxyParamCaption}\item[{}]{op,  }\item[{}]{name,  }\item[{}]{classname }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{operators_8hpp_ac78f458fcc8229aafac8d067772e0cc6} 
+\#define UTILS\+\_\+\+BINARY\+\_\+\+OP(\begin{DoxyParamCaption}\item[{}]{op}{, }\item[{}]{name}{, }\item[{}]{classname}{}\end{DoxyParamCaption})}
 
 {\bfseries Value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{    \textcolor{keyword}{template} <\textcolor{keyword}{typename} A, \textcolor{keyword}{typename} B,\(\backslash\)}
-\DoxyCodeLine{        typename AD = std::remove\_cvref\_t<A>, \textcolor{keyword}{typename} BD = std::remove\_cvref\_t<B>,\(\backslash\)}
-\DoxyCodeLine{        typename Self = std::conditional\_t<std::derived\_from<AD, classname>, A\&\&, B\&\&>, \textcolor{keyword}{typename} SelfD = std::remove\_cvref\_t<Self>>\(\backslash\)}
-\DoxyCodeLine{    friend \textcolor{keyword}{constexpr} \textcolor{keyword}{decltype}(\textcolor{keyword}{auto}) \textcolor{keyword}{operator} op(A\&\& a, B\&\& b)\(\backslash\)}
-\DoxyCodeLine{    requires (\(\backslash\)}
-\DoxyCodeLine{        !std::is\_same\_v<\textcolor{keyword}{decltype}(Funcs.name), disable\_op\_t> \&\&\(\backslash\)}
-\DoxyCodeLine{        (std::derived\_from<AD, classname> || std::derived\_from<BD, classname>) \&\&\(\backslash\)}
-\DoxyCodeLine{        \textcolor{keyword}{decltype}(Funcs.binary\_traits)::\textcolor{keyword}{template} constraint<Self, AD, BD>::value \&\&\(\backslash\)}
-\DoxyCodeLine{        \textcolor{keyword}{requires} \{ Funcs.name(SelfD::to\_underlying(std::forward<A>(a)), SelfD::to\_underlying(std::forward<B>(b))); \}\(\backslash\)}
-\DoxyCodeLine{    ) \{\(\backslash\)}
-\DoxyCodeLine{        using R = \textcolor{keyword}{decltype}(Funcs.binary\_traits)::\textcolor{keyword}{template} result<Self, A\&\&, B\&\&>::type;\(\backslash\)}
-\DoxyCodeLine{        const \textcolor{keyword}{auto} ret = [\&a, \&b] \{\(\backslash\)}
-\DoxyCodeLine{            return Funcs.name(SelfD::to\_underlying(std::forward<A>(a)), SelfD::to\_underlying(std::forward<B>(b)));\(\backslash\)}
-\DoxyCodeLine{        \};\(\backslash\)}
-\DoxyCodeLine{        if \textcolor{keyword}{constexpr} (std::is\_same\_v<R, deduce\_t>) \textcolor{keywordflow}{return} ret();\(\backslash\)}
-\DoxyCodeLine{        else \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}R\textcolor{keyword}{>}(ret());\(\backslash\)}
-\DoxyCodeLine{    \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ A,\ \textcolor{keyword}{typename}\ B,\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ AD\ =\ std::remove\_cvref\_t<A>,\ \textcolor{keyword}{typename}\ BD\ =\ std::remove\_cvref\_t<B>,\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Self\ =\ std::conditional\_t<std::derived\_from<AD,\ classname>,\ A\&\&,\ B\&\&>,\ \textcolor{keyword}{typename}\ SelfD\ =\ std::remove\_cvref\_t<Self>>\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{decltype}(\textcolor{keyword}{auto})\ \textcolor{keyword}{operator}\ op(A\&\&\ a,\ B\&\&\ b)\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ requires\ (\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ !std::is\_same\_v<\textcolor{keyword}{decltype}(Funcs.name),\ disable\_op\_t>\ \&\&\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ (std::derived\_from<AD,\ classname>\ ||\ std::derived\_from<BD,\ classname>)\ \&\&\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{decltype}(Funcs.binary\_traits)::template\ constraint<Self,\ AD,\ BD>::value\ \&\&\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ \{\ Funcs.name(SelfD::to\_underlying(std::forward<A>(a)),\ SelfD::to\_underlying(std::forward<B>(b)));\ \}\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ )\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }R\ =\ \textcolor{keyword}{decltype}(Funcs.binary\_traits)::template\ result<Self,\ A\&\&,\ B\&\&>::type;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ ret\ =\ [\&a,\ \&b]\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Funcs.name(SelfD::to\_underlying(std::forward<A>(a)),\ SelfD::to\_underlying(std::forward<B>(b)));\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<R,\ deduce\_t>)\ \textcolor{keywordflow}{return}\ ret();\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}R\textcolor{keyword}{>}(ret());\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}}
 
 \end{DoxyCode}
 
 
 Definition at line \mbox{\hyperlink{operators_8hpp_source_l00010}{10}} of file \mbox{\hyperlink{operators_8hpp_source}{operators.\+hpp}}.
 
-\mbox{\Hypertarget{operators_8hpp_af9a66ab382ee5d9ec749b9ba778ed41c}\label{operators_8hpp_af9a66ab382ee5d9ec749b9ba778ed41c}} 
-\index{operators.hpp@{operators.hpp}!UTILS\_FIX\_OP@{UTILS\_FIX\_OP}}
+\Hypertarget{operators_8hpp_af9a66ab382ee5d9ec749b9ba778ed41c}\index{operators.hpp@{operators.hpp}!UTILS\_FIX\_OP@{UTILS\_FIX\_OP}}
 \index{UTILS\_FIX\_OP@{UTILS\_FIX\_OP}!operators.hpp@{operators.hpp}}
 \doxysubsubsection{\texorpdfstring{UTILS\_FIX\_OP}{UTILS\_FIX\_OP}}
-{\footnotesize\ttfamily \#define UTILS\+\_\+\+FIX\+\_\+\+OP(\begin{DoxyParamCaption}\item[{}]{op,  }\item[{}]{name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{operators_8hpp_af9a66ab382ee5d9ec749b9ba778ed41c} 
+\#define UTILS\+\_\+\+FIX\+\_\+\+OP(\begin{DoxyParamCaption}\item[{}]{op}{, }\item[{}]{name}{}\end{DoxyParamCaption})}
 
 {\bfseries Value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{    \textcolor{keyword}{template} <\textcolor{keyword}{typename} Self, \textcolor{keyword}{typename} SelfD = std::remove\_cvref\_t<Self>>\(\backslash\)}
-\DoxyCodeLine{    constexpr \textcolor{keyword}{decltype}(\textcolor{keyword}{auto}) \textcolor{keyword}{operator} op(\textcolor{keyword}{this} Self\&\& \textcolor{keyword}{self})\(\backslash\)}
-\DoxyCodeLine{    requires (\(\backslash\)}
-\DoxyCodeLine{        !std::is\_same\_v<\textcolor{keyword}{decltype}(Funcs.pre\_\#\#name), disable\_op\_t> \&\&\(\backslash\)}
-\DoxyCodeLine{        \textcolor{keyword}{decltype}(Funcs.unary\_traits)::\textcolor{keyword}{template} constraint<Self\&\&>::value \&\&\(\backslash\)}
-\DoxyCodeLine{        \textcolor{keyword}{requires} \{ Funcs.pre\_\#\#name(SelfD::to\_underlying(std::forward<Self>(self))); \}\(\backslash\)}
-\DoxyCodeLine{    ) \{\(\backslash\)}
-\DoxyCodeLine{        Funcs.pre\_\#\#name(SelfD::to\_underlying(std::forward<Self>(\textcolor{keyword}{self})));\(\backslash\)}
-\DoxyCodeLine{        return \textcolor{keyword}{self};\(\backslash\)}
-\DoxyCodeLine{    \}\(\backslash\)}
-\DoxyCodeLine{    UTILS\_UNARY\_OP(op, post\_\#\#name, \textcolor{keywordtype}{int})}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Self,\ \textcolor{keyword}{typename}\ SelfD\ =\ std::remove\_cvref\_t<Self>>\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{decltype}(\textcolor{keyword}{auto})\ \textcolor{keyword}{operator}\ op(\textcolor{keyword}{this}\ Self\&\&\ self)\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ requires\ (\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ !std::is\_same\_v<\textcolor{keyword}{decltype}(Funcs.pre\_\#\#name),\ disable\_op\_t>\ \&\&\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{decltype}(Funcs.unary\_traits)::template\ constraint<Self\&\&>::value\ \&\&\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ \{\ Funcs.pre\_\#\#name(SelfD::to\_underlying(std::forward<Self>(self)));\ \}\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ )\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Funcs.pre\_\#\#name(SelfD::to\_underlying(std::forward<Self>(self)));\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ self;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ UTILS\_UNARY\_OP(op,\ post\_\#\#name,\ \textcolor{keywordtype}{int})}
 
 \end{DoxyCode}
 
 
 Definition at line \mbox{\hyperlink{operators_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{operators_8hpp_source}{operators.\+hpp}}.
 
-\mbox{\Hypertarget{operators_8hpp_ad95c59b8c57152e760307eea47d8e095}\label{operators_8hpp_ad95c59b8c57152e760307eea47d8e095}} 
-\index{operators.hpp@{operators.hpp}!UTILS\_UNARY\_OP@{UTILS\_UNARY\_OP}}
+\Hypertarget{operators_8hpp_ad95c59b8c57152e760307eea47d8e095}\index{operators.hpp@{operators.hpp}!UTILS\_UNARY\_OP@{UTILS\_UNARY\_OP}}
 \index{UTILS\_UNARY\_OP@{UTILS\_UNARY\_OP}!operators.hpp@{operators.hpp}}
 \doxysubsubsection{\texorpdfstring{UTILS\_UNARY\_OP}{UTILS\_UNARY\_OP}}
-{\footnotesize\ttfamily \#define UTILS\+\_\+\+UNARY\+\_\+\+OP(\begin{DoxyParamCaption}\item[{}]{op,  }\item[{}]{name,  }\item[{}]{... }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{operators_8hpp_ad95c59b8c57152e760307eea47d8e095} 
+\#define UTILS\+\_\+\+UNARY\+\_\+\+OP(\begin{DoxyParamCaption}\item[{}]{op}{, }\item[{}]{name}{, }\item[{}]{}...{}\end{DoxyParamCaption})}
 
 {\bfseries Value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{    \textcolor{keyword}{template} <\textcolor{keyword}{typename} Self, \textcolor{keyword}{typename} SelfD = std::remove\_cvref\_t<Self>>\(\backslash\)}
-\DoxyCodeLine{    constexpr \textcolor{keyword}{decltype}(\textcolor{keyword}{auto}) \textcolor{keyword}{operator} op(\textcolor{keyword}{this} Self\&\& \textcolor{keyword}{self} \_\_VA\_OPT\_\_(,) \_\_VA\_ARGS\_\_)\(\backslash\)}
-\DoxyCodeLine{    requires (\(\backslash\)}
-\DoxyCodeLine{        !std::is\_same\_v<decltype(Funcs.name), disable\_op\_t> \&\&\(\backslash\)}
-\DoxyCodeLine{        decltype(Funcs.unary\_traits)::template constraint<Self\&\&>::value \&\&\(\backslash\)}
-\DoxyCodeLine{        requires \{ Funcs.name(SelfD::to\_underlying(std::forward<Self>(\textcolor{keyword}{self}))); \}\(\backslash\)}
-\DoxyCodeLine{    ) \{\(\backslash\)}
-\DoxyCodeLine{        const \textcolor{keyword}{auto} ret = [\&\textcolor{keyword}{self}] \{ \textcolor{keywordflow}{return} Funcs.name(SelfD::to\_underlying(std::forward<Self>(\textcolor{keyword}{self}))); \};\(\backslash\)}
-\DoxyCodeLine{        using R = \textcolor{keyword}{decltype}(Funcs.unary\_traits)::\textcolor{keyword}{template} result<Self\&\&>::type;\(\backslash\)}
-\DoxyCodeLine{        if \textcolor{keyword}{constexpr} (std::is\_same\_v<R, deduce\_t>) \textcolor{keywordflow}{return} ret();\(\backslash\)}
-\DoxyCodeLine{        else \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}R\textcolor{keyword}{>}(ret());\(\backslash\)}
-\DoxyCodeLine{    \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Self,\ \textcolor{keyword}{typename}\ SelfD\ =\ std::remove\_cvref\_t<Self>>\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{decltype}(\textcolor{keyword}{auto})\ \textcolor{keyword}{operator}\ op(\textcolor{keyword}{this}\ Self\&\&\ self\ \_\_VA\_OPT\_\_(,)\ \_\_VA\_ARGS\_\_)\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ requires\ (\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ !std::is\_same\_v<\textcolor{keyword}{decltype}(Funcs.name),\ disable\_op\_t>\ \&\&\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{decltype}(Funcs.unary\_traits)::template\ constraint<Self\&\&>::value\ \&\&\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ \{\ Funcs.name(SelfD::to\_underlying(std::forward<Self>(self)));\ \}\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ )\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ ret\ =\ [\&self]\ \{\ \textcolor{keywordflow}{return}\ Funcs.name(SelfD::to\_underlying(std::forward<Self>(self)));\ \};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }R\ =\ \textcolor{keyword}{decltype}(Funcs.unary\_traits)::template\ result<Self\&\&>::type;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same\_v<R,\ deduce\_t>)\ \textcolor{keywordflow}{return}\ ret();\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}R\textcolor{keyword}{>}(ret());\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}}
 
 \end{DoxyCode}
 

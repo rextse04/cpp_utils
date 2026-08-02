@@ -1,24 +1,24 @@
-\hypertarget{group__metainfer}{}\doxysection{utils\+::meta\+::infer}
-\label{group__metainfer}\index{utils::meta::infer@{utils::meta::infer}}
+\doxysection{utils\+::meta\+::infer}
+\hypertarget{group__metainfer}{}\label{group__metainfer}\index{utils::meta::infer@{utils::meta::infer}}
 
 
-Converts an {\ttfamily Erased\+Result} to a {\ttfamily Result}.  
+A \href{Trait.html}{\texttt{ {\itshape Type\+Trait}}} that converts an {\ttfamily Erased\+Result} to a {\ttfamily Result}.  
 
 
-\doxysubsection*{Classes}
+\doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{group__metainfer_structutils_1_1meta_1_1infer}{utils\+::meta\+::infer$<$ Erased\+Result $>$}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Typedefs}
+\doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename Erased\+Result $>$ }\\using \mbox{\hyperlink{group__metainfer_ga589006341bea1c7475635f68058edb53}{utils\+::meta\+::infer\+\_\+t}} = \mbox{\hyperlink{group__metainfer_structutils_1_1meta_1_1infer}{infer}}$<$ Erased\+Result $>$\+::type
+{\footnotesize template$<$typename Erased\+Result$>$ }\\using \mbox{\hyperlink{group__metainfer_ga339d5b918f560d5afcc3ae2dba25a435}{utils\+::meta\+::infer\+\_\+t}} = \mbox{\hyperlink{group__metainfer_structutils_1_1meta_1_1infer}{infer}}$<$Erased\+Result$>$\+::type
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Converts an {\ttfamily Erased\+Result} to a {\ttfamily Result}. 
+A \href{Trait.html}{\texttt{ {\itshape Type\+Trait}}} that converts an {\ttfamily Erased\+Result} to a {\ttfamily Result}. 
 
 If {\ttfamily Erased\+Result} has a {\ttfamily type} member, that is returned; otherwise, {\ttfamily Erased\+Result} itself is returned. 
 
@@ -26,31 +26,26 @@ If {\ttfamily Erased\+Result} has a {\ttfamily type} member, that is returned; o
 \index{utils::meta::infer@{utils::meta::infer}}\label{structutils_1_1meta_1_1infer}
 \Hypertarget{group__metainfer_structutils_1_1meta_1_1infer}
 \doxysubsubsection{struct utils\+::meta\+::infer}
-\subsubsection*{template$<$typename \mbox{\hyperlink{group__metastrict__subset__of_ga1cf91fddec6a7f669b55820814674e71}{Erased\+Result}}$>$\newline
+\subsubsection*{template$<$typename Erased\+Result$>$\newline
 struct utils\+::meta\+::infer$<$ Erased\+Result $>$}
 
 
 Definition at line \mbox{\hyperlink{meta_8hpp_source_l00216}{216}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
 
-\doxysubsubsection*{Public Types}
+\doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-using \mbox{\hyperlink{group__metastrict__subset__of_ga43c3aa2423e04165a63b232a97ec2d92}{type}} = std\+::conditional\+\_\+t$<$ requires \{ typename Erased\+Result\+::type
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{group__metastrict__subset__of_ga1cf91fddec6a7f669b55820814674e71}{Erased\+Result}}
+using \mbox{\hyperlink{group__metastrict__subset__of_ga545c685635b5863a5bb7fd9e9a0c2bd4}{type}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
-\mbox{\Hypertarget{group__metainfer_ga589006341bea1c7475635f68058edb53}\label{group__metainfer_ga589006341bea1c7475635f68058edb53}} 
-\index{utils::meta::infer@{utils::meta::infer}!infer\_t@{infer\_t}}
+\Hypertarget{group__metainfer_ga339d5b918f560d5afcc3ae2dba25a435}\index{utils::meta::infer@{utils::meta::infer}!infer\_t@{infer\_t}}
 \index{infer\_t@{infer\_t}!utils::meta::infer@{utils::meta::infer}}
 \doxysubsubsection{\texorpdfstring{infer\_t}{infer\_t}}
-{\footnotesize\ttfamily template$<$typename Erased\+Result $>$ \\
-using \mbox{\hyperlink{group__metainfer_ga589006341bea1c7475635f68058edb53}{utils\+::meta\+::infer\+\_\+t}} = typedef \mbox{\hyperlink{group__metainfer_structutils_1_1meta_1_1infer}{infer}}$<$Erased\+Result$>$\+::type}
+{\footnotesize\ttfamily \label{group__metainfer_ga339d5b918f560d5afcc3ae2dba25a435} 
+template$<$typename Erased\+Result$>$ \\
+using \mbox{\hyperlink{group__metainfer_ga339d5b918f560d5afcc3ae2dba25a435}{utils\+::meta\+::infer\+\_\+t}} = \mbox{\hyperlink{group__metainfer_structutils_1_1meta_1_1infer}{infer}}$<$Erased\+Result$>$\+::type}
 
 
 

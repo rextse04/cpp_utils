@@ -1,53 +1,54 @@
-\hypertarget{stateful__meta_8hpp_source}{}\doxysection{stateful\+\_\+meta.\+hpp}
-\mbox{\hyperlink{stateful__meta_8hpp}{Go to the documentation of this file.}}
+\doxysection{stateful\+\_\+meta.\+hpp}
+\hypertarget{stateful__meta_8hpp_source}{}\label{stateful__meta_8hpp_source}\mbox{\hyperlink{stateful__meta_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#include <cstdint>}}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00003}00003 }
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00027}00027 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutils_1_1meta}{utils::meta}} \{}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00030}00030     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Var>}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00031}\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{00031}}     \textcolor{keyword}{class }\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{const\_var}} \{}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00032}\mbox{\hyperlink{classutils_1_1meta_1_1const__var_a4a303091bc052b127be2b9811c6ce1fe}{00032}}         \textcolor{keyword}{friend} \textcolor{keyword}{consteval} \textcolor{keyword}{auto} \mbox{\hyperlink{classutils_1_1meta_1_1const__var_a4a303091bc052b127be2b9811c6ce1fe}{get}}(\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{const\_var}});}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00033}00033     \};}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00035}00035     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Var, auto Value>}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00036}\mbox{\hyperlink{classutils_1_1meta_1_1define}{00036}}     \textcolor{keyword}{class }\mbox{\hyperlink{classutils_1_1meta_1_1define}{define}} \{}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00037}\mbox{\hyperlink{classutils_1_1meta_1_1define_a8404e9dbf9b9f65a2efb6b53ebdb1ba3}{00037}}         \textcolor{keyword}{friend} \textcolor{keyword}{consteval} \textcolor{keyword}{auto} \mbox{\hyperlink{classutils_1_1meta_1_1define_a8404e9dbf9b9f65a2efb6b53ebdb1ba3}{get}}(\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{const\_var<Var>}}) \{ \textcolor{keywordflow}{return} Value; \}}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00038}00038     \};}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00039}00039 }
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00041}00041     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Var, auto = get(utils::meta::const\_var<Var>\{\})>}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00042}\mbox{\hyperlink{namespaceutils_1_1meta_a663523ca9759fbbba5c59040d339416c}{00042}}     \textcolor{keyword}{consteval} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceutils_1_1meta_a663523ca9759fbbba5c59040d339416c}{exists}}(\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{const\_var<Var>}}) \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00044}\mbox{\hyperlink{namespaceutils_1_1meta_a7ecd2bb074afc4484c62aa40fb97ac97}{00044}}     \textcolor{keyword}{consteval} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceutils_1_1meta_a663523ca9759fbbba5c59040d339416c}{exists}}(...) \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00045}00045 }
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00046}00046     \textcolor{keyword}{namespace }detail \{}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00047}00047         \textcolor{keyword}{template} <\textcolor{keyword}{typename} Var, std::u\textcolor{keywordtype}{int}max\_t Value>}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00048}00048         \textcolor{keyword}{struct }counter;}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00049}00049     \}}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00053}00053     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Var = void, \textcolor{keywordtype}{bool} Increment = \textcolor{keyword}{false}, std::uintmax\_t Value = 0, \textcolor{keyword}{typename} Id = \textcolor{keyword}{decltype}([]\{\})>}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00054}\mbox{\hyperlink{namespaceutils_1_1meta_ad02c270667465805004b1f692dfb6cf0}{00054}}     \textcolor{keyword}{consteval} std::uintmax\_t \mbox{\hyperlink{namespaceutils_1_1meta_ad02c270667465805004b1f692dfb6cf0}{get\_counter}}() \{}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00055}00055         \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (\mbox{\hyperlink{namespaceutils_1_1meta_a663523ca9759fbbba5c59040d339416c}{exists}}(\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{const\_var}}<detail::counter<Var, Value>>\{\})) \{}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00056}00056             \textcolor{keywordflow}{return} get\_counter<Var, Increment, Value + 1, Id>();}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00057}00057         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00058}00058             \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (Increment) \{}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00059}00059                 (void) \mbox{\hyperlink{classutils_1_1meta_1_1define}{define}}<detail::counter<Var, Value>, \textcolor{keyword}{true}>\{\};}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00060}00060             \}}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00061}00061             \textcolor{keywordflow}{return} Value;}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00062}00062         \}}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00063}00063     \}}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00064}00064 }
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00068}00068     template <typename Var, std::uintmax\_t Version = get\_counter<Var>() -\/ 1>}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00069}\mbox{\hyperlink{classutils_1_1meta_1_1var}{00069}}     \textcolor{keyword}{class }\mbox{\hyperlink{classutils_1_1meta_1_1var}{var}} \{}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00070}\mbox{\hyperlink{classutils_1_1meta_1_1var_a8b5c3f2b56486e6003085ee7bdd27e7a}{00070}}         \textcolor{keyword}{friend} \textcolor{keyword}{consteval} \textcolor{keyword}{auto} \mbox{\hyperlink{classutils_1_1meta_1_1var_a8b5c3f2b56486e6003085ee7bdd27e7a}{get}}(\mbox{\hyperlink{classutils_1_1meta_1_1var}{var}});}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00071}00071     \};}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00074}00074     template <typename Var, auto Value, std::uintmax\_t Version = get\_counter<Var, true>()>}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00075}\mbox{\hyperlink{classutils_1_1meta_1_1set}{00075}}     \textcolor{keyword}{class }\mbox{\hyperlink{classutils_1_1meta_1_1set}{set}} \{}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00076}\mbox{\hyperlink{classutils_1_1meta_1_1set_a33f5a36f1982df794f19562affbbccd3}{00076}}         \textcolor{keyword}{friend} \textcolor{keyword}{consteval} \textcolor{keyword}{auto} \mbox{\hyperlink{classutils_1_1meta_1_1set_a33f5a36f1982df794f19562affbbccd3}{get}}(\mbox{\hyperlink{classutils_1_1meta_1_1var}{var<Var, Version>}}) \{ \textcolor{keywordflow}{return} Value; \}}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00077}00077     \};}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00078}00078 }
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00080}00080     \textcolor{keyword}{template} <\textcolor{keyword}{typename} Var, std::u\textcolor{keywordtype}{int}max\_t Version, auto = get(var<Var, Version>\{\})>}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00081}\mbox{\hyperlink{namespaceutils_1_1meta_ad2935ed0730cf850927f58cdf5fa8fdf}{00081}}     \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespaceutils_1_1meta_a663523ca9759fbbba5c59040d339416c}{exists}}(\mbox{\hyperlink{classutils_1_1meta_1_1var}{var<Var, Version>}}) \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00082}00082 }
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00084}00084     \textcolor{keyword}{template} <\textcolor{keyword}{typename}... Ts>}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00085}\mbox{\hyperlink{structutils_1_1meta_1_1product__t}{00085}}     \textcolor{keyword}{struct }\mbox{\hyperlink{structutils_1_1meta_1_1product__t}{product\_t}};}
-\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00086}00086 \}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00027}00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceutils_1_1meta}{utils::meta}}\ \{}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Var>}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00031}\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{00031}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{const\_var}}\ \{}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00032}\mbox{\hyperlink{classutils_1_1meta_1_1const__var_a4a303091bc052b127be2b9811c6ce1fe}{00032}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{consteval}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutils_1_1meta_1_1const__var_a4a303091bc052b127be2b9811c6ce1fe}{get}}(\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{const\_var}});}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00033}00033\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Var,\ auto\ Value>}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00036}\mbox{\hyperlink{classutils_1_1meta_1_1define}{00036}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classutils_1_1meta_1_1define}{define}}\ \{}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00037}\mbox{\hyperlink{classutils_1_1meta_1_1define_a8404e9dbf9b9f65a2efb6b53ebdb1ba3}{00037}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{consteval}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutils_1_1meta_1_1define_a8404e9dbf9b9f65a2efb6b53ebdb1ba3}{get}}(\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{const\_var<Var>}})\ \{\ \textcolor{keywordflow}{return}\ Value;\ \}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00038}00038\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Var,\ auto\ =\ get(utils::meta::const\_var<Var>\{\})>}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00042}\mbox{\hyperlink{namespaceutils_1_1meta_a663523ca9759fbbba5c59040d339416c}{00042}}\ \ \ \ \ \textcolor{keyword}{consteval}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceutils_1_1meta_a663523ca9759fbbba5c59040d339416c}{exists}}(\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{const\_var<Var>}})\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00044}\mbox{\hyperlink{namespaceutils_1_1meta_a7ecd2bb074afc4484c62aa40fb97ac97}{00044}}\ \ \ \ \ \textcolor{keyword}{consteval}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceutils_1_1meta_a663523ca9759fbbba5c59040d339416c}{exists}}(...)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{namespace\ }detail\ \{}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Var,\ std::u\textcolor{keywordtype}{int}max\_t\ Value>}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }counter;}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Var\ =\ void,\ \textcolor{keywordtype}{bool}\ Increment\ =\ \textcolor{keyword}{false},\ std::uintmax\_t\ Value\ =\ 0,\ \textcolor{keyword}{typename}\ Id\ =\ \textcolor{keyword}{decltype}([]\{\})>}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00054}\mbox{\hyperlink{namespaceutils_1_1meta_ad02c270667465805004b1f692dfb6cf0}{00054}}\ \ \ \ \ \textcolor{keyword}{consteval}\ std::uintmax\_t\ \mbox{\hyperlink{namespaceutils_1_1meta_ad02c270667465805004b1f692dfb6cf0}{get\_counter}}()\ \{}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (\mbox{\hyperlink{namespaceutils_1_1meta_a663523ca9759fbbba5c59040d339416c}{exists}}(\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{const\_var}}<detail::counter<Var,\ Value>>\{\}))\ \{}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceutils_1_1meta_ad02c270667465805004b1f692dfb6cf0}{get\_counter<Var,\ Increment,\ Value\ +\ 1,\ Id>}}();}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (Increment)\ \{}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (void)\ \mbox{\hyperlink{classutils_1_1meta_1_1define}{define}}<detail::counter<Var,\ Value>,\ \textcolor{keyword}{true}>\{\};}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Value;}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00068}00068\ \ \ \ \ template\ <typename\ Var,\ std::uintmax\_t\ Version\ =\ get\_counter<Var>()\ -\/\ 1>}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00069}\mbox{\hyperlink{classutils_1_1meta_1_1var}{00069}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classutils_1_1meta_1_1var}{var}}\ \{}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00070}\mbox{\hyperlink{classutils_1_1meta_1_1var_a8b5c3f2b56486e6003085ee7bdd27e7a}{00070}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{consteval}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutils_1_1meta_1_1var_a8b5c3f2b56486e6003085ee7bdd27e7a}{get}}(\mbox{\hyperlink{classutils_1_1meta_1_1var}{var}});}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00071}00071\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00074}00074\ \ \ \ \ template\ <typename\ Var,\ auto\ Value,\ std::uintmax\_t\ Version\ =\ get\_counter<Var,\ true>()>}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00075}\mbox{\hyperlink{classutils_1_1meta_1_1set}{00075}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classutils_1_1meta_1_1set}{set}}\ \{}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00076}\mbox{\hyperlink{classutils_1_1meta_1_1set_a33f5a36f1982df794f19562affbbccd3}{00076}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{consteval}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classutils_1_1meta_1_1set_a33f5a36f1982df794f19562affbbccd3}{get}}(\mbox{\hyperlink{classutils_1_1meta_1_1var}{var<Var,\ Version>}})\ \{\ \textcolor{keywordflow}{return}\ Value;\ \}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00077}00077\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00080}00080\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Var,\ std::u\textcolor{keywordtype}{int}max\_t\ Version,\ auto\ =\ get(var<Var,\ Version>\{\})>}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00081}\mbox{\hyperlink{namespaceutils_1_1meta_ad2935ed0730cf850927f58cdf5fa8fdf}{00081}}\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceutils_1_1meta_a663523ca9759fbbba5c59040d339416c}{exists}}(\mbox{\hyperlink{classutils_1_1meta_1_1var}{var<Var,\ Version>}})\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00084}00084\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Ts>}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00085}\mbox{\hyperlink{structutils_1_1meta_1_1product__t}{00085}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structutils_1_1meta_1_1product__t}{product\_t}};}
+\DoxyCodeLine{\Hypertarget{stateful__meta_8hpp_source_l00086}00086\ \}}
 
 \end{DoxyCode}

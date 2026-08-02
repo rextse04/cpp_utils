@@ -1,13 +1,13 @@
-\hypertarget{group__utilsintervalendpointcomparison}{}\doxysection{utils\+::interval\+\_\+endpoint\+::operator\texorpdfstring{$<$}{<}=\texorpdfstring{$>$}{>}, utils\+::interval\+\_\+endpoint\+::compare}
-\label{group__utilsintervalendpointcomparison}\index{utils::interval\_endpoint::operator$<$=$>$, utils::interval\_endpoint::compare@{utils::interval\_endpoint::operator$<$=$>$, utils::interval\_endpoint::compare}}
-\doxysubsection*{Functions}
+\doxysection{utils\+::interval\+\_\+endpoint\+::operator\texorpdfstring{$<$}{<}=\texorpdfstring{$>$}{>}, utils\+::interval\+\_\+endpoint\+::compare}
+\hypertarget{group__utilsintervalendpointcomparison}{}\label{group__utilsintervalendpointcomparison}\index{utils::interval\_endpoint::operator$<$=$>$, utils::interval\_endpoint::compare@{utils::interval\_endpoint::operator$<$=$>$, utils::interval\_endpoint::compare}}
+\doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename U $>$ \newline
+{\footnotesize template$<$typename U$>$ \newline
 requires (detail\+::strict\+\_\+weak\+\_\+order$<$std\+::less$<$$>$, const T\&, const U\&$>$)}\\constexpr std\+::weak\+\_\+ordering \mbox{\hyperlink{group__utilsintervalendpointcomparison_ga7531876b5ec7ffc958b3020f32b14a60}{utils\+::interval\+\_\+endpoint$<$ T $>$\+::operator$<$=$>$}} (const \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ U $>$ \&other) const
 \begin{DoxyCompactList}\small\item\em Three-\/way comparison operator. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename U , detail\+::strict\+\_\+weak\+\_\+order$<$ const T \&, const U \& $>$ Compare = std\+::less$<$$>$$>$ }\\constexpr std\+::weak\+\_\+ordering \mbox{\hyperlink{group__utilsintervalendpointcomparison_gabfe97454fff1e35e7177d9b24cf69801}{utils\+::interval\+\_\+endpoint$<$ T $>$\+::compare}} (const \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ U $>$ \&other, bool right, const Compare \&comp=\{\}) const
-\begin{DoxyCompactList}\small\item\em $E1$ is taken to be {\ttfamily $\ast$this}, $E2$ is taken to be {\ttfamily other}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\footnotesize template$<$typename U, detail\+::strict\+\_\+weak\+\_\+order$<$ const T \&, const U \& $>$ Compare = std\+::less$<$$>$$>$ }\\constexpr std\+::weak\+\_\+ordering \mbox{\hyperlink{group__utilsintervalendpointcomparison_gabfe97454fff1e35e7177d9b24cf69801}{utils\+::interval\+\_\+endpoint$<$ T $>$\+::compare}} (const \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ U $>$ \&other, bool \mbox{\hyperlink{namespaceutils_aa52b5daba05b396d43967f83d7b2dadda7c4f29407893c334a6cb7a87bf045c0d}{right}}, const Compare \&comp=\{\}) const
+\begin{DoxyCompactList}\small\item\em $E1$ is taken to be {\ttfamily \texorpdfstring{$\ast$}{*}this}, $E2$ is taken to be {\ttfamily other}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -16,30 +16,30 @@ Given endpoints $E1$ and $E2$, $E1<E2$ if and only if the set represented by $E1
 Let $v$ be {\ttfamily this-\/\texorpdfstring{$>$}{>}value} and $ov$ be {\ttfamily other.\+value}. The program is ill-\/formed if there is not a restriction of {\ttfamily std\+::less\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}} such that $v$ and $ov$ are in the domain. It is UB if such a restriction does not satisfy {\itshape Compare}. 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{group__utilsintervalendpointcomparison_gabfe97454fff1e35e7177d9b24cf69801}\label{group__utilsintervalendpointcomparison_gabfe97454fff1e35e7177d9b24cf69801}} 
-\index{utils::interval\_endpoint::operator$<$=$>$, utils::interval\_endpoint::compare@{utils::interval\_endpoint::operator$<$=$>$, utils::interval\_endpoint::compare}!compare@{compare}}
+\Hypertarget{group__utilsintervalendpointcomparison_gabfe97454fff1e35e7177d9b24cf69801}\index{utils::interval\_endpoint::operator$<$=$>$, utils::interval\_endpoint::compare@{utils::interval\_endpoint::operator$<$=$>$, utils::interval\_endpoint::compare}!compare@{compare}}
 \index{compare@{compare}!utils::interval\_endpoint::operator$<$=$>$, utils::interval\_endpoint::compare@{utils::interval\_endpoint::operator$<$=$>$, utils::interval\_endpoint::compare}}
 \doxysubsubsection{\texorpdfstring{compare()}{compare()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-template$<$typename U , detail\+::strict\+\_\+weak\+\_\+order$<$ const T \&, const U \& $>$ Compare = std\+::less$<$$>$$>$ \\
-constexpr std\+::weak\+\_\+ordering \mbox{\hyperlink{structutils_1_1interval__endpoint}{utils\+::interval\+\_\+endpoint}}$<$ T $>$\+::compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ U $>$ \&}]{other,  }\item[{bool}]{right,  }\item[{const Compare \&}]{comp = {\ttfamily \{\}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily \label{group__utilsintervalendpointcomparison_gabfe97454fff1e35e7177d9b24cf69801} 
+template$<$typename T$>$ \\
+template$<$typename U, detail\+::strict\+\_\+weak\+\_\+order$<$ const T \&, const U \& $>$ Compare = std\+::less$<$$>$$>$ \\
+std\+::weak\+\_\+ordering \mbox{\hyperlink{structutils_1_1interval__endpoint}{utils\+::interval\+\_\+endpoint}}$<$ T $>$\+::compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ U $>$ \&}]{other}{, }\item[{bool}]{right}{, }\item[{const Compare \&}]{comp}{ = {\ttfamily \{\}}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
-$E1$ is taken to be {\ttfamily $\ast$this}, $E2$ is taken to be {\ttfamily other}. 
+$E1$ is taken to be {\ttfamily \texorpdfstring{$\ast$}{*}this}, $E2$ is taken to be {\ttfamily other}. 
 
 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00079}{79}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00080}{80}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
-\mbox{\Hypertarget{group__utilsintervalendpointcomparison_ga7531876b5ec7ffc958b3020f32b14a60}\label{group__utilsintervalendpointcomparison_ga7531876b5ec7ffc958b3020f32b14a60}} 
-\index{utils::interval\_endpoint::operator$<$=$>$, utils::interval\_endpoint::compare@{utils::interval\_endpoint::operator$<$=$>$, utils::interval\_endpoint::compare}!operator$<$=$>$@{operator$<$=$>$}}
+\Hypertarget{group__utilsintervalendpointcomparison_ga7531876b5ec7ffc958b3020f32b14a60}\index{utils::interval\_endpoint::operator$<$=$>$, utils::interval\_endpoint::compare@{utils::interval\_endpoint::operator$<$=$>$, utils::interval\_endpoint::compare}!operator$<$=$>$@{operator$<$=$>$}}
 \index{operator$<$=$>$@{operator$<$=$>$}!utils::interval\_endpoint::operator$<$=$>$, utils::interval\_endpoint::compare@{utils::interval\_endpoint::operator$<$=$>$, utils::interval\_endpoint::compare}}
 \doxysubsubsection{\texorpdfstring{operator$<$=$>$()}{operator<=>()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-template$<$typename U $>$ \newline
+{\footnotesize\ttfamily \label{group__utilsintervalendpointcomparison_ga7531876b5ec7ffc958b3020f32b14a60} 
+template$<$typename T$>$ \\
+template$<$typename U$>$ \newline
 requires (detail\+::strict\+\_\+weak\+\_\+order$<$std\+::less$<$$>$, const T\&, const U\&$>$)\\
-constexpr std\+::weak\+\_\+ordering \mbox{\hyperlink{structutils_1_1interval__endpoint}{utils\+::interval\+\_\+endpoint}}$<$ T $>$\+::operator$<$=$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ U $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+std\+::weak\+\_\+ordering \mbox{\hyperlink{structutils_1_1interval__endpoint}{utils\+::interval\+\_\+endpoint}}$<$ T $>$\+::operator$<$=$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ U $>$ \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
@@ -47,5 +47,5 @@ Three-\/way comparison operator.
 
 All endpoints are assumed to be right endpoints. The comparator is taken to be {\ttfamily std\+::less\texorpdfstring{$<$}{<}\texorpdfstring{$>$}{>}}. 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00073}{73}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00074}{74}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 

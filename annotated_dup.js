@@ -8,23 +8,13 @@ var annotated_dup =
     ] ],
     [ "utils", "namespaceutils.html", [
       [ "bit_behavior", "namespaceutils_1_1bit__behavior.html", [
-        [ "default_asg_op_traits", "structutils_1_1bit__behavior_1_1default__asg__op__traits.html", [
-          [ "constraint", "structutils_1_1bit__behavior_1_1default__asg__op__traits_1_1constraint.html", null ]
-        ] ],
-        [ "default_binary_op_traits", "structutils_1_1bit__behavior_1_1default__binary__op__traits.html", [
-          [ "constraint", "structutils_1_1bit__behavior_1_1default__binary__op__traits_1_1constraint.html", null ],
-          [ "result", "structutils_1_1bit__behavior_1_1default__binary__op__traits_1_1result.html", "structutils_1_1bit__behavior_1_1default__binary__op__traits_1_1result" ]
-        ] ],
+        [ "default_asg_op_traits", "structutils_1_1bit__behavior_1_1default__asg__op__traits.html", "structutils_1_1bit__behavior_1_1default__asg__op__traits" ],
+        [ "default_binary_op_traits", "structutils_1_1bit__behavior_1_1default__binary__op__traits.html", "structutils_1_1bit__behavior_1_1default__binary__op__traits" ],
         [ "profile", "structutils_1_1bit__behavior_1_1profile.html", null ]
       ] ],
       [ "integral_behavior", "namespaceutils_1_1integral__behavior.html", [
-        [ "default_asg_op_traits", "structutils_1_1integral__behavior_1_1default__asg__op__traits.html", [
-          [ "constraint", "structutils_1_1integral__behavior_1_1default__asg__op__traits_1_1constraint.html", null ]
-        ] ],
-        [ "default_binary_op_traits", "structutils_1_1integral__behavior_1_1default__binary__op__traits.html", [
-          [ "constraint", "structutils_1_1integral__behavior_1_1default__binary__op__traits_1_1constraint.html", null ],
-          [ "result", "structutils_1_1integral__behavior_1_1default__binary__op__traits_1_1result.html", "structutils_1_1integral__behavior_1_1default__binary__op__traits_1_1result" ]
-        ] ],
+        [ "default_asg_op_traits", "structutils_1_1integral__behavior_1_1default__asg__op__traits.html", "structutils_1_1integral__behavior_1_1default__asg__op__traits" ],
+        [ "default_binary_op_traits", "structutils_1_1integral__behavior_1_1default__binary__op__traits.html", "structutils_1_1integral__behavior_1_1default__binary__op__traits" ],
         [ "profile", "structutils_1_1integral__behavior_1_1profile.html", null ]
       ] ],
       [ "meta", "namespaceutils_1_1meta.html", [
@@ -72,9 +62,7 @@ var annotated_dup =
         [ "stack_allocator", "classutils_1_1pmr_1_1stack__allocator.html", "classutils_1_1pmr_1_1stack__allocator" ]
       ] ],
       [ "shift_behavior", "namespaceutils_1_1shift__behavior.html", [
-        [ "default_binary_op_traits", "structutils_1_1shift__behavior_1_1default__binary__op__traits.html", [
-          [ "result", "structutils_1_1shift__behavior_1_1default__binary__op__traits_1_1result.html", "structutils_1_1shift__behavior_1_1default__binary__op__traits_1_1result" ]
-        ] ],
+        [ "default_binary_op_traits", "structutils_1_1shift__behavior_1_1default__binary__op__traits.html", "structutils_1_1shift__behavior_1_1default__binary__op__traits" ],
         [ "profile", "structutils_1_1shift__behavior_1_1profile.html", null ]
       ] ],
       [ "aligned_t", "structutils_1_1aligned__t.html", "structutils_1_1aligned__t" ],
@@ -104,26 +92,12 @@ var annotated_dup =
       [ "compile_error", "classutils_1_1compile__error.html", "classutils_1_1compile__error" ],
       [ "copy_construct", "structutils_1_1copy__construct.html", null ],
       [ "copy_construct<>", "structutils_1_1copy__construct_3_4.html", null ],
-      [ "default_asg_op_traits", "structutils_1_1default__asg__op__traits.html", [
-        [ "constraint", "structutils_1_1default__asg__op__traits_1_1constraint.html", null ]
-      ] ],
-      [ "default_binary_op_traits", "structutils_1_1default__binary__op__traits.html", [
-        [ "constraint", "structutils_1_1default__binary__op__traits_1_1constraint.html", null ],
-        [ "result", "structutils_1_1default__binary__op__traits_1_1result.html", null ]
-      ] ],
+      [ "default_asg_op_traits", "structutils_1_1default__asg__op__traits.html", "structutils_1_1default__asg__op__traits" ],
+      [ "default_binary_op_traits", "structutils_1_1default__binary__op__traits.html", "structutils_1_1default__binary__op__traits" ],
       [ "default_construct", "structutils_1_1default__construct.html", null ],
-      [ "default_postfix_op_traits", "structutils_1_1default__postfix__op__traits.html", [
-        [ "constraint", "structutils_1_1default__postfix__op__traits_1_1constraint.html", null ],
-        [ "result", "structutils_1_1default__postfix__op__traits_1_1result.html", null ]
-      ] ],
-      [ "default_prefix_op_traits", "structutils_1_1default__prefix__op__traits.html", [
-        [ "constraint", "structutils_1_1default__prefix__op__traits_1_1constraint.html", null ],
-        [ "result", "structutils_1_1default__prefix__op__traits_1_1result.html", null ]
-      ] ],
-      [ "default_unary_op_traits", "structutils_1_1default__unary__op__traits.html", [
-        [ "constraint", "structutils_1_1default__unary__op__traits_1_1constraint.html", null ],
-        [ "result", "structutils_1_1default__unary__op__traits_1_1result.html", null ]
-      ] ],
+      [ "default_postfix_op_traits", "structutils_1_1default__postfix__op__traits.html", "structutils_1_1default__postfix__op__traits" ],
+      [ "default_prefix_op_traits", "structutils_1_1default__prefix__op__traits.html", "structutils_1_1default__prefix__op__traits" ],
+      [ "default_unary_op_traits", "structutils_1_1default__unary__op__traits.html", "structutils_1_1default__unary__op__traits" ],
       [ "disable_op_t", "structutils_1_1disable__op__t.html", null ],
       [ "epsilon_of", "group__epsilon__of.html#structutils_1_1epsilon__of", null ],
       [ "filter_iterator", "classutils_1_1filter__iterator.html", "classutils_1_1filter__iterator" ],
@@ -196,7 +170,7 @@ var annotated_dup =
       [ "sign_ops", "structutils_1_1sign__ops.html", null ],
       [ "sink", "structutils_1_1sink.html", "structutils_1_1sink" ],
       [ "stale_class", "structutils_1_1stale__class.html", "structutils_1_1stale__class" ],
-      [ "synth_three_way_result", "structutils_1_1synth__three__way__result.html", "structutils_1_1synth__three__way__result" ],
+      [ "synth_three_way_result", "group__synth__three__way__result.html#structutils_1_1synth__three__way__result", "group__synth__three__way__result_structutils_1_1synth__three__way__result" ],
       [ "transform_iterator", "classutils_1_1transform__iterator.html", "classutils_1_1transform__iterator" ],
       [ "trim", "structutils_1_1trim.html", null ],
       [ "trivial_semaphore", "structutils_1_1trivial__semaphore.html", "structutils_1_1trivial__semaphore" ],

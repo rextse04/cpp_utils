@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['deprecated_20list_0',['Deprecated List',['../deprecated.html',1,'']]]
+  ['bufferallocator_20i_0',['Named Requirement: &lt;i&gt;BufferAllocator&lt;/i&gt;',['../BufferAllocator.html',1,'named_reqs']]]
 ];

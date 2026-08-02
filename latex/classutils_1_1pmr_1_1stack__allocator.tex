@@ -1,5 +1,5 @@
-\hypertarget{classutils_1_1pmr_1_1stack__allocator}{}\doxysection{utils\+::pmr\+::stack\+\_\+allocator\texorpdfstring{$<$}{<} T, Sync \texorpdfstring{$>$}{>} Class Template Reference}
-\label{classutils_1_1pmr_1_1stack__allocator}\index{utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}}
+\doxysection{utils\+::pmr\+::stack\+\_\+allocator\texorpdfstring{$<$}{<} T, Sync \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classutils_1_1pmr_1_1stack__allocator}{}\label{classutils_1_1pmr_1_1stack__allocator}\index{utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}}
 
 
 An allocator which allocates memory from a pre-\/allocated buffer in a lazy-\/stack-\/like manner.  
@@ -19,56 +19,6 @@ Collaboration diagram for utils\+::pmr\+::stack\+\_\+allocator\texorpdfstring{$<
 \includegraphics[width=206pt]{classutils_1_1pmr_1_1stack__allocator__coll__graph}
 \end{center}
 \end{figure}
-\doxysubsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \mbox{\hyperlink{structutils_1_1pmr_1_1stack__allocator_1_1rebind}{rebind}}
-\end{DoxyCompactItemize}
-\doxysubsection*{Public Types}
-\begin{DoxyCompactItemize}
-\item 
-using \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_a2530a1ce5086fa23c595bc941c1c610c}{propagate\+\_\+on\+\_\+container\+\_\+copy\+\_\+assignment}} = std\+::true\+\_\+type
-\item 
-using \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_a9a73d22503ca4fb27764422007681ffd}{propagate\+\_\+on\+\_\+container\+\_\+move\+\_\+assignment}} = std\+::true\+\_\+type
-\item 
-using \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_a0465766b0ed98ff04820e7e5d94f8f34}{propagate\+\_\+on\+\_\+container\+\_\+swap}} = std\+::true\+\_\+type
-\item 
-using \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_abd9b603040f83e782f72afeb661d8892}{pointer}} = std\+::pointer\+\_\+traits$<$ \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}} $>$\+::template \mbox{\hyperlink{structutils_1_1pmr_1_1stack__allocator_1_1rebind}{rebind}}$<$ T $>$
-\item 
-using \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}} = Traits\+::void\+\_\+pointer
-\item 
-using \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} = Traits\+::size\+\_\+type
-\end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_ga746f7cd5478f9442fc3808375aeae3e3}{stack\+\_\+allocator}} (\mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}} buf, \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} space)
-\begin{DoxyCompactList}\small\item\em Takes ownership of the buffer and uses it for allocations. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_gaa1ac4dbee6bdd25ed6d882a027b53dae}{stack\+\_\+allocator}} (std\+::pmr\+::memory\+\_\+resource \&mr, \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} space)
-\begin{DoxyCompactList}\small\item\em Allocates a buffer of size {\ttfamily space} through {\ttfamily mr} and uses it for allocations. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename U , bool S$>$ }\\\mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_ga3fc5d53309c8c22900137af934c5107f}{explicit}} (S !=Sync) \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator}{stack\+\_\+allocator}}(const \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator}{stack\+\_\+allocator}}$<$ U
-\begin{DoxyCompactList}\small\item\em Conversion constructor. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_gac4713049e86502fa957493fc1ab484ea}{release}} (std\+::pmr\+::memory\+\_\+resource \&mr, \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} space) \mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_ga9112aed083ab4d8d31d5cd3b16ac2eae}{noexcept}}
-\begin{DoxyCompactList}\small\item\em Deallocates the underlying buffer previously allocated through a memory resource. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_abd9b603040f83e782f72afeb661d8892}{pointer}} \mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_gafdb36bfd5513dee4589f339386bf8e8c}{allocate}} (\mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} n, std\+::align\+\_\+val\+\_\+t alignment=std\+::align\+\_\+val\+\_\+t(alignof(T))) const
-\begin{DoxyCompactList}\small\item\em Allocates storage for {\ttfamily T\mbox{[}n\mbox{]}} with specified alignment from the underlying buffer. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_gab607356fe93ec169799735ebea50f8c6}{deallocate}} (\mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_abd9b603040f83e782f72afeb661d8892}{pointer}} p, \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} n, std\+::align\+\_\+val\+\_\+t=std\+::align\+\_\+val\+\_\+t(alignof(T))) const \mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_ga9112aed083ab4d8d31d5cd3b16ac2eae}{noexcept}}
-\begin{DoxyCompactList}\small\item\em Deallocates previously allocated memory and recycles it in a LIFO manner. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-S \&other \mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_ga9112aed083ab4d8d31d5cd3b16ac2eae}{noexcept}}\+: front\+\_\+(other.\+front\+\_\+) \{\} bool operator==(const \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator}{stack\+\_\+allocator}}\& other) const noexcept \{ return front\+\_\+ == other.\+front\+\_\+
-\end{DoxyCompactItemize}
-\doxysubsection*{Static Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-static constexpr bool \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_aafad100834d2508fc141c824295fdb87}{synchronized}} = Sync
-\end{DoxyCompactItemize}
-\doxysubsection*{Friends}
-\begin{DoxyCompactItemize}
-\item 
-{\footnotesize template$<$typename , bool $>$ }\\class \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_ac1cd4dd3ac5a3096a95a6f64ef2a24f1}{stack\+\_\+allocator}}
-\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -76,13 +26,13 @@ static constexpr bool \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_aaf
 class utils\+::pmr\+::stack\+\_\+allocator$<$ T, Sync $>$}
 An allocator which allocates memory from a pre-\/allocated buffer in a lazy-\/stack-\/like manner. 
 
-A stack allocator allocates memory from a pre-\/allocated buffer in a lazy-\/stack-\/like manner. Specifically, a memory chunk is only recycled if it is the most recent allocation; otherwise, it is simply marked \char`\"{}removed\char`\"{}. When deallocation is requested, the allocator recursively frees memory chunks in a LIFO manner until it finds a chunk that is still in use.
+A stack allocator allocates memory from a pre-\/allocated buffer in a lazy-\/stack-\/like manner. Specifically, a memory chunk is only recycled if it is the most recent allocation; otherwise, it is simply marked "{}removed"{}. When deallocation is requested, the allocator recursively frees memory chunks in a LIFO manner until it finds a chunk that is still in use.
 
-Internally, an implementation-\/defined control structure is constructed at the beginning of the (aligned) buffer, and one is attached to every allocated memory chunk. The control at the beginning stores a pointer to the control of most recent chunk and a pointer to the end of the buffer. For others, each one stores a pointer to the structure attached to the previous chunk, and a pointer to the object itself (or nullptr if the chunk is marked \char`\"{}removed\char`\"{}). Note that there may be gaps between a control structure and its associated object due to alignment. The following diagram is a simple diagram illustrating the allocation strategy\+: 
+Internally, an implementation-\/defined control structure is constructed at the beginning of the (aligned) buffer, and one is attached to every allocated memory chunk. The control at the beginning stores a pointer to the control of most recent chunk and a pointer to the end of the buffer. For others, each one stores a pointer to the structure attached to the previous chunk, and a pointer to the object itself (or nullptr if the chunk is marked "{}removed"{}). Note that there may be gaps between a control structure and its associated object due to alignment. The following diagram is a simple diagram illustrating the allocation strategy\+: 
 
-All instances of this class satisfy \href{BufferAllocator.html}{\texttt{ {\itshape Buffer\+Allocator}}} and {\ttfamily resource\+\_\+allocator}. Instances with {\ttfamily Sync} equal to {\ttfamily true} also satisfy \href{BufferAllocator.html}{\texttt{ {\itshape Convertible\+Allocator}}}. Consult their documentation for conditions and effects of member functions. 
+All instances of this class satisfy \href{BufferAllocator.html}{\texttt{ {\itshape Buffer\+Allocator}}} and {\ttfamily \doxylink{conceptutils_1_1pmr_1_1resource__allocator}{resource\+\_\+allocator}}. Instances with {\ttfamily Sync} equal to {\ttfamily true} also satisfy \href{BufferAllocator.html}{\texttt{ {\itshape Convertible\+Allocator}}}. Consult their documentation for conditions and effects of member functions. 
 \begin{DoxyTemplParams}{Template Parameters}
-{\em T} & {\ttfamily value\+\_\+type} \\
+{\em T} & {\ttfamily \doxylink{structutils_1_1pmr_1_1allocator__base_a4edc136e6071d4afdd622696c3f20a34}{value\+\_\+type}} \\
 \hline
 {\em Sync} & Whether allocator operations should be synchronized. \\
 \hline
@@ -91,84 +41,95 @@ All instances of this class satisfy \href{BufferAllocator.html}{\texttt{ {\itsha
 
 Definition at line \mbox{\hyperlink{stack__allocator_8hpp_source_l00042}{42}} of file \mbox{\hyperlink{stack__allocator_8hpp_source}{stack\+\_\+allocator.\+hpp}}.
 
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structutils_1_1pmr_1_1stack__allocator_1_1rebind}{rebind}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_a2530a1ce5086fa23c595bc941c1c610c}{propagate\+\_\+on\+\_\+container\+\_\+copy\+\_\+assignment}} = std\+::true\+\_\+type
+\item 
+using \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_a9a73d22503ca4fb27764422007681ffd}{propagate\+\_\+on\+\_\+container\+\_\+move\+\_\+assignment}} = std\+::true\+\_\+type
+\item 
+using \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_a0465766b0ed98ff04820e7e5d94f8f34}{propagate\+\_\+on\+\_\+container\+\_\+swap}} = std\+::true\+\_\+type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_ga746f7cd5478f9442fc3808375aeae3e3}{stack\+\_\+allocator}} (\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}} buf, \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} space)
+\begin{DoxyCompactList}\small\item\em Takes ownership of the buffer and uses it for allocations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_gaa1ac4dbee6bdd25ed6d882a027b53dae}{stack\+\_\+allocator}} (std\+::pmr\+::memory\+\_\+resource \&mr, \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} space)
+\begin{DoxyCompactList}\small\item\em Allocates a buffer of size {\ttfamily space} through {\ttfamily mr} and uses it for allocations. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename U, bool S$>$ }\\\mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_ga3fc5d53309c8c22900137af934c5107f}{explicit}} (S !=Sync) \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator}{stack\+\_\+allocator}}(const \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator}{stack\+\_\+allocator}}$<$ U
+\begin{DoxyCompactList}\small\item\em Conversion constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_gac4713049e86502fa957493fc1ab484ea}{release}} (std\+::pmr\+::memory\+\_\+resource \&mr, \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} space) \mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_ga9112aed083ab4d8d31d5cd3b16ac2eae}{noexcept}}
+\begin{DoxyCompactList}\small\item\em Deallocates the underlying buffer previously allocated through a memory resource. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_abd9b603040f83e782f72afeb661d8892}{pointer}} \mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_gafdb36bfd5513dee4589f339386bf8e8c}{allocate}} (\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} n, std\+::align\+\_\+val\+\_\+t alignment=std\+::align\+\_\+val\+\_\+t(alignof(T))) const
+\begin{DoxyCompactList}\small\item\em Allocates storage for {\ttfamily T\mbox{[}n\mbox{]}} with specified alignment from the underlying buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_gab607356fe93ec169799735ebea50f8c6}{deallocate}} (\mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_abd9b603040f83e782f72afeb661d8892}{pointer}} p, \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} n, std\+::align\+\_\+val\+\_\+t=std\+::align\+\_\+val\+\_\+t(alignof(T))) const \mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_ga9112aed083ab4d8d31d5cd3b16ac2eae}{noexcept}}
+\begin{DoxyCompactList}\small\item\em Deallocates previously allocated memory and recycles it in a LIFO manner. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+S \&other \mbox{\hyperlink{group__utilspmrstack__allocatorconstructors_ga9112aed083ab4d8d31d5cd3b16ac2eae}{noexcept}}\+: front\+\_\+(other.\+front\+\_\+) \{\} bool operator==(const \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator}{stack\+\_\+allocator}}\& other) const noexcept \{ return front\+\_\+ == other.\+front\+\_\+
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr bool \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_aafad100834d2508fc141c824295fdb87}{synchronized}} = Sync
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename, bool$>$ }\\class \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_ac1cd4dd3ac5a3096a95a6f64ef2a24f1}{stack\+\_\+allocator}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Typedef Documentation}
-\mbox{\Hypertarget{classutils_1_1pmr_1_1stack__allocator_abd9b603040f83e782f72afeb661d8892}\label{classutils_1_1pmr_1_1stack__allocator_abd9b603040f83e782f72afeb661d8892}} 
-\index{utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}!pointer@{pointer}}
-\index{pointer@{pointer}!utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}}
-\doxysubsubsection{\texorpdfstring{pointer}{pointer}}
-{\footnotesize\ttfamily template$<$typename T , bool Sync = false$>$ \\
-using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base}{utils\+::pmr\+::allocator\+\_\+base}}$<$ T, Traits $>$\+::\mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_abd9b603040f83e782f72afeb661d8892}{pointer}} =  std\+::pointer\+\_\+traits$<$\mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}}$>$\+::template \mbox{\hyperlink{structutils_1_1pmr_1_1stack__allocator_1_1rebind}{rebind}}$<$T$>$}
-
-
-
-Definition at line \mbox{\hyperlink{allocator__base_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{allocator__base_8hpp_source}{allocator\+\_\+base.\+hpp}}.
-
-\mbox{\Hypertarget{classutils_1_1pmr_1_1stack__allocator_a2530a1ce5086fa23c595bc941c1c610c}\label{classutils_1_1pmr_1_1stack__allocator_a2530a1ce5086fa23c595bc941c1c610c}} 
-\index{utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}!propagate\_on\_container\_copy\_assignment@{propagate\_on\_container\_copy\_assignment}}
+\Hypertarget{classutils_1_1pmr_1_1stack__allocator_a2530a1ce5086fa23c595bc941c1c610c}\index{utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}!propagate\_on\_container\_copy\_assignment@{propagate\_on\_container\_copy\_assignment}}
 \index{propagate\_on\_container\_copy\_assignment@{propagate\_on\_container\_copy\_assignment}!utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}}
 \doxysubsubsection{\texorpdfstring{propagate\_on\_container\_copy\_assignment}{propagate\_on\_container\_copy\_assignment}}
-{\footnotesize\ttfamily template$<$typename T , bool Sync = false$>$ \\
-using \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator}{utils\+::pmr\+::stack\+\_\+allocator}}$<$ T, Sync $>$\+::\mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_a2530a1ce5086fa23c595bc941c1c610c}{propagate\+\_\+on\+\_\+container\+\_\+copy\+\_\+assignment}} =  std\+::true\+\_\+type}
+{\footnotesize\ttfamily \label{classutils_1_1pmr_1_1stack__allocator_a2530a1ce5086fa23c595bc941c1c610c} 
+template$<$typename T, bool Sync = false$>$ \\
+using \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator}{utils\+::pmr\+::stack\+\_\+allocator}}$<$ T, Sync $>$\+::propagate\+\_\+on\+\_\+container\+\_\+copy\+\_\+assignment = std\+::true\+\_\+type}
 
 
 
 Definition at line \mbox{\hyperlink{stack__allocator_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{stack__allocator_8hpp_source}{stack\+\_\+allocator.\+hpp}}.
 
-\mbox{\Hypertarget{classutils_1_1pmr_1_1stack__allocator_a9a73d22503ca4fb27764422007681ffd}\label{classutils_1_1pmr_1_1stack__allocator_a9a73d22503ca4fb27764422007681ffd}} 
-\index{utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}!propagate\_on\_container\_move\_assignment@{propagate\_on\_container\_move\_assignment}}
+\Hypertarget{classutils_1_1pmr_1_1stack__allocator_a9a73d22503ca4fb27764422007681ffd}\index{utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}!propagate\_on\_container\_move\_assignment@{propagate\_on\_container\_move\_assignment}}
 \index{propagate\_on\_container\_move\_assignment@{propagate\_on\_container\_move\_assignment}!utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}}
 \doxysubsubsection{\texorpdfstring{propagate\_on\_container\_move\_assignment}{propagate\_on\_container\_move\_assignment}}
-{\footnotesize\ttfamily template$<$typename T , bool Sync = false$>$ \\
-using \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator}{utils\+::pmr\+::stack\+\_\+allocator}}$<$ T, Sync $>$\+::\mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_a9a73d22503ca4fb27764422007681ffd}{propagate\+\_\+on\+\_\+container\+\_\+move\+\_\+assignment}} =  std\+::true\+\_\+type}
+{\footnotesize\ttfamily \label{classutils_1_1pmr_1_1stack__allocator_a9a73d22503ca4fb27764422007681ffd} 
+template$<$typename T, bool Sync = false$>$ \\
+using \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator}{utils\+::pmr\+::stack\+\_\+allocator}}$<$ T, Sync $>$\+::propagate\+\_\+on\+\_\+container\+\_\+move\+\_\+assignment = std\+::true\+\_\+type}
 
 
 
 Definition at line \mbox{\hyperlink{stack__allocator_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{stack__allocator_8hpp_source}{stack\+\_\+allocator.\+hpp}}.
 
-\mbox{\Hypertarget{classutils_1_1pmr_1_1stack__allocator_a0465766b0ed98ff04820e7e5d94f8f34}\label{classutils_1_1pmr_1_1stack__allocator_a0465766b0ed98ff04820e7e5d94f8f34}} 
-\index{utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}!propagate\_on\_container\_swap@{propagate\_on\_container\_swap}}
+\Hypertarget{classutils_1_1pmr_1_1stack__allocator_a0465766b0ed98ff04820e7e5d94f8f34}\index{utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}!propagate\_on\_container\_swap@{propagate\_on\_container\_swap}}
 \index{propagate\_on\_container\_swap@{propagate\_on\_container\_swap}!utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}}
 \doxysubsubsection{\texorpdfstring{propagate\_on\_container\_swap}{propagate\_on\_container\_swap}}
-{\footnotesize\ttfamily template$<$typename T , bool Sync = false$>$ \\
-using \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator}{utils\+::pmr\+::stack\+\_\+allocator}}$<$ T, Sync $>$\+::\mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_a0465766b0ed98ff04820e7e5d94f8f34}{propagate\+\_\+on\+\_\+container\+\_\+swap}} =  std\+::true\+\_\+type}
+{\footnotesize\ttfamily \label{classutils_1_1pmr_1_1stack__allocator_a0465766b0ed98ff04820e7e5d94f8f34} 
+template$<$typename T, bool Sync = false$>$ \\
+using \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator}{utils\+::pmr\+::stack\+\_\+allocator}}$<$ T, Sync $>$\+::propagate\+\_\+on\+\_\+container\+\_\+swap = std\+::true\+\_\+type}
 
 
 
 Definition at line \mbox{\hyperlink{stack__allocator_8hpp_source_l00053}{53}} of file \mbox{\hyperlink{stack__allocator_8hpp_source}{stack\+\_\+allocator.\+hpp}}.
 
-\mbox{\Hypertarget{classutils_1_1pmr_1_1stack__allocator_acec1005620dc77b29dc4844dc009d4c3}\label{classutils_1_1pmr_1_1stack__allocator_acec1005620dc77b29dc4844dc009d4c3}} 
-\index{utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}!size\_type@{size\_type}}
-\index{size\_type@{size\_type}!utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}}
-\doxysubsubsection{\texorpdfstring{size\_type}{size\_type}}
-{\footnotesize\ttfamily template$<$typename T , bool Sync = false$>$ \\
-using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base}{utils\+::pmr\+::allocator\+\_\+base}}$<$ T, Traits $>$\+::\mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_acec1005620dc77b29dc4844dc009d4c3}{size\+\_\+type}} =  Traits\+::size\+\_\+type}
 
 
-
-Definition at line \mbox{\hyperlink{allocator__base_8hpp_source_l00020}{20}} of file \mbox{\hyperlink{allocator__base_8hpp_source}{allocator\+\_\+base.\+hpp}}.
-
-\mbox{\Hypertarget{classutils_1_1pmr_1_1stack__allocator_a3fc5600dc9a5d1a01dc09a45d452f4ed}\label{classutils_1_1pmr_1_1stack__allocator_a3fc5600dc9a5d1a01dc09a45d452f4ed}} 
-\index{utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}!void\_pointer@{void\_pointer}}
-\index{void\_pointer@{void\_pointer}!utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}}
-\doxysubsubsection{\texorpdfstring{void\_pointer}{void\_pointer}}
-{\footnotesize\ttfamily template$<$typename T , bool Sync = false$>$ \\
-using \mbox{\hyperlink{structutils_1_1pmr_1_1allocator__base}{utils\+::pmr\+::allocator\+\_\+base}}$<$ T, Traits $>$\+::\mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator_a3fc5600dc9a5d1a01dc09a45d452f4ed}{void\+\_\+pointer}} =  Traits\+::void\+\_\+pointer}
-
-
-
-Definition at line \mbox{\hyperlink{allocator__base_8hpp_source_l00015}{15}} of file \mbox{\hyperlink{allocator__base_8hpp_source}{allocator\+\_\+base.\+hpp}}.
-
-
-
-\doxysubsection{Friends And Related Function Documentation}
-\mbox{\Hypertarget{classutils_1_1pmr_1_1stack__allocator_ac1cd4dd3ac5a3096a95a6f64ef2a24f1}\label{classutils_1_1pmr_1_1stack__allocator_ac1cd4dd3ac5a3096a95a6f64ef2a24f1}} 
-\index{utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}!stack\_allocator@{stack\_allocator}}
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classutils_1_1pmr_1_1stack__allocator_ac1cd4dd3ac5a3096a95a6f64ef2a24f1}\index{utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}!stack\_allocator@{stack\_allocator}}
 \index{stack\_allocator@{stack\_allocator}!utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}}
 \doxysubsubsection{\texorpdfstring{stack\_allocator}{stack\_allocator}}
-{\footnotesize\ttfamily template$<$typename T , bool Sync = false$>$ \\
-template$<$typename , bool $>$ \\
+{\footnotesize\ttfamily \label{classutils_1_1pmr_1_1stack__allocator_ac1cd4dd3ac5a3096a95a6f64ef2a24f1} 
+template$<$typename T, bool Sync = false$>$ \\
+template$<$typename, bool$>$ \\
 friend class \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator}{stack\+\_\+allocator}}\hspace{0.3cm}{\ttfamily [friend]}}
 
 
@@ -178,12 +139,12 @@ Definition at line \mbox{\hyperlink{stack__allocator_8hpp_source_l00059}{59}} of
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classutils_1_1pmr_1_1stack__allocator_aafad100834d2508fc141c824295fdb87}\label{classutils_1_1pmr_1_1stack__allocator_aafad100834d2508fc141c824295fdb87}} 
-\index{utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}!synchronized@{synchronized}}
+\Hypertarget{classutils_1_1pmr_1_1stack__allocator_aafad100834d2508fc141c824295fdb87}\index{utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}!synchronized@{synchronized}}
 \index{synchronized@{synchronized}!utils::pmr::stack\_allocator$<$ T, Sync $>$@{utils::pmr::stack\_allocator$<$ T, Sync $>$}}
 \doxysubsubsection{\texorpdfstring{synchronized}{synchronized}}
-{\footnotesize\ttfamily template$<$typename T , bool Sync = false$>$ \\
-constexpr bool \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator}{utils\+::pmr\+::stack\+\_\+allocator}}$<$ T, Sync $>$\+::synchronized = Sync\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily \label{classutils_1_1pmr_1_1stack__allocator_aafad100834d2508fc141c824295fdb87} 
+template$<$typename T, bool Sync = false$>$ \\
+bool \mbox{\hyperlink{classutils_1_1pmr_1_1stack__allocator}{utils\+::pmr\+::stack\+\_\+allocator}}$<$ T, Sync $>$\+::synchronized = Sync\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
 
 
 

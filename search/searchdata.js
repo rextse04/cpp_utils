@@ -11,9 +11,9 @@ var indexSectionsWithContent =
   8: "bclnorsv",
   9: "abgos",
   10: "u",
-  11: "u",
-  12: "dn",
-  13: "u"
+  11: "csu",
+  12: "bdilnort",
+  13: "abcdeilmprst"
 };
 
 var indexSectionNames =

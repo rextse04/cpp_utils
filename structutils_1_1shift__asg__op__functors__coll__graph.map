@@ -1,4 +1,5 @@
 <map id="utils::shift_asg_op_functors&lt; ShiftLeftAsg, ShiftRightAsg, AsgTraits &gt;" name="utils::shift_asg_op_functors&lt; ShiftLeftAsg, ShiftRightAsg, AsgTraits &gt;">
-<area shape="rect" id="node1" title="OperatorFunctorSetTemplate for utils::shift_asg_ops." alt="" coords="5,109,184,165"/>
-<area shape="rect" id="node2" href="$structutils_1_1default__asg__op__traits.html" title="The default trait set for assignment operators." alt="" coords="35,5,154,47"/>
+<area shape="rect" id="Node000001" title="OperatorFunctorSetTemplate for utils::shift_asg_ops." alt="" coords="5,109,184,165"/>
+<area shape="rect" id="Node000002" href="$structutils_1_1default__asg__op__traits.html" title="The default trait set for assignment operators." alt="" coords="35,5,154,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,62,97,109,92,109,92,62"/>
 </map>

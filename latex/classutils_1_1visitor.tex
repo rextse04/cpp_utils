@@ -1,5 +1,5 @@
-\hypertarget{classutils_1_1visitor}{}\doxysection{utils\+::visitor\texorpdfstring{$<$}{<} Fs \texorpdfstring{$>$}{>} Class Template Reference}
-\label{classutils_1_1visitor}\index{utils::visitor$<$ Fs $>$@{utils::visitor$<$ Fs $>$}}
+\doxysection{utils\+::visitor\texorpdfstring{$<$}{<} Fs \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classutils_1_1visitor}{}\label{classutils_1_1visitor}\index{utils::visitor$<$ Fs $>$@{utils::visitor$<$ Fs $>$}}
 
 
 Owns a set of callables and dispatches calls to the first one that matches the arguments.  
@@ -9,7 +9,16 @@ Owns a set of callables and dispatches calls to the first one that matches the a
 
 {\ttfamily \#include $<$utility.\+hpp$>$}
 
-\doxysubsection*{Public Member Functions}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename... Fs$>$\newline
+class utils\+::visitor$<$ Fs $>$}
+Owns a set of callables and dispatches calls to the first one that matches the arguments. 
+
+Definition at line \mbox{\hyperlink{utility_8hpp_source_l00008}{8}} of file \mbox{\hyperlink{utility_8hpp_source}{utility.\+hpp}}.
+
+\doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename... Gs$>$ \newline
@@ -20,24 +29,15 @@ requires (Match != -\/1)}\\constexpr auto \mbox{\hyperlink{classutils_1_1visitor
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-\subsubsection*{template$<$typename... Fs$>$\newline
-class utils\+::visitor$<$ Fs $>$}
-Owns a set of callables and dispatches calls to the first one that matches the arguments. 
-
-Definition at line \mbox{\hyperlink{utility_8hpp_source_l00008}{8}} of file \mbox{\hyperlink{utility_8hpp_source}{utility.\+hpp}}.
-
-
-
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classutils_1_1visitor_aafa75073512d69a3b17fb11c5a6809b9}\label{classutils_1_1visitor_aafa75073512d69a3b17fb11c5a6809b9}} 
-\index{utils::visitor$<$ Fs $>$@{utils::visitor$<$ Fs $>$}!visitor@{visitor}}
+\Hypertarget{classutils_1_1visitor_aafa75073512d69a3b17fb11c5a6809b9}\index{utils::visitor$<$ Fs $>$@{utils::visitor$<$ Fs $>$}!visitor@{visitor}}
 \index{visitor@{visitor}!utils::visitor$<$ Fs $>$@{utils::visitor$<$ Fs $>$}}
 \doxysubsubsection{\texorpdfstring{visitor()}{visitor()}}
-{\footnotesize\ttfamily template$<$typename... Fs$>$ \\
+{\footnotesize\ttfamily \label{classutils_1_1visitor_aafa75073512d69a3b17fb11c5a6809b9} 
+template$<$typename... Fs$>$ \\
 template$<$typename... Gs$>$ \newline
 requires (std\+::is\+\_\+constructible\+\_\+v$<$Fs, Gs$>$ \&\& ...)\\
-constexpr \mbox{\hyperlink{classutils_1_1visitor}{utils\+::visitor}}$<$ Fs $>$\+::\mbox{\hyperlink{classutils_1_1visitor}{visitor}} (\begin{DoxyParamCaption}\item[{Gs \&\&...}]{gs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+\mbox{\hyperlink{classutils_1_1visitor}{utils\+::visitor}}$<$ Fs $>$\+::visitor (\begin{DoxyParamCaption}\item[{Gs \&\&...}]{gs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
 
 
@@ -46,14 +46,14 @@ Definition at line \mbox{\hyperlink{utility_8hpp_source_l00027}{27}} of file \mb
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classutils_1_1visitor_a4c20a94876585a7cbd121db8dc79a54c}\label{classutils_1_1visitor_a4c20a94876585a7cbd121db8dc79a54c}} 
-\index{utils::visitor$<$ Fs $>$@{utils::visitor$<$ Fs $>$}!operator()@{operator()}}
+\Hypertarget{classutils_1_1visitor_a4c20a94876585a7cbd121db8dc79a54c}\index{utils::visitor$<$ Fs $>$@{utils::visitor$<$ Fs $>$}!operator()@{operator()}}
 \index{operator()@{operator()}!utils::visitor$<$ Fs $>$@{utils::visitor$<$ Fs $>$}}
 \doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
-{\footnotesize\ttfamily template$<$typename... Fs$>$ \\
+{\footnotesize\ttfamily \label{classutils_1_1visitor_a4c20a94876585a7cbd121db8dc79a54c} 
+template$<$typename... Fs$>$ \\
 template$<$typename... Ts, std\+::size\+\_\+t Match = match$<$\+Ts...$>$()$>$ \newline
 requires (Match != -\/1)\\
-constexpr auto \mbox{\hyperlink{classutils_1_1visitor}{utils\+::visitor}}$<$ Fs $>$\+::operator() (\begin{DoxyParamCaption}\item[{Ts \&\&...}]{ts }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+auto \mbox{\hyperlink{classutils_1_1visitor}{utils\+::visitor}}$<$ Fs $>$\+::operator() (\begin{DoxyParamCaption}\item[{Ts \&\&...}]{ts}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
 
 

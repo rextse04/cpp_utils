@@ -1,0 +1,15 @@
+\doxysection{Named Requirements\+: \texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Trait\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}
+\hypertarget{Trait}{}\label{Trait}\index{Named Requirements: $<$i$>$Trait$<$/i$>$@{Named Requirements: $<$i$>$Trait$<$/i$>$}}
+\label{Trait_md_docs_2named__reqs_2Trait}%
+\Hypertarget{Trait_md_docs_2named__reqs_2Trait}%
+
+
+{\itshape Trait} is a generalization of {\itshape Unary\+Type\+Trait} and {\itshape Binary\+Type\+Trait} in the standard library.\hypertarget{Trait_autotoc_md20}{}\doxysubsection{\texorpdfstring{Requirements}{Requirements}}\label{Trait_autotoc_md20}
+A class template or alias template {\ttfamily Tmpl} satisfies {\itshape Trait} if every well-\/formed instantiation of {\ttfamily Tmpl} produces a
+\begin{DoxyEnumerate}
+\item \href{Result.html}{\texttt{ {\itshape Type\+Result}}}, in which case it is a {\itshape Type\+Trait}; or
+\item \href{Result.html}{\texttt{ {\itshape Value\+Result}}}, in which case it is a {\itshape Value\+Trait}; or
+\item \href{Result.html}{\texttt{ {\itshape Trait\+Result}}}, in which case it is a {\itshape Meta\+Trait}.
+\end{DoxyEnumerate}
+
+A {\itshape Trait} can belong to one or more of the above categories. 

@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$group__metaextract.html#structutils_1_1meta_1_1extract_3_01Tmpl_3_01Args_8_8_8_01_4_01_4_1_1trait" title=" " alt="" coords="5,5,143,61"/>
+<area shape="rect" id="Node000000" href="$group__metaconcat.html" title=" " alt="" coords="5,24,166,94"/>
+<area shape="rect" id="Node000001" href="$group__metaerase.html" title=" " alt="" coords="218,5,354,46"/>
+<area shape="poly" id="edge137_Node000000_Node000001" title=" " alt="" coords="181,40,217,34,218,40,181,46"/>
+<area shape="rect" id="Node000002" href="$group__metaerase.html#structutils_1_1meta_1_1erase" title=" " alt="" coords="214,71,358,111"/>
+<area shape="poly" id="edge138_Node000000_Node000002" title=" " alt="" coords="181,72,214,77,213,82,181,77"/>
 </map>

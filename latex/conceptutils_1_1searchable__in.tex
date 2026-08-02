@@ -1,5 +1,5 @@
-\hypertarget{conceptutils_1_1searchable__in}{}\doxysection{utils\+::searchable\+\_\+in Concept Reference}
-\label{conceptutils_1_1searchable__in}\index{utils::searchable\_in@{utils::searchable\_in}}
+\doxysection{utils\+::searchable\+\_\+in Concept Reference}
+\hypertarget{conceptutils_1_1searchable__in}{}\label{conceptutils_1_1searchable__in}\index{utils::searchable\_in@{utils::searchable\_in}}
 
 
 Checks if {\ttfamily Key} can be used to query {\ttfamily C}.  
@@ -12,11 +12,11 @@ Checks if {\ttfamily Key} can be used to query {\ttfamily C}.
 \doxysubsection{Concept definition}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} Key, \textcolor{keyword}{typename} C>}
-\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1searchable__in}{utils::searchable\_in}} =  std::convertible\_to<Key, typename C::key\_type> || (}
-\DoxyCodeLine{        std::strict\_weak\_order<typename C::key\_compare, const typename C::key\_type\&, const Key\&> \&\&}
-\DoxyCodeLine{        \textcolor{keyword}{requires} \{ \textcolor{keyword}{typename} C::key\_compare::is\_transparent; \}}
-\DoxyCodeLine{    )}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Key,\ \textcolor{keyword}{typename}\ C>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptutils_1_1searchable__in}{utils::searchable\_in}}\ =\ \ std::convertible\_to<Key,\ typename\ C::key\_type>\ ||\ (}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::strict\_weak\_order<typename\ C::key\_compare,\ const\ typename\ C::key\_type\&,\ const\ Key\&>\ \&\&}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ \{\ \textcolor{keyword}{typename}\ C::key\_compare::is\_transparent;\ \}}
+\DoxyCodeLine{\ \ \ \ )}
 
 \end{DoxyCode}
 

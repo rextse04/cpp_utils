@@ -1,5 +1,5 @@
-\hypertarget{conceptutils_1_1boolean__testable}{}\doxysection{utils\+::boolean\+\_\+testable Concept Reference}
-\label{conceptutils_1_1boolean__testable}\index{utils::boolean\_testable@{utils::boolean\_testable}}
+\doxysection{utils\+::boolean\+\_\+testable Concept Reference}
+\hypertarget{conceptutils_1_1boolean__testable}{}\label{conceptutils_1_1boolean__testable}\index{utils::boolean\_testable@{utils::boolean\_testable}}
 
 
 C++ standard exposition-\/only concept\+: {\itshape boolean-\/testable}.  
@@ -12,10 +12,10 @@ C++ standard exposition-\/only concept\+: {\itshape boolean-\/testable}.
 \doxysubsection{Concept definition}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} B>}
-\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1boolean__testable}{utils::boolean\_testable}} =  detail::boolean\_testable\_impl<B> \&\& \textcolor{keyword}{requires} (B\&\& b) \{}
-\DoxyCodeLine{        \{ !std::forward<B>(b) \} -\/> detail::boolean\_testable\_impl;}
-\DoxyCodeLine{    \}}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ B>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptutils_1_1boolean__testable}{utils::boolean\_testable}}\ =\ \ detail::boolean\_testable\_impl<B>\ \&\&\ \textcolor{keyword}{requires}\ (B\&\&\ b)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ !std::forward<B>(b)\ \}\ -\/>\ detail::boolean\_testable\_impl;}
+\DoxyCodeLine{\ \ \ \ \}}
 
 \end{DoxyCode}
 

@@ -1,12 +1,12 @@
-\hypertarget{stateful__meta_8hpp}{}\doxysection{stateful\+\_\+meta.\+hpp File Reference}
-\label{stateful__meta_8hpp}\index{stateful\_meta.hpp@{stateful\_meta.hpp}}
+\doxysection{stateful\+\_\+meta.\+hpp File Reference}
+\hypertarget{stateful__meta_8hpp}{}\label{stateful__meta_8hpp}\index{stateful\_meta.hpp@{stateful\_meta.hpp}}
 {\ttfamily \#include $<$cstdint$>$}\newline
 Include dependency graph for stateful\+\_\+meta.\+hpp\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=174pt]{stateful__meta_8hpp__incl}
+\includegraphics[width=173pt]{stateful__meta_8hpp__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:
@@ -14,42 +14,13 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=174pt]{stateful__meta_8hpp__dep__incl}
+\includegraphics[width=173pt]{stateful__meta_8hpp__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-class \mbox{\hyperlink{classutils_1_1meta_1_1const__var}{utils\+::meta\+::const\+\_\+var$<$ Var $>$}}
-\begin{DoxyCompactList}\small\item\em Read by calling {\ttfamily get(\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{const\+\_\+var}}\texorpdfstring{$<$}{<}Var\texorpdfstring{$>$}{>}\{\})}. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classutils_1_1meta_1_1define}{utils\+::meta\+::define$<$ Var, Value $>$}}
-\begin{DoxyCompactList}\small\item\em Declare a {\ttfamily const-\/var} by instantiating the template. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classutils_1_1meta_1_1var}{utils\+::meta\+::var$<$ Var, Version $>$}}
-\begin{DoxyCompactList}\small\item\em Read by calling {\ttfamily get(var\texorpdfstring{$<$}{<}Var, Version\texorpdfstring{$>$}{>}\{\})}. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classutils_1_1meta_1_1set}{utils\+::meta\+::set$<$ Var, Value, Version $>$}}
-\begin{DoxyCompactList}\small\item\em Sets {\ttfamily Var} to {\ttfamily Value}. {\ttfamily Version} is automatically incremented at every instantiation of this template. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Namespaces}
-\begin{DoxyCompactItemize}
-\item 
-namespace \mbox{\hyperlink{namespaceutils}{utils}}
-\item 
-namespace \mbox{\hyperlink{namespaceutils_1_1meta}{utils\+::meta}}
-\end{DoxyCompactItemize}
-\doxysubsection*{Functions}
-\begin{DoxyCompactItemize}
-\item 
-{\footnotesize template$<$typename Var , auto  = get(utils\+::meta\+::const\+\_\+var$<$\+Var$>$\{\})$>$ }\\consteval bool \mbox{\hyperlink{namespaceutils_1_1meta_a663523ca9759fbbba5c59040d339416c}{utils\+::meta\+::exists}} (const\+\_\+var$<$ Var $>$)
-\begin{DoxyCompactList}\small\item\em Checks the existence of a {\ttfamily \mbox{\hyperlink{classutils_1_1meta_1_1const__var}{const\+\_\+var}}}. \end{DoxyCompactList}\item 
-consteval bool \mbox{\hyperlink{namespaceutils_1_1meta_a7ecd2bb074afc4484c62aa40fb97ac97}{utils\+::meta\+::exists}} (...)
-\begin{DoxyCompactList}\small\item\em Fallback. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Var  = void, bool Increment = false, std\+::uintmax\+\_\+t Value = 0, typename Id  = decltype(\mbox{[}$\,$\mbox{]}\{\})$>$ }\\consteval std\+::uintmax\+\_\+t \mbox{\hyperlink{namespaceutils_1_1meta_ad02c270667465805004b1f692dfb6cf0}{utils\+::meta\+::get\+\_\+counter}} ()
-\begin{DoxyCompactList}\small\item\em A compile-\/time counter. An undeclared counter is defined to have the value 0. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Var , std\+::uintmax\+\_\+t Version, auto  = get(var$<$\+Var, Version$>$\{\})$>$ }\\constexpr bool \mbox{\hyperlink{namespaceutils_1_1meta_ad2935ed0730cf850927f58cdf5fa8fdf}{utils\+::meta\+::exists}} (var$<$ Var, Version $>$)
-\begin{DoxyCompactList}\small\item\em Checks the existence of a {\ttfamily var}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-This file contains utilities that enable stateful metaprogramming, which allows you to make compile-\/time {\bfseries{modifiable}} variables. This is done via a technique called \char`\"{}friend injection\char`\"{}.
+This file contains utilities that enable stateful metaprogramming, which allows you to make compile-\/time {\bfseries{modifiable}} variables. This is done via a technique called "{}friend injection"{}.
 
 In this file, compile-\/time variables are named by types. That is, such variables are defined, accessed and modified via the types they are associated with. Note that you are allowed to use the same type to name variables of different categories. For example, you can define a {\ttfamily const\+\_\+var\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} and {\ttfamily \texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}counter\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} and they will be separate variables. There are three categories of variables\+: \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
@@ -73,3 +44,32 @@ In the implementation, some structs may have {\ttfamily Id} as one of their temp
 
 Definition in file \mbox{\hyperlink{stateful__meta_8hpp_source}{stateful\+\_\+meta.\+hpp}}.
 
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classutils_1_1meta_1_1const__var}{utils\+::meta\+::const\+\_\+var$<$ Var $>$}}
+\begin{DoxyCompactList}\small\item\em Read by calling {\ttfamily get(\doxylink{classutils_1_1meta_1_1const__var}{const\+\_\+var}\texorpdfstring{$<$}{<}Var\texorpdfstring{$>$}{>}\{\})}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classutils_1_1meta_1_1define}{utils\+::meta\+::define$<$ Var, Value $>$}}
+\begin{DoxyCompactList}\small\item\em Declare a {\ttfamily const-\/var} by instantiating the template. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classutils_1_1meta_1_1var}{utils\+::meta\+::var$<$ Var, Version $>$}}
+\begin{DoxyCompactList}\small\item\em Read by calling {\ttfamily get(var\texorpdfstring{$<$}{<}Var, Version\texorpdfstring{$>$}{>}\{\})}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classutils_1_1meta_1_1set}{utils\+::meta\+::set$<$ Var, Value, Version $>$}}
+\begin{DoxyCompactList}\small\item\em Sets {\ttfamily Var} to {\ttfamily Value}. {\ttfamily Version} is automatically incremented at every instantiation of this template. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceutils}{utils}}
+\item 
+namespace \mbox{\hyperlink{namespaceutils_1_1meta}{utils\+::meta}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Var, auto = get(utils\+::meta\+::const\+\_\+var$<$\+Var$>$\{\})$>$ }\\consteval bool \mbox{\hyperlink{namespaceutils_1_1meta_a663523ca9759fbbba5c59040d339416c}{utils\+::meta\+::exists}} (\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{const\+\_\+var}}$<$ Var $>$)
+\begin{DoxyCompactList}\small\item\em Checks the existence of a {\ttfamily \doxylink{classutils_1_1meta_1_1const__var}{const\+\_\+var}}. \end{DoxyCompactList}\item 
+consteval bool \mbox{\hyperlink{namespaceutils_1_1meta_a7ecd2bb074afc4484c62aa40fb97ac97}{utils\+::meta\+::exists}} (...)
+\begin{DoxyCompactList}\small\item\em Fallback. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Var = void, bool Increment = false, std\+::uintmax\+\_\+t Value = 0, typename Id = decltype(\mbox{[}$\,$\mbox{]}\{\})$>$ }\\consteval std\+::uintmax\+\_\+t \mbox{\hyperlink{namespaceutils_1_1meta_ad02c270667465805004b1f692dfb6cf0}{utils\+::meta\+::get\+\_\+counter}} ()
+\begin{DoxyCompactList}\small\item\em A compile-\/time counter. An undeclared counter is defined to have the value 0. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Var, std\+::uintmax\+\_\+t Version, auto = get(var$<$\+Var, Version$>$\{\})$>$ }\\constexpr bool \mbox{\hyperlink{namespaceutils_1_1meta_ad2935ed0730cf850927f58cdf5fa8fdf}{utils\+::meta\+::exists}} (\mbox{\hyperlink{classutils_1_1meta_1_1var}{var}}$<$ Var, Version $>$)
+\begin{DoxyCompactList}\small\item\em Checks the existence of a {\ttfamily var}. \end{DoxyCompactList}\end{DoxyCompactItemize}

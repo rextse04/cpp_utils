@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structutils_1_1shift__right.html" title=" " alt="" coords="5,5,144,32"/>
+<area shape="rect" id="Node000000" href="$structutils_1_1shift__asg__ops.html" title=" " alt="" coords="6,5,139,46"/>
+<area shape="rect" id="Node000001" href="$structutils_1_1shift__full__ops.html" title="A convenience template inheriting from utils::shift_ops and utils::shift_asg_ops." alt="" coords="188,35,333,75"/>
+<area shape="poly" id="edge152_Node000000_Node000001" title=" " alt="" coords="154,36,188,41,187,46,154,41"/>
+<area shape="rect" id="Node000002" href="$structutils_1_1shift__ops.html" title=" " alt="" coords="5,70,140,96"/>
+<area shape="poly" id="edge153_Node000002_Node000001" title=" " alt="" coords="155,68,187,63,188,68,156,73"/>
 </map>

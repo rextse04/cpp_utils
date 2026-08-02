@@ -1,6 +1,9 @@
 <map id="swap.hpp" name="swap.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="175,5,252,32"/>
-<area shape="rect" id="node2" href="$segment__tree_8hpp.html" title=" " alt="" coords="5,80,141,121"/>
-<area shape="rect" id="node3" href="$dynamic_8hpp.html" title=" " alt="" coords="166,87,261,114"/>
-<area shape="rect" id="node4" href="$static__string_8hpp.html" title=" " alt="" coords="285,87,403,114"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="174,5,250,31"/>
+<area shape="rect" id="Node000002" href="$segment__tree_8hpp.html" title=" " alt="" coords="5,79,141,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,41,109,81,106,76,176,36"/>
+<area shape="rect" id="Node000003" href="$dynamic_8hpp.html" title=" " alt="" coords="165,86,258,112"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="214,47,214,86,209,86,209,47"/>
+<area shape="rect" id="Node000004" href="$static__string_8hpp.html" title=" " alt="" coords="283,86,399,112"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="246,37,323,84,320,88,243,41"/>
 </map>

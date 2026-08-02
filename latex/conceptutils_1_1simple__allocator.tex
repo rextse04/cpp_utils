@@ -1,5 +1,5 @@
-\hypertarget{conceptutils_1_1simple__allocator}{}\doxysection{utils\+::simple\+\_\+allocator Concept Reference}
-\label{conceptutils_1_1simple__allocator}\index{utils::simple\_allocator@{utils::simple\_allocator}}
+\doxysection{utils\+::simple\+\_\+allocator Concept Reference}
+\hypertarget{conceptutils_1_1simple__allocator}{}\label{conceptutils_1_1simple__allocator}\index{utils::simple\_allocator@{utils::simple\_allocator}}
 
 
 C++ named requirements\+: {\itshape Allocator}  
@@ -12,11 +12,11 @@ C++ named requirements\+: {\itshape Allocator}
 \doxysubsection{Concept definition}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1simple__allocator}{utils::simple\_allocator}} =  \textcolor{keyword}{requires}(T alloc, \mbox{\hyperlink{namespaceutils_1_1integer__alias_aa8967fdcbd912fcd5a66fdeb551691cf}{std::size\_t}} n) \{}
-\DoxyCodeLine{        \{ *alloc.allocate(n) \} -\/> std::same\_as<typename T::value\_type\&>;}
-\DoxyCodeLine{        \{ alloc.deallocate(alloc.allocate(n), n) \};}
-\DoxyCodeLine{    \} \&\& std::copy\_constructible<T> \&\& std::equality\_comparable<T>}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptutils_1_1simple__allocator}{utils::simple\_allocator}}\ =\ \ \textcolor{keyword}{requires}(T\ alloc,\ std::size\_t\ n)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ *alloc.allocate(n)\ \}\ -\/>\ std::same\_as<typename\ T::value\_type\&>;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ alloc.deallocate(alloc.allocate(n),\ n)\ \};}
+\DoxyCodeLine{\ \ \ \ \}\ \&\&\ std::copy\_constructible<T>\ \&\&\ std::equality\_comparable<T>}
 
 \end{DoxyCode}
 

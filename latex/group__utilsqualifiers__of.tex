@@ -1,24 +1,24 @@
-\hypertarget{group__utilsqualifiers__of}{}\doxysection{utils\+::qualifiers\+\_\+of}
-\label{group__utilsqualifiers__of}\index{utils::qualifiers\_of@{utils::qualifiers\_of}}
+\doxysection{utils\+::qualifiers\+\_\+of}
+\hypertarget{group__utilsqualifiers__of}{}\label{group__utilsqualifiers__of}\index{utils::qualifiers\_of@{utils::qualifiers\_of}}
 
 
-Extracts the const and volatile qualifiers from a type.  
+A \href{Trait.html}{\texttt{ {\itshape Value\+Trait}}} that extracts the const and volatile qualifiers from a type.  
 
 
-\doxysubsection*{Classes}
+\doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{group__utilsqualifiers__of_structutils_1_1qualifiers__of}{utils\+::qualifiers\+\_\+of$<$ T $>$}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Variables}
+\doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T $>$ }\\constexpr \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} \mbox{\hyperlink{group__utilsqualifiers__of_gad6a8c3be8fd9c0f96263ed785cd8bff7}{utils\+::qualifiers\+\_\+of\+\_\+v}} = \mbox{\hyperlink{group__utilsqualifiers__of_structutils_1_1qualifiers__of}{qualifiers\+\_\+of}}$<$T$>$\+::value
+{\footnotesize template$<$typename T$>$ }\\constexpr \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} \mbox{\hyperlink{group__utilsqualifiers__of_gad6a8c3be8fd9c0f96263ed785cd8bff7}{utils\+::qualifiers\+\_\+of\+\_\+v}} = \mbox{\hyperlink{group__utilsqualifiers__of_structutils_1_1qualifiers__of}{qualifiers\+\_\+of}}$<$T$>$\+::value
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Extracts the const and volatile qualifiers from a type. 
+A \href{Trait.html}{\texttt{ {\itshape Value\+Trait}}} that extracts the const and volatile qualifiers from a type. 
 
 \begin{DoxyRemark}{Remarks}
 Ignores reference and pointer decorations, extracting qualifiers from the underlying type. 
@@ -35,20 +35,20 @@ struct utils\+::qualifiers\+\_\+of$<$ T $>$}
 
 Definition at line \mbox{\hyperlink{type_8hpp_source_l00027}{27}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
 
-\doxysubsubsection*{Static Public Attributes}
+\doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static constexpr \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} \mbox{\hyperlink{group__utilsqualifiers__of_ab4110edae1047498a9f80371249a8533}{value}} \{+c $\ast$ std\+::is\+\_\+const\+\_\+v$<$DT$>$ + +v $\ast$ std\+::is\+\_\+volatile\+\_\+v$<$DT$>$\}
+static constexpr \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} \mbox{\hyperlink{group__utilsqualifiers__of_ab4110edae1047498a9f80371249a8533}{value}} \{+\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}} \texorpdfstring{$\ast$}{*} std\+::is\+\_\+const\+\_\+v$<$DT$>$ + +\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea9e3669d19b675bd57058fd4664205d2a}{v}} \texorpdfstring{$\ast$}{*} std\+::is\+\_\+volatile\+\_\+v$<$DT$>$\}
 \end{DoxyCompactItemize}
 
 
 \doxyparagraph{Member Data Documentation}
-\mbox{\Hypertarget{group__utilsqualifiers__of_ab4110edae1047498a9f80371249a8533}\label{group__utilsqualifiers__of_ab4110edae1047498a9f80371249a8533}} 
-\index{utils::qualifiers\_of$<$ T $>$@{utils::qualifiers\_of$<$ T $>$}!value@{value}}
+\Hypertarget{group__utilsqualifiers__of_ab4110edae1047498a9f80371249a8533}\index{utils::qualifiers\_of$<$ T $>$@{utils::qualifiers\_of$<$ T $>$}!value@{value}}
 \index{value@{value}!utils::qualifiers\_of$<$ T $>$@{utils::qualifiers\_of$<$ T $>$}}
 \doxysubparagraph{\texorpdfstring{value}{value}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-constexpr \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} \mbox{\hyperlink{group__utilsqualifiers__of_structutils_1_1qualifiers__of}{utils\+::qualifiers\+\_\+of}}$<$ T $>$\+::value \{+c $\ast$ std\+::is\+\_\+const\+\_\+v$<$DT$>$ + +v $\ast$ std\+::is\+\_\+volatile\+\_\+v$<$DT$>$\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily \label{group__utilsqualifiers__of_ab4110edae1047498a9f80371249a8533} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} \mbox{\hyperlink{group__utilsqualifiers__of_structutils_1_1qualifiers__of}{utils\+::qualifiers\+\_\+of}}$<$ T $>$\+::value \{+\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}} \texorpdfstring{$\ast$}{*} std\+::is\+\_\+const\+\_\+v$<$DT$>$ + +\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea9e3669d19b675bd57058fd4664205d2a}{v}} \texorpdfstring{$\ast$}{*} std\+::is\+\_\+volatile\+\_\+v$<$DT$>$\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
 
 
 
@@ -57,12 +57,12 @@ Definition at line \mbox{\hyperlink{type_8hpp_source_l00032}{32}} of file \mbox{
 
 
 \doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{group__utilsqualifiers__of_gad6a8c3be8fd9c0f96263ed785cd8bff7}\label{group__utilsqualifiers__of_gad6a8c3be8fd9c0f96263ed785cd8bff7}} 
-\index{utils::qualifiers\_of@{utils::qualifiers\_of}!qualifiers\_of\_v@{qualifiers\_of\_v}}
+\Hypertarget{group__utilsqualifiers__of_gad6a8c3be8fd9c0f96263ed785cd8bff7}\index{utils::qualifiers\_of@{utils::qualifiers\_of}!qualifiers\_of\_v@{qualifiers\_of\_v}}
 \index{qualifiers\_of\_v@{qualifiers\_of\_v}!utils::qualifiers\_of@{utils::qualifiers\_of}}
 \doxysubsubsection{\texorpdfstring{qualifiers\_of\_v}{qualifiers\_of\_v}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-constexpr \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} utils\+::qualifiers\+\_\+of\+\_\+v = \mbox{\hyperlink{group__utilsqualifiers__of_structutils_1_1qualifiers__of}{qualifiers\+\_\+of}}$<$T$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily \label{group__utilsqualifiers__of_gad6a8c3be8fd9c0f96263ed785cd8bff7} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} utils\+::qualifiers\+\_\+of\+\_\+v = \mbox{\hyperlink{group__utilsqualifiers__of_structutils_1_1qualifiers__of}{qualifiers\+\_\+of}}$<$T$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
 
 
 

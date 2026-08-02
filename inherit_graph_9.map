@@ -1,3 +1,19 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structutils_1_1arguments__of_3_01R_07Args_8_8_8_08_4.html" title=" " alt="" coords="5,5,136,47"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,223,150,249"/>
+<area shape="rect" id="Node000001" href="$group__metasearch.html#structutils_1_1meta_1_1search_3_01Tuple_00_01T_00_01PredTrait_00_01End_00_01End_01_4" title=" " alt="" coords="231,5,374,61"/>
+<area shape="poly" id="edge36_Node000000_Node000001" title=" " alt="" coords="90,208,131,140,161,103,196,71,230,52,232,56,199,75,165,107,136,143,94,210"/>
+<area shape="rect" id="Node000002" href="$structutils_1_1arity__of_3_01R_07Args_8_8_8_08_4.html" title=" " alt="" coords="246,85,360,126"/>
+<area shape="poly" id="edge37_Node000000_Node000002" title=" " alt="" coords="100,210,143,173,196,136,245,116,247,121,199,141,146,177,104,214"/>
+<area shape="rect" id="Node000003" href="$group__epsilon__of.html#structutils_1_1epsilon__of" title=" " alt="" coords="244,150,362,191"/>
+<area shape="poly" id="edge38_Node000000_Node000003" title=" " alt="" coords="138,216,242,185,244,190,140,221"/>
+<area shape="rect" id="Node000004" href="$group__metaproduct.html#structutils_1_1meta_1_1product" title=" " alt="" coords="238,216,368,256"/>
+<area shape="poly" id="edge39_Node000000_Node000004" title=" " alt="" coords="165,233,238,233,238,238,165,238"/>
+<area shape="rect" id="Node000005" href="$group__metasearch.html#structutils_1_1meta_1_1search" title=" " alt="" coords="231,280,374,336"/>
+<area shape="poly" id="edge40_Node000000_Node000005" title=" " alt="" coords="136,251,231,282,230,287,134,256"/>
+<area shape="rect" id="Node000007" href="$group__metasum.html#structutils_1_1meta_1_1sum" title=" " alt="" coords="198,360,408,386"/>
+<area shape="poly" id="edge42_Node000000_Node000007" title=" " alt="" coords="101,259,143,304,170,326,199,345,227,357,225,362,196,350,167,331,139,308,97,263"/>
+<area shape="rect" id="Node000008" href="$group__width__of.html#structutils_1_1width__of" title=" " alt="" coords="241,410,364,451"/>
+<area shape="poly" id="edge43_Node000000_Node000008" title=" " alt="" coords="94,261,135,329,164,365,199,396,220,408,242,416,240,421,217,413,196,401,161,369,130,332,89,264"/>
+<area shape="rect" id="Node000006" href="$group__metasearch.html#structutils_1_1meta_1_1search__trait" title=" " alt="" coords="456,288,581,328"/>
+<area shape="poly" id="edge41_Node000005_Node000006" title=" " alt="" coords="390,305,456,305,456,310,390,310"/>
 </map>

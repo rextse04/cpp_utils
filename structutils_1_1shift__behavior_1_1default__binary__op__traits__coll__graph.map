@@ -1,4 +1,5 @@
 <map id="utils::shift_behavior::default_binary_op_traits" name="utils::shift_behavior::default_binary_op_traits">
-<area shape="rect" id="node1" title="Default trait set for binary operations for utils::shift_behavior::profile_from." alt="" coords="5,95,171,136"/>
-<area shape="rect" id="node2" href="$structutils_1_1default__binary__op__traits.html" title="The default trait set for binary operators, except assignment and prefix operators." alt="" coords="22,5,154,47"/>
+<area shape="rect" id="Node000001" title="Default trait set for binary operations for utils::shift_behavior::profile_from." alt="" coords="5,94,170,135"/>
+<area shape="rect" id="Node000002" href="$structutils_1_1default__binary__op__traits.html" title="The default trait set for binary operators, except assignment and prefix operators." alt="" coords="22,5,153,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,62,90,94,85,94,85,62"/>
 </map>

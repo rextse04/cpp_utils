@@ -1,4 +1,5 @@
 <map id="utils::always_false&lt;... &gt;" name="utils::always_false&lt;... &gt;">
-<area shape="rect" id="node1" title="A trait that is always false_type, regardless of template arguments." alt="" coords="5,80,132,121"/>
-<area shape="rect" id="node2" title=" " alt="" coords="16,5,121,32"/>
+<area shape="rect" id="Node000001" title="A ValueTrait that is always false_type, regardless of template arguments." alt="" coords="5,79,132,120"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="16,5,121,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,46,71,79,66,79,66,46"/>
 </map>

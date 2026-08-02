@@ -1,0 +1,68 @@
+\doxysection{Named Requirement\+: \texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Resource\+Allocator\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}
+\hypertarget{ResourceAllocator}{}\label{ResourceAllocator}\index{Named Requirement: $<$i$>$ResourceAllocator$<$/i$>$@{Named Requirement: $<$i$>$ResourceAllocator$<$/i$>$}}
+\label{ResourceAllocator_md_docs_2named__reqs_2ResourceAllocator}%
+\Hypertarget{ResourceAllocator_md_docs_2named__reqs_2ResourceAllocator}%
+
+
+A resource allocator is an {\itshape Allocator} which operates on buffer memory allocated from an upstream {\ttfamily std\+::pmr\+::memory\+\_\+resource}. It can be wrapped in {\ttfamily \doxylink{classutils_1_1pmr_1_1allocator__resource}{utils\+::pmr\+::allocator\+\_\+resource}} to act as an {\ttfamily std\+::pmr\+::memory\+\_\+resource}, which is useful when one would like to reuse the same allocation strategy with or without virtual dispatch.\hypertarget{ResourceAllocator_autotoc_md14}{}\doxysubsection{\texorpdfstring{Requirements}{Requirements}}\label{ResourceAllocator_autotoc_md14}
+A class type {\ttfamily A} meets the named requirement if it satisfies {\itshape Allocator} and all requirements below. \hypertarget{ResourceAllocator_autotoc_md15}{}\doxysubsubsection{\texorpdfstring{Notations}{Notations}}\label{ResourceAllocator_autotoc_md15}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Definition    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Definition    }\\\cline{1-2}
+\endhead
+{\ttfamily a}   &A (non-\/cv-\/qualified) object of type {\ttfamily A}    \\\cline{1-2}
+{\ttfamily mr}   &A (non-\/cv-\/qualified) l-\/value reference of {\ttfamily std\+::pmr\+::memory\+\_\+resource}    \\\cline{1-2}
+{\ttfamily space}   &A value of type {\ttfamily std\+::size\+\_\+t}    \\\cline{1-2}
+{\ttfamily bytes}   &A value of type {\ttfamily std\+::size\+\_\+t}    \\\cline{1-2}
+{\ttfamily alignment}   &A value of type {\ttfamily std\+::size\+\_\+t} which is a power of 2    \\\cline{1-2}
+{\ttfamily p}   &A value of type {\ttfamily std\+::byte\texorpdfstring{$\ast$}{*}}   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{ResourceAllocator_autotoc_md16}{}\doxysubsubsection{\texorpdfstring{Supported Operations}{Supported Operations}}\label{ResourceAllocator_autotoc_md16}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Expression}&\cellcolor{\tableheadbgcolor}\textbf{ Return Type}&\cellcolor{\tableheadbgcolor}\textbf{ Semantics }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Expression}&\cellcolor{\tableheadbgcolor}\textbf{ Return Type}&\cellcolor{\tableheadbgcolor}\textbf{ Semantics }\\\cline{1-3}
+\endhead
+{\ttfamily A\+::value\+\_\+type} &{\ttfamily std\+::byte} &-\/  \\\cline{1-3}
+{\ttfamily A(mr, space, v0, ..., vk)} &{\ttfamily A} &There must be a sequence of types {\ttfamily V1,...,Vk} such that the expression is well-\/formed for any {\ttfamily v0} of type {\ttfamily V0}, and so on.~\newline
+ {\bfseries{Effects}} 
+\begin{DoxyItemize}
+\item A storage of {\ttfamily space} bytes is allocated through {\ttfamily mr} and used as the underlying buffer of {\ttfamily a}.  
+\end{DoxyItemize}\\\cline{1-3}
+{\ttfamily a.\+release(mr, space)} &{\itshape (not used)} &The call must be {\ttfamily noexcept}.~\newline
+ {\bfseries{Conditions}} 
+\begin{DoxyItemize}
+\item {\ttfamily a} is equal to an allocator (implicitly or explicitly) constructed in the form {\ttfamily A(mr, space, ...)}.  
+\item {\ttfamily release} has not been called on any allocator (of type {\ttfamily A}) equal to {\ttfamily a}. 
+\item The underlying buffer is not used in any way after the call, including through allocator operations. 
+\end{DoxyItemize}{\bfseries{Effects}} 
+\begin{DoxyItemize}
+\item The underlying buffer is deallocated through {\ttfamily mr}. 
+\end{DoxyItemize}\\\cline{1-3}
+{\ttfamily a.\+allocate(bytes, alignment)} &{\ttfamily std\+::byte\texorpdfstring{$\ast$}{*}} &{\bfseries{Effects}} 
+\begin{DoxyItemize}
+\item Allocates storage suitable for an array object of type {\ttfamily std\+::byte\mbox{[}bytes\mbox{]}} from the underlying buffer with the specified {\ttfamily alignment}, and creates the array.  
+\end{DoxyItemize}\\\cline{1-3}
+{\ttfamily a.\+deallocate(p, bytes, alignment)} &{\itshape (not used)} &{\bfseries{Conditions}} 
+\begin{DoxyItemize}
+\item {\ttfamily p} is obtained (potentially by conversion) through a call to {\ttfamily a.\+allocate(bytes, alignment)}. 
+\item {\ttfamily p} has not been deallocated by an allocator equal to {\ttfamily a}. 
+\end{DoxyItemize}{\bfseries{Effects}} 
+\begin{DoxyItemize}
+\item Deallocates storage pointed to by {\ttfamily p}. 
+\item No exceptions are thrown. 
+\end{DoxyItemize}\\\cline{1-3}
+\end{longtabu}
+\hypertarget{ResourceAllocator_autotoc_md17}{}\doxysubsection{\texorpdfstring{Associated Concept}{Associated Concept}}\label{ResourceAllocator_autotoc_md17}
+The library provides {\ttfamily \doxylink{conceptutils_1_1pmr_1_1resource__allocator}{utils\+::pmr\+::resource\+\_\+allocator}\texorpdfstring{$<$}{<}A\texorpdfstring{$>$}{>}} as an equivalent constraint to the named requirement. 

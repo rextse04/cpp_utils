@@ -1,5 +1,5 @@
-\hypertarget{structutils_1_1segment__tree_1_1node__info}{}\doxysection{utils\+::segment\+\_\+tree\texorpdfstring{$<$}{<} Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container \texorpdfstring{$>$}{>}\+::node\+\_\+info Struct Reference}
-\label{structutils_1_1segment__tree_1_1node__info}\index{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}}
+\doxysection{utils\+::segment\+\_\+tree\texorpdfstring{$<$}{<} Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container \texorpdfstring{$>$}{>}\+::node\+\_\+info Struct Reference}
+\hypertarget{structutils_1_1segment__tree_1_1node__info}{}\label{structutils_1_1segment__tree_1_1node__info}\index{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}}
 
 
 Stores properties of the node the traverser is visiting.  
@@ -9,7 +9,20 @@ Stores properties of the node the traverser is visiting.
 
 {\ttfamily \#include $<$segment\+\_\+tree.\+hpp$>$}
 
-\doxysubsection*{Public Attributes}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Key, typename T, std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container = std\+::vector$<$\+Key$>$, typename Mapped\+Container = std\+::vector$<$\+T$>$$>$\newline
+struct utils\+::segment\+\_\+tree$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::node\+\_\+info}
+Stores properties of the node the traverser is visiting. 
+
+Let $v$ be the subject of the struct, and {\ttfamily left} and {\ttfamily right} be its children. Then {\ttfamily level} is the height of $v$ (distance of $v$ to the nearest leaf), and {\ttfamily level\+\_\+idx} is the number of nodes preceding $v$ is its level. {\ttfamily \texorpdfstring{$\ast$}{*}\+\_\+level} and {\ttfamily \texorpdfstring{$\ast$}{*}\+\_\+idx} represent the level and index of {\ttfamily left} / {\ttfamily right}, respectively. Level {\ttfamily -\/1} indicates a non-\/existent node.
+
+\mbox{[} {\ttfamily begin}, {\ttfamily end} ) gives the range of indices of mapped values the sub-\/tree rooted at $v$ encompasses, and the sub-\/trees rooted at the left and right child of the current node encompass \mbox{[} {\ttfamily begin}, {\ttfamily div\+\_\+node} ) and \mbox{[} {\ttfamily div\+\_\+node}, {\ttfamily end} ), respectively. 
+
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00872}{872}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+
+\doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{structutils_1_1segment__tree_1_1node__info_a86f8133d8c61d56ae7314964cb5b5d48}{level}}
@@ -32,118 +45,105 @@ int \mbox{\hyperlink{structutils_1_1segment__tree_1_1node__info_aaeb362eee18a149
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-\subsubsection*{template$<$typename Key, typename T, std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container = std\+::vector$<$\+Key$>$, typename Mapped\+Container = std\+::vector$<$\+T$>$$>$\newline
-struct utils\+::segment\+\_\+tree$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::node\+\_\+info}
-Stores properties of the node the traverser is visiting. 
-
-Let $v$ be the subject of the struct, and {\ttfamily left} and {\ttfamily right} be its children. Then {\ttfamily level} is the height of $v$ (distance of $v$ to the nearest leaf), and {\ttfamily level\+\_\+idx} is the number of nodes preceding $v$ is its level. {\ttfamily $\ast$\+\_\+level} and {\ttfamily $\ast$\+\_\+idx} represent the level and index of {\ttfamily left} / {\ttfamily right}, respectively. Level {\ttfamily -\/1} indicates a non-\/existent node.
-
-\mbox{[} {\ttfamily begin}, {\ttfamily end} ) gives the range of indices of mapped values the sub-\/tree rooted at $v$ encompasses, and the sub-\/trees rooted at the left and right child of the current node encompass \mbox{[} {\ttfamily begin}, {\ttfamily div\+\_\+node} ) and \mbox{[} {\ttfamily div\+\_\+node}, {\ttfamily end} ), respectively. 
-
-Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00841}{841}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
-
-
-
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{structutils_1_1segment__tree_1_1node__info_ab169872cc5dc076a59474d54074fb4ad}\label{structutils_1_1segment__tree_1_1node__info_ab169872cc5dc076a59474d54074fb4ad}} 
-\index{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}!begin@{begin}}
+\Hypertarget{structutils_1_1segment__tree_1_1node__info_ab169872cc5dc076a59474d54074fb4ad}\index{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}!begin@{begin}}
 \index{begin@{begin}!utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}}
 \doxysubsubsection{\texorpdfstring{begin}{begin}}
-{\footnotesize\ttfamily template$<$typename Key , typename T , std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container  = std\+::vector$<$\+Key$>$, typename Mapped\+Container  = std\+::vector$<$\+T$>$$>$ \\
+{\footnotesize\ttfamily \label{structutils_1_1segment__tree_1_1node__info_ab169872cc5dc076a59474d54074fb4ad} 
+template$<$typename Key, typename T, std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container = std\+::vector$<$\+Key$>$, typename Mapped\+Container = std\+::vector$<$\+T$>$$>$ \\
 \mbox{\hyperlink{classutils_1_1segment__tree_ac17e61eed4d4ebcf7aee166fd7fe549f}{size\+\_\+type}} \mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::node\+\_\+info\+::begin}
 
 
 
-Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00843}{843}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00874}{874}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
 
-\mbox{\Hypertarget{structutils_1_1segment__tree_1_1node__info_af5d9985421088bd9cc07f20bb3bcee1b}\label{structutils_1_1segment__tree_1_1node__info_af5d9985421088bd9cc07f20bb3bcee1b}} 
-\index{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}!div\_node@{div\_node}}
+\Hypertarget{structutils_1_1segment__tree_1_1node__info_af5d9985421088bd9cc07f20bb3bcee1b}\index{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}!div\_node@{div\_node}}
 \index{div\_node@{div\_node}!utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}}
 \doxysubsubsection{\texorpdfstring{div\_node}{div\_node}}
-{\footnotesize\ttfamily template$<$typename Key , typename T , std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container  = std\+::vector$<$\+Key$>$, typename Mapped\+Container  = std\+::vector$<$\+T$>$$>$ \\
+{\footnotesize\ttfamily \label{structutils_1_1segment__tree_1_1node__info_af5d9985421088bd9cc07f20bb3bcee1b} 
+template$<$typename Key, typename T, std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container = std\+::vector$<$\+Key$>$, typename Mapped\+Container = std\+::vector$<$\+T$>$$>$ \\
 \mbox{\hyperlink{classutils_1_1segment__tree_ac17e61eed4d4ebcf7aee166fd7fe549f}{size\+\_\+type}} \mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::node\+\_\+info\+::div\+\_\+node}
 
 
 
-Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00843}{843}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00874}{874}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
 
-\mbox{\Hypertarget{structutils_1_1segment__tree_1_1node__info_a1a8dcc53b7d78a2ee8768aa3184a5835}\label{structutils_1_1segment__tree_1_1node__info_a1a8dcc53b7d78a2ee8768aa3184a5835}} 
-\index{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}!end@{end}}
+\Hypertarget{structutils_1_1segment__tree_1_1node__info_a1a8dcc53b7d78a2ee8768aa3184a5835}\index{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}!end@{end}}
 \index{end@{end}!utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}}
 \doxysubsubsection{\texorpdfstring{end}{end}}
-{\footnotesize\ttfamily template$<$typename Key , typename T , std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container  = std\+::vector$<$\+Key$>$, typename Mapped\+Container  = std\+::vector$<$\+T$>$$>$ \\
+{\footnotesize\ttfamily \label{structutils_1_1segment__tree_1_1node__info_a1a8dcc53b7d78a2ee8768aa3184a5835} 
+template$<$typename Key, typename T, std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container = std\+::vector$<$\+Key$>$, typename Mapped\+Container = std\+::vector$<$\+T$>$$>$ \\
 \mbox{\hyperlink{classutils_1_1segment__tree_ac17e61eed4d4ebcf7aee166fd7fe549f}{size\+\_\+type}} \mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::node\+\_\+info\+::end}
 
 
 
-Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00843}{843}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00874}{874}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
 
-\mbox{\Hypertarget{structutils_1_1segment__tree_1_1node__info_afe1e83571bbd20160f9897d8ca9178a9}\label{structutils_1_1segment__tree_1_1node__info_afe1e83571bbd20160f9897d8ca9178a9}} 
-\index{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}!left\_idx@{left\_idx}}
+\Hypertarget{structutils_1_1segment__tree_1_1node__info_afe1e83571bbd20160f9897d8ca9178a9}\index{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}!left\_idx@{left\_idx}}
 \index{left\_idx@{left\_idx}!utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}}
 \doxysubsubsection{\texorpdfstring{left\_idx}{left\_idx}}
-{\footnotesize\ttfamily template$<$typename Key , typename T , std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container  = std\+::vector$<$\+Key$>$, typename Mapped\+Container  = std\+::vector$<$\+T$>$$>$ \\
+{\footnotesize\ttfamily \label{structutils_1_1segment__tree_1_1node__info_afe1e83571bbd20160f9897d8ca9178a9} 
+template$<$typename Key, typename T, std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container = std\+::vector$<$\+Key$>$, typename Mapped\+Container = std\+::vector$<$\+T$>$$>$ \\
 \mbox{\hyperlink{classutils_1_1segment__tree_ac17e61eed4d4ebcf7aee166fd7fe549f}{size\+\_\+type}} \mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::node\+\_\+info\+::left\+\_\+idx}
 
 
 
-Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00843}{843}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00874}{874}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
 
-\mbox{\Hypertarget{structutils_1_1segment__tree_1_1node__info_a61a15024b6d14bdf46096c932147d98c}\label{structutils_1_1segment__tree_1_1node__info_a61a15024b6d14bdf46096c932147d98c}} 
-\index{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}!left\_level@{left\_level}}
+\Hypertarget{structutils_1_1segment__tree_1_1node__info_a61a15024b6d14bdf46096c932147d98c}\index{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}!left\_level@{left\_level}}
 \index{left\_level@{left\_level}!utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}}
 \doxysubsubsection{\texorpdfstring{left\_level}{left\_level}}
-{\footnotesize\ttfamily template$<$typename Key , typename T , std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container  = std\+::vector$<$\+Key$>$, typename Mapped\+Container  = std\+::vector$<$\+T$>$$>$ \\
+{\footnotesize\ttfamily \label{structutils_1_1segment__tree_1_1node__info_a61a15024b6d14bdf46096c932147d98c} 
+template$<$typename Key, typename T, std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container = std\+::vector$<$\+Key$>$, typename Mapped\+Container = std\+::vector$<$\+T$>$$>$ \\
 int \mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::node\+\_\+info\+::left\+\_\+level}
 
 
 
-Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00842}{842}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00873}{873}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
 
-\mbox{\Hypertarget{structutils_1_1segment__tree_1_1node__info_a86f8133d8c61d56ae7314964cb5b5d48}\label{structutils_1_1segment__tree_1_1node__info_a86f8133d8c61d56ae7314964cb5b5d48}} 
-\index{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}!level@{level}}
+\Hypertarget{structutils_1_1segment__tree_1_1node__info_a86f8133d8c61d56ae7314964cb5b5d48}\index{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}!level@{level}}
 \index{level@{level}!utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}}
 \doxysubsubsection{\texorpdfstring{level}{level}}
-{\footnotesize\ttfamily template$<$typename Key , typename T , std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container  = std\+::vector$<$\+Key$>$, typename Mapped\+Container  = std\+::vector$<$\+T$>$$>$ \\
+{\footnotesize\ttfamily \label{structutils_1_1segment__tree_1_1node__info_a86f8133d8c61d56ae7314964cb5b5d48} 
+template$<$typename Key, typename T, std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container = std\+::vector$<$\+Key$>$, typename Mapped\+Container = std\+::vector$<$\+T$>$$>$ \\
 int \mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::node\+\_\+info\+::level}
 
 
 
-Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00842}{842}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00873}{873}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
 
-\mbox{\Hypertarget{structutils_1_1segment__tree_1_1node__info_ac34bec915e4707ebbdffe6891a000208}\label{structutils_1_1segment__tree_1_1node__info_ac34bec915e4707ebbdffe6891a000208}} 
-\index{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}!level\_idx@{level\_idx}}
+\Hypertarget{structutils_1_1segment__tree_1_1node__info_ac34bec915e4707ebbdffe6891a000208}\index{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}!level\_idx@{level\_idx}}
 \index{level\_idx@{level\_idx}!utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}}
 \doxysubsubsection{\texorpdfstring{level\_idx}{level\_idx}}
-{\footnotesize\ttfamily template$<$typename Key , typename T , std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container  = std\+::vector$<$\+Key$>$, typename Mapped\+Container  = std\+::vector$<$\+T$>$$>$ \\
+{\footnotesize\ttfamily \label{structutils_1_1segment__tree_1_1node__info_ac34bec915e4707ebbdffe6891a000208} 
+template$<$typename Key, typename T, std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container = std\+::vector$<$\+Key$>$, typename Mapped\+Container = std\+::vector$<$\+T$>$$>$ \\
 \mbox{\hyperlink{classutils_1_1segment__tree_ac17e61eed4d4ebcf7aee166fd7fe549f}{size\+\_\+type}} \mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::node\+\_\+info\+::level\+\_\+idx}
 
 
 
-Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00843}{843}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00874}{874}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
 
-\mbox{\Hypertarget{structutils_1_1segment__tree_1_1node__info_a453f77d23b3a6274232b890d913b7a66}\label{structutils_1_1segment__tree_1_1node__info_a453f77d23b3a6274232b890d913b7a66}} 
-\index{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}!right\_idx@{right\_idx}}
+\Hypertarget{structutils_1_1segment__tree_1_1node__info_a453f77d23b3a6274232b890d913b7a66}\index{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}!right\_idx@{right\_idx}}
 \index{right\_idx@{right\_idx}!utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}}
 \doxysubsubsection{\texorpdfstring{right\_idx}{right\_idx}}
-{\footnotesize\ttfamily template$<$typename Key , typename T , std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container  = std\+::vector$<$\+Key$>$, typename Mapped\+Container  = std\+::vector$<$\+T$>$$>$ \\
+{\footnotesize\ttfamily \label{structutils_1_1segment__tree_1_1node__info_a453f77d23b3a6274232b890d913b7a66} 
+template$<$typename Key, typename T, std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container = std\+::vector$<$\+Key$>$, typename Mapped\+Container = std\+::vector$<$\+T$>$$>$ \\
 \mbox{\hyperlink{classutils_1_1segment__tree_ac17e61eed4d4ebcf7aee166fd7fe549f}{size\+\_\+type}} \mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::node\+\_\+info\+::right\+\_\+idx}
 
 
 
-Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00843}{843}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00874}{874}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
 
-\mbox{\Hypertarget{structutils_1_1segment__tree_1_1node__info_aaeb362eee18a149691b93ef8e2c14258}\label{structutils_1_1segment__tree_1_1node__info_aaeb362eee18a149691b93ef8e2c14258}} 
-\index{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}!right\_level@{right\_level}}
+\Hypertarget{structutils_1_1segment__tree_1_1node__info_aaeb362eee18a149691b93ef8e2c14258}\index{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}!right\_level@{right\_level}}
 \index{right\_level@{right\_level}!utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info@{utils::segment\_tree$<$ Key, T, Compare, Sum, Identity, KeyContainer, MappedContainer $>$::node\_info}}
 \doxysubsubsection{\texorpdfstring{right\_level}{right\_level}}
-{\footnotesize\ttfamily template$<$typename Key , typename T , std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container  = std\+::vector$<$\+Key$>$, typename Mapped\+Container  = std\+::vector$<$\+T$>$$>$ \\
+{\footnotesize\ttfamily \label{structutils_1_1segment__tree_1_1node__info_aaeb362eee18a149691b93ef8e2c14258} 
+template$<$typename Key, typename T, std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container = std\+::vector$<$\+Key$>$, typename Mapped\+Container = std\+::vector$<$\+T$>$$>$ \\
 int \mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::node\+\_\+info\+::right\+\_\+level}
 
 
 
-Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00842}{842}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00873}{873}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
 
 
 

@@ -1,29 +1,29 @@
-\hypertarget{group__utilsexplicitly__convertible__to}{}\doxysection{utils\+::explicitly\+\_\+convertible\+\_\+to}
-\label{group__utilsexplicitly__convertible__to}\index{utils::explicitly\_convertible\_to@{utils::explicitly\_convertible\_to}}
+\doxysection{utils\+::explicitly\+\_\+convertible\+\_\+to}
+\hypertarget{group__utilsexplicitly__convertible__to}{}\label{group__utilsexplicitly__convertible__to}\index{utils::explicitly\_convertible\_to@{utils::explicitly\_convertible\_to}}
 
 
-Determines if {\ttfamily From} is explicitly convertible to {\ttfamily To}.  
+A \mbox{[}{\itshape Value\+Trait}\mbox{]} that determines if {\ttfamily From} is explicitly convertible to {\ttfamily To}.  
 
 
-\doxysubsection*{Concepts}
+\doxysubsubsection*{Concepts}
 \begin{DoxyCompactItemize}
 \item 
 concept \mbox{\hyperlink{conceptutils_1_1explicitly__convertible__to}{utils\+::explicitly\+\_\+convertible\+\_\+to}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Classes}
+\doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{group__utilsexplicitly__convertible__to_structutils_1_1is__explicitly__convertible}{utils\+::is\+\_\+explicitly\+\_\+convertible$<$ From, To $>$}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Variables}
+\doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename From , typename To $>$ }\\constexpr bool \mbox{\hyperlink{group__utilsexplicitly__convertible__to_gaeeeecd5e5e48d738f1f779d9b8f46dcc}{utils\+::is\+\_\+explicitly\+\_\+convertible\+\_\+v}} = \mbox{\hyperlink{group__utilsexplicitly__convertible__to_structutils_1_1is__explicitly__convertible}{is\+\_\+explicitly\+\_\+convertible}}$<$From, To$>$\+::value
+{\footnotesize template$<$typename From, typename To$>$ }\\constexpr bool \mbox{\hyperlink{group__utilsexplicitly__convertible__to_gaeeeecd5e5e48d738f1f779d9b8f46dcc}{utils\+::is\+\_\+explicitly\+\_\+convertible\+\_\+v}} = \mbox{\hyperlink{group__utilsexplicitly__convertible__to_structutils_1_1is__explicitly__convertible}{is\+\_\+explicitly\+\_\+convertible}}$<$From, To$>$\+::value
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Determines if {\ttfamily From} is explicitly convertible to {\ttfamily To}. 
+A \mbox{[}{\itshape Value\+Trait}\mbox{]} that determines if {\ttfamily From} is explicitly convertible to {\ttfamily To}. 
 
 {\ttfamily From} is explicitly convertible to {\ttfamily To} if the expression {\ttfamily static\+\_\+cast\texorpdfstring{$<$}{<}To\texorpdfstring{$>$}{>}(std\+::declval\texorpdfstring{$<$}{<}From\texorpdfstring{$>$}{>}())} is well-\/formed. 
 
@@ -35,7 +35,7 @@ Determines if {\ttfamily From} is explicitly convertible to {\ttfamily To}.
 struct utils\+::is\+\_\+explicitly\+\_\+convertible$<$ From, To $>$}
 
 
-Definition at line \mbox{\hyperlink{type_8hpp_source_l00107}{107}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
+Definition at line \mbox{\hyperlink{type_8hpp_source_l00105}{105}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
 
 
 
@@ -44,20 +44,20 @@ Collaboration diagram for utils\+::is\+\_\+explicitly\+\_\+convertible\texorpdfs
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=205pt]{structutils_1_1is__explicitly__convertible__coll__graph}
+\includegraphics[width=204pt]{structutils_1_1is__explicitly__convertible__coll__graph}
 \end{center}
 \end{figure}
 
 
 \doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{group__utilsexplicitly__convertible__to_gaeeeecd5e5e48d738f1f779d9b8f46dcc}\label{group__utilsexplicitly__convertible__to_gaeeeecd5e5e48d738f1f779d9b8f46dcc}} 
-\index{utils::explicitly\_convertible\_to@{utils::explicitly\_convertible\_to}!is\_explicitly\_convertible\_v@{is\_explicitly\_convertible\_v}}
+\Hypertarget{group__utilsexplicitly__convertible__to_gaeeeecd5e5e48d738f1f779d9b8f46dcc}\index{utils::explicitly\_convertible\_to@{utils::explicitly\_convertible\_to}!is\_explicitly\_convertible\_v@{is\_explicitly\_convertible\_v}}
 \index{is\_explicitly\_convertible\_v@{is\_explicitly\_convertible\_v}!utils::explicitly\_convertible\_to@{utils::explicitly\_convertible\_to}}
 \doxysubsubsection{\texorpdfstring{is\_explicitly\_convertible\_v}{is\_explicitly\_convertible\_v}}
-{\footnotesize\ttfamily template$<$typename From , typename To $>$ \\
-constexpr bool utils\+::is\+\_\+explicitly\+\_\+convertible\+\_\+v = \mbox{\hyperlink{group__utilsexplicitly__convertible__to_structutils_1_1is__explicitly__convertible}{is\+\_\+explicitly\+\_\+convertible}}$<$From, To$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily \label{group__utilsexplicitly__convertible__to_gaeeeecd5e5e48d738f1f779d9b8f46dcc} 
+template$<$typename From, typename To$>$ \\
+bool utils\+::is\+\_\+explicitly\+\_\+convertible\+\_\+v = \mbox{\hyperlink{group__utilsexplicitly__convertible__to_structutils_1_1is__explicitly__convertible}{is\+\_\+explicitly\+\_\+convertible}}$<$From, To$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
 
 
 
-Definition at line \mbox{\hyperlink{type_8hpp_source_l00109}{109}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
+Definition at line \mbox{\hyperlink{type_8hpp_source_l00107}{107}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
 

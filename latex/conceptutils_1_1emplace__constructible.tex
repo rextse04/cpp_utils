@@ -1,5 +1,5 @@
-\hypertarget{conceptutils_1_1emplace__constructible}{}\doxysection{utils\+::emplace\+\_\+constructible Concept Reference}
-\label{conceptutils_1_1emplace__constructible}\index{utils::emplace\_constructible@{utils::emplace\_constructible}}
+\doxysection{utils\+::emplace\+\_\+constructible Concept Reference}
+\hypertarget{conceptutils_1_1emplace__constructible}{}\label{conceptutils_1_1emplace__constructible}\index{utils::emplace\_constructible@{utils::emplace\_constructible}}
 
 
 C++ named requirements\+: {\itshape Emplace\+Constructible}  
@@ -12,10 +12,10 @@ C++ named requirements\+: {\itshape Emplace\+Constructible}
 \doxysubsection{Concept definition}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} Allocator, \textcolor{keyword}{typename}... Args>}
-\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1emplace__constructible}{utils::emplace\_constructible}} =  \textcolor{keyword}{requires}(Allocator m, T* p, Args\&\&... args) \{}
-\DoxyCodeLine{        std::allocator\_traits<Allocator>::construct(m, p, \textcolor{keyword}{static\_cast<}Args\&\&\textcolor{keyword}{>}(args)...);}
-\DoxyCodeLine{    \}}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Allocator,\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptutils_1_1emplace__constructible}{utils::emplace\_constructible}}\ =\ \ \textcolor{keyword}{requires}(Allocator\ m,\ T*\ p,\ Args\&\&...\ args)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::allocator\_traits<Allocator>::construct(m,\ p,\ \textcolor{keyword}{static\_cast<}Args\&\&\textcolor{keyword}{>}(args)...);}
+\DoxyCodeLine{\ \ \ \ \}}
 
 \end{DoxyCode}
 

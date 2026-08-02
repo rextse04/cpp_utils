@@ -1,24 +1,24 @@
-\hypertarget{group__metaerase}{}\doxysection{utils\+::meta\+::erase}
-\label{group__metaerase}\index{utils::meta::erase@{utils::meta::erase}}
+\doxysection{utils\+::meta\+::erase}
+\hypertarget{group__metaerase}{}\label{group__metaerase}\index{utils::meta::erase@{utils::meta::erase}}
 
 
-Erases elements from a tuple type {\ttfamily Tuple} in the range \mbox{[}{\ttfamily Begin}, {\ttfamily End}).  
+A \href{Trait.html}{\texttt{ {\itshape Type\+Trait}}} that erases elements from a tuple type {\ttfamily Tuple} in the range \mbox{[}{\ttfamily Begin}, {\ttfamily End}).  
 
 
-\doxysubsection*{Classes}
+\doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{group__metaerase_structutils_1_1meta_1_1erase}{utils\+::meta\+::erase$<$ Tuple, Begin, End $>$}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Typedefs}
+\doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Begin, std\+::ptrdiff\+\_\+t End$>$ }\\using \mbox{\hyperlink{group__metaerase_ga57e2e26a9ed32b0384df07a98f53b377}{utils\+::meta\+::erase\+\_\+t}} = \mbox{\hyperlink{group__metaerase_structutils_1_1meta_1_1erase}{erase}}$<$ Tuple, Begin, End $>$\+::type
+{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Begin, std\+::ptrdiff\+\_\+t End$>$ }\\using \mbox{\hyperlink{group__metaerase_ga48bf47608e3b0de0f193ba4ed12dd12d}{utils\+::meta\+::erase\+\_\+t}} = \mbox{\hyperlink{group__metaerase_structutils_1_1meta_1_1erase}{erase}}$<$Tuple, Begin, End$>$\+::type
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Erases elements from a tuple type {\ttfamily Tuple} in the range \mbox{[}{\ttfamily Begin}, {\ttfamily End}). 
+A \href{Trait.html}{\texttt{ {\itshape Type\+Trait}}} that erases elements from a tuple type {\ttfamily Tuple} in the range \mbox{[}{\ttfamily Begin}, {\ttfamily End}). 
 
 Both {\ttfamily Begin} and {\ttfamily End} can be negative indices, which are normalized relative to the tuple size. 
 
@@ -39,19 +39,24 @@ Collaboration diagram for utils\+::meta\+::erase\texorpdfstring{$<$}{<} Tuple, B
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=201pt]{structutils_1_1meta_1_1erase__coll__graph}
+\includegraphics[width=200pt]{structutils_1_1meta_1_1erase__coll__graph}
 \end{center}
 \end{figure}
-\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{group__metaconcat}{utils\+::meta\+::concat$<$ slice\+\_\+t$<$ Tuple, 0, Begin $>$, slice\+\_\+t$<$ Tuple, End $>$ $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{group__metastrict__subset__of_gae0cc6b1113cbcb8e99c20146520ab37f}{type}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
-\mbox{\Hypertarget{group__metaerase_ga57e2e26a9ed32b0384df07a98f53b377}\label{group__metaerase_ga57e2e26a9ed32b0384df07a98f53b377}} 
-\index{utils::meta::erase@{utils::meta::erase}!erase\_t@{erase\_t}}
+\Hypertarget{group__metaerase_ga48bf47608e3b0de0f193ba4ed12dd12d}\index{utils::meta::erase@{utils::meta::erase}!erase\_t@{erase\_t}}
 \index{erase\_t@{erase\_t}!utils::meta::erase@{utils::meta::erase}}
 \doxysubsubsection{\texorpdfstring{erase\_t}{erase\_t}}
-{\footnotesize\ttfamily template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Begin, std\+::ptrdiff\+\_\+t End$>$ \\
-using \mbox{\hyperlink{group__metaerase_ga57e2e26a9ed32b0384df07a98f53b377}{utils\+::meta\+::erase\+\_\+t}} = typedef \mbox{\hyperlink{group__metaerase_structutils_1_1meta_1_1erase}{erase}}$<$Tuple, Begin, End$>$\+::type}
+{\footnotesize\ttfamily \label{group__metaerase_ga48bf47608e3b0de0f193ba4ed12dd12d} 
+template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Begin, std\+::ptrdiff\+\_\+t End$>$ \\
+using \mbox{\hyperlink{group__metaerase_ga48bf47608e3b0de0f193ba4ed12dd12d}{utils\+::meta\+::erase\+\_\+t}} = \mbox{\hyperlink{group__metaerase_structutils_1_1meta_1_1erase}{erase}}$<$Tuple, Begin, End$>$\+::type}
 
 
 

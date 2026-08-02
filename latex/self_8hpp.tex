@@ -1,8 +1,8 @@
-\hypertarget{self_8hpp}{}\doxysection{self.\+hpp File Reference}
-\label{self_8hpp}\index{self.hpp@{self.hpp}}
+\doxysection{self.\+hpp File Reference}
+\hypertarget{self_8hpp}{}\label{self_8hpp}\index{self.hpp@{self.hpp}}
 {\ttfamily \#include $<$type\+\_\+traits$>$}\newline
-{\ttfamily \#include \char`\"{}stateful\+\_\+meta.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}exception.\+hpp\char`\"{}}\newline
+{\ttfamily \#include "{}stateful\+\_\+meta.\+hpp"{}}\newline
+{\ttfamily \#include "{}exception.\+hpp"{}}\newline
 Include dependency graph for self.\+hpp\+:
 \nopagebreak
 \begin{figure}[H]
@@ -16,17 +16,17 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=151pt]{self_8hpp__dep__incl}
+\includegraphics[width=150pt]{self_8hpp__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsection*{Namespaces}
+\doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespaceutils}{utils}}
 \item 
 namespace \mbox{\hyperlink{namespaceutils_1_1meta}{utils\+::meta}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Macros}
+\doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{self_8hpp_a0fd91b8deec89b8d0a02352439b62ded}{UTILS\+\_\+\+FIND\+\_\+\+SELF}}
@@ -36,20 +36,20 @@ namespace \mbox{\hyperlink{namespaceutils_1_1meta}{utils\+::meta}}
 
 
 \doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{self_8hpp_a0fd91b8deec89b8d0a02352439b62ded}\label{self_8hpp_a0fd91b8deec89b8d0a02352439b62ded}} 
-\index{self.hpp@{self.hpp}!UTILS\_FIND\_SELF@{UTILS\_FIND\_SELF}}
+\Hypertarget{self_8hpp_a0fd91b8deec89b8d0a02352439b62ded}\index{self.hpp@{self.hpp}!UTILS\_FIND\_SELF@{UTILS\_FIND\_SELF}}
 \index{UTILS\_FIND\_SELF@{UTILS\_FIND\_SELF}!self.hpp@{self.hpp}}
 \doxysubsubsection{\texorpdfstring{UTILS\_FIND\_SELF}{UTILS\_FIND\_SELF}}
-{\footnotesize\ttfamily \#define UTILS\+\_\+\+FIND\+\_\+\+SELF}
+{\footnotesize\ttfamily \label{self_8hpp_a0fd91b8deec89b8d0a02352439b62ded} 
+\#define UTILS\+\_\+\+FIND\+\_\+\+SELF}
 
 {\bfseries Value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{    \textcolor{keyword}{struct }utils\_find\_self\_result\_;\(\backslash\)}
-\DoxyCodeLine{    consteval \textcolor{keyword}{auto} utils\_find\_self\_()\(\backslash\)}
-\DoxyCodeLine{    -\/> \textcolor{keyword}{decltype}(\mbox{\hyperlink{classutils_1_1meta_1_1define}{utils::meta::define}}<utils\_find\_self\_result\_, std::type\_identity<std::remove\_cvref\_t<\textcolor{keyword}{decltype}(*this)>>\{\}>\{\}) \{\(\backslash\)}
-\DoxyCodeLine{        throw \mbox{\hyperlink{classutils_1_1compile__error}{utils::compile\_error}}(\(\backslash\)}
-\DoxyCodeLine{            \textcolor{stringliteral}{"{}You are not supposed to call this method. See the documentation for UTILS\_FIND\_SELF."{}});\(\backslash\)}
-\DoxyCodeLine{    \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{struct\ }utils\_find\_self\_result\_;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{consteval}\ \textcolor{keyword}{auto}\ utils\_find\_self\_()\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ -\/>\ \textcolor{keyword}{decltype}(\mbox{\hyperlink{classutils_1_1meta_1_1define}{utils::meta::define}}<utils\_find\_self\_result\_,\ std::type\_identity<std::remove\_cvref\_t<\textcolor{keyword}{decltype}(*this)>>\{\}>\{\})\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ utils::compile\_error(\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}You\ are\ not\ supposed\ to\ call\ this\ method.\ See\ the\ documentation\ for\ UTILS\_FIND\_SELF."{}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -66,11 +66,11 @@ The program is ill-\/formed if the macro is not used inside a class declaration,
 
 Definition at line \mbox{\hyperlink{self_8hpp_source_l00015}{15}} of file \mbox{\hyperlink{self_8hpp_source}{self.\+hpp}}.
 
-\mbox{\Hypertarget{self_8hpp_a379c3395d69445241a0099fdaf0e68de}\label{self_8hpp_a379c3395d69445241a0099fdaf0e68de}} 
-\index{self.hpp@{self.hpp}!UTILS\_FIND\_SELF\_TYPE@{UTILS\_FIND\_SELF\_TYPE}}
+\Hypertarget{self_8hpp_a379c3395d69445241a0099fdaf0e68de}\index{self.hpp@{self.hpp}!UTILS\_FIND\_SELF\_TYPE@{UTILS\_FIND\_SELF\_TYPE}}
 \index{UTILS\_FIND\_SELF\_TYPE@{UTILS\_FIND\_SELF\_TYPE}!self.hpp@{self.hpp}}
 \doxysubsubsection{\texorpdfstring{UTILS\_FIND\_SELF\_TYPE}{UTILS\_FIND\_SELF\_TYPE}}
-{\footnotesize\ttfamily \#define UTILS\+\_\+\+FIND\+\_\+\+SELF\+\_\+\+TYPE~typename decltype(get(\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{utils\+::meta\+::const\+\_\+var}}$<$utils\+\_\+find\+\_\+self\+\_\+result\+\_\+$>$\{\}))\+::type}
+{\footnotesize\ttfamily \label{self_8hpp_a379c3395d69445241a0099fdaf0e68de} 
+\#define UTILS\+\_\+\+FIND\+\_\+\+SELF\+\_\+\+TYPE~typename decltype(get(\mbox{\hyperlink{classutils_1_1meta_1_1const__var}{utils\+::meta\+::const\+\_\+var}}$<$utils\+\_\+find\+\_\+self\+\_\+result\+\_\+$>$\{\}))\+::type}
 
 
 

@@ -1,24 +1,24 @@
-\hypertarget{group__metareplace}{}\doxysection{utils\+::meta\+::replace}
-\label{group__metareplace}\index{utils::meta::replace@{utils::meta::replace}}
+\doxysection{utils\+::meta\+::replace}
+\hypertarget{group__metareplace}{}\label{group__metareplace}\index{utils::meta::replace@{utils::meta::replace}}
 
 
-Replaces the element at index {\ttfamily Idx} in a tuple type {\ttfamily Tuple} with type {\ttfamily T}.  
+A \href{Trait.html}{\texttt{ {\itshape Type\+Trait}}} that replaces the element at index {\ttfamily Idx} in a tuple type {\ttfamily Tuple} with type {\ttfamily T}.  
 
 
-\doxysubsection*{Classes}
+\doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{group__metareplace_structutils_1_1meta_1_1replace}{utils\+::meta\+::replace$<$ Tuple, Idx, T $>$}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Typedefs}
+\doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx, typename T $>$ }\\using \mbox{\hyperlink{group__metareplace_ga44e3856c9561e053226ad2c473572a43}{utils\+::meta\+::replace\+\_\+t}} = \mbox{\hyperlink{group__metareplace_structutils_1_1meta_1_1replace}{replace}}$<$ Tuple, Idx, T $>$\+::type
+{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx, typename T$>$ }\\using \mbox{\hyperlink{group__metareplace_ga5707ead199d6ae662fdfce27928d5a61}{utils\+::meta\+::replace\+\_\+t}} = \mbox{\hyperlink{group__metareplace_structutils_1_1meta_1_1replace}{replace}}$<$Tuple, Idx, T$>$\+::type
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Replaces the element at index {\ttfamily Idx} in a tuple type {\ttfamily Tuple} with type {\ttfamily T}. 
+A \href{Trait.html}{\texttt{ {\itshape Type\+Trait}}} that replaces the element at index {\ttfamily Idx} in a tuple type {\ttfamily Tuple} with type {\ttfamily T}. 
 
 The index {\ttfamily Idx} can be negative, which is normalized relative to the tuple size. 
 
@@ -39,19 +39,24 @@ Collaboration diagram for utils\+::meta\+::replace\texorpdfstring{$<$}{<} Tuple,
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{structutils_1_1meta_1_1replace__coll__graph}
+\includegraphics[width=348pt]{structutils_1_1meta_1_1replace__coll__graph}
 \end{center}
 \end{figure}
-\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{group__metaconcat}{utils\+::meta\+::concat$<$ slice\+\_\+t$<$ Tuple, 0, Idx $>$, std\+::tuple$<$ T $>$, slice\+\_\+t$<$ Tuple, Idx+1 $>$ $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{group__metastrict__subset__of_gae0cc6b1113cbcb8e99c20146520ab37f}{type}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
-\mbox{\Hypertarget{group__metareplace_ga44e3856c9561e053226ad2c473572a43}\label{group__metareplace_ga44e3856c9561e053226ad2c473572a43}} 
-\index{utils::meta::replace@{utils::meta::replace}!replace\_t@{replace\_t}}
+\Hypertarget{group__metareplace_ga5707ead199d6ae662fdfce27928d5a61}\index{utils::meta::replace@{utils::meta::replace}!replace\_t@{replace\_t}}
 \index{replace\_t@{replace\_t}!utils::meta::replace@{utils::meta::replace}}
 \doxysubsubsection{\texorpdfstring{replace\_t}{replace\_t}}
-{\footnotesize\ttfamily template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx, typename T $>$ \\
-using \mbox{\hyperlink{group__metareplace_ga44e3856c9561e053226ad2c473572a43}{utils\+::meta\+::replace\+\_\+t}} = typedef \mbox{\hyperlink{group__metareplace_structutils_1_1meta_1_1replace}{replace}}$<$Tuple, Idx, T$>$\+::type}
+{\footnotesize\ttfamily \label{group__metareplace_ga5707ead199d6ae662fdfce27928d5a61} 
+template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx, typename T$>$ \\
+using \mbox{\hyperlink{group__metareplace_ga5707ead199d6ae662fdfce27928d5a61}{utils\+::meta\+::replace\+\_\+t}} = \mbox{\hyperlink{group__metareplace_structutils_1_1meta_1_1replace}{replace}}$<$Tuple, Idx, T$>$\+::type}
 
 
 

@@ -13,5 +13,5 @@ var containers_2type_8hpp =
     [ "utils::erasable_from", "conceptutils_1_1erasable__from.html", null ],
     [ "utils::container_three_way_comparable", "conceptutils_1_1container__three__way__comparable.html", null ],
     [ "utils::searchable_in", "conceptutils_1_1searchable__in.html", null ],
-    [ "make_search_key", "containers_2type_8hpp.html#afb8127674294a339f6ccc7bbcd1640da", null ]
+    [ "utils::make_search_key", "namespaceutils.html#afb8127674294a339f6ccc7bbcd1640da", null ]
 ];

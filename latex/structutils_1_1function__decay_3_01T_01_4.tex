@@ -1,5 +1,5 @@
-\hypertarget{structutils_1_1function__decay_3_01T_01_4}{}\doxysection{utils\+::function\+\_\+decay\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Reference}
-\label{structutils_1_1function__decay_3_01T_01_4}\index{utils::function\_decay$<$ T $>$@{utils::function\_decay$<$ T $>$}}
+\doxysection{utils\+::function\+\_\+decay\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{structutils_1_1function__decay_3_01T_01_4}{}\label{structutils_1_1function__decay_3_01T_01_4}\index{utils::function\_decay$<$ T $>$@{utils::function\_decay$<$ T $>$}}
 
 
 {\ttfamily \#include $<$functional.\+hpp$>$}
@@ -17,6 +17,9 @@ Collaboration diagram for utils\+::function\+\_\+decay\texorpdfstring{$<$}{<} T 
 
 
 \doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+requires requires \{ requires !std\+::is\+\_\+same\+\_\+v$<$std\+::remove\+\_\+pointer\+\_\+t$<$std\+::remove\+\_\+cvref\+\_\+t$<$T$>$$>$, T$>$; typename \mbox{\hyperlink{structutils_1_1function__decay}{function\+\_\+decay}}$<$std\+::remove\+\_\+pointer\+\_\+t$<$std\+::remove\+\_\+cvref\+\_\+t$<$T$>$$>$$>$\+::type; \}\newline
+struct utils\+::function\+\_\+decay$<$ T $>$}
 
 
 Definition at line \mbox{\hyperlink{functional_8hpp_source_l00245}{245}} of file \mbox{\hyperlink{functional_8hpp_source}{functional.\+hpp}}.

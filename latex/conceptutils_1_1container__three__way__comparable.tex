@@ -1,5 +1,5 @@
-\hypertarget{conceptutils_1_1container__three__way__comparable}{}\doxysection{utils\+::container\+\_\+three\+\_\+way\+\_\+comparable Concept Reference}
-\label{conceptutils_1_1container__three__way__comparable}\index{utils::container\_three\_way\_comparable@{utils::container\_three\_way\_comparable}}
+\doxysection{utils\+::container\+\_\+three\+\_\+way\+\_\+comparable Concept Reference}
+\hypertarget{conceptutils_1_1container__three__way__comparable}{}\label{conceptutils_1_1container__three__way__comparable}\index{utils::container\_three\_way\_comparable@{utils::container\_three\_way\_comparable}}
 
 
 Precondition of optional container requirements.  
@@ -12,15 +12,15 @@ Precondition of optional container requirements.
 \doxysubsection{Concept definition}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} C>}
-\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1container__three__way__comparable}{utils::container\_three\_way\_comparable}} =  (}
-\DoxyCodeLine{        std::three\_way\_comparable<typename C::value\_type> ||}
-\DoxyCodeLine{        \textcolor{keyword}{requires} (\textcolor{keyword}{typename} C::value\_type t, \textcolor{keyword}{const} \textcolor{keyword}{typename} C::value\_type ct) \{}
-\DoxyCodeLine{            \{ t < t \} -\/> boolean\_testable;}
-\DoxyCodeLine{            \{ t < ct \} -\/> boolean\_testable;}
-\DoxyCodeLine{            \{ ct < t \} -\/> boolean\_testable;}
-\DoxyCodeLine{            \{ ct < ct \} -\/> boolean\_testable;}
-\DoxyCodeLine{        \})}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ C>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptutils_1_1container__three__way__comparable}{utils::container\_three\_way\_comparable}}\ =\ \ (}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::three\_way\_comparable<typename\ C::value\_type>\ ||}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ (\textcolor{keyword}{typename}\ C::value\_type\ t,\ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ C::value\_type\ ct)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ t\ <\ t\ \}\ -\/>\ \mbox{\hyperlink{conceptutils_1_1boolean__testable}{boolean\_testable}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ t\ <\ ct\ \}\ -\/>\ boolean\_testable;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ ct\ <\ t\ \}\ -\/>\ \mbox{\hyperlink{conceptutils_1_1boolean__testable}{boolean\_testable}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ ct\ <\ ct\ \}\ -\/>\ \mbox{\hyperlink{conceptutils_1_1boolean__testable}{boolean\_testable}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \})}
 
 \end{DoxyCode}
 

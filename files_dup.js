@@ -8,9 +8,7 @@ var files_dup =
     [ "compare.hpp", "compare_8hpp.html", "compare_8hpp" ],
     [ "concurrency.hpp", "concurrency_8hpp.html", "concurrency_8hpp" ],
     [ "dynamic.hpp", "dynamic_8hpp.html", null ],
-    [ "exception.hpp", "exception_8hpp.html", [
-      [ "utils::compile_error", "classutils_1_1compile__error.html", "classutils_1_1compile__error" ]
-    ] ],
+    [ "exception.hpp", "exception_8hpp.html", "exception_8hpp" ],
     [ "functional.hpp", "functional_8hpp.html", "functional_8hpp" ],
     [ "integer.hpp", "integer_8hpp.html", "integer_8hpp" ],
     [ "iterator.hpp", "iterator_8hpp.html", "iterator_8hpp" ],

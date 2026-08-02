@@ -1,0 +1,30 @@
+\doxysection{Named Requirements\+: \texorpdfstring{$<$}{<}i\texorpdfstring{$>$}{>}Integer\+Behavior\+Profile\texorpdfstring{$<$}{<}/i\texorpdfstring{$>$}{>}}
+\hypertarget{IntegerBehaviorProfile}{}\label{IntegerBehaviorProfile}\index{Named Requirements: $<$i$>$IntegerBehaviorProfile$<$/i$>$@{Named Requirements: $<$i$>$IntegerBehaviorProfile$<$/i$>$}}
+\label{IntegerBehaviorProfile_md_docs_2named__reqs_2IntegerBehaviorProfile}%
+\Hypertarget{IntegerBehaviorProfile_md_docs_2named__reqs_2IntegerBehaviorProfile}%
+
+
+An {\itshape Integer\+Behavior\+Profile} encapsulates how an integer wrapper type (such as {\ttfamily \doxylink{structutils_1_1integer}{utils\+::integer}}) ought to behave under a specified set of operations involving integer-\/like types.\hypertarget{IntegerBehaviorProfile_autotoc_md8}{}\doxysubsection{\texorpdfstring{Requirements}{Requirements}}\label{IntegerBehaviorProfile_autotoc_md8}
+An {\itshape Integer\+Behavior\+Profile\+Template} is a class template declared as such by the library in the following format\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <op\_functors\_1\ Funcs1,\ ...,\ op\_functors\_N\ FuncsN>}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }IntegerBehaviorProfileTemplate\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ funcs\_1\ =\ Funcs1;}
+\DoxyCodeLine{\ \ \ \ ...}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ funcs\_n\ =\ FuncsN;}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+ where every {\ttfamily op\+\_\+functors\+\_\+I} is an \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}}. The names of template parameters and member variables are only for illustration and may appear otherwise in implementation.
+
+Let {\ttfamily IT} be a theoretical collection of wrapper types such that {\ttfamily IT\texorpdfstring{$<$}{<}Int\texorpdfstring{$>$}{>}} represents a unique wrapper around {\ttfamily Int} in {\ttfamily IT} for any integer-\/like type {\ttfamily Int}. In addition, every {\ttfamily IT\texorpdfstring{$<$}{<}Int\texorpdfstring{$>$}{>}} (denoted {\ttfamily I} below) satisfies the following properties\+:
+\begin{DoxyEnumerate}
+\item {\ttfamily I} has an instance variable of type {\ttfamily Int} that represents the value of the instance. (The variable is called the {\itshape underlying object} of the instance.)
+\item {\ttfamily I\+::underlying\+\_\+type} is {\ttfamily Int}.
+\item For every integer-\/like type {\ttfamily U}, let {\ttfamily u} be a (possibly cv-\/qualified) object of type {\ttfamily U} and {\ttfamily w} be a (possibly cv-\/qualified) object of type {\ttfamily Int\texorpdfstring{$<$}{<}U\texorpdfstring{$>$}{>}}. Denote by {\ttfamily R(obj)} a reference (of any value category) to an object {\ttfamily obj}. Then, {\ttfamily I\+::to\+\_\+underlying(\+R(u))} returns {\ttfamily R(u)} and {\ttfamily I\+::to\+\_\+underlying(\+R(w))} returns {\ttfamily R(v)}, where {\ttfamily v} is the underlying object of {\ttfamily w}. {\ttfamily I\+::to\+\_\+underlying} is not overloaded for any other types.
+\item {\ttfamily I\+::template rebind\texorpdfstring{$<$}{<}U\texorpdfstring{$>$}{>}} gives {\ttfamily IT\texorpdfstring{$<$}{<}U\texorpdfstring{$>$}{>}} for any integer-\/like type {\ttfamily U}.
+\item Given a (possibly cv-\/qualified) object {\ttfamily w} of type {\ttfamily I}, {\ttfamily +w} gives a copy of the underlying object.
+\item {\ttfamily std\+::numeric\+\_\+limits} is meaningfully specialized for {\ttfamily IT\texorpdfstring{$<$}{<}Int\texorpdfstring{$>$}{>}}.
+\end{DoxyEnumerate}
+
+Then, an instance of an {\itshape Integer\+Behavior\+Profile\+Template} is an {\itshape Integer\+Behavior\+Profile} if {\ttfamily FuncsI} is an \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set}}} for every type in {\ttfamily IT}, for every $I\in[N]$. 

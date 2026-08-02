@@ -1,10 +1,10 @@
-\hypertarget{containers_2type_8hpp}{}\doxysection{containers/type.hpp File Reference}
-\label{containers_2type_8hpp}\index{containers/type.hpp@{containers/type.hpp}}
+\doxysection{containers/type.hpp File Reference}
+\hypertarget{containers_2type_8hpp}{}\label{containers_2type_8hpp}\index{containers/type.hpp@{containers/type.hpp}}
 {\ttfamily \#include $<$type\+\_\+traits$>$}\newline
 {\ttfamily \#include $<$concepts$>$}\newline
 {\ttfamily \#include $<$memory$>$}\newline
 {\ttfamily \#include $<$compare$>$}\newline
-{\ttfamily \#include \char`\"{}memory.\+hpp\char`\"{}}\newline
+{\ttfamily \#include "{}memory.\+hpp"{}}\newline
 Include dependency graph for type.\+hpp\+:
 \nopagebreak
 \begin{figure}[H]
@@ -21,12 +21,12 @@ This graph shows which files directly or indirectly include this file\+:
 \includegraphics[width=182pt]{containers_2type_8hpp__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsection*{Namespaces}
+\doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespaceutils}{utils}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Concepts}
+\doxysubsubsection*{Concepts}
 \begin{DoxyCompactItemize}
 \item 
 concept \mbox{\hyperlink{conceptutils_1_1container__allocator}{utils\+::container\+\_\+allocator}}
@@ -55,8 +55,8 @@ concept \mbox{\hyperlink{conceptutils_1_1container__three__way__comparable}{util
 \begin{DoxyCompactList}\small\item\em Precondition of optional container requirements. \end{DoxyCompactList}\item 
 concept \mbox{\hyperlink{conceptutils_1_1searchable__in}{utils\+::searchable\+\_\+in}}
 \begin{DoxyCompactList}\small\item\em Checks if {\ttfamily Key} can be used to query {\ttfamily C}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Functions}
+\doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename C , searchable\+\_\+in$<$ C $>$ Key$>$ }\\constexpr decltype(auto) \mbox{\hyperlink{namespaceutils_afb8127674294a339f6ccc7bbcd1640da}{utils\+::make\+\_\+search\+\_\+key}} (const Key \&key)
+{\footnotesize template$<$typename C, searchable\+\_\+in$<$ C $>$ Key$>$ }\\constexpr decltype(auto) \mbox{\hyperlink{namespaceutils_afb8127674294a339f6ccc7bbcd1640da}{utils\+::make\+\_\+search\+\_\+key}} (const Key \&\mbox{\hyperlink{classutils_1_1key}{key}})
 \begin{DoxyCompactList}\small\item\em Make a search key for container {\ttfamily C} from {\ttfamily Key}, converting if necessary. \end{DoxyCompactList}\end{DoxyCompactItemize}

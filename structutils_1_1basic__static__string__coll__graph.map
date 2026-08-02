@@ -1,4 +1,5 @@
 <map id="utils::basic_static_string&lt; CharT, N, Traits &gt;" name="utils::basic_static_string&lt; CharT, N, Traits &gt;">
-<area shape="rect" id="node1" title="An owning string defined at compile time." alt="" coords="5,109,180,151"/>
-<area shape="rect" id="node2" title=" " alt="" coords="14,5,171,61"/>
+<area shape="rect" id="Node000001" title="An owning string defined at compile time." alt="" coords="6,94,180,135"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,181,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,62,96,94,90,94,90,62"/>
 </map>

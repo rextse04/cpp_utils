@@ -17,7 +17,7 @@ var classutils_1_1transform__iterator =
     [ "operator->", "classutils_1_1transform__iterator.html#abb1c17b2c30973c29aba9208aed4a7f2", null ],
     [ "operator[]", "classutils_1_1transform__iterator.html#a18e099ff0dfdeaa31a9c66319bd459b3", null ],
     [ "transformer", "classutils_1_1transform__iterator.html#a0ea956af4882ae579fc0f13421aed67a", null ],
-    [ "operator+", "classutils_1_1transform__iterator.html#a06c4dac76fb27d97ecc5d8a9f6515a8f", null ],
-    [ "operator+", "classutils_1_1transform__iterator.html#a312c20b83d5057175047976940bdd58d", null ],
-    [ "operator-", "classutils_1_1transform__iterator.html#adcc1fe8001b1200d2d04a80194f96aef", null ]
+    [ "operator+", "classutils_1_1transform__iterator.html#a9f7695ceeaf3ed67ddadabd7a87896e5", null ],
+    [ "operator+", "classutils_1_1transform__iterator.html#ae7eb01c8574fbac092f7f8026337eba2", null ],
+    [ "operator-", "classutils_1_1transform__iterator.html#a2445040493dc1d1178e6f6bc07d5cf51", null ]
 ];

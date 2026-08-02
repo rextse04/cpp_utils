@@ -1,4 +1,5 @@
 <map id="utils::integral_op_functors&lt; Plus, Minus, Mul, Div, Mod, BinaryTraits &gt;" name="utils::integral_op_functors&lt; Plus, Minus, Mul, Div, Mod, BinaryTraits &gt;">
-<area shape="rect" id="node1" title="OperatorFunctorSetTemplate for utils::integral_ops." alt="" coords="5,109,196,165"/>
-<area shape="rect" id="node2" href="$structutils_1_1default__binary__op__traits.html" title="The default trait set for binary operators, except assignment and prefix operators." alt="" coords="35,5,167,47"/>
+<area shape="rect" id="Node000001" title="OperatorFunctorSetTemplate for utils::integral_ops." alt="" coords="5,109,196,165"/>
+<area shape="rect" id="Node000002" href="$structutils_1_1default__binary__op__traits.html" title="The default trait set for binary operators, except assignment and prefix operators." alt="" coords="35,5,166,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,62,103,109,98,109,98,62"/>
 </map>

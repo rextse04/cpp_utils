@@ -5,7 +5,7 @@ var structutils_1_1interval =
     [ "compare", "group__utilsintervalcomparison.html#gab25eb88158269045c97d7649d0222dd5", null ],
     [ "contains", "structutils_1_1interval.html#a2b616d8f95af510e2bd97ae77a4a4ca2", null ],
     [ "empty", "structutils_1_1interval.html#a8f939b3442aeb1b8011773e9be42bedb", null ],
-    [ "intersection_with", "structutils_1_1interval.html#a0eac8db5d70e12c7cb5f4e161e3ec2f1", null ],
+    [ "intersection_with", "structutils_1_1interval.html#acea4764f41d8ddc544925f40f2de34c7", null ],
     [ "intersection_with", "structutils_1_1interval.html#a45eb22a52645446e31be3c52751fde9f", null ],
     [ "operator<=>", "group__utilsintervalcomparison.html#ga25e12e71ad43636f184197a1329500df", null ],
     [ "operator==", "structutils_1_1interval.html#afba4323d395fd4ab185cc9df575c06ca", null ],

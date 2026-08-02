@@ -1,3 +1,27 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$group__utilsapply__qualifiers.html#structutils_1_1apply__qualifiers" title=" " alt="" coords="5,5,145,47"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,413,110,438"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="198,229,342,270"/>
+<area shape="poly" id="edge22_Node000000_Node000001" title=" " alt="" coords="68,397,102,338,126,306,156,279,197,260,199,265,159,284,130,310,106,341,73,400"/>
+<area shape="rect" id="Node000007" href="$group__utilsis__template__instance.html#structutils_1_1is__template__instance_3_01Tmpl_00_01Tmpl_3_01Ts_8_8_8_01_4_01_4" title=" " alt="" coords="194,294,347,350"/>
+<area shape="poly" id="edge24_Node000000_Node000007" title=" " alt="" coords="87,401,156,359,192,344,194,349,159,364,90,406"/>
+<area shape="rect" id="Node000008" href="$group__metais__tuple.html#structutils_1_1meta_1_1is__tuple_3_01std_1_1tuple_3_01Ts_8_8_8_01_4_01_4" title=" " alt="" coords="200,373,341,414"/>
+<area shape="poly" id="edge25_Node000000_Node000008" title=" " alt="" coords="125,413,199,402,199,407,126,418"/>
+<area shape="rect" id="Node000009" href="$structutils_1_1always__false.html" title="A ValueTrait that is always false_type, regardless of template arguments." alt="" coords="207,439,334,479"/>
+<area shape="poly" id="edge26_Node000000_Node000009" title=" " alt="" coords="126,434,207,447,206,452,125,439"/>
+<area shape="rect" id="Node000010" href="$group__utilsis__template__instance.html#structutils_1_1is__template__instance" title=" " alt="" coords="196,503,344,559"/>
+<area shape="poly" id="edge27_Node000000_Node000010" title=" " alt="" coords="90,446,159,489,197,505,195,510,156,493,87,450"/>
+<area shape="rect" id="Node000011" href="$group__metais__tuple.html#structutils_1_1meta_1_1is__tuple" title=" " alt="" coords="190,584,351,609"/>
+<area shape="poly" id="edge28_Node000000_Node000011" title=" " alt="" coords="72,452,105,512,130,543,159,569,190,584,188,588,156,573,126,547,101,515,67,454"/>
+<area shape="rect" id="Node000002" href="$group__is__integer__like.html#structutils_1_1is__integer__like" title=" " alt="" coords="431,237,595,262"/>
+<area shape="poly" id="edge23_Node000001_Node000002" title=" " alt="" coords="358,247,431,247,431,252,358,252"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="8,201,107,226"/>
+<area shape="poly" id="edge32_Node000003_Node000001" title=" " alt="" coords="123,222,198,235,197,240,122,227"/>
+<area shape="poly" id="edge33_Node000003_Node000007" title=" " alt="" coords="89,234,122,257,159,279,194,295,192,300,156,284,119,262,86,238"/>
+<area shape="poly" id="edge34_Node000003_Node000008" title=" " alt="" coords="72,240,106,301,130,333,159,360,179,371,200,379,198,384,176,376,156,364,126,336,101,304,68,242"/>
+<area shape="rect" id="Node000004" href="$structutils_1_1always__true.html" title="A ValueTrait that is always true_type, regardless of template arguments." alt="" coords="210,5,330,46"/>
+<area shape="poly" id="edge29_Node000003_Node000004" title=" " alt="" coords="67,185,100,120,125,85,156,56,182,41,209,32,211,37,184,46,159,60,129,89,104,123,71,188"/>
+<area shape="rect" id="Node000005" href="$structutils_1_1default__binary__op__traits_1_1constraint.html" title=" " alt="" coords="158,70,383,126"/>
+<area shape="poly" id="edge30_Node000003_Node000005" title=" " alt="" coords="83,188,117,161,156,135,180,124,183,129,159,140,120,165,86,192"/>
+<area shape="rect" id="Node000006" href="$structutils_1_1default__unary__op__traits_1_1constraint.html" title=" " alt="" coords="200,150,341,206"/>
+<area shape="poly" id="edge31_Node000003_Node000006" title=" " alt="" coords="122,200,199,187,200,192,122,205"/>
 </map>

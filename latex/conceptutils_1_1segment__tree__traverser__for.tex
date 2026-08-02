@@ -1,5 +1,5 @@
-\hypertarget{conceptutils_1_1segment__tree__traverser__for}{}\doxysection{utils\+::segment\+\_\+tree\+\_\+traverser\+\_\+for Concept Reference}
-\label{conceptutils_1_1segment__tree__traverser__for}\index{utils::segment\_tree\_traverser\_for@{utils::segment\_tree\_traverser\_for}}
+\doxysection{utils\+::segment\+\_\+tree\+\_\+traverser\+\_\+for Concept Reference}
+\hypertarget{conceptutils_1_1segment__tree__traverser__for}{}\label{conceptutils_1_1segment__tree__traverser__for}\index{utils::segment\_tree\_traverser\_for@{utils::segment\_tree\_traverser\_for}}
 
 
 Specifies that {\ttfamily T} is a traverser for {\ttfamily segment\+\_\+tree} {\ttfamily ST}.  
@@ -12,10 +12,10 @@ Specifies that {\ttfamily T} is a traverser for {\ttfamily segment\+\_\+tree} {\
 \doxysubsection{Concept definition}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} ST>}
-\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1segment__tree__traverser__for}{utils::segment\_tree\_traverser\_for}} =  \textcolor{keyword}{requires} (T traverser, \textcolor{keyword}{const} ST\& st, \textcolor{keyword}{const} \textcolor{keyword}{typename} ST::node\_info\& info) \{}
-\DoxyCodeLine{        \{ traverser(st, info) \} -\/> std::convertible\_to<segment\_tree\_traverse\_direction>;}
-\DoxyCodeLine{    \}}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ ST>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptutils_1_1segment__tree__traverser__for}{utils::segment\_tree\_traverser\_for}}\ =\ \ \textcolor{keyword}{requires}\ (T\ traverser,\ \textcolor{keyword}{const}\ ST\&\ st,\ \textcolor{keyword}{const}\ \textcolor{keyword}{typename}\ ST::node\_info\&\ info)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ traverser(st,\ info)\ \}\ -\/>\ std::convertible\_to<segment\_tree\_traverse\_direction>;}
+\DoxyCodeLine{\ \ \ \ \}}
 
 \end{DoxyCode}
 

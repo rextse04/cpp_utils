@@ -1,6 +1,6 @@
-\hypertarget{namespaceutils}{}\doxysection{utils Namespace Reference}
-\label{namespaceutils}\index{utils@{utils}}
-\doxysubsection*{Namespaces}
+\doxysection{utils Namespace Reference}
+\hypertarget{namespaceutils}{}\label{namespaceutils}\index{utils@{utils}}
+\doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespaceutils_1_1bit__behavior}{bit\+\_\+behavior}}
@@ -17,15 +17,15 @@ namespace \mbox{\hyperlink{namespaceutils_1_1shift__behavior}{shift\+\_\+behavio
 \begin{DoxyCompactList}\small\item\em Common strategies for bit shifts. \end{DoxyCompactList}\item 
 namespace \mbox{\hyperlink{namespaceutils_1_1static__string__literals}{static\+\_\+string\+\_\+literals}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Classes}
+\doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structutils_1_1aligned__t}{aligned\+\_\+t}}
 \begin{DoxyCompactList}\small\item\em A trivial class type that is aligned to {\ttfamily Alignment}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1always__false}{always\+\_\+false}}
-\begin{DoxyCompactList}\small\item\em A trait that is always {\ttfamily false\+\_\+type}, regardless of template arguments. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A \href{Trait.html}{\texttt{ {\itshape Value\+Trait}}} that is always {\ttfamily false\+\_\+type}, regardless of template arguments. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1always__true}{always\+\_\+true}}
-\begin{DoxyCompactList}\small\item\em A trait that is always {\ttfamily true\+\_\+type}, regardless of template arguments. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A \href{Trait.html}{\texttt{ {\itshape Value\+Trait}}} that is always {\ttfamily true\+\_\+type}, regardless of template arguments. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{group__utilsapply__qualifiers_structutils_1_1apply__qualifiers}{apply\+\_\+qualifiers}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1arguments__of}{arguments\+\_\+of}}
@@ -33,7 +33,7 @@ struct \mbox{\hyperlink{structutils_1_1arguments__of}{arguments\+\_\+of}}
 struct \mbox{\hyperlink{structutils_1_1arguments__of_3_01R_07Args_8_8_8_08_4}{arguments\+\_\+of$<$ R(\+Args...)$>$}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1arithmetic__ops}{arithmetic\+\_\+ops}}
-\begin{DoxyCompactList}\small\item\em A convenience template inheriting from {\ttfamily \mbox{\hyperlink{structutils_1_1integral__full__ops}{utils\+::integral\+\_\+full\+\_\+ops}}}, {\ttfamily \mbox{\hyperlink{structutils_1_1bit__full__ops}{utils\+::bit\+\_\+full\+\_\+ops}}}, {\ttfamily \mbox{\hyperlink{structutils_1_1shift__full__ops}{utils\+::shift\+\_\+full\+\_\+ops}}}, {\ttfamily \mbox{\hyperlink{structutils_1_1sign__ops}{utils\+::sign\+\_\+ops}}} and {\ttfamily \mbox{\hyperlink{structutils_1_1fix__ops}{utils\+::fix\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A convenience template inheriting from {\ttfamily \doxylink{structutils_1_1integral__full__ops}{utils\+::integral\+\_\+full\+\_\+ops}}, {\ttfamily \doxylink{structutils_1_1bit__full__ops}{utils\+::bit\+\_\+full\+\_\+ops}}, {\ttfamily \doxylink{structutils_1_1shift__full__ops}{utils\+::shift\+\_\+full\+\_\+ops}}, {\ttfamily \doxylink{structutils_1_1sign__ops}{utils\+::sign\+\_\+ops}} and {\ttfamily \doxylink{structutils_1_1fix__ops}{utils\+::fix\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1arity}{arity}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1arity__of}{arity\+\_\+of}}
@@ -47,19 +47,19 @@ struct \mbox{\hyperlink{structutils_1_1asg__wrap_3_01Op_00_01void_01_4}{asg\+\_\
 struct \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}
 \begin{DoxyCompactList}\small\item\em An owning string defined at compile time. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}
-\begin{DoxyCompactList}\small\item\em Identical interface to {\ttfamily std\+::basic\+\_\+string\+\_\+view}, except that this class can only be constructed at compile time, thus ensuring that it refers to a \char`\"{}static string\char`\"{}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Identical interface to {\ttfamily std\+::basic\+\_\+string\+\_\+view}, except that this class can only be constructed at compile time, thus ensuring that it refers to a "{}static string"{}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1bind}{bind}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1bit__asg__op__functors}{bit\+\_\+asg\+\_\+op\+\_\+functors}}
-\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \mbox{\hyperlink{structutils_1_1bit__asg__ops}{utils\+::bit\+\_\+asg\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \doxylink{structutils_1_1bit__asg__ops}{utils\+::bit\+\_\+asg\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1bit__asg__ops}{bit\+\_\+asg\+\_\+ops}}
-\begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a \&= b}, {\ttfamily a $\vert$= b} and {\ttfamily a $^\wedge$= b}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a \&= b}, {\ttfamily a \texorpdfstring{$\vert$}{|}= b} and {\ttfamily a \texorpdfstring{$^\wedge$}{\string^}= b}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1bit__full__ops}{bit\+\_\+full\+\_\+ops}}
-\begin{DoxyCompactList}\small\item\em A convenience template inheriting from {\ttfamily \mbox{\hyperlink{structutils_1_1bit__ops}{utils\+::bit\+\_\+ops}}} and {\ttfamily \mbox{\hyperlink{structutils_1_1bit__asg__ops}{utils\+::bit\+\_\+asg\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A convenience template inheriting from {\ttfamily \doxylink{structutils_1_1bit__ops}{utils\+::bit\+\_\+ops}} and {\ttfamily \doxylink{structutils_1_1bit__asg__ops}{utils\+::bit\+\_\+asg\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1bit__op__functors}{bit\+\_\+op\+\_\+functors}}
 \begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily utils\+::bit\+\_\+op}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1bit__ops}{bit\+\_\+ops}}
-\begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a \& b}, {\ttfamily a $\vert$ b}, {\ttfamily a $^\wedge$ b} and {\ttfamily $\sim$t}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a \& b}, {\ttfamily a \texorpdfstring{$\vert$}{|} b}, {\ttfamily a \texorpdfstring{$^\wedge$}{\string^} b} and {\ttfamily \texorpdfstring{$\sim$}{\string~}t}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1cast}{cast}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1cast_3_01To_00_01void_01_4}{cast$<$ To, void $>$}}
@@ -93,7 +93,7 @@ struct \mbox{\hyperlink{group__epsilon__of_structutils_1_1epsilon__of}{epsilon\+
 class \mbox{\hyperlink{classutils_1_1filter__iterator}{filter\+\_\+iterator}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1fix__op__functors}{fix\+\_\+op\+\_\+functors}}
-\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \mbox{\hyperlink{structutils_1_1fix__ops}{utils\+::fix\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \doxylink{structutils_1_1fix__ops}{utils\+::fix\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1fix__ops}{fix\+\_\+ops}}
 \begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily ++t}, {\ttfamily t++}, {\ttfamily -\/-\/t} and {\ttfamily t-\/-\/}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{group__utilsfollow_structutils_1_1follow}{follow}}
@@ -109,15 +109,15 @@ struct \mbox{\hyperlink{structutils_1_1function__decay_3_01T_01_4}{function\+\_\
 struct \mbox{\hyperlink{structutils_1_1integer}{integer}}
 \begin{DoxyCompactList}\small\item\em An integer wrapper with added type safety and customizable behavior in arithmetic operations. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1integral__asg__op__functors}{integral\+\_\+asg\+\_\+op\+\_\+functors}}
-\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \mbox{\hyperlink{structutils_1_1integral__asg__ops}{utils\+::integral\+\_\+asg\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \doxylink{structutils_1_1integral__asg__ops}{utils\+::integral\+\_\+asg\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1integral__asg__ops}{integral\+\_\+asg\+\_\+ops}}
-\begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a += b}, {\ttfamily a -\/= b}, {\ttfamily a $\ast$= b}, {\ttfamily a /= b}, {\ttfamily a \%= b}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a += b}, {\ttfamily a -\/= b}, {\ttfamily a \texorpdfstring{$\ast$}{*}= b}, {\ttfamily a /= b}, {\ttfamily a \%= b}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1integral__full__ops}{integral\+\_\+full\+\_\+ops}}
-\begin{DoxyCompactList}\small\item\em A convenience template inheriting from {\ttfamily \mbox{\hyperlink{structutils_1_1integral__full__ops}{utils\+::integral\+\_\+full\+\_\+ops}}} and {\ttfamily \mbox{\hyperlink{structutils_1_1integral__asg__ops}{utils\+::integral\+\_\+asg\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A convenience template inheriting from {\ttfamily \doxylink{structutils_1_1integral__full__ops}{utils\+::integral\+\_\+full\+\_\+ops}} and {\ttfamily \doxylink{structutils_1_1integral__asg__ops}{utils\+::integral\+\_\+asg\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1integral__op__functors}{integral\+\_\+op\+\_\+functors}}
-\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \mbox{\hyperlink{structutils_1_1integral__ops}{utils\+::integral\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \doxylink{structutils_1_1integral__ops}{utils\+::integral\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1integral__ops}{integral\+\_\+ops}}
-\begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a + b}, {\ttfamily a -\/ b}, {\ttfamily a $\ast$ b}, {\ttfamily a / b} and {\ttfamily a \% b}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a + b}, {\ttfamily a -\/ b}, {\ttfamily a \texorpdfstring{$\ast$}{*} b}, {\ttfamily a / b} and {\ttfamily a \% b}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1interval}{interval}}
 \begin{DoxyCompactList}\small\item\em An interval defined by a left endpoint and a right endpoint. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}
@@ -151,9 +151,9 @@ struct \mbox{\hyperlink{structutils_1_1lambda__decay_3_01R_07_6_08_07Args_8_8_8_
 struct \mbox{\hyperlink{structutils_1_1lambda__decay_3_01T_01_4}{lambda\+\_\+decay$<$ T $>$}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1logical__op__functors}{logical\+\_\+op\+\_\+functors}}
-\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \mbox{\hyperlink{structutils_1_1logical__ops}{utils\+::logical\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \doxylink{structutils_1_1logical__ops}{utils\+::logical\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1logical__ops}{logical\+\_\+ops}}
-\begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a \&\& b}, {\ttfamily a $\vert$$\vert$ b} and {\ttfamily !t}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a \&\& b}, {\ttfamily a \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} b} and {\ttfamily !t}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{group__utilsmax__align_structutils_1_1max__align}{max\+\_\+align}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1move__construct}{move\+\_\+construct}}
@@ -195,13 +195,13 @@ struct \mbox{\hyperlink{group__sane__common__type_structutils_1_1sane__common__t
 class \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}
 \begin{DoxyCompactList}\small\item\em A key-\/immutable (multi-\/)associative container adaptor that supports linear-\/time construction and logarithmic-\/time search and aggregation. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1segment__tree__nodes__t}{segment\+\_\+tree\+\_\+nodes\+\_\+t}}
-\begin{DoxyCompactList}\small\item\em A disambiguation flag to declare that keys and mapped values given to the constructor conform to the internal layout of {\ttfamily \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A disambiguation flag to declare that keys and mapped values given to the constructor conform to the internal layout of {\ttfamily \doxylink{classutils_1_1segment__tree}{segment\+\_\+tree}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1shift__asg__op__functors}{shift\+\_\+asg\+\_\+op\+\_\+functors}}
-\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \mbox{\hyperlink{structutils_1_1shift__asg__ops}{utils\+::shift\+\_\+asg\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \doxylink{structutils_1_1shift__asg__ops}{utils\+::shift\+\_\+asg\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1shift__asg__ops}{shift\+\_\+asg\+\_\+ops}}
 \begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}= b} and {\ttfamily a \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}= b}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1shift__full__ops}{shift\+\_\+full\+\_\+ops}}
-\begin{DoxyCompactList}\small\item\em A convenience template inheriting from {\ttfamily \mbox{\hyperlink{structutils_1_1shift__ops}{utils\+::shift\+\_\+ops}}} and {\ttfamily \mbox{\hyperlink{structutils_1_1shift__asg__ops}{utils\+::shift\+\_\+asg\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A convenience template inheriting from {\ttfamily \doxylink{structutils_1_1shift__ops}{utils\+::shift\+\_\+ops}} and {\ttfamily \doxylink{structutils_1_1shift__asg__ops}{utils\+::shift\+\_\+asg\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1shift__left}{shift\+\_\+left}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1shift__left_3_01void_01_4}{shift\+\_\+left$<$ void $>$}}
@@ -211,7 +211,7 @@ struct \mbox{\hyperlink{structutils_1_1shift__left__asg}{shift\+\_\+left\+\_\+as
 struct \mbox{\hyperlink{structutils_1_1shift__left__asg_3_01void_01_4}{shift\+\_\+left\+\_\+asg$<$ void $>$}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1shift__op__functors}{shift\+\_\+op\+\_\+functors}}
-\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \mbox{\hyperlink{structutils_1_1shift__ops}{utils\+::shift\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \doxylink{structutils_1_1shift__ops}{utils\+::shift\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1shift__ops}{shift\+\_\+ops}}
 \begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily a \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} b} and {\ttfamily a \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} b}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1shift__right}{shift\+\_\+right}}
@@ -223,15 +223,15 @@ struct \mbox{\hyperlink{structutils_1_1shift__right__asg}{shift\+\_\+right\+\_\+
 struct \mbox{\hyperlink{structutils_1_1shift__right__asg_3_01void_01_4}{shift\+\_\+right\+\_\+asg$<$ void $>$}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1sign__op__functors}{sign\+\_\+op\+\_\+functors}}
-\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \mbox{\hyperlink{structutils_1_1sign__ops}{utils\+::sign\+\_\+ops}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \href{OperatorFunctorSet.html}{\texttt{ {\itshape Operator\+Functor\+Set\+Template}}} for {\ttfamily \doxylink{structutils_1_1sign__ops}{utils\+::sign\+\_\+ops}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1sign__ops}{sign\+\_\+ops}}
 \begin{DoxyCompactList}\small\item\em Adds support for {\ttfamily +t} and {\ttfamily -\/t}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1sink}{sink}}
 \begin{DoxyCompactList}\small\item\em A sink type that discards any arguments passed to its constructor. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1stale__class}{stale\+\_\+class}}
 \begin{DoxyCompactList}\small\item\em A class that cannot be copied or moved. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structutils_1_1synth__three__way__result}{synth\+\_\+three\+\_\+way\+\_\+result}}
-\begin{DoxyCompactList}\small\item\em Trait to deduce the result type of the {\itshape synth-\/three-\/way} functor for types {\ttfamily T} and {\ttfamily U}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{group__synth__three__way__result_structutils_1_1synth__three__way__result}{synth\+\_\+three\+\_\+way\+\_\+result}}
+\item 
 class \mbox{\hyperlink{classutils_1_1transform__iterator}{transform\+\_\+iterator}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1trim}{trim}}
@@ -241,16 +241,42 @@ struct \mbox{\hyperlink{structutils_1_1trivial__semaphore}{trivial\+\_\+semaphor
 class \mbox{\hyperlink{classutils_1_1unique__resource}{unique\+\_\+resource}}
 \begin{DoxyCompactList}\small\item\em A user-\/provided resource that is capable of limiting and synchronizing access to it. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1unique__resource__sync__t}{unique\+\_\+resource\+\_\+sync\+\_\+t}}
-\begin{DoxyCompactList}\small\item\em Denotes a {\ttfamily \mbox{\hyperlink{classutils_1_1unique__resource}{utils\+::unique\+\_\+resource}}} should enable synchronization. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Denotes a {\ttfamily \doxylink{classutils_1_1unique__resource}{utils\+::unique\+\_\+resource}} should enable synchronization. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classutils_1_1visitor}{visitor}}
 \begin{DoxyCompactList}\small\item\em Owns a set of callables and dispatches calls to the first one that matches the arguments. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{group__width__of_structutils_1_1width__of}{width\+\_\+of}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1with}{with}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Concepts}
+\doxysubsubsection*{Concepts}
 \begin{DoxyCompactItemize}
 \item 
+concept \mbox{\hyperlink{conceptutils_1_1integer__like}{integer\+\_\+like}}
+\item 
+concept \mbox{\hyperlink{conceptutils_1_1same__sign__as}{same\+\_\+sign\+\_\+as}}
+\item 
+concept \mbox{\hyperlink{conceptutils_1_1lossless__convertible__to}{lossless\+\_\+convertible\+\_\+to}}
+\item 
+concept \mbox{\hyperlink{conceptutils_1_1simple__allocator}{simple\+\_\+allocator}}
+\begin{DoxyCompactList}\small\item\em C++ named requirements\+: {\itshape Allocator} \end{DoxyCompactList}\item 
+concept \mbox{\hyperlink{conceptutils_1_1reservable__container}{reservable\+\_\+container}}
+\item 
+concept \mbox{\hyperlink{conceptutils_1_1appendable__container}{appendable\+\_\+container}}
+\item 
+concept \mbox{\hyperlink{conceptutils_1_1container__compatible__iterator}{container\+\_\+compatible\+\_\+iterator}}
+\item 
+concept \mbox{\hyperlink{conceptutils_1_1container__compatible__range}{container\+\_\+compatible\+\_\+range}}
+\item 
+concept \mbox{\hyperlink{conceptutils_1_1equiv__to}{equiv\+\_\+to}}
+\item 
+concept \mbox{\hyperlink{conceptutils_1_1explicitly__convertible__to}{explicitly\+\_\+convertible\+\_\+to}}
+\item 
+concept \mbox{\hyperlink{conceptutils_1_1tagged}{tagged}}
+\item 
+concept \mbox{\hyperlink{conceptutils_1_1boolean__testable}{boolean\+\_\+testable}}
+\begin{DoxyCompactList}\small\item\em C++ standard exposition-\/only concept\+: {\itshape boolean-\/testable}. \end{DoxyCompactList}\item 
+concept \mbox{\hyperlink{conceptutils_1_1can__reference}{can\+\_\+reference}}
+\begin{DoxyCompactList}\small\item\em C++ standard exposition-\/only concept\+: {\itshape can-\/reference}. \end{DoxyCompactList}\item 
 concept \mbox{\hyperlink{conceptutils_1_1segment__tree__traverser__for}{segment\+\_\+tree\+\_\+traverser\+\_\+for}}
 \begin{DoxyCompactList}\small\item\em Specifies that {\ttfamily T} is a traverser for {\ttfamily segment\+\_\+tree} {\ttfamily ST}. \end{DoxyCompactList}\item 
 concept \mbox{\hyperlink{conceptutils_1_1segment__tree__strategy__for}{segment\+\_\+tree\+\_\+strategy\+\_\+for}}
@@ -280,85 +306,64 @@ concept \mbox{\hyperlink{conceptutils_1_1erasable__from}{erasable\+\_\+from}}
 concept \mbox{\hyperlink{conceptutils_1_1container__three__way__comparable}{container\+\_\+three\+\_\+way\+\_\+comparable}}
 \begin{DoxyCompactList}\small\item\em Precondition of optional container requirements. \end{DoxyCompactList}\item 
 concept \mbox{\hyperlink{conceptutils_1_1searchable__in}{searchable\+\_\+in}}
-\begin{DoxyCompactList}\small\item\em Checks if {\ttfamily Key} can be used to query {\ttfamily C}. \end{DoxyCompactList}\item 
-concept \mbox{\hyperlink{conceptutils_1_1integer__like}{integer\+\_\+like}}
-\item 
-concept \mbox{\hyperlink{conceptutils_1_1same__sign__as}{same\+\_\+sign\+\_\+as}}
-\item 
-concept \mbox{\hyperlink{conceptutils_1_1lossless__convertible__to}{lossless\+\_\+convertible\+\_\+to}}
-\item 
-concept \mbox{\hyperlink{conceptutils_1_1simple__allocator}{simple\+\_\+allocator}}
-\begin{DoxyCompactList}\small\item\em C++ named requirements\+: {\itshape Allocator} \end{DoxyCompactList}\item 
-concept \mbox{\hyperlink{conceptutils_1_1reservable__container}{reservable\+\_\+container}}
-\item 
-concept \mbox{\hyperlink{conceptutils_1_1appendable__container}{appendable\+\_\+container}}
-\item 
-concept \mbox{\hyperlink{conceptutils_1_1container__compatible__iterator}{container\+\_\+compatible\+\_\+iterator}}
-\item 
-concept \mbox{\hyperlink{conceptutils_1_1container__compatible__range}{container\+\_\+compatible\+\_\+range}}
-\item 
-concept \mbox{\hyperlink{conceptutils_1_1equiv__to}{equiv\+\_\+to}}
-\item 
-concept \mbox{\hyperlink{conceptutils_1_1explicitly__convertible__to}{explicitly\+\_\+convertible\+\_\+to}}
-\item 
-concept \mbox{\hyperlink{conceptutils_1_1tagged}{tagged}}
-\item 
-concept \mbox{\hyperlink{conceptutils_1_1boolean__testable}{boolean\+\_\+testable}}
-\begin{DoxyCompactList}\small\item\em C++ standard exposition-\/only concept\+: {\itshape boolean-\/testable}. \end{DoxyCompactList}\item 
-concept \mbox{\hyperlink{conceptutils_1_1can__reference}{can\+\_\+reference}}
-\begin{DoxyCompactList}\small\item\em C++ standard exposition-\/only concept\+: {\itshape can-\/reference}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Typedefs}
+\begin{DoxyCompactList}\small\item\em Checks if {\ttfamily Key} can be used to query {\ttfamily C}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T , typename U  = T$>$ }\\using \mbox{\hyperlink{namespaceutils_a22794b5e2b5d651985e849245ad8e187}{synth\+\_\+three\+\_\+way\+\_\+result\+\_\+t}} = \mbox{\hyperlink{structutils_1_1synth__three__way__result}{synth\+\_\+three\+\_\+way\+\_\+result}}$<$ T, U $>$\+::type
-\begin{DoxyCompactList}\small\item\em Result type of the {\itshape synth-\/three-\/way} functor for types {\ttfamily T} and {\ttfamily U}. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceutils_a4ff95410c7281fc810a9e8cfef9855e8}{function\+\_\+decay\+\_\+t}} = \mbox{\hyperlink{structutils_1_1function__decay}{function\+\_\+decay}}$<$ T $>$\+::type
+{\footnotesize template$<$typename T, typename U = T$>$ }\\using \mbox{\hyperlink{group__synth__three__way__result_ga106037c9c8c8bc992433f348525389ce}{synth\+\_\+three\+\_\+way\+\_\+result\+\_\+t}} = \mbox{\hyperlink{group__synth__three__way__result_structutils_1_1synth__three__way__result}{synth\+\_\+three\+\_\+way\+\_\+result}}$<$T, U$>$\+::type
 \item 
-{\footnotesize template$<$typename T $>$ }\\using \mbox{\hyperlink{namespaceutils_aa2a651da2caee87aff06087795119502}{lambda\+\_\+decay\+\_\+t}} = \mbox{\hyperlink{structutils_1_1lambda__decay}{lambda\+\_\+decay}}$<$ T $>$\+::type
+{\footnotesize template$<$typename T$>$ }\\using \mbox{\hyperlink{namespaceutils_ab216c55ca5eed8fa85dfa7d1ccb85eb5}{function\+\_\+decay\+\_\+t}} = \mbox{\hyperlink{structutils_1_1function__decay}{function\+\_\+decay}}$<$T$>$\+::type
 \item 
-{\footnotesize template$<$typename F $>$ }\\using \mbox{\hyperlink{namespaceutils_aec2f7d8a4a6a70e231ae13dd1a18606a}{result\+\_\+of\+\_\+t}} = \mbox{\hyperlink{structutils_1_1result__of}{result\+\_\+of}}$<$ F $>$\+::type
+{\footnotesize template$<$typename T$>$ }\\using \mbox{\hyperlink{namespaceutils_a04fc2d011dfa57bb06527bc644533804}{lambda\+\_\+decay\+\_\+t}} = \mbox{\hyperlink{structutils_1_1lambda__decay}{lambda\+\_\+decay}}$<$T$>$\+::type
 \item 
-{\footnotesize template$<$typename F $>$ }\\using \mbox{\hyperlink{namespaceutils_ac4674b772ff1c668b49f1867630f3d54}{arguments\+\_\+of\+\_\+t}} = \mbox{\hyperlink{structutils_1_1arguments__of}{arguments\+\_\+of}}$<$ F $>$\+::type
+{\footnotesize template$<$typename F$>$ }\\using \mbox{\hyperlink{namespaceutils_ae4538b11ae419baa498ebfb430faab6d}{result\+\_\+of\+\_\+t}} = \mbox{\hyperlink{structutils_1_1result__of}{result\+\_\+of}}$<$F$>$\+::type
 \item 
-using \mbox{\hyperlink{namespaceutils_acdc92300a8a41d794e21ecfade137492}{variadic\+\_\+arity}} = \mbox{\hyperlink{structutils_1_1arity}{arity}}$<$ static\+\_\+cast$<$ std\+::size\+\_\+t $>$(-\/1)$>$
+{\footnotesize template$<$typename F$>$ }\\using \mbox{\hyperlink{namespaceutils_a191a3b3465098ded89db3c91d162cdf4}{arguments\+\_\+of\+\_\+t}} = \mbox{\hyperlink{structutils_1_1arguments__of}{arguments\+\_\+of}}$<$F$>$\+::type
 \item 
-{\footnotesize template$<$typename T , typename U $>$ }\\using \mbox{\hyperlink{group__sane__common__type_gab6b5848d6804531f450947c7fa15825c}{sane\+\_\+common\+\_\+type\+\_\+t}} = \mbox{\hyperlink{group__sane__common__type_structutils_1_1sane__common__type}{sane\+\_\+common\+\_\+type}}$<$ T, U $>$\+::type
+using \mbox{\hyperlink{namespaceutils_a3566da17ec35d45d98ab780d5b335238}{variadic\+\_\+arity}} = \mbox{\hyperlink{structutils_1_1arity}{arity}}$<$static\+\_\+cast$<$std\+::size\+\_\+t$>$(-\/1)$>$
 \item 
-{\footnotesize template$<$typename Iter $>$ }\\using \mbox{\hyperlink{namespaceutils_aac452ad4319d1aa831bb904e6e5123bb}{iterator\+\_\+category\+\_\+t}} = \mbox{\hyperlink{structutils_1_1iterator__category}{iterator\+\_\+category}}$<$ Iter $>$\+::type
+{\footnotesize template$<$typename T, typename U$>$ }\\using \mbox{\hyperlink{group__sane__common__type_ga22c489a7573b4347a2eef7e4cc7c637d}{sane\+\_\+common\+\_\+type\+\_\+t}} = \mbox{\hyperlink{group__sane__common__type_structutils_1_1sane__common__type}{sane\+\_\+common\+\_\+type}}$<$T, U$>$\+::type
 \item 
-{\footnotesize template$<$typename Iter $>$ }\\using \mbox{\hyperlink{namespaceutils_a2a46c9140a386f42f42b6577cd48b1a6}{iterator\+\_\+wrapper}} = std\+::conditional\+\_\+t$<$ std\+::is\+\_\+pointer\+\_\+v$<$ Iter $>$, \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}}$<$ std\+::remove\+\_\+pointer\+\_\+t$<$ Iter $>$ $>$, Iter $>$
+{\footnotesize template$<$typename Iter$>$ }\\using \mbox{\hyperlink{namespaceutils_a32770ef0ae297b11683cbfea866290dc}{iterator\+\_\+category\+\_\+t}} = \mbox{\hyperlink{structutils_1_1iterator__category}{iterator\+\_\+category}}$<$Iter$>$\+::type
 \item 
-using \mbox{\hyperlink{namespaceutils_a145ea814e7f8a159dda04fd61f74c2a2}{static\+\_\+string\+\_\+view}} = \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$ char $>$
+{\footnotesize template$<$typename Iter$>$ }\\using \mbox{\hyperlink{namespaceutils_a3c25287b2acf0067e44ab4dceebb0052}{iterator\+\_\+wrapper}} = std\+::conditional\+\_\+t$<$std\+::is\+\_\+pointer\+\_\+v$<$Iter$>$, \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}}$<$std\+::remove\+\_\+pointer\+\_\+t$<$Iter$>$$>$, Iter$>$
 \item 
-using \mbox{\hyperlink{namespaceutils_a024354295af32aee7ed2220d3a52d8f5}{wstatic\+\_\+string\+\_\+view}} = \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$ wchar\+\_\+t $>$
+using \mbox{\hyperlink{namespaceutils_aae8e6d52bab69e719589fd104c43bef4}{static\+\_\+string\+\_\+view}} = \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$char$>$
 \item 
-using \mbox{\hyperlink{namespaceutils_a6d9158916669d9f93599022e9201c016}{u8static\+\_\+string\+\_\+view}} = \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$ char8\+\_\+t $>$
+using \mbox{\hyperlink{namespaceutils_a6d473d7753045fb5672219a3f763af10}{wstatic\+\_\+string\+\_\+view}} = \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$wchar\+\_\+t$>$
 \item 
-using \mbox{\hyperlink{namespaceutils_a52a16a9740cf3b0b2e963198ebcd7ca9}{u16static\+\_\+string\+\_\+view}} = \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$ char16\+\_\+t $>$
+using \mbox{\hyperlink{namespaceutils_a33f8eec783c30b43e0ea620cf7d032b4}{u8static\+\_\+string\+\_\+view}} = \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$char8\+\_\+t$>$
 \item 
-using \mbox{\hyperlink{namespaceutils_a607e1c30fad8199a766afa327008d13f}{u32static\+\_\+string\+\_\+view}} = \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$ char32\+\_\+t $>$
+using \mbox{\hyperlink{namespaceutils_a6ecc783d2242e83d51c8df321dd7b7cf}{u16static\+\_\+string\+\_\+view}} = \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$char16\+\_\+t$>$
 \item 
-{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\using \mbox{\hyperlink{namespaceutils_a74b48c2315cd329e92dc844eacbec5ae}{static\+\_\+string}} = \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$ char, N $>$
+using \mbox{\hyperlink{namespaceutils_a6c7009b0a39b0c5f91e681d45ad94cc6}{u32static\+\_\+string\+\_\+view}} = \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$char32\+\_\+t$>$
 \item 
-{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\using \mbox{\hyperlink{namespaceutils_af0ea072dbe2b847ec65a37641f0352fc}{wstatic\+\_\+string}} = \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$ wchar\+\_\+t, N $>$
+{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\using \mbox{\hyperlink{namespaceutils_a50417c84b3f9a8a4df14f01c84ee3d98}{static\+\_\+string}} = \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$char, N$>$
 \item 
-{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\using \mbox{\hyperlink{namespaceutils_ab905b8e2c36d6ed84b4653a2551f6001}{u8static\+\_\+string}} = \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$ char8\+\_\+t, N $>$
+{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\using \mbox{\hyperlink{namespaceutils_a9adb27e54f418dbc2b0fbe31be45dd56}{wstatic\+\_\+string}} = \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$wchar\+\_\+t, N$>$
 \item 
-{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\using \mbox{\hyperlink{namespaceutils_aaf9bbe5b2bd0925138bff5c0b7a9c16c}{u16static\+\_\+string}} = \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$ char16\+\_\+t, N $>$
+{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\using \mbox{\hyperlink{namespaceutils_a30adc31944222cec94474260159e7dcf}{u8static\+\_\+string}} = \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$char8\+\_\+t, N$>$
 \item 
-{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\using \mbox{\hyperlink{namespaceutils_a8a879e6085361f9a698393a071df0e9b}{u32static\+\_\+string}} = \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$ char32\+\_\+t, N $>$
+{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\using \mbox{\hyperlink{namespaceutils_ab8439cfe4079dc7798698786779018be}{u16static\+\_\+string}} = \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$char16\+\_\+t, N$>$
 \item 
-{\footnotesize template$<$typename T , \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} Q$>$ }\\using \mbox{\hyperlink{group__utilsapply__qualifiers_ga0f1ae7032a6b8ec9503056a4ac3a0b46}{apply\+\_\+qualifiers\+\_\+t}} = \mbox{\hyperlink{group__utilsapply__qualifiers_structutils_1_1apply__qualifiers}{apply\+\_\+qualifiers}}$<$ T, Q $>$\+::type
+{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\using \mbox{\hyperlink{namespaceutils_a7bbea5b2a2fcdd043b13533e04a35a24}{u32static\+\_\+string}} = \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$char32\+\_\+t, N$>$
 \item 
-{\footnotesize template$<$typename RefT , typename T $>$ }\\using \mbox{\hyperlink{group__utilsfollow_ga9cee2155b4c7479372bc3ffc2dc06a59}{follow\+\_\+t}} = \mbox{\hyperlink{group__utilsfollow_structutils_1_1follow}{follow}}$<$ RefT, T $>$\+::type
+{\footnotesize template$<$typename T, \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} Q$>$ }\\using \mbox{\hyperlink{group__utilsapply__qualifiers_ga9fe1035efd9b409ab4f57c45e7986411}{apply\+\_\+qualifiers\+\_\+t}} = \mbox{\hyperlink{group__utilsapply__qualifiers_structutils_1_1apply__qualifiers}{apply\+\_\+qualifiers}}$<$T, Q$>$\+::type
 \item 
-{\footnotesize template$<$typename T , T End, T Begin = 0, T Step = 1$>$ }\\using \mbox{\hyperlink{group__utilsmake__integer__range_ga011249984f152afb7307c44c21667c79}{make\+\_\+integer\+\_\+range}} = detail\+::sequence\+\_\+apply$<$ T,\mbox{[}$\,$\mbox{]}(T n) \{ return Begin+n $\ast$Step
+{\footnotesize template$<$typename RefT, typename T$>$ }\\using \mbox{\hyperlink{group__utilsfollow_ga73ba7c6d0100b82e7f3b52b284dd6b87}{follow\+\_\+t}} = \mbox{\hyperlink{group__utilsfollow_structutils_1_1follow}{follow}}$<$RefT, T$>$\+::type
 \item 
-{\footnotesize template$<$std\+::size\+\_\+t End, std\+::size\+\_\+t Begin = 0, std\+::size\+\_\+t Step = 1$>$ }\\using \mbox{\hyperlink{group__utilsmake__integer__range_ga6593b60afa5929e922ecc032ce2db4d1}{make\+\_\+index\+\_\+range}} = \mbox{\hyperlink{group__utilsmake__integer__range_ga011249984f152afb7307c44c21667c79}{make\+\_\+integer\+\_\+range}}$<$ std\+::size\+\_\+t, End, Begin, Step $>$
+{\footnotesize template$<$typename T, T End, T Begin = 0, T Step = 1$>$ }\\using \mbox{\hyperlink{group__utilsmake__integer__range_gaf7358a1b15b2833057cf650540ea3ce8}{make\+\_\+integer\+\_\+range}}
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t End, std\+::size\+\_\+t Begin = 0, std\+::size\+\_\+t Step = 1$>$ }\\using \mbox{\hyperlink{group__utilsmake__integer__range_ga360074c6b85fbd853ef93362a899f2f9}{make\+\_\+index\+\_\+range}} = \mbox{\hyperlink{group__utilsmake__integer__range_gaf7358a1b15b2833057cf650540ea3ce8}{make\+\_\+integer\+\_\+range}}$<$std\+::size\+\_\+t, End, Begin, Step$>$
 \begin{DoxyCompactList}\small\item\em Creates a size\+\_\+t index sequence with custom Begin and Step values. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Enumerations}
+\doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
+enum class \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} \{ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea334c4a4c42fdb79d7ebc3e73b517e6f8}{none}} = 0
+, \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}} = 0b1
+, \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea9e3669d19b675bd57058fd4664205d2a}{v}} = 0b10
+ \}
+\begin{DoxyCompactList}\small\item\em Bitmask enumeration representing type qualifiers (const and volatile). \end{DoxyCompactList}\item 
 enum class \mbox{\hyperlink{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2e}{interval\+\_\+endpoint\+\_\+type}} \+: unsigned char \{ \mbox{\hyperlink{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2ea7cef8a734855777c2a9d0caf42666e69}{open}}
 , \mbox{\hyperlink{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2ea349e686330723975502e9ef4f939a5ac}{closed}}
  \}
@@ -368,118 +373,117 @@ enum class \mbox{\hyperlink{namespaceutils_aa52b5daba05b396d43967f83d7b2dadd}{se
 , \mbox{\hyperlink{namespaceutils_aa52b5daba05b396d43967f83d7b2dadda7c4f29407893c334a6cb7a87bf045c0d}{right}}
 , \mbox{\hyperlink{namespaceutils_aa52b5daba05b396d43967f83d7b2daddaf6cb3e816496528d4187db53bc66567f}{both}}
  \}
-\begin{DoxyCompactList}\small\item\em Enumeration type representing the direction a {\ttfamily segment\+\_\+tree\+\_\+traverser\+\_\+for} chooses to go, from root to leaves. \end{DoxyCompactList}\item 
-enum class \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} \{ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea334c4a4c42fdb79d7ebc3e73b517e6f8}{none}} = 0
-, \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}} = 0b1
-, \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea9e3669d19b675bd57058fd4664205d2a}{v}} = 0b10
- \}
-\begin{DoxyCompactList}\small\item\em Bitmask enumeration representing type qualifiers (const and volatile). \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Functions}
+\begin{DoxyCompactList}\small\item\em Enumeration type representing the direction a {\ttfamily segment\+\_\+tree\+\_\+traverser\+\_\+for} chooses to go, from root to leaves. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{namespaceutils_a197cc51bcfc6c07cffed9890ac0f92e9}{unique\+\_\+resource}} (\mbox{\hyperlink{structutils_1_1unique__resource__sync__t}{unique\+\_\+resource\+\_\+sync\+\_\+t}}, \mbox{\hyperlink{namespaceutils_1_1integer__alias_aca05a61d14a516c6dd53450e823075b7}{integer\+\_\+alias\+::ptrdiff\+\_\+t}}, T \&\&) -\/$>$ \mbox{\hyperlink{classutils_1_1unique__resource}{unique\+\_\+resource}}$<$ std\+::remove\+\_\+cvref\+\_\+t$<$ T $>$, true $>$
+{\footnotesize template$<$typename T$>$ }\\\mbox{\hyperlink{namespaceutils_a197cc51bcfc6c07cffed9890ac0f92e9}{unique\+\_\+resource}} (\mbox{\hyperlink{structutils_1_1unique__resource__sync__t}{unique\+\_\+resource\+\_\+sync\+\_\+t}}, \mbox{\hyperlink{namespaceutils_1_1integer__alias_ac71df17998dda042d59607839ab7fa88}{integer\+\_\+alias\+::ptrdiff\+\_\+t}}, T \&\&) -\/$>$ unique\+\_\+resource$<$ std\+::remove\+\_\+cvref\+\_\+t$<$ T $>$, true $>$
 \item 
-{\footnotesize template$<$typename T $>$ }\\constexpr \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ std\+::decay\+\_\+t$<$ T $>$ $>$ \mbox{\hyperlink{namespaceutils_a22a7c7da6ae7e5d01adb976235886f2e}{operator$\vert$}} (T \&\&value, \mbox{\hyperlink{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2e}{interval\+\_\+endpoint\+\_\+type}} type)
-\begin{DoxyCompactList}\small\item\em Convenience operator overload to construct an interval endpoint. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename LE , typename RE $>$ \newline
-requires requires}\\constexpr auto \mbox{\hyperlink{namespaceutils_aaa53feca4f8d1aaf5de3f3b32b8f233f}{operator,}} (LE \&\&left, RE \&\&right)
-\begin{DoxyCompactList}\small\item\em Convenience operator overload to construct an interval. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Key\+Container , typename Mapped\+Container , typename Key  = Key\+Container\+::value\+\_\+type, typename T  = Mapped\+Container\+::value\+\_\+type, typename Compare  = std\+::less$<$\+Key$>$, typename Sum  = std\+::plus$<$\+T$>$, typename Identity  = default\+\_\+construct$<$\+T$>$, typename Allocator  = detail\+::void\+\_\+allocator\+\_\+t$>$ }\\\mbox{\hyperlink{namespaceutils_a6e7eeb7aeb526748af406563871d8902}{segment\+\_\+tree}} (\mbox{\hyperlink{structutils_1_1segment__tree__nodes__t}{segment\+\_\+tree\+\_\+nodes\+\_\+t}}, Key\+Container, Mapped\+Container, Compare=Compare(), Sum=Sum(), Identity=Identity(), Allocator=Allocator()) -\/$>$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$
+{\footnotesize template$<$typename G, std\+::size\+\_\+t Arity$>$ }\\\mbox{\hyperlink{namespaceutils_aed4f05af8c7f6713f035d46368507ca9}{with}} (\mbox{\hyperlink{structutils_1_1arity}{arity}}$<$ Arity $>$, G \&\&) -\/$>$ with$<$ G \&\&, Arity $>$
 \item 
-{\footnotesize template$<$typename Key\+Container , typename Mapped\+Container , simple\+\_\+allocator Allocator, typename Key  = Key\+Container\+::value\+\_\+type, typename T  = Mapped\+Container\+::value\+\_\+type$>$ }\\\mbox{\hyperlink{namespaceutils_a6a77c6e8d1d094c7adce75365d2ec023}{segment\+\_\+tree}} (\mbox{\hyperlink{structutils_1_1segment__tree__nodes__t}{segment\+\_\+tree\+\_\+nodes\+\_\+t}}, Key\+Container, Mapped\+Container, Allocator) -\/$>$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ Key, T, std\+::less$<$ Key $>$, std\+::plus$<$ T $>$, \mbox{\hyperlink{structutils_1_1default__construct}{default\+\_\+construct}}$<$ T $>$, Key\+Container, Mapped\+Container $>$
+{\footnotesize template$<$typename G, std\+::size\+\_\+t Arity$>$ \newline
+requires (!std\+::is\+\_\+function\+\_\+v$<$std\+::remove\+\_\+cvref\+\_\+t$<$G$>$$>$)}\\\mbox{\hyperlink{namespaceutils_abb3dc16e2977ca5391762a1836cc4cc9}{with}} (\mbox{\hyperlink{structutils_1_1arity}{arity}}$<$ Arity $>$, \mbox{\hyperlink{structutils_1_1owning}{owning}}, G \&\&) -\/$>$ with$<$ std\+::remove\+\_\+cvref\+\_\+t$<$ G $>$, Arity, true $>$
 \item 
-{\footnotesize template$<$typename Key\+Container , typename Mapped\+Container , typename Key  = Key\+Container\+::value\+\_\+type, typename T  = Mapped\+Container\+::value\+\_\+type, typename Compare  = std\+::less$<$\+Key$>$, typename Sum  = std\+::plus$<$\+T$>$, typename Identity  = default\+\_\+construct$<$\+T$>$, typename Allocator  = detail\+::void\+\_\+allocator\+\_\+t$>$ }\\\mbox{\hyperlink{namespaceutils_a8129c38c4f3daf945460bc7b4b5a5a79}{segment\+\_\+tree}} (Key\+Container, Mapped\+Container, Compare=Compare(), Sum=Sum(), Identity=Identity(), Allocator=Allocator()) -\/$>$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$
+{\footnotesize template$<$typename G, std\+::size\+\_\+t Arity$>$ \newline
+requires (std\+::is\+\_\+function\+\_\+v$<$std\+::remove\+\_\+cvref\+\_\+t$<$G$>$$>$)}\\\mbox{\hyperlink{namespaceutils_a35cbe6fdbca6f6e48f10edf1f5ffb2e1}{with}} (\mbox{\hyperlink{structutils_1_1arity}{arity}}$<$ Arity $>$, \mbox{\hyperlink{structutils_1_1owning}{owning}}, G \&\&) -\/$>$ with$<$ std\+::add\+\_\+pointer\+\_\+t$<$ std\+::remove\+\_\+cvref\+\_\+t$<$ G $>$ $>$, Arity, true $>$
 \item 
-{\footnotesize template$<$typename Key\+Container , typename Mapped\+Container , simple\+\_\+allocator Allocator, typename Key  = Key\+Container\+::value\+\_\+type, typename T  = Mapped\+Container\+::value\+\_\+type$>$ }\\\mbox{\hyperlink{namespaceutils_adb611abcc25122b499fdd1fd2c55419f}{segment\+\_\+tree}} (Key\+Container, Mapped\+Container, Allocator) -\/$>$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ Key, T, std\+::less$<$ Key $>$, std\+::plus$<$ T $>$, \mbox{\hyperlink{structutils_1_1default__construct}{default\+\_\+construct}}$<$ T $>$, Key\+Container, Mapped\+Container $>$
+{\footnotesize template$<$typename T$>$ }\\\mbox{\hyperlink{namespaceutils_aeae858e40387fdfac0f8629db4991dbb}{bind}} (T \&\&) -\/$>$ bind$<$ T \&\& $>$
 \item 
-{\footnotesize template$<$typename Key\+Container , typename Mapped\+Container , typename Key  = Key\+Container\+::value\+\_\+type, typename T  = Mapped\+Container\+::value\+\_\+type, typename Compare  = std\+::less$<$\+Key$>$, typename Sum  = std\+::plus$<$\+T$>$, typename Identity  = default\+\_\+construct$<$\+T$>$, typename Allocator  = detail\+::void\+\_\+allocator\+\_\+t$>$ }\\\mbox{\hyperlink{namespaceutils_a529b6fb988f9d203c7def5f1253c46af}{segment\+\_\+tree}} (std\+::sorted\+\_\+equivalent\+\_\+t, Key\+Container, Mapped\+Container, Compare=Compare(), Sum=Sum(), Identity=Identity(), Allocator=Allocator()) -\/$>$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$
+{\footnotesize template$<$typename F, typename... Gs$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a75ce48a3fb2e45c2eb6917e6d32ceb84}{composite}} (F \&\&f, Gs \&\&... gs)
 \item 
-{\footnotesize template$<$typename Key\+Container , typename Mapped\+Container , simple\+\_\+allocator Allocator, typename Key  = Key\+Container\+::value\+\_\+type, typename T  = Mapped\+Container\+::value\+\_\+type$>$ }\\\mbox{\hyperlink{namespaceutils_aa813e9045621ce0bc1f86b83334852e3}{segment\+\_\+tree}} (std\+::sorted\+\_\+equivalent\+\_\+t, Key\+Container, Mapped\+Container, Allocator) -\/$>$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ Key, T, std\+::less$<$ Key $>$, std\+::plus$<$ T $>$, \mbox{\hyperlink{structutils_1_1default__construct}{default\+\_\+construct}}$<$ T $>$, Key\+Container, Mapped\+Container $>$
-\item 
-{\footnotesize template$<$typename Pairs , typename Allocator  = std\+::allocator$<$int$>$, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$ranges\+::iterator\+\_\+t$<$\+Pairs$>$, Allocator$>$, typename Compare  = STT\+::\+Compare, typename Sum  = STT\+::\+Sum, typename Identity  = STT\+::\+Identity$>$ }\\\mbox{\hyperlink{namespaceutils_a39cc5af4cee6e71a8109f82d4301d6f9}{segment\+\_\+tree}} (std\+::from\+\_\+range\+\_\+t, Pairs \&\&, Compare=Compare(), Sum=Sum(), Identity=Identity(), Allocator=Allocator()) -\/$>$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
-\item 
-{\footnotesize template$<$typename Pairs , simple\+\_\+allocator Allocator, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$ranges\+::iterator\+\_\+t$<$\+Pairs$>$, Allocator$>$$>$ }\\\mbox{\hyperlink{namespaceutils_a5a6a09ae254b5d235206c80872ff196d}{segment\+\_\+tree}} (std\+::from\+\_\+range\+\_\+t, Pairs \&\&, Allocator) -\/$>$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
-\item 
-{\footnotesize template$<$typename Pairs , typename Allocator  = std\+::allocator$<$int$>$, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$ranges\+::iterator\+\_\+t$<$\+Pairs$>$, Allocator$>$, typename Compare  = STT\+::\+Compare, typename Sum  = STT\+::\+Sum, typename Identity  = STT\+::\+Identity$>$ }\\\mbox{\hyperlink{namespaceutils_a15c5648d54f45bae380b6ed233a87770}{segment\+\_\+tree}} (std\+::sorted\+\_\+equivalent\+\_\+t, std\+::from\+\_\+range\+\_\+t, Pairs \&\&, Compare=Compare(), Sum=Sum(), Identity=Identity(), Allocator=Allocator()) -\/$>$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
-\item 
-{\footnotesize template$<$typename Pairs , simple\+\_\+allocator Allocator, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$ranges\+::iterator\+\_\+t$<$\+Pairs$>$, Allocator$>$$>$ }\\\mbox{\hyperlink{namespaceutils_acdcea13af380f403900bea1e667330fd}{segment\+\_\+tree}} (std\+::sorted\+\_\+equivalent\+\_\+t, std\+::from\+\_\+range\+\_\+t, Pairs \&\&, Allocator) -\/$>$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
-\item 
-{\footnotesize template$<$typename Pairs\+It , typename Pairs\+Sent , typename Allocator  = std\+::allocator$<$int$>$, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$\+Pairs\+It, Allocator$>$, typename Compare  = STT\+::\+Compare, typename Sum  = STT\+::\+Sum, typename Identity  = STT\+::\+Identity$>$ }\\\mbox{\hyperlink{namespaceutils_af2f5835a9c7e242f2c66e87717a79569}{segment\+\_\+tree}} (Pairs\+It, Pairs\+Sent, Compare=Compare(), Sum=Sum(), Identity=Identity(), Allocator=Allocator()) -\/$>$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
-\item 
-{\footnotesize template$<$typename Pairs\+It , typename Pairs\+Sent , simple\+\_\+allocator Allocator, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$\+Pairs\+It, Allocator$>$$>$ }\\\mbox{\hyperlink{namespaceutils_aa4a7ef62887a1a97db65b8a9e8cbd9bd}{segment\+\_\+tree}} (Pairs\+It, Pairs\+Sent, Allocator) -\/$>$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
-\item 
-{\footnotesize template$<$typename Pairs\+It , typename Pairs\+Sent , typename Allocator  = std\+::allocator$<$int$>$, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$\+Pairs\+It, Allocator$>$, typename Compare  = STT\+::\+Compare, typename Sum  = STT\+::\+Sum, typename Identity  = STT\+::\+Identity$>$ }\\\mbox{\hyperlink{namespaceutils_ab34d7c058da716ef963b80de4e6af749}{segment\+\_\+tree}} (std\+::sorted\+\_\+equivalent\+\_\+t, Pairs\+It, Pairs\+Sent, Compare=Compare(), Sum=Sum(), Allocator=Allocator()) -\/$>$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
-\item 
-{\footnotesize template$<$typename Pairs\+It , typename Pairs\+Sent , simple\+\_\+allocator Allocator, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$\+Pairs\+It, Allocator$>$$>$ }\\\mbox{\hyperlink{namespaceutils_a9fb37b34e2c9e0e274718240606493f0}{segment\+\_\+tree}} (std\+::sorted\+\_\+equivalent\+\_\+t, Pairs\+It, Pairs\+Sent, Allocator) -\/$>$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
-\item 
-{\footnotesize template$<$typename Key , typename T , typename Allocator  = std\+::allocator$<$int$>$, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$const std\+::pair$<$\+Key, T$>$$\ast$, Allocator$>$, typename Compare  = STT\+::\+Compare, typename Sum  = STT\+::\+Sum, typename Identity  = STT\+::\+Identity$>$ }\\\mbox{\hyperlink{namespaceutils_a7b7cf4b16a602895ec2b00d5a6553745}{segment\+\_\+tree}} (std\+::initializer\+\_\+list$<$ std\+::pair$<$ Key, T $>$ $>$, Compare=Compare(), Sum=Sum(), Allocator=Allocator()) -\/$>$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
-\item 
-{\footnotesize template$<$typename Key , typename T , simple\+\_\+allocator Allocator, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$const std\+::pair$<$\+Key, T$>$$\ast$, Allocator$>$$>$ }\\\mbox{\hyperlink{namespaceutils_a3b7a317d3912b759e5dabe1c8e79d820}{segment\+\_\+tree}} (std\+::initializer\+\_\+list$<$ std\+::pair$<$ Key, T $>$ $>$, Allocator) -\/$>$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
-\item 
-{\footnotesize template$<$typename Key , typename T , typename Allocator  = std\+::allocator$<$int$>$, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$const std\+::pair$<$\+Key, T$>$$\ast$, Allocator$>$, typename Compare  = STT\+::\+Compare, typename Sum  = STT\+::\+Sum, typename Identity  = STT\+::\+Identity$>$ }\\\mbox{\hyperlink{namespaceutils_a6d7538388dde8d989997a8b6030ea9fb}{segment\+\_\+tree}} (std\+::sorted\+\_\+equivalent\+\_\+t, std\+::initializer\+\_\+list$<$ std\+::pair$<$ Key, T $>$ $>$, Compare=Compare(), Sum=Sum(), Identity=Identity(), Allocator=Allocator()) -\/$>$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
-\item 
-{\footnotesize template$<$typename Key , typename T , simple\+\_\+allocator Allocator, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$const std\+::pair$<$\+Key, T$>$$\ast$, Allocator$>$$>$ }\\\mbox{\hyperlink{namespaceutils_a048efb80d8c76325f02a7d20f9396570}{segment\+\_\+tree}} (std\+::sorted\+\_\+equivalent\+\_\+t, std\+::initializer\+\_\+list$<$ std\+::pair$<$ Key, T $>$ $>$, Allocator) -\/$>$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
-\item 
-{\footnotesize template$<$typename C , searchable\+\_\+in$<$ C $>$ Key$>$ }\\constexpr decltype(auto) \mbox{\hyperlink{namespaceutils_afb8127674294a339f6ccc7bbcd1640da}{make\+\_\+search\+\_\+key}} (const Key \&\mbox{\hyperlink{classutils_1_1key}{key}})
-\begin{DoxyCompactList}\small\item\em Make a search key for container {\ttfamily C} from {\ttfamily Key}, converting if necessary. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename G , std\+::size\+\_\+t Arity$>$ }\\\mbox{\hyperlink{namespaceutils_aed4f05af8c7f6713f035d46368507ca9}{with}} (\mbox{\hyperlink{structutils_1_1arity}{arity}}$<$ Arity $>$, G \&\&) -\/$>$ \mbox{\hyperlink{structutils_1_1with}{with}}$<$ G \&\&, Arity $>$
-\item 
-{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{namespaceutils_aeae858e40387fdfac0f8629db4991dbb}{bind}} (T \&\&) -\/$>$ \mbox{\hyperlink{structutils_1_1bind}{bind}}$<$ T \&\& $>$
-\item 
-{\footnotesize template$<$typename F , typename... Gs$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a75ce48a3fb2e45c2eb6917e6d32ceb84}{composite}} (F \&\&f, Gs \&\&... gs)
-\item 
-{\footnotesize template$<$std\+::ptrdiff\+\_\+t Exp, typename CastT $>$ }\\constexpr CastT \mbox{\hyperlink{namespaceutils_a4515012627113facd242ccb5f3d59374}{pow}} (CastT base)
+{\footnotesize template$<$std\+::ptrdiff\+\_\+t Exp, typename CastT$>$ }\\constexpr CastT \mbox{\hyperlink{namespaceutils_a4515012627113facd242ccb5f3d59374}{pow}} (CastT base)
 \begin{DoxyCompactList}\small\item\em Calculates {\ttfamily base} raised to the power of {\ttfamily Exp}. Supports zero and negative exponents. \end{DoxyCompactList}\item 
-void $\ast$ \mbox{\hyperlink{namespaceutils_a8d2503c40d18bf18ecc897b57dd968ab}{align}} (std\+::size\+\_\+t alignment, std\+::size\+\_\+t size, void $\ast$ptr, void $\ast$end)
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceutils_a8d2503c40d18bf18ecc897b57dd968ab}{align}} (std\+::size\+\_\+t alignment, std\+::size\+\_\+t size, void \texorpdfstring{$\ast$}{*}ptr, void \texorpdfstring{$\ast$}{*}end)
 \begin{DoxyCompactList}\small\item\em Align a pointer to the specified alignment. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename To $>$ \newline
-requires requires}\\constexpr To \mbox{\hyperlink{namespaceutils_a412fc76b0efe03804baebd2a13f6e790}{rcast}} (auto $\ast$from) noexcept
+{\footnotesize template$<$typename To$>$ \newline
+requires requires \{static\+\_\+cast$<$To$>$(static\+\_\+cast$<$void\texorpdfstring{$\ast$}{*}$>$(from));\}}\\constexpr To \mbox{\hyperlink{namespaceutils_a62531a4b1248dafd250d977cb1111ec4}{rcast}} (auto \texorpdfstring{$\ast$}{*}from) noexcept
 \begin{DoxyCompactList}\small\item\em {\ttfamily constexpr}-\/friendly pointer punning \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename C $>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a838b0479484b30995e1d7e40f1cb529b}{container\+\_\+appender}} (C \&c)
+{\footnotesize template$<$typename C$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a838b0479484b30995e1d7e40f1cb529b}{container\+\_\+appender}} (C \&\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}})
 \item 
 std\+::ostream \& \mbox{\hyperlink{namespaceutils_a610c726ab1f1a35f461b1d64c34e9f11}{operator$<$$<$}} (std\+::ostream \&os, const tagged$<$ static\+\_\+string\+\_\+tag $>$ auto \&str)
 \item 
-{\footnotesize template$<$typename T , typename U $>$ \newline
+{\footnotesize template$<$typename T, typename U$>$ \newline
 requires requires(T\& t, U\& u) \{ t.\+swap(u); \}}\\constexpr decltype(auto) \mbox{\hyperlink{namespaceutils_a15c903199c2c3166038cf06caa747a2c}{swap}} (T \&t, U \&u) noexcept(noexcept(t.\+swap(u)))
 \begin{DoxyCompactList}\small\item\em Make classes that provide a {\ttfamily swap} method swappable. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespaceutils_aed7303c206edcaa7cba652c07ca49240}{UTILS\+\_\+\+BITMASK}} (\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}})
 \item 
-{\footnotesize template$<$typename T $>$ }\\constexpr const T \&\& \mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{as\+\_\+const}} (T \&\&ref) noexcept
+{\footnotesize template$<$typename T$>$ }\\constexpr const T \&\& \mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{as\+\_\+const}} (T \&\&ref) noexcept
 \begin{DoxyCompactList}\small\item\em Casts a forwarding reference to a const reference of the same category. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\constexpr volatile T \&\& \mbox{\hyperlink{namespaceutils_a5efd377d9bd98cc665b5211b4e64e07f}{as\+\_\+volatile}} (T \&\&ref) noexcept
+{\footnotesize template$<$typename T$>$ }\\constexpr volatile T \&\& \mbox{\hyperlink{namespaceutils_a5efd377d9bd98cc665b5211b4e64e07f}{as\+\_\+volatile}} (T \&\&ref) noexcept
 \begin{DoxyCompactList}\small\item\em Casts a forwarding reference to a volatile reference of the same category. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\constexpr const volatile T \&\& \mbox{\hyperlink{namespaceutils_a0922f693f86f61e5b05d43af01c05cb6}{as\+\_\+cv}} (T \&\&ref) noexcept
+{\footnotesize template$<$typename T$>$ }\\constexpr const volatile T \&\& \mbox{\hyperlink{namespaceutils_a0922f693f86f61e5b05d43af01c05cb6}{as\+\_\+cv}} (T \&\&ref) noexcept
 \begin{DoxyCompactList}\small\item\em Casts a forwarding reference to a const volatile reference of the same category. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\constexpr const T $\ast$ \mbox{\hyperlink{namespaceutils_a570f4db159e0862968337af153e091e5}{as\+\_\+const\+\_\+ptr}} (T $\ast$ptr) noexcept
+{\footnotesize template$<$typename T$>$ }\\constexpr const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceutils_a570f4db159e0862968337af153e091e5}{as\+\_\+const\+\_\+ptr}} (T \texorpdfstring{$\ast$}{*}ptr) noexcept
 \begin{DoxyCompactList}\small\item\em Const-\/qualifies a pointer. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\constexpr volatile T $\ast$ \mbox{\hyperlink{namespaceutils_a4a19d4a2f7dfda792458d6c0983c368f}{as\+\_\+volatile\+\_\+ptr}} (T $\ast$ptr) noexcept
+{\footnotesize template$<$typename T$>$ }\\constexpr volatile T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceutils_a4a19d4a2f7dfda792458d6c0983c368f}{as\+\_\+volatile\+\_\+ptr}} (T \texorpdfstring{$\ast$}{*}ptr) noexcept
 \begin{DoxyCompactList}\small\item\em Volatile-\/qualifies a pointer. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\constexpr const volatile T $\ast$ \mbox{\hyperlink{namespaceutils_a9b359b4959abf1200f831e0febf5acd9}{as\+\_\+cv\+\_\+ptr}} (T $\ast$ptr) noexcept
+{\footnotesize template$<$typename T$>$ }\\constexpr const volatile T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceutils_a9b359b4959abf1200f831e0febf5acd9}{as\+\_\+cv\+\_\+ptr}} (T \texorpdfstring{$\ast$}{*}ptr) noexcept
 \begin{DoxyCompactList}\small\item\em Const volatile-\/qualifies a pointer. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , typename U $>$ }\\constexpr auto \&\& \mbox{\hyperlink{namespaceutils_ac60b73bc9e229724ebdb31555e939edb}{forward\+\_\+stored}} (U \&\&u) noexcept
+{\footnotesize template$<$typename T, typename U$>$ }\\constexpr auto \&\& \mbox{\hyperlink{namespaceutils_ac60b73bc9e229724ebdb31555e939edb}{forward\+\_\+stored}} (U \&\&u) noexcept
 \begin{DoxyCompactList}\small\item\em Returns a reference to {\ttfamily u}, which has similar properties to {\ttfamily T}. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename... Gs$>$ }\\\mbox{\hyperlink{namespaceutils_abae20f757c60321115ef587a2424452f}{visitor}} (Gs \&\&...) -\/$>$ \mbox{\hyperlink{classutils_1_1visitor}{visitor}}$<$ std\+::decay\+\_\+t$<$ Gs $>$... $>$
-\end{DoxyCompactItemize}
-\doxysubsection*{Variables}
+{\footnotesize template$<$typename... Gs$>$ }\\\mbox{\hyperlink{namespaceutils_abae20f757c60321115ef587a2424452f}{visitor}} (Gs \&\&...) -\/$>$ visitor$<$ std\+::decay\+\_\+t$<$ Gs $>$... $>$
+\item 
+{\footnotesize template$<$typename T$>$ }\\constexpr \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ std\+::decay\+\_\+t$<$ T $>$ $>$ \mbox{\hyperlink{namespaceutils_a22a7c7da6ae7e5d01adb976235886f2e}{operator\texorpdfstring{$\vert$}{|}}} (T \&\&value, \mbox{\hyperlink{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2e}{interval\+\_\+endpoint\+\_\+type}} \mbox{\hyperlink{group__synth__three__way__result}{type}})
+\begin{DoxyCompactList}\small\item\em Convenience operator overload to construct an interval endpoint. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename LE, typename RE$>$ \newline
+requires requires \{ \mbox{\hyperlink{structutils_1_1interval}{interval}}(std\+::forward$<$LE$>$(\mbox{\hyperlink{namespaceutils_aa52b5daba05b396d43967f83d7b2dadda811882fecd5c7618d7099ebbd39ea254}{left}}), std\+::forward$<$RE$>$(\mbox{\hyperlink{namespaceutils_aa52b5daba05b396d43967f83d7b2dadda7c4f29407893c334a6cb7a87bf045c0d}{right}})); \}}\\constexpr auto \mbox{\hyperlink{namespaceutils_ad2a4f0996740774f3ec83af943648b15}{operator,}} (LE \&\&\mbox{\hyperlink{namespaceutils_aa52b5daba05b396d43967f83d7b2dadda811882fecd5c7618d7099ebbd39ea254}{left}}, RE \&\&\mbox{\hyperlink{namespaceutils_aa52b5daba05b396d43967f83d7b2dadda7c4f29407893c334a6cb7a87bf045c0d}{right}})
+\begin{DoxyCompactList}\small\item\em Convenience operator overload to construct an interval. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Key\+Container, typename Mapped\+Container, typename Key = Key\+Container\+::value\+\_\+type, typename T = Mapped\+Container\+::value\+\_\+type, typename Compare = std\+::less$<$\+Key$>$, typename Sum = std\+::plus$<$\+T$>$, typename Identity = default\+\_\+construct$<$\+T$>$, typename Allocator = detail\+::void\+\_\+allocator\+\_\+t$>$ }\\\mbox{\hyperlink{namespaceutils_a6e7eeb7aeb526748af406563871d8902}{segment\+\_\+tree}} (\mbox{\hyperlink{structutils_1_1segment__tree__nodes__t}{segment\+\_\+tree\+\_\+nodes\+\_\+t}}, Key\+Container, Mapped\+Container, Compare=Compare(), Sum=Sum(), Identity=Identity(), Allocator=Allocator()) -\/$>$ segment\+\_\+tree$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$
+\item 
+{\footnotesize template$<$typename Key\+Container, typename Mapped\+Container, simple\+\_\+allocator Allocator, typename Key = Key\+Container\+::value\+\_\+type, typename T = Mapped\+Container\+::value\+\_\+type$>$ }\\\mbox{\hyperlink{namespaceutils_a6a77c6e8d1d094c7adce75365d2ec023}{segment\+\_\+tree}} (\mbox{\hyperlink{structutils_1_1segment__tree__nodes__t}{segment\+\_\+tree\+\_\+nodes\+\_\+t}}, Key\+Container, Mapped\+Container, Allocator) -\/$>$ segment\+\_\+tree$<$ Key, T, std\+::less$<$ Key $>$, std\+::plus$<$ T $>$, \mbox{\hyperlink{structutils_1_1default__construct}{default\+\_\+construct}}$<$ T $>$, Key\+Container, Mapped\+Container $>$
+\item 
+{\footnotesize template$<$typename Key\+Container, typename Mapped\+Container, typename Key = Key\+Container\+::value\+\_\+type, typename T = Mapped\+Container\+::value\+\_\+type, typename Compare = std\+::less$<$\+Key$>$, typename Sum = std\+::plus$<$\+T$>$, typename Identity = default\+\_\+construct$<$\+T$>$, typename Allocator = detail\+::void\+\_\+allocator\+\_\+t$>$ }\\\mbox{\hyperlink{namespaceutils_a8129c38c4f3daf945460bc7b4b5a5a79}{segment\+\_\+tree}} (Key\+Container, Mapped\+Container, Compare=Compare(), Sum=Sum(), Identity=Identity(), Allocator=Allocator()) -\/$>$ segment\+\_\+tree$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$
+\item 
+{\footnotesize template$<$typename Key\+Container, typename Mapped\+Container, simple\+\_\+allocator Allocator, typename Key = Key\+Container\+::value\+\_\+type, typename T = Mapped\+Container\+::value\+\_\+type$>$ }\\\mbox{\hyperlink{namespaceutils_adb611abcc25122b499fdd1fd2c55419f}{segment\+\_\+tree}} (Key\+Container, Mapped\+Container, Allocator) -\/$>$ segment\+\_\+tree$<$ Key, T, std\+::less$<$ Key $>$, std\+::plus$<$ T $>$, \mbox{\hyperlink{structutils_1_1default__construct}{default\+\_\+construct}}$<$ T $>$, Key\+Container, Mapped\+Container $>$
+\item 
+{\footnotesize template$<$typename Key\+Container, typename Mapped\+Container, typename Key = Key\+Container\+::value\+\_\+type, typename T = Mapped\+Container\+::value\+\_\+type, typename Compare = std\+::less$<$\+Key$>$, typename Sum = std\+::plus$<$\+T$>$, typename Identity = default\+\_\+construct$<$\+T$>$, typename Allocator = detail\+::void\+\_\+allocator\+\_\+t$>$ }\\\mbox{\hyperlink{namespaceutils_a529b6fb988f9d203c7def5f1253c46af}{segment\+\_\+tree}} (std\+::sorted\+\_\+equivalent\+\_\+t, Key\+Container, Mapped\+Container, Compare=Compare(), Sum=Sum(), Identity=Identity(), Allocator=Allocator()) -\/$>$ segment\+\_\+tree$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$
+\item 
+{\footnotesize template$<$typename Key\+Container, typename Mapped\+Container, simple\+\_\+allocator Allocator, typename Key = Key\+Container\+::value\+\_\+type, typename T = Mapped\+Container\+::value\+\_\+type$>$ }\\\mbox{\hyperlink{namespaceutils_aa813e9045621ce0bc1f86b83334852e3}{segment\+\_\+tree}} (std\+::sorted\+\_\+equivalent\+\_\+t, Key\+Container, Mapped\+Container, Allocator) -\/$>$ segment\+\_\+tree$<$ Key, T, std\+::less$<$ Key $>$, std\+::plus$<$ T $>$, \mbox{\hyperlink{structutils_1_1default__construct}{default\+\_\+construct}}$<$ T $>$, Key\+Container, Mapped\+Container $>$
+\item 
+{\footnotesize template$<$typename Pairs, typename Allocator = std\+::allocator$<$int$>$, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$ranges\+::iterator\+\_\+t$<$\+Pairs$>$, Allocator$>$, typename Compare = STT\+::\+Compare, typename Sum = STT\+::\+Sum, typename Identity = STT\+::\+Identity$>$ }\\\mbox{\hyperlink{namespaceutils_a39cc5af4cee6e71a8109f82d4301d6f9}{segment\+\_\+tree}} (std\+::from\+\_\+range\+\_\+t, Pairs \&\&, Compare=Compare(), Sum=Sum(), Identity=Identity(), Allocator=Allocator()) -\/$>$ segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
+\item 
+{\footnotesize template$<$typename Pairs, simple\+\_\+allocator Allocator, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$ranges\+::iterator\+\_\+t$<$\+Pairs$>$, Allocator$>$$>$ }\\\mbox{\hyperlink{namespaceutils_a5a6a09ae254b5d235206c80872ff196d}{segment\+\_\+tree}} (std\+::from\+\_\+range\+\_\+t, Pairs \&\&, Allocator) -\/$>$ segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
+\item 
+{\footnotesize template$<$typename Pairs, typename Allocator = std\+::allocator$<$int$>$, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$ranges\+::iterator\+\_\+t$<$\+Pairs$>$, Allocator$>$, typename Compare = STT\+::\+Compare, typename Sum = STT\+::\+Sum, typename Identity = STT\+::\+Identity$>$ }\\\mbox{\hyperlink{namespaceutils_a15c5648d54f45bae380b6ed233a87770}{segment\+\_\+tree}} (std\+::sorted\+\_\+equivalent\+\_\+t, std\+::from\+\_\+range\+\_\+t, Pairs \&\&, Compare=Compare(), Sum=Sum(), Identity=Identity(), Allocator=Allocator()) -\/$>$ segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
+\item 
+{\footnotesize template$<$typename Pairs, simple\+\_\+allocator Allocator, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$ranges\+::iterator\+\_\+t$<$\+Pairs$>$, Allocator$>$$>$ }\\\mbox{\hyperlink{namespaceutils_acdcea13af380f403900bea1e667330fd}{segment\+\_\+tree}} (std\+::sorted\+\_\+equivalent\+\_\+t, std\+::from\+\_\+range\+\_\+t, Pairs \&\&, Allocator) -\/$>$ segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
+\item 
+{\footnotesize template$<$typename Pairs\+It, typename Pairs\+Sent, typename Allocator = std\+::allocator$<$int$>$, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$\+Pairs\+It, Allocator$>$, typename Compare = STT\+::\+Compare, typename Sum = STT\+::\+Sum, typename Identity = STT\+::\+Identity$>$ }\\\mbox{\hyperlink{namespaceutils_af2f5835a9c7e242f2c66e87717a79569}{segment\+\_\+tree}} (Pairs\+It, Pairs\+Sent, Compare=Compare(), Sum=Sum(), Identity=Identity(), Allocator=Allocator()) -\/$>$ segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
+\item 
+{\footnotesize template$<$typename Pairs\+It, typename Pairs\+Sent, simple\+\_\+allocator Allocator, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$\+Pairs\+It, Allocator$>$$>$ }\\\mbox{\hyperlink{namespaceutils_aa4a7ef62887a1a97db65b8a9e8cbd9bd}{segment\+\_\+tree}} (Pairs\+It, Pairs\+Sent, Allocator) -\/$>$ segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
+\item 
+{\footnotesize template$<$typename Pairs\+It, typename Pairs\+Sent, typename Allocator = std\+::allocator$<$int$>$, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$\+Pairs\+It, Allocator$>$, typename Compare = STT\+::\+Compare, typename Sum = STT\+::\+Sum, typename Identity = STT\+::\+Identity$>$ }\\\mbox{\hyperlink{namespaceutils_ab34d7c058da716ef963b80de4e6af749}{segment\+\_\+tree}} (std\+::sorted\+\_\+equivalent\+\_\+t, Pairs\+It, Pairs\+Sent, Compare=Compare(), Sum=Sum(), Allocator=Allocator()) -\/$>$ segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
+\item 
+{\footnotesize template$<$typename Pairs\+It, typename Pairs\+Sent, simple\+\_\+allocator Allocator, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$\+Pairs\+It, Allocator$>$$>$ }\\\mbox{\hyperlink{namespaceutils_a9fb37b34e2c9e0e274718240606493f0}{segment\+\_\+tree}} (std\+::sorted\+\_\+equivalent\+\_\+t, Pairs\+It, Pairs\+Sent, Allocator) -\/$>$ segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
+\item 
+{\footnotesize template$<$typename Key, typename T, typename Allocator = std\+::allocator$<$int$>$, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$const std\+::pair$<$\+Key, T$>$\texorpdfstring{$\ast$}{*}, Allocator$>$, typename Compare = STT\+::\+Compare, typename Sum = STT\+::\+Sum, typename Identity = STT\+::\+Identity$>$ }\\\mbox{\hyperlink{namespaceutils_a7b7cf4b16a602895ec2b00d5a6553745}{segment\+\_\+tree}} (std\+::initializer\+\_\+list$<$ std\+::pair$<$ Key, T $>$ $>$, Compare=Compare(), Sum=Sum(), Allocator=Allocator()) -\/$>$ segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
+\item 
+{\footnotesize template$<$typename Key, typename T, simple\+\_\+allocator Allocator, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$const std\+::pair$<$\+Key, T$>$\texorpdfstring{$\ast$}{*}, Allocator$>$$>$ }\\\mbox{\hyperlink{namespaceutils_a3b7a317d3912b759e5dabe1c8e79d820}{segment\+\_\+tree}} (std\+::initializer\+\_\+list$<$ std\+::pair$<$ Key, T $>$ $>$, Allocator) -\/$>$ segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
+\item 
+{\footnotesize template$<$typename Key, typename T, typename Allocator = std\+::allocator$<$int$>$, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$const std\+::pair$<$\+Key, T$>$\texorpdfstring{$\ast$}{*}, Allocator$>$, typename Compare = STT\+::\+Compare, typename Sum = STT\+::\+Sum, typename Identity = STT\+::\+Identity$>$ }\\\mbox{\hyperlink{namespaceutils_a6d7538388dde8d989997a8b6030ea9fb}{segment\+\_\+tree}} (std\+::sorted\+\_\+equivalent\+\_\+t, std\+::initializer\+\_\+list$<$ std\+::pair$<$ Key, T $>$ $>$, Compare=Compare(), Sum=Sum(), Identity=Identity(), Allocator=Allocator()) -\/$>$ segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
+\item 
+{\footnotesize template$<$typename Key, typename T, simple\+\_\+allocator Allocator, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$const std\+::pair$<$\+Key, T$>$\texorpdfstring{$\ast$}{*}, Allocator$>$$>$ }\\\mbox{\hyperlink{namespaceutils_a048efb80d8c76325f02a7d20f9396570}{segment\+\_\+tree}} (std\+::sorted\+\_\+equivalent\+\_\+t, std\+::initializer\+\_\+list$<$ std\+::pair$<$ Key, T $>$ $>$, Allocator) -\/$>$ segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$
+\item 
+{\footnotesize template$<$typename C, searchable\+\_\+in$<$ C $>$ Key$>$ }\\constexpr decltype(auto) \mbox{\hyperlink{namespaceutils_afb8127674294a339f6ccc7bbcd1640da}{make\+\_\+search\+\_\+key}} (const Key \&\mbox{\hyperlink{classutils_1_1key}{key}})
+\begin{DoxyCompactList}\small\item\em Make a search key for container {\ttfamily C} from {\ttfamily Key}, converting if necessary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 constexpr auto \mbox{\hyperlink{namespaceutils_a66e65835c8cea64e6a28ccf70f71ea28}{synth\+\_\+three\+\_\+way}}
 \begin{DoxyCompactList}\small\item\em C++ standard exposition-\/only functor\+: {\itshape synth-\/three-\/way}. \end{DoxyCompactList}\item 
 constexpr struct \mbox{\hyperlink{structutils_1_1unique__resource__sync__t}{utils\+::unique\+\_\+resource\+\_\+sync\+\_\+t}} \mbox{\hyperlink{namespaceutils_aab7eb6fe43329d41b46fcfe6ba001dc8}{unique\+\_\+resource\+\_\+sync}}
 \item 
-constexpr struct \mbox{\hyperlink{structutils_1_1segment__tree__nodes__t}{utils\+::segment\+\_\+tree\+\_\+nodes\+\_\+t}} \mbox{\hyperlink{namespaceutils_a801d8a7b8045aa578086613e00216580}{segment\+\_\+tree\+\_\+nodes}}
+{\footnotesize template$<$typename F$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a5a720537626a2d6e7ae840a1212a67f2}{arity\+\_\+of\+\_\+v}} = \mbox{\hyperlink{structutils_1_1arity__of}{arity\+\_\+of}}$<$F$>$\+::value
 \item 
-{\footnotesize template$<$typename F $>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a5a720537626a2d6e7ae840a1212a67f2}{arity\+\_\+of\+\_\+v}} = \mbox{\hyperlink{structutils_1_1arity__of}{arity\+\_\+of}}$<$F$>$\+::value
+{\footnotesize template$<$typename T$>$ }\\constexpr bool \mbox{\hyperlink{group__is__integer__like_ga3e785f8bbe5579cdb6684c29d19d4fe7}{is\+\_\+integer\+\_\+like\+\_\+v}} = \mbox{\hyperlink{group__is__integer__like_structutils_1_1is__integer__like}{is\+\_\+integer\+\_\+like}}$<$T$>$\+::value
 \item 
-{\footnotesize template$<$typename T $>$ }\\constexpr bool \mbox{\hyperlink{group__is__integer__like_ga3e785f8bbe5579cdb6684c29d19d4fe7}{is\+\_\+integer\+\_\+like\+\_\+v}} = \mbox{\hyperlink{group__is__integer__like_structutils_1_1is__integer__like}{is\+\_\+integer\+\_\+like}}$<$T$>$\+::value
+{\footnotesize template$<$typename T$>$ }\\constexpr int \mbox{\hyperlink{group__width__of_ga576ed06f843b2217161f37a06cc6da31}{width\+\_\+of\+\_\+v}} = \mbox{\hyperlink{group__width__of_structutils_1_1width__of}{width\+\_\+of}}$<$T$>$\+::value
 \item 
-{\footnotesize template$<$typename T $>$ }\\constexpr int \mbox{\hyperlink{group__width__of_ga576ed06f843b2217161f37a06cc6da31}{width\+\_\+of\+\_\+v}} = \mbox{\hyperlink{group__width__of_structutils_1_1width__of}{width\+\_\+of}}$<$T$>$\+::value
+{\footnotesize template$<$typename T, typename U$>$ }\\constexpr bool \mbox{\hyperlink{group__is__same__sign_gae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}} = \mbox{\hyperlink{group__is__same__sign_structutils_1_1is__same__sign}{is\+\_\+same\+\_\+sign}}$<$T, U$>$\+::value
 \item 
-{\footnotesize template$<$typename T , typename U $>$ }\\constexpr bool \mbox{\hyperlink{group__is__same__sign_gae1ba453ed44bcb43cd6d1b42e5ee9b82}{is\+\_\+same\+\_\+sign\+\_\+v}} = \mbox{\hyperlink{group__is__same__sign_structutils_1_1is__same__sign}{is\+\_\+same\+\_\+sign}}$<$T, U$>$\+::value
+{\footnotesize template$<$typename T$>$ }\\constexpr T \mbox{\hyperlink{group__epsilon__of_ga237a9d163e61fab7413f93616669f2c9}{epsilon\+\_\+of\+\_\+v}} = \mbox{\hyperlink{group__epsilon__of_structutils_1_1epsilon__of}{epsilon\+\_\+of}}$<$T$>$\+::value
 \item 
-{\footnotesize template$<$typename T $>$ }\\constexpr T \mbox{\hyperlink{group__epsilon__of_ga237a9d163e61fab7413f93616669f2c9}{epsilon\+\_\+of\+\_\+v}} = \mbox{\hyperlink{group__epsilon__of_structutils_1_1epsilon__of}{epsilon\+\_\+of}}$<$T$>$\+::value
-\item 
-{\footnotesize template$<$typename From , typename To $>$ }\\constexpr bool \mbox{\hyperlink{group__is__lossless__convertible_ga0895531ec3b54ee68daa30b7fbd31996}{is\+\_\+lossless\+\_\+convertible\+\_\+v}} = is\+\_\+lossless\+\_\+convertible$<$From, To$>$\+::value
+{\footnotesize template$<$typename From, typename To$>$ }\\constexpr bool \mbox{\hyperlink{group__is__lossless__convertible_ga0895531ec3b54ee68daa30b7fbd31996}{is\+\_\+lossless\+\_\+convertible\+\_\+v}} = is\+\_\+lossless\+\_\+convertible$<$From, To$>$\+::value
 \item 
 {\footnotesize template$<$typename... Ts$>$ }\\constexpr std\+::align\+\_\+val\+\_\+t \mbox{\hyperlink{group__utilsmax__align_ga261afe138d5120bb7ae53bac474fc8a7}{max\+\_\+align\+\_\+v}} = \mbox{\hyperlink{group__utilsmax__align_structutils_1_1max__align}{max\+\_\+align}}$<$Ts...$>$\+::value
 \item 
@@ -487,210 +491,197 @@ constexpr struct \mbox{\hyperlink{structutils_1_1disable__op__t}{utils\+::disabl
 \item 
 {\footnotesize template$<$\mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} S$>$ }\\constexpr auto \mbox{\hyperlink{namespaceutils_a026f0efc276a6d7eba427c611cd569ff}{trim\+\_\+v}} = \mbox{\hyperlink{structutils_1_1trim}{trim}}$<$S$>$\+::value
 \item 
-{\footnotesize template$<$typename T $>$ }\\constexpr \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} \mbox{\hyperlink{group__utilsqualifiers__of_gad6a8c3be8fd9c0f96263ed785cd8bff7}{qualifiers\+\_\+of\+\_\+v}} = \mbox{\hyperlink{group__utilsqualifiers__of_structutils_1_1qualifiers__of}{qualifiers\+\_\+of}}$<$T$>$\+::value
+{\footnotesize template$<$typename T$>$ }\\constexpr \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} \mbox{\hyperlink{group__utilsqualifiers__of_gad6a8c3be8fd9c0f96263ed785cd8bff7}{qualifiers\+\_\+of\+\_\+v}} = \mbox{\hyperlink{group__utilsqualifiers__of_structutils_1_1qualifiers__of}{qualifiers\+\_\+of}}$<$T$>$\+::value
 \item 
-{\footnotesize template$<$typename T , typename U $>$ }\\constexpr bool \mbox{\hyperlink{group__utilsis__equiv_gabc8a77dfb384195bd1be8468750888c0}{is\+\_\+equiv\+\_\+v}} = \mbox{\hyperlink{group__utilsis__equiv_structutils_1_1is__equiv}{is\+\_\+equiv}}$<$T, U$>$\+::value
+{\footnotesize template$<$typename T, typename U$>$ }\\constexpr bool \mbox{\hyperlink{group__utilsis__equiv_gabc8a77dfb384195bd1be8468750888c0}{is\+\_\+equiv\+\_\+v}} = \mbox{\hyperlink{group__utilsis__equiv_structutils_1_1is__equiv}{is\+\_\+equiv}}$<$T, U$>$\+::value
 \item 
-{\footnotesize template$<$template$<$ typename... $>$ typename Tmpl, typename T $>$ }\\constexpr bool \mbox{\hyperlink{group__utilsis__template__instance_ga1de78a43e2208a380d280c56bdd7947e}{is\+\_\+template\+\_\+instance\+\_\+v}} = \mbox{\hyperlink{group__utilsis__template__instance_structutils_1_1is__template__instance}{is\+\_\+template\+\_\+instance}}$<$Tmpl, std\+::remove\+\_\+cvref\+\_\+t$<$T$>$$>$\+::value
+{\footnotesize template$<$template$<$ typename... $>$ typename Tmpl, typename T$>$ }\\constexpr bool \mbox{\hyperlink{group__utilsis__template__instance_ga1de78a43e2208a380d280c56bdd7947e}{is\+\_\+template\+\_\+instance\+\_\+v}} = \mbox{\hyperlink{group__utilsis__template__instance_structutils_1_1is__template__instance}{is\+\_\+template\+\_\+instance}}$<$Tmpl, std\+::remove\+\_\+cvref\+\_\+t$<$T$>$$>$\+::value
 \item 
-{\footnotesize template$<$typename From , typename To $>$ }\\constexpr bool \mbox{\hyperlink{group__utilsexplicitly__convertible__to_gaeeeecd5e5e48d738f1f779d9b8f46dcc}{is\+\_\+explicitly\+\_\+convertible\+\_\+v}} = \mbox{\hyperlink{group__utilsexplicitly__convertible__to_structutils_1_1is__explicitly__convertible}{is\+\_\+explicitly\+\_\+convertible}}$<$From, To$>$\+::value
+{\footnotesize template$<$typename From, typename To$>$ }\\constexpr bool \mbox{\hyperlink{group__utilsexplicitly__convertible__to_gaeeeecd5e5e48d738f1f779d9b8f46dcc}{is\+\_\+explicitly\+\_\+convertible\+\_\+v}} = \mbox{\hyperlink{group__utilsexplicitly__convertible__to_structutils_1_1is__explicitly__convertible}{is\+\_\+explicitly\+\_\+convertible}}$<$From, To$>$\+::value
 \item 
-{\footnotesize template$<$typename Tag , typename T $>$ }\\constexpr bool \mbox{\hyperlink{group__utilsis__tagged_ga4cf6ed8a5af20f379e7e15fcb183c2bc}{is\+\_\+tagged\+\_\+v}} = \mbox{\hyperlink{group__utilsis__tagged_structutils_1_1is__tagged}{is\+\_\+tagged}}$<$Tag, T$>$\+::value
+{\footnotesize template$<$typename Tag, typename T$>$ }\\constexpr bool \mbox{\hyperlink{group__utilsis__tagged_ga4cf6ed8a5af20f379e7e15fcb183c2bc}{is\+\_\+tagged\+\_\+v}} = \mbox{\hyperlink{group__utilsis__tagged_structutils_1_1is__tagged}{is\+\_\+tagged}}$<$Tag, T$>$\+::value
+\item 
+constexpr struct \mbox{\hyperlink{structutils_1_1segment__tree__nodes__t}{utils\+::segment\+\_\+tree\+\_\+nodes\+\_\+t}} \mbox{\hyperlink{namespaceutils_a801d8a7b8045aa578086613e00216580}{segment\+\_\+tree\+\_\+nodes}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
-\mbox{\Hypertarget{namespaceutils_ac4674b772ff1c668b49f1867630f3d54}\label{namespaceutils_ac4674b772ff1c668b49f1867630f3d54}} 
-\index{utils@{utils}!arguments\_of\_t@{arguments\_of\_t}}
+\Hypertarget{namespaceutils_a191a3b3465098ded89db3c91d162cdf4}\index{utils@{utils}!arguments\_of\_t@{arguments\_of\_t}}
 \index{arguments\_of\_t@{arguments\_of\_t}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{arguments\_of\_t}{arguments\_of\_t}}
-{\footnotesize\ttfamily template$<$typename F $>$ \\
-using \mbox{\hyperlink{namespaceutils_ac4674b772ff1c668b49f1867630f3d54}{utils\+::arguments\+\_\+of\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1arguments__of}{arguments\+\_\+of}}$<$F$>$\+::type}
+{\footnotesize\ttfamily \label{namespaceutils_a191a3b3465098ded89db3c91d162cdf4} 
+template$<$typename F$>$ \\
+using \mbox{\hyperlink{namespaceutils_a191a3b3465098ded89db3c91d162cdf4}{utils\+::arguments\+\_\+of\+\_\+t}} = \mbox{\hyperlink{structutils_1_1arguments__of}{arguments\+\_\+of}}$<$F$>$\+::type}
 
 
 
 Definition at line \mbox{\hyperlink{functional_8hpp_source_l00301}{301}} of file \mbox{\hyperlink{functional_8hpp_source}{functional.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a4ff95410c7281fc810a9e8cfef9855e8}\label{namespaceutils_a4ff95410c7281fc810a9e8cfef9855e8}} 
-\index{utils@{utils}!function\_decay\_t@{function\_decay\_t}}
+\Hypertarget{namespaceutils_ab216c55ca5eed8fa85dfa7d1ccb85eb5}\index{utils@{utils}!function\_decay\_t@{function\_decay\_t}}
 \index{function\_decay\_t@{function\_decay\_t}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{function\_decay\_t}{function\_decay\_t}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-using \mbox{\hyperlink{namespaceutils_a4ff95410c7281fc810a9e8cfef9855e8}{utils\+::function\+\_\+decay\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1function__decay}{function\+\_\+decay}}$<$T$>$\+::type}
+{\footnotesize\ttfamily \label{namespaceutils_ab216c55ca5eed8fa85dfa7d1ccb85eb5} 
+template$<$typename T$>$ \\
+using \mbox{\hyperlink{namespaceutils_ab216c55ca5eed8fa85dfa7d1ccb85eb5}{utils\+::function\+\_\+decay\+\_\+t}} = \mbox{\hyperlink{structutils_1_1function__decay}{function\+\_\+decay}}$<$T$>$\+::type}
 
 
 
 Definition at line \mbox{\hyperlink{functional_8hpp_source_l00275}{275}} of file \mbox{\hyperlink{functional_8hpp_source}{functional.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_aac452ad4319d1aa831bb904e6e5123bb}\label{namespaceutils_aac452ad4319d1aa831bb904e6e5123bb}} 
-\index{utils@{utils}!iterator\_category\_t@{iterator\_category\_t}}
+\Hypertarget{namespaceutils_a32770ef0ae297b11683cbfea866290dc}\index{utils@{utils}!iterator\_category\_t@{iterator\_category\_t}}
 \index{iterator\_category\_t@{iterator\_category\_t}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{iterator\_category\_t}{iterator\_category\_t}}
-{\footnotesize\ttfamily template$<$typename Iter $>$ \\
-using \mbox{\hyperlink{namespaceutils_aac452ad4319d1aa831bb904e6e5123bb}{utils\+::iterator\+\_\+category\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1iterator__category}{iterator\+\_\+category}}$<$Iter$>$\+::type}
+{\footnotesize\ttfamily \label{namespaceutils_a32770ef0ae297b11683cbfea866290dc} 
+template$<$typename Iter$>$ \\
+using \mbox{\hyperlink{namespaceutils_a32770ef0ae297b11683cbfea866290dc}{utils\+::iterator\+\_\+category\+\_\+t}} = \mbox{\hyperlink{structutils_1_1iterator__category}{iterator\+\_\+category}}$<$Iter$>$\+::type}
 
 
 
 Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00020}{20}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a2a46c9140a386f42f42b6577cd48b1a6}\label{namespaceutils_a2a46c9140a386f42f42b6577cd48b1a6}} 
-\index{utils@{utils}!iterator\_wrapper@{iterator\_wrapper}}
+\Hypertarget{namespaceutils_a3c25287b2acf0067e44ab4dceebb0052}\index{utils@{utils}!iterator\_wrapper@{iterator\_wrapper}}
 \index{iterator\_wrapper@{iterator\_wrapper}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{iterator\_wrapper}{iterator\_wrapper}}
-{\footnotesize\ttfamily template$<$typename Iter $>$ \\
-using \mbox{\hyperlink{namespaceutils_a2a46c9140a386f42f42b6577cd48b1a6}{utils\+::iterator\+\_\+wrapper}} = typedef std\+::conditional\+\_\+t$<$std\+::is\+\_\+pointer\+\_\+v$<$Iter$>$, \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}}$<$std\+::remove\+\_\+pointer\+\_\+t$<$Iter$>$ $>$, Iter$>$}
+{\footnotesize\ttfamily \label{namespaceutils_a3c25287b2acf0067e44ab4dceebb0052} 
+template$<$typename Iter$>$ \\
+using \mbox{\hyperlink{namespaceutils_a3c25287b2acf0067e44ab4dceebb0052}{utils\+::iterator\+\_\+wrapper}} = std\+::conditional\+\_\+t$<$std\+::is\+\_\+pointer\+\_\+v$<$Iter$>$, \mbox{\hyperlink{classutils_1_1pointer__iterator}{pointer\+\_\+iterator}}$<$std\+::remove\+\_\+pointer\+\_\+t$<$Iter$>$$>$, Iter$>$}
 
 
 
 Definition at line \mbox{\hyperlink{iterator_8hpp_source_l00057}{57}} of file \mbox{\hyperlink{iterator_8hpp_source}{iterator.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_aa2a651da2caee87aff06087795119502}\label{namespaceutils_aa2a651da2caee87aff06087795119502}} 
-\index{utils@{utils}!lambda\_decay\_t@{lambda\_decay\_t}}
+\Hypertarget{namespaceutils_a04fc2d011dfa57bb06527bc644533804}\index{utils@{utils}!lambda\_decay\_t@{lambda\_decay\_t}}
 \index{lambda\_decay\_t@{lambda\_decay\_t}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{lambda\_decay\_t}{lambda\_decay\_t}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-using \mbox{\hyperlink{namespaceutils_aa2a651da2caee87aff06087795119502}{utils\+::lambda\+\_\+decay\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1lambda__decay}{lambda\+\_\+decay}}$<$T$>$\+::type}
+{\footnotesize\ttfamily \label{namespaceutils_a04fc2d011dfa57bb06527bc644533804} 
+template$<$typename T$>$ \\
+using \mbox{\hyperlink{namespaceutils_a04fc2d011dfa57bb06527bc644533804}{utils\+::lambda\+\_\+decay\+\_\+t}} = \mbox{\hyperlink{structutils_1_1lambda__decay}{lambda\+\_\+decay}}$<$T$>$\+::type}
 
 
 
 Definition at line \mbox{\hyperlink{functional_8hpp_source_l00287}{287}} of file \mbox{\hyperlink{functional_8hpp_source}{functional.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_aec2f7d8a4a6a70e231ae13dd1a18606a}\label{namespaceutils_aec2f7d8a4a6a70e231ae13dd1a18606a}} 
-\index{utils@{utils}!result\_of\_t@{result\_of\_t}}
+\Hypertarget{namespaceutils_ae4538b11ae419baa498ebfb430faab6d}\index{utils@{utils}!result\_of\_t@{result\_of\_t}}
 \index{result\_of\_t@{result\_of\_t}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{result\_of\_t}{result\_of\_t}}
-{\footnotesize\ttfamily template$<$typename F $>$ \\
-using \mbox{\hyperlink{namespaceutils_aec2f7d8a4a6a70e231ae13dd1a18606a}{utils\+::result\+\_\+of\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1result__of}{result\+\_\+of}}$<$F$>$\+::type}
+{\footnotesize\ttfamily \label{namespaceutils_ae4538b11ae419baa498ebfb430faab6d} 
+template$<$typename F$>$ \\
+using \mbox{\hyperlink{namespaceutils_ae4538b11ae419baa498ebfb430faab6d}{utils\+::result\+\_\+of\+\_\+t}} = \mbox{\hyperlink{structutils_1_1result__of}{result\+\_\+of}}$<$F$>$\+::type}
 
 
 
 Definition at line \mbox{\hyperlink{functional_8hpp_source_l00294}{294}} of file \mbox{\hyperlink{functional_8hpp_source}{functional.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a74b48c2315cd329e92dc844eacbec5ae}\label{namespaceutils_a74b48c2315cd329e92dc844eacbec5ae}} 
-\index{utils@{utils}!static\_string@{static\_string}}
+\Hypertarget{namespaceutils_a50417c84b3f9a8a4df14f01c84ee3d98}\index{utils@{utils}!static\_string@{static\_string}}
 \index{static\_string@{static\_string}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{static\_string}{static\_string}}
-{\footnotesize\ttfamily template$<$std\+::size\+\_\+t N$>$ \\
-using \mbox{\hyperlink{namespaceutils_a74b48c2315cd329e92dc844eacbec5ae}{utils\+::static\+\_\+string}} = typedef \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$char, N$>$}
+{\footnotesize\ttfamily \label{namespaceutils_a50417c84b3f9a8a4df14f01c84ee3d98} 
+template$<$std\+::size\+\_\+t N$>$ \\
+using \mbox{\hyperlink{namespaceutils_a50417c84b3f9a8a4df14f01c84ee3d98}{utils\+::static\+\_\+string}} = \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$char, N$>$}
 
 
 
 Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00521}{521}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a145ea814e7f8a159dda04fd61f74c2a2}\label{namespaceutils_a145ea814e7f8a159dda04fd61f74c2a2}} 
-\index{utils@{utils}!static\_string\_view@{static\_string\_view}}
+\Hypertarget{namespaceutils_aae8e6d52bab69e719589fd104c43bef4}\index{utils@{utils}!static\_string\_view@{static\_string\_view}}
 \index{static\_string\_view@{static\_string\_view}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{static\_string\_view}{static\_string\_view}}
-{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceutils_a145ea814e7f8a159dda04fd61f74c2a2}{utils\+::static\+\_\+string\+\_\+view}} = typedef \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$char$>$}
+{\footnotesize\ttfamily \label{namespaceutils_aae8e6d52bab69e719589fd104c43bef4} 
+using \mbox{\hyperlink{namespaceutils_aae8e6d52bab69e719589fd104c43bef4}{utils\+::static\+\_\+string\+\_\+view}} = \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$char$>$}
 
 
 
 Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00220}{220}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a22794b5e2b5d651985e849245ad8e187}\label{namespaceutils_a22794b5e2b5d651985e849245ad8e187}} 
-\index{utils@{utils}!synth\_three\_way\_result\_t@{synth\_three\_way\_result\_t}}
-\index{synth\_three\_way\_result\_t@{synth\_three\_way\_result\_t}!utils@{utils}}
-\doxysubsubsection{\texorpdfstring{synth\_three\_way\_result\_t}{synth\_three\_way\_result\_t}}
-{\footnotesize\ttfamily template$<$typename T , typename U  = T$>$ \\
-using \mbox{\hyperlink{namespaceutils_a22794b5e2b5d651985e849245ad8e187}{utils\+::synth\+\_\+three\+\_\+way\+\_\+result\+\_\+t}} = typedef \mbox{\hyperlink{structutils_1_1synth__three__way__result}{synth\+\_\+three\+\_\+way\+\_\+result}}$<$T, U$>$\+::type}
-
-
-
-Result type of the {\itshape synth-\/three-\/way} functor for types {\ttfamily T} and {\ttfamily U}. 
-
-
-
-Definition at line \mbox{\hyperlink{compare_8hpp_source_l00029}{29}} of file \mbox{\hyperlink{compare_8hpp_source}{compare.\+hpp}}.
-
-\mbox{\Hypertarget{namespaceutils_aaf9bbe5b2bd0925138bff5c0b7a9c16c}\label{namespaceutils_aaf9bbe5b2bd0925138bff5c0b7a9c16c}} 
-\index{utils@{utils}!u16static\_string@{u16static\_string}}
+\Hypertarget{namespaceutils_ab8439cfe4079dc7798698786779018be}\index{utils@{utils}!u16static\_string@{u16static\_string}}
 \index{u16static\_string@{u16static\_string}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{u16static\_string}{u16static\_string}}
-{\footnotesize\ttfamily template$<$std\+::size\+\_\+t N$>$ \\
-using \mbox{\hyperlink{namespaceutils_aaf9bbe5b2bd0925138bff5c0b7a9c16c}{utils\+::u16static\+\_\+string}} = typedef \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$char16\+\_\+t, N$>$}
+{\footnotesize\ttfamily \label{namespaceutils_ab8439cfe4079dc7798698786779018be} 
+template$<$std\+::size\+\_\+t N$>$ \\
+using \mbox{\hyperlink{namespaceutils_ab8439cfe4079dc7798698786779018be}{utils\+::u16static\+\_\+string}} = \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$char16\+\_\+t, N$>$}
 
 
 
 Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00527}{527}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a52a16a9740cf3b0b2e963198ebcd7ca9}\label{namespaceutils_a52a16a9740cf3b0b2e963198ebcd7ca9}} 
-\index{utils@{utils}!u16static\_string\_view@{u16static\_string\_view}}
+\Hypertarget{namespaceutils_a6ecc783d2242e83d51c8df321dd7b7cf}\index{utils@{utils}!u16static\_string\_view@{u16static\_string\_view}}
 \index{u16static\_string\_view@{u16static\_string\_view}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{u16static\_string\_view}{u16static\_string\_view}}
-{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceutils_a52a16a9740cf3b0b2e963198ebcd7ca9}{utils\+::u16static\+\_\+string\+\_\+view}} = typedef \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$char16\+\_\+t$>$}
+{\footnotesize\ttfamily \label{namespaceutils_a6ecc783d2242e83d51c8df321dd7b7cf} 
+using \mbox{\hyperlink{namespaceutils_a6ecc783d2242e83d51c8df321dd7b7cf}{utils\+::u16static\+\_\+string\+\_\+view}} = \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$char16\+\_\+t$>$}
 
 
 
 Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00223}{223}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a8a879e6085361f9a698393a071df0e9b}\label{namespaceutils_a8a879e6085361f9a698393a071df0e9b}} 
-\index{utils@{utils}!u32static\_string@{u32static\_string}}
+\Hypertarget{namespaceutils_a7bbea5b2a2fcdd043b13533e04a35a24}\index{utils@{utils}!u32static\_string@{u32static\_string}}
 \index{u32static\_string@{u32static\_string}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{u32static\_string}{u32static\_string}}
-{\footnotesize\ttfamily template$<$std\+::size\+\_\+t N$>$ \\
-using \mbox{\hyperlink{namespaceutils_a8a879e6085361f9a698393a071df0e9b}{utils\+::u32static\+\_\+string}} = typedef \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$char32\+\_\+t, N$>$}
+{\footnotesize\ttfamily \label{namespaceutils_a7bbea5b2a2fcdd043b13533e04a35a24} 
+template$<$std\+::size\+\_\+t N$>$ \\
+using \mbox{\hyperlink{namespaceutils_a7bbea5b2a2fcdd043b13533e04a35a24}{utils\+::u32static\+\_\+string}} = \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$char32\+\_\+t, N$>$}
 
 
 
 Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00529}{529}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a607e1c30fad8199a766afa327008d13f}\label{namespaceutils_a607e1c30fad8199a766afa327008d13f}} 
-\index{utils@{utils}!u32static\_string\_view@{u32static\_string\_view}}
+\Hypertarget{namespaceutils_a6c7009b0a39b0c5f91e681d45ad94cc6}\index{utils@{utils}!u32static\_string\_view@{u32static\_string\_view}}
 \index{u32static\_string\_view@{u32static\_string\_view}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{u32static\_string\_view}{u32static\_string\_view}}
-{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceutils_a607e1c30fad8199a766afa327008d13f}{utils\+::u32static\+\_\+string\+\_\+view}} = typedef \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$char32\+\_\+t$>$}
+{\footnotesize\ttfamily \label{namespaceutils_a6c7009b0a39b0c5f91e681d45ad94cc6} 
+using \mbox{\hyperlink{namespaceutils_a6c7009b0a39b0c5f91e681d45ad94cc6}{utils\+::u32static\+\_\+string\+\_\+view}} = \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$char32\+\_\+t$>$}
 
 
 
 Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00224}{224}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_ab905b8e2c36d6ed84b4653a2551f6001}\label{namespaceutils_ab905b8e2c36d6ed84b4653a2551f6001}} 
-\index{utils@{utils}!u8static\_string@{u8static\_string}}
+\Hypertarget{namespaceutils_a30adc31944222cec94474260159e7dcf}\index{utils@{utils}!u8static\_string@{u8static\_string}}
 \index{u8static\_string@{u8static\_string}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{u8static\_string}{u8static\_string}}
-{\footnotesize\ttfamily template$<$std\+::size\+\_\+t N$>$ \\
-using \mbox{\hyperlink{namespaceutils_ab905b8e2c36d6ed84b4653a2551f6001}{utils\+::u8static\+\_\+string}} = typedef \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$char8\+\_\+t, N$>$}
+{\footnotesize\ttfamily \label{namespaceutils_a30adc31944222cec94474260159e7dcf} 
+template$<$std\+::size\+\_\+t N$>$ \\
+using \mbox{\hyperlink{namespaceutils_a30adc31944222cec94474260159e7dcf}{utils\+::u8static\+\_\+string}} = \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$char8\+\_\+t, N$>$}
 
 
 
 Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00525}{525}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a6d9158916669d9f93599022e9201c016}\label{namespaceutils_a6d9158916669d9f93599022e9201c016}} 
-\index{utils@{utils}!u8static\_string\_view@{u8static\_string\_view}}
+\Hypertarget{namespaceutils_a33f8eec783c30b43e0ea620cf7d032b4}\index{utils@{utils}!u8static\_string\_view@{u8static\_string\_view}}
 \index{u8static\_string\_view@{u8static\_string\_view}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{u8static\_string\_view}{u8static\_string\_view}}
-{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceutils_a6d9158916669d9f93599022e9201c016}{utils\+::u8static\+\_\+string\+\_\+view}} = typedef \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$char8\+\_\+t$>$}
+{\footnotesize\ttfamily \label{namespaceutils_a33f8eec783c30b43e0ea620cf7d032b4} 
+using \mbox{\hyperlink{namespaceutils_a33f8eec783c30b43e0ea620cf7d032b4}{utils\+::u8static\+\_\+string\+\_\+view}} = \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$char8\+\_\+t$>$}
 
 
 
 Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00222}{222}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_acdc92300a8a41d794e21ecfade137492}\label{namespaceutils_acdc92300a8a41d794e21ecfade137492}} 
-\index{utils@{utils}!variadic\_arity@{variadic\_arity}}
+\Hypertarget{namespaceutils_a3566da17ec35d45d98ab780d5b335238}\index{utils@{utils}!variadic\_arity@{variadic\_arity}}
 \index{variadic\_arity@{variadic\_arity}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{variadic\_arity}{variadic\_arity}}
-{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceutils_acdc92300a8a41d794e21ecfade137492}{utils\+::variadic\+\_\+arity}} = typedef \mbox{\hyperlink{structutils_1_1arity}{arity}}$<$static\+\_\+cast$<$std\+::size\+\_\+t$>$(-\/1)$>$}
+{\footnotesize\ttfamily \label{namespaceutils_a3566da17ec35d45d98ab780d5b335238} 
+using \mbox{\hyperlink{namespaceutils_a3566da17ec35d45d98ab780d5b335238}{utils\+::variadic\+\_\+arity}} = \mbox{\hyperlink{structutils_1_1arity}{arity}}$<$static\+\_\+cast$<$std\+::size\+\_\+t$>$(-\/1)$>$}
 
 
 
 Definition at line \mbox{\hyperlink{functional_8hpp_source_l00312}{312}} of file \mbox{\hyperlink{functional_8hpp_source}{functional.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_af0ea072dbe2b847ec65a37641f0352fc}\label{namespaceutils_af0ea072dbe2b847ec65a37641f0352fc}} 
-\index{utils@{utils}!wstatic\_string@{wstatic\_string}}
+\Hypertarget{namespaceutils_a9adb27e54f418dbc2b0fbe31be45dd56}\index{utils@{utils}!wstatic\_string@{wstatic\_string}}
 \index{wstatic\_string@{wstatic\_string}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{wstatic\_string}{wstatic\_string}}
-{\footnotesize\ttfamily template$<$std\+::size\+\_\+t N$>$ \\
-using \mbox{\hyperlink{namespaceutils_af0ea072dbe2b847ec65a37641f0352fc}{utils\+::wstatic\+\_\+string}} = typedef \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$wchar\+\_\+t, N$>$}
+{\footnotesize\ttfamily \label{namespaceutils_a9adb27e54f418dbc2b0fbe31be45dd56} 
+template$<$std\+::size\+\_\+t N$>$ \\
+using \mbox{\hyperlink{namespaceutils_a9adb27e54f418dbc2b0fbe31be45dd56}{utils\+::wstatic\+\_\+string}} = \mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}}$<$wchar\+\_\+t, N$>$}
 
 
 
 Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00523}{523}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a024354295af32aee7ed2220d3a52d8f5}\label{namespaceutils_a024354295af32aee7ed2220d3a52d8f5}} 
-\index{utils@{utils}!wstatic\_string\_view@{wstatic\_string\_view}}
+\Hypertarget{namespaceutils_a6d473d7753045fb5672219a3f763af10}\index{utils@{utils}!wstatic\_string\_view@{wstatic\_string\_view}}
 \index{wstatic\_string\_view@{wstatic\_string\_view}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{wstatic\_string\_view}{wstatic\_string\_view}}
-{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceutils_a024354295af32aee7ed2220d3a52d8f5}{utils\+::wstatic\+\_\+string\+\_\+view}} = typedef \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$wchar\+\_\+t$>$}
+{\footnotesize\ttfamily \label{namespaceutils_a6d473d7753045fb5672219a3f763af10} 
+using \mbox{\hyperlink{namespaceutils_a6d473d7753045fb5672219a3f763af10}{utils\+::wstatic\+\_\+string\+\_\+view}} = \mbox{\hyperlink{structutils_1_1basic__static__string__view}{basic\+\_\+static\+\_\+string\+\_\+view}}$<$wchar\+\_\+t$>$}
 
 
 
@@ -699,22 +690,22 @@ Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00221}{221}} of 
 
 
 \doxysubsection{Enumeration Type Documentation}
-\mbox{\Hypertarget{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2e}\label{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2e}} 
-\index{utils@{utils}!interval\_endpoint\_type@{interval\_endpoint\_type}}
+\Hypertarget{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2e}\index{utils@{utils}!interval\_endpoint\_type@{interval\_endpoint\_type}}
 \index{interval\_endpoint\_type@{interval\_endpoint\_type}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{interval\_endpoint\_type}{interval\_endpoint\_type}}
-{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2e}{utils\+::interval\+\_\+endpoint\+\_\+type}} \+: unsigned char\hspace{0.3cm}{\ttfamily [strong]}}
+{\footnotesize\ttfamily \label{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2e} 
+enum class \mbox{\hyperlink{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2e}{utils\+::interval\+\_\+endpoint\+\_\+type}} \+: unsigned char\hspace{0.3cm}{\ttfamily [strong]}}
 
 
 
 Enumeration representing the type of an interval endpoint (open or closed). 
 
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{open@{open}!utils@{utils}}\index{utils@{utils}!open@{open}}}\mbox{\Hypertarget{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2ea7cef8a734855777c2a9d0caf42666e69}\label{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2ea7cef8a734855777c2a9d0caf42666e69}} 
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{open@{open}!utils@{utils}}\index{utils@{utils}!open@{open}}}\Hypertarget{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2ea7cef8a734855777c2a9d0caf42666e69}\label{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2ea7cef8a734855777c2a9d0caf42666e69} 
 open&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{closed@{closed}!utils@{utils}}\index{utils@{utils}!closed@{closed}}}\mbox{\Hypertarget{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2ea349e686330723975502e9ef4f939a5ac}\label{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2ea349e686330723975502e9ef4f939a5ac}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{closed@{closed}!utils@{utils}}\index{utils@{utils}!closed@{closed}}}\Hypertarget{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2ea349e686330723975502e9ef4f939a5ac}\label{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2ea349e686330723975502e9ef4f939a5ac} 
 closed&\\
 \hline
 
@@ -723,30 +714,30 @@ closed&\\
 
 Definition at line \mbox{\hyperlink{interval_8hpp_source_l00025}{25}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_aa52b5daba05b396d43967f83d7b2dadd}\label{namespaceutils_aa52b5daba05b396d43967f83d7b2dadd}} 
-\index{utils@{utils}!segment\_tree\_traverse\_direction@{segment\_tree\_traverse\_direction}}
+\Hypertarget{namespaceutils_aa52b5daba05b396d43967f83d7b2dadd}\index{utils@{utils}!segment\_tree\_traverse\_direction@{segment\_tree\_traverse\_direction}}
 \index{segment\_tree\_traverse\_direction@{segment\_tree\_traverse\_direction}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{segment\_tree\_traverse\_direction}{segment\_tree\_traverse\_direction}}
-{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespaceutils_aa52b5daba05b396d43967f83d7b2dadd}{utils\+::segment\+\_\+tree\+\_\+traverse\+\_\+direction}}\hspace{0.3cm}{\ttfamily [strong]}}
+{\footnotesize\ttfamily \label{namespaceutils_aa52b5daba05b396d43967f83d7b2dadd} 
+enum class \mbox{\hyperlink{namespaceutils_aa52b5daba05b396d43967f83d7b2dadd}{utils\+::segment\+\_\+tree\+\_\+traverse\+\_\+direction}}\hspace{0.3cm}{\ttfamily [strong]}}
 
 
 
-Enumeration type representing the direction a {\ttfamily segment\+\_\+tree\+\_\+traverser\+\_\+for} chooses to go, from root to leaves. 
+Enumeration type representing the direction a {\ttfamily \doxylink{conceptutils_1_1segment__tree__traverser__for}{segment\+\_\+tree\+\_\+traverser\+\_\+for}} chooses to go, from root to leaves. 
 
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{stop@{stop}!utils@{utils}}\index{utils@{utils}!stop@{stop}}}\mbox{\Hypertarget{namespaceutils_aa52b5daba05b396d43967f83d7b2daddaef399b2d446bb37b7c32ad2cc1b6045b}\label{namespaceutils_aa52b5daba05b396d43967f83d7b2daddaef399b2d446bb37b7c32ad2cc1b6045b}} 
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{stop@{stop}!utils@{utils}}\index{utils@{utils}!stop@{stop}}}\Hypertarget{namespaceutils_aa52b5daba05b396d43967f83d7b2daddaef399b2d446bb37b7c32ad2cc1b6045b}\label{namespaceutils_aa52b5daba05b396d43967f83d7b2daddaef399b2d446bb37b7c32ad2cc1b6045b} 
 stop&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{left@{left}!utils@{utils}}\index{utils@{utils}!left@{left}}}\mbox{\Hypertarget{namespaceutils_aa52b5daba05b396d43967f83d7b2dadda811882fecd5c7618d7099ebbd39ea254}\label{namespaceutils_aa52b5daba05b396d43967f83d7b2dadda811882fecd5c7618d7099ebbd39ea254}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{left@{left}!utils@{utils}}\index{utils@{utils}!left@{left}}}\Hypertarget{namespaceutils_aa52b5daba05b396d43967f83d7b2dadda811882fecd5c7618d7099ebbd39ea254}\label{namespaceutils_aa52b5daba05b396d43967f83d7b2dadda811882fecd5c7618d7099ebbd39ea254} 
 left&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{right@{right}!utils@{utils}}\index{utils@{utils}!right@{right}}}\mbox{\Hypertarget{namespaceutils_aa52b5daba05b396d43967f83d7b2dadda7c4f29407893c334a6cb7a87bf045c0d}\label{namespaceutils_aa52b5daba05b396d43967f83d7b2dadda7c4f29407893c334a6cb7a87bf045c0d}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{right@{right}!utils@{utils}}\index{utils@{utils}!right@{right}}}\Hypertarget{namespaceutils_aa52b5daba05b396d43967f83d7b2dadda7c4f29407893c334a6cb7a87bf045c0d}\label{namespaceutils_aa52b5daba05b396d43967f83d7b2dadda7c4f29407893c334a6cb7a87bf045c0d} 
 right&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{both@{both}!utils@{utils}}\index{utils@{utils}!both@{both}}}\mbox{\Hypertarget{namespaceutils_aa52b5daba05b396d43967f83d7b2daddaf6cb3e816496528d4187db53bc66567f}\label{namespaceutils_aa52b5daba05b396d43967f83d7b2daddaf6cb3e816496528d4187db53bc66567f}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{both@{both}!utils@{utils}}\index{utils@{utils}!both@{both}}}\Hypertarget{namespaceutils_aa52b5daba05b396d43967f83d7b2daddaf6cb3e816496528d4187db53bc66567f}\label{namespaceutils_aa52b5daba05b396d43967f83d7b2daddaf6cb3e816496528d4187db53bc66567f} 
 both&\\
 \hline
 
@@ -755,26 +746,26 @@ both&\\
 
 Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00076}{76}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}\label{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}} 
-\index{utils@{utils}!type\_qualifiers@{type\_qualifiers}}
+\Hypertarget{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}\index{utils@{utils}!type\_qualifiers@{type\_qualifiers}}
 \index{type\_qualifiers@{type\_qualifiers}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{type\_qualifiers}{type\_qualifiers}}
-{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{utils\+::type\+\_\+qualifiers}}\hspace{0.3cm}{\ttfamily [strong]}}
+{\footnotesize\ttfamily \label{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e} 
+enum class \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{utils\+::type\+\_\+qualifiers}}\hspace{0.3cm}{\ttfamily [strong]}}
 
 
 
 Bitmask enumeration representing type qualifiers (const and volatile). 
 
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{none@{none}!utils@{utils}}\index{utils@{utils}!none@{none}}}\mbox{\Hypertarget{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea334c4a4c42fdb79d7ebc3e73b517e6f8}\label{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea334c4a4c42fdb79d7ebc3e73b517e6f8}} 
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{none@{none}!utils@{utils}}\index{utils@{utils}!none@{none}}}\Hypertarget{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea334c4a4c42fdb79d7ebc3e73b517e6f8}\label{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea334c4a4c42fdb79d7ebc3e73b517e6f8} 
 none&No qualifiers. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{c@{c}!utils@{utils}}\index{utils@{utils}!c@{c}}}\mbox{\Hypertarget{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}\label{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{c@{c}!utils@{utils}}\index{utils@{utils}!c@{c}}}\Hypertarget{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}\label{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33} 
 c&Const qualifier. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{v@{v}!utils@{utils}}\index{utils@{utils}!v@{v}}}\mbox{\Hypertarget{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea9e3669d19b675bd57058fd4664205d2a}\label{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea9e3669d19b675bd57058fd4664205d2a}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{v@{v}!utils@{utils}}\index{utils@{utils}!v@{v}}}\Hypertarget{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea9e3669d19b675bd57058fd4664205d2a}\label{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea9e3669d19b675bd57058fd4664205d2a} 
 v&Volatile qualifier. \\
 \hline
 
@@ -786,11 +777,11 @@ Definition at line \mbox{\hyperlink{type_8hpp_source_l00015}{15}} of file \mbox{
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{namespaceutils_a8d2503c40d18bf18ecc897b57dd968ab}\label{namespaceutils_a8d2503c40d18bf18ecc897b57dd968ab}} 
-\index{utils@{utils}!align@{align}}
+\Hypertarget{namespaceutils_a8d2503c40d18bf18ecc897b57dd968ab}\index{utils@{utils}!align@{align}}
 \index{align@{align}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{align()}{align()}}
-{\footnotesize\ttfamily void $\ast$ utils\+::align (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{alignment,  }\item[{std\+::size\+\_\+t}]{size,  }\item[{void $\ast$}]{ptr,  }\item[{void $\ast$}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{namespaceutils_a8d2503c40d18bf18ecc897b57dd968ab} 
+void \texorpdfstring{$\ast$}{*} utils\+::align (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{alignment}{, }\item[{std\+::size\+\_\+t}]{size}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{ptr}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{end}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -814,12 +805,12 @@ If it is possible to fit a storage of {\ttfamily size} in \mbox{[} {\ttfamily pt
 
 Definition at line \mbox{\hyperlink{memory_8hpp_source_l00028}{28}} of file \mbox{\hyperlink{memory_8hpp_source}{memory.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_aa0aaad636b78156361f43a4651536d56}\label{namespaceutils_aa0aaad636b78156361f43a4651536d56}} 
-\index{utils@{utils}!as\_const@{as\_const}}
+\Hypertarget{namespaceutils_aa0aaad636b78156361f43a4651536d56}\index{utils@{utils}!as\_const@{as\_const}}
 \index{as\_const@{as\_const}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{as\_const()}{as\_const()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-constexpr const T \&\& utils\+::as\+\_\+const (\begin{DoxyParamCaption}\item[{T \&\&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily \label{namespaceutils_aa0aaad636b78156361f43a4651536d56} 
+template$<$typename T$>$ \\
+const T \&\& utils\+::as\+\_\+const (\begin{DoxyParamCaption}\item[{T \&\&}]{ref}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
 
 
@@ -837,12 +828,12 @@ A const reference preserving the reference category (lvalue/rvalue) of {\ttfamil
 
 Definition at line \mbox{\hyperlink{type_8hpp_source_l00216}{216}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a570f4db159e0862968337af153e091e5}\label{namespaceutils_a570f4db159e0862968337af153e091e5}} 
-\index{utils@{utils}!as\_const\_ptr@{as\_const\_ptr}}
+\Hypertarget{namespaceutils_a570f4db159e0862968337af153e091e5}\index{utils@{utils}!as\_const\_ptr@{as\_const\_ptr}}
 \index{as\_const\_ptr@{as\_const\_ptr}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{as\_const\_ptr()}{as\_const\_ptr()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-constexpr const T $\ast$ utils\+::as\+\_\+const\+\_\+ptr (\begin{DoxyParamCaption}\item[{T $\ast$}]{ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily \label{namespaceutils_a570f4db159e0862968337af153e091e5} 
+template$<$typename T$>$ \\
+const T \texorpdfstring{$\ast$}{*} utils\+::as\+\_\+const\+\_\+ptr (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{ptr}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
 
 
@@ -860,12 +851,12 @@ A const-\/qualified pointer to the same type.
 
 Definition at line \mbox{\hyperlink{type_8hpp_source_l00232}{232}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a0922f693f86f61e5b05d43af01c05cb6}\label{namespaceutils_a0922f693f86f61e5b05d43af01c05cb6}} 
-\index{utils@{utils}!as\_cv@{as\_cv}}
+\Hypertarget{namespaceutils_a0922f693f86f61e5b05d43af01c05cb6}\index{utils@{utils}!as\_cv@{as\_cv}}
 \index{as\_cv@{as\_cv}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{as\_cv()}{as\_cv()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-constexpr const volatile T \&\& utils\+::as\+\_\+cv (\begin{DoxyParamCaption}\item[{T \&\&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily \label{namespaceutils_a0922f693f86f61e5b05d43af01c05cb6} 
+template$<$typename T$>$ \\
+const volatile T \&\& utils\+::as\+\_\+cv (\begin{DoxyParamCaption}\item[{T \&\&}]{ref}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
 
 
@@ -883,12 +874,12 @@ A const volatile reference preserving the reference category (lvalue/rvalue) of 
 
 Definition at line \mbox{\hyperlink{type_8hpp_source_l00226}{226}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a9b359b4959abf1200f831e0febf5acd9}\label{namespaceutils_a9b359b4959abf1200f831e0febf5acd9}} 
-\index{utils@{utils}!as\_cv\_ptr@{as\_cv\_ptr}}
+\Hypertarget{namespaceutils_a9b359b4959abf1200f831e0febf5acd9}\index{utils@{utils}!as\_cv\_ptr@{as\_cv\_ptr}}
 \index{as\_cv\_ptr@{as\_cv\_ptr}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{as\_cv\_ptr()}{as\_cv\_ptr()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-constexpr const volatile T $\ast$ utils\+::as\+\_\+cv\+\_\+ptr (\begin{DoxyParamCaption}\item[{T $\ast$}]{ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily \label{namespaceutils_a9b359b4959abf1200f831e0febf5acd9} 
+template$<$typename T$>$ \\
+const volatile T \texorpdfstring{$\ast$}{*} utils\+::as\+\_\+cv\+\_\+ptr (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{ptr}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
 
 
@@ -906,12 +897,12 @@ A const volatile-\/qualified pointer to the same type.
 
 Definition at line \mbox{\hyperlink{type_8hpp_source_l00242}{242}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a5efd377d9bd98cc665b5211b4e64e07f}\label{namespaceutils_a5efd377d9bd98cc665b5211b4e64e07f}} 
-\index{utils@{utils}!as\_volatile@{as\_volatile}}
+\Hypertarget{namespaceutils_a5efd377d9bd98cc665b5211b4e64e07f}\index{utils@{utils}!as\_volatile@{as\_volatile}}
 \index{as\_volatile@{as\_volatile}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{as\_volatile()}{as\_volatile()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-constexpr volatile T \&\& utils\+::as\+\_\+volatile (\begin{DoxyParamCaption}\item[{T \&\&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily \label{namespaceutils_a5efd377d9bd98cc665b5211b4e64e07f} 
+template$<$typename T$>$ \\
+volatile T \&\& utils\+::as\+\_\+volatile (\begin{DoxyParamCaption}\item[{T \&\&}]{ref}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
 
 
@@ -929,12 +920,12 @@ A volatile reference preserving the reference category (lvalue/rvalue) of {\ttfa
 
 Definition at line \mbox{\hyperlink{type_8hpp_source_l00221}{221}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a4a19d4a2f7dfda792458d6c0983c368f}\label{namespaceutils_a4a19d4a2f7dfda792458d6c0983c368f}} 
-\index{utils@{utils}!as\_volatile\_ptr@{as\_volatile\_ptr}}
+\Hypertarget{namespaceutils_a4a19d4a2f7dfda792458d6c0983c368f}\index{utils@{utils}!as\_volatile\_ptr@{as\_volatile\_ptr}}
 \index{as\_volatile\_ptr@{as\_volatile\_ptr}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{as\_volatile\_ptr()}{as\_volatile\_ptr()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-constexpr volatile T $\ast$ utils\+::as\+\_\+volatile\+\_\+ptr (\begin{DoxyParamCaption}\item[{T $\ast$}]{ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily \label{namespaceutils_a4a19d4a2f7dfda792458d6c0983c368f} 
+template$<$typename T$>$ \\
+volatile T \texorpdfstring{$\ast$}{*} utils\+::as\+\_\+volatile\+\_\+ptr (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{ptr}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
 
 
@@ -952,41 +943,41 @@ A volatile-\/qualified pointer to the same type.
 
 Definition at line \mbox{\hyperlink{type_8hpp_source_l00237}{237}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_aeae858e40387fdfac0f8629db4991dbb}\label{namespaceutils_aeae858e40387fdfac0f8629db4991dbb}} 
-\index{utils@{utils}!bind@{bind}}
+\Hypertarget{namespaceutils_aeae858e40387fdfac0f8629db4991dbb}\index{utils@{utils}!bind@{bind}}
 \index{bind@{bind}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{bind()}{bind()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{structutils_1_1bind}{utils\+::bind}} (\begin{DoxyParamCaption}\item[{T \&\&}]{ }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{structutils_1_1bind}{bind}}$<$ T \&\& $>$}
+{\footnotesize\ttfamily \label{namespaceutils_aeae858e40387fdfac0f8629db4991dbb} 
+template$<$typename T$>$ \\
+utils\+::bind (\begin{DoxyParamCaption}\item[{T \&\&}]{}{}\end{DoxyParamCaption}) -\/$>$  bind$<$ T \&\& $>$}
 
-\mbox{\Hypertarget{namespaceutils_a75ce48a3fb2e45c2eb6917e6d32ceb84}\label{namespaceutils_a75ce48a3fb2e45c2eb6917e6d32ceb84}} 
-\index{utils@{utils}!composite@{composite}}
+\Hypertarget{namespaceutils_a75ce48a3fb2e45c2eb6917e6d32ceb84}\index{utils@{utils}!composite@{composite}}
 \index{composite@{composite}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{composite()}{composite()}}
-{\footnotesize\ttfamily template$<$typename F , typename... Gs$>$ \\
-constexpr auto utils\+::composite (\begin{DoxyParamCaption}\item[{F \&\&}]{f,  }\item[{Gs \&\&...}]{gs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily \label{namespaceutils_a75ce48a3fb2e45c2eb6917e6d32ceb84} 
+template$<$typename F, typename... Gs$>$ \\
+auto utils\+::composite (\begin{DoxyParamCaption}\item[{F \&\&}]{f}{, }\item[{Gs \&\&...}]{gs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
 
 
 
 Definition at line \mbox{\hyperlink{functional_8hpp_source_l00392}{392}} of file \mbox{\hyperlink{functional_8hpp_source}{functional.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a838b0479484b30995e1d7e40f1cb529b}\label{namespaceutils_a838b0479484b30995e1d7e40f1cb529b}} 
-\index{utils@{utils}!container\_appender@{container\_appender}}
+\Hypertarget{namespaceutils_a838b0479484b30995e1d7e40f1cb529b}\index{utils@{utils}!container\_appender@{container\_appender}}
 \index{container\_appender@{container\_appender}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{container\_appender()}{container\_appender()}}
-{\footnotesize\ttfamily template$<$typename C $>$ \\
-constexpr auto utils\+::container\+\_\+appender (\begin{DoxyParamCaption}\item[{C \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily \label{namespaceutils_a838b0479484b30995e1d7e40f1cb529b} 
+template$<$typename C$>$ \\
+auto utils\+::container\+\_\+appender (\begin{DoxyParamCaption}\item[{C \&}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
 
 
 
 Definition at line \mbox{\hyperlink{ranges_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{ranges_8hpp_source}{ranges.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_ac60b73bc9e229724ebdb31555e939edb}\label{namespaceutils_ac60b73bc9e229724ebdb31555e939edb}} 
-\index{utils@{utils}!forward\_stored@{forward\_stored}}
+\Hypertarget{namespaceutils_ac60b73bc9e229724ebdb31555e939edb}\index{utils@{utils}!forward\_stored@{forward\_stored}}
 \index{forward\_stored@{forward\_stored}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{forward\_stored()}{forward\_stored()}}
-{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
-constexpr auto \&\& utils\+::forward\+\_\+stored (\begin{DoxyParamCaption}\item[{U \&\&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily \label{namespaceutils_ac60b73bc9e229724ebdb31555e939edb} 
+template$<$typename T, typename U$>$ \\
+auto \&\& utils\+::forward\+\_\+stored (\begin{DoxyParamCaption}\item[{U \&\&}]{u}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
 
 
@@ -996,12 +987,12 @@ Behaves like {\ttfamily std\+::forward\+\_\+like}, except when {\ttfamily T} is 
 
 Definition at line \mbox{\hyperlink{type_8hpp_source_l00250}{250}} of file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_afb8127674294a339f6ccc7bbcd1640da}\label{namespaceutils_afb8127674294a339f6ccc7bbcd1640da}} 
-\index{utils@{utils}!make\_search\_key@{make\_search\_key}}
+\Hypertarget{namespaceutils_afb8127674294a339f6ccc7bbcd1640da}\index{utils@{utils}!make\_search\_key@{make\_search\_key}}
 \index{make\_search\_key@{make\_search\_key}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{make\_search\_key()}{make\_search\_key()}}
-{\footnotesize\ttfamily template$<$typename C , searchable\+\_\+in$<$ C $>$ Key$>$ \\
-constexpr decltype(auto) utils\+::make\+\_\+search\+\_\+key (\begin{DoxyParamCaption}\item[{const Key \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily \label{namespaceutils_afb8127674294a339f6ccc7bbcd1640da} 
+template$<$typename C, searchable\+\_\+in$<$ C $>$ Key$>$ \\
+decltype(auto) utils\+::make\+\_\+search\+\_\+key (\begin{DoxyParamCaption}\item[{const Key \&}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
 
 
 
@@ -1016,13 +1007,13 @@ Make a search key for container {\ttfamily C} from {\ttfamily Key}, converting i
 
 Definition at line \mbox{\hyperlink{containers_2type_8hpp_source_l00097}{97}} of file \mbox{\hyperlink{containers_2type_8hpp_source}{type.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_aaa53feca4f8d1aaf5de3f3b32b8f233f}\label{namespaceutils_aaa53feca4f8d1aaf5de3f3b32b8f233f}} 
-\index{utils@{utils}!operator,@{operator,}}
+\Hypertarget{namespaceutils_ad2a4f0996740774f3ec83af943648b15}\index{utils@{utils}!operator,@{operator,}}
 \index{operator,@{operator,}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{operator,()}{operator,()}}
-{\footnotesize\ttfamily template$<$typename LE , typename RE $>$ \newline
-requires requires\\
-constexpr auto utils\+::operator, (\begin{DoxyParamCaption}\item[{LE \&\&}]{left,  }\item[{RE \&\&}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily \label{namespaceutils_ad2a4f0996740774f3ec83af943648b15} 
+template$<$typename LE, typename RE$>$ \newline
+requires requires \{ \mbox{\hyperlink{structutils_1_1interval}{interval}}(std\+::forward$<$LE$>$(\mbox{\hyperlink{namespaceutils_aa52b5daba05b396d43967f83d7b2dadda811882fecd5c7618d7099ebbd39ea254}{left}}), std\+::forward$<$RE$>$(\mbox{\hyperlink{namespaceutils_aa52b5daba05b396d43967f83d7b2dadda7c4f29407893c334a6cb7a87bf045c0d}{right}})); \}\\
+auto utils\+::operator, (\begin{DoxyParamCaption}\item[{LE \&\&}]{left}{, }\item[{RE \&\&}]{right}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
 
 
 
@@ -1030,24 +1021,24 @@ Convenience operator overload to construct an interval.
 
 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00217}{217}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00220}{220}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a610c726ab1f1a35f461b1d64c34e9f11}\label{namespaceutils_a610c726ab1f1a35f461b1d64c34e9f11}} 
-\index{utils@{utils}!operator$<$$<$@{operator$<$$<$}}
+\Hypertarget{namespaceutils_a610c726ab1f1a35f461b1d64c34e9f11}\index{utils@{utils}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
-{\footnotesize\ttfamily std\+::ostream \& utils\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const tagged$<$ static\+\_\+string\+\_\+tag $>$ auto \&}]{str }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{namespaceutils_a610c726ab1f1a35f461b1d64c34e9f11} 
+std\+::ostream \& utils\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const tagged$<$ static\+\_\+string\+\_\+tag $>$ auto \&}]{str}{}\end{DoxyParamCaption})}
 
 
 
 Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00542}{542}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a22a7c7da6ae7e5d01adb976235886f2e}\label{namespaceutils_a22a7c7da6ae7e5d01adb976235886f2e}} 
-\index{utils@{utils}!operator\texttt{"|}@{operator\texttt{"|}}}
+\Hypertarget{namespaceutils_a22a7c7da6ae7e5d01adb976235886f2e}\index{utils@{utils}!operator\texttt{"|}@{operator\texttt{"|}}}
 \index{operator\texttt{"|}@{operator\texttt{"|}}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{operator\texttt{"|}()}{operator|()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-constexpr \mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ std\+::decay\+\_\+t$<$ T $>$ $>$ utils\+::operator$\vert$ (\begin{DoxyParamCaption}\item[{T \&\&}]{value,  }\item[{\mbox{\hyperlink{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2e}{interval\+\_\+endpoint\+\_\+type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily \label{namespaceutils_a22a7c7da6ae7e5d01adb976235886f2e} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{structutils_1_1interval__endpoint}{interval\+\_\+endpoint}}$<$ std\+::decay\+\_\+t$<$ T $>$ $>$ utils\+::operator\texorpdfstring{$\vert$}{|} (\begin{DoxyParamCaption}\item[{T \&\&}]{value}{, }\item[{\mbox{\hyperlink{namespaceutils_a7b8bfbc22ae832dddfa89d9214454c2e}{interval\+\_\+endpoint\+\_\+type}}}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
 
 
 
@@ -1055,14 +1046,14 @@ Convenience operator overload to construct an interval endpoint.
 
 
 
-Definition at line \mbox{\hyperlink{interval_8hpp_source_l00088}{88}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
+Definition at line \mbox{\hyperlink{interval_8hpp_source_l00089}{89}} of file \mbox{\hyperlink{interval_8hpp_source}{interval.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a4515012627113facd242ccb5f3d59374}\label{namespaceutils_a4515012627113facd242ccb5f3d59374}} 
-\index{utils@{utils}!pow@{pow}}
+\Hypertarget{namespaceutils_a4515012627113facd242ccb5f3d59374}\index{utils@{utils}!pow@{pow}}
 \index{pow@{pow}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{pow()}{pow()}}
-{\footnotesize\ttfamily template$<$std\+::ptrdiff\+\_\+t Exp, typename CastT $>$ \\
-constexpr CastT utils\+::pow (\begin{DoxyParamCaption}\item[{CastT}]{base }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily \label{namespaceutils_a4515012627113facd242ccb5f3d59374} 
+template$<$std\+::ptrdiff\+\_\+t Exp, typename CastT$>$ \\
+CastT utils\+::pow (\begin{DoxyParamCaption}\item[{CastT}]{base}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
 
 
 
@@ -1072,13 +1063,13 @@ Calculates {\ttfamily base} raised to the power of {\ttfamily Exp}. Supports zer
 
 Definition at line \mbox{\hyperlink{math_8hpp_source_l00007}{7}} of file \mbox{\hyperlink{math_8hpp_source}{math.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a412fc76b0efe03804baebd2a13f6e790}\label{namespaceutils_a412fc76b0efe03804baebd2a13f6e790}} 
-\index{utils@{utils}!rcast@{rcast}}
+\Hypertarget{namespaceutils_a62531a4b1248dafd250d977cb1111ec4}\index{utils@{utils}!rcast@{rcast}}
 \index{rcast@{rcast}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{rcast()}{rcast()}}
-{\footnotesize\ttfamily template$<$typename To $>$ \newline
-requires requires\\
-constexpr To utils\+::rcast (\begin{DoxyParamCaption}\item[{auto $\ast$}]{from }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily \label{namespaceutils_a62531a4b1248dafd250d977cb1111ec4} 
+template$<$typename To$>$ \newline
+requires requires \{static\+\_\+cast$<$To$>$(static\+\_\+cast$<$void\texorpdfstring{$\ast$}{*}$>$(from));\}\\
+To utils\+::rcast (\begin{DoxyParamCaption}\item[{auto \texorpdfstring{$\ast$}{*}}]{from}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
 
 
@@ -1091,139 +1082,139 @@ This does not guard against UB.
 
 Definition at line \mbox{\hyperlink{memory_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{memory_8hpp_source}{memory.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_adb611abcc25122b499fdd1fd2c55419f}\label{namespaceutils_adb611abcc25122b499fdd1fd2c55419f}} 
-\index{utils@{utils}!segment\_tree@{segment\_tree}}
+\Hypertarget{namespaceutils_adb611abcc25122b499fdd1fd2c55419f}\index{utils@{utils}!segment\_tree@{segment\_tree}}
 \index{segment\_tree@{segment\_tree}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{segment\_tree()}{segment\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [1/18]}}
-{\footnotesize\ttfamily template$<$typename Key\+Container , typename Mapped\+Container , simple\+\_\+allocator Allocator, typename Key  = Key\+Container\+::value\+\_\+type, typename T  = Mapped\+Container\+::value\+\_\+type$>$ \\
-\mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}} (\begin{DoxyParamCaption}\item[{Key\+Container}]{,  }\item[{Mapped\+Container}]{,  }\item[{Allocator}]{ }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ Key, T, std\+::less$<$ Key $>$, std\+::plus$<$ T $>$, \mbox{\hyperlink{structutils_1_1default__construct}{default\+\_\+construct}}$<$ T $>$, Key\+Container, Mapped\+Container $>$}
+{\footnotesize\ttfamily \label{namespaceutils_adb611abcc25122b499fdd1fd2c55419f} 
+template$<$typename Key\+Container, typename Mapped\+Container, simple\+\_\+allocator Allocator, typename Key = Key\+Container\+::value\+\_\+type, typename T = Mapped\+Container\+::value\+\_\+type$>$ \\
+utils\+::segment\+\_\+tree (\begin{DoxyParamCaption}\item[{Key\+Container}]{}{, }\item[{Mapped\+Container}]{}{, }\item[{Allocator}]{}{}\end{DoxyParamCaption}) -\/$>$  segment\+\_\+tree$<$ Key, T, std\+::less$<$ Key $>$, std\+::plus$<$ T $>$, \mbox{\hyperlink{structutils_1_1default__construct}{default\+\_\+construct}}$<$ T $>$, Key\+Container, Mapped\+Container $>$}
 
-\mbox{\Hypertarget{namespaceutils_a8129c38c4f3daf945460bc7b4b5a5a79}\label{namespaceutils_a8129c38c4f3daf945460bc7b4b5a5a79}} 
-\index{utils@{utils}!segment\_tree@{segment\_tree}}
+\Hypertarget{namespaceutils_a8129c38c4f3daf945460bc7b4b5a5a79}\index{utils@{utils}!segment\_tree@{segment\_tree}}
 \index{segment\_tree@{segment\_tree}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{segment\_tree()}{segment\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [2/18]}}
-{\footnotesize\ttfamily template$<$typename Key\+Container , typename Mapped\+Container , typename Key  = Key\+Container\+::value\+\_\+type, typename T  = Mapped\+Container\+::value\+\_\+type, typename Compare  = std\+::less$<$\+Key$>$, typename Sum  = std\+::plus$<$\+T$>$, typename Identity  = default\+\_\+construct$<$\+T$>$, typename Allocator  = detail\+::void\+\_\+allocator\+\_\+t$>$ \\
-\mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}} (\begin{DoxyParamCaption}\item[{Key\+Container}]{,  }\item[{Mapped\+Container}]{,  }\item[{Compare}]{ = {\ttfamily Compare()},  }\item[{Sum}]{ = {\ttfamily Sum()},  }\item[{Identity}]{ = {\ttfamily Identity()},  }\item[{Allocator}]{ = {\ttfamily Allocator()} }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$}
+{\footnotesize\ttfamily \label{namespaceutils_a8129c38c4f3daf945460bc7b4b5a5a79} 
+template$<$typename Key\+Container, typename Mapped\+Container, typename Key = Key\+Container\+::value\+\_\+type, typename T = Mapped\+Container\+::value\+\_\+type, typename Compare = std\+::less$<$\+Key$>$, typename Sum = std\+::plus$<$\+T$>$, typename Identity = default\+\_\+construct$<$\+T$>$, typename Allocator = detail\+::void\+\_\+allocator\+\_\+t$>$ \\
+utils\+::segment\+\_\+tree (\begin{DoxyParamCaption}\item[{Key\+Container}]{}{, }\item[{Mapped\+Container}]{}{, }\item[{Compare}]{}{ = {\ttfamily Compare()}, }\item[{Sum}]{}{ = {\ttfamily Sum()}, }\item[{Identity}]{}{ = {\ttfamily Identity()}, }\item[{Allocator}]{}{ = {\ttfamily Allocator()}}\end{DoxyParamCaption}) -\/$>$  segment\+\_\+tree$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$}
 
-\mbox{\Hypertarget{namespaceutils_aa4a7ef62887a1a97db65b8a9e8cbd9bd}\label{namespaceutils_aa4a7ef62887a1a97db65b8a9e8cbd9bd}} 
-\index{utils@{utils}!segment\_tree@{segment\_tree}}
+\Hypertarget{namespaceutils_aa4a7ef62887a1a97db65b8a9e8cbd9bd}\index{utils@{utils}!segment\_tree@{segment\_tree}}
 \index{segment\_tree@{segment\_tree}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{segment\_tree()}{segment\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [3/18]}}
-{\footnotesize\ttfamily template$<$typename Pairs\+It , typename Pairs\+Sent , simple\+\_\+allocator Allocator, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$\+Pairs\+It, Allocator$>$$>$ \\
-\mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}} (\begin{DoxyParamCaption}\item[{Pairs\+It}]{,  }\item[{Pairs\+Sent}]{,  }\item[{Allocator}]{ }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
+{\footnotesize\ttfamily \label{namespaceutils_aa4a7ef62887a1a97db65b8a9e8cbd9bd} 
+template$<$typename Pairs\+It, typename Pairs\+Sent, simple\+\_\+allocator Allocator, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$\+Pairs\+It, Allocator$>$$>$ \\
+utils\+::segment\+\_\+tree (\begin{DoxyParamCaption}\item[{Pairs\+It}]{}{, }\item[{Pairs\+Sent}]{}{, }\item[{Allocator}]{}{}\end{DoxyParamCaption}) -\/$>$  segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
 
-\mbox{\Hypertarget{namespaceutils_af2f5835a9c7e242f2c66e87717a79569}\label{namespaceutils_af2f5835a9c7e242f2c66e87717a79569}} 
-\index{utils@{utils}!segment\_tree@{segment\_tree}}
+\Hypertarget{namespaceutils_af2f5835a9c7e242f2c66e87717a79569}\index{utils@{utils}!segment\_tree@{segment\_tree}}
 \index{segment\_tree@{segment\_tree}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{segment\_tree()}{segment\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [4/18]}}
-{\footnotesize\ttfamily template$<$typename Pairs\+It , typename Pairs\+Sent , typename Allocator  = std\+::allocator$<$int$>$, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$\+Pairs\+It, Allocator$>$, typename Compare  = STT\+::\+Compare, typename Sum  = STT\+::\+Sum, typename Identity  = STT\+::\+Identity$>$ \\
-\mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}} (\begin{DoxyParamCaption}\item[{Pairs\+It}]{,  }\item[{Pairs\+Sent}]{,  }\item[{Compare}]{ = {\ttfamily Compare()},  }\item[{Sum}]{ = {\ttfamily Sum()},  }\item[{Identity}]{ = {\ttfamily Identity()},  }\item[{Allocator}]{ = {\ttfamily Allocator()} }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
+{\footnotesize\ttfamily \label{namespaceutils_af2f5835a9c7e242f2c66e87717a79569} 
+template$<$typename Pairs\+It, typename Pairs\+Sent, typename Allocator = std\+::allocator$<$int$>$, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$\+Pairs\+It, Allocator$>$, typename Compare = STT\+::\+Compare, typename Sum = STT\+::\+Sum, typename Identity = STT\+::\+Identity$>$ \\
+utils\+::segment\+\_\+tree (\begin{DoxyParamCaption}\item[{Pairs\+It}]{}{, }\item[{Pairs\+Sent}]{}{, }\item[{Compare}]{}{ = {\ttfamily Compare()}, }\item[{Sum}]{}{ = {\ttfamily Sum()}, }\item[{Identity}]{}{ = {\ttfamily Identity()}, }\item[{Allocator}]{}{ = {\ttfamily Allocator()}}\end{DoxyParamCaption}) -\/$>$  segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
 
-\mbox{\Hypertarget{namespaceutils_a6a77c6e8d1d094c7adce75365d2ec023}\label{namespaceutils_a6a77c6e8d1d094c7adce75365d2ec023}} 
-\index{utils@{utils}!segment\_tree@{segment\_tree}}
+\Hypertarget{namespaceutils_a6a77c6e8d1d094c7adce75365d2ec023}\index{utils@{utils}!segment\_tree@{segment\_tree}}
 \index{segment\_tree@{segment\_tree}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{segment\_tree()}{segment\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [5/18]}}
-{\footnotesize\ttfamily template$<$typename Key\+Container , typename Mapped\+Container , simple\+\_\+allocator Allocator, typename Key  = Key\+Container\+::value\+\_\+type, typename T  = Mapped\+Container\+::value\+\_\+type$>$ \\
-\mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1segment__tree__nodes__t}{segment\+\_\+tree\+\_\+nodes\+\_\+t}}}]{,  }\item[{Key\+Container}]{,  }\item[{Mapped\+Container}]{,  }\item[{Allocator}]{ }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ Key, T, std\+::less$<$ Key $>$, std\+::plus$<$ T $>$, \mbox{\hyperlink{structutils_1_1default__construct}{default\+\_\+construct}}$<$ T $>$, Key\+Container, Mapped\+Container $>$}
+{\footnotesize\ttfamily \label{namespaceutils_a6a77c6e8d1d094c7adce75365d2ec023} 
+template$<$typename Key\+Container, typename Mapped\+Container, simple\+\_\+allocator Allocator, typename Key = Key\+Container\+::value\+\_\+type, typename T = Mapped\+Container\+::value\+\_\+type$>$ \\
+utils\+::segment\+\_\+tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1segment__tree__nodes__t}{segment\+\_\+tree\+\_\+nodes\+\_\+t}}}]{}{, }\item[{Key\+Container}]{}{, }\item[{Mapped\+Container}]{}{, }\item[{Allocator}]{}{}\end{DoxyParamCaption}) -\/$>$  segment\+\_\+tree$<$ Key, T, std\+::less$<$ Key $>$, std\+::plus$<$ T $>$, \mbox{\hyperlink{structutils_1_1default__construct}{default\+\_\+construct}}$<$ T $>$, Key\+Container, Mapped\+Container $>$}
 
-\mbox{\Hypertarget{namespaceutils_a6e7eeb7aeb526748af406563871d8902}\label{namespaceutils_a6e7eeb7aeb526748af406563871d8902}} 
-\index{utils@{utils}!segment\_tree@{segment\_tree}}
+\Hypertarget{namespaceutils_a6e7eeb7aeb526748af406563871d8902}\index{utils@{utils}!segment\_tree@{segment\_tree}}
 \index{segment\_tree@{segment\_tree}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{segment\_tree()}{segment\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [6/18]}}
-{\footnotesize\ttfamily template$<$typename Key\+Container , typename Mapped\+Container , typename Key  = Key\+Container\+::value\+\_\+type, typename T  = Mapped\+Container\+::value\+\_\+type, typename Compare  = std\+::less$<$\+Key$>$, typename Sum  = std\+::plus$<$\+T$>$, typename Identity  = default\+\_\+construct$<$\+T$>$, typename Allocator  = detail\+::void\+\_\+allocator\+\_\+t$>$ \\
-\mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1segment__tree__nodes__t}{segment\+\_\+tree\+\_\+nodes\+\_\+t}}}]{,  }\item[{Key\+Container}]{,  }\item[{Mapped\+Container}]{,  }\item[{Compare}]{ = {\ttfamily Compare()},  }\item[{Sum}]{ = {\ttfamily Sum()},  }\item[{Identity}]{ = {\ttfamily Identity()},  }\item[{Allocator}]{ = {\ttfamily Allocator()} }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$}
+{\footnotesize\ttfamily \label{namespaceutils_a6e7eeb7aeb526748af406563871d8902} 
+template$<$typename Key\+Container, typename Mapped\+Container, typename Key = Key\+Container\+::value\+\_\+type, typename T = Mapped\+Container\+::value\+\_\+type, typename Compare = std\+::less$<$\+Key$>$, typename Sum = std\+::plus$<$\+T$>$, typename Identity = default\+\_\+construct$<$\+T$>$, typename Allocator = detail\+::void\+\_\+allocator\+\_\+t$>$ \\
+utils\+::segment\+\_\+tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1segment__tree__nodes__t}{segment\+\_\+tree\+\_\+nodes\+\_\+t}}}]{}{, }\item[{Key\+Container}]{}{, }\item[{Mapped\+Container}]{}{, }\item[{Compare}]{}{ = {\ttfamily Compare()}, }\item[{Sum}]{}{ = {\ttfamily Sum()}, }\item[{Identity}]{}{ = {\ttfamily Identity()}, }\item[{Allocator}]{}{ = {\ttfamily Allocator()}}\end{DoxyParamCaption}) -\/$>$  segment\+\_\+tree$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$}
 
-\mbox{\Hypertarget{namespaceutils_a5a6a09ae254b5d235206c80872ff196d}\label{namespaceutils_a5a6a09ae254b5d235206c80872ff196d}} 
-\index{utils@{utils}!segment\_tree@{segment\_tree}}
+\Hypertarget{namespaceutils_a5a6a09ae254b5d235206c80872ff196d}\index{utils@{utils}!segment\_tree@{segment\_tree}}
 \index{segment\_tree@{segment\_tree}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{segment\_tree()}{segment\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [7/18]}}
-{\footnotesize\ttfamily template$<$typename Pairs , simple\+\_\+allocator Allocator, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$ranges\+::iterator\+\_\+t$<$\+Pairs$>$, Allocator$>$$>$ \\
-\mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}} (\begin{DoxyParamCaption}\item[{std\+::from\+\_\+range\+\_\+t}]{,  }\item[{Pairs \&\&}]{,  }\item[{Allocator}]{ }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
+{\footnotesize\ttfamily \label{namespaceutils_a5a6a09ae254b5d235206c80872ff196d} 
+template$<$typename Pairs, simple\+\_\+allocator Allocator, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$ranges\+::iterator\+\_\+t$<$\+Pairs$>$, Allocator$>$$>$ \\
+utils\+::segment\+\_\+tree (\begin{DoxyParamCaption}\item[{std\+::from\+\_\+range\+\_\+t}]{}{, }\item[{Pairs \&\&}]{}{, }\item[{Allocator}]{}{}\end{DoxyParamCaption}) -\/$>$  segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
 
-\mbox{\Hypertarget{namespaceutils_a39cc5af4cee6e71a8109f82d4301d6f9}\label{namespaceutils_a39cc5af4cee6e71a8109f82d4301d6f9}} 
-\index{utils@{utils}!segment\_tree@{segment\_tree}}
+\Hypertarget{namespaceutils_a39cc5af4cee6e71a8109f82d4301d6f9}\index{utils@{utils}!segment\_tree@{segment\_tree}}
 \index{segment\_tree@{segment\_tree}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{segment\_tree()}{segment\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [8/18]}}
-{\footnotesize\ttfamily template$<$typename Pairs , typename Allocator  = std\+::allocator$<$int$>$, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$ranges\+::iterator\+\_\+t$<$\+Pairs$>$, Allocator$>$, typename Compare  = STT\+::\+Compare, typename Sum  = STT\+::\+Sum, typename Identity  = STT\+::\+Identity$>$ \\
-\mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}} (\begin{DoxyParamCaption}\item[{std\+::from\+\_\+range\+\_\+t}]{,  }\item[{Pairs \&\&}]{,  }\item[{Compare}]{ = {\ttfamily Compare()},  }\item[{Sum}]{ = {\ttfamily Sum()},  }\item[{Identity}]{ = {\ttfamily Identity()},  }\item[{Allocator}]{ = {\ttfamily Allocator()} }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
+{\footnotesize\ttfamily \label{namespaceutils_a39cc5af4cee6e71a8109f82d4301d6f9} 
+template$<$typename Pairs, typename Allocator = std\+::allocator$<$int$>$, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$ranges\+::iterator\+\_\+t$<$\+Pairs$>$, Allocator$>$, typename Compare = STT\+::\+Compare, typename Sum = STT\+::\+Sum, typename Identity = STT\+::\+Identity$>$ \\
+utils\+::segment\+\_\+tree (\begin{DoxyParamCaption}\item[{std\+::from\+\_\+range\+\_\+t}]{}{, }\item[{Pairs \&\&}]{}{, }\item[{Compare}]{}{ = {\ttfamily Compare()}, }\item[{Sum}]{}{ = {\ttfamily Sum()}, }\item[{Identity}]{}{ = {\ttfamily Identity()}, }\item[{Allocator}]{}{ = {\ttfamily Allocator()}}\end{DoxyParamCaption}) -\/$>$  segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
 
-\mbox{\Hypertarget{namespaceutils_a3b7a317d3912b759e5dabe1c8e79d820}\label{namespaceutils_a3b7a317d3912b759e5dabe1c8e79d820}} 
-\index{utils@{utils}!segment\_tree@{segment\_tree}}
+\Hypertarget{namespaceutils_a3b7a317d3912b759e5dabe1c8e79d820}\index{utils@{utils}!segment\_tree@{segment\_tree}}
 \index{segment\_tree@{segment\_tree}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{segment\_tree()}{segment\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [9/18]}}
-{\footnotesize\ttfamily template$<$typename Key , typename T , simple\+\_\+allocator Allocator, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$const std\+::pair$<$\+Key, T$>$$\ast$, Allocator$>$$>$ \\
-\mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}} (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ std\+::pair$<$ Key, T $>$ $>$}]{,  }\item[{Allocator}]{ }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
+{\footnotesize\ttfamily \label{namespaceutils_a3b7a317d3912b759e5dabe1c8e79d820} 
+template$<$typename Key, typename T, simple\+\_\+allocator Allocator, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$const std\+::pair$<$\+Key, T$>$\texorpdfstring{$\ast$}{*}, Allocator$>$$>$ \\
+utils\+::segment\+\_\+tree (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ std\+::pair$<$ Key, T $>$ $>$}]{}{, }\item[{Allocator}]{}{}\end{DoxyParamCaption}) -\/$>$  segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
 
-\mbox{\Hypertarget{namespaceutils_a7b7cf4b16a602895ec2b00d5a6553745}\label{namespaceutils_a7b7cf4b16a602895ec2b00d5a6553745}} 
-\index{utils@{utils}!segment\_tree@{segment\_tree}}
+\Hypertarget{namespaceutils_a7b7cf4b16a602895ec2b00d5a6553745}\index{utils@{utils}!segment\_tree@{segment\_tree}}
 \index{segment\_tree@{segment\_tree}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{segment\_tree()}{segment\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [10/18]}}
-{\footnotesize\ttfamily template$<$typename Key , typename T , typename Allocator  = std\+::allocator$<$int$>$, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$const std\+::pair$<$\+Key, T$>$$\ast$, Allocator$>$, typename Compare  = STT\+::\+Compare, typename Sum  = STT\+::\+Sum, typename Identity  = STT\+::\+Identity$>$ \\
-\mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}} (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ std\+::pair$<$ Key, T $>$ $>$}]{,  }\item[{Compare}]{ = {\ttfamily Compare()},  }\item[{Sum}]{ = {\ttfamily Sum()},  }\item[{Allocator}]{ = {\ttfamily Allocator()} }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
+{\footnotesize\ttfamily \label{namespaceutils_a7b7cf4b16a602895ec2b00d5a6553745} 
+template$<$typename Key, typename T, typename Allocator = std\+::allocator$<$int$>$, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$const std\+::pair$<$\+Key, T$>$\texorpdfstring{$\ast$}{*}, Allocator$>$, typename Compare = STT\+::\+Compare, typename Sum = STT\+::\+Sum, typename Identity = STT\+::\+Identity$>$ \\
+utils\+::segment\+\_\+tree (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ std\+::pair$<$ Key, T $>$ $>$}]{}{, }\item[{Compare}]{}{ = {\ttfamily Compare()}, }\item[{Sum}]{}{ = {\ttfamily Sum()}, }\item[{Allocator}]{}{ = {\ttfamily Allocator()}}\end{DoxyParamCaption}) -\/$>$  segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
 
-\mbox{\Hypertarget{namespaceutils_aa813e9045621ce0bc1f86b83334852e3}\label{namespaceutils_aa813e9045621ce0bc1f86b83334852e3}} 
-\index{utils@{utils}!segment\_tree@{segment\_tree}}
+\Hypertarget{namespaceutils_aa813e9045621ce0bc1f86b83334852e3}\index{utils@{utils}!segment\_tree@{segment\_tree}}
 \index{segment\_tree@{segment\_tree}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{segment\_tree()}{segment\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [11/18]}}
-{\footnotesize\ttfamily template$<$typename Key\+Container , typename Mapped\+Container , simple\+\_\+allocator Allocator, typename Key  = Key\+Container\+::value\+\_\+type, typename T  = Mapped\+Container\+::value\+\_\+type$>$ \\
-\mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}} (\begin{DoxyParamCaption}\item[{std\+::sorted\+\_\+equivalent\+\_\+t}]{,  }\item[{Key\+Container}]{,  }\item[{Mapped\+Container}]{,  }\item[{Allocator}]{ }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ Key, T, std\+::less$<$ Key $>$, std\+::plus$<$ T $>$, \mbox{\hyperlink{structutils_1_1default__construct}{default\+\_\+construct}}$<$ T $>$, Key\+Container, Mapped\+Container $>$}
+{\footnotesize\ttfamily \label{namespaceutils_aa813e9045621ce0bc1f86b83334852e3} 
+template$<$typename Key\+Container, typename Mapped\+Container, simple\+\_\+allocator Allocator, typename Key = Key\+Container\+::value\+\_\+type, typename T = Mapped\+Container\+::value\+\_\+type$>$ \\
+utils\+::segment\+\_\+tree (\begin{DoxyParamCaption}\item[{std\+::sorted\+\_\+equivalent\+\_\+t}]{}{, }\item[{Key\+Container}]{}{, }\item[{Mapped\+Container}]{}{, }\item[{Allocator}]{}{}\end{DoxyParamCaption}) -\/$>$  segment\+\_\+tree$<$ Key, T, std\+::less$<$ Key $>$, std\+::plus$<$ T $>$, \mbox{\hyperlink{structutils_1_1default__construct}{default\+\_\+construct}}$<$ T $>$, Key\+Container, Mapped\+Container $>$}
 
-\mbox{\Hypertarget{namespaceutils_a529b6fb988f9d203c7def5f1253c46af}\label{namespaceutils_a529b6fb988f9d203c7def5f1253c46af}} 
-\index{utils@{utils}!segment\_tree@{segment\_tree}}
+\Hypertarget{namespaceutils_a529b6fb988f9d203c7def5f1253c46af}\index{utils@{utils}!segment\_tree@{segment\_tree}}
 \index{segment\_tree@{segment\_tree}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{segment\_tree()}{segment\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [12/18]}}
-{\footnotesize\ttfamily template$<$typename Key\+Container , typename Mapped\+Container , typename Key  = Key\+Container\+::value\+\_\+type, typename T  = Mapped\+Container\+::value\+\_\+type, typename Compare  = std\+::less$<$\+Key$>$, typename Sum  = std\+::plus$<$\+T$>$, typename Identity  = default\+\_\+construct$<$\+T$>$, typename Allocator  = detail\+::void\+\_\+allocator\+\_\+t$>$ \\
-\mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}} (\begin{DoxyParamCaption}\item[{std\+::sorted\+\_\+equivalent\+\_\+t}]{,  }\item[{Key\+Container}]{,  }\item[{Mapped\+Container}]{,  }\item[{Compare}]{ = {\ttfamily Compare()},  }\item[{Sum}]{ = {\ttfamily Sum()},  }\item[{Identity}]{ = {\ttfamily Identity()},  }\item[{Allocator}]{ = {\ttfamily Allocator()} }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$}
+{\footnotesize\ttfamily \label{namespaceutils_a529b6fb988f9d203c7def5f1253c46af} 
+template$<$typename Key\+Container, typename Mapped\+Container, typename Key = Key\+Container\+::value\+\_\+type, typename T = Mapped\+Container\+::value\+\_\+type, typename Compare = std\+::less$<$\+Key$>$, typename Sum = std\+::plus$<$\+T$>$, typename Identity = default\+\_\+construct$<$\+T$>$, typename Allocator = detail\+::void\+\_\+allocator\+\_\+t$>$ \\
+utils\+::segment\+\_\+tree (\begin{DoxyParamCaption}\item[{std\+::sorted\+\_\+equivalent\+\_\+t}]{}{, }\item[{Key\+Container}]{}{, }\item[{Mapped\+Container}]{}{, }\item[{Compare}]{}{ = {\ttfamily Compare()}, }\item[{Sum}]{}{ = {\ttfamily Sum()}, }\item[{Identity}]{}{ = {\ttfamily Identity()}, }\item[{Allocator}]{}{ = {\ttfamily Allocator()}}\end{DoxyParamCaption}) -\/$>$  segment\+\_\+tree$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$}
 
-\mbox{\Hypertarget{namespaceutils_a9fb37b34e2c9e0e274718240606493f0}\label{namespaceutils_a9fb37b34e2c9e0e274718240606493f0}} 
-\index{utils@{utils}!segment\_tree@{segment\_tree}}
+\Hypertarget{namespaceutils_a9fb37b34e2c9e0e274718240606493f0}\index{utils@{utils}!segment\_tree@{segment\_tree}}
 \index{segment\_tree@{segment\_tree}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{segment\_tree()}{segment\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [13/18]}}
-{\footnotesize\ttfamily template$<$typename Pairs\+It , typename Pairs\+Sent , simple\+\_\+allocator Allocator, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$\+Pairs\+It, Allocator$>$$>$ \\
-\mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}} (\begin{DoxyParamCaption}\item[{std\+::sorted\+\_\+equivalent\+\_\+t}]{,  }\item[{Pairs\+It}]{,  }\item[{Pairs\+Sent}]{,  }\item[{Allocator}]{ }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
+{\footnotesize\ttfamily \label{namespaceutils_a9fb37b34e2c9e0e274718240606493f0} 
+template$<$typename Pairs\+It, typename Pairs\+Sent, simple\+\_\+allocator Allocator, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$\+Pairs\+It, Allocator$>$$>$ \\
+utils\+::segment\+\_\+tree (\begin{DoxyParamCaption}\item[{std\+::sorted\+\_\+equivalent\+\_\+t}]{}{, }\item[{Pairs\+It}]{}{, }\item[{Pairs\+Sent}]{}{, }\item[{Allocator}]{}{}\end{DoxyParamCaption}) -\/$>$  segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
 
-\mbox{\Hypertarget{namespaceutils_ab34d7c058da716ef963b80de4e6af749}\label{namespaceutils_ab34d7c058da716ef963b80de4e6af749}} 
-\index{utils@{utils}!segment\_tree@{segment\_tree}}
+\Hypertarget{namespaceutils_ab34d7c058da716ef963b80de4e6af749}\index{utils@{utils}!segment\_tree@{segment\_tree}}
 \index{segment\_tree@{segment\_tree}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{segment\_tree()}{segment\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [14/18]}}
-{\footnotesize\ttfamily template$<$typename Pairs\+It , typename Pairs\+Sent , typename Allocator  = std\+::allocator$<$int$>$, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$\+Pairs\+It, Allocator$>$, typename Compare  = STT\+::\+Compare, typename Sum  = STT\+::\+Sum, typename Identity  = STT\+::\+Identity$>$ \\
-\mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}} (\begin{DoxyParamCaption}\item[{std\+::sorted\+\_\+equivalent\+\_\+t}]{,  }\item[{Pairs\+It}]{,  }\item[{Pairs\+Sent}]{,  }\item[{Compare}]{ = {\ttfamily Compare()},  }\item[{Sum}]{ = {\ttfamily Sum()},  }\item[{Allocator}]{ = {\ttfamily Allocator()} }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
+{\footnotesize\ttfamily \label{namespaceutils_ab34d7c058da716ef963b80de4e6af749} 
+template$<$typename Pairs\+It, typename Pairs\+Sent, typename Allocator = std\+::allocator$<$int$>$, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$\+Pairs\+It, Allocator$>$, typename Compare = STT\+::\+Compare, typename Sum = STT\+::\+Sum, typename Identity = STT\+::\+Identity$>$ \\
+utils\+::segment\+\_\+tree (\begin{DoxyParamCaption}\item[{std\+::sorted\+\_\+equivalent\+\_\+t}]{}{, }\item[{Pairs\+It}]{}{, }\item[{Pairs\+Sent}]{}{, }\item[{Compare}]{}{ = {\ttfamily Compare()}, }\item[{Sum}]{}{ = {\ttfamily Sum()}, }\item[{Allocator}]{}{ = {\ttfamily Allocator()}}\end{DoxyParamCaption}) -\/$>$  segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
 
-\mbox{\Hypertarget{namespaceutils_acdcea13af380f403900bea1e667330fd}\label{namespaceutils_acdcea13af380f403900bea1e667330fd}} 
-\index{utils@{utils}!segment\_tree@{segment\_tree}}
+\Hypertarget{namespaceutils_acdcea13af380f403900bea1e667330fd}\index{utils@{utils}!segment\_tree@{segment\_tree}}
 \index{segment\_tree@{segment\_tree}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{segment\_tree()}{segment\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [15/18]}}
-{\footnotesize\ttfamily template$<$typename Pairs , simple\+\_\+allocator Allocator, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$ranges\+::iterator\+\_\+t$<$\+Pairs$>$, Allocator$>$$>$ \\
-\mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}} (\begin{DoxyParamCaption}\item[{std\+::sorted\+\_\+equivalent\+\_\+t}]{,  }\item[{std\+::from\+\_\+range\+\_\+t}]{,  }\item[{Pairs \&\&}]{,  }\item[{Allocator}]{ }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
+{\footnotesize\ttfamily \label{namespaceutils_acdcea13af380f403900bea1e667330fd} 
+template$<$typename Pairs, simple\+\_\+allocator Allocator, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$ranges\+::iterator\+\_\+t$<$\+Pairs$>$, Allocator$>$$>$ \\
+utils\+::segment\+\_\+tree (\begin{DoxyParamCaption}\item[{std\+::sorted\+\_\+equivalent\+\_\+t}]{}{, }\item[{std\+::from\+\_\+range\+\_\+t}]{}{, }\item[{Pairs \&\&}]{}{, }\item[{Allocator}]{}{}\end{DoxyParamCaption}) -\/$>$  segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
 
-\mbox{\Hypertarget{namespaceutils_a15c5648d54f45bae380b6ed233a87770}\label{namespaceutils_a15c5648d54f45bae380b6ed233a87770}} 
-\index{utils@{utils}!segment\_tree@{segment\_tree}}
+\Hypertarget{namespaceutils_a15c5648d54f45bae380b6ed233a87770}\index{utils@{utils}!segment\_tree@{segment\_tree}}
 \index{segment\_tree@{segment\_tree}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{segment\_tree()}{segment\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [16/18]}}
-{\footnotesize\ttfamily template$<$typename Pairs , typename Allocator  = std\+::allocator$<$int$>$, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$ranges\+::iterator\+\_\+t$<$\+Pairs$>$, Allocator$>$, typename Compare  = STT\+::\+Compare, typename Sum  = STT\+::\+Sum, typename Identity  = STT\+::\+Identity$>$ \\
-\mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}} (\begin{DoxyParamCaption}\item[{std\+::sorted\+\_\+equivalent\+\_\+t}]{,  }\item[{std\+::from\+\_\+range\+\_\+t}]{,  }\item[{Pairs \&\&}]{,  }\item[{Compare}]{ = {\ttfamily Compare()},  }\item[{Sum}]{ = {\ttfamily Sum()},  }\item[{Identity}]{ = {\ttfamily Identity()},  }\item[{Allocator}]{ = {\ttfamily Allocator()} }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
+{\footnotesize\ttfamily \label{namespaceutils_a15c5648d54f45bae380b6ed233a87770} 
+template$<$typename Pairs, typename Allocator = std\+::allocator$<$int$>$, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$ranges\+::iterator\+\_\+t$<$\+Pairs$>$, Allocator$>$, typename Compare = STT\+::\+Compare, typename Sum = STT\+::\+Sum, typename Identity = STT\+::\+Identity$>$ \\
+utils\+::segment\+\_\+tree (\begin{DoxyParamCaption}\item[{std\+::sorted\+\_\+equivalent\+\_\+t}]{}{, }\item[{std\+::from\+\_\+range\+\_\+t}]{}{, }\item[{Pairs \&\&}]{}{, }\item[{Compare}]{}{ = {\ttfamily Compare()}, }\item[{Sum}]{}{ = {\ttfamily Sum()}, }\item[{Identity}]{}{ = {\ttfamily Identity()}, }\item[{Allocator}]{}{ = {\ttfamily Allocator()}}\end{DoxyParamCaption}) -\/$>$  segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
 
-\mbox{\Hypertarget{namespaceutils_a048efb80d8c76325f02a7d20f9396570}\label{namespaceutils_a048efb80d8c76325f02a7d20f9396570}} 
-\index{utils@{utils}!segment\_tree@{segment\_tree}}
+\Hypertarget{namespaceutils_a048efb80d8c76325f02a7d20f9396570}\index{utils@{utils}!segment\_tree@{segment\_tree}}
 \index{segment\_tree@{segment\_tree}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{segment\_tree()}{segment\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [17/18]}}
-{\footnotesize\ttfamily template$<$typename Key , typename T , simple\+\_\+allocator Allocator, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$const std\+::pair$<$\+Key, T$>$$\ast$, Allocator$>$$>$ \\
-\mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}} (\begin{DoxyParamCaption}\item[{std\+::sorted\+\_\+equivalent\+\_\+t}]{,  }\item[{std\+::initializer\+\_\+list$<$ std\+::pair$<$ Key, T $>$ $>$}]{,  }\item[{Allocator}]{ }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
+{\footnotesize\ttfamily \label{namespaceutils_a048efb80d8c76325f02a7d20f9396570} 
+template$<$typename Key, typename T, simple\+\_\+allocator Allocator, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$const std\+::pair$<$\+Key, T$>$\texorpdfstring{$\ast$}{*}, Allocator$>$$>$ \\
+utils\+::segment\+\_\+tree (\begin{DoxyParamCaption}\item[{std\+::sorted\+\_\+equivalent\+\_\+t}]{}{, }\item[{std\+::initializer\+\_\+list$<$ std\+::pair$<$ Key, T $>$ $>$}]{}{, }\item[{Allocator}]{}{}\end{DoxyParamCaption}) -\/$>$  segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, typename STT\+::\+Compare, typename STT\+::\+Sum, typename STT\+::\+Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
 
-\mbox{\Hypertarget{namespaceutils_a6d7538388dde8d989997a8b6030ea9fb}\label{namespaceutils_a6d7538388dde8d989997a8b6030ea9fb}} 
-\index{utils@{utils}!segment\_tree@{segment\_tree}}
+\Hypertarget{namespaceutils_a6d7538388dde8d989997a8b6030ea9fb}\index{utils@{utils}!segment\_tree@{segment\_tree}}
 \index{segment\_tree@{segment\_tree}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{segment\_tree()}{segment\_tree()}\hspace{0.1cm}{\footnotesize\ttfamily [18/18]}}
-{\footnotesize\ttfamily template$<$typename Key , typename T , typename Allocator  = std\+::allocator$<$int$>$, typename STT  = detail\+::segment\+\_\+tree\+\_\+traits$<$const std\+::pair$<$\+Key, T$>$$\ast$, Allocator$>$, typename Compare  = STT\+::\+Compare, typename Sum  = STT\+::\+Sum, typename Identity  = STT\+::\+Identity$>$ \\
-\mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}} (\begin{DoxyParamCaption}\item[{std\+::sorted\+\_\+equivalent\+\_\+t}]{,  }\item[{std\+::initializer\+\_\+list$<$ std\+::pair$<$ Key, T $>$ $>$}]{,  }\item[{Compare}]{ = {\ttfamily Compare()},  }\item[{Sum}]{ = {\ttfamily Sum()},  }\item[{Identity}]{ = {\ttfamily Identity()},  }\item[{Allocator}]{ = {\ttfamily Allocator()} }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
+{\footnotesize\ttfamily \label{namespaceutils_a6d7538388dde8d989997a8b6030ea9fb} 
+template$<$typename Key, typename T, typename Allocator = std\+::allocator$<$int$>$, typename STT = detail\+::segment\+\_\+tree\+\_\+traits$<$const std\+::pair$<$\+Key, T$>$\texorpdfstring{$\ast$}{*}, Allocator$>$, typename Compare = STT\+::\+Compare, typename Sum = STT\+::\+Sum, typename Identity = STT\+::\+Identity$>$ \\
+utils\+::segment\+\_\+tree (\begin{DoxyParamCaption}\item[{std\+::sorted\+\_\+equivalent\+\_\+t}]{}{, }\item[{std\+::initializer\+\_\+list$<$ std\+::pair$<$ Key, T $>$ $>$}]{}{, }\item[{Compare}]{}{ = {\ttfamily Compare()}, }\item[{Sum}]{}{ = {\ttfamily Sum()}, }\item[{Identity}]{}{ = {\ttfamily Identity()}, }\item[{Allocator}]{}{ = {\ttfamily Allocator()}}\end{DoxyParamCaption}) -\/$>$  segment\+\_\+tree$<$ typename STT\+::\+Key, typename STT\+::T, Compare, Sum, Identity, typename STT\+::\+Key\+Container, typename STT\+::\+Mapped\+Container $>$}
 
-\mbox{\Hypertarget{namespaceutils_a15c903199c2c3166038cf06caa747a2c}\label{namespaceutils_a15c903199c2c3166038cf06caa747a2c}} 
-\index{utils@{utils}!swap@{swap}}
+\Hypertarget{namespaceutils_a15c903199c2c3166038cf06caa747a2c}\index{utils@{utils}!swap@{swap}}
 \index{swap@{swap}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{swap()}{swap()}}
-{\footnotesize\ttfamily template$<$typename T , typename U $>$ \newline
+{\footnotesize\ttfamily \label{namespaceutils_a15c903199c2c3166038cf06caa747a2c} 
+template$<$typename T, typename U$>$ \newline
 requires requires(T\& t, U\& u) \{ t.\+swap(u); \}\\
-constexpr decltype(auto) utils\+::swap (\begin{DoxyParamCaption}\item[{T \&}]{t,  }\item[{U \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+decltype(auto) utils\+::swap (\begin{DoxyParamCaption}\item[{T \&}]{t}{, }\item[{U \&}]{u}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
 
 
@@ -1233,82 +1224,98 @@ Visible to any namespace by ADL.
 
 Definition at line \mbox{\hyperlink{swap_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{swap_8hpp_source}{swap.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a197cc51bcfc6c07cffed9890ac0f92e9}\label{namespaceutils_a197cc51bcfc6c07cffed9890ac0f92e9}} 
-\index{utils@{utils}!unique\_resource@{unique\_resource}}
+\Hypertarget{namespaceutils_a197cc51bcfc6c07cffed9890ac0f92e9}\index{utils@{utils}!unique\_resource@{unique\_resource}}
 \index{unique\_resource@{unique\_resource}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{unique\_resource()}{unique\_resource()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classutils_1_1unique__resource}{utils\+::unique\+\_\+resource}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1unique__resource__sync__t}{unique\+\_\+resource\+\_\+sync\+\_\+t}}}]{,  }\item[{\mbox{\hyperlink{namespaceutils_1_1integer__alias_aca05a61d14a516c6dd53450e823075b7}{integer\+\_\+alias\+::ptrdiff\+\_\+t}}}]{,  }\item[{T \&\&}]{ }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutils_1_1unique__resource}{unique\+\_\+resource}}$<$ std\+::remove\+\_\+cvref\+\_\+t$<$ T $>$, true $>$}
+{\footnotesize\ttfamily \label{namespaceutils_a197cc51bcfc6c07cffed9890ac0f92e9} 
+template$<$typename T$>$ \\
+utils\+::unique\+\_\+resource (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1unique__resource__sync__t}{unique\+\_\+resource\+\_\+sync\+\_\+t}}}]{}{, }\item[{\mbox{\hyperlink{namespaceutils_1_1integer__alias_ac71df17998dda042d59607839ab7fa88}{integer\+\_\+alias\+::ptrdiff\+\_\+t}}}]{}{, }\item[{T \&\&}]{}{}\end{DoxyParamCaption}) -\/$>$  unique\+\_\+resource$<$ std\+::remove\+\_\+cvref\+\_\+t$<$ T $>$, true $>$}
 
-\mbox{\Hypertarget{namespaceutils_aed7303c206edcaa7cba652c07ca49240}\label{namespaceutils_aed7303c206edcaa7cba652c07ca49240}} 
-\index{utils@{utils}!UTILS\_BITMASK@{UTILS\_BITMASK}}
+\Hypertarget{namespaceutils_aed7303c206edcaa7cba652c07ca49240}\index{utils@{utils}!UTILS\_BITMASK@{UTILS\_BITMASK}}
 \index{UTILS\_BITMASK@{UTILS\_BITMASK}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{UTILS\_BITMASK()}{UTILS\_BITMASK()}}
-{\footnotesize\ttfamily utils\+::\+UTILS\+\_\+\+BITMASK (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}}}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{namespaceutils_aed7303c206edcaa7cba652c07ca49240} 
+utils\+::\+UTILS\+\_\+\+BITMASK (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}}}]{}{}\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{namespaceutils_abae20f757c60321115ef587a2424452f}\label{namespaceutils_abae20f757c60321115ef587a2424452f}} 
-\index{utils@{utils}!visitor@{visitor}}
+\Hypertarget{namespaceutils_abae20f757c60321115ef587a2424452f}\index{utils@{utils}!visitor@{visitor}}
 \index{visitor@{visitor}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{visitor()}{visitor()}}
-{\footnotesize\ttfamily template$<$typename... Gs$>$ \\
-\mbox{\hyperlink{classutils_1_1visitor}{utils\+::visitor}} (\begin{DoxyParamCaption}\item[{Gs \&\&}]{... }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classutils_1_1visitor}{visitor}}$<$ std\+::decay\+\_\+t$<$ Gs $>$... $>$}
+{\footnotesize\ttfamily \label{namespaceutils_abae20f757c60321115ef587a2424452f} 
+template$<$typename... Gs$>$ \\
+utils\+::visitor (\begin{DoxyParamCaption}\item[{Gs \&\&}]{...}{}\end{DoxyParamCaption}) -\/$>$  visitor$<$ std\+::decay\+\_\+t$<$ Gs $>$... $>$}
 
-\mbox{\Hypertarget{namespaceutils_aed4f05af8c7f6713f035d46368507ca9}\label{namespaceutils_aed4f05af8c7f6713f035d46368507ca9}} 
-\index{utils@{utils}!with@{with}}
+\Hypertarget{namespaceutils_aed4f05af8c7f6713f035d46368507ca9}\index{utils@{utils}!with@{with}}
 \index{with@{with}!utils@{utils}}
-\doxysubsubsection{\texorpdfstring{with()}{with()}}
-{\footnotesize\ttfamily template$<$typename G , std\+::size\+\_\+t Arity$>$ \\
-\mbox{\hyperlink{structutils_1_1with}{utils\+::with}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1arity}{arity}}$<$ Arity $>$}]{,  }\item[{G \&\&}]{ }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{structutils_1_1with}{with}}$<$ G \&\&, Arity $>$}
+\doxysubsubsection{\texorpdfstring{with()}{with()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{namespaceutils_aed4f05af8c7f6713f035d46368507ca9} 
+template$<$typename G, std\+::size\+\_\+t Arity$>$ \\
+utils\+::with (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1arity}{arity}}$<$ Arity $>$}]{}{, }\item[{G \&\&}]{}{}\end{DoxyParamCaption}) -\/$>$  with$<$ G \&\&, Arity $>$}
+
+\Hypertarget{namespaceutils_a35cbe6fdbca6f6e48f10edf1f5ffb2e1}\index{utils@{utils}!with@{with}}
+\index{with@{with}!utils@{utils}}
+\doxysubsubsection{\texorpdfstring{with()}{with()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{namespaceutils_a35cbe6fdbca6f6e48f10edf1f5ffb2e1} 
+template$<$typename G, std\+::size\+\_\+t Arity$>$ \newline
+requires (std\+::is\+\_\+function\+\_\+v$<$std\+::remove\+\_\+cvref\+\_\+t$<$G$>$$>$)\\
+utils\+::with (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1arity}{arity}}$<$ Arity $>$}]{}{, }\item[{\mbox{\hyperlink{structutils_1_1owning}{owning}}}]{}{, }\item[{G \&\&}]{}{}\end{DoxyParamCaption}) -\/$>$  with$<$ std\+::add\+\_\+pointer\+\_\+t$<$ std\+::remove\+\_\+cvref\+\_\+t$<$ G $>$ $>$, Arity, true $>$}
+
+\Hypertarget{namespaceutils_abb3dc16e2977ca5391762a1836cc4cc9}\index{utils@{utils}!with@{with}}
+\index{with@{with}!utils@{utils}}
+\doxysubsubsection{\texorpdfstring{with()}{with()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{namespaceutils_abb3dc16e2977ca5391762a1836cc4cc9} 
+template$<$typename G, std\+::size\+\_\+t Arity$>$ \newline
+requires (!std\+::is\+\_\+function\+\_\+v$<$std\+::remove\+\_\+cvref\+\_\+t$<$G$>$$>$)\\
+utils\+::with (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structutils_1_1arity}{arity}}$<$ Arity $>$}]{}{, }\item[{\mbox{\hyperlink{structutils_1_1owning}{owning}}}]{}{, }\item[{G \&\&}]{}{}\end{DoxyParamCaption}) -\/$>$  with$<$ std\+::remove\+\_\+cvref\+\_\+t$<$ G $>$, Arity, true $>$}
 
 
 
 \doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{namespaceutils_a5a720537626a2d6e7ae840a1212a67f2}\label{namespaceutils_a5a720537626a2d6e7ae840a1212a67f2}} 
-\index{utils@{utils}!arity\_of\_v@{arity\_of\_v}}
+\Hypertarget{namespaceutils_a5a720537626a2d6e7ae840a1212a67f2}\index{utils@{utils}!arity\_of\_v@{arity\_of\_v}}
 \index{arity\_of\_v@{arity\_of\_v}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{arity\_of\_v}{arity\_of\_v}}
-{\footnotesize\ttfamily template$<$typename F $>$ \\
-constexpr auto utils\+::arity\+\_\+of\+\_\+v = \mbox{\hyperlink{structutils_1_1arity__of}{arity\+\_\+of}}$<$F$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily \label{namespaceutils_a5a720537626a2d6e7ae840a1212a67f2} 
+template$<$typename F$>$ \\
+auto utils\+::arity\+\_\+of\+\_\+v = \mbox{\hyperlink{structutils_1_1arity__of}{arity\+\_\+of}}$<$F$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
 
 
 
 Definition at line \mbox{\hyperlink{functional_8hpp_source_l00308}{308}} of file \mbox{\hyperlink{functional_8hpp_source}{functional.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a73660fa40d7555f9ec8f74c3fd244253}\label{namespaceutils_a73660fa40d7555f9ec8f74c3fd244253}} 
-\index{utils@{utils}!disable\_op@{disable\_op}}
+\Hypertarget{namespaceutils_a73660fa40d7555f9ec8f74c3fd244253}\index{utils@{utils}!disable\_op@{disable\_op}}
 \index{disable\_op@{disable\_op}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{disable\_op}{disable\_op}}
-{\footnotesize\ttfamily constexpr struct \mbox{\hyperlink{structutils_1_1disable__op__t}{utils\+::disable\+\_\+op\+\_\+t}} utils\+::disable\+\_\+op}
+{\footnotesize\ttfamily \label{namespaceutils_a73660fa40d7555f9ec8f74c3fd244253} 
+struct \mbox{\hyperlink{structutils_1_1disable__op__t}{utils\+::disable\+\_\+op\+\_\+t}} utils\+::disable\+\_\+op}
 
-\mbox{\Hypertarget{namespaceutils_a801d8a7b8045aa578086613e00216580}\label{namespaceutils_a801d8a7b8045aa578086613e00216580}} 
-\index{utils@{utils}!segment\_tree\_nodes@{segment\_tree\_nodes}}
+\Hypertarget{namespaceutils_a801d8a7b8045aa578086613e00216580}\index{utils@{utils}!segment\_tree\_nodes@{segment\_tree\_nodes}}
 \index{segment\_tree\_nodes@{segment\_tree\_nodes}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{segment\_tree\_nodes}{segment\_tree\_nodes}}
-{\footnotesize\ttfamily constexpr struct \mbox{\hyperlink{structutils_1_1segment__tree__nodes__t}{utils\+::segment\+\_\+tree\+\_\+nodes\+\_\+t}} utils\+::segment\+\_\+tree\+\_\+nodes}
+{\footnotesize\ttfamily \label{namespaceutils_a801d8a7b8045aa578086613e00216580} 
+struct \mbox{\hyperlink{structutils_1_1segment__tree__nodes__t}{utils\+::segment\+\_\+tree\+\_\+nodes\+\_\+t}} utils\+::segment\+\_\+tree\+\_\+nodes}
 
-\mbox{\Hypertarget{namespaceutils_a66e65835c8cea64e6a28ccf70f71ea28}\label{namespaceutils_a66e65835c8cea64e6a28ccf70f71ea28}} 
-\index{utils@{utils}!synth\_three\_way@{synth\_three\_way}}
+\Hypertarget{namespaceutils_a66e65835c8cea64e6a28ccf70f71ea28}\index{utils@{utils}!synth\_three\_way@{synth\_three\_way}}
 \index{synth\_three\_way@{synth\_three\_way}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{synth\_three\_way}{synth\_three\_way}}
-{\footnotesize\ttfamily constexpr auto utils\+::synth\+\_\+three\+\_\+way\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily \label{namespaceutils_a66e65835c8cea64e6a28ccf70f71ea28} 
+auto utils\+::synth\+\_\+three\+\_\+way\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{= []<\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} U>(\textcolor{keyword}{const} T\& t, \textcolor{keyword}{const} U\& u)}
-\DoxyCodeLine{    \textcolor{keyword}{requires} \textcolor{keyword}{requires} \{}
-\DoxyCodeLine{        \{ t < u \} -\/> boolean\_testable;}
-\DoxyCodeLine{        \{ u < t \} -\/> boolean\_testable;}
-\DoxyCodeLine{    \} \{}
-\DoxyCodeLine{        \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (std::three\_way\_comparable\_with<T, U>) \{}
-\DoxyCodeLine{            \textcolor{keywordflow}{return} t <=> u;}
-\DoxyCodeLine{        \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{            \textcolor{keywordflow}{if} (t < u)}
-\DoxyCodeLine{                \textcolor{keywordflow}{return} std::weak\_ordering::less;}
-\DoxyCodeLine{            \textcolor{keywordflow}{if} (u < t)}
-\DoxyCodeLine{                \textcolor{keywordflow}{return} std::weak\_ordering::greater;}
-\DoxyCodeLine{            \textcolor{keywordflow}{return} std::weak\_ordering::equivalent;}
-\DoxyCodeLine{        \}}
-\DoxyCodeLine{    \}}
+\DoxyCodeLine{=\ []<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U>(\textcolor{keyword}{const}\ T\&\ t,\ \textcolor{keyword}{const}\ U\&\ u)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{requires}\ \textcolor{keyword}{requires}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ t\ <\ u\ \}\ -\/>\ \mbox{\hyperlink{conceptutils_1_1boolean__testable}{boolean\_testable}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ u\ <\ t\ \}\ -\/>\ boolean\_testable;}
+\DoxyCodeLine{\ \ \ \ \}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::three\_way\_comparable\_with<T,\ U>)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t\ <=>\ u;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t\ <\ u)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::weak\_ordering::less;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (u\ <\ t)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::weak\_ordering::greater;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::weak\_ordering::equivalent;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -1319,20 +1326,20 @@ C++ standard exposition-\/only functor\+: {\itshape synth-\/three-\/way}.
 
 Definition at line \mbox{\hyperlink{compare_8hpp_source_l00007}{7}} of file \mbox{\hyperlink{compare_8hpp_source}{compare.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_a026f0efc276a6d7eba427c611cd569ff}\label{namespaceutils_a026f0efc276a6d7eba427c611cd569ff}} 
-\index{utils@{utils}!trim\_v@{trim\_v}}
+\Hypertarget{namespaceutils_a026f0efc276a6d7eba427c611cd569ff}\index{utils@{utils}!trim\_v@{trim\_v}}
 \index{trim\_v@{trim\_v}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{trim\_v}{trim\_v}}
-{\footnotesize\ttfamily template$<$\mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} S$>$ \\
-constexpr auto utils\+::trim\+\_\+v = \mbox{\hyperlink{structutils_1_1trim}{trim}}$<$S$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily \label{namespaceutils_a026f0efc276a6d7eba427c611cd569ff} 
+template$<$\mbox{\hyperlink{structutils_1_1basic__static__string}{basic\+\_\+static\+\_\+string}} S$>$ \\
+auto utils\+::trim\+\_\+v = \mbox{\hyperlink{structutils_1_1trim}{trim}}$<$S$>$\+::value\hspace{0.3cm}{\ttfamily [constexpr]}}
 
 
 
 Definition at line \mbox{\hyperlink{static__string_8hpp_source_l00519}{519}} of file \mbox{\hyperlink{static__string_8hpp_source}{static\+\_\+string.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_aab7eb6fe43329d41b46fcfe6ba001dc8}\label{namespaceutils_aab7eb6fe43329d41b46fcfe6ba001dc8}} 
-\index{utils@{utils}!unique\_resource\_sync@{unique\_resource\_sync}}
+\Hypertarget{namespaceutils_aab7eb6fe43329d41b46fcfe6ba001dc8}\index{utils@{utils}!unique\_resource\_sync@{unique\_resource\_sync}}
 \index{unique\_resource\_sync@{unique\_resource\_sync}!utils@{utils}}
 \doxysubsubsection{\texorpdfstring{unique\_resource\_sync}{unique\_resource\_sync}}
-{\footnotesize\ttfamily constexpr struct \mbox{\hyperlink{structutils_1_1unique__resource__sync__t}{utils\+::unique\+\_\+resource\+\_\+sync\+\_\+t}} utils\+::unique\+\_\+resource\+\_\+sync}
+{\footnotesize\ttfamily \label{namespaceutils_aab7eb6fe43329d41b46fcfe6ba001dc8} 
+struct \mbox{\hyperlink{structutils_1_1unique__resource__sync__t}{utils\+::unique\+\_\+resource\+\_\+sync\+\_\+t}} utils\+::unique\+\_\+resource\+\_\+sync}
 

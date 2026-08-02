@@ -1,24 +1,24 @@
-\hypertarget{group__metaslice}{}\doxysection{utils\+::meta\+::slice}
-\label{group__metaslice}\index{utils::meta::slice@{utils::meta::slice}}
+\doxysection{utils\+::meta\+::slice}
+\hypertarget{group__metaslice}{}\label{group__metaslice}\index{utils::meta::slice@{utils::meta::slice}}
 
 
-Extracts a slice from a tuple type from index {\ttfamily Begin} to index {\ttfamily End} (exclusive).  
+A \href{Trait.html}{\texttt{ {\itshape Type\+Trait}}} that extracts a slice from a tuple type from index {\ttfamily Begin} to index {\ttfamily End} (exclusive).  
 
 
-\doxysubsection*{Classes}
+\doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{group__metaslice_structutils_1_1meta_1_1slice}{utils\+::meta\+::slice$<$ Tuple, Begin, End $>$}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Typedefs}
+\doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Begin = 0, std\+::ptrdiff\+\_\+t End = std\+::tuple\+\_\+size\+\_\+v$<$\+Tuple$>$$>$ }\\using \mbox{\hyperlink{group__metaslice_ga38abc3ef8e35eaf454eea88f36750bbc}{utils\+::meta\+::slice\+\_\+t}} = \mbox{\hyperlink{group__metaslice_structutils_1_1meta_1_1slice}{slice}}$<$ Tuple, Begin, End $>$\+::type
+{\footnotesize template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Begin = 0, std\+::ptrdiff\+\_\+t End = std\+::tuple\+\_\+size\+\_\+v$<$\+Tuple$>$$>$ }\\using \mbox{\hyperlink{group__metaslice_ga18badcb75c84a1f7d87a7b66952852f2}{utils\+::meta\+::slice\+\_\+t}} = \mbox{\hyperlink{group__metaslice_structutils_1_1meta_1_1slice}{slice}}$<$Tuple, Begin, End$>$\+::type
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Extracts a slice from a tuple type from index {\ttfamily Begin} to index {\ttfamily End} (exclusive). 
+A \href{Trait.html}{\texttt{ {\itshape Type\+Trait}}} that extracts a slice from a tuple type from index {\ttfamily Begin} to index {\ttfamily End} (exclusive). 
 
 Both {\ttfamily Begin} and {\ttfamily End} can be negative indices, which are normalized relative to the tuple size. If {\ttfamily Begin \texorpdfstring{$>$}{>}= End}, an empty tuple is returned. 
 
@@ -32,20 +32,20 @@ struct utils\+::meta\+::slice$<$ Tuple, Begin, End $>$}
 
 Definition at line \mbox{\hyperlink{meta_8hpp_source_l00160}{160}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
 
-\doxysubsubsection*{Public Types}
+\doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-using \mbox{\hyperlink{group__metastrict__subset__of_gad9768f6f6120d03d55fce41b53c335a8}{type}} = decltype(\mbox{[}$\,$\mbox{]}() \{ if constexpr(begin$<$ end) return detail\+::slice$<$ Tuple, begin, std\+::make\+\_\+index\+\_\+sequence$<$ end -\/ begin $>$ $>$\{\}
+using \mbox{\hyperlink{group__metastrict__subset__of_gaa9a67f940c2a9b4de204904ca0296ee9}{type}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
-\mbox{\Hypertarget{group__metaslice_ga38abc3ef8e35eaf454eea88f36750bbc}\label{group__metaslice_ga38abc3ef8e35eaf454eea88f36750bbc}} 
-\index{utils::meta::slice@{utils::meta::slice}!slice\_t@{slice\_t}}
+\Hypertarget{group__metaslice_ga18badcb75c84a1f7d87a7b66952852f2}\index{utils::meta::slice@{utils::meta::slice}!slice\_t@{slice\_t}}
 \index{slice\_t@{slice\_t}!utils::meta::slice@{utils::meta::slice}}
 \doxysubsubsection{\texorpdfstring{slice\_t}{slice\_t}}
-{\footnotesize\ttfamily template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Begin = 0, std\+::ptrdiff\+\_\+t End = std\+::tuple\+\_\+size\+\_\+v$<$\+Tuple$>$$>$ \\
-using \mbox{\hyperlink{group__metaslice_ga38abc3ef8e35eaf454eea88f36750bbc}{utils\+::meta\+::slice\+\_\+t}} = typedef \mbox{\hyperlink{group__metaslice_structutils_1_1meta_1_1slice}{slice}}$<$Tuple, Begin, End$>$\+::type}
+{\footnotesize\ttfamily \label{group__metaslice_ga18badcb75c84a1f7d87a7b66952852f2} 
+template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Begin = 0, std\+::ptrdiff\+\_\+t End = std\+::tuple\+\_\+size\+\_\+v$<$\+Tuple$>$$>$ \\
+using \mbox{\hyperlink{group__metaslice_ga18badcb75c84a1f7d87a7b66952852f2}{utils\+::meta\+::slice\+\_\+t}} = \mbox{\hyperlink{group__metaslice_structutils_1_1meta_1_1slice}{slice}}$<$Tuple, Begin, End$>$\+::type}
 
 
 

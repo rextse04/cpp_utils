@@ -1,5 +1,5 @@
-\hypertarget{conceptutils_1_1appendable__container}{}\doxysection{utils\+::appendable\+\_\+container Concept Reference}
-\label{conceptutils_1_1appendable__container}\index{utils::appendable\_container@{utils::appendable\_container}}
+\doxysection{utils\+::appendable\+\_\+container Concept Reference}
+\hypertarget{conceptutils_1_1appendable__container}{}\label{conceptutils_1_1appendable__container}\index{utils::appendable\_container@{utils::appendable\_container}}
 
 
 {\ttfamily \#include $<$ranges.\+hpp$>$}
@@ -7,15 +7,15 @@
 \doxysubsection{Concept definition}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} Container, \textcolor{keyword}{typename} Reference>}
-\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1appendable__container}{utils::appendable\_container}} =  \textcolor{keyword}{requires} (Container\& \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}, Reference\&\& ref) \{}
-\DoxyCodeLine{        \textcolor{keyword}{requires} (}
-\DoxyCodeLine{            \textcolor{keyword}{requires} \{ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.emplace\_back(std::forward<Reference>(ref)); \}     ||}
-\DoxyCodeLine{            \textcolor{keyword}{requires} \{ c.push\_back(std::forward<Reference>(ref)); \}        ||}
-\DoxyCodeLine{            \textcolor{keyword}{requires} \{ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.emplace(\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.end(), std::forward<Reference>(ref)); \} ||}
-\DoxyCodeLine{            \textcolor{keyword}{requires} \{ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.insert(\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.end(), std::forward<Reference>(ref)); \}}
-\DoxyCodeLine{        );}
-\DoxyCodeLine{    \}}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Container,\ \textcolor{keyword}{typename}\ Reference>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptutils_1_1appendable__container}{utils::appendable\_container}}\ =\ \ \textcolor{keyword}{requires}\ (Container\&\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}},\ Reference\&\&\ ref)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ (}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ \{\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.emplace\_back(std::forward<Reference>(ref));\ \}\ \ \ \ \ ||}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ \{\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.push\_back(std::forward<Reference>(ref));\ \}\ \ \ \ \ \ \ \ ||}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ \{\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.emplace(\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.end(),\ std::forward<Reference>(ref));\ \}\ ||}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ \{\ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.insert(\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea4a8a08f09d37b73795649038408b5f33}{c}}.end(),\ std::forward<Reference>(ref));\ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\ \ \ \ \}}
 
 \end{DoxyCode}
 

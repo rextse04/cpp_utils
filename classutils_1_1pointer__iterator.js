@@ -19,10 +19,10 @@ var classutils_1_1pointer__iterator =
     [ "operator-=", "classutils_1_1pointer__iterator.html#a5ff63874d49fd440538eb28ef5a36d03", null ],
     [ "operator->", "classutils_1_1pointer__iterator.html#ab475917983d56b8989452467151461d4", null ],
     [ "operator[]", "classutils_1_1pointer__iterator.html#a5f5edd4cf7e2c406515c75672bd11fda", null ],
-    [ "operator+", "classutils_1_1pointer__iterator.html#a65814b544fe7f82de4a13b84aa52c18f", null ],
-    [ "operator+", "classutils_1_1pointer__iterator.html#a89db1d3be72445c3b84510a5f9d84337", null ],
-    [ "operator-", "classutils_1_1pointer__iterator.html#a518e098963b62954ed85b03f487f748c", null ],
-    [ "operator-", "classutils_1_1pointer__iterator.html#adf547ed2a9406bce330a1c8b5f9109d5", null ],
-    [ "operator<=>", "classutils_1_1pointer__iterator.html#ad36d6f42391d0bc25ab10f042e7538d5", null ],
-    [ "operator==", "classutils_1_1pointer__iterator.html#af28e8243ae39a8beb6759eec72dbe690", null ]
+    [ "operator+", "classutils_1_1pointer__iterator.html#a97f94bf47666ff5dbe638e32f602d037", null ],
+    [ "operator+", "classutils_1_1pointer__iterator.html#a12eea7a4db1cfa8030a9ead3a451e033", null ],
+    [ "operator-", "classutils_1_1pointer__iterator.html#ac58a6d6af4dd563c665f2d7bffa9caeb", null ],
+    [ "operator-", "classutils_1_1pointer__iterator.html#a6bd84c66649e5b4f18bcb5a5c322583f", null ],
+    [ "operator<=>", "classutils_1_1pointer__iterator.html#a4bb41724854a78ca5e4058fa9418d796", null ],
+    [ "operator==", "classutils_1_1pointer__iterator.html#a3b23a1ffe3aad437779ea725495f8414", null ]
 ];

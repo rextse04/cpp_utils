@@ -1,4 +1,5 @@
 <map id="std::uses_allocator&lt; utils::segment_tree&lt; Args... &gt;, Alloc &gt;" name="std::uses_allocator&lt; utils::segment_tree&lt; Args... &gt;, Alloc &gt;">
-<area shape="rect" id="node1" title=" " alt="" coords="288,35,431,91"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,240,120"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="287,35,428,91"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,239,121"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="254,60,287,60,287,66,254,66"/>
 </map>

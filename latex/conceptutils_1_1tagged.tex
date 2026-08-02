@@ -1,5 +1,5 @@
-\hypertarget{conceptutils_1_1tagged}{}\doxysection{utils\+::tagged Concept Reference}
-\label{conceptutils_1_1tagged}\index{utils::tagged@{utils::tagged}}
+\doxysection{utils\+::tagged Concept Reference}
+\hypertarget{conceptutils_1_1tagged}{}\label{conceptutils_1_1tagged}\index{utils::tagged@{utils::tagged}}
 
 
 {\ttfamily \#include $<$type.\+hpp$>$}
@@ -7,9 +7,9 @@
 \doxysubsection{Concept definition}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} Tag>}
-\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1tagged}{utils::tagged}} =  (std::is\_same\_v<typename std::remove\_cvref\_t<T>::tag, Tag> ||}
-\DoxyCodeLine{        meta::contained\_in\_v<typename std::remove\_cvref\_t<T>::tag, Tag>)}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Tag>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptutils_1_1tagged}{utils::tagged}}\ =\ \ (std::is\_same\_v<typename\ std::remove\_cvref\_t<T>::tag,\ Tag>\ ||}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{group__metacontained__in_ga1047a3fe70ce04f9726a0e5d3fb74acd}{meta::contained\_in\_v<typename\ std::remove\_cvref\_t<T>::tag}},\ Tag>)}
 
 \end{DoxyCode}
 

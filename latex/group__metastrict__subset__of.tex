@@ -1,51 +1,46 @@
-\hypertarget{group__metastrict__subset__of}{}\doxysection{utils\+::meta\+::strict\+\_\+subset\+\_\+of}
-\label{group__metastrict__subset__of}\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}}
+\doxysection{utils\+::meta\+::strict\+\_\+subset\+\_\+of}
+\hypertarget{group__metastrict__subset__of}{}\label{group__metastrict__subset__of}\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}}
 
 
-Checks if {\ttfamily Small\+Tuple} is a strict subset of {\ttfamily Big\+Tuple}.  
+A \href{Trait.html}{\texttt{ {\itshape Value\+Trait}}} that checks if {\ttfamily Small\+Tuple} is a strict subset of {\ttfamily Big\+Tuple}.  
 
 
-\doxysubsection*{Classes}
+\doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{group__metastrict__subset__of_structutils_1_1meta_1_1bind__front_1_1trait}{utils\+::meta\+::bind\+\_\+front$<$ Trait, Args $>$\+::trait$<$ Ts $>$}}
 \item 
 struct \mbox{\hyperlink{group__metastrict__subset__of_structutils_1_1meta_1_1bind__back_1_1trait}{utils\+::meta\+::bind\+\_\+back$<$ Trait, Args $>$\+::trait$<$ Ts $>$}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Typedefs}
+\doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-using \mbox{\hyperlink{group__metastrict__subset__of_gaf286e1f5eeb50395efd23b6d353959a2}{utils\+::meta\+::pack$<$ Ts $>$\+::type}} = std\+::tuple$<$ Ts... $>$
+using \mbox{\hyperlink{group__metastrict__subset__of_gaf286e1f5eeb50395efd23b6d353959a2}{utils\+::meta\+::pack$<$ Ts $>$\+::type}} = std\+::tuple$<$Ts...$>$
 \item 
-using \mbox{\hyperlink{group__metastrict__subset__of_gaa1249e6243a05e8d4467c31f9507447c}{utils\+::meta\+::smart\+\_\+pack$<$ Ts $>$\+::type}} = std\+::tuple$<$ Ts... $>$
+using \mbox{\hyperlink{group__metastrict__subset__of_gaa1249e6243a05e8d4467c31f9507447c}{utils\+::meta\+::smart\+\_\+pack$<$ Ts $>$\+::type}} = std\+::tuple$<$Ts...$>$
 \item 
-using \mbox{\hyperlink{group__metastrict__subset__of_gab946929681d26e6d82525a686605bf55}{utils\+::meta\+::smart\+\_\+pack$<$ std\+::tuple$<$ Ts... $>$ $>$\+::type}} = std\+::tuple$<$ Ts... $>$
+using \mbox{\hyperlink{group__metastrict__subset__of_gab946929681d26e6d82525a686605bf55}{utils\+::meta\+::smart\+\_\+pack$<$ std\+::tuple$<$ Ts... $>$ $>$\+::type}} = std\+::tuple$<$Ts...$>$
 \item 
-using \mbox{\hyperlink{group__metastrict__subset__of_gaa2a3f1c8887bcea874c62480dae1071f}{utils\+::meta\+::at$<$ Tuple, Idx $>$\+::type}} = std\+::tuple\+\_\+element\+\_\+t$<$ \mbox{\hyperlink{group__metaactual__index_ga4d133c7490f073188fc7eb130261cbd2}{actual\+\_\+index\+\_\+v}}$<$ Tuple, Idx $>$, Tuple $>$
+using \mbox{\hyperlink{group__metastrict__subset__of_gaa2a3f1c8887bcea874c62480dae1071f}{utils\+::meta\+::at$<$ Tuple, Idx $>$\+::type}} = std\+::tuple\+\_\+element\+\_\+t$<$\mbox{\hyperlink{group__metaactual__index_ga4d133c7490f073188fc7eb130261cbd2}{actual\+\_\+index\+\_\+v}}$<$Tuple, Idx$>$, Tuple$>$
 \item 
-using \mbox{\hyperlink{group__metastrict__subset__of_gae0cc6b1113cbcb8e99c20146520ab37f}{utils\+::meta\+::concat$<$ Tuples $>$\+::type}} = decltype(std\+::tuple\+\_\+cat(std\+::declval$<$ Tuples $>$()...))
+using \mbox{\hyperlink{group__metastrict__subset__of_gae0cc6b1113cbcb8e99c20146520ab37f}{utils\+::meta\+::concat$<$ Tuples $>$\+::type}} = decltype(std\+::tuple\+\_\+cat(std\+::declval$<$Tuples$>$()...))
 \item 
-using \mbox{\hyperlink{group__metastrict__subset__of_gad9768f6f6120d03d55fce41b53c335a8}{utils\+::meta\+::slice$<$ Tuple, Begin, End $>$\+::type}} = decltype(\mbox{[}$\,$\mbox{]}() \{ if constexpr(begin$<$ end) return detail\+::slice$<$ Tuple, begin, std\+::make\+\_\+index\+\_\+sequence$<$ end -\/ begin $>$ $>$\{\}
+using \mbox{\hyperlink{group__metastrict__subset__of_gaa9a67f940c2a9b4de204904ca0296ee9}{utils\+::meta\+::slice$<$ Tuple, Begin, End $>$\+::type}}
 \item 
-using \mbox{\hyperlink{group__metastrict__subset__of_ga43c3aa2423e04165a63b232a97ec2d92}{utils\+::meta\+::infer$<$ Erased\+Result $>$\+::type}} = std\+::conditional\+\_\+t$<$ requires \{ typename Erased\+Result\+::type
+using \mbox{\hyperlink{group__metastrict__subset__of_ga545c685635b5863a5bb7fd9e9a0c2bd4}{utils\+::meta\+::infer$<$ Erased\+Result $>$\+::type}}
 \item 
-using \mbox{\hyperlink{group__metastrict__subset__of_ga0cabd8a79cff290bf18ede1db0ad70b8}{utils\+::meta\+::extract$<$ Tmpl$<$ Args... $>$ $>$\+::type}} = std\+::tuple$<$ Args... $>$
+using \mbox{\hyperlink{group__metastrict__subset__of_ga0cabd8a79cff290bf18ede1db0ad70b8}{utils\+::meta\+::extract$<$ Tmpl$<$ Args... $>$ $>$\+::type}} = std\+::tuple$<$Args...$>$
 \item 
-using \mbox{\hyperlink{group__metastrict__subset__of_gae77aa35bc3629d5c81f2af493607edc9}{utils\+::meta\+::extract$<$ Tmpl$<$ Args... $>$ $>$\+::trait$<$ Ts $>$\+::type}} = Tmpl$<$ Ts... $>$
+using \mbox{\hyperlink{group__metastrict__subset__of_gae77aa35bc3629d5c81f2af493607edc9}{utils\+::meta\+::extract$<$ Tmpl$<$ Args... $>$ $>$\+::trait$<$ Ts $>$\+::type}} = Tmpl$<$Ts...$>$
 \item 
 using \mbox{\hyperlink{group__metastrict__subset__of_ga69eca927314093ceb631ff560340a761}{utils\+::meta\+::rebind$<$ T, Args $>$\+::type}} = T
 \item 
-using \mbox{\hyperlink{group__metastrict__subset__of_gadd1a1b646abb378b8987a68f60a634a0}{utils\+::meta\+::rebind$<$ T, Args... $>$\+::type}} = \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{extract}}$<$ T $>$\+::template trait$<$ Args... $>$\+::\mbox{\hyperlink{group__metastrict__subset__of_gadd1a1b646abb378b8987a68f60a634a0}{type}}
-\end{DoxyCompactItemize}
-\doxysubsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{group__metastrict__subset__of_ga1cf91fddec6a7f669b55820814674e71}{utils\+::meta\+::infer$<$ Erased\+Result $>$\+::\+Erased\+Result}}
+using \mbox{\hyperlink{group__metastrict__subset__of_gadd1a1b646abb378b8987a68f60a634a0}{utils\+::meta\+::rebind$<$ T, Args... $>$\+::type}} = \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{extract}}$<$T$>$\+::template trait$<$Args...$>$\+::type
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Checks if {\ttfamily Small\+Tuple} is a strict subset of {\ttfamily Big\+Tuple}. 
+A \href{Trait.html}{\texttt{ {\itshape Value\+Trait}}} that checks if {\ttfamily Small\+Tuple} is a strict subset of {\ttfamily Big\+Tuple}. 
 
 
 
@@ -67,7 +62,7 @@ Collaboration diagram for utils\+::meta\+::bind\+\_\+front\texorpdfstring{$<$}{<
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=207pt]{structutils_1_1meta_1_1bind__front_1_1trait__coll__graph}
+\includegraphics[width=206pt]{structutils_1_1meta_1_1bind__front_1_1trait__coll__graph}
 \end{center}
 \end{figure}
 \index{utils::meta::bind\_back::trait@{utils::meta::bind\_back::trait}}\label{structutils_1_1meta_1_1bind__back_1_1trait}
@@ -87,145 +82,145 @@ Collaboration diagram for utils\+::meta\+::bind\+\_\+back\texorpdfstring{$<$}{<}
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=207pt]{structutils_1_1meta_1_1bind__back_1_1trait__coll__graph}
+\includegraphics[width=206pt]{structutils_1_1meta_1_1bind__back_1_1trait__coll__graph}
 \end{center}
 \end{figure}
 
 
 \doxysubsection{Typedef Documentation}
-\mbox{\Hypertarget{group__metastrict__subset__of_gaf286e1f5eeb50395efd23b6d353959a2}\label{group__metastrict__subset__of_gaf286e1f5eeb50395efd23b6d353959a2}} 
-\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
+\Hypertarget{group__metastrict__subset__of_gaa2a3f1c8887bcea874c62480dae1071f}\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
 \index{type@{type}!utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}}
 \doxysubsubsection{\texorpdfstring{type}{type}\hspace{0.1cm}{\footnotesize\ttfamily [1/11]}}
-{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
-using \mbox{\hyperlink{group__metapack_structutils_1_1meta_1_1pack}{utils\+::meta\+::pack}}$<$ Ts $>$\+::\mbox{\hyperlink{group__metastrict__subset__of_gaf286e1f5eeb50395efd23b6d353959a2}{type}} =  std\+::tuple$<$Ts...$>$}
-
-
-
-Definition at line \mbox{\hyperlink{meta_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
-
-\mbox{\Hypertarget{group__metastrict__subset__of_gaa1249e6243a05e8d4467c31f9507447c}\label{group__metastrict__subset__of_gaa1249e6243a05e8d4467c31f9507447c}} 
-\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
-\index{type@{type}!utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}}
-\doxysubsubsection{\texorpdfstring{type}{type}\hspace{0.1cm}{\footnotesize\ttfamily [2/11]}}
-{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
-using \mbox{\hyperlink{group__metasmart__pack_structutils_1_1meta_1_1smart__pack}{utils\+::meta\+::smart\+\_\+pack}}$<$ Ts $>$\+::\mbox{\hyperlink{group__metastrict__subset__of_gaa1249e6243a05e8d4467c31f9507447c}{type}} =  std\+::tuple$<$Ts...$>$}
-
-
-
-Definition at line \mbox{\hyperlink{meta_8hpp_source_l00049}{49}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
-
-\mbox{\Hypertarget{group__metastrict__subset__of_gab946929681d26e6d82525a686605bf55}\label{group__metastrict__subset__of_gab946929681d26e6d82525a686605bf55}} 
-\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
-\index{type@{type}!utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}}
-\doxysubsubsection{\texorpdfstring{type}{type}\hspace{0.1cm}{\footnotesize\ttfamily [3/11]}}
-{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
-using \mbox{\hyperlink{group__metasmart__pack_structutils_1_1meta_1_1smart__pack}{utils\+::meta\+::smart\+\_\+pack}}$<$ std\+::tuple$<$ Ts... $>$ $>$\+::\mbox{\hyperlink{group__metastrict__subset__of_gab946929681d26e6d82525a686605bf55}{type}} =  std\+::tuple$<$Ts...$>$}
-
-
-
-Definition at line \mbox{\hyperlink{meta_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
-
-\mbox{\Hypertarget{group__metastrict__subset__of_gaa2a3f1c8887bcea874c62480dae1071f}\label{group__metastrict__subset__of_gaa2a3f1c8887bcea874c62480dae1071f}} 
-\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
-\index{type@{type}!utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}}
-\doxysubsubsection{\texorpdfstring{type}{type}\hspace{0.1cm}{\footnotesize\ttfamily [4/11]}}
-{\footnotesize\ttfamily template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx$>$ \\
-using \mbox{\hyperlink{group__metaat_structutils_1_1meta_1_1at}{utils\+::meta\+::at}}$<$ Tuple, Idx $>$\+::\mbox{\hyperlink{group__metastrict__subset__of_gaa2a3f1c8887bcea874c62480dae1071f}{type}} =  std\+::tuple\+\_\+element\+\_\+t$<$\mbox{\hyperlink{group__metaactual__index_ga4d133c7490f073188fc7eb130261cbd2}{actual\+\_\+index\+\_\+v}}$<$Tuple, Idx$>$, Tuple$>$}
+{\footnotesize\ttfamily \label{group__metastrict__subset__of_gaa2a3f1c8887bcea874c62480dae1071f} 
+template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Idx$>$ \\
+using \mbox{\hyperlink{group__metaat_structutils_1_1meta_1_1at}{utils\+::meta\+::at}}$<$ Tuple, Idx $>$\+::type = std\+::tuple\+\_\+element\+\_\+t$<$\mbox{\hyperlink{group__metaactual__index_ga4d133c7490f073188fc7eb130261cbd2}{actual\+\_\+index\+\_\+v}}$<$Tuple, Idx$>$, Tuple$>$}
 
 
 
 Definition at line \mbox{\hyperlink{meta_8hpp_source_l00091}{91}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
 
-\mbox{\Hypertarget{group__metastrict__subset__of_gae0cc6b1113cbcb8e99c20146520ab37f}\label{group__metastrict__subset__of_gae0cc6b1113cbcb8e99c20146520ab37f}} 
-\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
+\Hypertarget{group__metastrict__subset__of_gae0cc6b1113cbcb8e99c20146520ab37f}\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
 \index{type@{type}!utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}}
-\doxysubsubsection{\texorpdfstring{type}{type}\hspace{0.1cm}{\footnotesize\ttfamily [5/11]}}
-{\footnotesize\ttfamily template$<$tuple\+\_\+like... Tuples$>$ \\
-using \mbox{\hyperlink{group__metaconcat_structutils_1_1meta_1_1concat}{utils\+::meta\+::concat}}$<$ Tuples $>$\+::\mbox{\hyperlink{group__metastrict__subset__of_gae0cc6b1113cbcb8e99c20146520ab37f}{type}} =  decltype(std\+::tuple\+\_\+cat(std\+::declval$<$Tuples$>$()...))}
+\doxysubsubsection{\texorpdfstring{type}{type}\hspace{0.1cm}{\footnotesize\ttfamily [2/11]}}
+{\footnotesize\ttfamily \label{group__metastrict__subset__of_gae0cc6b1113cbcb8e99c20146520ab37f} 
+template$<$tuple\+\_\+like... Tuples$>$ \\
+using \mbox{\hyperlink{group__metaconcat_structutils_1_1meta_1_1concat}{utils\+::meta\+::concat}}$<$ Tuples $>$\+::type = decltype(std\+::tuple\+\_\+cat(std\+::declval$<$Tuples$>$()...))}
 
 
 
 Definition at line \mbox{\hyperlink{meta_8hpp_source_l00138}{138}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
 
-\mbox{\Hypertarget{group__metastrict__subset__of_gad9768f6f6120d03d55fce41b53c335a8}\label{group__metastrict__subset__of_gad9768f6f6120d03d55fce41b53c335a8}} 
-\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
+\Hypertarget{group__metastrict__subset__of_gae77aa35bc3629d5c81f2af493607edc9}\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
 \index{type@{type}!utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}}
-\doxysubsubsection{\texorpdfstring{type}{type}\hspace{0.1cm}{\footnotesize\ttfamily [6/11]}}
-{\footnotesize\ttfamily template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Begin = 0, std\+::ptrdiff\+\_\+t End = std\+::tuple\+\_\+size\+\_\+v$<$\+Tuple$>$$>$ \\
-using \mbox{\hyperlink{group__metaslice_structutils_1_1meta_1_1slice}{utils\+::meta\+::slice}}$<$ Tuple, Begin, End $>$\+::\mbox{\hyperlink{group__metastrict__subset__of_gad9768f6f6120d03d55fce41b53c335a8}{type}} =  decltype(\mbox{[}$\,$\mbox{]}() \{ if constexpr (begin $<$ end) return detail\+::slice$<$Tuple, begin, std\+::make\+\_\+index\+\_\+sequence$<$end -\/ begin$>$ $>$\{\}}
-
-
-
-Definition at line \mbox{\hyperlink{meta_8hpp_source_l00164}{164}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
-
-\mbox{\Hypertarget{group__metastrict__subset__of_ga43c3aa2423e04165a63b232a97ec2d92}\label{group__metastrict__subset__of_ga43c3aa2423e04165a63b232a97ec2d92}} 
-\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
-\index{type@{type}!utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}}
-\doxysubsubsection{\texorpdfstring{type}{type}\hspace{0.1cm}{\footnotesize\ttfamily [7/11]}}
-{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{group__metastrict__subset__of_ga1cf91fddec6a7f669b55820814674e71}{Erased\+Result}} $>$ \\
-using \mbox{\hyperlink{group__metainfer_structutils_1_1meta_1_1infer}{utils\+::meta\+::infer}}$<$ \mbox{\hyperlink{group__metastrict__subset__of_ga1cf91fddec6a7f669b55820814674e71}{Erased\+Result}} $>$\+::\mbox{\hyperlink{group__metastrict__subset__of_ga43c3aa2423e04165a63b232a97ec2d92}{type}} =  std\+::conditional\+\_\+t$<$requires \{ typename Erased\+Result\+::type}
-
-
-
-Definition at line \mbox{\hyperlink{meta_8hpp_source_l00217}{217}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
-
-\mbox{\Hypertarget{group__metastrict__subset__of_ga0cabd8a79cff290bf18ede1db0ad70b8}\label{group__metastrict__subset__of_ga0cabd8a79cff290bf18ede1db0ad70b8}} 
-\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
-\index{type@{type}!utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}}
-\doxysubsubsection{\texorpdfstring{type}{type}\hspace{0.1cm}{\footnotesize\ttfamily [8/11]}}
-{\footnotesize\ttfamily template$<$template$<$ typename... $>$ typename Tmpl, typename... Args$>$ \\
-using \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{utils\+::meta\+::extract}}$<$ Tmpl$<$ Args... $>$ $>$\+::\mbox{\hyperlink{group__metastrict__subset__of_ga0cabd8a79cff290bf18ede1db0ad70b8}{type}} =  std\+::tuple$<$Args...$>$}
-
-
-
-Definition at line \mbox{\hyperlink{meta_8hpp_source_l00295}{295}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
-
-\mbox{\Hypertarget{group__metastrict__subset__of_gae77aa35bc3629d5c81f2af493607edc9}\label{group__metastrict__subset__of_gae77aa35bc3629d5c81f2af493607edc9}} 
-\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
-\index{type@{type}!utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}}
-\doxysubsubsection{\texorpdfstring{type}{type}\hspace{0.1cm}{\footnotesize\ttfamily [9/11]}}
-{\footnotesize\ttfamily template$<$template$<$ typename... $>$ typename Tmpl, typename... Args$>$ \\
+\doxysubsubsection{\texorpdfstring{type}{type}\hspace{0.1cm}{\footnotesize\ttfamily [3/11]}}
+{\footnotesize\ttfamily \label{group__metastrict__subset__of_gae77aa35bc3629d5c81f2af493607edc9} 
+template$<$template$<$ typename... $>$ typename Tmpl, typename... Args$>$ \\
 template$<$typename... Ts$>$ \\
-using \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{utils\+::meta\+::extract}}$<$ Tmpl$<$ Args... $>$ $>$\+::trait$<$ Ts $>$\+::\mbox{\hyperlink{group__metastrict__subset__of_gae77aa35bc3629d5c81f2af493607edc9}{type}} =  Tmpl$<$Ts...$>$}
+using \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{utils\+::meta\+::extract}}$<$ Tmpl$<$ Args... $>$ $>$\+::trait$<$ Ts $>$\+::type = Tmpl$<$Ts...$>$}
 
 
 
 Definition at line \mbox{\hyperlink{meta_8hpp_source_l00298}{298}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
 
-\mbox{\Hypertarget{group__metastrict__subset__of_ga69eca927314093ceb631ff560340a761}\label{group__metastrict__subset__of_ga69eca927314093ceb631ff560340a761}} 
-\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
+\Hypertarget{group__metastrict__subset__of_ga0cabd8a79cff290bf18ede1db0ad70b8}\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
 \index{type@{type}!utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}}
-\doxysubsubsection{\texorpdfstring{type}{type}\hspace{0.1cm}{\footnotesize\ttfamily [10/11]}}
-{\footnotesize\ttfamily template$<$typename T , typename... Args$>$ \\
-using \mbox{\hyperlink{group__metarebind_structutils_1_1meta_1_1rebind}{utils\+::meta\+::rebind}}$<$ T, Args $>$\+::\mbox{\hyperlink{group__metastrict__subset__of_ga69eca927314093ceb631ff560340a761}{type}} =  T}
+\doxysubsubsection{\texorpdfstring{type}{type}\hspace{0.1cm}{\footnotesize\ttfamily [4/11]}}
+{\footnotesize\ttfamily \label{group__metastrict__subset__of_ga0cabd8a79cff290bf18ede1db0ad70b8} 
+template$<$template$<$ typename... $>$ typename Tmpl, typename... Args$>$ \\
+using \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{utils\+::meta\+::extract}}$<$ Tmpl$<$ Args... $>$ $>$\+::type = std\+::tuple$<$Args...$>$}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00295}{295}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\Hypertarget{group__metastrict__subset__of_ga545c685635b5863a5bb7fd9e9a0c2bd4}\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
+\index{type@{type}!utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}}
+\doxysubsubsection{\texorpdfstring{type}{type}\hspace{0.1cm}{\footnotesize\ttfamily [5/11]}}
+{\footnotesize\ttfamily \label{group__metastrict__subset__of_ga545c685635b5863a5bb7fd9e9a0c2bd4} 
+template$<$typename Erased\+Result$>$ \\
+using \mbox{\hyperlink{group__metainfer_structutils_1_1meta_1_1infer}{utils\+::meta\+::infer}}$<$ Erased\+Result $>$\+::type}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ std::conditional\_t<\textcolor{keyword}{requires}\ \{\ \textcolor{keyword}{typename}\ ErasedResult::type;\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ ErasedResult::type,\ ErasedResult>}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00217}{217}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\Hypertarget{group__metastrict__subset__of_gaf286e1f5eeb50395efd23b6d353959a2}\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
+\index{type@{type}!utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}}
+\doxysubsubsection{\texorpdfstring{type}{type}\hspace{0.1cm}{\footnotesize\ttfamily [6/11]}}
+{\footnotesize\ttfamily \label{group__metastrict__subset__of_gaf286e1f5eeb50395efd23b6d353959a2} 
+template$<$typename... Ts$>$ \\
+using \mbox{\hyperlink{group__metapack_structutils_1_1meta_1_1pack}{utils\+::meta\+::pack}}$<$ Ts $>$\+::type = std\+::tuple$<$Ts...$>$}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\Hypertarget{group__metastrict__subset__of_ga69eca927314093ceb631ff560340a761}\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
+\index{type@{type}!utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}}
+\doxysubsubsection{\texorpdfstring{type}{type}\hspace{0.1cm}{\footnotesize\ttfamily [7/11]}}
+{\footnotesize\ttfamily \label{group__metastrict__subset__of_ga69eca927314093ceb631ff560340a761} 
+template$<$typename T, typename... Args$>$ \\
+using \mbox{\hyperlink{group__metarebind_structutils_1_1meta_1_1rebind}{utils\+::meta\+::rebind}}$<$ T, Args $>$\+::type = T}
 
 
 
 Definition at line \mbox{\hyperlink{meta_8hpp_source_l00312}{312}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
 
-\mbox{\Hypertarget{group__metastrict__subset__of_gadd1a1b646abb378b8987a68f60a634a0}\label{group__metastrict__subset__of_gadd1a1b646abb378b8987a68f60a634a0}} 
-\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
+\Hypertarget{group__metastrict__subset__of_gadd1a1b646abb378b8987a68f60a634a0}\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
 \index{type@{type}!utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}}
-\doxysubsubsection{\texorpdfstring{type}{type}\hspace{0.1cm}{\footnotesize\ttfamily [11/11]}}
-{\footnotesize\ttfamily template$<$typename T , typename... Args$>$ \\
-using \mbox{\hyperlink{group__metarebind_structutils_1_1meta_1_1rebind}{utils\+::meta\+::rebind}}$<$ T, Args... $>$\+::\mbox{\hyperlink{group__metastrict__subset__of_gadd1a1b646abb378b8987a68f60a634a0}{type}} =  \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{extract}}$<$T$>$\+::template trait$<$Args...$>$\+::\mbox{\hyperlink{group__metastrict__subset__of_gadd1a1b646abb378b8987a68f60a634a0}{type}}}
+\doxysubsubsection{\texorpdfstring{type}{type}\hspace{0.1cm}{\footnotesize\ttfamily [8/11]}}
+{\footnotesize\ttfamily \label{group__metastrict__subset__of_gadd1a1b646abb378b8987a68f60a634a0} 
+template$<$typename T, typename... Args$>$ \\
+using \mbox{\hyperlink{group__metarebind_structutils_1_1meta_1_1rebind}{utils\+::meta\+::rebind}}$<$ T, Args... $>$\+::type = \mbox{\hyperlink{group__metaextract_structutils_1_1meta_1_1extract}{extract}}$<$T$>$\+::template trait$<$Args...$>$\+::type}
 
 
 
 Definition at line \mbox{\hyperlink{meta_8hpp_source_l00317}{317}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
 
+\Hypertarget{group__metastrict__subset__of_gaa9a67f940c2a9b4de204904ca0296ee9}\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
+\index{type@{type}!utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}}
+\doxysubsubsection{\texorpdfstring{type}{type}\hspace{0.1cm}{\footnotesize\ttfamily [9/11]}}
+{\footnotesize\ttfamily \label{group__metastrict__subset__of_gaa9a67f940c2a9b4de204904ca0296ee9} 
+template$<$tuple\+\_\+like Tuple, std\+::ptrdiff\+\_\+t Begin = 0, std\+::ptrdiff\+\_\+t End = std\+::tuple\+\_\+size\+\_\+v$<$\+Tuple$>$$>$ \\
+using \mbox{\hyperlink{group__metaslice_structutils_1_1meta_1_1slice}{utils\+::meta\+::slice}}$<$ Tuple, Begin, End $>$\+::type}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \textcolor{keyword}{decltype}([]()\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (begin\ <\ end)\ \textcolor{keywordflow}{return}\ detail::slice<Tuple,\ begin,\ std::make\_index\_sequence<end\ -\/\ begin>>\{\};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{return}\ std::type\_identity<std::tuple<>>\{\};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}())\mbox{\hyperlink{group__synth__three__way__result}{::type}}}
+
+\end{DoxyCode}
 
 
-\doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{group__metastrict__subset__of_ga1cf91fddec6a7f669b55820814674e71}\label{group__metastrict__subset__of_ga1cf91fddec6a7f669b55820814674e71}} 
-\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!ErasedResult@{ErasedResult}}
-\index{ErasedResult@{ErasedResult}!utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}}
-\doxysubsubsection{\texorpdfstring{ErasedResult}{ErasedResult}}
-{\footnotesize\ttfamily template$<$typename Erased\+Result $>$ \\
-\mbox{\hyperlink{group__metainfer_structutils_1_1meta_1_1infer}{utils\+::meta\+::infer}}$<$ Erased\+Result $>$\+::Erased\+Result}
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00164}{164}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\Hypertarget{group__metastrict__subset__of_gaa1249e6243a05e8d4467c31f9507447c}\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
+\index{type@{type}!utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}}
+\doxysubsubsection{\texorpdfstring{type}{type}\hspace{0.1cm}{\footnotesize\ttfamily [10/11]}}
+{\footnotesize\ttfamily \label{group__metastrict__subset__of_gaa1249e6243a05e8d4467c31f9507447c} 
+template$<$typename... Ts$>$ \\
+using \mbox{\hyperlink{group__metasmart__pack_structutils_1_1meta_1_1smart__pack}{utils\+::meta\+::smart\+\_\+pack}}$<$ Ts $>$\+::type = std\+::tuple$<$Ts...$>$}
 
 
 
-Definition at line \mbox{\hyperlink{meta_8hpp_source_l00218}{218}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00049}{49}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
+
+\Hypertarget{group__metastrict__subset__of_gab946929681d26e6d82525a686605bf55}\index{utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}!type@{type}}
+\index{type@{type}!utils::meta::strict\_subset\_of@{utils::meta::strict\_subset\_of}}
+\doxysubsubsection{\texorpdfstring{type}{type}\hspace{0.1cm}{\footnotesize\ttfamily [11/11]}}
+{\footnotesize\ttfamily \label{group__metastrict__subset__of_gab946929681d26e6d82525a686605bf55} 
+template$<$typename... Ts$>$ \\
+using \mbox{\hyperlink{group__metasmart__pack_structutils_1_1meta_1_1smart__pack}{utils\+::meta\+::smart\+\_\+pack}}$<$ std\+::tuple$<$ Ts... $>$ $>$\+::type = std\+::tuple$<$Ts...$>$}
+
+
+
+Definition at line \mbox{\hyperlink{meta_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{meta_8hpp_source}{meta.\+hpp}}.
 

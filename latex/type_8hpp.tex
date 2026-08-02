@@ -1,5 +1,5 @@
-\hypertarget{type_8hpp}{}\doxysection{type.\+hpp File Reference}
-\label{type_8hpp}\index{type.hpp@{type.hpp}}
+\doxysection{type.\+hpp File Reference}
+\hypertarget{type_8hpp}{}\label{type_8hpp}\index{type.hpp@{type.hpp}}
 
 
 Type manipulation and qualification utilities for compile-\/time type introspection and transformation.  
@@ -8,8 +8,8 @@ Type manipulation and qualification utilities for compile-\/time type introspect
 {\ttfamily \#include $<$type\+\_\+traits$>$}\newline
 {\ttfamily \#include $<$limits$>$}\newline
 {\ttfamily \#include $<$utility$>$}\newline
-{\ttfamily \#include \char`\"{}bitmask.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}meta.\+hpp\char`\"{}}\newline
+{\ttfamily \#include "{}bitmask.\+hpp"{}}\newline
+{\ttfamily \#include "{}meta.\+hpp"{}}\newline
 Include dependency graph for type.\+hpp\+:
 \nopagebreak
 \begin{figure}[H]
@@ -26,7 +26,16 @@ This graph shows which files directly or indirectly include this file\+:
 \includegraphics[width=350pt]{type_8hpp__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsection*{Classes}
+
+
+\doxysubsection{Detailed Description}
+Type manipulation and qualification utilities for compile-\/time type introspection and transformation. 
+
+
+
+Definition in file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
+
+\doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{group__utilsqualifiers__of_structutils_1_1qualifiers__of}{utils\+::qualifiers\+\_\+of$<$ T $>$}}
@@ -44,9 +53,9 @@ struct \mbox{\hyperlink{group__utilsis__template__instance_structutils_1_1is__te
 struct \mbox{\hyperlink{group__utilsexplicitly__convertible__to_structutils_1_1is__explicitly__convertible}{utils\+::is\+\_\+explicitly\+\_\+convertible$<$ From, To $>$}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1always__true}{utils\+::always\+\_\+true$<$... $>$}}
-\begin{DoxyCompactList}\small\item\em A trait that is always {\ttfamily true\+\_\+type}, regardless of template arguments. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A \href{Trait.html}{\texttt{ {\itshape Value\+Trait}}} that is always {\ttfamily true\+\_\+type}, regardless of template arguments. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1always__false}{utils\+::always\+\_\+false$<$... $>$}}
-\begin{DoxyCompactList}\small\item\em A trait that is always {\ttfamily false\+\_\+type}, regardless of template arguments. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A \href{Trait.html}{\texttt{ {\itshape Value\+Trait}}} that is always {\ttfamily false\+\_\+type}, regardless of template arguments. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{group__utilsis__tagged_structutils_1_1is__tagged}{utils\+::is\+\_\+tagged$<$ Tag, T $>$}}
 \item 
 struct \mbox{\hyperlink{structutils_1_1stale__class}{utils\+::stale\+\_\+class}}
@@ -55,12 +64,12 @@ class \mbox{\hyperlink{classutils_1_1key}{utils\+::key$<$ T $>$}}
 \begin{DoxyCompactList}\small\item\em A key type that can only be constructed by specified friend types. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1sink}{utils\+::sink}}
 \begin{DoxyCompactList}\small\item\em A sink type that discards any arguments passed to its constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Namespaces}
+\doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespaceutils}{utils}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Concepts}
+\doxysubsubsection*{Concepts}
 \begin{DoxyCompactItemize}
 \item 
 concept \mbox{\hyperlink{conceptutils_1_1equiv__to}{utils\+::equiv\+\_\+to}}
@@ -73,18 +82,18 @@ concept \mbox{\hyperlink{conceptutils_1_1boolean__testable}{utils\+::boolean\+\_
 \begin{DoxyCompactList}\small\item\em C++ standard exposition-\/only concept\+: {\itshape boolean-\/testable}. \end{DoxyCompactList}\item 
 concept \mbox{\hyperlink{conceptutils_1_1can__reference}{utils\+::can\+\_\+reference}}
 \begin{DoxyCompactList}\small\item\em C++ standard exposition-\/only concept\+: {\itshape can-\/reference}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Typedefs}
+\doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T , type\+\_\+qualifiers Q$>$ }\\using \mbox{\hyperlink{group__utilsapply__qualifiers_ga0f1ae7032a6b8ec9503056a4ac3a0b46}{utils\+::apply\+\_\+qualifiers\+\_\+t}} = apply\+\_\+qualifiers$<$ T, Q $>$\+::type
+{\footnotesize template$<$typename T, \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} Q$>$ }\\using \mbox{\hyperlink{group__utilsapply__qualifiers_ga9fe1035efd9b409ab4f57c45e7986411}{utils\+::apply\+\_\+qualifiers\+\_\+t}} = \mbox{\hyperlink{group__utilsapply__qualifiers_structutils_1_1apply__qualifiers}{apply\+\_\+qualifiers}}$<$T, Q$>$\+::type
 \item 
-{\footnotesize template$<$typename RefT , typename T $>$ }\\using \mbox{\hyperlink{group__utilsfollow_ga9cee2155b4c7479372bc3ffc2dc06a59}{utils\+::follow\+\_\+t}} = follow$<$ RefT, T $>$\+::type
+{\footnotesize template$<$typename RefT, typename T$>$ }\\using \mbox{\hyperlink{group__utilsfollow_ga73ba7c6d0100b82e7f3b52b284dd6b87}{utils\+::follow\+\_\+t}} = \mbox{\hyperlink{group__utilsfollow_structutils_1_1follow}{follow}}$<$RefT, T$>$\+::type
 \item 
-{\footnotesize template$<$typename T , T End, T Begin = 0, T Step = 1$>$ }\\using \mbox{\hyperlink{group__utilsmake__integer__range_ga011249984f152afb7307c44c21667c79}{utils\+::make\+\_\+integer\+\_\+range}} = detail\+::sequence\+\_\+apply$<$ T,\mbox{[}$\,$\mbox{]}(T n) \{ return Begin+n $\ast$Step
+{\footnotesize template$<$typename T, T End, T Begin = 0, T Step = 1$>$ }\\using \mbox{\hyperlink{group__utilsmake__integer__range_gaf7358a1b15b2833057cf650540ea3ce8}{utils\+::make\+\_\+integer\+\_\+range}}
 \item 
-{\footnotesize template$<$std\+::size\+\_\+t End, std\+::size\+\_\+t Begin = 0, std\+::size\+\_\+t Step = 1$>$ }\\using \mbox{\hyperlink{group__utilsmake__integer__range_ga6593b60afa5929e922ecc032ce2db4d1}{utils\+::make\+\_\+index\+\_\+range}} = make\+\_\+integer\+\_\+range$<$ std\+::size\+\_\+t, End, Begin, Step $>$
+{\footnotesize template$<$std\+::size\+\_\+t End, std\+::size\+\_\+t Begin = 0, std\+::size\+\_\+t Step = 1$>$ }\\using \mbox{\hyperlink{group__utilsmake__integer__range_ga360074c6b85fbd853ef93362a899f2f9}{utils\+::make\+\_\+index\+\_\+range}} = \mbox{\hyperlink{group__utilsmake__integer__range_gaf7358a1b15b2833057cf650540ea3ce8}{make\+\_\+integer\+\_\+range}}$<$std\+::size\+\_\+t, End, Begin, Step$>$
 \begin{DoxyCompactList}\small\item\em Creates a size\+\_\+t index sequence with custom Begin and Step values. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Enumerations}
+\doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
 enum class \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{utils\+::type\+\_\+qualifiers}} \{ \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea334c4a4c42fdb79d7ebc3e73b517e6f8}{utils\+::none}} = 0
@@ -92,44 +101,35 @@ enum class \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{ut
 , \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21ea9e3669d19b675bd57058fd4664205d2a}{utils\+::v}} = 0b10
  \}
 \begin{DoxyCompactList}\small\item\em Bitmask enumeration representing type qualifiers (const and volatile). \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Functions}
+\doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{namespaceutils_aed7303c206edcaa7cba652c07ca49240}{utils\+::\+UTILS\+\_\+\+BITMASK}} (type\+\_\+qualifiers)
+\mbox{\hyperlink{namespaceutils_aed7303c206edcaa7cba652c07ca49240}{utils\+::\+UTILS\+\_\+\+BITMASK}} (\mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}})
 \item 
-{\footnotesize template$<$typename T $>$ }\\constexpr const T \&\& \mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{utils\+::as\+\_\+const}} (T \&\&ref) noexcept
+{\footnotesize template$<$typename T$>$ }\\constexpr const T \&\& \mbox{\hyperlink{namespaceutils_aa0aaad636b78156361f43a4651536d56}{utils\+::as\+\_\+const}} (T \&\&ref) noexcept
 \begin{DoxyCompactList}\small\item\em Casts a forwarding reference to a const reference of the same category. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\constexpr volatile T \&\& \mbox{\hyperlink{namespaceutils_a5efd377d9bd98cc665b5211b4e64e07f}{utils\+::as\+\_\+volatile}} (T \&\&ref) noexcept
+{\footnotesize template$<$typename T$>$ }\\constexpr volatile T \&\& \mbox{\hyperlink{namespaceutils_a5efd377d9bd98cc665b5211b4e64e07f}{utils\+::as\+\_\+volatile}} (T \&\&ref) noexcept
 \begin{DoxyCompactList}\small\item\em Casts a forwarding reference to a volatile reference of the same category. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\constexpr const volatile T \&\& \mbox{\hyperlink{namespaceutils_a0922f693f86f61e5b05d43af01c05cb6}{utils\+::as\+\_\+cv}} (T \&\&ref) noexcept
+{\footnotesize template$<$typename T$>$ }\\constexpr const volatile T \&\& \mbox{\hyperlink{namespaceutils_a0922f693f86f61e5b05d43af01c05cb6}{utils\+::as\+\_\+cv}} (T \&\&ref) noexcept
 \begin{DoxyCompactList}\small\item\em Casts a forwarding reference to a const volatile reference of the same category. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\constexpr const T $\ast$ \mbox{\hyperlink{namespaceutils_a570f4db159e0862968337af153e091e5}{utils\+::as\+\_\+const\+\_\+ptr}} (T $\ast$ptr) noexcept
+{\footnotesize template$<$typename T$>$ }\\constexpr const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceutils_a570f4db159e0862968337af153e091e5}{utils\+::as\+\_\+const\+\_\+ptr}} (T \texorpdfstring{$\ast$}{*}ptr) noexcept
 \begin{DoxyCompactList}\small\item\em Const-\/qualifies a pointer. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\constexpr volatile T $\ast$ \mbox{\hyperlink{namespaceutils_a4a19d4a2f7dfda792458d6c0983c368f}{utils\+::as\+\_\+volatile\+\_\+ptr}} (T $\ast$ptr) noexcept
+{\footnotesize template$<$typename T$>$ }\\constexpr volatile T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceutils_a4a19d4a2f7dfda792458d6c0983c368f}{utils\+::as\+\_\+volatile\+\_\+ptr}} (T \texorpdfstring{$\ast$}{*}ptr) noexcept
 \begin{DoxyCompactList}\small\item\em Volatile-\/qualifies a pointer. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\constexpr const volatile T $\ast$ \mbox{\hyperlink{namespaceutils_a9b359b4959abf1200f831e0febf5acd9}{utils\+::as\+\_\+cv\+\_\+ptr}} (T $\ast$ptr) noexcept
+{\footnotesize template$<$typename T$>$ }\\constexpr const volatile T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceutils_a9b359b4959abf1200f831e0febf5acd9}{utils\+::as\+\_\+cv\+\_\+ptr}} (T \texorpdfstring{$\ast$}{*}ptr) noexcept
 \begin{DoxyCompactList}\small\item\em Const volatile-\/qualifies a pointer. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , typename U $>$ }\\constexpr auto \&\& \mbox{\hyperlink{namespaceutils_ac60b73bc9e229724ebdb31555e939edb}{utils\+::forward\+\_\+stored}} (U \&\&u) noexcept
+{\footnotesize template$<$typename T, typename U$>$ }\\constexpr auto \&\& \mbox{\hyperlink{namespaceutils_ac60b73bc9e229724ebdb31555e939edb}{utils\+::forward\+\_\+stored}} (U \&\&u) noexcept
 \begin{DoxyCompactList}\small\item\em Returns a reference to {\ttfamily u}, which has similar properties to {\ttfamily T}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Variables}
+\doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T $>$ }\\constexpr type\+\_\+qualifiers \mbox{\hyperlink{group__utilsqualifiers__of_gad6a8c3be8fd9c0f96263ed785cd8bff7}{utils\+::qualifiers\+\_\+of\+\_\+v}} = qualifiers\+\_\+of$<$T$>$\+::value
+{\footnotesize template$<$typename T$>$ }\\constexpr \mbox{\hyperlink{namespaceutils_ab347f7fd31e7ee14b2e4e14686a2c21e}{type\+\_\+qualifiers}} \mbox{\hyperlink{group__utilsqualifiers__of_gad6a8c3be8fd9c0f96263ed785cd8bff7}{utils\+::qualifiers\+\_\+of\+\_\+v}} = \mbox{\hyperlink{group__utilsqualifiers__of_structutils_1_1qualifiers__of}{qualifiers\+\_\+of}}$<$T$>$\+::value
 \item 
-{\footnotesize template$<$typename T , typename U $>$ }\\constexpr bool \mbox{\hyperlink{group__utilsis__equiv_gabc8a77dfb384195bd1be8468750888c0}{utils\+::is\+\_\+equiv\+\_\+v}} = is\+\_\+equiv$<$T, U$>$\+::value
+{\footnotesize template$<$typename T, typename U$>$ }\\constexpr bool \mbox{\hyperlink{group__utilsis__equiv_gabc8a77dfb384195bd1be8468750888c0}{utils\+::is\+\_\+equiv\+\_\+v}} = \mbox{\hyperlink{group__utilsis__equiv_structutils_1_1is__equiv}{is\+\_\+equiv}}$<$T, U$>$\+::value
 \item 
-{\footnotesize template$<$template$<$ typename... $>$ typename Tmpl, typename T $>$ }\\constexpr bool \mbox{\hyperlink{group__utilsis__template__instance_ga1de78a43e2208a380d280c56bdd7947e}{utils\+::is\+\_\+template\+\_\+instance\+\_\+v}} = is\+\_\+template\+\_\+instance$<$Tmpl, std\+::remove\+\_\+cvref\+\_\+t$<$T$>$$>$\+::value
+{\footnotesize template$<$template$<$ typename... $>$ typename Tmpl, typename T$>$ }\\constexpr bool \mbox{\hyperlink{group__utilsis__template__instance_ga1de78a43e2208a380d280c56bdd7947e}{utils\+::is\+\_\+template\+\_\+instance\+\_\+v}} = \mbox{\hyperlink{group__utilsis__template__instance_structutils_1_1is__template__instance}{is\+\_\+template\+\_\+instance}}$<$Tmpl, std\+::remove\+\_\+cvref\+\_\+t$<$T$>$$>$\+::value
 \item 
-{\footnotesize template$<$typename From , typename To $>$ }\\constexpr bool \mbox{\hyperlink{group__utilsexplicitly__convertible__to_gaeeeecd5e5e48d738f1f779d9b8f46dcc}{utils\+::is\+\_\+explicitly\+\_\+convertible\+\_\+v}} = is\+\_\+explicitly\+\_\+convertible$<$From, To$>$\+::value
+{\footnotesize template$<$typename From, typename To$>$ }\\constexpr bool \mbox{\hyperlink{group__utilsexplicitly__convertible__to_gaeeeecd5e5e48d738f1f779d9b8f46dcc}{utils\+::is\+\_\+explicitly\+\_\+convertible\+\_\+v}} = \mbox{\hyperlink{group__utilsexplicitly__convertible__to_structutils_1_1is__explicitly__convertible}{is\+\_\+explicitly\+\_\+convertible}}$<$From, To$>$\+::value
 \item 
-{\footnotesize template$<$typename Tag , typename T $>$ }\\constexpr bool \mbox{\hyperlink{group__utilsis__tagged_ga4cf6ed8a5af20f379e7e15fcb183c2bc}{utils\+::is\+\_\+tagged\+\_\+v}} = is\+\_\+tagged$<$Tag, T$>$\+::value
+{\footnotesize template$<$typename Tag, typename T$>$ }\\constexpr bool \mbox{\hyperlink{group__utilsis__tagged_ga4cf6ed8a5af20f379e7e15fcb183c2bc}{utils\+::is\+\_\+tagged\+\_\+v}} = \mbox{\hyperlink{group__utilsis__tagged_structutils_1_1is__tagged}{is\+\_\+tagged}}$<$Tag, T$>$\+::value
 \end{DoxyCompactItemize}
-
-
-\doxysubsection{Detailed Description}
-Type manipulation and qualification utilities for compile-\/time type introspection and transformation. 
-
-
-
-Definition in file \mbox{\hyperlink{type_8hpp_source}{type.\+hpp}}.
-

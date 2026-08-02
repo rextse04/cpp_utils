@@ -1,6 +1,11 @@
-\hypertarget{group__segment__treeat}{}\doxysection{utils\+::segment\+\_\+tree\+::at}
-\label{group__segment__treeat}\index{utils::segment\_tree::at@{utils::segment\_tree::at}}
-\doxysubsection*{Functions}
+\doxysection{utils\+::segment\+\_\+tree\+::at}
+\hypertarget{group__segment__treeat}{}\label{group__segment__treeat}\index{utils::segment\_tree::at@{utils::segment\_tree::at}}
+
+
+Checked query by key.  
+
+
+\doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 constexpr \mbox{\hyperlink{classutils_1_1segment__tree_aaa052c7eff48c79b7c438417ccbe92c3}{reference}} \mbox{\hyperlink{group__segment__treeat_ga08635a69453b0772e039a08e36464c3a}{utils\+::segment\+\_\+tree$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::at}} (const searchable\+\_\+in$<$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}} $>$ auto \&\mbox{\hyperlink{classutils_1_1key}{key}})
@@ -12,45 +17,47 @@ constexpr const T \& \mbox{\hyperlink{group__segment__treeat_ga9ce469003e2c9265b
 
 
 \doxysubsection{Detailed Description}
-Returns a (potentially proxy) reference to the mapped value of {\ttfamily key}. If {\ttfamily key} does not have a {\ttfamily \mbox{\hyperlink{classutils_1_1segment__tree_a387f5c52bb8be44a5dd202ca94790eea}{key\+\_\+compare()}}}-\/equivalent in {\ttfamily \mbox{\hyperlink{classutils_1_1segment__tree_a651253130fe6d6fc8bfc3b88e2851a9a}{keys()}}}, an exception is thrown with strong exception guarantee. 
+Checked query by key. 
+
+Returns a (potentially proxy) reference to the mapped value of {\ttfamily key}. If {\ttfamily key} does not have a {\ttfamily \doxylink{classutils_1_1segment__tree_a387f5c52bb8be44a5dd202ca94790eea}{key\+\_\+compare()}}-\/equivalent in {\ttfamily \doxylink{classutils_1_1segment__tree_a651253130fe6d6fc8bfc3b88e2851a9a}{keys()}}, an exception is thrown with strong exception guarantee. 
 \begin{DoxyExceptions}{Exceptions}
-{\em std\+::out\+\_\+of\+\_\+range} & If {\ttfamily key} does not have a {\ttfamily \mbox{\hyperlink{classutils_1_1segment__tree_a387f5c52bb8be44a5dd202ca94790eea}{key\+\_\+compare()}}}-\/equivalent in {\ttfamily \mbox{\hyperlink{classutils_1_1segment__tree_a651253130fe6d6fc8bfc3b88e2851a9a}{keys()}}} \\
+{\em std\+::out\+\_\+of\+\_\+range} & If {\ttfamily key} does not have a {\ttfamily \doxylink{classutils_1_1segment__tree_a387f5c52bb8be44a5dd202ca94790eea}{key\+\_\+compare()}}-\/equivalent in {\ttfamily \doxylink{classutils_1_1segment__tree_a651253130fe6d6fc8bfc3b88e2851a9a}{keys()}} \\
 \hline
 \end{DoxyExceptions}
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{group__segment__treeat_ga08635a69453b0772e039a08e36464c3a}\label{group__segment__treeat_ga08635a69453b0772e039a08e36464c3a}} 
-\index{utils::segment\_tree::at@{utils::segment\_tree::at}!at@{at}}
+\Hypertarget{group__segment__treeat_ga08635a69453b0772e039a08e36464c3a}\index{utils::segment\_tree::at@{utils::segment\_tree::at}!at@{at}}
 \index{at@{at}!utils::segment\_tree::at@{utils::segment\_tree::at}}
 \doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily template$<$typename Key , typename T , std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container  = std\+::vector$<$\+Key$>$, typename Mapped\+Container  = std\+::vector$<$\+T$>$$>$ \\
-constexpr \mbox{\hyperlink{classutils_1_1segment__tree_aaa052c7eff48c79b7c438417ccbe92c3}{reference}} \mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::at (\begin{DoxyParamCaption}\item[{const searchable\+\_\+in$<$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$ $>$ auto \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily \label{group__segment__treeat_ga08635a69453b0772e039a08e36464c3a} 
+template$<$typename Key, typename T, std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container = std\+::vector$<$\+Key$>$, typename Mapped\+Container = std\+::vector$<$\+T$>$$>$ \\
+\mbox{\hyperlink{classutils_1_1segment__tree_aaa052c7eff48c79b7c438417ccbe92c3}{reference}} \mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::at (\begin{DoxyParamCaption}\item[{const searchable\+\_\+in$<$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$ $>$ auto \&}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
-Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00685}{685}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00694}{694}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
 
-\mbox{\Hypertarget{group__segment__treeat_ga9ce469003e2c9265ba8204213c0dc976}\label{group__segment__treeat_ga9ce469003e2c9265ba8204213c0dc976}} 
-\index{utils::segment\_tree::at@{utils::segment\_tree::at}!at@{at}}
+\Hypertarget{group__segment__treeat_ga9ce469003e2c9265ba8204213c0dc976}\index{utils::segment\_tree::at@{utils::segment\_tree::at}!at@{at}}
 \index{at@{at}!utils::segment\_tree::at@{utils::segment\_tree::at}}
 \doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily template$<$typename Key , typename T , std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container  = std\+::vector$<$\+Key$>$, typename Mapped\+Container  = std\+::vector$<$\+T$>$$>$ \\
-constexpr const T \& \mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::at (\begin{DoxyParamCaption}\item[{const searchable\+\_\+in$<$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$ $>$ auto \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily \label{group__segment__treeat_ga9ce469003e2c9265ba8204213c0dc976} 
+template$<$typename Key, typename T, std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container = std\+::vector$<$\+Key$>$, typename Mapped\+Container = std\+::vector$<$\+T$>$$>$ \\
+const T \& \mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::at (\begin{DoxyParamCaption}\item[{const searchable\+\_\+in$<$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$ $>$ auto \&}]{key}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
-Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00688}{688}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00697}{697}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
 
-\mbox{\Hypertarget{group__segment__treeat_gad72e174c09f16bba67fc87725ece6f38}\label{group__segment__treeat_gad72e174c09f16bba67fc87725ece6f38}} 
-\index{utils::segment\_tree::at@{utils::segment\_tree::at}!at@{at}}
+\Hypertarget{group__segment__treeat_gad72e174c09f16bba67fc87725ece6f38}\index{utils::segment\_tree::at@{utils::segment\_tree::at}!at@{at}}
 \index{at@{at}!utils::segment\_tree::at@{utils::segment\_tree::at}}
 \doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily template$<$typename Key , typename T , std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container  = std\+::vector$<$\+Key$>$, typename Mapped\+Container  = std\+::vector$<$\+T$>$$>$ \\
+{\footnotesize\ttfamily \label{group__segment__treeat_gad72e174c09f16bba67fc87725ece6f38} 
+template$<$typename Key, typename T, std\+::copyable Compare = std\+::less$<$\+Key$>$, std\+::copyable Sum = std\+::plus$<$\+T$>$, std\+::copyable Identity = default\+\_\+construct$<$\+T$>$, typename Key\+Container = std\+::vector$<$\+Key$>$, typename Mapped\+Container = std\+::vector$<$\+T$>$$>$ \\
 template$<$detail\+::multiplies\+\_\+for$<$ \mbox{\hyperlink{classutils_1_1segment__tree_aed9cba5a57e30841d2ac815549a2d0a9}{mapped\+\_\+type}}, \mbox{\hyperlink{classutils_1_1segment__tree_ac17e61eed4d4ebcf7aee166fd7fe549f}{size\+\_\+type}} $>$ Mul = std\+::multiplies$<$$>$$>$ \\
-constexpr T \mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::at (\begin{DoxyParamCaption}\item[{const searchable\+\_\+in$<$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$ $>$ auto \&}]{key,  }\item[{\mbox{\hyperlink{classutils_1_1segment__tree_aa900e852fdb513dbf300ff7d71b6b585}{update\+\_\+type}} \&}]{update,  }\item[{const Mul \&}]{multiplies }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+T \mbox{\hyperlink{classutils_1_1segment__tree}{utils\+::segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$\+::at (\begin{DoxyParamCaption}\item[{const searchable\+\_\+in$<$ \mbox{\hyperlink{classutils_1_1segment__tree}{segment\+\_\+tree}}$<$ Key, T, Compare, Sum, Identity, Key\+Container, Mapped\+Container $>$ $>$ auto \&}]{key}{, }\item[{\mbox{\hyperlink{classutils_1_1segment__tree_aa900e852fdb513dbf300ff7d71b6b585}{update\+\_\+type}} \&}]{update}{, }\item[{const Mul \&}]{multiplies}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 
 
-Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00692}{692}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
+Definition at line \mbox{\hyperlink{segment__tree_8hpp_source_l00701}{701}} of file \mbox{\hyperlink{segment__tree_8hpp_source}{segment\+\_\+tree.\+hpp}}.
 

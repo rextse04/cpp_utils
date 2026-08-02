@@ -1,5 +1,5 @@
-\hypertarget{conceptutils_1_1copy__insertable}{}\doxysection{utils\+::copy\+\_\+insertable Concept Reference}
-\label{conceptutils_1_1copy__insertable}\index{utils::copy\_insertable@{utils::copy\_insertable}}
+\doxysection{utils\+::copy\+\_\+insertable Concept Reference}
+\hypertarget{conceptutils_1_1copy__insertable}{}\label{conceptutils_1_1copy__insertable}\index{utils::copy\_insertable@{utils::copy\_insertable}}
 
 
 C++ named requirements\+: {\itshape Copy\+Insertable}  
@@ -12,11 +12,11 @@ C++ named requirements\+: {\itshape Copy\+Insertable}
 \doxysubsection{Concept definition}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} Allocator>}
-\DoxyCodeLine{\textcolor{keyword}{concept }\mbox{\hyperlink{conceptutils_1_1copy__insertable}{utils::copy\_insertable}} =  \mbox{\hyperlink{conceptutils_1_1move__insertable}{move\_insertable<T, Allocator>}} \&\&}
-\DoxyCodeLine{        \mbox{\hyperlink{conceptutils_1_1emplace__constructible}{emplace\_constructible<T, Allocator, T\&>}} \&\&}
-\DoxyCodeLine{        \mbox{\hyperlink{conceptutils_1_1emplace__constructible}{emplace\_constructible<T, Allocator, const T\&>}} \&\&}
-\DoxyCodeLine{        \mbox{\hyperlink{conceptutils_1_1emplace__constructible}{emplace\_constructible<T, Allocator, const T\&\&>}}}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ Allocator>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptutils_1_1copy__insertable}{utils::copy\_insertable}}\ =\ \ \mbox{\hyperlink{conceptutils_1_1move__insertable}{move\_insertable<T,\ Allocator>}}\ \&\&}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{conceptutils_1_1emplace__constructible}{emplace\_constructible<T,\ Allocator,\ T\&>}}\ \&\&}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{conceptutils_1_1emplace__constructible}{emplace\_constructible<T,\ Allocator,\ const\ T\&>}}\ \&\&}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{conceptutils_1_1emplace__constructible}{emplace\_constructible<T,\ Allocator,\ const\ T\&\&>}}}
 
 \end{DoxyCode}
 

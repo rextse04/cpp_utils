@@ -1,8 +1,13 @@
 <map id="containers/interval.hpp" name="containers/interval.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="175,5,327,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,80,88,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="112,80,187,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="211,80,290,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="314,80,366,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="391,80,463,107"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="172,5,323,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,87,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,34,96,76,94,71,212,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="110,79,184,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="232,34,178,72,175,67,229,29"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="209,79,286,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="250,31,250,63,245,63,245,31"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="310,79,361,105"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="264,29,310,67,307,71,261,34"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="385,79,456,105"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="278,29,378,70,376,75,276,34"/>
 </map>

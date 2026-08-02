@@ -1,3 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structutils_1_1aligned__t.html" title="A trivial class type that is aligned to Alignment." alt="" coords="5,5,189,32"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,140,117,166"/>
+<area shape="rect" id="Node000001" href="$structstd_1_1uses__allocator_3_01utils_1_1segment__tree_3_01Args_8_8_8_01_4_00_01Alloc_01_4.html" title=" " alt="" coords="198,5,340,61"/>
+<area shape="poly" id="edge15_Node000000_Node000001" title=" " alt="" coords="86,128,121,99,163,71,196,55,199,60,166,75,125,103,89,132"/>
+<area shape="rect" id="Node000002" href="$structutils_1_1bit__behavior_1_1default__asg__op__traits_1_1constraint.html" title="a @= b passes constraint if and only if a is an lvalue reference and a and b have the same width." alt="" coords="188,85,350,141"/>
+<area shape="poly" id="edge16_Node000000_Node000002" title=" " alt="" coords="131,137,187,126,188,131,132,142"/>
+<area shape="rect" id="Node000003" href="$structutils_1_1integral__behavior_1_1default__asg__op__traits_1_1constraint.html" title=" " alt="" coords="188,165,350,221"/>
+<area shape="poly" id="edge17_Node000000_Node000003" title=" " alt="" coords="132,164,188,175,187,180,131,169"/>
+<area shape="rect" id="Node000004" href="$structutils_1_1integral__behavior_1_1default__binary__op__traits_1_1constraint.html" title=" " alt="" coords="165,244,373,315"/>
+<area shape="poly" id="edge18_Node000000_Node000004" title=" " alt="" coords="90,174,125,203,166,231,185,242,183,246,163,235,122,207,86,178"/>
 </map>

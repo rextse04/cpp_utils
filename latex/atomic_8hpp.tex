@@ -1,12 +1,12 @@
-\hypertarget{atomic_8hpp}{}\doxysection{atomic.\+hpp File Reference}
-\label{atomic_8hpp}\index{atomic.hpp@{atomic.hpp}}
+\doxysection{atomic.\+hpp File Reference}
+\hypertarget{atomic_8hpp}{}\label{atomic_8hpp}\index{atomic.hpp@{atomic.hpp}}
 {\ttfamily \#include $<$atomic$>$}\newline
 Include dependency graph for atomic.\+hpp\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=144pt]{atomic_8hpp__incl}
+\includegraphics[width=143pt]{atomic_8hpp__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:
@@ -17,25 +17,30 @@ This graph shows which files directly or indirectly include this file\+:
 \includegraphics[width=350pt]{atomic_8hpp__dep__incl}
 \end{center}
 \end{figure}
-\doxysubsection*{Namespaces}
+\doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespaceutils}{utils}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Macros}
+\doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{atomic_8hpp_a906f5f112892dd56d532e9be72443840}{UTILS\+\_\+\+ATOMIC\+\_\+\+ALIGN}}(T)~alignas(std\+::atomic\+\_\+ref$<$T$>$\+::required\+\_\+alignment) T
+\#define \mbox{\hyperlink{atomic_8hpp_a906f5f112892dd56d532e9be72443840}{UTILS\+\_\+\+ATOMIC\+\_\+\+ALIGN}}(T)
 \begin{DoxyCompactList}\small\item\em A convenience macro to align a data member such that it is suitable for use of {\ttfamily std\+::atomic\+\_\+ref}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{atomic_8hpp_a906f5f112892dd56d532e9be72443840}\label{atomic_8hpp_a906f5f112892dd56d532e9be72443840}} 
-\index{atomic.hpp@{atomic.hpp}!UTILS\_ATOMIC\_ALIGN@{UTILS\_ATOMIC\_ALIGN}}
+\Hypertarget{atomic_8hpp_a906f5f112892dd56d532e9be72443840}\index{atomic.hpp@{atomic.hpp}!UTILS\_ATOMIC\_ALIGN@{UTILS\_ATOMIC\_ALIGN}}
 \index{UTILS\_ATOMIC\_ALIGN@{UTILS\_ATOMIC\_ALIGN}!atomic.hpp@{atomic.hpp}}
 \doxysubsubsection{\texorpdfstring{UTILS\_ATOMIC\_ALIGN}{UTILS\_ATOMIC\_ALIGN}}
-{\footnotesize\ttfamily \#define UTILS\+\_\+\+ATOMIC\+\_\+\+ALIGN(\begin{DoxyParamCaption}\item[{}]{T }\end{DoxyParamCaption})~alignas(std\+::atomic\+\_\+ref$<$T$>$\+::required\+\_\+alignment) T}
+{\footnotesize\ttfamily \label{atomic_8hpp_a906f5f112892dd56d532e9be72443840} 
+\#define UTILS\+\_\+\+ATOMIC\+\_\+\+ALIGN(\begin{DoxyParamCaption}\item[{}]{T}{}\end{DoxyParamCaption})}
 
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{alignas}(std::atomic\_ref<T>::required\_alignment)\ T}
+
+\end{DoxyCode}
 
 
 A convenience macro to align a data member such that it is suitable for use of {\ttfamily std\+::atomic\+\_\+ref}. 

@@ -1,40 +1,40 @@
-\hypertarget{namespaceutils_1_1bit__behavior}{}\doxysection{utils\+::bit\+\_\+behavior Namespace Reference}
-\label{namespaceutils_1_1bit__behavior}\index{utils::bit\_behavior@{utils::bit\_behavior}}
+\doxysection{utils\+::bit\+\_\+behavior Namespace Reference}
+\hypertarget{namespaceutils_1_1bit__behavior}{}\label{namespaceutils_1_1bit__behavior}\index{utils::bit\_behavior@{utils::bit\_behavior}}
 
 
 Common strategies for bit operations.  
 
 
-\doxysubsection*{Classes}
+
+
+\doxysubsection{Detailed Description}
+Common strategies for bit operations. \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structutils_1_1bit__behavior_1_1default__asg__op__traits}{default\+\_\+asg\+\_\+op\+\_\+traits}}
-\begin{DoxyCompactList}\small\item\em Default trait set for assignment operations for {\ttfamily \mbox{\hyperlink{namespaceutils_1_1bit__behavior_a5a8f53fa0b20ac3bd53ca7b63e03439c}{utils\+::bit\+\_\+behavior\+::profile\+\_\+from}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Default trait set for assignment operations for {\ttfamily \doxylink{namespaceutils_1_1bit__behavior_a5a8f53fa0b20ac3bd53ca7b63e03439c}{utils\+::bit\+\_\+behavior\+::profile\+\_\+from}}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1bit__behavior_1_1default__binary__op__traits}{default\+\_\+binary\+\_\+op\+\_\+traits}}
-\begin{DoxyCompactList}\small\item\em Default trait set for binary operations for {\ttfamily \mbox{\hyperlink{namespaceutils_1_1bit__behavior_a5a8f53fa0b20ac3bd53ca7b63e03439c}{utils\+::bit\+\_\+behavior\+::profile\+\_\+from}}}. ///. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Default trait set for binary operations for {\ttfamily \doxylink{namespaceutils_1_1bit__behavior_a5a8f53fa0b20ac3bd53ca7b63e03439c}{utils\+::bit\+\_\+behavior\+::profile\+\_\+from}}. ///. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{profile}}
 \begin{DoxyCompactList}\small\item\em An \href{IntegerBehaviorProfile.html}{\texttt{ {\itshape Integer\+Behavior\+Profile\+Template}}} for bit operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Variables}
+\doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$auto Bit\+And, auto Bit\+Or, auto Bit\+Xor, auto Bit\+Not, template$<$ typename, typename $>$ typename Common\+Type\+Trait = sane\+\_\+common\+\_\+type, template$<$ typename, typename $>$ typename Result\+Trait = Common\+Type\+Trait, typename Binary\+Traits  = default\+\_\+binary\+\_\+op\+\_\+traits$<$\+Result\+Trait$>$, typename Asg\+Traits  = default\+\_\+asg\+\_\+op\+\_\+traits$>$ }\\constexpr \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{profile}}$<$\{ .bit\+\_\+and=utils\+::detail\+::integer\+\_\+transform$<$ Bit\+And, Common\+Type\+Trait $>$\{\},.bit\+\_\+or=utils\+::detail\+::integer\+\_\+transform$<$ Bit\+Or, Common\+Type\+Trait $>$\{\},.bit\+\_\+xor=utils\+::detail\+::integer\+\_\+transform$<$ Bit\+Xor, Common\+Type\+Trait $>$\{\},.bit\+\_\+not=Bit\+Not,.binary\+\_\+traits=Binary\+Traits\{\} \}, \{ .bit\+\_\+and\+\_\+asg=utils\+::detail\+::integer\+\_\+asg\+\_\+wrap$<$ Bit\+And $>$\{\},.bit\+\_\+or\+\_\+asg=utils\+::detail\+::integer\+\_\+asg\+\_\+wrap$<$ Bit\+Or $>$\{\},.bit\+\_\+xor\+\_\+asg=utils\+::detail\+::integer\+\_\+asg\+\_\+wrap$<$ Bit\+Xor $>$\{\},.asg\+\_\+traits=Asg\+Traits\{\} \}$>$ \mbox{\hyperlink{namespaceutils_1_1bit__behavior_a5a8f53fa0b20ac3bd53ca7b63e03439c}{profile\+\_\+from}}
+{\footnotesize template$<$auto Bit\+And, auto Bit\+Or, auto Bit\+Xor, auto Bit\+Not, template$<$ typename, typename $>$ typename Common\+Type\+Trait = sane\+\_\+common\+\_\+type, template$<$ typename, typename $>$ typename Result\+Trait = Common\+Type\+Trait, typename Binary\+Traits = default\+\_\+binary\+\_\+op\+\_\+traits$<$\+Result\+Trait$>$, typename Asg\+Traits = default\+\_\+asg\+\_\+op\+\_\+traits$>$ }\\constexpr \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{profile}}$<$\{ .bit\+\_\+and=utils\+::detail\+::integer\+\_\+transform$<$ Bit\+And, Common\+Type\+Trait $>$\{\},.bit\+\_\+or=utils\+::detail\+::integer\+\_\+transform$<$ Bit\+Or, Common\+Type\+Trait $>$\{\},.bit\+\_\+xor=utils\+::detail\+::integer\+\_\+transform$<$ Bit\+Xor, Common\+Type\+Trait $>$\{\},.bit\+\_\+not=Bit\+Not,.binary\+\_\+traits=Binary\+Traits\{\} \}, \{ .bit\+\_\+and\+\_\+asg=utils\+::detail\+::integer\+\_\+asg\+\_\+wrap$<$ Bit\+And $>$\{\},.bit\+\_\+or\+\_\+asg=utils\+::detail\+::integer\+\_\+asg\+\_\+wrap$<$ Bit\+Or $>$\{\},.bit\+\_\+xor\+\_\+asg=utils\+::detail\+::integer\+\_\+asg\+\_\+wrap$<$ Bit\+Xor $>$\{\},.asg\+\_\+traits=Asg\+Traits\{\} \}$>$ \mbox{\hyperlink{namespaceutils_1_1bit__behavior_a5a8f53fa0b20ac3bd53ca7b63e03439c}{profile\+\_\+from}}
 \begin{DoxyCompactList}\small\item\em Convenience variable template to make an \href{IntegerBehaviorProfile.html}{\texttt{ {\itshape Integer\+Behavior\+Profile}}} for bit operations. \end{DoxyCompactList}\item 
 constexpr auto \mbox{\hyperlink{namespaceutils_1_1bit__behavior_a7ecfb3e0498c15492edd93b9d750b6ca}{standard}}
 \begin{DoxyCompactList}\small\item\em Default C++ bit operation rules. \end{DoxyCompactList}\item 
 constexpr auto \mbox{\hyperlink{namespaceutils_1_1bit__behavior_afe4ae201007274cf3e7cfcf2a5b634d7}{sane}}
-\begin{DoxyCompactList}\small\item\em Default C++ bit operation rules, but the result type is determined by {\ttfamily \mbox{\hyperlink{group__sane__common__type_structutils_1_1sane__common__type}{utils\+::sane\+\_\+common\+\_\+type}}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Default C++ bit operation rules, but the result type is determined by {\ttfamily \doxylink{group__sane__common__type_structutils_1_1sane__common__type}{utils\+::sane\+\_\+common\+\_\+type}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
-
-\doxysubsection{Detailed Description}
-Common strategies for bit operations. 
 
 \doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{namespaceutils_1_1bit__behavior_a5a8f53fa0b20ac3bd53ca7b63e03439c}\label{namespaceutils_1_1bit__behavior_a5a8f53fa0b20ac3bd53ca7b63e03439c}} 
-\index{utils::bit\_behavior@{utils::bit\_behavior}!profile\_from@{profile\_from}}
+\Hypertarget{namespaceutils_1_1bit__behavior_a5a8f53fa0b20ac3bd53ca7b63e03439c}\index{utils::bit\_behavior@{utils::bit\_behavior}!profile\_from@{profile\_from}}
 \index{profile\_from@{profile\_from}!utils::bit\_behavior@{utils::bit\_behavior}}
 \doxysubsubsection{\texorpdfstring{profile\_from}{profile\_from}}
-{\footnotesize\ttfamily template$<$auto Bit\+And, auto Bit\+Or, auto Bit\+Xor, auto Bit\+Not, template$<$ typename, typename $>$ typename Common\+Type\+Trait = sane\+\_\+common\+\_\+type, template$<$ typename, typename $>$ typename Result\+Trait = Common\+Type\+Trait, typename Binary\+Traits  = default\+\_\+binary\+\_\+op\+\_\+traits$<$\+Result\+Trait$>$, typename Asg\+Traits  = default\+\_\+asg\+\_\+op\+\_\+traits$>$ \\
-constexpr \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{profile}}$<$\{ .bit\+\_\+and = utils\+::detail\+::integer\+\_\+transform$<$Bit\+And, Common\+Type\+Trait$>$\{\}, .bit\+\_\+or = utils\+::detail\+::integer\+\_\+transform$<$Bit\+Or, Common\+Type\+Trait$>$\{\}, .bit\+\_\+xor = utils\+::detail\+::integer\+\_\+transform$<$Bit\+Xor, Common\+Type\+Trait$>$\{\}, .bit\+\_\+not = Bit\+Not, .binary\+\_\+traits = Binary\+Traits\{\} \}, \{ .bit\+\_\+and\+\_\+asg = utils\+::detail\+::integer\+\_\+asg\+\_\+wrap$<$Bit\+And$>$\{\}, .bit\+\_\+or\+\_\+asg = utils\+::detail\+::integer\+\_\+asg\+\_\+wrap$<$Bit\+Or$>$\{\}, .bit\+\_\+xor\+\_\+asg = utils\+::detail\+::integer\+\_\+asg\+\_\+wrap$<$Bit\+Xor$>$\{\}, .asg\+\_\+traits = Asg\+Traits\{\} \}$>$ utils\+::bit\+\_\+behavior\+::profile\+\_\+from\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily \label{namespaceutils_1_1bit__behavior_a5a8f53fa0b20ac3bd53ca7b63e03439c} 
+template$<$auto Bit\+And, auto Bit\+Or, auto Bit\+Xor, auto Bit\+Not, template$<$ typename, typename $>$ typename Common\+Type\+Trait = sane\+\_\+common\+\_\+type, template$<$ typename, typename $>$ typename Result\+Trait = Common\+Type\+Trait, typename Binary\+Traits = default\+\_\+binary\+\_\+op\+\_\+traits$<$\+Result\+Trait$>$, typename Asg\+Traits = default\+\_\+asg\+\_\+op\+\_\+traits$>$ \\
+\mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{profile}}$<$\{ .bit\+\_\+and = utils\+::detail\+::integer\+\_\+transform$<$Bit\+And, Common\+Type\+Trait$>$\{\}, .bit\+\_\+or = utils\+::detail\+::integer\+\_\+transform$<$Bit\+Or, Common\+Type\+Trait$>$\{\}, .bit\+\_\+xor = utils\+::detail\+::integer\+\_\+transform$<$Bit\+Xor, Common\+Type\+Trait$>$\{\}, .bit\+\_\+not = Bit\+Not, .binary\+\_\+traits = Binary\+Traits\{\} \}, \{ .bit\+\_\+and\+\_\+asg = utils\+::detail\+::integer\+\_\+asg\+\_\+wrap$<$Bit\+And$>$\{\}, .bit\+\_\+or\+\_\+asg = utils\+::detail\+::integer\+\_\+asg\+\_\+wrap$<$Bit\+Or$>$\{\}, .bit\+\_\+xor\+\_\+asg = utils\+::detail\+::integer\+\_\+asg\+\_\+wrap$<$Bit\+Xor$>$\{\}, .asg\+\_\+traits = Asg\+Traits\{\} \}$>$ utils\+::bit\+\_\+behavior\+::profile\+\_\+from\hspace{0.3cm}{\ttfamily [constexpr]}}
 
 
 
@@ -42,14 +42,14 @@ Convenience variable template to make an \href{IntegerBehaviorProfile.html}{\tex
 
 For every relevant operator {\ttfamily @} and the corresponding functor {\ttfamily F} (supplied in template parameters), the synthesized functor {\ttfamily op} behaves as follows\+:
 \begin{DoxyEnumerate}
-\item If {\ttfamily @} is a binary operator, {\ttfamily op(a, b)} is equivalent to {\ttfamily F(static\+\_\+cast\texorpdfstring{$<$}{<}const C\&\texorpdfstring{$>$}{>}(a), static\+\_\+cast\texorpdfstring{$<$}{<}const C\&\texorpdfstring{$>$}{>}(b))}; where {\ttfamily a} and {\ttfamily b} are expressions of types {\ttfamily A} and {\ttfamily B} respectively, and {\ttfamily C} is {\ttfamily Common\+Type\+Trait\texorpdfstring{$<$}{<}A, B\texorpdfstring{$>$}{>}\+::type}.
+\item If {\ttfamily @} is a binary operator, {\ttfamily op(a, b)} is equivalent to {\ttfamily F(static\+\_\+cast\texorpdfstring{$<$}{<}const C\&\texorpdfstring{$>$}{>}(a), static\+\_\+cast\texorpdfstring{$<$}{<}const C\&\texorpdfstring{$>$}{>}(b))}; where {\ttfamily a} and {\ttfamily b} are expressions of types {\ttfamily A} and {\ttfamily B} respectively, and {\ttfamily C} is {\ttfamily Common\+Type\+Trait\texorpdfstring{$<$}{<}A, B\texorpdfstring{$>$}{>}::type}.
 \item If {\ttfamily @} is an assignment operator, {\ttfamily op(a, b)} is equivalent to {\ttfamily a = F(a, static\+\_\+cast\texorpdfstring{$<$}{<}const A\&\texorpdfstring{$>$}{>}(b))}, where {\ttfamily a} and {\ttfamily b} are expressions of types {\ttfamily A} and {\ttfamily B} respectively. 
 \begin{DoxyTemplParams}{Template Parameters}
-{\em Bit\+And,Bit\+Or,Bit\+Xor,Bit\+Not} & Base functors from which functors supplied to {\ttfamily \mbox{\hyperlink{structutils_1_1bit__behavior_1_1profile}{utils\+::bit\+\_\+behavior\+::profile}}} are synthesized. They must return an integer-\/like type on every well-\/formed invocation. \\
+{\em Bit\+And,Bit\+Or,Bit\+Xor,Bit\+Not} & Base functors from which functors supplied to {\ttfamily \doxylink{structutils_1_1bit__behavior_1_1profile}{utils\+::bit\+\_\+behavior\+::profile}} are synthesized. They must return an integer-\/like type on every well-\/formed invocation. \\
 \hline
-{\em Binary\+Traits} & Trait set supplied to {\ttfamily \mbox{\hyperlink{structutils_1_1bit__op__functors}{utils\+::bit\+\_\+op\+\_\+functors}}}. \\
+{\em Binary\+Traits} & Trait set supplied to {\ttfamily \doxylink{structutils_1_1bit__op__functors}{utils\+::bit\+\_\+op\+\_\+functors}}. \\
 \hline
-{\em Asg\+Traits} & Trait set supplied to {\ttfamily \mbox{\hyperlink{structutils_1_1bit__asg__op__functors}{utils\+::bit\+\_\+asg\+\_\+op\+\_\+functors}}}. \\
+{\em Asg\+Traits} & Trait set supplied to {\ttfamily \doxylink{structutils_1_1bit__asg__op__functors}{utils\+::bit\+\_\+asg\+\_\+op\+\_\+functors}}. \\
 \hline
 \end{DoxyTemplParams}
 
@@ -57,36 +57,36 @@ For every relevant operator {\ttfamily @} and the corresponding functor {\ttfami
 
 Definition at line \mbox{\hyperlink{integer_8hpp_source_l00430}{430}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_1_1bit__behavior_afe4ae201007274cf3e7cfcf2a5b634d7}\label{namespaceutils_1_1bit__behavior_afe4ae201007274cf3e7cfcf2a5b634d7}} 
-\index{utils::bit\_behavior@{utils::bit\_behavior}!sane@{sane}}
+\Hypertarget{namespaceutils_1_1bit__behavior_afe4ae201007274cf3e7cfcf2a5b634d7}\index{utils::bit\_behavior@{utils::bit\_behavior}!sane@{sane}}
 \index{sane@{sane}!utils::bit\_behavior@{utils::bit\_behavior}}
 \doxysubsubsection{\texorpdfstring{sane}{sane}}
-{\footnotesize\ttfamily constexpr auto utils\+::bit\+\_\+behavior\+::sane\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily \label{namespaceutils_1_1bit__behavior_afe4ae201007274cf3e7cfcf2a5b634d7} 
+auto utils\+::bit\+\_\+behavior\+::sane\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{= \mbox{\hyperlink{namespaceutils_1_1shift__behavior_a661ce0fc9bfb0fb4f8c15cb656cf03ae}{profile\_from}}<}
-\DoxyCodeLine{            std::bit\_and\{\}, std::bit\_or\{\}, std::bit\_xor\{\}, std::bit\_not\{\}, sane\_common\_type>}
+\DoxyCodeLine{=\ \mbox{\hyperlink{namespaceutils_1_1bit__behavior_a5a8f53fa0b20ac3bd53ca7b63e03439c}{profile\_from}}<}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ std::bit\_and\{\},\ std::bit\_or\{\},\ std::bit\_xor\{\},\ std::bit\_not\{\},\ sane\_common\_type>}
 
 \end{DoxyCode}
 
 
-Default C++ bit operation rules, but the result type is determined by {\ttfamily \mbox{\hyperlink{group__sane__common__type_structutils_1_1sane__common__type}{utils\+::sane\+\_\+common\+\_\+type}}}. 
+Default C++ bit operation rules, but the result type is determined by {\ttfamily \doxylink{group__sane__common__type_structutils_1_1sane__common__type}{utils\+::sane\+\_\+common\+\_\+type}}. 
 
 
 
 Definition at line \mbox{\hyperlink{integer_8hpp_source_l00437}{437}} of file \mbox{\hyperlink{integer_8hpp_source}{integer.\+hpp}}.
 
-\mbox{\Hypertarget{namespaceutils_1_1bit__behavior_a7ecfb3e0498c15492edd93b9d750b6ca}\label{namespaceutils_1_1bit__behavior_a7ecfb3e0498c15492edd93b9d750b6ca}} 
-\index{utils::bit\_behavior@{utils::bit\_behavior}!standard@{standard}}
+\Hypertarget{namespaceutils_1_1bit__behavior_a7ecfb3e0498c15492edd93b9d750b6ca}\index{utils::bit\_behavior@{utils::bit\_behavior}!standard@{standard}}
 \index{standard@{standard}!utils::bit\_behavior@{utils::bit\_behavior}}
 \doxysubsubsection{\texorpdfstring{standard}{standard}}
-{\footnotesize\ttfamily constexpr auto utils\+::bit\+\_\+behavior\+::standard\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily \label{namespaceutils_1_1bit__behavior_a7ecfb3e0498c15492edd93b9d750b6ca} 
+auto utils\+::bit\+\_\+behavior\+::standard\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{= \mbox{\hyperlink{namespaceutils_1_1shift__behavior_a661ce0fc9bfb0fb4f8c15cb656cf03ae}{profile\_from}}<}
-\DoxyCodeLine{            std::bit\_and\{\}, std::bit\_or\{\}, std::bit\_xor\{\}, std::bit\_not\{\}, std::common\_type>}
+\DoxyCodeLine{=\ \mbox{\hyperlink{namespaceutils_1_1bit__behavior_a5a8f53fa0b20ac3bd53ca7b63e03439c}{profile\_from}}<}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ std::bit\_and\{\},\ std::bit\_or\{\},\ std::bit\_xor\{\},\ std::bit\_not\{\},\ std::common\_type>}
 
 \end{DoxyCode}
 

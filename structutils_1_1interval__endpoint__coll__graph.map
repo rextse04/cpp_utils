@@ -1,4 +1,5 @@
 <map id="utils::interval_endpoint&lt; T &gt;" name="utils::interval_endpoint&lt; T &gt;">
-<area shape="rect" id="node1" title="Represents an endpoint of an interval, consisting of a value and its type (open or closed)." alt="" coords="5,95,185,121"/>
-<area shape="rect" id="node2" title=" " alt="" coords="76,5,115,32"/>
+<area shape="rect" id="Node000001" title="Represents an endpoint of an interval, consisting of a value and its type (open or closed)." alt="" coords="5,94,185,120"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="76,5,114,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,47,98,94,92,94,92,47"/>
 </map>
