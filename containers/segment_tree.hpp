@@ -25,6 +25,11 @@
 #include "compare.hpp"
 #include "swap.hpp"
 
+/**
+ * @file
+ * @brief Segment tree.
+ */
+
 namespace utils::detail {
     template <typename Base>
     class segment_tree_reference {

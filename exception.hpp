@@ -2,6 +2,11 @@
 #include <exception>
 #include <string_view>
 
+/**
+ * @file
+ * @brief Additional exceptions defined by the library.
+ */
+
 namespace utils {
     /// @brief Represents an error at compilation due to incorrect use of library constructs.
     class compile_error : public std::exception {

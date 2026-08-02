@@ -2,9 +2,14 @@
 #include <type_traits>
 #include <cstddef>
 #include <memory_resource>
-#include <memory>
+#include <new>
 #include <utility>
 #include "memory.hpp"
+
+/**
+ * @file
+ * @brief `std::pmr::memory_resource` wrapper for allocators.
+ */
 
 namespace utils::pmr {
     /// @brief Named requirement: [<i>ResourceAllocator</i>](ResourceAllocator.html)

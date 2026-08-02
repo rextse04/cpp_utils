@@ -8,6 +8,11 @@
 #include "integer.hpp"
 #include "type.hpp"
 
+/**
+ * @file
+ * @brief Utilities for concurrency.
+ */
+
 namespace utils {
     /// @brief Denotes a `utils::unique_resource` should enable synchronization.
     constexpr struct unique_resource_sync_t {} unique_resource_sync{};

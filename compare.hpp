@@ -2,6 +2,11 @@
 #include <compare>
 #include "type.hpp"
 
+/**
+ * @file
+ * @brief Utilites for comparison operators and comparators.
+ */
+
 namespace utils {
     /// @brief C++ standard exposition-only functor: <i>synth-three-way</i>.
     inline constexpr auto synth_three_way = []<typename T, typename U>(const T& t, const U& u)

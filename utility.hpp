@@ -2,6 +2,11 @@
 #include <tuple>
 #include <type_traits>
 
+/**
+ * @file
+ * @brief Miscellaneous utilities.
+ */
+
 namespace utils {
     /// @brief Owns a set of callables and dispatches calls to the first one that matches the arguments.
     template <typename... Fs>

@@ -5,6 +5,11 @@
 #include <utility>
 #include <compare>
 
+/**
+ * @file
+ * @brief Formalizing the notion of an "interval" in the library.
+ */
+
 namespace utils {
     namespace detail {
         template <typename R, typename... Ts>

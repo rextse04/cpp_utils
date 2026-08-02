@@ -6,6 +6,14 @@
 #include "functional.hpp"
 #include "type.hpp"
 
+/**
+ * @file
+ * @brief Bulk operator overloads.
+ *
+ * This file defines a simple framework for enabling operator overloads in semantically-related batches,
+ * using the mixin pattern.
+ */
+
 namespace utils {
 #define UTILS_BINARY_OP(op, name, classname)\
     template <typename A, typename B,\

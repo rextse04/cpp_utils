@@ -2,6 +2,7 @@
 
 /**
  * @file
+ * @brief ADL discoverable swap.
  *
  * This file is included by all headers that contain a class with a `swap` method.
  * Due to ADL, manually including this header in user code does not provide any extra utilites.

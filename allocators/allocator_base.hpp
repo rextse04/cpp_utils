@@ -1,6 +1,11 @@
 #pragma once
 #include <memory>
 
+/**
+ * @file
+ * @brief Common utilities for custom allocators.
+ */
+
 namespace utils::pmr {
     /// @brief A convenience base class providing typedefs for custom allocators.
     /// @remark Due to `std::allocator_traits`, this is not needed most of the time.

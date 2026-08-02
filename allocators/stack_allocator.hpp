@@ -6,6 +6,11 @@
 #include "allocator_base.hpp"
 #include "memory.hpp"
 
+/**
+ * @file
+ * @brief Stack allocator.
+ */
+
 namespace utils::pmr {
     namespace detail {
         struct stack_allocator_control {
@@ -60,6 +65,7 @@ namespace utils::pmr {
     public:
         /// @defgroup utilspmrstack_allocatorconstructors utils::pmr::stack_allocator::stack_allocator
         /// @brief Constructors.
+        ///
         /// @{
 
         /// @brief Takes ownership of the buffer and uses it for allocations.

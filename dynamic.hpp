@@ -14,6 +14,7 @@
 
 /**
  * @file
+ * @brief Utilities for Rust-like dynamic dispatch.
  *
  * This file provides utilities for Rust-like dynamic dispatch,
  * as a partial replacement for virtual methods in standard C++.

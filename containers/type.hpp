@@ -5,6 +5,11 @@
 #include <compare>
 #include "memory.hpp"
 
+/**
+ * @file
+ * @brief Common type utilities for custom containers.
+ */
+
 namespace utils {
     namespace detail {
         inline constexpr struct void_allocator_t {} void_allocator;

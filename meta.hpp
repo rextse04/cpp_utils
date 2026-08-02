@@ -6,9 +6,8 @@
 #include <utility>
 
 /**
- * @namespace utils::meta
- *
- * Useful utilities for template metaprogramming.
+ * @file
+ * @brief Useful utilities for template metaprogramming.
  */
 namespace utils::meta {
     namespace detail {

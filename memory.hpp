@@ -5,6 +5,11 @@
 #include <algorithm>
 #include <concepts>
 
+/**
+ * @file
+ * @brief Utilities for managing raw memory storage.
+ */
+
 namespace utils {
     /// @defgroup utilsmax_align utils::max_align
     /// @brief Calculates the maximum alignment requirement among the types in `Ts`.

@@ -9,6 +9,11 @@
 #include "allocator_base.hpp"
 #include "memory.hpp"
 
+/**
+ * @file
+ * @brief Arena allocator.
+ */
+
 namespace utils::pmr {
     namespace detail {
         struct arena_allocator_control {

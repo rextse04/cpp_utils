@@ -3,6 +3,7 @@
 
 /**
  * @file
+ * @brief Stateful metaprogramming utilites.
  *
  * This file contains utilities that enable stateful metaprogramming,
  * which allows you to make compile-time <b>modifiable</b> variables.

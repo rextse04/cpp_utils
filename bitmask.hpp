@@ -1,7 +1,15 @@
 #pragma once
-#include <utility>
+
+/**
+ * @file
+ * @brief Utility to enable bitmask operations on an enumeration type.
+ */
 
 namespace utils {
+    /// @brief A convenience macro to enable bitmask operations on an enumeration `T`.
+    ///
+    /// The macro must be applied in the same namespace as `T` to allow ADL lookup.
+    /// The program is ill-formed if `T` is not an enumeration type.
 #define UTILS_BITMASK(T)\
     static_assert(std::is_enum_v<T>, "T must be an enumeration type");\
     constexpr auto operator+(T a) noexcept {\

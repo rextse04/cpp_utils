@@ -15,6 +15,11 @@
 #include "operators.hpp"
 #include "type.hpp"
 
+/**
+ *  @file
+ *  @brief A type-safe wrapper for built-in integer types and related utilities.
+ */
+
 namespace utils {
     namespace detail {
         template <typename>
