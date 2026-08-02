@@ -34,10 +34,9 @@ namespace utils {
         using value_type = T;
         using semaphore_type = Semaphore;
         static constexpr bool sync = Sync;
-        class permit;
     private:
-        using permit_opt = std::optional<permit>;
-    public:
+        class permit;
+        /// @internal
         /// @brief A fancy pointer that holds a lock throughout its lifetime.
         template <typename Lock, type_qualifiers Q = type_qualifiers::none>
         class permit_ptr : public stale_class {
@@ -53,16 +52,13 @@ namespace utils {
         /// @brief A proxy through which the user uses the resource to enforce thread safety.
         ///
         /// `unique_resource` only issues a permit when there is available quota.
-        /// The class has a private constructor to maintain the ownership of `unique_resource`.
-        /// In other words, the user and other constructs cannot issue permits.
         class permit : public stale_class {
         private:
             unique_resource& owner_;
-
-            explicit constexpr permit(unique_resource* owner) : owner_(*owner) {}
-            friend unique_resource;
-            friend permit_opt;
         public:
+            /// @brief Constructs a permit.
+            /// @param owner: A pointer to the issuer of the permit (i.e. the owner of the resource).
+            explicit constexpr permit(unique_resource* owner) : owner_(*owner) {}
             /// @brief Provides read-only access to the resource.
             /// @remark If `sync` is true, a fancy pointer (`permit_ptr`) is returned.
             constexpr auto read() const noexcept {
@@ -88,7 +84,9 @@ namespace utils {
             /// @brief At destruction, notify the owner of the resource that the current user has released control.
             constexpr ~permit() { owner_.sem_.release(); }
         };
-    private:
+        /// @endinternal
+        using permit_opt = std::optional<permit>;
+
         value_type base_;
         [[no_unique_address]] semaphore_type sem_;
         [[no_unique_address]] std::conditional_t<sync, std::shared_mutex, std::monostate> mutex_;
