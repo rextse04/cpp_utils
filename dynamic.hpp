@@ -4,10 +4,10 @@
 #include <cstddef>
 #include <atomic>
 #include <functional>
+#include <meta>
 #include "functional.hpp"
 #include "type.hpp"
 #include "meta.hpp"
-#include "self.hpp"
 #include "integer.hpp"
 #include "swap.hpp"
 #include "memory.hpp"
@@ -276,7 +276,7 @@ namespace utils {
     /// @brief Convenience macro for defining a class that implements one or more interfaces.
     ///
     /// Hides boilerplate for setting up the `vtable()` method as specified in `implements`.
-    /// It finds the current class by using the UTILS_FIND_SELF macro, so the rules of the macro apply.
+    /// It finds the current class by using the `UTILS_FIND_SELF` macro, so the rules of the macro apply.
     /// Pairs with `UTILS_DYN_END`.
 #define UTILS_DYN UTILS_FIND_SELF\
     constexpr static const vtable_type& vtable() {\

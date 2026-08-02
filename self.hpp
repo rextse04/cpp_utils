@@ -3,6 +3,11 @@
 #include "stateful_meta.hpp"
 #include "exception.hpp"
 
+/**
+ * @file
+ * @brief Utilities to find the current class.
+ */
+
 namespace utils::meta {
 /// @deprecated Use C++26 reflection.
 /// @brief A macro for retrieving the current class.
